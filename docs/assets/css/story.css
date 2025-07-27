@@ -1,0 +1,21 @@
+/* Base */
+body { font-family: 'Inter', sans-serif; }
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Hobby Sections */
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  scroll-snap-align: start;
+}
+
+#anime { background: #F6F8FF; }
+#sneakers { background: #FFF6F6; }
