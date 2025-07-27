@@ -1,97 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Passion Projects</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/story.css">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+---
+layout: home
+title: Welcome
+---
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>I turn passions into projects</h1>
-      <p>Scroll down to explore my obsessions →</p>
+<section class="hero">
+    <div class="container">
+        <h1>Hello, I'm a Builder</h1>
+        <p>I create things at the intersection of my passions and skills.</p>
+        <a href="#chapters" class="btn btn-primary">Explore My World</a>
     </div>
-  </section>
+</section>
 
-  <!-- Sports Chapter -->
-  <section id="sneakers" class="hobby-chapter">
-    <div class="chapter-content">
-      <h2><span class="emoji">👟</span> Sports Hustle</h2>
-      <p>Automating the hunt for rare kicks (and learning hard lessons).</p>
-      <a href="hobbies/sports.html" class="cta-button">See All Sneaker Projects</a>
+<section id="chapters" class="story-chapters">
+    {% for hobby in site.data.hobbies %}
+    <div class="chapter" style="background-color: {{ hobby.color }};">
+        <div class="chapter-content">
+            <span class="chapter-emoji">{{ hobby.emoji }}</span>
+            <h2 class="chapter-title">{{ hobby.name }}</h2>
+            <p class="chapter-description">{{ hobby.description }}</p>
+            <a href="/hobbies/{{ hobby.slug }}" class="chapter-cta">Explore {{ hobby.name }}</a>
+        </div>
     </div>
-    <div class="project-preview">
-      <img src="assets/img/sneakers/drop-bot-preview.jpg" alt="Sneaker bot UI">
-      <div class="preview-caption">
-        <h3>Drop Alert Bot</h3>
-        <p>Monitors 20+ sites for new releases</p>
-        <a href="projects/sneaker-bot.html" class="project-link">War Stories →</a>
-      </div>
-    </div>
-  </section>
+    {% endfor %}
+</section>
 
-  <!-- Anime Chapter -->
-  <section id="anime" class="hobby-chapter">
-    <div class="chapter-content">
-      <h2><span class="emoji">🎌</span> Anime Code</h2>
-      <p>When I'm not rewatching Attack on Titan, I build tools for fellow weebs.</p>
-      <a href="hobbies/anime.html" class="cta-button">See All Anime Projects</a>
+<section class="cta-section">
+    <div class="container">
+        <h2>Want to see more?</h2>
+        <p>Discover all my projects, thoughts, and creative endeavors.</p>
+        <a href="/hobbies" class="btn btn-outline">View All Hobbies</a>
     </div>
-    <div class="project-preview">
-      <img src="assets/img/anime/quote-bot-preview.gif" alt="Anime quote bot demo">
-      <div class="preview-caption">
-        <h3>Anime Quote Bot</h3>
-        <p>Tweets random lines from your favorite shows</p>
-        <a href="projects/anime-quote-bot.html" class="project-link">View Project →</a>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <!-- Sneakers Chapter -->
-  <section id="sneakers" class="hobby-chapter">
-    <div class="chapter-content">
-      <h2><span class="emoji">👟</span> Sneaker Hustle</h2>
-      <p>Automating the hunt for rare kicks (and learning hard lessons).</p>
-      <a href="hobbies/sneakers.html" class="cta-button">See All Sneaker Projects</a>
-    </div>
-    <div class="project-preview">
-      <img src="assets/img/sneakers/drop-bot-preview.jpg" alt="Sneaker bot UI">
-      <div class="preview-caption">
-        <h3>Drop Alert Bot</h3>
-        <p>Monitors 20+ sites for new releases</p>
-        <a href="projects/sneaker-bot.html" class="project-link">War Stories →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gym Chapter -->
-  <section id="sneakers" class="hobby-chapter">
-    <div class="chapter-content">
-      <h2><span class="emoji">👟</span> Gym </h2>
-      <p>Automating the hunt for rare kicks (and learning hard lessons).</p>
-      <a href="hobbies/gym.html" class="cta-button">See All Sneaker Projects</a>
-    </div>
-    <div class="project-preview">
-      <img src="assets/img/sneakers/drop-bot-preview.jpg" alt="Sneaker bot UI">
-      <div class="preview-caption">
-        <h3>Drop Alert Bot</h3>
-        <p>Monitors 20+ sites for new releases</p>
-        <a href="projects/sneaker-bot.html" class="project-link">War Stories →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- More hobby chapters... -->
-
-  <footer>
-    <p>Want to build something wild? <a href="contact.html">Let's talk</a>.</p>
-  </footer>
-
-  <script src="assets/js/scroll.js"></script>
-</body>
-</html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling for the explore button
+    const exploreBtn = document.querySelector('.hero .btn');
+    if (exploreBtn) {
+        exploreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+    
+    // Add tilt effect to chapters
+    const chapters = document.querySelectorAll('.chapter');
+    chapters.forEach(chapter => {
+        chapter.addEventListener('mousemove', (e) => {
+            const rect = chapter.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 25;
+            const rotateY = (centerX - x) / 25;
+            
+            chapter.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
+        
+        chapter.addEventListener('mouseleave', () => {
+            chapter.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+    });
+});
+</script>

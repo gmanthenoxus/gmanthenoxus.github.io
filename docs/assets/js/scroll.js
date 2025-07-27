@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const chapters = document.querySelectorAll('.hobby-chapter');
+  const chapters = document.querySelectorAll('.chapter');
   
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
+  // Add tilt effect on hover
   chapters.forEach(chapter => {
-    observer.observe(chapter);
+    chapter.addEventListener('mouseenter', () => {
+      chapter.style.transform = 'rotate(1deg) scale(1.02)';
+    });
+    
+    chapter.addEventListener('mouseleave', () => {
+      chapter.style.transform = 'rotate(0) scale(1)';
+    });
   });
 });

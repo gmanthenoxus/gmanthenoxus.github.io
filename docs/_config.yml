@@ -1,49 +1,45 @@
-# Site Settings
-title: "Your Name | Passion Projects"
-description: "Building tools at the intersection of tech and obsession"
-baseurl: "" # Leave empty for GitHub Pages
-url: "https://yourusername.github.io" # Replace with your username
-favicon: "assets/img/favicon.ico"
+# _config.yml
+title: Noxus' Hub
+email: thisisnoxus@gmail.com
+description: A portfolio showcasing my passions and projects
+baseurl: ""
+url: "https://gmanthenoxus.github.io"
+github_username: gmanthenoxus
 
-# Build Settings
-theme: minima
+# Build settings
+markdown: kramdown
+theme: null
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
 
-# Collections (for projects)
+# Collections
 collections:
+  hobbies:
+    output: true
+    permalink: /hobbies/:name/
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /builds/:path/
 
-# Defaults (for project pages)
+# Defaults
 defaults:
   - scope:
       path: ""
-      type: projects
+      type: "hobbies"
     values:
-      layout: project
-      comments: false
+      layout: "default"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "default"
 
-# Custom Variables
-brand_colors:
-  primary: "#2D3747"
-  accent: "#FF6B35"
-
-hobbies:
-  - name: "Anime"
-    emoji: "🎌"
-    color: "#F6F8FF"
-  - name: "Sneakers"
-    emoji: "👟"
-    color: "#FFF6F6"
-  - name: "Tech"
-    emoji: "💻"
-    color: "#F0F7FF"
-
-# SASS Configuration
-sass:
-  style: compressed
-  load_paths:
-    - "_sass"
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

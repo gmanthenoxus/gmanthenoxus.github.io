@@ -1,0 +1,49 @@
+// Color Palette
+$primary-color: #2D3747;        // Deep navy blue
+$accent-color: #FF6B35;         // Vibrant orange
+$background-light: #F7FAFC;     // Light gray background
+$text-dark: #2D3747;           // Dark text
+$text-light: #CBD5E0;          // Light text
+$text-muted: #718096;          // Muted text
+
+// Hobby-specific colors (from your data)
+$anime-color: #F6F8FF;
+$sneakers-color: #FFE5B4;
+$gym-color: #E8F5E9;
+
+// Typography
+$font-primary: 'Barlow', sans-serif;    // Headings
+$font-secondary: 'Inter', sans-serif;   // Body text
+
+// Font weights
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+
+// Spacing System
+$spacing-xxs: 0.25rem;  // 4px
+$spacing-xs: 0.5rem;    // 8px
+$spacing-sm: 1rem;      // 16px
+$spacing-md: 1.5rem;    // 24px
+$spacing-lg: 2rem;      // 32px
+$spacing-xl: 3rem;      // 48px
+$spacing-xxl: 4rem;     // 64px
+
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1200px;
+
+
+// Shadows & Effects
+$shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-medium: 0.3s ease;
+$transition-slow: 0.5s ease;

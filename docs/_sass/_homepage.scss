@@ -1,0 +1,167 @@
+// Homepage Specific Styles
+
+// Hero section
+.hero {
+    text-align: center;
+    padding: $spacing-xl 0;
+    background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+    color: white;
+    
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xxl 0;
+    }
+    
+    h1 {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: $spacing-sm;
+        
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 3.5rem;
+        }
+    }
+    
+    p {
+        font-size: 1.2rem;
+        color: lighten($text-light, 20%);
+        max-width: 600px;
+        margin: 0 auto $spacing-lg;
+    }
+}
+
+// Story chapters (horizontal scroll)
+.story-chapters {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    height: 100vh;
+    scrollbar-width: none; // Firefox
+    background: $background-light;
+    
+    &::-webkit-scrollbar {
+        display: none; // Chrome/Safari
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+        height: 80vh;
+    }
+}
+
+.chapter {
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: $spacing-md;
+    
+    // Background patterns or images can be added via inline styles
+    background-size: cover;
+    background-position: center;
+    
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xl;
+    }
+}
+
+.chapter-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: $spacing-lg;
+    border-radius: 16px;
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow-lg;
+    transition: transform $transition-medium;
+    
+    &:hover {
+        transform: scale(1.02);
+    }
+    
+    @media (min-width: $breakpoint-tablet) {
+        padding: $spacing-xl;
+    }
+}
+
+.chapter-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: $spacing-md;
+    transition: transform $transition-fast;
+    
+    &:hover {
+        transform: rotate(10deg) scale(1.1);
+    }
+}
+
+.chapter-title {
+    font-size: 2rem;
+    margin-bottom: $spacing-sm;
+    color: $primary-color;
+}
+
+.chapter-description {
+    font-size: 1.1rem;
+    margin-bottom: $spacing-lg;
+    color: $text-dark;
+}
+
+.chapter-cta {
+    @extend .btn-primary;
+    font-size: 1.1rem;
+    padding: $spacing-sm $spacing-lg;
+}
+
+// CTA section
+.cta-section {
+    text-align: center;
+    padding: $spacing-xl 0;
+    background: $primary-color;
+    color: white;
+    
+    h2 {
+        color: white;
+        margin-bottom: $spacing-md;
+    }
+    
+    p {
+        color: $text-light;
+        max-width: 600px;
+        margin: 0 auto $spacing-lg;
+    }
+}
+
+// Featured projects section
+.featured-projects {
+    background: white;
+}
+
+.project-grid {
+    @extend .grid;
+    @extend .grid-cols-1;
+    
+    @media (min-width: $breakpoint-mobile) {
+        @extend .grid-cols-2-mobile;
+    }
+    
+    @media (min-width: $breakpoint-tablet) {
+        @extend .grid-cols-3-tablet;
+    }
+}
+
+.project-card {
+    @extend .card;
+    text-align: center;
+    
+    h3 {
+        margin-top: $spacing-sm;
+        margin-bottom: $spacing-xs;
+    }
+    
+    p {
+        font-size: 0.9rem;
+        color: $text-muted;
+        margin-bottom: $spacing-sm;
+    }
+}
