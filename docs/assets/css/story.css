@@ -1,25 +1,43 @@
-/* Base */
-body { font-family: 'Inter', sans-serif; }
-
-/* Hero */
-.hero {
-  height: 100vh;
+/* Hobby Chapters */
+.hobby-chapter {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.chapter-content {
+  max-width: 600px;
+  margin: 0 auto 2rem;
   text-align: center;
 }
 
-/* Hobby Sections */
-section {
-  min-height: 100vh;
-  padding: 4rem;
-  scroll-snap-align: start;
-  border-bottom: 1px solid #eee;
+/* Hobby-Specific Colors */
+#anime {
+  background-color: #F6F8FF;
 }
 
-/* Hobby-Specific Accents */
-#sports { background: #FFF6F6; }
-#anime { background: #F6F8FF; }
-#gym { background: #F6FFF8; }
-#food { background: #FFFBF6; }
+#sneakers {
+  background-color: #FFF6F6;
+}
+
+/* Scroll Animations */
+.hobby-chapter {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hobby-chapter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Emoji Styling */
+.emoji {
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
