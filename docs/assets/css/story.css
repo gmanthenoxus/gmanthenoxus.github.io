@@ -13,9 +13,13 @@ body { font-family: 'Inter', sans-serif; }
 /* Hobby Sections */
 section {
   min-height: 100vh;
-  padding: 2rem;
+  padding: 4rem;
   scroll-snap-align: start;
+  border-bottom: 1px solid #eee;
 }
 
+/* Hobby-Specific Accents */
+#sports { background: #FFF6F6; }
 #anime { background: #F6F8FF; }
-#sneakers { background: #FFF6F6; }
+#gym { background: #F6FFF8; }
+#food { background: #FFFBF6; }
