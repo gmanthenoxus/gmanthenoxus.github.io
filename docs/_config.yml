@@ -1,0 +1,49 @@
+# Site Settings
+title: "Your Name | Passion Projects"
+description: "Building tools at the intersection of tech and obsession"
+baseurl: "" # Leave empty for GitHub Pages
+url: "https://yourusername.github.io" # Replace with your username
+favicon: "assets/img/favicon.ico"
+
+# Build Settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections (for projects)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Defaults (for project pages)
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      comments: false
+
+# Custom Variables
+brand_colors:
+  primary: "#2D3747"
+  accent: "#FF6B35"
+
+hobbies:
+  - name: "Anime"
+    emoji: "🎌"
+    color: "#F6F8FF"
+  - name: "Sneakers"
+    emoji: "👟"
+    color: "#FFF6F6"
+  - name: "Tech"
+    emoji: "💻"
+    color: "#F0F7FF"
+
+# SASS Configuration
+sass:
+  style: compressed
+  load_paths:
+    - "_sass"
