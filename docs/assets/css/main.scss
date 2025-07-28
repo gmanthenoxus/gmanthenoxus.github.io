@@ -5,10 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 // Import our Sass partials
-@import "variables";
-@import "base";
-@import "components";
-@import "homepage";
+@import "../../_sass/variables";
+@import "../../_sass/base";
+@import "../../_sass/components";
+@import "../../_sass/homepage";
 
 // Responsive Adjustments
 @media (max-width: $breakpoint-mobile) {
