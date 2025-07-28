@@ -1,9 +1,10 @@
 ---
+layout: hobby
 title: Sneakers
+slug: sneakers
 emoji: "👟"
 color: "#FFE5B4"
 description: "From collecting to customizing. The culture, the craft, the community."
-featured_image: "/assets/images/sneakers-bg.jpg"
 ---
 
 # Sneakers
@@ -13,11 +14,6 @@ The world of sneakers is more than just footwear—it's culture, art, and commun
 ## The Sneaker Journey
 
 What started as casual interest has evolved into a deep appreciation for design, craftsmanship, and the stories behind each pair.
-
-## Featured Projects
-
-- [Drop Tracker](/builds/sneakers/drop-tracker) - Never miss a release again
-- Custom Design Portfolio - Showcasing my paint work
 
 ## Collection Highlights
 

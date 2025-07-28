@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<div class="hobby-page">
+    <header class="hobby-header" style="background-color: {{ page.color }};">
+        <div class="container">
+            <div class="hobby-header-content">
+                <span class="hobby-emoji">{{ page.emoji }}</span>
+                <h1>{{ page.title }}</h1>
+                <p class="hobby-description">{{ page.description }}</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hobby-content">
+            {{ content }}
+        </div>
+
+        <!-- Projects Section -->
+        {% assign hobby_projects = site.projects | where: "hobby", page.slug %}
+        {% if hobby_projects.size > 0 %}
+        <section class="hobby-projects">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                {% for project in hobby_projects %}
+                <div class="project-card">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.url }}" class="btn btn-primary">View Project</a>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+.hobby-header {
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hobby-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.hobby-header h1 {
+    color: inherit;
+    margin-bottom: 1rem;
+}
+
+.hobby-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.hobby-content {
+    margin-bottom: 3rem;
+}
+
+.hobby-projects {
+    margin: 4rem 0;
+}
+
+.hobby-projects h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #2D3747;
+}
+
+.project-card p {
+    color: #718096;
+    margin-bottom: 1.5rem;
+}
+</style>

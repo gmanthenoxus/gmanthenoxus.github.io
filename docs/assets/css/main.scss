@@ -397,3 +397,21 @@ a {
         color: white;
     }
 }
+
+
+.project-highlight {
+    background: rgba(255, 107, 53, 0.1);
+    border-left: 4px solid $accent-color;
+    padding: 2rem;
+    border-radius: 0 8px 8px 0;
+    margin: 2rem 0;
+}
+
+.project-highlight h3 {
+    margin-top: 0;
+    color: $primary-color;
+}
+
+.project-highlight .btn {
+    margin-top: 1rem;
+}
