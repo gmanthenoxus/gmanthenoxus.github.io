@@ -1,0 +1,246 @@
+---
+layout: default
+---
+
+<article class="blog-post">
+    <header class="post-header">
+        <div class="container">
+            <div class="post-breadcrumb">
+                <a href="/blog">← Back to Blog</a>
+            </div>
+            <h1>{{ page.title }}</h1>
+            <div class="post-meta">
+                {% if page.date %}
+                <span class="meta-item">
+                    <i class="meta-icon">📅</i>
+                    {{ page.date | date: "%B %d, %Y" }}
+                </span>
+                {% endif %}
+                
+                {% if page.author %}
+                <span class="meta-item">
+                    <i class="meta-icon">👤</i>
+                    {{ page.author }}
+                </span>
+                {% endif %}
+                
+                {% if page.categories %}
+                <span class="meta-item">
+                    <i class="meta-icon">📂</i>
+                    {% for category in page.categories %}
+                    <span class="category">{{ category }}</span>
+                    {% endfor %}
+                </span>
+                {% endif %}
+                
+                {% if page.tags %}
+                <span class="meta-item">
+                    <i class="meta-icon">🏷️</i>
+                    {% for tag in page.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="post-content">
+            {{ content }}
+        </div>
+
+        <div class="post-navigation">
+            {% if page.previous %}
+            <a href="{{ page.previous.url }}" class="nav-prev">
+                ← {{ page.previous.title | truncate: 50 }}
+            </a>
+            {% endif %}
+            
+            {% if page.next %}
+            <a href="{{ page.next.url }}" class="nav-next">
+                {{ page.next.title | truncate: 50 }} →
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</article>
+
+<style>
+.blog-post {
+    padding: 2rem 0;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+}
+
+.post-breadcrumb {
+    margin-bottom: 1rem;
+}
+
+.post-breadcrumb a {
+    color: #718096;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.post-breadcrumb a:hover {
+    color: #FF6B35;
+}
+
+.post-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #718096;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 1.5rem 0;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meta-icon {
+    font-size: 1.1rem;
+}
+
+.category, .tag {
+    background: #EDF2F7;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.category {
+    background: #EBF8FF;
+    color: #3182CE;
+}
+
+.tag {
+    background: #F0FFF4;
+    color: #38A169;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.post-content h2 {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E2E8F0;
+}
+
+.post-content h3 {
+    margin-top: 1.5rem;
+}
+
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content ul, .post-content ol {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #FF6B35;
+    padding: 0.5rem 1.5rem;
+    margin: 2rem 0;
+    background: #FFF9F2;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+.post-content img {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    display: block;
+}
+
+.post-content pre {
+    background: #1A202C;
+    color: #CBD5E0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.post-content code {
+    background: #EDF2F7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E2E8F0;
+}
+
+.nav-prev, .nav-next {
+    text-decoration: none;
+    color: #2D3747;
+    font-weight: 600;
+    max-width: 45%;
+}
+
+.nav-prev:hover, .nav-next:hover {
+    color: #FF6B35;
+}
+
+.nav-prev {
+    text-align: left;
+}
+
+.nav-next {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .post-header h1 {
+        font-size: 2rem;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .post-navigation {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .nav-prev, .nav-next {
+        max-width: 100%;
+    }
+}
+</style>

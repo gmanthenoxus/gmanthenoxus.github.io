@@ -1,0 +1,280 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="blog-page">
+    <div class="container">
+        <header class="page-header">
+            <h1>Thoughts & Insights</h1>
+            <p>Sharing my journey, learnings, and passion projects</p>
+        </header>
+
+        <div class="blog-filters">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search posts...">
+            </div>
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="thoughts">Thoughts</button>
+                <button class="filter-btn" data-category="tutorials">Tutorials</button>
+                <button class="filter-btn" data-category="philosophy">Philosophy</button>
+            </div>
+        </div>
+
+        <div class="posts-grid" id="postsGrid">
+            {% for post in site.posts %}
+            <article class="post-card" data-categories="{{ post.categories | join: ' ' }}">
+                <div class="post-card-header">
+                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                    <div class="post-meta">
+                        {% if post.date %}
+                        <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                        {% endif %}
+                        
+                        {% if post.categories %}
+                        <div class="post-categories">
+                            {% for category in post.categories %}
+                            <span class="category {{ category }}">{{ category | capitalize }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                {% if post.excerpt %}
+                <div class="post-excerpt">
+                    {{ post.excerpt | strip_html | truncate: 200 }}
+                </div>
+                {% endif %}
+                
+                <div class="post-read-more">
+                    <a href="{{ post.url }}" class="btn btn-outline">Read More</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<style>
+.blog-page {
+    padding: 2rem 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #718096;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.blog-filters {
+    margin-bottom: 3rem;
+}
+
+.search-box {
+    margin-bottom: 1.5rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #FF6B35;
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: white;
+    border: 2px solid #E2E8F0;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #FF6B35;
+    color: white;
+    border-color: #FF6B35;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.post-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #E2E8F0;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.post-card-header h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.post-card-header h2 a {
+    color: #2D3747;
+    text-decoration: none;
+}
+
+.post-card-header h2 a:hover {
+    color: #FF6B35;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.post-date {
+    font-weight: 500;
+}
+
+.post-categories {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.category {
+    background: #EDF2F7;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.category.thoughts {
+    background: #EBF8FF;
+    color: #3182CE;
+}
+
+.category.tutorials {
+    background: #F0FFF4;
+    color: #38A169;
+}
+
+.category.philosophy {
+    background: #FDF2F8;
+    color: #E53E3E;
+}
+
+.post-excerpt {
+    color: #718096;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.post-read-more {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .post-categories {
+        margin-top: 0.5rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Category filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const postCards = document.querySelectorAll('.post-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Get filter value
+            const filter = button.dataset.category;
+            
+            // Filter posts
+            postCards.forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const categories = card.dataset.categories || '';
+                    if (categories.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            postCards.forEach(card => {
+                const title = card.querySelector('h2 a').textContent.toLowerCase();
+                const excerpt = card.querySelector('.post-excerpt')?.textContent.toLowerCase() || '';
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+});
+</script>

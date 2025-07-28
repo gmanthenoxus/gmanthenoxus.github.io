@@ -1,0 +1,185 @@
+
+---
+layout: default
+title: All Projects
+---
+
+<div class="projects-page">
+    <div class="container">
+        <header class="page-header">
+            <h1>My Projects</h1>
+            <p>Built with passion, powered by code</p>
+        </header>
+
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="anime">Anime</button>
+            <button class="filter-btn" data-filter="sneakers">Sneakers</button>
+        </div>
+
+        <div class="projects-grid">
+            {% for project in site.projects %}
+            <div class="project-card" data-hobby="{{ project.hobby }}">
+                <div class="project-card-header">
+                    <h3>{{ project.title }}</h3>
+                    <span class="project-hobby-tag {{ project.hobby }}">{{ project.hobby | capitalize }}</span>
+                </div>
+                <p>{{ project.description }}</p>
+                <div class="project-card-footer">
+                    {% if project.date %}
+                    <span class="project-date">{{ project.date | date: "%b %d, %Y" }}</span>
+                    {% endif %}
+                    <a href="{{ project.url }}" class="btn btn-primary btn-small">View Project</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<style>
+.projects-page {
+    padding: 2rem 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #718096;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.projects-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: white;
+    border: 2px solid #E2E8F0;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #FF6B35;
+    color: white;
+    border-color: #FF6B35;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #E2E8F0;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.project-card-header h3 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.project-hobby-tag {
+    background: #EDF2F7;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-hobby-tag.anime {
+    background: #F6F8FF;
+    color: #4C51BF;
+}
+
+.project-hobby-tag.sneakers {
+    background: #FFE5B4;
+    color: #975A16;
+}
+
+.project-card p {
+    color: #718096;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.project-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-date {
+    font-size: 0.9rem;
+    color: #A0AEC0;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Get filter value
+            const filter = button.dataset.filter;
+            
+            // Filter projects
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.dataset.hobby === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
