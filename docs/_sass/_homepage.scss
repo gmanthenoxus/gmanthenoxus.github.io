@@ -138,15 +138,16 @@
 }
 
 .project-grid {
-    @extend .grid;
-    @extend .grid-cols-1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
     
     @media (min-width: $breakpoint-mobile) {
-        @extend .grid-cols-2-mobile;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     @media (min-width: $breakpoint-tablet) {
-        @extend .grid-cols-3-tablet;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
