@@ -21,19 +21,6 @@ collections:
     output: true
     permalink: /builds/:path/
 
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "hobbies"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "default"
-
 # Exclude from processing
 exclude:
   - Gemfile
