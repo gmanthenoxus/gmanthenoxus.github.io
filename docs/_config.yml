@@ -13,6 +13,7 @@ plugins:
   - jekyll-feed
 
 # Add this to your _config.yml if not already there
+# Collections
 collections:
   hobbies:
     output: true
@@ -21,7 +22,7 @@ collections:
     output: true
     permalink: /builds/:path/
 
-# Make sure you have this defaults section
+# Defaults
 defaults:
   - scope:
       path: ""
@@ -33,6 +34,11 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
 # Exclude from processing
 exclude:
