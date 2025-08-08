@@ -415,3 +415,31 @@ a {
 .project-highlight .btn {
     margin-top: 1rem;
 }
+
+/* Animated gradient background */
+.hero {
+  background: linear-gradient(135deg, #008753 0%, #012169 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Typewriter effect */
+.typewriter {
+  border-right: 3px solid #FF6B35;
+  animation: blink 0.75s step-end infinite;
+}
+
+/* Floating emojis */
+.floating-emoji {
+  animation: float 6s ease-in-out infinite;
+  font-size: 2.5rem;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+/* Code animation background */
+.code-animation::before {
+  content: "function buildWithPassion() {";
+  position: absolute;
+  opacity: 0.1;
+  animation: scrollCode 20s linear infinite;
+}
