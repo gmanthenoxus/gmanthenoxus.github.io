@@ -20,23 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Smooth scroll for arrow
   document.querySelector('.scroll-down')?.addEventListener('click', () => {
-    document.querySelector('.roadmap')?.scrollIntoView({ 
+    document.querySelector('.tabbed-roadmap')?.scrollIntoView({ 
       behavior: 'smooth' 
-    });
-  });
-  
-  // Card click handling
-  document.querySelectorAll('.roadmap-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      if (!e.target.closest('a')) {
-        const link = card.querySelector('a.cta:not(.disabled)');
-        if (link) link.click();
-      }
     });
   });
 });
 
-// In assets/js/home-interactions.js
 // Tabbed roadmap functionality
 document.addEventListener('DOMContentLoaded', () => {
   // Tab switching

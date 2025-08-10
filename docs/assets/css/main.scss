@@ -240,6 +240,7 @@ a {
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
+    z-index: 20;
     
     svg {
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
