@@ -1,22 +1,25 @@
 ---
 layout: default
-title: Welcome
 ---
 
+<!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
     <h1 class="headline">We really should get back to work</h1>
-    <p class="subheadline">But while I have your attention, here's something to keep you entertained.</p>
+    <p class="subheadline">But while I have your attention, something to keep you entertained.</p>
+    
+    <!-- Arrow under subheadline -->
     <div class="scroll-down">
       <svg width="30" height="50" viewBox="0 0 30 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M15 0V35M15 35L25 25M15 35L5 25" stroke="white" stroke-width="2"/>
       </svg>
     </div>
   </div>
-
+  
+  <!-- Floating emojis added via JS -->
 </section>
 
-<!-- Replace roadmap section in _layouts/home.html -->
+<!-- Tabbed Roadmap Section -->
 <section class="tabbed-roadmap">
   <nav class="roadmap-nav">
     <button class="nav-item active" data-target="blog">Get Inspired</button>
@@ -25,51 +28,48 @@ title: Welcome
   </nav>
   
   <div class="roadmap-content">
+    <!-- Blog Content -->
     <div id="blog" class="content-pane active">
       <div class="content-card">
         <h3>Latest Inspiration</h3>
         <p>Exploring the intersection of passion and technology through personal stories.</p>
+        
         <div class="preview-grid">
+          {% for post in site.posts limit:3 %}
           <div class="preview-item">
-            <h4>Why I Build With Passions</h4>
-            <p>How turning hobbies into code changed my approach to development</p>
-            <a href="/blog/passion-driven-dev" class="cta-small">Read</a>
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+            <a href="{{ post.url }}" class="cta-small">Read</a>
           </div>
-          <div class="preview-item">
-            <h4>From Lagos to London</h4>
-            <p>A developer's journey through cultural perspectives</p>
-            <a href="/blog/lagos-to-london" class="cta-small">Read</a>
-          </div>
+          {% endfor %}
         </div>
+        
         <a href="/blog" class="cta">View All Posts</a>
       </div>
     </div>
     
+    <!-- Hobbies Content -->
     <div id="hobbies" class="content-pane">
       <div class="content-card">
         <h3>My Passion Projects</h3>
         <p>Where obsessions meet code and create solutions</p>
+        
+        <!-- Dynamically list hobby categories -->
         <div class="hobby-grid">
+          {% for hobby in site.data.hobbies %}
           <div class="hobby-item">
-            <span class="hobby-emoji">🏀</span>
-            <h4>Sports Analytics</h4>
-            <p>Basketball data visualization tools</p>
+            <span class="hobby-emoji">{{ hobby.emoji }}</span>
+            <h4>{{ hobby.name }}</h4>
+            <p>{{ hobby.description }}</p>
           </div>
-          <div class="hobby-item">
-            <span class="hobby-emoji">🎌</span>
-            <h4>Anime Tech</h4>
-            <p>API integrations and fan tools</p>
-          </div>
-          <div class="hobby-item">
-            <span class="hobby-emoji">👟</span>
-            <h4>Sneaker Tech</h4>
-            <p>Drop trackers and authentication</p>
-          </div>
+          {% endfor %}
         </div>
+        
         <a href="/hobbies" class="cta">Explore All Hobbies</a>
       </div>
     </div>
     
+    <!-- Brain Work Content -->
     <div id="brain" class="content-pane">
       <div class="content-card">
         <div class="wip-container">
@@ -93,61 +93,3 @@ title: Welcome
     </div>
   </div>
 </section>
-
-<!-- Horizontal Roadmap -->
-<section class="roadmap">
-  <div class="roadmap-container">
-    <div class="roadmap-card">
-      <h3>Get Inspired</h3>
-      <p>Explore my blog posts about passion and technology.</p>
-      <a href="{{ site.baseurl }}/blog" class="cta">Read Posts</a>
-    </div>
-    
-    <div class="roadmap-card">
-      <h3>My Hobbies</h3>
-      <p>See how I turn obsessions into code.</p>
-      <a href="{{ site.baseurl }}/hobbies" class="cta">Explore Hobbies</a>
-    </div>
-    
-    <div class="roadmap-card">
-      <h3>Brain Work <span class="wip-badge">Work in Progress</span></h3>
-      <p>Interactive zone for collaboration and challenges.</p>
-      <a href="#" class="cta disabled">Coming Soon</a>
-    </div>
-  </div>
-</section>
-
-<section id="chapters" class="story-chapters">
-    {% for hobby in site.data.hobbies %}
-    <div class="chapter" style="background-color: {{ hobby.color }};">
-        <div class="chapter-content">
-            <span class="chapter-emoji">{{ hobby.emoji }}</span>
-            <h2 class="chapter-title">{{ hobby.name }}</h2>
-            <p class="chapter-description">{{ hobby.description }}</p>
-            <a href="/hobbies/{{ hobby.slug }}" class="chapter-cta">Explore {{ hobby.name }}</a>
-        </div>
-    </div>
-    {% endfor %}
-</section>
-
-<section class="cta-section">
-    <div class="container">
-        <h2>Want to see more?</h2>
-        <p>Discover all my projects, thoughts, and creative endeavors.</p>
-        <a href="/hobbies" class="btn btn-outline">View All Hobbies</a>
-    </div>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling for the explore button
-    const exploreBtn = document.querySelector('.hero .btn');
-    if (exploreBtn) {
-        exploreBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            target.scrollIntoView({ behavior: 'smooth' });
-        });
-    }
-});
-</script>
