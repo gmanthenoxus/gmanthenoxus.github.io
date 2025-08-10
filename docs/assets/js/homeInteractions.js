@@ -35,3 +35,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// In assets/js/home-interactions.js
+// Tabbed roadmap functionality
+document.addEventListener('DOMContentLoaded', () => {
+  // Tab switching
+  const tabButtons = document.querySelectorAll('.roadmap-nav .nav-item');
+  const tabPanes = document.querySelectorAll('.content-pane');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active classes
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabPanes.forEach(pane => pane.classList.remove('active'));
+      
+      // Add active class to clicked button
+      button.classList.add('active');
+      
+      // Show corresponding pane
+      const targetId = button.dataset.target;
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+  
+  // Email notification for WIP
+  document.querySelector('.wip-form button')?.addEventListener('click', () => {
+    const email = document.querySelector('.wip-form input').value;
+    if (validateEmail(email)) {
+      alert(`Thanks! We'll notify you at ${email} when Brain Work is ready.`);
+      // Here you would normally send to a database
+    } else {
+      alert('Please enter a valid email address');
+    }
+  });
+  
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+});

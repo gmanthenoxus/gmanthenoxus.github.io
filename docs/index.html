@@ -6,14 +6,91 @@ title: Welcome
 <section class="hero">
   <div class="hero-content">
     <h1 class="headline">We really should get back to work</h1>
-    <p class="subheadline">But while I have your attention, something to keep you entertained.</p>
-    
+    <p class="subheadline">But while I have your attention, here's something to keep you entertained.</p>
+    <div class="scroll-down">
+      <svg width="30" height="50" viewBox="0 0 30 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 0V35M15 35L25 25M15 35L5 25" stroke="white" stroke-width="2"/>
+      </svg>
     </div>
+  </div>
+
+</section>
+
+<!-- Replace roadmap section in _layouts/home.html -->
+<section class="tabbed-roadmap">
+  <nav class="roadmap-nav">
+    <button class="nav-item active" data-target="blog">Get Inspired</button>
+    <button class="nav-item" data-target="hobbies">My Hobbies</button>
+    <button class="nav-item" data-target="brain">Brain Work <span class="wip-badge">WIP</span></button>
+  </nav>
   
-  <div class="scroll-down">
-    <svg width="30" height="50" viewBox="0 0 30 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15 0V35M15 35L25 25M15 35L5 25" stroke="white" stroke-width="2"/>
-    </svg>
+  <div class="roadmap-content">
+    <div id="blog" class="content-pane active">
+      <div class="content-card">
+        <h3>Latest Inspiration</h3>
+        <p>Exploring the intersection of passion and technology through personal stories.</p>
+        <div class="preview-grid">
+          <div class="preview-item">
+            <h4>Why I Build With Passions</h4>
+            <p>How turning hobbies into code changed my approach to development</p>
+            <a href="/blog/passion-driven-dev" class="cta-small">Read</a>
+          </div>
+          <div class="preview-item">
+            <h4>From Lagos to London</h4>
+            <p>A developer's journey through cultural perspectives</p>
+            <a href="/blog/lagos-to-london" class="cta-small">Read</a>
+          </div>
+        </div>
+        <a href="/blog" class="cta">View All Posts</a>
+      </div>
+    </div>
+    
+    <div id="hobbies" class="content-pane">
+      <div class="content-card">
+        <h3>My Passion Projects</h3>
+        <p>Where obsessions meet code and create solutions</p>
+        <div class="hobby-grid">
+          <div class="hobby-item">
+            <span class="hobby-emoji">🏀</span>
+            <h4>Sports Analytics</h4>
+            <p>Basketball data visualization tools</p>
+          </div>
+          <div class="hobby-item">
+            <span class="hobby-emoji">🎌</span>
+            <h4>Anime Tech</h4>
+            <p>API integrations and fan tools</p>
+          </div>
+          <div class="hobby-item">
+            <span class="hobby-emoji">👟</span>
+            <h4>Sneaker Tech</h4>
+            <p>Drop trackers and authentication</p>
+          </div>
+        </div>
+        <a href="/hobbies" class="cta">Explore All Hobbies</a>
+      </div>
+    </div>
+    
+    <div id="brain" class="content-pane">
+      <div class="content-card">
+        <div class="wip-container">
+          <h3>Brain Work Lab</h3>
+          <div class="construction">
+            <div class="crane-arm"></div>
+            <div class="building">
+              <div class="window"></div>
+              <div class="window"></div>
+              <div class="window"></div>
+            </div>
+          </div>
+          <p>Interactive collaboration space coming soon!</p>
+          <div class="wip-form">
+            <p>Notify me when it's ready:</p>
+            <input type="email" placeholder="your.email@example.com">
+            <button class="cta-small">Notify Me</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
