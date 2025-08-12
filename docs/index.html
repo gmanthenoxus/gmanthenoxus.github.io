@@ -56,7 +56,7 @@ layout: default
         
         <!-- Dynamically list hobby categories -->
         <div class="hobby-grid">
-          {% for hobby in site.data.hobbies %}
+          {% for hobby in site.data.hobbies limit:3 %}
           <div class="hobby-item">
             <span class="hobby-emoji">{{ hobby.emoji }}</span>
             <h4>{{ hobby.name }}</h4>
@@ -89,6 +89,49 @@ layout: default
             <button class="cta-small">Notify Me</button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+  <div class="cta-container">
+    <!-- Main CTA -->
+    <div class="cta-main">
+      <h2>Ready to build something remarkable?</h2>
+      <p>Let's turn ideas into reality. Whether you want to collaborate, hire me, or just chat about tech and passions.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="cta-button pulse">
+          <span>Let's Connect</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Secondary CTAs -->
+    <div class="cta-grid">
+      <div class="cta-card">
+        <div class="cta-icon">💼</div>
+        <h3>Hire Me</h3>
+        <p>Looking for a passionate developer? View my resume and skills.</p>
+        <a href="/resume" class="cta-link">View Resume →</a>
+      </div>
+      
+      <div class="cta-card">
+        <div class="cta-icon">👁️</div>
+        <h3>See My Work</h3>
+        <p>Explore my passion projects and technical solutions.</p>
+        <a href="/projects" class="cta-link">View Projects →</a>
+      </div>
+      
+      <div class="cta-card">
+        <div class="cta-icon">💬</div>
+        <h3>Get Insights</h3>
+        <p>Read my thoughts on tech, development, and creative problem-solving.</p>
+        <a href="/blog" class="cta-link">Read Blog →</a>
       </div>
     </div>
   </div>
