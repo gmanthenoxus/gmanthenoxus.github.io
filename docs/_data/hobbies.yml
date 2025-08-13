@@ -6,6 +6,13 @@
   description: "Where storytelling meets artistry. My journey through Japanese animation."
   featured_image: "/assets/images/anime-bg.jpg"
 
+- name: "Sports"
+  slug: "sports"
+  emoji: "⚽️"
+  color: "#F0F0F0"
+  description: "From the court to the field. The world of sports."
+  featured_image: "/assets/images/sports-bg.jpg"
+
 - name: "Sneakers"
   slug: "sneakers"
   emoji: "👟"
@@ -19,13 +26,6 @@
   color: "#F0F0F0"
   description: "From retro classics to modern masterpieces. The world of video games."
   featured_image: "/assets/images/boardgames-bg.jpg"
-
-- name: "Sports"
-  slug: "sports"
-  emoji: "⚽️"
-  color: "#F0F0F0"
-  description: "From the court to the field. The world of sports."
-  featured_image: "/assets/images/sports-bg.jpg"
 
 - name: "Tech"
   slug: "tech"
