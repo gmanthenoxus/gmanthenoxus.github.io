@@ -1,99 +1,55 @@
 ---
 layout: default
-title: My Hobbies
+title: My Passions
+subtitle: Where obsessions meet code
 ---
 
-<div class="hobbies-page">
-    <div class="container">
-        <header class="page-header">
-            <h1>My Passions</h1>
-            <p>Explore the different worlds I'm passionate about</p>
-        </header>
+<section class="hobbies-hero">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.subtitle }}</p>
+  </div>
+</section>
 
-        <div class="hobby-grid">
-            {% for hobby in site.hobbies %}
-            <a href="{{ hobby.url }}" class="hobby-card" style="background-color: {{ hobby.color }};">
-                <div class="hobby-card-content">
-                    <span class="hobby-card-emoji">{{ hobby.emoji }}</span>
-                    <h2>{{ hobby.title }}</h2>
-                    <p>{{ hobby.description }}</p>
-                    <span class="explore-link">Explore →</span>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
+<section class="hobbies-container">
+  <div class="container">
+    <div class="hobby-intro">
+      <p>Each of these passions has inspired projects, solutions, and learning journeys. Click through to explore how I've turned hobbies into code.</p>
     </div>
-</div>
+    
+    <div class="hobbies-grid">
+      {% for hobby in site.data.hobbies %}
+        <div class="hobby-card" style="background-image: url('{{ hobby.featured_image }}');">
+          <div class="hobby-overlay"></div>
+          <div class="hobby-header">
+            <span class="hobby-emoji">{{ hobby.emoji }}</span>
+            <h2>{{ hobby.name }}</h2>
+          </div>
+          <div class="hobby-content">
+            <p>{{ hobby.description }}</p>
+            <div class="hobby-projects">
+              <h3>Featured Projects</h3>
+              <ul>
+                {% for project in hobby.projects %}
+                  <li>
+                    <a href="{{ project.url }}">{{ project.name }}</a>
+                    <span>{{ project.description }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <a href="{{ hobby.url }}" class="cta-btn">Explore {{ hobby.name }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-<style>
-.hobbies-page {
-    padding: 2rem 0;
-}
-
-.page-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.page-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.page-header p {
-    font-size: 1.2rem;
-    color: #718096;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.hobby-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.hobby-card {
-    display: block;
-    text-decoration: none;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 100%;
-}
-
-.hobby-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.hobby-card-content {
-    padding: 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.hobby-card-emoji {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hobby-card h2 {
-    color: inherit;
-    margin-bottom: 1rem;
-}
-
-.hobby-card p {
-    color: inherit;
-    opacity: 0.9;
-    flex-grow: 1;
-    margin-bottom: 1rem;
-}
-
-.explore-link {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: underline;
-}
-</style>
+<section class="hobby-cta">
+  <div class="container">
+    <h2>Want to collaborate on a passion project?</h2>
+    <p>I'm always open to discussing new ideas and collaborations around my interests</p>
+    <a href="/contact" class="cta-btn">Let's Brainstorm Together</a>
+  </div>
+</section>
