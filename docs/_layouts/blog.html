@@ -1,0 +1,69 @@
+<!-- _layouts/blog.html -->
+---
+layout: default
+title: Get Inspired
+subtitle: Thoughts, stories, and insights from my journey
+---
+
+<section class="blog-hero">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.subtitle }}</p>
+    
+    <div class="category-filters">
+      <button class="filter-btn active" data-filter="all">All Topics</button>
+      <button class="filter-btn" data-filter="tech">Tech & Code</button>
+      <button class="filter-btn" data-filter="passion">Passion Projects</button>
+      <button class="filter-btn" data-filter="journey">My Journey</button>
+    </div>
+  </div>
+</section>
+
+<section class="blog-grid">
+  <div class="container">
+    <div class="posts-container">
+      {% for post in site.posts %}
+        <article class="blog-card" data-category="{{ post.category }}">
+          <div class="card-image">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+            <span class="category-badge">{{ post.category }}</span>
+          </div>
+          <div class="card-content">
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+            <div class="meta">
+              <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+              <span class="read-time">{{ post.read_time }}</span>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    
+    <div class="featured-post">
+      <h2>Featured Insight</h2>
+      {% assign featured = site.posts | where: "featured", true | first %}
+      <div class="featured-card">
+        <img src="{{ featured.image }}" alt="{{ featured.title }}">
+        <div class="featured-content">
+          <h3><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
+          <p>{{ featured.excerpt | strip_html | truncate: 200 }}</p>
+          <a href="{{ featured.url }}" class="cta-btn">Read Full Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Never Miss an Insight</h2>
+      <p>Get my latest articles on passion-driven development directly to your inbox</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>

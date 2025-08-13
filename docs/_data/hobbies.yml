@@ -5,6 +5,10 @@
   color: "#F6F8FF"
   description: "Where storytelling meets artistry. My journey through Japanese animation."
   featured_image: "/assets/images/anime-bg.jpg"
+  projects:
+    - name: "Anime Quote Generator"
+      url: "/projects/anime-quotes"
+      description: "API for random anime quotes"
 
 - name: "Sports"
   slug: "sports"
@@ -12,6 +16,10 @@
   color: "#F0F0F0"
   description: "From the court to the field. The world of sports."
   featured_image: "/assets/images/sports-bg.jpg"
+  projects:
+    - name: "NBA Stat Predictor"
+      url: "/projects/nba-predictor"
+      description: "Machine learning model for player performance"
 
 - name: "Sneakers"
   slug: "sneakers"
