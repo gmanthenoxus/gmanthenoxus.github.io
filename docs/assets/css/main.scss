@@ -327,7 +327,6 @@ a {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   }
   
-  /* Add to assets/css/main.scss */
 .preview-grid, .hobby-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -633,7 +632,6 @@ a {
   }
 }
 
-//* Add to assets/css/main.scss */
 // ========================================
 // 📞 CTA SECTION (Mobile & Desktop Optimized)
 // ========================================
@@ -872,7 +870,6 @@ a {
   }
 }
 
-/* Add to assets/css/main.scss */
 // ========================================
 // 📚 BLOG SECTION
 // ========================================
@@ -1141,7 +1138,6 @@ a {
   }
 }
 
-/* Add to assets/css/main.scss */
 // ========================================
 // 🎯 HOBBIES SECTION
 // ========================================
@@ -1213,69 +1209,57 @@ a {
     z-index: 1;
   }
   
+  .hobby-header,
+  .hobby-content,
+  .cta-btn {
+    position: relative;
+    z-index: 2;
+  }
+  
   .hobby-header {
-    background: $primary-color;
-    color: white;
     padding: $spacing-md;
     display: flex;
     align-items: center;
     gap: $spacing-sm;
+    color: white; /* Ensure text is visible */
     
     .hobby-emoji {
       font-size: 2.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     
     h2 {
       color: white;
       margin: 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
   }
   
   .hobby-content {
     padding: $spacing-md;
-    flex-grow: 1;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.9); /* Light text for contrast */
     
     p {
-      margin-bottom: $spacing-md;
       color: rgba(255,255,255,0.85);
     }
     
     .hobby-projects {
       h3 {
-        font-size: 1.2rem;
-        margin-bottom: $spacing-sm;
-        color: $primary-color;
         color: white;
+        font-weight: 600;
       }
       
       ul {
-        list-style: none;
-        padding: 0;
-        
         li {
-          margin-bottom: $spacing-sm;
-          padding-bottom: $spacing-sm;
           border-bottom: 1px solid rgba(255,255,255,0.15);
           
-          &:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-          }
-          
           a {
+            color: white;
             font-weight: 600;
-            color: $accent-color;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.2rem;
           }
           
           span {
-            display: block;
-            font-size: 0.9rem;
-            color: $text-muted;
+            color: rgba(255,255,255,0.8);
           }
         }
       }
@@ -1294,39 +1278,8 @@ a {
     backdrop-filter: blur(5px);
     
     &:hover {
-      background: darken($primary-color, 10%);
-    }
-  }
-}
-
-.hobby-cta {
-  background: $background-light;
-  padding: $spacing-xl 0;
-  text-align: center;
-  
-  h2 {
-    font-size: 2.2rem;
-    margin-bottom: $spacing-sm;
-  }
-  
-  p {
-    max-width: 600px;
-    margin: 0 auto $spacing-lg;
-    color: $text-muted;
-  }
-  
-  .cta-btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: $accent-color;
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background: darken($accent-color, 10%);
+      background: $accent-color;
+      border-color: $accent-color;
       transform: translateY(-3px);
     }
   }
