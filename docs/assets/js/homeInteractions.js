@@ -20,9 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Smooth scroll for arrow
   document.querySelector('.scroll-down')?.addEventListener('click', () => {
-    document.querySelector('.tabbed-roadmap')?.scrollIntoView({ 
-      behavior: 'smooth' 
-    });
+    const roadmapSection = document.querySelector('.tabbed-roadmap');
+    if (roadmapSection) {
+      const offsetTop = roadmapSection.offsetTop - 20; // Add small offset from top
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
   });
 });
 

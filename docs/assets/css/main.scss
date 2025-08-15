@@ -101,14 +101,32 @@
 
   .scroll-down {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
     z-index: 20;
+    cursor: pointer;
+    padding: $spacing-sm;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-50%) scale(1.1);
+      animation-play-state: paused;
+    }
 
     svg {
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateY(2px);
     }
   }
 
@@ -125,57 +143,93 @@
 .tabbed-roadmap {
   padding: $spacing-xl 0;
   background: $background-light;
+  position: relative;
+
+  // Add a subtle top border gradient
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, $accent-color, $accent-secondary);
+    opacity: 0.6;
+  }
 
   .roadmap-nav {
     display: flex;
     justify-content: center;
-    margin-bottom: $spacing-md;
-    border-bottom: 1px solid darken($background-light, 10%);
-    padding: 0 $spacing-sm;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-sm;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($primary-color, 0.05);
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+    }
 
     .nav-item {
       background: none;
       border: none;
-      padding: $spacing-sm $spacing-md;
+      padding: $spacing-sm $spacing-lg;
       font-size: 1.1rem;
       font-weight: 500;
       color: $text-muted;
       cursor: pointer;
       position: relative;
-      transition: all 0.3s ease;
-      border-radius: 8px 8px 0 0;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border-radius: 12px;
+      margin: 0 $spacing-xs;
 
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: transparent;
-        transition: all 0.3s ease;
-        border-radius: 2px;
+      @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-sm $spacing-md;
+        font-size: 1rem;
+        margin: 0;
+        flex: 1;
+        text-align: center;
       }
 
+      // Subtle gradient background on hover
       &:hover {
-        color: $text-dark;
-        background: rgba($accent-color, 0.05);
-        transform: translateY(-2px);
-
-        &:after {
-          background: rgba($accent-color, 0.3);
-        }
+        color: $primary-color;
+        background: linear-gradient(135deg,
+          rgba($accent-color, 0.08),
+          rgba($accent-secondary, 0.08));
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 6px 16px rgba($accent-color, 0.15);
       }
 
       &.active {
-        color: $accent-color;
+        color: white;
         font-weight: 600;
-        background: rgba($accent-color, 0.08);
+        background: linear-gradient(135deg, $accent-color, $accent-secondary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($accent-color, 0.25);
 
-        &:after {
-          background: $accent-color;
-          height: 4px;
+        // Add a subtle glow effect
+        &::before {
+          content: '';
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          right: -2px;
+          bottom: -2px;
+          background: linear-gradient(135deg, $accent-color, $accent-secondary);
+          border-radius: 14px;
+          z-index: -1;
+          opacity: 0.3;
+          filter: blur(8px);
         }
+      }
+
+      // Add a subtle animation for the WIP badge
+      .wip-badge {
+        animation: pulse 2s infinite;
       }
     }
   }
@@ -581,86 +635,178 @@
 
 // WIP Section
 .wip-badge {
-  background: darken($background-light, 5%);
-  color: $text-muted;
+  background: linear-gradient(135deg, rgba($accent-color, 0.1), rgba($accent-secondary, 0.1));
+  color: $accent-color;
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
   font-size: 0.8rem;
   display: inline-block;
   margin-left: 0.5rem;
+  font-weight: 600;
+  border: 1px solid rgba($accent-color, 0.2);
 }
 
 .wip-container {
   text-align: center;
-  padding: $spacing-md;
+  padding: $spacing-lg;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: $spacing-md;
+    color: $primary-color;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, $accent-color, $accent-secondary);
+      border-radius: 2px;
+    }
+  }
 
   .construction {
     position: relative;
-    height: 150px;
+    height: 180px;
     width: 100%;
-    margin: $spacing-lg auto;
-    max-width: 300px;
+    margin: $spacing-xl auto;
+    max-width: 350px;
+    background: linear-gradient(135deg,
+      rgba($accent-color, 0.05) 0%,
+      rgba($accent-secondary, 0.05) 100%);
+    border-radius: 16px;
+    padding: $spacing-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .crane-arm {
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 50%;
-    width: 4px;
-    height: 100px;
-    background: $text-muted;
+    width: 6px;
+    height: 120px;
+    background: linear-gradient(180deg, $text-muted, darken($text-muted, 20%));
     transform-origin: top center;
     animation: craneSwing 8s infinite ease-in-out;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
     &:before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: -8px;
-      width: 20px;
-      height: 20px;
-      background: $accent-color;
+      bottom: -10px;
+      left: -12px;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, $accent-color, darken($accent-color, 10%));
       border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
   }
 
   .building {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 100px;
-    background: darken($background-light, 10%);
+    width: 140px;
+    height: 120px;
+    background: linear-gradient(180deg,
+      darken($background-light, 8%),
+      darken($background-light, 15%));
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
     .window {
       position: absolute;
-      width: 20px;
-      height: 30px;
-      background: lighten($accent-color, 30%);
-      left: 20px;
-      top: 20px;
+      width: 24px;
+      height: 36px;
+      background: linear-gradient(135deg,
+        lighten($accent-color, 20%),
+        $accent-color);
+      border-radius: 4px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 
+      &:nth-child(1) {
+        left: 20px;
+        top: 25px;
+      }
       &:nth-child(2) {
-        left: 50px;
+        left: 58px;
+        top: 25px;
       }
       &:nth-child(3) {
-        left: 80px;
+        left: 96px;
+        top: 25px;
       }
     }
   }
 
+  > p {
+    font-size: 1.2rem;
+    color: $text-muted;
+    margin: $spacing-lg 0;
+    line-height: 1.6;
+  }
+
   .wip-form {
-    max-width: 400px;
-    margin: $spacing-lg auto;
+    max-width: 450px;
+    margin: $spacing-xl auto 0;
+    padding: $spacing-lg;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    border: 1px solid rgba($accent-color, 0.1);
+
+    p {
+      font-size: 1.1rem;
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+      font-weight: 600;
+    }
 
     input {
       width: 100%;
-      padding: 0.8rem;
-      border: 1px solid darken($background-light, 10%);
+      padding: 1rem 1.5rem;
+      border: 2px solid rgba($accent-color, 0.2);
       border-radius: 50px;
       margin: $spacing-sm 0;
       text-align: center;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $accent-color;
+        box-shadow: 0 0 0 3px rgba($accent-color, 0.1);
+      }
+
+      &::placeholder {
+        color: lighten($text-muted, 10%);
+      }
+    }
+
+    button {
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: $spacing-sm;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($accent-color, 0.3);
+      }
     }
   }
 }
