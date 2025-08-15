@@ -1,10 +1,15 @@
 // Color Palette
 $primary-color: #2D3747;        // Deep navy blue
-$accent-color: #FF6B35;         // Vibrant orange
+$accent-color: #008753;         // Green from hero gradient
+$accent-secondary: #012169;     // Blue from hero gradient
 $background-light: #F7FAFC;     // Light gray background
 $text-dark: #2D3747;           // Dark text
 $text-light: #CBD5E0;          // Light text
 $text-muted: #718096;          // Muted text
+
+// Hero gradient colors
+$hero-green: #008753;
+$hero-blue: #012169;
 
 // Hobby-specific colors (from your data)
 $anime-color: #F6F8FF;

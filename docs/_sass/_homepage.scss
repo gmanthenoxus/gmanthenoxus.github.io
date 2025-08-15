@@ -2,10 +2,18 @@
 
 // Hero section
 .hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: $spacing-xl 0;
-    background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+    background: linear-gradient(135deg, $hero-green 0%, $hero-blue 100%);
     color: white;
+    padding: 0 $spacing-sm;
+    position: relative;
+    overflow: hidden;
     
     @media (min-width: $breakpoint-tablet) {
         padding: $spacing-xxl 0;
