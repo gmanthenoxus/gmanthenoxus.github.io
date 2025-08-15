@@ -38,13 +38,27 @@ layout: default
         <div class="preview-grid">
           {% for post in site.posts limit:3 %}
           <a href="{{ post.url }}" class="preview-item">
-            <div class="preview-image" style="background-image: url('{% if post.image %}{{ post.image }}{% else %}/assets/images/default-post.jpg{% endif %}');">
+            {% assign category_icon = "📝" %}
+            {% if post.category == "Philosophy" %}
+              {% assign category_icon = "🤔" %}
+            {% elsif post.category == "Tech" %}
+              {% assign category_icon = "💻" %}
+            {% elsif post.category == "Hobbies" %}
+              {% assign category_icon = "🎯" %}
+            {% elsif post.category == "Thoughts" %}
+              {% assign category_icon = "💭" %}
+            {% endif %}
+
+            <div class="preview-image"
+                 data-category="{{ post.category | default: 'General' }}"
+                 data-icon="{{ category_icon }}"
+                 {% if post.image %}style="background-image: url('{{ post.image }}');"{% endif %}>
               <div class="image-overlay"></div>
             </div>
             <div class="preview-text">
               <h4>{{ post.title }}</h4>
               {% if post.excerpt %}
-              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
               {% endif %}
               <div class="meta">
                 <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
