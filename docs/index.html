@@ -33,23 +33,38 @@ layout: default
       <div class="content-card">
         <h3>Latest Inspiration</h3>
         <p>Fresh thoughts and stories from my journey</p>
-        
+
+        {% if site.posts.size > 0 %}
         <div class="preview-grid">
           {% for post in site.posts limit:3 %}
           <a href="{{ post.url }}" class="preview-item">
-            <div class="preview-image" style="background-image: url('{{ post.image }}');"></div>
+            <div class="preview-image" style="background-image: url('{% if post.image %}{{ post.image }}{% else %}/assets/images/default-post.jpg{% endif %}');">
+              <div class="image-overlay"></div>
+            </div>
             <div class="preview-text">
               <h4>{{ post.title }}</h4>
+              {% if post.excerpt %}
+              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+              {% endif %}
               <div class="meta">
                 <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+                {% if post.category %}
                 <span class="category">{{ post.category }}</span>
+                {% endif %}
               </div>
             </div>
           </a>
           {% endfor %}
         </div>
-        
-        <a href="/blog" class="cta">View All Posts</a>
+        {% else %}
+        <div class="empty-state">
+          <div class="empty-icon">📝</div>
+          <h4>Coming Soon</h4>
+          <p>I'm working on some inspiring content. Check back soon!</p>
+        </div>
+        {% endif %}
+
+        <a href="/blog" class="cta btn-primary">View All Posts</a>
       </div>
     </div>
     

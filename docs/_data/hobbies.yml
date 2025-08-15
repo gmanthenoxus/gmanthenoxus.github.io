@@ -5,6 +5,7 @@
   color: "#F6F8FF"
   description: "Where storytelling meets artistry. My journey through Japanese animation."
   featured_image: "/assets/images/anime-bg.jpg"
+  url: "/hobbies/anime/"
   projects:
     - name: "Anime Quote Generator"
       url: "/projects/anime-quotes"
@@ -16,6 +17,7 @@
   color: "#F0F0F0"
   description: "From the court to the field. The world of sports."
   featured_image: "/assets/images/sports-bg.jpg"
+  url: "/hobbies/sports/"
   projects:
     - name: "NBA Stat Predictor"
       url: "/projects/nba-predictor"
@@ -27,6 +29,7 @@
   color: "#FFE5B4"
   description: "From collecting to customizing. The culture, the craft, the community."
   featured_image: "/assets/images/sneakers-bg.jpg"
+  url: "/hobbies/sneakers/"
 
 - name: "BoardGames"
   slug: "boardgames"
@@ -34,6 +37,7 @@
   color: "#F0F0F0"
   description: "From retro classics to modern masterpieces. The world of video games."
   featured_image: "/assets/images/boardgames-bg.jpg"
+  url: "/hobbies/boardGames/"
 
 - name: "Tech"
   slug: "tech"
@@ -41,6 +45,7 @@
   color: "#F0F0F0"
   description: "From hardware to software. The world of technology."
   featured_image: "/assets/images/tech-bg.jpg"
+  url: "/hobbies/tech/"
 
 - name: "Gym"
   slug: "gym"
@@ -48,6 +53,7 @@
   color: "#F0F0F0"
   description: "From weights to cardio. The world of fitness."
   featured_image: "/assets/images/gym-bg.jpg"
+  url: "/hobbies/gym/"
 
 - name: "Food"
   slug: "food"
@@ -55,6 +61,7 @@
   color: "#F0F0F0"
   description: "From street food to fine dining. The world of food."
   featured_image: "/assets/images/food-bg.jpg"
+  url: "/hobbies/food/"
 
 - name: "Music"
   slug: "music"
@@ -62,3 +69,4 @@
   color: "#F0F0F0"
   description: "From indie to pop. The world of music."
   featured_image: "/assets/images/music-bg.jpg"
+  url: "/hobbies/music/"

@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: posts
 title: "Why I Build With My Hobbies"
 date: 2024-05-01
-categories: [thoughts, philosophy]
+category: "Philosophy"
+excerpt: "Building at the intersection of passion and skill creates something truly unique. Every great project starts with genuine interest."
 tags: [passion, development, creativity]
 ---
 
