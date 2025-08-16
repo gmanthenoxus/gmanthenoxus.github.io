@@ -28,9 +28,57 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes craneSwing {
-  0%, 100% { transform: rotate(-10deg); }
-  50% { transform: rotate(10deg); }
+@keyframes buildingGrow {
+  0% {
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: bottom;
+  }
+  50% {
+    transform: translateX(-50%) scaleY(0.7);
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@keyframes windowsLight {
+  0%, 100% {
+    opacity: 0.3;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 0 10px rgba(0, 135, 83, 0.5);
+  }
+}
+
+@keyframes craneWork {
+  0% {
+    transform: rotate(-15deg) translateY(0);
+  }
+  25% {
+    transform: rotate(0deg) translateY(-10px);
+  }
+  50% {
+    transform: rotate(15deg) translateY(0);
+  }
+  75% {
+    transform: rotate(0deg) translateY(-5px);
+  }
+  100% {
+    transform: rotate(-15deg) translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
 }
 
 @keyframes pulse {
@@ -109,13 +157,12 @@
     cursor: pointer;
     padding: $spacing-sm;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.25);
       transform: translateX(-50%) scale(1.1);
       animation-play-state: paused;
     }
@@ -671,42 +718,79 @@
 
   .construction {
     position: relative;
-    height: 180px;
+    height: 200px;
     width: 100%;
     margin: $spacing-xl auto;
-    max-width: 350px;
+    max-width: 400px;
     background: linear-gradient(135deg,
       rgba($accent-color, 0.05) 0%,
       rgba($accent-secondary, 0.05) 100%);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: $spacing-md;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    overflow: hidden;
+
+    // Add some floating particles
+    &::before {
+      content: '✨';
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 1.5rem;
+      animation: sparkle 3s infinite;
+      animation-delay: 0s;
+    }
+
+    &::after {
+      content: '⚡';
+      position: absolute;
+      top: 50px;
+      left: 30px;
+      font-size: 1.2rem;
+      animation: sparkle 3s infinite;
+      animation-delay: 1.5s;
+    }
   }
 
   .crane-arm {
     position: absolute;
-    top: 20px;
-    left: 50%;
-    width: 6px;
-    height: 120px;
-    background: linear-gradient(180deg, $text-muted, darken($text-muted, 20%));
+    top: 10px;
+    left: 60%;
+    width: 8px;
+    height: 100px;
+    background: linear-gradient(180deg,
+      lighten($text-muted, 10%),
+      darken($text-muted, 10%));
     transform-origin: top center;
-    animation: craneSwing 8s infinite ease-in-out;
-    border-radius: 3px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: craneWork 6s infinite ease-in-out;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 
     &:before {
       content: '';
       position: absolute;
-      bottom: -10px;
-      left: -12px;
-      width: 30px;
-      height: 30px;
-      background: linear-gradient(135deg, $accent-color, darken($accent-color, 10%));
+      bottom: -15px;
+      left: -15px;
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
       border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+    }
+
+    // Add crane hook cable
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background: darken($text-muted, 20%);
+      transform: translateX(-50%);
     }
   }
 
@@ -714,36 +798,75 @@
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
-    height: 120px;
+    width: 160px;
+    height: 100px;
     background: linear-gradient(180deg,
-      darken($background-light, 8%),
-      darken($background-light, 15%));
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      lighten($primary-color, 45%),
+      lighten($primary-color, 35%));
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    animation: buildingGrow 8s infinite;
+
+    // Add building details
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 8px;
+      background: $accent-color;
+      border-radius: 4px 4px 0 0;
+    }
 
     .window {
       position: absolute;
-      width: 24px;
-      height: 36px;
+      width: 28px;
+      height: 40px;
       background: linear-gradient(135deg,
-        lighten($accent-color, 20%),
+        lighten($accent-color, 25%),
         $accent-color);
-      border-radius: 4px;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      animation: windowsLight 4s infinite;
 
       &:nth-child(1) {
-        left: 20px;
-        top: 25px;
+        left: 25px;
+        top: 20px;
+        animation-delay: 0s;
       }
       &:nth-child(2) {
-        left: 58px;
-        top: 25px;
+        left: 66px;
+        top: 20px;
+        animation-delay: 1.3s;
       }
       &:nth-child(3) {
-        left: 96px;
-        top: 25px;
+        left: 107px;
+        top: 20px;
+        animation-delay: 2.6s;
+      }
+
+      // Add window frames
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateX(-50%);
       }
     }
   }
@@ -792,21 +915,11 @@
     }
 
     button {
-      background: linear-gradient(135deg, $accent-color, $accent-secondary);
-      color: white;
-      border: none;
+      @extend .btn-primary;
       padding: 1rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
       font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
       margin-top: $spacing-sm;
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba($accent-color, 0.3);
-      }
+      border: none;
     }
   }
 }
@@ -885,66 +998,29 @@
 
 .cta-action {
   .cta-button {
+    @extend .btn-primary;
     display: inline-flex;
     align-items: center;
     gap: $spacing-sm;
     padding: 1.2rem 2.5rem;
-    background: $accent-color;
-    color: white;
-    border-radius: 50px;
-    font-weight: 600;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba($accent-color, 0.3);
-    text-decoration: none;
 
     @media (max-width: $breakpoint-mobile) {
       padding: 1.2rem 2rem;
       font-size: 1.1rem;
       width: 100%;
       justify-content: center;
+      animation: pulse 2s infinite;
     }
 
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba($accent-color, 0.4);
-      color: white;
-      text-decoration: none;
-
       svg {
         transform: translateX(3px);
       }
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-      );
-      transition: 0.5s;
-    }
-
-    &:hover::before {
-      left: 100%;
-    }
-
     svg {
       transition: transform 0.3s ease;
-    }
-
-    // Mobile-specific pulse animation
-    @media (max-width: $breakpoint-mobile) {
-      animation: pulse 2s infinite;
     }
   }
 }
