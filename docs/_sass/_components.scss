@@ -161,7 +161,10 @@
     @extend .btn;
     background: transparent;
     color: $accent-color;
-    border: 2px solid $accent-color;
+    border: 2px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(135deg, $accent-color, $accent-secondary);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
     position: relative;
     overflow: hidden;
 
@@ -169,9 +172,8 @@
         background: linear-gradient(135deg, $accent-color, $accent-secondary);
         color: white;
         text-decoration: none;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba($accent-color, 0.4);
-        border-color: transparent;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($accent-color, 0.3);
     }
 
     &::before {
@@ -192,6 +194,32 @@
 
     &:hover::before {
         left: 100%;
+    }
+}
+
+.btn-text {
+    @extend .btn;
+    background: transparent;
+    color: $accent-color;
+    border: none;
+    padding: $spacing-sm $spacing-md;
+    font-weight: 600;
+    position: relative;
+
+    &::after {
+        content: '→';
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        color: $primary-color;
+        text-decoration: none;
+        transform: translateX(5px);
+
+        &::after {
+            transform: translateX(3px);
+        }
     }
 }
 
