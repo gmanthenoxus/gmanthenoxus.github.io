@@ -18,6 +18,16 @@ action_items:
   - "Specific action reader can take immediately"
   - "Another actionable step"
   - "Third concrete action"
+developer_challenge:
+  type: "Build" # Build, Design, or Analysis
+  difficulty: 3 # 1-5 stars
+  description: "Brief description of what developers should build related to your post topic."
+  requirements:
+    - "Specific requirement 1"
+    - "Specific requirement 2"
+    - "Specific requirement 3"
+  bonus: "Optional bonus challenge for advanced developers"
+  submission_url: "#" # Link to submission form or community
 tags: [tag1, tag2, tag3]
 ---
 

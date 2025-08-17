@@ -32,6 +32,16 @@ related_guides:
     url: "/blog/related-post-1"
   - title: "Related Guide 2"
     url: "/blog/related-post-2"
+developer_challenge:
+  type: "Build" # Build, Design, or Analysis
+  difficulty: 3 # 1-5 stars
+  description: "Challenge to extend or modify the tutorial project with additional features."
+  requirements:
+    - "Complete the original tutorial"
+    - "Add advanced feature 1"
+    - "Add advanced feature 2"
+  bonus: "Creative extensions or integrations with other technologies"
+  submission_url: "#" # Link to submission form or community
 tags: [how-to, tutorial, guide]
 ---
 

@@ -2547,14 +2547,18 @@ a {
       z-index: 2;
     }
 
-    .post-breadcrumb a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
+    .post-breadcrumb {
+      margin-bottom: 2rem;
 
-      &:hover {
-        color: white;
+      a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: white;
+        }
       }
     }
 
@@ -2619,7 +2623,57 @@ a {
 }
 
 // Template-specific components
-.tldr-box, .results-preview, .prerequisites-box, .tools-needed {
+.tldr-box {
+  background: linear-gradient(135deg, rgba($accent-color, 0.08), rgba($accent-secondary, 0.08));
+  border: 2px solid rgba($accent-color, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  position: relative;
+  box-shadow: 0 8px 25px rgba($accent-color, 0.1);
+
+  &::before {
+    content: "⚡";
+    position: absolute;
+    top: -15px;
+    left: 2rem;
+    background: linear-gradient(135deg, $accent-color, $accent-secondary);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+  }
+
+  h3 {
+    color: $accent-color;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: "💡";
+      font-size: 1.2rem;
+    }
+  }
+
+  p {
+    color: $text-dark;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.results-preview, .prerequisites-box, .tools-needed {
   background: linear-gradient(135deg, rgba($accent-color, 0.05), rgba($accent-secondary, 0.05));
   border: 1px solid rgba($accent-color, 0.1);
   border-radius: 12px;
@@ -2912,36 +2966,63 @@ a {
 
   // Post navigation
   .post-navigation {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba($accent-color, 0.1);
-    gap: 1rem;
+    gap: 2rem;
 
     .nav-prev, .nav-next {
       text-decoration: none;
       color: $primary-color;
       font-weight: 600;
-      max-width: 45%;
-      padding: 1rem;
-      border-radius: 8px;
+      padding: 1.2rem;
+      border-radius: 12px;
       transition: all 0.3s ease;
       border: 1px solid rgba($accent-color, 0.1);
+      background: rgba($accent-color, 0.02);
+      display: flex;
+      align-items: center;
+      min-height: 60px;
 
       &:hover {
         color: $accent-color;
-        background: rgba($accent-color, 0.05);
-        transform: translateY(-2px);
+        background: rgba($accent-color, 0.08);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba($accent-color, 0.15);
       }
     }
 
     .nav-prev {
       text-align: left;
+      justify-content: flex-start;
+
+      &::before {
+        content: "←";
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
     }
 
     .nav-next {
       text-align: right;
+      justify-content: flex-end;
+
+      &::after {
+        content: "→";
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    // Handle single navigation item
+    .nav-prev:only-child {
+      grid-column: 1;
+    }
+
+    .nav-next:only-child {
+      grid-column: 2;
     }
   }
 
@@ -2986,6 +3067,178 @@ a {
 
     .tools-grid {
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Developer Challenges Section
+.developer-challenge {
+  background: linear-gradient(135deg, rgba($accent-color, 0.08), rgba($accent-secondary, 0.08));
+  border: 2px solid rgba($accent-color, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 3rem 0;
+  position: relative;
+  box-shadow: 0 8px 25px rgba($accent-color, 0.1);
+
+  &::before {
+    content: "🚀";
+    position: absolute;
+    top: -15px;
+    left: 2rem;
+    background: linear-gradient(135deg, $accent-color, $accent-secondary);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+  }
+
+  .challenge-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    h3 {
+      color: $accent-color;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::before {
+        content: "💻";
+        font-size: 1.3rem;
+      }
+    }
+
+    .challenge-type {
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .difficulty {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      .star {
+        color: #FFD700;
+        font-size: 1rem;
+      }
+
+      .star.empty {
+        color: #E2E8F0;
+      }
+    }
+  }
+
+  .challenge-description {
+    color: $text-dark;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .challenge-requirements {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid $accent-color;
+
+    h4 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::before {
+        content: "📋";
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        color: $text-muted;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .challenge-bonus {
+    background: linear-gradient(135deg, rgba(#FFD700, 0.1), rgba(#FFA500, 0.1));
+    border: 1px solid rgba(#FFD700, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+
+    h4 {
+      color: #FF8C00;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::before {
+        content: "⭐";
+      }
+    }
+
+    p {
+      color: $text-dark;
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+
+  .challenge-cta {
+    margin-top: 1.5rem;
+    text-align: center;
+
+    .challenge-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba($accent-color, 0.3);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba($accent-color, 0.4);
+        color: white;
+      }
+
+      &::before {
+        content: "🎯";
+        font-size: 1rem;
+      }
     }
   }
 }

@@ -20,6 +20,18 @@ action_items:
   - "Implement one new habit this week and track the results"
   - "Share your progress with the community for accountability"
   - "Review and refine your habits after 30 days"
+developer_challenge:
+  type: "Build"
+  difficulty: 3
+  description: "Build a personal productivity tracker that helps you implement and monitor these 7 development habits. Create a simple web app that tracks your daily progress and shows productivity metrics over time."
+  requirements:
+    - "Track completion of each of the 7 habits daily"
+    - "Display weekly/monthly progress charts"
+    - "Calculate productivity scores based on habit completion"
+    - "Export progress data as CSV or JSON"
+    - "Responsive design that works on mobile and desktop"
+  bonus: "Add habit streak tracking, goal setting, and social sharing features. Integrate with GitHub API to automatically track coding activity."
+  submission_url: "#"
 tags: [productivity, development, habits, workflow]
 ---
 

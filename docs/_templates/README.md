@@ -22,6 +22,7 @@
 - TL;DR box for busy readers
 - Key takeaways section
 - Interactive action checklist
+- Developer challenges with difficulty ratings
 - List count in metadata
 
 ### 2. Case Study Template (`case-study-template.md`)
@@ -36,6 +37,7 @@
 - Results preview with metrics
 - Methodology section
 - Tools used breakdown
+- Developer challenges for replication
 - Key learnings summary
 
 ### 3. How-To Guide Template (`how-to-template.md`)
@@ -50,6 +52,7 @@
 - Prerequisites checklist
 - Tools needed section
 - Troubleshooting guide
+- Developer challenges for extension
 - Related guides links
 
 ## 🚀 How to Use Templates

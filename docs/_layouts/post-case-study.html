@@ -105,6 +105,55 @@ layout: default
         </div>
         {% endif %}
 
+        {% if page.developer_challenge %}
+        <div class="developer-challenge">
+            <div class="challenge-header">
+                <h3>Developer Challenge</h3>
+                <span class="challenge-type">{{ page.developer_challenge.type | default: "Build" }}</span>
+                {% if page.developer_challenge.difficulty %}
+                <div class="difficulty">
+                    {% assign difficulty = page.developer_challenge.difficulty %}
+                    {% for i in (1..5) %}
+                        {% if i <= difficulty %}
+                            <span class="star">★</span>
+                        {% else %}
+                            <span class="star empty">★</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="challenge-description">
+                {{ page.developer_challenge.description }}
+            </div>
+
+            {% if page.developer_challenge.requirements %}
+            <div class="challenge-requirements">
+                <h4>Requirements</h4>
+                <ul>
+                    {% for req in page.developer_challenge.requirements %}
+                    <li>{{ req }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if page.developer_challenge.bonus %}
+            <div class="challenge-bonus">
+                <h4>Bonus Challenge</h4>
+                <p>{{ page.developer_challenge.bonus }}</p>
+            </div>
+            {% endif %}
+
+            <div class="challenge-cta">
+                <a href="{{ page.developer_challenge.submission_url | default: '#' }}" class="challenge-button">
+                    Take the Challenge
+                </a>
+            </div>
+        </div>
+        {% endif %}
+
         <div class="post-navigation">
             {% if page.previous %}
             <a href="{{ page.previous.url }}" class="nav-prev">

@@ -29,6 +29,16 @@ key_learnings:
   - "Most important insight from the study"
   - "Unexpected discovery"
   - "What would be done differently"
+developer_challenge:
+  type: "Build" # Build, Design, or Analysis
+  difficulty: 4 # 1-5 stars
+  description: "Challenge developers to recreate or improve upon the case study results."
+  requirements:
+    - "Replicate the core functionality"
+    - "Implement key optimizations"
+    - "Add measurement and analytics"
+  bonus: "Advanced features or alternative approaches to try"
+  submission_url: "#" # Link to submission form or community
 tags: [case-study, results, strategy]
 ---
 
