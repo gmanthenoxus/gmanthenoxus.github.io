@@ -1,0 +1,122 @@
+---
+layout: default
+---
+
+<article class="blog-post case-study-post">
+    <header class="post-header">
+        <div class="container">
+            <div class="post-breadcrumb">
+                <a href="/blog">← Back to Blog</a>
+            </div>
+            
+            <div class="post-type-badge">
+                <span class="badge-icon">📊</span>
+                Case Study
+            </div>
+            
+            <h1>{{ page.title }}</h1>
+            
+            {% if page.subtitle %}
+            <p class="post-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            
+            <div class="post-meta">
+                <span class="meta-item">
+                    <i class="meta-icon">📅</i>
+                    {{ page.date | date: "%B %d, %Y" }}
+                </span>
+                
+                {% if page.read_time %}
+                <span class="meta-item">
+                    <i class="meta-icon">⏱️</i>
+                    {{ page.read_time }}
+                </span>
+                {% endif %}
+                
+                {% if page.study_duration %}
+                <span class="meta-item">
+                    <i class="meta-icon">📈</i>
+                    {{ page.study_duration }} Study
+                </span>
+                {% endif %}
+                
+                {% if page.category %}
+                <span class="meta-item">
+                    <i class="meta-icon">📂</i>
+                    <span class="category">{{ page.category | capitalize }}</span>
+                </span>
+                {% endif %}
+            </div>
+            
+            {% if page.results_summary %}
+            <div class="results-preview">
+                <h3>📈 Results at a Glance</h3>
+                <div class="results-grid">
+                    {% for result in page.results_summary %}
+                    <div class="result-item">
+                        <div class="result-number">{{ result.value }}</div>
+                        <div class="result-label">{{ result.label }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="post-content case-study-content">
+            {{ content }}
+        </div>
+        
+        {% if page.methodology %}
+        <div class="methodology-box">
+            <h3>🔬 Methodology</h3>
+            <ul>
+                {% for method in page.methodology %}
+                <li>{{ method }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.tools_used %}
+        <div class="tools-used">
+            <h3>🛠️ Tools Used</h3>
+            <div class="tools-grid">
+                {% for tool in page.tools_used %}
+                <div class="tool-item">
+                    <span class="tool-name">{{ tool.name }}</span>
+                    <span class="tool-purpose">{{ tool.purpose }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if page.key_learnings %}
+        <div class="key-learnings">
+            <h3>💡 Key Learnings</h3>
+            <ul>
+                {% for learning in page.key_learnings %}
+                <li>{{ learning }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="post-navigation">
+            {% if page.previous %}
+            <a href="{{ page.previous.url }}" class="nav-prev">
+                ← {{ page.previous.title | truncate: 50 }}
+            </a>
+            {% endif %}
+            
+            {% if page.next %}
+            <a href="{{ page.next.url }}" class="nav-next">
+                {{ page.next.title | truncate: 50 }} →
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</article>

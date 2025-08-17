@@ -1,0 +1,135 @@
+---
+layout: default
+---
+
+<article class="blog-post how-to-post">
+    <header class="post-header">
+        <div class="container">
+            <div class="post-breadcrumb">
+                <a href="/blog">← Back to Blog</a>
+            </div>
+            
+            <div class="post-type-badge">
+                <span class="badge-icon">🎯</span>
+                How-To Guide
+            </div>
+            
+            <h1>{{ page.title }}</h1>
+            
+            {% if page.subtitle %}
+            <p class="post-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            
+            <div class="post-meta">
+                <span class="meta-item">
+                    <i class="meta-icon">📅</i>
+                    {{ page.date | date: "%B %d, %Y" }}
+                </span>
+                
+                {% if page.read_time %}
+                <span class="meta-item">
+                    <i class="meta-icon">⏱️</i>
+                    {{ page.read_time }}
+                </span>
+                {% endif %}
+                
+                {% if page.difficulty %}
+                <span class="meta-item">
+                    <i class="meta-icon">⭐</i>
+                    {{ page.difficulty }} Level
+                </span>
+                {% endif %}
+                
+                {% if page.estimated_time %}
+                <span class="meta-item">
+                    <i class="meta-icon">⏰</i>
+                    {{ page.estimated_time }} to Complete
+                </span>
+                {% endif %}
+                
+                {% if page.category %}
+                <span class="meta-item">
+                    <i class="meta-icon">📂</i>
+                    <span class="category">{{ page.category | capitalize }}</span>
+                </span>
+                {% endif %}
+            </div>
+            
+            {% if page.prerequisites %}
+            <div class="prerequisites-box">
+                <h3>📋 Prerequisites</h3>
+                <ul>
+                    {% for prereq in page.prerequisites %}
+                    <li>{{ prereq }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            {% if page.tools_needed %}
+            <div class="tools-needed">
+                <h3>🛠️ Tools You'll Need</h3>
+                <div class="tools-list">
+                    {% for tool in page.tools_needed %}
+                    <span class="tool-tag">{{ tool }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="post-content how-to-content">
+            {{ content }}
+        </div>
+        
+        {% if page.troubleshooting %}
+        <div class="troubleshooting-section">
+            <h3>🔧 Troubleshooting</h3>
+            {% for issue in page.troubleshooting %}
+            <div class="troubleshooting-item">
+                <h4>{{ issue.problem }}</h4>
+                <p><strong>Solution:</strong> {{ issue.solution }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        {% if page.next_steps %}
+        <div class="next-steps">
+            <h3>🚀 What's Next?</h3>
+            <ul>
+                {% for step in page.next_steps %}
+                <li>{{ step }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.related_guides %}
+        <div class="related-guides">
+            <h3>📚 Related Guides</h3>
+            <div class="related-links">
+                {% for guide in page.related_guides %}
+                <a href="{{ guide.url }}" class="related-link">{{ guide.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="post-navigation">
+            {% if page.previous %}
+            <a href="{{ page.previous.url }}" class="nav-prev">
+                ← {{ page.previous.title | truncate: 50 }}
+            </a>
+            {% endif %}
+            
+            {% if page.next %}
+            <a href="{{ page.next.url }}" class="nav-next">
+                {{ page.next.title | truncate: 50 }} →
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</article>

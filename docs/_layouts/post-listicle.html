@@ -1,0 +1,105 @@
+---
+layout: default
+---
+
+<article class="blog-post listicle-post">
+    <header class="post-header">
+        <div class="container">
+            <div class="post-breadcrumb">
+                <a href="/blog">← Back to Blog</a>
+            </div>
+            
+            <div class="post-type-badge">
+                <span class="badge-icon">📝</span>
+                Listicle
+            </div>
+            
+            <h1>{{ page.title }}</h1>
+            
+            {% if page.subtitle %}
+            <p class="post-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            
+            <div class="post-meta">
+                <span class="meta-item">
+                    <i class="meta-icon">📅</i>
+                    {{ page.date | date: "%B %d, %Y" }}
+                </span>
+                
+                {% if page.read_time %}
+                <span class="meta-item">
+                    <i class="meta-icon">⏱️</i>
+                    {{ page.read_time }}
+                </span>
+                {% endif %}
+                
+                {% if page.list_count %}
+                <span class="meta-item">
+                    <i class="meta-icon">📋</i>
+                    {{ page.list_count }} Items
+                </span>
+                {% endif %}
+                
+                {% if page.category %}
+                <span class="meta-item">
+                    <i class="meta-icon">📂</i>
+                    <span class="category">{{ page.category | capitalize }}</span>
+                </span>
+                {% endif %}
+            </div>
+            
+            {% if page.tldr %}
+            <div class="tldr-box">
+                <h3>TL;DR</h3>
+                <p>{{ page.tldr }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="post-content listicle-content">
+            {{ content }}
+        </div>
+        
+        {% if page.key_takeaways %}
+        <div class="key-takeaways">
+            <h3>🎯 Key Takeaways</h3>
+            <ul>
+                {% for takeaway in page.key_takeaways %}
+                <li>{{ takeaway }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.action_items %}
+        <div class="action-items">
+            <h3>✅ Action Items</h3>
+            <div class="action-checklist">
+                {% for action in page.action_items %}
+                <label class="action-item">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    {{ action }}
+                </label>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="post-navigation">
+            {% if page.previous %}
+            <a href="{{ page.previous.url }}" class="nav-prev">
+                ← {{ page.previous.title | truncate: 50 }}
+            </a>
+            {% endif %}
+            
+            {% if page.next %}
+            <a href="{{ page.next.url }}" class="nav-next">
+                {{ page.next.title | truncate: 50 }} →
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</article>
