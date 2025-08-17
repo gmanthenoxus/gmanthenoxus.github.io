@@ -21,35 +21,71 @@ subtitle: Thoughts, stories, and insights from my journey
 <section class="blog-grid">
   <div class="container">
     <div class="posts-container">
-      {% for post in site.posts %}
-        <article class="blog-card" data-category="{{ post.category }}">
-          <div class="card-image">
-            <img src="{{ post.image }}" alt="{{ post.title }}">
-            <span class="category-badge">{{ post.category }}</span>
-          </div>
-          <div class="card-content">
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
-            <div class="meta">
-              <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
-              <span class="read-time">{{ post.read_time }}</span>
+      {% if site.posts.size > 0 %}
+        {% for post in site.posts %}
+          <article class="blog-card" data-category="{{ post.category }}">
+            <div class="card-image">
+              {% if post.image %}
+                <img src="{{ post.image }}" alt="{{ post.title }}" onerror="this.style.display='none'">
+              {% endif %}
+              <span class="category-badge">{{ post.category | capitalize }}</span>
             </div>
-          </div>
-        </article>
-      {% endfor %}
+            <div class="card-content">
+              <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+              <div class="meta">
+                <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+                {% if post.read_time %}
+                  <span class="read-time">{{ post.read_time }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-icon">📝</div>
+          <h3>No Posts Yet</h3>
+          <p>I'm working on some great content. Check back soon!</p>
+        </div>
+      {% endif %}
     </div>
     
     <div class="featured-post">
       <h2>Featured Insight</h2>
       {% assign featured = site.posts | where: "featured", true | first %}
-      <div class="featured-card">
-        <img src="{{ featured.image }}" alt="{{ featured.title }}">
-        <div class="featured-content">
-          <h3><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
-          <p>{{ featured.excerpt | strip_html | truncate: 200 }}</p>
-          <a href="{{ featured.url }}" class="cta-btn">Read Full Story</a>
+      {% if featured %}
+        <div class="featured-card">
+          {% if featured.image %}
+            <img src="{{ featured.image }}" alt="{{ featured.title }}" onerror="this.style.display='none'">
+          {% endif %}
+          <div class="featured-content">
+            <h3><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
+            <p>{{ featured.excerpt | strip_html | truncate: 200 }}</p>
+            <a href="{{ featured.url }}" class="cta-btn">Read Full Story</a>
+          </div>
         </div>
-      </div>
+      {% else %}
+        {% assign latest = site.posts | first %}
+        {% if latest %}
+          <div class="featured-card">
+            {% if latest.image %}
+              <img src="{{ latest.image }}" alt="{{ latest.title }}" onerror="this.style.display='none'">
+            {% endif %}
+            <div class="featured-content">
+              <h3><a href="{{ latest.url }}">{{ latest.title }}</a></h3>
+              <p>{{ latest.excerpt | strip_html | truncate: 200 }}</p>
+              <a href="{{ latest.url }}" class="cta-btn">Read Full Story</a>
+            </div>
+          </div>
+        {% else %}
+          <div class="featured-placeholder">
+            <div class="placeholder-icon">✨</div>
+            <h3>Coming Soon</h3>
+            <p>I'm working on some amazing content to share with you. Stay tuned!</p>
+          </div>
+        {% endif %}
+      {% endif %}
     </div>
   </div>
 </section>
