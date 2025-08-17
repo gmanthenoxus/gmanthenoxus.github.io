@@ -32,6 +32,17 @@ developer_challenge:
     - "Responsive design that works on mobile and desktop"
   bonus: "Add habit streak tracking, goal setting, and social sharing features. Integrate with GitHub API to automatically track coding activity."
   submission_url: "#"
+references:
+  - title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones"
+    author: "James Clear"
+    url: "https://jamesclear.com/atomic-habits"
+    publication: "Avery"
+    date: "2018"
+  - title: "The Power of Habit: Why We Do What We Do in Life and Business"
+    author: "Charles Duhigg"
+    url: "https://charlesduhigg.com/the-power-of-habit/"
+    publication: "Random House"
+    date: "2012"
 tags: [productivity, development, habits, workflow]
 ---
 

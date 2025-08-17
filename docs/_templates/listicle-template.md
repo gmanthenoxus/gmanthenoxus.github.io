@@ -28,6 +28,13 @@ developer_challenge:
     - "Specific requirement 3"
   bonus: "Optional bonus challenge for advanced developers"
   submission_url: "#" # Link to submission form or community
+references:
+  - title: "Source Article Title"
+    author: "Author Name"
+    url: "https://example.com"
+    publication: "Publication Name" # Optional
+    date: "2024-01-01"
+  # Add more references as needed
 tags: [tag1, tag2, tag3]
 ---
 

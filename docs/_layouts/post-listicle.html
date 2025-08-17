@@ -137,6 +137,25 @@ layout: default
         </div>
         {% endif %}
 
+        {% if page.references %}
+        <div class="references-section">
+            <h3>📚 References & Attribution</h3>
+            <ul class="references-list">
+                {% for ref in page.references %}
+                <li class="reference-item">
+                    <a href="{{ ref.url }}" target="_blank" rel="noopener">{{ ref.author }}</a>,
+                    "{{ ref.title }}",
+                    {% if ref.publication %}<em>{{ ref.publication }}</em>, {% endif %}
+                    {{ ref.date }}
+                </li>
+                {% endfor %}
+            </ul>
+            <p class="attribution-note">
+                <em>This post contains original content and properly attributed references. All code examples are original unless otherwise noted.</em>
+            </p>
+        </div>
+        {% endif %}
+
         <div class="post-navigation">
             {% if page.previous %}
             <a href="{{ page.previous.url }}" class="nav-prev">
