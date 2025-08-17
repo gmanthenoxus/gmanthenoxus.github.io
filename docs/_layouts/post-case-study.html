@@ -50,14 +50,22 @@ layout: default
             
             {% if page.results_summary %}
             <div class="results-preview">
-                <h3>📈 Results at a Glance</h3>
-                <div class="results-grid">
-                    {% for result in page.results_summary %}
-                    <div class="result-item">
-                        <div class="result-number">{{ result.value }}</div>
-                        <div class="result-label">{{ result.label }}</div>
+                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
+                    <div class="section-icon"></div>
+                    <h3>Results at a Glance</h3>
+                    <div class="toggle-indicator"></div>
+                </div>
+                <div class="section-content">
+                    <div class="content-inner">
+                        <div class="results-grid">
+                            {% for result in page.results_summary %}
+                            <div class="result-item">
+                                <div class="result-number">{{ result.value }}</div>
+                                <div class="result-label">{{ result.label }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                    {% endfor %}
                 </div>
             </div>
             {% endif %}

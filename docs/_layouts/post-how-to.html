@@ -57,22 +57,38 @@ layout: default
             
             {% if page.prerequisites %}
             <div class="prerequisites-box">
-                <h3>📋 Prerequisites</h3>
-                <ul>
-                    {% for prereq in page.prerequisites %}
-                    <li>{{ prereq }}</li>
-                    {% endfor %}
-                </ul>
+                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
+                    <div class="section-icon"></div>
+                    <h3>Prerequisites</h3>
+                    <div class="toggle-indicator"></div>
+                </div>
+                <div class="section-content">
+                    <div class="content-inner">
+                        <ul>
+                            {% for prereq in page.prerequisites %}
+                            <li>{{ prereq }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
             {% endif %}
-            
+
             {% if page.tools_needed %}
             <div class="tools-needed">
-                <h3>🛠️ Tools You'll Need</h3>
-                <div class="tools-list">
-                    {% for tool in page.tools_needed %}
-                    <span class="tool-tag">{{ tool }}</span>
-                    {% endfor %}
+                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
+                    <div class="section-icon"></div>
+                    <h3>Tools You'll Need</h3>
+                    <div class="toggle-indicator"></div>
+                </div>
+                <div class="section-content">
+                    <div class="content-inner">
+                        <div class="tools-list">
+                            {% for tool in page.tools_needed %}
+                            <span class="tool-tag">{{ tool }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
             {% endif %}

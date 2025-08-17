@@ -2622,191 +2622,325 @@ a {
   }
 }
 
-// Template-specific components
+// Template-specific components - Collapsible sections
 .tldr-box {
-  background: linear-gradient(135deg, rgba($accent-color, 0.08), rgba($accent-secondary, 0.08));
-  border: 2px solid rgba($accent-color, 0.2);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2.5rem 0;
-  position: relative;
-  box-shadow: 0 8px 25px rgba($accent-color, 0.1);
+  background: linear-gradient(135deg, rgba($accent-color, 0.05), rgba($accent-secondary, 0.05));
+  border: 1px solid rgba($accent-color, 0.15);
+  border-radius: 12px;
+  margin: 2rem 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 
-  &::before {
-    content: "⚡";
-    position: absolute;
-    top: -15px;
-    left: 2rem;
-    background: linear-gradient(135deg, $accent-color, $accent-secondary);
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  .section-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
-  }
+    gap: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba($accent-color, 0.02);
 
-  h3 {
-    color: $accent-color;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    &:hover {
+      background: rgba($accent-color, 0.08);
+    }
 
-    &::before {
-      content: "💡";
+    .section-icon {
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+      transition: all 0.3s ease;
+
+      &::before {
+        content: "💡";
+      }
+    }
+
+    h3 {
+      color: $accent-color;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+      flex: 1;
+    }
+
+    .toggle-indicator {
+      color: $accent-color;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &::before {
+        content: "▼";
+      }
     }
   }
 
-  p {
-    color: $primary-color;
-    line-height: 1.7;
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin: 0;
+  .section-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    .content-inner {
+      padding: 0 0 1.5rem 0;
+
+      p {
+        color: $primary-color;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+  }
+
+  &.expanded {
+    box-shadow: 0 8px 25px rgba($accent-color, 0.15);
+
+    .section-header {
+      background: rgba($accent-color, 0.08);
+
+      .section-icon {
+        transform: scale(1.1);
+        animation: pulse 2s infinite;
+      }
+
+      .toggle-indicator {
+        transform: rotate(180deg);
+      }
+    }
+
+    .section-content {
+      max-height: 500px;
+    }
   }
 }
 
 .results-preview {
-  background: linear-gradient(135deg, rgba($accent-color, 0.08), rgba($accent-secondary, 0.08));
-  border: 2px solid rgba($accent-color, 0.2);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2.5rem 0;
-  position: relative;
-  box-shadow: 0 8px 25px rgba($accent-color, 0.1);
+  background: linear-gradient(135deg, rgba($accent-color, 0.05), rgba($accent-secondary, 0.05));
+  border: 1px solid rgba($accent-color, 0.15);
+  border-radius: 12px;
+  margin: 2rem 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 
-  &::before {
-    content: "📈";
-    position: absolute;
-    top: -15px;
-    left: 2rem;
-    background: linear-gradient(135deg, $accent-color, $accent-secondary);
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  .section-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+    gap: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba($accent-color, 0.02);
+
+    &:hover {
+      background: rgba($accent-color, 0.08);
+    }
+
+    .section-icon {
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba($accent-color, 0.3);
+      transition: all 0.3s ease;
+
+      &::before {
+        content: "📈";
+      }
+    }
+
+    h3 {
+      color: $accent-color;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+      flex: 1;
+    }
+
+    .toggle-indicator {
+      color: $accent-color;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &::before {
+        content: "▼";
+      }
+    }
   }
 
-  h3 {
-    color: $accent-color;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    font-weight: 700;
+  .section-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    .content-inner {
+      padding: 0 0 1.5rem 0;
+    }
+  }
+
+  &.expanded {
+    box-shadow: 0 8px 25px rgba($accent-color, 0.15);
+
+    .section-header {
+      background: rgba($accent-color, 0.08);
+
+      .section-icon {
+        transform: scale(1.1);
+        animation: pulse 2s infinite;
+      }
+
+      .toggle-indicator {
+        transform: rotate(180deg);
+      }
+    }
+
+    .section-content {
+      max-height: 500px;
+    }
   }
 }
 
 .prerequisites-box, .tools-needed {
-  background: linear-gradient(135deg, rgba($accent-color, 0.08), rgba($accent-secondary, 0.08));
-  border: 2px solid rgba($accent-color, 0.2);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2.5rem 0;
-  position: relative;
-  box-shadow: 0 8px 25px rgba($accent-color, 0.1);
+  background: linear-gradient(135deg, rgba($accent-color, 0.05), rgba($accent-secondary, 0.05));
+  border: 1px solid rgba($accent-color, 0.15);
+  border-radius: 12px;
+  margin: 2rem 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 
-  h3 {
-    color: $accent-color;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    font-weight: 700;
+  .section-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-  }
+    gap: 1rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba($accent-color, 0.02);
 
-  p, li {
-    color: $primary-color;
-    line-height: 1.6;
-    font-weight: 500;
-  }
+    &:hover {
+      background: rgba($accent-color, 0.08);
+    }
 
-  ul {
-    display: grid;
-    gap: 0.75rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      border-left: 4px solid $accent-color;
+    .section-icon {
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba($accent-color, 0.3);
       transition: all 0.3s ease;
+    }
 
-      &:hover {
-        transform: translateX(4px);
-        box-shadow: 0 4px 12px rgba($accent-color, 0.15);
-      }
+    h3 {
+      color: $accent-color;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+      flex: 1;
+    }
+
+    .toggle-indicator {
+      color: $accent-color;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
 
       &::before {
-        content: "✓";
-        color: $accent-color;
-        font-weight: bold;
-        margin-right: 0.5rem;
+        content: "▼";
       }
+    }
+  }
+
+  .section-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    .content-inner {
+      padding: 0 0 1.5rem 0;
+
+      ul {
+        display: grid;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          background: white;
+          padding: 1rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+          border-left: 4px solid $accent-color;
+          transition: all 0.3s ease;
+          color: $primary-color;
+          line-height: 1.6;
+          font-weight: 500;
+
+          &:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba($accent-color, 0.15);
+          }
+
+          &::before {
+            content: "✓";
+            color: $accent-color;
+            font-weight: bold;
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.expanded {
+    box-shadow: 0 8px 25px rgba($accent-color, 0.15);
+
+    .section-header {
+      background: rgba($accent-color, 0.08);
+
+      .section-icon {
+        transform: scale(1.1);
+        animation: pulse 2s infinite;
+      }
+
+      .toggle-indicator {
+        transform: rotate(180deg);
+      }
+    }
+
+    .section-content {
+      max-height: 800px;
     }
   }
 }
 
 .prerequisites-box {
-  &::before {
+  .section-icon::before {
     content: "📋";
-    position: absolute;
-    top: -15px;
-    left: 2rem;
-    background: linear-gradient(135deg, $accent-color, $accent-secondary);
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
-  }
-
-  h3::before {
-    content: "📚";
-    font-size: 1.2rem;
   }
 }
 
 .tools-needed {
-  &::before {
+  .section-icon::before {
     content: "🛠️";
-    position: absolute;
-    top: -15px;
-    left: 2rem;
-    background: linear-gradient(135deg, $accent-color, $accent-secondary);
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba($accent-color, 0.3);
-  }
-
-  h3::before {
-    content: "⚙️";
-    font-size: 1.2rem;
   }
 }
 
@@ -3419,6 +3553,19 @@ a {
     padding-top: 1rem;
     border-top: 1px solid rgba($primary-color, 0.1);
   }
+}
+
+// Accessibility helpers
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 // ========================================

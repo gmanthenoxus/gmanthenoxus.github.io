@@ -50,8 +50,16 @@ layout: default
             
             {% if page.tldr %}
             <div class="tldr-box">
-                <h3>TL;DR</h3>
-                <p>{{ page.tldr }}</p>
+                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
+                    <div class="section-icon"></div>
+                    <h3>TL;DR</h3>
+                    <div class="toggle-indicator"></div>
+                </div>
+                <div class="section-content">
+                    <div class="content-inner">
+                        <p>{{ page.tldr }}</p>
+                    </div>
+                </div>
             </div>
             {% endif %}
         </div>
