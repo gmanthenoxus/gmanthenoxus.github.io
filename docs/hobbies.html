@@ -15,11 +15,48 @@ subtitle: Where obsessions meet code
   <div class="container">
     <div class="hobby-intro">
       <p>Each of these passions has inspired projects, solutions, and learning journeys. Click through to explore how I've turned hobbies into code.</p>
+
+      <div class="hobby-stats">
+        <div class="stat-item">
+          <span class="stat-number">{{ site.data.hobbies | size }}</span>
+          <span class="stat-label">Active Hobbies</span>
+        </div>
+        <div class="stat-item">
+          {% assign project_count = 0 %}
+          {% for hobby in site.data.hobbies %}
+            {% if hobby.projects %}
+              {% assign project_count = project_count | plus: hobby.projects.size %}
+            {% endif %}
+          {% endfor %}
+          <span class="stat-number">{{ project_count }}</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Ideas Brewing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hobby-filters">
+      <button class="filter-btn active" data-filter="all">All Hobbies</button>
+      <button class="filter-btn" data-filter="creative">🎨 Creative</button>
+      <button class="filter-btn" data-filter="active">🏃 Active</button>
+      <button class="filter-btn" data-filter="tech">💻 Tech</button>
+      <button class="filter-btn" data-filter="entertainment">🎮 Entertainment</button>
     </div>
     
     <div class="hobbies-grid">
       {% for hobby in site.data.hobbies %}
-        <div class="hobby-card" style="background-image: url('{{ hobby.featured_image }}');">
+        {% assign category = "entertainment" %}
+        {% if hobby.slug == "anime" or hobby.slug == "music" or hobby.slug == "food" %}
+          {% assign category = "creative" %}
+        {% elsif hobby.slug == "sports" or hobby.slug == "gym" %}
+          {% assign category = "active" %}
+        {% elsif hobby.slug == "tech" or hobby.slug == "boardgames" %}
+          {% assign category = "tech" %}
+        {% endif %}
+        <div class="hobby-card" data-hobby="{{ hobby.slug }}" data-category="{{ category }}" style="background-image: url('{{ hobby.featured_image }}');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
             <span class="hobby-emoji">{{ hobby.emoji }}</span>
@@ -27,6 +64,7 @@ subtitle: Where obsessions meet code
           </div>
           <div class="hobby-content">
             <p>{{ hobby.description }}</p>
+            {% if hobby.projects and hobby.projects.size > 0 %}
             <div class="hobby-projects">
               <h3>Featured Projects</h3>
               <ul>
@@ -38,6 +76,12 @@ subtitle: Where obsessions meet code
                 {% endfor %}
               </ul>
             </div>
+            {% else %}
+            <div class="hobby-projects">
+              <h3>Coming Soon</h3>
+              <p style="color: rgba(255,255,255,0.7); font-style: italic;">Exciting projects in development!</p>
+            </div>
+            {% endif %}
           </div>
           <a href="{{ hobby.url }}" class="cta-btn">Explore {{ hobby.name }}</a>
         </div>
