@@ -2691,7 +2691,7 @@ a {
       padding: 0 0 1.5rem 0;
 
       p {
-        color: $primary-color;
+        color: #F7FAFC;
         line-height: 1.7;
         font-size: 1.05rem;
         font-weight: 600;
@@ -3218,12 +3218,14 @@ a {
 
   // Post navigation
   .post-navigation {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba($accent-color, 0.1);
     gap: 2rem;
+    min-height: 80px;
 
     .nav-prev, .nav-next {
       text-decoration: none;
@@ -3236,7 +3238,8 @@ a {
       background: rgba($accent-color, 0.02);
       display: flex;
       align-items: center;
-      min-height: 60px;
+      flex: 1;
+      max-width: 45%;
 
       &:hover {
         color: $accent-color;
@@ -3249,32 +3252,41 @@ a {
     .nav-prev {
       text-align: left;
       justify-content: flex-start;
-
-      &::before {
-        content: "←";
-        margin-right: 0.5rem;
-        font-size: 1.2rem;
-      }
+      margin-right: auto;
     }
 
     .nav-next {
       text-align: right;
       justify-content: flex-end;
+      margin-left: auto;
+    }
 
-      &::after {
-        content: "→";
-        margin-left: 0.5rem;
-        font-size: 1.2rem;
-      }
+    .nav-arrow {
+      font-size: 1.2rem;
+      color: $accent-color;
+      font-weight: bold;
+    }
+
+    .nav-title {
+      flex: 1;
+      margin: 0 0.5rem;
     }
 
     // Handle single navigation item
-    .nav-prev:only-child {
-      grid-column: 1;
+    &:has(.nav-prev:only-child) {
+      justify-content: flex-start;
+
+      .nav-prev {
+        max-width: 45%;
+      }
     }
 
-    .nav-next:only-child {
-      grid-column: 2;
+    &:has(.nav-next:only-child) {
+      justify-content: flex-end;
+
+      .nav-next {
+        max-width: 45%;
+      }
     }
   }
 
@@ -3305,6 +3317,21 @@ a {
       .nav-prev, .nav-next {
         max-width: 100%;
         text-align: center;
+        font-size: 0.9rem;
+
+        // Truncate long titles on mobile
+        .nav-title {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: 200px;
+          margin: 0 auto;
+        }
+
+        .nav-arrow {
+          font-size: 1rem;
+        }
       }
     }
 
