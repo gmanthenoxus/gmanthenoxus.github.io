@@ -111,6 +111,17 @@
   }
 }
 
+@keyframes mobileIconFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes floatMobile {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
@@ -4206,37 +4217,61 @@ a {
 // Mobile responsiveness for hobbies
 @media (max-width: 768px) {
   .hobbies-hero {
-    padding: 4rem 0 3rem;
+    padding: 4rem 0 3rem !important;
 
     .container {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 0 1rem;
-      text-align: center;
+      grid-template-columns: 1fr !important;
+      gap: 2rem !important;
+      padding: 0 1rem !important;
+      text-align: center !important;
     }
 
     .hero-content {
-      text-align: center;
+      text-align: center !important;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem !important;
+        margin-bottom: 0.5rem !important;
       }
 
       .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
       }
 
-      .hero-description p {
-        font-size: 1rem;
-        max-width: 100%;
+      .hero-description {
+        display: none !important; // Remove description on mobile
       }
     }
 
     .hero-visual {
-      height: 200px;
+      height: 300px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
 
-      .floating-icons .float-icon {
-        font-size: 2rem;
+      .floating-icons {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        height: auto !important;
+        width: auto !important;
+
+        .float-icon {
+          position: static !important;
+          font-size: 2.5rem !important;
+          animation: mobileIconFadeIn 0.6s ease-out forwards !important;
+          animation-delay: calc(var(--delay) * 0.3) !important; // Faster sequence on mobile
+          filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)) !important;
+          opacity: 0 !important; // Start invisible for fade-in effect
+          transition: all 0.3s ease !important;
+
+          &:hover {
+            opacity: 1 !important;
+            transform: scale(1.1) !important;
+          }
+        }
       }
     }
   }
