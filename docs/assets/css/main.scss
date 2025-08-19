@@ -4220,66 +4220,25 @@ a {
     padding: 4rem 0 3rem !important;
 
     .container {
-      grid-template-columns: 1fr !important;
-      gap: 2rem !important;
       padding: 0 1rem !important;
-      text-align: center !important;
     }
 
     .hero-content {
-      text-align: center !important;
-      width: 100% !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-
       h1 {
         font-size: 2.5rem !important;
-        margin-bottom: 0.5rem !important;
-        text-align: center !important;
-        width: 100% !important;
       }
 
       .hero-subtitle {
         font-size: 1.2rem !important;
-        margin-bottom: 1rem !important;
-        text-align: center !important;
-        width: 100% !important;
+        margin-bottom: 2rem !important;
       }
-
-      .hero-description {
-        display: none !important; // Remove description on mobile
-      }
-    }
-
-    .hero-visual {
-      height: 300px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
 
       .floating-icons {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 1rem !important;
-        height: auto !important;
-        width: auto !important;
+        gap: 1.5rem !important;
+        margin-top: 1.5rem !important;
 
         .float-icon {
-          position: static !important;
           font-size: 2.5rem !important;
-          animation: mobileIconFadeIn 0.6s ease-out forwards !important;
-          animation-delay: calc(var(--delay) * 0.3) !important; // Faster sequence on mobile
-          filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)) !important;
-          opacity: 0 !important; // Start invisible for fade-in effect
-          transition: all 0.3s ease !important;
-
-          &:hover {
-            opacity: 1 !important;
-            transform: scale(1.1) !important;
-          }
         }
       }
     }
@@ -4434,26 +4393,19 @@ a {
 body .hobbies-hero {
   background: linear-gradient(135deg, $accent-color 0%, $accent-secondary 100%) !important;
   color: white !important;
-  padding: 8rem 0 6rem !important;
+  padding: 6rem 0 4rem !important;
   position: relative !important;
   overflow: hidden !important;
+  text-align: center !important;
 
   .container {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 4rem !important;
-    align-items: center !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 0 2rem !important;
   }
 
   .hero-content {
-    text-align: left !important;
-
-    @media (min-width: 769px) {
-      text-align: left !important;
-    }
+    text-align: center !important;
 
     h1 {
       font-size: clamp(2.5rem, 5vw, 4rem) !important;
@@ -4466,48 +4418,39 @@ body .hobbies-hero {
 
     .hero-subtitle {
       font-size: 1.5rem !important;
-      margin-bottom: 2rem !important;
+      margin-bottom: 3rem !important;
       opacity: 0.9 !important;
       font-weight: 600 !important;
       color: rgba(255,255,255,0.95) !important;
     }
 
-    .hero-description p {
-      font-size: 1.1rem !important;
-      line-height: 1.7 !important;
-      opacity: 0.85 !important;
-      max-width: 500px !important;
-      color: rgba(255,255,255,0.9) !important;
-    }
-  }
-
-  .hero-visual {
-    position: relative !important;
-    height: 400px !important;
-
     .floating-icons {
-      position: relative !important;
-      width: 100% !important;
-      height: 100% !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 2rem !important;
+      flex-wrap: wrap !important;
+      margin-top: 2rem !important;
 
       .float-icon {
-        position: absolute !important;
         font-size: 3rem !important;
-        animation: floatAround 6s ease-in-out infinite !important;
+        animation: floatAround 4s ease-in-out infinite !important;
         animation-delay: var(--delay) !important;
         filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)) !important;
+        transition: transform 0.3s ease !important;
 
-        &:nth-child(1) { top: 10% !important; left: 20% !important; }
-        &:nth-child(2) { top: 20% !important; right: 15% !important; }
-        &:nth-child(3) { top: 40% !important; left: 10% !important; }
-        &:nth-child(4) { top: 35% !important; right: 25% !important; }
-        &:nth-child(5) { top: 60% !important; left: 30% !important; }
-        &:nth-child(6) { top: 55% !important; right: 10% !important; }
-        &:nth-child(7) { top: 80% !important; left: 15% !important; }
-        &:nth-child(8) { top: 75% !important; right: 30% !important; }
+        &:hover {
+          transform: scale(1.2) !important;
+        }
       }
     }
   }
+}
+
+// Hobby spacer
+.hobby-spacer {
+  height: 4rem !important;
+  background: transparent !important;
 }
 
 body .hobby-intro {
