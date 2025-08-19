@@ -19,190 +19,188 @@ layout: default
     <div class="container">
         <div class="hobby-main-content">
 
-            <!-- TL;DR Quick Summary -->
-            {% if page.tldr %}
-            <div class="tldr-box">
-                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
-                    <div class="section-icon"></div>
-                    <h3>TL;DR</h3>
-                    <div class="toggle-indicator"></div>
-                </div>
-                <div class="section-content">
-                    <div class="content-inner">
-                        <p>{{ page.tldr }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
             <!-- Live Statistics Dashboard -->
             {% if page.stats %}
-            <div class="hobby-stats-dashboard">
-                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
-                    <div class="section-icon"></div>
-                    <h3>Live Statistics</h3>
-                    <div class="toggle-indicator"></div>
+            <section class="hobby-stats-section">
+                <div class="section-header">
+                    <h2>📊 Live Statistics</h2>
+                    <p>Data-driven insights into my {{ page.title | downcase }} journey</p>
                 </div>
-                <div class="section-content">
-                    <div class="content-inner">
-                        <div class="stats-grid">
-                            {% for stat in page.stats %}
-                            <div class="stat-card">
-                                <div class="stat-value">{{ stat.value }}</div>
-                                <div class="stat-label">{{ stat.label }}</div>
-                                {% if stat.context %}
-                                <div class="stat-context">{{ stat.context }}</div>
+                <div class="stats-grid">
+                    {% for stat in page.stats %}
+                    <div class="stat-card">
+                        <div class="stat-value">{{ stat.value }}</div>
+                        <div class="stat-label">{{ stat.label }}</div>
+                        {% if stat.context %}
+                        <div class="stat-context">{{ stat.context }}</div>
+                        {% endif %}
+                        {% if stat.progress %}
+                        <div class="stat-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: {{ stat.progress }}%"></div>
+                            </div>
+                            <span class="progress-text">{{ stat.progress }}% complete</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- World Statistics for Context -->
+                {% if page.world_stats %}
+                <div class="world-stats-section">
+                    <h3>🌍 Global Context</h3>
+                    <div class="world-stats-grid">
+                        {% for stat in page.world_stats %}
+                        <div class="world-stat-card">
+                            <div class="world-stat-icon">{{ stat.icon }}</div>
+                            <div class="world-stat-content">
+                                <div class="world-stat-value">{{ stat.value }}</div>
+                                <div class="world-stat-label">{{ stat.label }}</div>
+                                {% if stat.source %}
+                                <div class="world-stat-source">Source: {{ stat.source }}</div>
                                 {% endif %}
                             </div>
-                            {% endfor %}
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
-            </div>
+                {% endif %}
+            </section>
             {% endif %}
 
-            <!-- Personal Connection Story -->
+            <!-- Personal Connection Section -->
             {% if page.personal_journey %}
-            <div class="personal-journey-section">
-                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
-                    <div class="section-icon"></div>
-                    <h3>My Personal Journey</h3>
-                    <div class="toggle-indicator"></div>
+            <section class="personal-journey-section">
+                <div class="section-header">
+                    <h2>🌟 My Personal Journey</h2>
+                    <p>The story behind my passion for {{ page.title | downcase }}</p>
                 </div>
-                <div class="section-content">
-                    <div class="content-inner">
-                        {% if page.personal_journey.origin_story %}
-                        <div class="journey-item">
-                            <h4>🌱 How It Started</h4>
+                <div class="journey-timeline">
+                    {% if page.personal_journey.origin_story %}
+                    <div class="journey-item">
+                        <div class="journey-icon">🌱</div>
+                        <div class="journey-content">
+                            <h3>How It Started</h3>
                             <p>{{ page.personal_journey.origin_story }}</p>
                         </div>
-                        {% endif %}
+                    </div>
+                    {% endif %}
 
-                        {% if page.personal_journey.current_status %}
-                        <div class="journey-item">
-                            <h4>🎯 Current Status</h4>
+                    {% if page.personal_journey.current_status %}
+                    <div class="journey-item">
+                        <div class="journey-icon">🎯</div>
+                        <div class="journey-content">
+                            <h3>Current Status</h3>
                             <p>{{ page.personal_journey.current_status }}</p>
                         </div>
-                        {% endif %}
+                    </div>
+                    {% endif %}
 
-                        {% if page.personal_journey.goals %}
-                        <div class="journey-item">
-                            <h4>🚀 Goals & Aspirations</h4>
-                            <ul>
+                    {% if page.personal_journey.goals %}
+                    <div class="journey-item">
+                        <div class="journey-icon">🚀</div>
+                        <div class="journey-content">
+                            <h3>Goals & Aspirations</h3>
+                            <ul class="goals-list">
                                 {% for goal in page.personal_journey.goals %}
                                 <li>{{ goal }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
-                        {% endif %}
+                    </div>
+                    {% endif %}
 
-                        {% if page.personal_journey.achievements %}
-                        <div class="journey-item">
-                            <h4>🏆 Notable Achievements</h4>
-                            <ul>
+                    {% if page.personal_journey.achievements %}
+                    <div class="journey-item">
+                        <div class="journey-icon">🏆</div>
+                        <div class="journey-content">
+                            <h3>Notable Achievements</h3>
+                            <ul class="achievements-list">
                                 {% for achievement in page.personal_journey.achievements %}
                                 <li>{{ achievement }}</li>
                                 {% endfor %}
                             </ul>
                         </div>
-                        {% endif %}
                     </div>
-                </div>
-            </div>
-            {% endif %}
+                    {% endif %}
 
-            <!-- Fun Facts & Trivia -->
-            {% if page.fun_facts %}
-            <div class="fun-facts-section">
-                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
-                    <div class="section-icon"></div>
-                    <h3>Fun Facts & Trivia</h3>
-                    <div class="toggle-indicator"></div>
-                </div>
-                <div class="section-content">
-                    <div class="content-inner">
-                        <div class="facts-grid">
-                            {% for fact in page.fun_facts %}
-                            <div class="fact-card">
-                                <div class="fact-icon">{{ fact.icon | default: "💡" }}</div>
-                                <div class="fact-content">
-                                    <h4>{{ fact.title }}</h4>
-                                    <p>{{ fact.description }}</p>
+                    {% if page.personal_journey.favorites %}
+                    <div class="journey-item">
+                        <div class="journey-icon">⭐</div>
+                        <div class="journey-content">
+                            <h3>Personal Favorites</h3>
+                            <div class="favorites-grid">
+                                {% for favorite in page.personal_journey.favorites %}
+                                <div class="favorite-item">
+                                    <h4>{{ favorite.name }}</h4>
+                                    <p>{{ favorite.reason }}</p>
                                 </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- Tech Integration Showcase -->
-            {% if page.tech_integration %}
-            <div class="tech-integration-section">
-                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
-                    <div class="section-icon"></div>
-                    <h3>Tech Integration</h3>
-                    <div class="toggle-indicator"></div>
-                </div>
-                <div class="section-content">
-                    <div class="content-inner">
-                        {% for integration in page.tech_integration %}
-                        <div class="tech-item">
-                            <div class="tech-header">
-                                <h4>{{ integration.category }}</h4>
-                                <span class="tech-status">{{ integration.status | default: "Active" }}</span>
-                            </div>
-                            <p>{{ integration.description }}</p>
-                            {% if integration.tools %}
-                            <div class="tech-tools">
-                                <strong>Tools Used:</strong>
-                                {% for tool in integration.tools %}
-                                <span class="tool-tag">{{ tool }}</span>
                                 {% endfor %}
                             </div>
-                            {% endif %}
-                            {% if integration.link %}
-                            <a href="{{ integration.link }}" class="tech-link">View Project →</a>
-                            {% endif %}
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
-            <!-- External Platforms & Links -->
-            {% if page.external_platforms %}
-            <div class="external-platforms-section">
-                <div class="section-header" tabindex="0" role="button" aria-expanded="false">
-                    <div class="section-icon"></div>
-                    <h3>Find Me Online</h3>
-                    <div class="toggle-indicator"></div>
-                </div>
-                <div class="section-content">
-                    <div class="content-inner">
-                        <div class="platforms-grid">
-                            {% for platform in page.external_platforms %}
-                            <a href="{{ platform.url }}" class="platform-card" target="_blank" rel="noopener">
-                                <div class="platform-icon">{{ platform.icon }}</div>
-                                <div class="platform-info">
-                                    <h4>{{ platform.name }}</h4>
-                                    <p>{{ platform.description }}</p>
-                                </div>
-                                <div class="platform-arrow">→</div>
-                            </a>
-                            {% endfor %}
                         </div>
                     </div>
+                    {% endif %}
                 </div>
-            </div>
+            </section>
             {% endif %}
 
             <!-- Main Content -->
             <div class="hobby-content">
                 {{ content }}
             </div>
+
+            <!-- Fun Facts & Trivia Section -->
+            {% if page.fun_facts %}
+            <section class="fun-facts-section">
+                <div class="section-header">
+                    <h2>🎯 Fun Facts & Trivia</h2>
+                    <p>Interesting insights and lesser-known facts about {{ page.title | downcase }}</p>
+                </div>
+                <div class="facts-grid">
+                    {% for fact in page.fun_facts %}
+                    <div class="fact-card" data-shareable="true">
+                        <div class="fact-header">
+                            <div class="fact-icon">{{ fact.icon | default: "💡" }}</div>
+                            <div class="fact-share-btn" title="Share this fact">📤</div>
+                        </div>
+                        <div class="fact-content">
+                            <h3>{{ fact.title }}</h3>
+                            <p>{{ fact.description }}</p>
+                            {% if fact.source %}
+                            <div class="fact-source">Source: {{ fact.source }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <!-- External Platforms & Links -->
+            {% if page.external_platforms %}
+            <section class="external-platforms-section">
+                <div class="section-header">
+                    <h2>🔗 Find Me Online</h2>
+                    <p>Connect with my {{ page.title | downcase }} journey across platforms</p>
+                </div>
+                <div class="platforms-grid">
+                    {% for platform in page.external_platforms %}
+                    <a href="{{ platform.url }}" class="platform-card" target="_blank" rel="noopener">
+                        <div class="platform-icon">{{ platform.icon }}</div>
+                        <div class="platform-info">
+                            <h3>{{ platform.name }}</h3>
+                            <p>{{ platform.description }}</p>
+                            {% if platform.stats %}
+                            <div class="platform-stats">{{ platform.stats }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="platform-arrow">→</div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
 
             <!-- Projects Section -->
             {% assign hobby_projects = site.projects | where: "hobby", page.slug %}
@@ -270,3 +268,5 @@ layout: default
         </div>
     </div>
 </div>
+
+<script src="/assets/js/hobby-enhancements.js"></script>
