@@ -6,6 +6,17 @@ emoji: "🎌"
 color: "#FF6B9D"
 description: "Where storytelling meets artistry. My journey through Japanese animation and the tech projects it inspires."
 
+# Rotating Quotes
+quotes:
+  - text: "The world is not beautiful, therefore it is."
+    author: "Kino's Journey"
+  - text: "People die when they are killed... That's the way it should be."
+    author: "Shirou Emiya, Fate/stay night"
+  - text: "I am not alone. I can hear them... I can hear everyone's voices... I can sense everyone's feelings... I am not alone... Everyone's feelings... They support me... They are what give me the will to stand and fight!"
+    author: "Natsu Dragneel, Fairy Tail"
+  - text: "The fake is of far greater value. In its deliberate attempt to be real, it's more real than the real thing."
+    author: "Kaiki Deishuu, Monogatari Series"
+
 # Live Statistics Dashboard
 stats:
   - value: "500+"
@@ -117,55 +128,95 @@ external_platforms:
     description: "Curated collection of anime openings & soundtracks"
     url: "https://open.spotify.com/playlist/anime-favorites"
     stats: "200+ tracks, 15 hours"
+
+# Fun Facts (General interesting content)
+fun_facts:
+  - icon: "🎨"
+    title: "Animation Economics"
+    description: "The average anime episode costs $100,000-300,000 to produce, but streaming has made it profitable for niche series that would never have been made in the TV-only era."
+    source: "Anime Industry Economics Report"
+  - icon: "🌍"
+    title: "Global Phenomenon"
+    description: "Anime is now watched in over 100 countries, with the largest international audiences in the US, China, and Brazil. The global fanbase has grown 400% since 2010."
+    source: "Crunchyroll Global Survey 2024"
+  - icon: "🎭"
+    title: "Studio Recognition"
+    description: "Studio Ghibli films have won over 50 international awards, including an Academy Award. Their movies are considered cultural treasures in Japan and have influenced Western animation."
+    source: "Studio Ghibli Archives"
+  - icon: "📊"
+    title: "Streaming Revolution"
+    description: "Over 70% of anime consumption now happens through streaming platforms, completely changing how series are produced and distributed globally."
+    source: "Digital Entertainment Report 2024"
+
+# Interactive Trivia
+trivia:
+  - question: "Which anime holds the record for the most episodes ever produced?"
+    options:
+      - text: "One Piece"
+        correct: false
+      - text: "Sazae-san"
+        correct: true
+      - text: "Detective Conan"
+        correct: false
+      - text: "Naruto (including Shippuden)"
+        correct: false
+    explanation: "Sazae-san has been running since 1969 and has over 7,000 episodes, making it the longest-running animated series in the world!"
+
+  - question: "What does the term 'otaku' originally mean in Japanese?"
+    options:
+      - text: "Anime fan"
+        correct: false
+      - text: "Your house/home"
+        correct: true
+      - text: "Obsessed person"
+        correct: false
+      - text: "Japanese culture enthusiast"
+        correct: false
+    explanation: "Otaku literally means 'your house' and was originally used as a polite way to address someone. It became associated with obsessive fans in the 1980s."
+
+  - question: "Which Studio Ghibli film was the first to win an Academy Award?"
+    options:
+      - text: "Princess Mononoke"
+        correct: false
+      - text: "My Neighbor Totoro"
+        correct: false
+      - text: "Spirited Away"
+        correct: true
+      - text: "Howl's Moving Castle"
+        correct: false
+    explanation: "Spirited Away won the Academy Award for Best Animated Feature in 2003, becoming the first hand-drawn and Japanese animated film to win this award."
+
+# Current Projects
+current_projects:
+  - name: "Anime Recommendation Engine"
+    icon: "🤖"
+    description: "Machine learning model that analyzes viewing patterns, genre preferences, and rating correlations to suggest anime with 85% accuracy rate."
+    status: "Beta Testing"
+    progress: 78
+    tech_stack: ["Python", "TensorFlow", "Pandas", "MyAnimeList API", "React"]
+    link: "/projects/anime-recommender"
+
+  - name: "Seasonal Tracker Bot"
+    icon: "📅"
+    description: "Automated Discord bot that tracks new anime releases, aggregates reviews, and sends personalized weekly recommendations."
+    status: "Active Development"
+    progress: 65
+    tech_stack: ["Node.js", "Discord.js", "MongoDB", "Web Scraping"]
+    link: "/projects/seasonal-tracker"
+
+# Empty States (personality-driven placeholders)
+empty_states:
+  projects: "Even the best anime have filler episodes - my projects are just in their development arc!"
+  projects_icon: "🎬"
+  projects_title: "Plot Twist Coming Soon"
+  projects_description: "Like waiting for the next season of your favorite anime, great projects take time to develop. The next breakthrough could be more epic than a Shonen power-up!"
 ---
-
-# My Journey with Anime
-
-Anime has been a transformative part of my life, introducing me to rich storytelling, complex characters, and unique art styles that have shaped my creative perspective. What started as casual viewing has evolved into a deeper appreciation for the medium's cultural impact and technical artistry.
-
-## What Draws Me In
-
-**Storytelling Excellence**: The diverse range of narratives, from intimate slice-of-life moments to epic multi-generational sagas, showcases storytelling at its finest.
-
-**Visual Innovation**: The unique art styles and animation techniques push the boundaries of what's possible in visual media, inspiring my own approach to design and user interfaces.
-
-**Cultural Bridge**: Anime serves as a window into Japanese culture, values, and philosophy, broadening my global perspective and understanding.
-
-**Community Connection**: The passionate fanbase creates opportunities for meaningful discussions about themes, characters, and the craft of animation.
-
-## Current Obsessions
-
-I'm particularly drawn to series that challenge conventional thinking:
-
-- **Psychological Thrillers**: Shows like *Monster* and *Serial Experiments Lain* that explore the human psyche
-- **Studio Ghibli Magic**: Films that blend environmental themes with stunning visuals and emotional depth
-- **Tech-Forward Narratives**: Anime exploring AI, virtual reality, and the digital age's impact on humanity
-- **Character-Driven Stories**: Series where character development takes precedence over action
 
 <div class="project-highlight">
   <h3>🚀 Current Project: Anime Analytics Dashboard</h3>
   <p>Building a comprehensive platform that analyzes viewing patterns, seasonal trends, and recommendation algorithms to help fellow anime enthusiasts discover their next favorite series.</p>
   <a href="/projects/anime-analytics" class="btn">View Project Details</a>
 </div>
-
-## The Tech Connection
-
-My programming background has opened up fascinating ways to engage with anime:
-
-### **Data-Driven Discovery**
-- Building machine learning models to predict anime preferences based on viewing history
-- Analyzing seasonal trends and studio performance metrics
-- Creating personalized recommendation engines that go beyond simple genre matching
-
-### **Community Tools**
-- Developing platforms for anime discussion and review aggregation
-- Building tools for tracking and organizing extensive anime collections
-- Creating social features that connect fans with similar tastes
-
-### **Industry Analysis**
-- Exploring the intersection of AI and animation production workflows
-- Analyzing the global impact of anime streaming platforms
-- Studying the economics of anime production and distribution
 
 ## Philosophy & Impact
 

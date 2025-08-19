@@ -1,6 +1,110 @@
 // Enhanced Hobby Page Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    
+
+    // Scroll Reveal Animation System
+    const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+
+    const scrollRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                scrollRevealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    scrollRevealElements.forEach(element => {
+        scrollRevealObserver.observe(element);
+    });
+
+    // Quote Rotation System
+    const quoteContainer = document.getElementById('rotating-quote');
+    if (quoteContainer && window.hobbyQuotes && window.hobbyQuotes.length > 1) {
+        let currentQuoteIndex = 0;
+
+        function rotateQuote() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % window.hobbyQuotes.length;
+            const quote = window.hobbyQuotes[currentQuoteIndex];
+
+            quoteContainer.style.opacity = '0';
+
+            setTimeout(() => {
+                quoteContainer.querySelector('.quote-text').textContent = `"${quote.text}"`;
+                quoteContainer.querySelector('.quote-author').textContent = `— ${quote.author}`;
+                quoteContainer.style.opacity = '1';
+            }, 300);
+        }
+
+        // Rotate quotes every 8 seconds
+        setInterval(rotateQuote, 8000);
+    }
+
+    // Trivia System
+    const triviaCards = document.querySelectorAll('.trivia-card');
+
+    triviaCards.forEach(card => {
+        const options = card.querySelectorAll('.trivia-option');
+        const feedback = card.querySelector('.trivia-feedback');
+        const result = card.querySelector('.trivia-result');
+        const shareBtn = card.querySelector('.trivia-share-btn');
+
+        options.forEach(option => {
+            option.addEventListener('click', function() {
+                // Disable all options
+                options.forEach(opt => opt.disabled = true);
+
+                // Show selected state
+                this.classList.add('selected');
+
+                // Check if correct
+                const isCorrect = this.dataset.correct === 'true';
+
+                // Show correct/incorrect states
+                options.forEach(opt => {
+                    if (opt.dataset.correct === 'true') {
+                        opt.classList.add('correct');
+                    } else if (opt === this && !isCorrect) {
+                        opt.classList.add('incorrect');
+                    }
+                });
+
+                // Show feedback
+                result.className = `trivia-result ${isCorrect ? 'correct' : 'incorrect'}`;
+                feedback.style.display = 'block';
+
+                // Setup share functionality
+                if (shareBtn) {
+                    shareBtn.addEventListener('click', function() {
+                        const question = card.querySelector('.trivia-question h3').textContent;
+                        const hobbyTitle = document.querySelector('.hobby-hero h1').textContent;
+                        const shareText = `🧠 ${hobbyTitle} Trivia Challenge!\n\n${question}\n\nThink you know the answer? Test your knowledge!`;
+
+                        shareTrivia(shareText, window.location.href);
+                    });
+                }
+            });
+        });
+    });
+
+    // Trivia sharing functionality
+    function shareTrivia(text, url) {
+        if (navigator.share) {
+            navigator.share({
+                title: 'Trivia Challenge',
+                text: text,
+                url: url
+            }).catch(err => {
+                console.log('Error sharing:', err);
+                fallbackShare(text);
+            });
+        } else {
+            fallbackShare(text);
+        }
+    }
+
     // Fun Facts Sharing Functionality
     const shareButtons = document.querySelectorAll('.fact-share-btn');
     
