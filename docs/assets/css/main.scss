@@ -5182,7 +5182,7 @@ a {
 
         .world-stat-icon {
           font-size: 2rem;
-          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+          filter: drop-shadow(0 2px 4px rgba(var(--hobby-color-rgb), 0.3));
         }
 
         .world-stat-content {
@@ -5191,7 +5191,7 @@ a {
           .world-stat-value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: $accent-color;
+            color: var(--hobby-color);
             margin-bottom: 0.25rem;
           }
 
@@ -5430,12 +5430,12 @@ a {
       background: white;
       border-radius: 16px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      border-left: 4px solid $accent-color;
+      border-left: 4px solid var(--hobby-color);
       transition: all 0.3s ease;
 
       &:hover {
         transform: translateX(5px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        box-shadow: 0 12px 30px rgba(var(--hobby-color-rgb), 0.15);
       }
 
       .journey-icon {
@@ -5472,7 +5472,7 @@ a {
             margin-bottom: 0.5rem;
 
             &::marker {
-              color: $accent-color;
+              color: var(--hobby-color);
             }
           }
         }
@@ -5484,10 +5484,10 @@ a {
           margin-top: 1rem;
 
           .favorite-item {
-            background: linear-gradient(135deg, rgba($accent-color, 0.05), rgba($accent-secondary, 0.05));
+            background: linear-gradient(135deg, rgba(var(--hobby-color-rgb), 0.05), rgba(var(--hobby-color-rgb), 0.1));
             padding: 1rem;
             border-radius: 8px;
-            border: 1px solid rgba($accent-color, 0.1);
+            border: 1px solid rgba(var(--hobby-color-rgb), 0.15);
 
             h4 {
               color: $primary-color;
@@ -5666,12 +5666,12 @@ a {
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(135deg, $accent-color, $accent-secondary);
+        background: var(--hobby-gradient);
       }
 
       &:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        box-shadow: 0 15px 35px rgba(var(--hobby-color-rgb), 0.15);
         color: inherit;
 
         .platform-arrow {
@@ -5703,19 +5703,19 @@ a {
         }
 
         .platform-stats {
-          background: linear-gradient(135deg, rgba($accent-color, 0.1), rgba($accent-secondary, 0.1));
-          color: $accent-color;
+          background: linear-gradient(135deg, rgba(var(--hobby-color-rgb), 0.1), rgba(var(--hobby-color-rgb), 0.05));
+          color: var(--hobby-color);
           padding: 0.25rem 0.75rem;
           border-radius: 12px;
           font-size: 0.8rem;
           font-weight: 600;
           display: inline-block;
-          border: 1px solid rgba($accent-color, 0.2);
+          border: 1px solid rgba(var(--hobby-color-rgb), 0.2);
         }
       }
 
       .platform-arrow {
-        color: $accent-color;
+        color: var(--hobby-color);
         font-size: 1.5rem;
         font-weight: bold;
         transition: transform 0.3s ease;
@@ -5783,6 +5783,39 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
+
+    .btn-primary {
+      background: var(--hobby-gradient);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(var(--hobby-color-rgb), 0.3);
+        color: white;
+      }
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--hobby-color);
+      padding: 1rem 2rem;
+      border: 2px solid var(--hobby-color);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--hobby-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+    }
   }
 }
 
