@@ -3642,7 +3642,9 @@ a {
   .hero-content {
     text-align: center;
     width: 100%;
-    display: block; // Override any flex/grid layout
+    max-width: 1000px;
+    margin: 0 auto;
+    display: block;
 
     h1 {
       font-size: clamp(2.5rem, 5vw, 4rem);
@@ -3652,6 +3654,7 @@ a {
       line-height: 1.1;
       text-shadow: 0 4px 8px rgba(0,0,0,0.3);
       text-align: center;
+      width: 100%;
     }
 
     .hero-subtitle {
@@ -3661,6 +3664,7 @@ a {
       font-weight: 600;
       color: rgba(255,255,255,0.95);
       text-align: center;
+      width: 100%;
     }
 
     .floating-icons {
@@ -4379,6 +4383,70 @@ a {
       font-size: 1rem;
     }
   }
+
+  // Individual hobby pages mobile
+  .hobby-hero {
+    padding: 4rem 0 3rem;
+
+    .hobby-hero-content {
+      padding: 0 1rem;
+
+      .hobby-emoji-large {
+        font-size: 4rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .hobby-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .hobby-main-content {
+    padding: 2rem 0;
+
+    .hobby-content {
+      padding: 0 1rem;
+    }
+  }
+
+  .hobby-projects-section {
+    padding: 0 1rem;
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      .project-actions {
+        flex-direction: column;
+
+        .btn-primary,
+        .btn-secondary {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .related-hobbies {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0;
+    }
+  }
 }
 
 
@@ -4387,6 +4455,528 @@ a {
 .hobby-spacer {
   height: 4rem !important;
   background: transparent !important;
+}
+
+// ========================================
+// 🎯 INDIVIDUAL HOBBY PAGES
+// ========================================
+
+.hobby-page {
+  // Dynamic gradient backgrounds based on hobby type
+  &[data-hobby="anime"] {
+    --hobby-gradient: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+    --hobby-color: #FF6B9D;
+  }
+
+  &[data-hobby="sports"] {
+    --hobby-gradient: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+    --hobby-color: #4ECDC4;
+  }
+
+  &[data-hobby="sneakers"] {
+    --hobby-gradient: linear-gradient(135deg, #FFD93D 0%, #FF6B35 100%);
+    --hobby-color: #FFD93D;
+  }
+
+  &[data-hobby="boardGames"] {
+    --hobby-gradient: linear-gradient(135deg, #A8E6CF 0%, #7FCDCD 100%);
+    --hobby-color: #A8E6CF;
+  }
+
+  &[data-hobby="tech"] {
+    --hobby-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --hobby-color: #667eea;
+  }
+
+  &[data-hobby="gym"] {
+    --hobby-gradient: linear-gradient(135deg, #FF9A8B 0%, #A8E6CF 100%);
+    --hobby-color: #FF9A8B;
+  }
+
+  &[data-hobby="food"] {
+    --hobby-gradient: linear-gradient(135deg, #FDBB2D 0%, #22C1C3 100%);
+    --hobby-color: #FDBB2D;
+  }
+
+  &[data-hobby="music"] {
+    --hobby-gradient: linear-gradient(135deg, #E056FD 0%, #F18CE0 100%);
+    --hobby-color: #E056FD;
+  }
+}
+
+.hobby-hero {
+  background: var(--hobby-gradient, linear-gradient(135deg, $accent-color 0%, $accent-secondary 100%));
+  color: white;
+  padding: 6rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hobby-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .hobby-emoji-large {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+      animation: floatAround 6s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      line-height: 1.1;
+    }
+
+    .hobby-subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      font-weight: 500;
+      line-height: 1.5;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hobby-breadcrumb {
+      margin-top: 2rem;
+
+      a {
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid rgba(255,255,255,0.3);
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+          background: rgba(255,255,255,0.1);
+          border-color: white;
+          transform: translateY(-2px);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.hobby-main-content {
+  padding: 4rem 0;
+
+  .hobby-content {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+
+    h1, h2, h3 {
+      color: $primary-color;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      border-bottom: 3px solid var(--hobby-color, $accent-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      color: $text-muted;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul, ol {
+      color: $text-muted;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        strong {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .project-highlight {
+      background: linear-gradient(135deg, rgba(var(--hobby-color), 0.1), rgba(var(--hobby-color), 0.05));
+      border: 2px solid rgba(var(--hobby-color), 0.2);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+
+      h3 {
+        color: var(--hobby-color, $accent-color);
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      .btn {
+        background: var(--hobby-gradient, linear-gradient(135deg, $accent-color, $accent-secondary));
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(var(--hobby-color), 0.3);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.hobby-projects-section {
+  margin: 4rem 0;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $text-muted;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--hobby-gradient, linear-gradient(135deg, $accent-color, $accent-secondary));
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+
+      h3 {
+        color: $primary-color;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0;
+        flex: 1;
+      }
+
+      .project-status {
+        background: var(--hobby-gradient, linear-gradient(135deg, $accent-color, $accent-secondary));
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .project-description {
+      color: $text-muted;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      .tech-tag {
+        background: rgba(var(--hobby-color), 0.1);
+        color: var(--hobby-color, $accent-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(var(--hobby-color), 0.2);
+      }
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 1rem;
+
+      .btn-primary {
+        background: var(--hobby-gradient, linear-gradient(135deg, $accent-color, $accent-secondary));
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        flex: 1;
+        text-align: center;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(var(--hobby-color), 0.3);
+          color: white;
+        }
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--hobby-color, $accent-color);
+        padding: 0.75rem 1.5rem;
+        border: 2px solid var(--hobby-color, $accent-color);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        text-align: center;
+
+        &:hover {
+          background: var(--hobby-color, $accent-color);
+          color: white;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .coming-soon-card {
+    background: linear-gradient(135deg, rgba(var(--hobby-color), 0.05), rgba(var(--hobby-color), 0.1));
+    border: 2px dashed rgba(var(--hobby-color), 0.3);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+
+    .coming-soon-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $text-muted;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      background: var(--hobby-gradient, linear-gradient(135deg, $accent-color, $accent-secondary));
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(var(--hobby-color), 0.3);
+        color: white;
+      }
+    }
+  }
+}
+
+.related-hobbies {
+  margin: 4rem 0;
+  padding: 3rem 0;
+  background: linear-gradient(135deg, rgba($accent-color, 0.02), rgba($accent-secondary, 0.02));
+  border-radius: 20px;
+  border: 1px solid rgba($accent-color, 0.1);
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .related-hobby-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    // Dynamic gradients for related hobby cards
+    &[data-hobby="anime"] {
+      &::before {
+        background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);
+      }
+    }
+
+    &[data-hobby="sports"] {
+      &::before {
+        background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+      }
+    }
+
+    &[data-hobby="sneakers"] {
+      &::before {
+        background: linear-gradient(135deg, #FFD93D 0%, #FF6B35 100%);
+      }
+    }
+
+    &[data-hobby="boardGames"] {
+      &::before {
+        background: linear-gradient(135deg, #A8E6CF 0%, #7FCDCD 100%);
+      }
+    }
+
+    &[data-hobby="tech"] {
+      &::before {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+    }
+
+    &[data-hobby="gym"] {
+      &::before {
+        background: linear-gradient(135deg, #FF9A8B 0%, #A8E6CF 100%);
+      }
+    }
+
+    &[data-hobby="food"] {
+      &::before {
+        background: linear-gradient(135deg, #FDBB2D 0%, #22C1C3 100%);
+      }
+    }
+
+    &[data-hobby="music"] {
+      &::before {
+        background: linear-gradient(135deg, #E056FD 0%, #F18CE0 100%);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+
+      .related-emoji {
+        transform: scale(1.2) rotate(5deg);
+      }
+    }
+
+    .related-emoji {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+      transition: all 0.3s ease;
+    }
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
 }
 
 body .hobby-intro {
