@@ -191,6 +191,10 @@
 
     svg {
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    svg {
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
       transition: transform 0.3s ease;
     }
 
@@ -1036,6 +1040,14 @@
 }
 
 .cta-action {
+  display: flex;
+  justify-content: flex-start;
+
+  @media (max-width: $breakpoint-mobile) {
+    justify-content: center;
+    width: 100%;
+  }
+
   .cta-button {
     @extend .btn-primary;
     display: inline-flex;
@@ -1045,10 +1057,13 @@
     font-size: 1.1rem;
 
     @media (max-width: $breakpoint-mobile) {
-      padding: 1.2rem 2rem;
-      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
       width: 100%;
+      max-width: 280px;
       justify-content: center;
+      margin: 0 auto;
+      display: flex;
       animation: pulse 2s infinite;
     }
 
@@ -1423,18 +1438,7 @@ a {
     opacity: 0.9;
   }
   
-  .scroll-down {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
-    z-index: 20;
-    
-    svg {
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-    }
-  }
+
   
   .floating-bg {
     position: absolute;
@@ -1907,24 +1911,7 @@ a {
   }
 }
 
-// CTA Section
-.cta-section {
-  text-align: center;
-  padding: $spacing-xl $spacing-sm;
-  background: $primary-color;
-  color: white;
-  
-  h2 {
-    color: white;
-    margin-bottom: $spacing-sm;
-  }
-  
-  p {
-    color: $text-light;
-    max-width: 600px;
-    margin: 0 auto $spacing-md;
-  }
-}
+
 
 // Project Highlight
 .project-highlight {
@@ -1986,7 +1973,8 @@ a {
   @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
     text-align: center;
-    gap: 3rem;
+    gap: 2rem;
+    padding: 0 $spacing-sm;
   }
 }
 
@@ -2027,8 +2015,10 @@ a {
   justify-content: center;
   
   @media (max-width: $breakpoint-mobile) {
-    height: 200px;
+    height: 150px;
     width: 100%;
+    order: -1; // Move visual above content on mobile
+    margin-bottom: 1rem;
   }
   
   .tech-emoji {
@@ -2076,6 +2066,28 @@ a {
         bottom: 20%;
         left: 25%;
         animation: floatDesktop 9s ease-in-out infinite;
+      }
+    }
+  }
+
+  // Mobile-specific adjustments for floating emojis
+  @media (max-width: $breakpoint-mobile) {
+    .floating-emoji {
+      font-size: 1.2rem !important;
+
+      &:nth-child(1) {
+        top: 10% !important;
+        right: 10% !important;
+      }
+
+      &:nth-child(2) {
+        top: 40% !important;
+        right: 15% !important;
+      }
+
+      &:nth-child(3) {
+        bottom: 10% !important;
+        left: 10% !important;
       }
     }
   }
