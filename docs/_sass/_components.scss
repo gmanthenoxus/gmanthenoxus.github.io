@@ -1,67 +1,6 @@
 // Reusable Components
 
-// Header & Navigation
-.site-header {
-    background: $primary-color;
-    padding: $spacing-sm 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: $shadow-sm;
-}
-
-.site-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 $spacing-md;
-}
-
-.nav-logo {
-    color: white;
-    font-family: $font-primary;
-    font-weight: $font-weight-bold;
-    font-size: 1.5rem;
-    text-decoration: none;
-    
-    &:hover {
-        color: lighten($accent-color, 20%);
-        text-decoration: none;
-    }
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    
-    li {
-        margin-left: $spacing-lg;
-    }
-    
-    a {
-        color: $text-light;
-        font-weight: $font-weight-semibold;
-        text-decoration: none;
-        transition: color $transition-fast;
-        
-        &:hover {
-            color: white;
-            text-decoration: none;
-        }
-    }
-}
-
-// Mobile navigation toggle (will implement later)
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+// Note: Navigation styles moved to _navigation.scss
 
 // Footer
 .site-footer {
