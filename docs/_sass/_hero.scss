@@ -1,0 +1,291 @@
+// ========================================
+// 🦸 HERO SECTION STYLES
+// ========================================
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $hero-green 0%, $hero-blue 100%);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+
+  // Responsive height adjustments
+  @media (max-width: $breakpoint-tablet) {
+    height: 90vh;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 85vh;
+    padding: 0 $spacing-sm;
+  }
+
+  // Hero content container
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    padding: 0 $spacing-md;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  // Main headline
+  .headline {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    line-height: 1.1;
+    color: white;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2.5rem;
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // Subheadline text
+  .subheadline {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 3rem;
+    opacity: 0.9;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  // Scroll down arrow
+  .scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    z-index: 20;
+    cursor: pointer;
+    padding: $spacing-sm;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateX(-50%) scale(1.1);
+      animation-play-state: paused;
+    }
+    
+    svg {
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      bottom: 20px;
+    }
+  }
+
+  // Floating background elements
+  .floating-bg {
+    position: absolute;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
+
+    &.emoji-1 {
+      top: 20%;
+      left: 10%;
+      font-size: 3rem;
+      animation: floatBackground 8s ease-in-out infinite;
+    }
+
+    &.emoji-2 {
+      top: 60%;
+      right: 15%;
+      font-size: 2.5rem;
+      animation: floatBackground 10s ease-in-out infinite reverse;
+      animation-delay: 2s;
+    }
+
+    &.emoji-3 {
+      bottom: 30%;
+      left: 20%;
+      font-size: 3.5rem;
+      animation: floatBackground 12s ease-in-out infinite;
+      animation-delay: 4s;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      display: none; // Hide floating elements on mobile for performance
+    }
+  }
+
+  // Gradient overlay for better text readability
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba($hero-green, 0.8) 0%,
+      rgba($hero-blue, 0.8) 100%
+    );
+    z-index: 2;
+  }
+
+  // Animated background pattern
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    z-index: 1;
+    animation: gradientShift 20s ease-in-out infinite;
+  }
+}
+
+// Hero section for hobby pages (different styling)
+.hobby-hero {
+  position: relative;
+  padding: 8rem 0 4rem;
+  background: var(--hobby-gradient);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 6rem 0 3rem;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  .hobby-emoji {
+    font-size: 4rem;
+    margin-bottom: $spacing-md;
+    display: block;
+    animation: floatBackground 6s ease-in-out infinite;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 3rem;
+    }
+  }
+
+  .hobby-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+    color: white;
+  }
+
+  .hobby-description {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto $spacing-lg;
+    line-height: 1.6;
+  }
+
+  // Rotating quotes container
+  .rotating-quotes {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $spacing-lg;
+
+    .quote {
+      opacity: 0;
+      position: absolute;
+      transition: opacity 0.5s ease-in-out;
+      max-width: 700px;
+      text-align: center;
+
+      &.active {
+        opacity: 1;
+        position: relative;
+      }
+
+      .quote-text {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        font-style: italic;
+        margin-bottom: $spacing-xs;
+        line-height: 1.5;
+      }
+
+      .quote-author {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+
+  // Background pattern for hobby pages
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    z-index: 1;
+  }
+}
+
+// Blog post hero section
+.post-hero {
+  padding: 6rem 0 3rem;
+  background: linear-gradient(135deg, $primary-color 0%, darken($primary-color, 10%) 100%);
+  color: white;
+  text-align: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 4rem 0 2rem;
+  }
+
+  .post-meta {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: $spacing-sm;
+  }
+
+  .post-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .post-excerpt {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
