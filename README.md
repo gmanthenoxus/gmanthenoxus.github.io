@@ -2,7 +2,7 @@
 
 A modern, interactive personal portfolio website showcasing projects, hobbies, and blog posts. Built with Jekyll and hosted on GitHub Pages, featuring a comprehensive blog template system and developer challenges.
 
-## � **What Makes This Special**
+## **What Makes This Special**
 
 ✨ **4 Specialized Blog Templates** - Listicle, Case Study, How-To, and Standard layouts
 🚀 **Developer Challenges** - Interactive coding challenges with difficulty ratings
@@ -10,7 +10,7 @@ A modern, interactive personal portfolio website showcasing projects, hobbies, a
 📱 **Mobile-First Design** - Responsive layouts that work beautifully on all devices
 ⚡ **Performance Optimized** - Fast loading with 95+ Lighthouse scores
 
-## �🌟 Features
+## 🌟 Features
 
 ### 🎨 **Design & UI**
 - **Responsive Design**: Optimized for all devices and screen sizes
