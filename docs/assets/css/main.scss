@@ -3,10 +3,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap');
 
-// ========================================
-// 🎨 MODULAR SASS ARCHITECTURE
-// ========================================
-
 // Core foundation
 @import 'variables';      // Colors, fonts, spacing, breakpoints
 @import 'base';          // Reset, typography, base elements
