@@ -32,18 +32,18 @@
   url: "/hobbies/sneakers/"
 
 - name: "Games"
-  slug: "games"
+  slug: "boardgames"
   emoji: "🎮"
   color: "#F0F0F0"
-  description: "From retro classics to modern masterpieces. The world of video games."
+  description: "From board games to video games. Strategic thinking meets digital innovation."
   featured_image: "/assets/images/boardgames-bg.jpg"
   url: "/hobbies/games/"
 
 - name: "Tech"
   slug: "tech"
   emoji: "💻"
-  color: "#F0F0F0"
-  description: "From hardware to software. The world of technology."
+  color: "#E3F2FD"
+  description: "From hardware to software. Exploring the cutting edge of technology and innovation."
   featured_image: "/assets/images/tech-bg.jpg"
   url: "/hobbies/tech/"
 
