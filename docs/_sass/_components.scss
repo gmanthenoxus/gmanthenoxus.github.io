@@ -198,42 +198,6 @@
     }
 }
 
-.btn-secondary {
-    @extend .btn;
-    background: linear-gradient(135deg, $secondary-color 0%, darken($secondary-color, 10%) 100%);
-    color: white;
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-        background: linear-gradient(135deg, darken($secondary-color, 5%) 0%, darken($secondary-color, 15%) 100%);
-        color: white;
-        text-decoration: none;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba($secondary-color, 0.3);
-    }
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent
-        );
-        transition: 0.5s;
-    }
-
-    &:hover::before {
-        left: 100%;
-    }
-}
-
 .btn-text {
     @extend .btn;
     background: transparent;
