@@ -7,6 +7,13 @@ $text-dark: #2D3747;           // Dark text
 $text-light: #CBD5E0;          // Light text
 $text-muted: #718096;          // Muted text
 
+// UI Colors
+$border-color: #E2E8F0;        // Light border color
+$success-color: #48BB78;       // Success/completed status
+$warning-color: #ED8936;       // Warning/in-progress status
+$info-color: #4299E1;         // Info/planning status
+$error-color: #F56565;         // Error/failed status
+
 // Hero gradient colors
 $hero-green: #008753;
 $hero-blue: #012169;
@@ -15,6 +22,11 @@ $hero-blue: #012169;
 $anime-color: #F6F8FF;
 $sneakers-color: #FFE5B4;
 $gym-color: #E8F5E9;
+$sports-color: #4ECDC4;
+$boardgames-color: #F0F0F0;
+$tech-color: #E3F2FD;
+$fitness-color: #E8F5E9;
+$food-color: #FFF3E0;
 
 // Typography
 $font-primary: 'Barlow', sans-serif;    // Headings
