@@ -37,7 +37,7 @@
   color: "#F0F0F0"
   description: "From board games to video games. Strategic thinking meets digital innovation."
   featured_image: "/assets/images/boardgames-bg.jpg"
-  url: "/hobbies/games/"
+  url: "/hobbies/board-games/"
 
 - name: "Tech"
   slug: "tech"
