@@ -174,3 +174,253 @@
         margin-bottom: $spacing-sm;
     }
 }
+
+// Tabbed Roadmap Section
+.tabbed-roadmap {
+    background: $background-light;
+    padding: $spacing-xl 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 $spacing-md;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: $spacing-lg;
+        color: $primary-color;
+    }
+}
+
+.roadmap-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $spacing-lg;
+    border-bottom: 2px solid $border-color;
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-wrap: wrap;
+        gap: $spacing-xs;
+    }
+}
+
+.nav-item {
+    padding: $spacing-sm $spacing-md;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-muted;
+    border-bottom: 3px solid transparent;
+    transition: all $transition-fast;
+
+    &:hover {
+        color: $primary-color;
+        background: rgba($primary-color, 0.05);
+    }
+
+    &.active {
+        color: $primary-color;
+        border-bottom-color: $primary-color;
+        background: rgba($primary-color, 0.1);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-xs $spacing-sm;
+        font-size: 0.9rem;
+        flex: 1;
+        text-align: center;
+        min-width: 120px;
+    }
+}
+
+.roadmap-content {
+    position: relative;
+    min-height: 400px;
+}
+
+.content-pane {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all $transition-medium;
+
+    &.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.roadmap-timeline {
+    position: relative;
+    padding-left: $spacing-lg;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, $primary-color, $secondary-color);
+        border-radius: 2px;
+    }
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: $spacing-lg;
+    padding-left: $spacing-md;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -$spacing-sm;
+        top: $spacing-xs;
+        width: 12px;
+        height: 12px;
+        background: $primary-color;
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px $primary-color;
+    }
+
+    &.completed::before {
+        background: $success-color;
+        box-shadow: 0 0 0 3px $success-color;
+    }
+
+    &.in-progress::before {
+        background: $warning-color;
+        box-shadow: 0 0 0 3px $warning-color;
+        animation: pulse 2s infinite;
+    }
+}
+
+.timeline-content {
+    background: white;
+    padding: $spacing-md;
+    border-radius: 8px;
+    box-shadow: $shadow-sm;
+    border-left: 4px solid $primary-color;
+
+    h4 {
+        margin-top: 0;
+        margin-bottom: $spacing-xs;
+        color: $primary-color;
+    }
+
+    p {
+        margin-bottom: $spacing-xs;
+        color: $text-dark;
+    }
+
+    .timeline-meta {
+        font-size: 0.85rem;
+        color: $text-muted;
+        margin-top: $spacing-xs;
+    }
+}
+
+// WIP Form Section
+.wip-section {
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: white;
+    padding: $spacing-xl 0;
+    text-align: center;
+
+    h2 {
+        color: white;
+        margin-bottom: $spacing-md;
+    }
+
+    p {
+        color: rgba(white, 0.9);
+        max-width: 600px;
+        margin: 0 auto $spacing-lg;
+    }
+}
+
+.wip-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    gap: $spacing-sm;
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+    }
+
+    input {
+        flex: 1;
+        padding: $spacing-sm $spacing-md;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+
+        &:focus {
+            outline: 2px solid rgba(white, 0.5);
+            outline-offset: 2px;
+        }
+    }
+
+    button {
+        @extend .btn-secondary;
+        white-space: nowrap;
+
+        @media (max-width: $breakpoint-mobile) {
+            width: 100%;
+        }
+    }
+}
+
+.wip-form-message {
+    margin-top: $spacing-sm;
+    padding: $spacing-sm;
+    border-radius: 6px;
+    font-size: 0.9rem;
+
+    &--success {
+        background: rgba($success-color, 0.2);
+        color: lighten($success-color, 20%);
+        border: 1px solid rgba($success-color, 0.3);
+    }
+
+    &--error {
+        background: rgba($error-color, 0.2);
+        color: lighten($error-color, 20%);
+        border: 1px solid rgba($error-color, 0.3);
+    }
+}
+
+// Scroll down indicator
+.scroll-down {
+    position: absolute;
+    bottom: $spacing-lg;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: 2px solid rgba(white, 0.7);
+    color: rgba(white, 0.9);
+    padding: $spacing-sm;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all $transition-fast;
+    animation: bounce 2s infinite;
+
+    &:hover {
+        background: rgba(white, 0.1);
+        border-color: white;
+        color: white;
+        transform: translateX(-50%) translateY(-5px);
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+        display: block;
+    }
+}

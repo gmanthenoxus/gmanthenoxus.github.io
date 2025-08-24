@@ -186,3 +186,26 @@
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
 }
+
+// Floating background elements
+.floating-bg {
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
+  animation: float 20s linear infinite;
+  font-weight: bold;
+  z-index: 1;
+
+  &:nth-child(odd) {
+    animation-direction: reverse;
+  }
+
+  &:nth-child(3n) {
+    animation-duration: 25s;
+  }
+
+  &:nth-child(4n) {
+    animation-duration: 15s;
+  }
+}
