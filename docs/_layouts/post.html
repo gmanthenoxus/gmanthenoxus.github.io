@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="container">
+      <div class="post-meta">
+        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.categories %}
+          <div class="post-categories">
+            {% for category in page.categories %}
+              <span class="category">{{ category }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <h1 class="post-title">{{ page.title }}</h1>
+      
+      {% if page.subtitle %}
+        <p class="post-subtitle">{{ page.subtitle }}</p>
+      {% endif %}
+      
+      {% if page.tags %}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <span class="tag">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+{% if site.posts.size > 1 %}
+<nav class="post-navigation">
+  <div class="container">
+    {% assign current_index = 0 %}
+    {% for post in site.posts %}
+      {% if post.url == page.url %}
+        {% assign current_index = forloop.index %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    {% assign prev_index = current_index | plus: 1 %}
+    {% assign next_index = current_index | minus: 1 %}
+    
+    {% if prev_index <= site.posts.size %}
+      {% assign prev_post = site.posts[prev_index] %}
+      <a href="{{ prev_post.url }}" class="nav-prev">
+        <span class="nav-arrow">←</span>
+        <span class="nav-title">{{ prev_post.title }}</span>
+      </a>
+    {% endif %}
+    
+    {% if next_index > 0 %}
+      {% assign next_post = site.posts[next_index] %}
+      <a href="{{ next_post.url }}" class="nav-next">
+        <span class="nav-title">{{ next_post.title }}</span>
+        <span class="nav-arrow">→</span>
+      </a>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}
