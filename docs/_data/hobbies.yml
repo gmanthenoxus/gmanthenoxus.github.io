@@ -13,7 +13,7 @@
 
 - name: "Sports"
   slug: "sports"
-  emoji: "⚽️"
+  emoji: "🏀"
   color: "#F0F0F0"
   description: "From the court to the field. The world of sports."
   featured_image: "/assets/images/sports-bg.jpg"
@@ -31,13 +31,13 @@
   featured_image: "/assets/images/sneakers-bg.jpg"
   url: "/hobbies/sneakers/"
 
-- name: "BoardGames"
-  slug: "boardgames"
+- name: "Games"
+  slug: "games"
   emoji: "🎮"
   color: "#F0F0F0"
   description: "From retro classics to modern masterpieces. The world of video games."
   featured_image: "/assets/images/boardgames-bg.jpg"
-  url: "/hobbies/boardGames/"
+  url: "/hobbies/games/"
 
 - name: "Tech"
   slug: "tech"
@@ -47,13 +47,13 @@
   featured_image: "/assets/images/tech-bg.jpg"
   url: "/hobbies/tech/"
 
-- name: "Gym"
-  slug: "gym"
+- name: "Fitness"
+  slug: "fitness"
   emoji: "🏋️"
   color: "#F0F0F0"
   description: "From weights to cardio. The world of fitness."
   featured_image: "/assets/images/gym-bg.jpg"
-  url: "/hobbies/gym/"
+  url: "/hobbies/fitness/"
 
 - name: "Food"
   slug: "food"
