@@ -1,0 +1,298 @@
+// ========================================
+// 🎯 Hobbies Section Styles
+// ========================================
+
+.hobbies-hero {
+  background: linear-gradient(135deg, $accent-color 0%, $accent-secondary 100%);
+  color: white;
+  padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: block; // Override any grid layout
+  }
+
+  .hero-content {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: block;
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+      color: white;
+      font-weight: 800;
+      line-height: 1.1;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 100%;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+      font-weight: 600;
+      color: rgba(255,255,255,0.95);
+      text-align: center;
+      width: 100%;
+    }
+
+    .floating-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2rem auto 0;
+      width: 100%;
+      max-width: 800px;
+
+      .float-icon {
+        font-size: 3rem;
+        animation: floatAround 4s ease-in-out infinite;
+        animation-delay: var(--delay);
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  // Hide any hero-visual that might still exist
+  .hero-visual {
+    display: none;
+  }
+}
+
+.hobby-intro {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba($accent-color, 0.03), rgba($accent-secondary, 0.03));
+  border-radius: 20px;
+  border: 1px solid rgba($accent-color, 0.1);
+
+  .intro-content {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: $text-muted;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .intro-highlights {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+
+      .highlight-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: white;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border: 1px solid rgba($accent-color, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .highlight-icon {
+          font-size: 1.5rem;
+          color: $accent-color;
+        }
+
+        .highlight-text {
+          font-weight: 600;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Hobby cards grid
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.hobby-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    border-color: rgba($accent-color, 0.3);
+  }
+
+  .card-header {
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba($accent-color, 0.05), rgba($accent-secondary, 0.05));
+
+    .hobby-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: block;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .hobby-subtitle {
+      color: $text-muted;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .card-content {
+    padding: 0 2rem 2rem;
+
+    .hobby-description {
+      color: $text-dark;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .hobby-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: $background-light;
+      border-radius: 12px;
+
+      .stat-item {
+        text-align: center;
+
+        .stat-number {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $accent-color;
+          display: block;
+        }
+
+        .stat-label {
+          font-size: 0.8rem;
+          color: $text-muted;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+
+    .hobby-cta {
+      display: inline-block;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, $accent-color, $accent-secondary);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba($accent-color, 0.4);
+        text-decoration: none;
+        color: white;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      &:hover::before {
+        left: 100%;
+      }
+    }
+  }
+}
+
+// Floating animation for hobby icons
+@keyframes floatAround {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
