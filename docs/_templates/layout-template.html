@@ -1,0 +1,248 @@
+---
+# Layout Template for Jekyll Pages
+# Copy this template to _layouts/ directory and customize for specific page types
+# Filename should be descriptive: custom-page.html, portfolio.html, etc.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/images/og-default.jpg{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/images/og-default.jpg{% endif %}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{% if page.layout == 'post' %}BlogPosting{% else %}WebPage{% endif %}",
+        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+        "description": "{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}",
+        {% if page.image %}"image": "{{ site.url }}{{ page.image }}",{% endif %}
+        {% if page.date %}"datePublished": "{{ page.date | date_to_xmlschema }}",{% endif %}
+        {% if page.date %}"dateModified": "{{ page.date | date_to_xmlschema }}",{% endif %}
+        "author": {
+            "@type": "Person",
+            "name": "{{ site.author.name | default: 'Noxus' }}",
+            "url": "{{ site.url }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.title }}",
+            "url": "{{ site.url }}"
+        },
+        "url": "{{ site.url }}{{ page.url }}"
+    }
+    </script>
+</head>
+<body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    {% include header.html %}
+    
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Page Header Section (Optional) -->
+        {% if page.show_header != false %}
+        <header class="page-header">
+            {% if page.breadcrumbs %}
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li><a href="/">Home</a></li>
+                    {% for crumb in page.breadcrumbs %}
+                    <li>
+                        {% if crumb.url %}<a href="{{ crumb.url }}">{{ crumb.name }}</a>{% else %}{{ crumb.name }}{% endif %}
+                    </li>
+                    {% endfor %}
+                </ol>
+            </nav>
+            {% endif %}
+            
+            {% if page.title %}
+            <h1 class="page-title">{{ page.title }}</h1>
+            {% endif %}
+            
+            {% if page.subtitle %}
+            <p class="page-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+            
+            {% if page.show_meta != false and page.date %}
+            <div class="page-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}" class="page-date">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.read_time %}
+                <span class="page-read-time">{{ page.read_time }}</span>
+                {% endif %}
+                {% if page.category %}
+                <span class="page-category">{{ page.category | capitalize }}</span>
+                {% endif %}
+            </div>
+            {% endif %}
+        </header>
+        {% endif %}
+        
+        <!-- Page Content -->
+        <div class="page-content">
+            {{ content }}
+        </div>
+        
+        <!-- Page Footer Section (Optional) -->
+        {% if page.show_footer != false %}
+        <footer class="page-footer">
+            {% if page.tags and page.tags.size > 0 %}
+            <div class="page-tags">
+                <h3>Tags</h3>
+                <ul class="tag-list">
+                    {% for tag in page.tags %}
+                    <li class="tag-item">
+                        <a href="/tags/{{ tag | slugify }}/" class="tag-link">#{{ tag }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            {% if page.show_share != false %}
+            <div class="page-share">
+                <h3>Share this page</h3>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title | uri_escape }}" 
+                       class="share-button twitter" target="_blank" rel="noopener">
+                        Share on Twitter
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" 
+                       class="share-button linkedin" target="_blank" rel="noopener">
+                        Share on LinkedIn
+                    </a>
+                    <a href="mailto:?subject={{ page.title | uri_escape }}&body=Check out this page: {{ site.url }}{{ page.url }}" 
+                       class="share-button email">
+                        Share via Email
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if page.show_navigation != false %}
+            <nav class="page-navigation" aria-label="Page navigation">
+                {% if page.previous %}
+                <a href="{{ page.previous.url }}" class="nav-link nav-prev">
+                    <span class="nav-label">Previous</span>
+                    <span class="nav-title">{{ page.previous.title }}</span>
+                </a>
+                {% endif %}
+                
+                {% if page.next %}
+                <a href="{{ page.next.url }}" class="nav-link nav-next">
+                    <span class="nav-label">Next</span>
+                    <span class="nav-title">{{ page.next.title }}</span>
+                </a>
+                {% endif %}
+            </nav>
+            {% endif %}
+        </footer>
+        {% endif %}
+    </main>
+    
+    <!-- Footer -->
+    {% include footer.html %}
+    
+    <!-- JavaScript -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    
+    <!-- Page-specific JavaScript -->
+    {% if page.custom_js %}
+        {% for js_file in page.custom_js %}
+        <script src="{{ '/assets/js/' | append: js_file | relative_url }}"></script>
+        {% endfor %}
+    {% endif %}
+    
+    <!-- Inline JavaScript -->
+    {% if page.inline_js %}
+    <script>
+        {{ page.inline_js }}
+    </script>
+    {% endif %}
+    
+    <!-- Analytics (if configured) -->
+    {% if site.google_analytics %}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+</body>
+</html>
+
+<!-- 
+Template Usage Instructions:
+1. Copy this file to _layouts/ directory with a descriptive name
+2. Customize the layout for specific page types
+3. Add page-specific CSS classes or JavaScript as needed
+4. Configure front matter options for flexibility:
+
+Example front matter options:
+---
+layout: custom-page
+title: "Page Title"
+subtitle: "Optional subtitle"
+description: "Page description for SEO"
+image: "/assets/images/page-image.jpg"
+body_class: "custom-page-class"
+show_header: true
+show_footer: true
+show_meta: true
+show_share: true
+show_navigation: true
+breadcrumbs:
+  - name: "Section"
+    url: "/section/"
+  - name: "Current Page"
+custom_js:
+  - "custom-script.js"
+  - "another-script.js"
+inline_js: |
+  console.log('Page-specific JavaScript');
+---
+
+Customization Options:
+- Add page-specific CSS classes via body_class
+- Control header/footer visibility with show_* options
+- Add breadcrumb navigation
+- Include custom JavaScript files or inline scripts
+- Configure social sharing and page navigation
+- Add structured data for SEO
+-->

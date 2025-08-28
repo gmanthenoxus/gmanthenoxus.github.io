@@ -19,14 +19,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    {% include header.html %}
-    
-    <main>
-        {{ content }}
-    </main>
-    
-    {% include footer.html %}
+    {% include sidebar.html %}
+
+    <div class="site-wrapper">
+        {% include header.html %}
+
+        <main class="main-content">
+            {{ content }}
+        </main>
+
+        {% include footer.html %}
+    </div>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/sidebar.js"></script>
     <script src="/assets/js/homeInteractions.js"></script>
     <script src="/assets/js/blogFilter.js"></script>
     <script src="/assets/js/collapsible-sections.js"></script>

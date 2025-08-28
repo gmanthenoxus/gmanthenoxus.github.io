@@ -1,0 +1,350 @@
+// SCSS Component Template
+// Copy this template and customize for new UI components
+// Follow BEM methodology and use design tokens from _variables.scss
+
+/* ============================================================================
+   COMPONENT NAME
+   ============================================================================ */
+
+// Component Variables (if needed)
+$component-padding: $space-4;
+$component-border-radius: 8px;
+$component-transition: $transition-base;
+
+// Component Base Styles
+.component-name {
+  // Layout
+  display: block;
+  position: relative;
+  
+  // Box Model
+  padding: $component-padding;
+  margin: 0;
+  border: 1px solid $border-color;
+  border-radius: $component-border-radius;
+  
+  // Visual
+  background: $bg-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  // Typography
+  font-family: $font-primary;
+  font-size: $font-base;
+  line-height: 1.5;
+  color: $text-primary;
+  
+  // Transitions
+  transition: $component-transition;
+  
+  // States
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-green;
+    outline-offset: 2px;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  // Disabled state
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // Loading state
+  &.is-loading {
+    position: relative;
+    color: transparent;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border: 2px solid $primary-green;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+// Component Elements (BEM)
+.component-name__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-3;
+  padding-bottom: $space-2;
+  border-bottom: 1px solid $border-light;
+}
+
+.component-name__title {
+  margin: 0;
+  font-size: $font-lg;
+  font-weight: $font-semibold;
+  color: $text-primary;
+}
+
+.component-name__subtitle {
+  margin: $space-1 0 0;
+  font-size: $font-sm;
+  color: $text-secondary;
+}
+
+.component-name__content {
+  margin-bottom: $space-4;
+  
+  p {
+    margin-bottom: $space-3;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.component-name__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $space-3;
+  padding-top: $space-3;
+  border-top: 1px solid $border-light;
+}
+
+.component-name__action {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+.component-name__secondary-action {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+// Component Modifiers (BEM)
+.component-name--large {
+  padding: $space-6;
+  
+  .component-name__title {
+    font-size: $font-xl;
+  }
+}
+
+.component-name--small {
+  padding: $space-2;
+  
+  .component-name__title {
+    font-size: $font-base;
+  }
+}
+
+.component-name--primary {
+  border-color: $primary-green;
+  background: linear-gradient(135deg, rgba($primary-green, 0.05), rgba($primary-blue, 0.05));
+  
+  .component-name__title {
+    color: $primary-green;
+  }
+}
+
+.component-name--secondary {
+  border-color: $text-secondary;
+  background: $bg-light;
+}
+
+.component-name--success {
+  border-color: $success-color;
+  background: rgba($success-color, 0.05);
+  
+  .component-name__title {
+    color: $success-color;
+  }
+}
+
+.component-name--warning {
+  border-color: $warning-color;
+  background: rgba($warning-color, 0.05);
+  
+  .component-name__title {
+    color: $warning-color;
+  }
+}
+
+.component-name--error {
+  border-color: $error-color;
+  background: rgba($error-color, 0.05);
+  
+  .component-name__title {
+    color: $error-color;
+  }
+}
+
+// Responsive Behavior
+@include mobile-up {
+  .component-name {
+    padding: $space-5;
+  }
+  
+  .component-name--large {
+    padding: $space-8;
+  }
+}
+
+@include tablet-up {
+  .component-name {
+    padding: $space-6;
+  }
+  
+  .component-name__header {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .component-name__footer {
+    justify-content: space-between;
+  }
+}
+
+@include desktop-up {
+  .component-name {
+    max-width: 600px; // Adjust based on component needs
+  }
+}
+
+// Animation Keyframes
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Utility Classes for Component
+.component-name-grid {
+  display: grid;
+  gap: $space-4;
+  grid-template-columns: 1fr;
+  
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include desktop-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.component-name-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  
+  @include tablet-up {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+// Dark Mode Support (if applicable)
+@media (prefers-color-scheme: dark) {
+  .component-name {
+    background: $bg-dark;
+    border-color: $border-dark;
+    color: $text-dark;
+    
+    .component-name__title {
+      color: $text-dark;
+    }
+    
+    .component-name__subtitle {
+      color: $text-secondary-dark;
+    }
+  }
+}
+
+// Print Styles
+@media print {
+  .component-name {
+    box-shadow: none;
+    border: 1px solid #000;
+    background: white;
+    
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  
+  .component-name__action,
+  .component-name__secondary-action {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   COMPONENT USAGE EXAMPLES
+   ============================================================================ */
+
+/*
+Basic Usage:
+<div class="component-name">
+  <header class="component-name__header">
+    <h3 class="component-name__title">Component Title</h3>
+    <p class="component-name__subtitle">Optional subtitle</p>
+  </header>
+  <div class="component-name__content">
+    <p>Component content goes here.</p>
+  </div>
+  <footer class="component-name__footer">
+    <button class="component-name__action">Primary Action</button>
+    <button class="component-name__secondary-action">Secondary</button>
+  </footer>
+</div>
+
+With Modifiers:
+<div class="component-name component-name--large component-name--primary">
+  <!-- Component content -->
+</div>
+
+Grid Layout:
+<div class="component-name-grid">
+  <div class="component-name">...</div>
+  <div class="component-name">...</div>
+  <div class="component-name">...</div>
+</div>
+
+Template Customization Instructions:
+1. Replace "component-name" with your actual component name
+2. Adjust variables and measurements for your specific needs
+3. Customize colors and styling to match design requirements
+4. Add or remove modifiers based on component variations needed
+5. Update responsive breakpoints if different behavior is required
+6. Add component-specific animations or interactions
+7. Include accessibility considerations (ARIA labels, focus management)
+8. Test across different browsers and devices
+9. Document any special usage requirements or dependencies
+10. Consider performance implications of animations and effects
+*/

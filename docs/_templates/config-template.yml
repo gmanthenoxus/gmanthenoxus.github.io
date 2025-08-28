@@ -1,0 +1,297 @@
+# Jekyll Configuration Template
+# Copy this template and customize for different environments or features
+# Filename suggestions: _config_dev.yml, _config_staging.yml, _config_prod.yml
+
+# Site Settings
+title: "Your Site Title"
+description: "Your site description for SEO and social sharing"
+url: "https://yourdomain.com"  # Production URL
+baseurl: ""  # Subpath if site is hosted in subdirectory
+
+# Author Information
+author:
+  name: "Your Name"
+  email: "your.email@example.com"
+  twitter: "yourtwitterhandle"
+  github: "yourgithubusername"
+  linkedin: "yourlinkedinprofile"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+theme: minima  # or custom theme
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-archives
+
+# Kramdown Settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Archives (if using jekyll-archives)
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+    - year
+    - month
+  layouts:
+    category: archive-category
+    tag: archive-tag
+    year: archive-year
+    month: archive-month
+  permalinks:
+    category: '/categories/:name/'
+    tag: '/tags/:name/'
+    year: '/archives/:year/'
+    month: '/archives/:year/:month/'
+
+# Collections
+collections:
+  hobbies:
+    output: true
+    permalink: /hobbies/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+  team:
+    output: false
+  testimonials:
+    output: false
+
+# Collection Defaults
+defaults:
+  # Posts
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "posts"
+      author: "Your Name"
+      show_excerpts: true
+      comments: true
+  
+  # Hobbies
+  - scope:
+      path: ""
+      type: "hobbies"
+    values:
+      layout: "hobby"
+      show_related: true
+  
+  # Projects
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "post"
+      show_related: true
+      comments: false
+  
+  # Pages
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Sass Settings
+sass:
+  sass_dir: _sass
+  style: compressed  # compressed for production, expanded for development
+
+# Exclude from Processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - gulpfile.js
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - .DS_Store
+  - Thumbs.db
+
+# Include Files (override default excludes if needed)
+include:
+  - .htaccess
+  - _pages
+
+# Timezone
+timezone: America/New_York  # Adjust to your timezone
+
+# Encoding
+encoding: utf-8
+
+# Liquid Settings
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# Analytics
+google_analytics: "GA_TRACKING_ID"  # Replace with your GA4 tracking ID
+google_tag_manager: "GTM_ID"  # Optional: Google Tag Manager ID
+
+# Social Media
+social:
+  twitter:
+    username: "yourtwitterhandle"
+    card: "summary_large_image"
+  facebook:
+    app_id: "your_facebook_app_id"
+    publisher: "your_facebook_page_url"
+  linkedin:
+    username: "yourlinkedinprofile"
+  github:
+    username: "yourgithubusername"
+  instagram:
+    username: "yourinstagramhandle"
+
+# SEO Settings
+seo:
+  type: "Person"  # or "Organization"
+  name: "Your Name"
+  links:
+    - "https://twitter.com/yourtwitterhandle"
+    - "https://github.com/yourgithubusername"
+    - "https://linkedin.com/in/yourlinkedinprofile"
+
+# Comments (if using a commenting system)
+comments:
+  provider: "disqus"  # disqus, utterances, staticman, etc.
+  disqus:
+    shortname: "your_disqus_shortname"
+  utterances:
+    repo: "yourusername/yourrepo"
+    issue_term: "pathname"
+    theme: "github-light"
+
+# Search (if implementing search)
+search:
+  enabled: true
+  provider: "lunr"  # lunr, algolia, etc.
+  lunr:
+    search_within: "title,content,categories,tags"
+
+# Performance Settings
+incremental: false  # Set to true for faster builds during development
+profile: false  # Set to true to see build performance stats
+strict_front_matter: false
+
+# Development Settings (override in _config_dev.yml)
+show_drafts: false
+future: false
+unpublished: false
+
+# Custom Variables (site-specific)
+brand:
+  name: "Your Brand"
+  logo: "/assets/images/logo.png"
+  favicon: "/favicon.ico"
+  colors:
+    primary: "#008753"
+    secondary: "#012169"
+    accent: "#4ECDC4"
+
+navigation:
+  main:
+    - name: "Home"
+      url: "/"
+    - name: "About"
+      url: "/about/"
+    - name: "Blog"
+      url: "/blog/"
+    - name: "Projects"
+      url: "/projects/"
+    - name: "Hobbies"
+      url: "/hobbies/"
+    - name: "Contact"
+      url: "/contact/"
+
+footer:
+  links:
+    - name: "Privacy Policy"
+      url: "/privacy/"
+    - name: "Terms of Service"
+      url: "/terms/"
+    - name: "Sitemap"
+      url: "/sitemap.xml"
+
+# Feature Flags
+features:
+  dark_mode: true
+  search: true
+  comments: true
+  analytics: true
+  social_sharing: true
+  related_posts: true
+  reading_time: true
+  table_of_contents: true
+
+# Content Settings
+excerpt_separator: "<!--more-->"
+show_excerpts: true
+words_per_minute: 200  # For reading time calculation
+
+# Image Settings
+image_path: "/assets/images"
+default_image: "/assets/images/default-og.jpg"
+
+# Contact Form (if using a form service)
+contact:
+  email: "your.email@example.com"
+  form_action: "https://formspree.io/f/your_form_id"  # or other form service
+
+# Newsletter (if using a newsletter service)
+newsletter:
+  provider: "mailchimp"  # mailchimp, convertkit, etc.
+  action_url: "https://your-mailchimp-url.com"
+  success_message: "Thanks for subscribing!"
+
+# Environment-Specific Overrides
+# Create separate config files for different environments:
+# _config_dev.yml - Development settings
+# _config_staging.yml - Staging settings  
+# _config_prod.yml - Production settings
+
+# Usage:
+# Development: bundle exec jekyll serve --config _config.yml,_config_dev.yml
+# Staging: bundle exec jekyll build --config _config.yml,_config_staging.yml
+# Production: bundle exec jekyll build --config _config.yml,_config_prod.yml
+
+# Template Customization Instructions:
+# 1. Replace all placeholder values with your actual information
+# 2. Adjust collections based on your content structure
+# 3. Configure plugins based on your needs
+# 4. Set up analytics and social media integration
+# 5. Customize navigation and footer links
+# 6. Enable/disable features based on requirements
+# 7. Create environment-specific config files
+# 8. Test configuration with different build commands
+# 9. Validate all URLs and external integrations
+# 10. Document any custom variables or settings

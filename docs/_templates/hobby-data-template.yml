@@ -1,0 +1,62 @@
+# Hobby Data Template for _data/hobbies.yml
+# Copy this template and customize for each new hobby
+
+- name: "Hobby Display Name"
+  slug: "hobby-slug"  # Used in URLs, should match the .md filename
+  emoji: "🎯"  # Choose an emoji that represents the hobby
+  color: "#HEX_COLOR"  # Hex color code that matches the hobby's personality
+  description: "Brief description for hobby cards and previews (1-2 sentences)"
+  featured_image: "/assets/images/hobby-name-bg.jpg"  # Background image for the hobby
+  url: "/hobbies/hobby-name/"  # URL path to the hobby page
+
+# Color Palette Suggestions:
+# Sports: #4ECDC4 (Teal) - Energy and competition
+# Games: #F0F0F0 (Light Gray) - Neutral and versatile
+# Fitness: #E8F5E9 (Light Green) - Health and growth
+# Food: #FFF3E0 (Light Orange) - Warmth and creativity
+# Sneakers: #FFE5B4 (Light Peach) - Style and culture
+# Tech: #E3F2FD (Light Blue) - Innovation and logic
+# Music: #F3E5F5 (Light Purple) - Creativity and expression
+# Art: #FFEBEE (Light Pink) - Creativity and beauty
+# Travel: #E0F2F1 (Light Teal) - Adventure and discovery
+# Reading: #FFF8E1 (Light Yellow) - Knowledge and learning
+# Photography: #EFEBE9 (Light Brown) - Capturing moments
+# Gardening: #E8F5E9 (Light Green) - Growth and nature
+
+# Emoji Suggestions by Category:
+# Sports: ⚽ 🏀 🏈 ⚾ 🎾 🏐 🏓 🏸 🥊 🏋️
+# Games: 🎮 🎲 🃏 🎯 🎪 🎨 🧩 🎭 🎪
+# Fitness: 🏋️ 💪 🏃 🚴 🧘 🤸 🏊 🥋 ⛹️
+# Food: 🍔 🍕 🍜 🍳 👨‍🍳 🥘 🍰 🥗 🍱
+# Fashion: 👟 👕 👗 👔 💄 💍 👜 🕶️ 👠
+# Tech: 💻 📱 ⌚ 🖥️ 🔧 ⚙️ 🤖 💾 🔌
+# Creative: 🎨 📸 🎵 ✍️ 🎬 🎪 🎭 🖌️ 📝
+# Outdoor: 🏕️ 🥾 🌲 🏔️ 🚵 🎣 🏄 ⛷️ 🧗
+# Learning: 📚 🎓 🔬 🧪 📖 ✏️ 🎯 🧠 💡
+
+# Template Usage Instructions:
+# 1. Copy this template for each new hobby
+# 2. Customize all fields with hobby-specific information
+# 3. Choose appropriate emoji and color that match the hobby's personality
+# 4. Ensure the slug matches your hobby page filename (without .md extension)
+# 5. Create the corresponding featured image in /assets/images/
+# 6. Add the entry to the main _data/hobbies.yml file
+# 7. Test the hobby page renders correctly with the new data
+
+# Example Complete Entry:
+# - name: "Photography & Visual Storytelling"
+#   slug: "photography"
+#   emoji: "📸"
+#   color: "#EFEBE9"
+#   description: "Capturing moments and telling stories through the lens of creativity and technical precision."
+#   featured_image: "/assets/images/photography-bg.jpg"
+#   url: "/hobbies/photography/"
+
+# Quality Checklist:
+# ✅ Name is descriptive and includes focus area
+# ✅ Slug is lowercase, hyphenated, and matches filename
+# ✅ Emoji is relevant and visually appealing
+# ✅ Color complements the site's overall design
+# ✅ Description is engaging and mentions technical connection
+# ✅ Featured image exists and is optimized for web
+# ✅ URL path is correct and follows site structure

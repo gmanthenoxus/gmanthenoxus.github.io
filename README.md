@@ -1,14 +1,6 @@
 # Noxus' Hub - Personal Portfolio Website
 
-A modern, interactive personal portfolio website showcasing projects, hobbies, and blog posts. Built with Jekyll and hosted on GitHub Pages, featuring a comprehensive blog template system and developer challenges.
-
-## **What Makes This Special**
-
-✨ **4 Specialized Blog Templates** - Listicle, Case Study, How-To, and Standard layouts
-🚀 **Developer Challenges** - Interactive coding challenges with difficulty ratings
-🎨 **Modern UI System** - Green-to-blue gradient theme with smooth animations
-📱 **Mobile-First Design** - Responsive layouts that work beautifully on all devices
-⚡ **Performance Optimized** - Fast loading with 95+ Lighthouse scores
+A comprehensive personal portfolio website showcasing the intersection of technical skills with personal passions. Built with Jekyll and hosted on GitHub Pages, featuring specialized blog templates, comprehensive hobby pages, and detailed project showcases.
 
 ## 🌟 Features
 
@@ -37,10 +29,11 @@ A modern, interactive personal portfolio website showcasing projects, hobbies, a
 Visit the live website: [https://gmanthenoxus.github.io](https://gmanthenoxus.github.io)
 
 ### 🚀 **Project & Hobby Showcase**
-- **Project Collection**: Dedicated section for technical projects and builds
-- **Hobby Collection**: Personal interests and passion projects
-- **Dynamic Content**: Data-driven content management
-- **Rich Media Support**: Images, videos, and interactive elements
+- **7 Comprehensive Projects**: Fantasy Sports Optimizer, Sneaker Drop Tracker, Smart Workout Tracker, and more
+- **7 Detailed Hobby Pages**: Sports Analytics, Games, Fitness, Food, Sneakers, Tech, and Anime
+- **Technical Integration**: Every hobby connected to programming projects and innovation
+- **Real Impact Metrics**: Concrete user numbers, performance data, and success stories
+- **Professional Documentation**: Detailed technical implementation and architecture examples
 
 ### 🔗 **Integration & Contact**
 - **Contact Forms**: Easy ways to connect and collaborate
@@ -61,43 +54,65 @@ Visit the live website: [https://gmanthenoxus.github.io](https://gmanthenoxus.gi
 
 ```
 gmanthenoxus.github.io/
-├── README.md
-├── blogTemplate.md         # Blog template guide and strategy
-└── docs/                   # Jekyll site root
-    ├── _config.yml         # Jekyll configuration
-    ├── _data/              # Data files for dynamic content
-    ├── _hobbies/           # Hobby collection pages
-    ├── _includes/          # Reusable HTML components
-    ├── _layouts/           # Page templates
-    │   ├── default.html    # Base layout
-    │   ├── posts.html      # Standard blog post layout
-    │   ├── post-listicle.html    # Listicle template
-    │   ├── post-case-study.html  # Case study template
-    │   └── post-how-to.html      # How-to guide template
-    ├── _posts/             # Blog posts
-    ├── _projects/          # Project collection pages
-    ├── _sass/              # Modular SCSS stylesheets
-    │   ├── _variables.scss # Color and spacing variables
-    │   ├── _base.scss      # Base styles and resets
-    │   ├── _components.scss # Reusable components
-    │   └── _homepage.scss  # Homepage-specific styles
-    ├── _templates/         # Blog post templates
-    │   ├── README.md       # Template selection guide
-    │   ├── listicle-template.md    # Listicle template
-    │   ├── case-study-template.md  # Case study template
-    │   └── how-to-template.md      # How-to template
-    ├── assets/             # Static assets
-    │   ├── css/main.scss   # Main stylesheet
-    │   ├── js/             # JavaScript files
-    │   └── images/         # Image assets
-    ├── index.html          # Homepage
-    ├── about.html          # About page
-    ├── blog.html           # Blog listing page
-    ├── builds.html         # Projects listing page
-    ├── contact.html        # Contact page
-    ├── hobbies.html        # Hobbies listing page
-    ├── Gemfile             # Ruby dependencies
-    └── Gemfile.lock        # Locked dependency versions
+├── README.md                    # Main project documentation
+├── blogTemplate.md             # Blog template guide and strategy
+└── docs/                       # Jekyll site root
+    ├── _config.yml             # Jekyll configuration
+    ├── DEVELOPMENT.md          # Development and deployment guide
+    ├── _data/                  # Data files for dynamic content
+    │   └── hobbies.yml         # Hobby metadata and configuration
+    ├── _hobbies/               # Hobby collection pages (7 comprehensive pages)
+    │   ├── README.md           # Hobby system documentation
+    │   ├── anime.md            # Anime & Culture page
+    │   ├── board-games.md      # Games & Interactive Media page
+    │   ├── culinary.md         # Food & Culinary Tech page
+    │   ├── fitness.md          # Fitness & Performance page
+    │   ├── sneakers.md         # Sneakers & Street Culture page
+    │   ├── sports.md           # Sports & Analytics page
+    │   └── tech.md             # Technology & Innovation page
+    ├── _includes/              # Reusable HTML components
+    │   ├── header.html         # Site header with navigation
+    │   └── footer.html         # Site footer
+    ├── _layouts/               # Page templates
+    │   ├── default.html        # Base layout with header/footer
+    │   ├── hobby.html          # Comprehensive hobby page layout
+    │   ├── posts.html          # Standard blog post layout
+    │   ├── post-listicle.html  # Listicle template with interactive elements
+    │   ├── post-case-study.html # Case study template with metrics
+    │   └── post-how-to.html    # How-to guide template with steps
+    ├── _posts/                 # Blog posts (12 example posts)
+    ├── _projects/              # Project collection pages (7 detailed projects)
+    │   ├── README.md           # Project system documentation
+    │   ├── anime-quote-bot.md  # Anime Quote Bot project
+    │   ├── automation-suite.md # Personal Automation Suite project
+    │   ├── board-game-platform.md # Digital Board Game Platform project
+    │   ├── fantasy-sports-optimizer.md # Fantasy Sports Optimizer project
+    │   ├── recipe-manager.md   # Smart Recipe Manager project
+    │   ├── smart-workout-tracker.md # Smart Workout Tracker project
+    │   └── sneaker-drop-tracker.md # Sneaker Drop Tracker project
+    ├── _sass/                  # Modular SCSS stylesheets
+    │   ├── README.md           # SASS system documentation
+    │   ├── _variables.scss     # Design tokens and configuration
+    │   ├── _base.scss          # Base styles and resets
+    │   ├── _components.scss    # Reusable UI components
+    │   └── _homepage.scss      # Homepage-specific styles
+    ├── _templates/             # Blog post templates
+    │   ├── README.md           # Template selection guide
+    │   ├── listicle-template.md # Listicle template
+    │   ├── case-study-template.md # Case study template
+    │   └── how-to-template.md  # How-to template
+    ├── assets/                 # Static assets
+    │   ├── css/main.scss       # Main stylesheet with imports
+    │   ├── js/                 # JavaScript files
+    │   └── images/             # Image assets and project screenshots
+    ├── index.html              # Homepage with tabbed navigation
+    ├── about.html              # About page
+    ├── blog.html               # Blog listing page with filtering
+    ├── builds.html             # Enhanced projects showcase page
+    ├── contact.html            # Contact page
+    ├── hobbies.html            # Hobbies listing page
+    ├── Gemfile                 # Ruby dependencies
+    └── Gemfile.lock            # Locked dependency versions
 ```
 
 ## 🏃‍♂️ Quick Start
@@ -374,6 +389,24 @@ This is a personal portfolio website, but suggestions and improvements are welco
 - **Email**: thisisnoxus@gmail.com
 - **GitHub**: [@gmanthenoxus](https://github.com/gmanthenoxus)
 - **Website**: [https://gmanthenoxus.github.io](https://gmanthenoxus.github.io)
+
+## 📚 Documentation
+
+### **Comprehensive Documentation System**
+- **Main README**: Overview and quick start guide
+- **Development Guide**: `docs/DEVELOPMENT.md` - Setup, workflows, and deployment
+- **Projects Documentation**: `docs/_projects/README.md` - Project system and standards
+- **Hobbies Documentation**: `docs/_hobbies/README.md` - Hobby page system and templates
+- **SASS Documentation**: `docs/_sass/README.md` - Styling system and design tokens
+- **Template Guide**: `docs/_templates/README.md` - Blog template selection and usage
+
+### **Content Statistics**
+- **7 Hobby Pages**: 1,400+ lines of comprehensive content
+- **7 Detailed Projects**: Professional portfolio with real impact metrics
+- **12 Blog Posts**: Examples across all template types
+- **9 Template Files**: Complete templates for all website components
+- **6 Documentation Files**: 2,500+ lines of comprehensive documentation
+- **Modular SASS**: Organized styling system with design tokens
 
 ## 📄 License
 

@@ -1,6 +1,24 @@
-# Blog Post Template Guide
+# Website Templates Collection
 
-## 🎯 Quick Template Selection
+This directory contains comprehensive templates for all parts of the website, from blog posts to components, layouts, and configuration files. Each template is designed to maintain consistency while providing flexibility for customization.
+
+## 📋 Template Categories
+
+### **Content Templates**
+- **Blog Post Templates**: Specialized layouts for different content types
+- **Hobby Page Template**: Comprehensive template for personal interest pages
+- **Project Template**: Detailed project documentation structure
+- **Data Templates**: YAML structure templates for consistent data
+
+### **Development Templates**
+- **Layout Template**: HTML layout for new page types
+- **SCSS Component Template**: Styling template following design system
+- **JavaScript Component Template**: Interactive component development
+- **Configuration Template**: Jekyll configuration for different environments
+
+## 🎯 Blog Post Templates
+
+### **Quick Template Selection**
 
 | **Your Goal** | **Use This Template** | **Best For** |
 |---------------|----------------------|--------------|
@@ -118,6 +136,93 @@ Based on your blog template guide:
 - **Case Studies**: Best for backlinks and authority
 - **How-To Guides**: Best for SEO and user value
 
+## 🏗️ Development Templates
+
+### **Layout Template** (`layout-template.html`)
+**Purpose**: HTML layout for new page types
+**Features**:
+- Complete HTML5 structure with SEO meta tags
+- Accessibility features (skip links, ARIA labels)
+- Social media optimization (Open Graph, Twitter Cards)
+- Flexible header/footer sections
+- Breadcrumb navigation support
+- Custom JavaScript and CSS integration
+
+**Usage**: Copy to `_layouts/` directory and customize for specific page types
+
+### **SCSS Component Template** (`scss-component-template.scss`)
+**Purpose**: Styling template following design system
+**Features**:
+- BEM methodology structure
+- Design token integration
+- Responsive behavior patterns
+- Animation and transition standards
+- Accessibility considerations
+- Dark mode support
+
+**Usage**: Copy and customize for new UI components
+
+### **JavaScript Component Template** (`js-component-template.js`)
+**Purpose**: Interactive component development
+**Features**:
+- Modern ES6+ class structure
+- Event handling and state management
+- Accessibility features (keyboard navigation)
+- Touch and mobile support
+- Error handling and debugging
+- Auto-initialization system
+
+**Usage**: Copy and customize for interactive features
+
+### **Configuration Template** (`config-template.yml`)
+**Purpose**: Jekyll configuration for different environments
+**Features**:
+- Complete Jekyll configuration options
+- Environment-specific settings
+- Plugin and collection configuration
+- SEO and analytics integration
+- Performance optimization settings
+- Custom variables and feature flags
+
+**Usage**: Copy and customize for development/staging/production environments
+
+## 📄 Content Templates
+
+### **Hobby Page Template** (`hobby-template.md`)
+**Purpose**: Comprehensive template for personal interest pages
+**Features**:
+- Complete front matter structure with all sections
+- Personal journey and statistics integration
+- Technical project connections
+- Interactive elements (trivia, fun facts)
+- External platform integration
+- Consistent 200+ line content structure
+
+**Usage**: Copy and customize for new hobby pages
+
+### **Project Template** (`project-template.md`)
+**Purpose**: Detailed project documentation structure
+**Features**:
+- Problem/solution framework
+- Technical implementation examples
+- Results and impact metrics
+- User testimonials and success stories
+- Future development roadmap
+- Technology stack documentation
+
+**Usage**: Copy and customize for new project documentation
+
+### **Data Template** (`hobby-data-template.yml`)
+**Purpose**: YAML data structure for hobbies
+**Features**:
+- Complete hobby metadata structure
+- Color palette and emoji suggestions
+- URL and navigation configuration
+- Quality checklist and validation
+- Usage instructions and examples
+
+**Usage**: Copy and customize for new hobby data entries
+
 ## 🔄 Template Updates
 
 Templates are living documents. Update them based on:
@@ -125,7 +230,12 @@ Templates are living documents. Update them based on:
 - Reader feedback
 - New content ideas
 - Industry best practices
+- Technical improvements
+- Accessibility enhancements
 
 ---
 
-**Need help?** Check the original `blogTemplate.md` for detailed guidance on each post type.
+**Complete Template System**: Templates for all website components and content types
+**Development Standards**: Consistent patterns and best practices across all templates
+**Content Quality**: Detailed templates ensuring rich, engaging content
+**Technical Integration**: Seamless connection between content and code
