@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Digital Board Game Platform"
 date: 2024-04-05
 hobby: games

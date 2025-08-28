@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio showcasing my passions and projects">
+    <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
+    <meta name="author" content="Noxus' Hub">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Contact Me | Noxus' Hub">
+    <meta property="og:description" content="A portfolio showcasing my passions and projects">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gmanthenoxus.github.io/contact.html">
+    
+    <title>Contact Me | Noxus' Hub</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" role="banner">
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <a href="/" class="nav-logo" aria-label="Home">
+                <span class="logo-text">Noxus' Hub</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/about/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">👨‍💻</span>
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/blog/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">📝</span>
+                            <span class="nav-text">Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/builds/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">🚀</span>
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/hobbies/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">🎯</span>
+                            <span class="nav-text">Hobbies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/contact/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">📧</span>
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav-overlay" aria-hidden="true"></div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <div class="contact-page">
+    <div class="container">
+        <header class="page-header">
+            <h1>Get In Touch</h1>
+            <p>Let's start a conversation</p>
+        </header>
+
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to chat about shared interests, feel free to reach out.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:thisisnoxus@gmail.com">thisisnoxus@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>💬 Social Media</h3>
+                        <div class="social-links">
+                            
+                            <p><strong>GitHub:</strong> <a href="https://github.com/gmanthenoxus" target="_blank">@gmanthenoxus</a></p>
+                            
+                            <!-- Add other social links as needed -->
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h3>📍 Location</h3>
+                        <p>Based in [Your Location]</p>
+                        <p>Open to remote collaboration worldwide</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <h2>Send Me a Message</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.contact-page {
+    padding: 2rem 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #718096;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-method h3 {
+    margin-bottom: 1rem;
+    color: #2D3747;
+}
+
+.contact-method p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-section h2 {
+    margin-bottom: 2rem;
+    color: #2D3747;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2D3747;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF6B35;
+}
+
+.btn-primary {
+    align-self: flex-start;
+    padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+    </main>
+
+    <footer class="site-footer">
+    <div class="social-links">
+        
+            <a href="https://github.com/gmanthenoxus" target="_blank">GitHub</a>
+        
+        <!-- Add more social links as needed -->
+    </div>
+    <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
+</footer>
+    <script src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/project-filter.js"></script>
+    <script src="/assets/js/progress-tracker.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/homeInteractions.js"></script>
+    <script src="/assets/js/blogFilter.js"></script>
+    <script src="/assets/js/collapsible-sections.js"></script>
+    <script src="/assets/js/mobile-navigation.js"></script>
+    <script src="/assets/js/hobby-filter.js"></script>
+</body>
+</html>

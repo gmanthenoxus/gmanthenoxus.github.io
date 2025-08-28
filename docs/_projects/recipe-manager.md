@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Smart Recipe Manager"
 date: 2024-03-01
 hobby: food

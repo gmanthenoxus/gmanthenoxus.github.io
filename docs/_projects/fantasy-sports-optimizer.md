@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Fantasy Sports Lineup Optimizer"
 date: 2024-03-15
 hobby: sports

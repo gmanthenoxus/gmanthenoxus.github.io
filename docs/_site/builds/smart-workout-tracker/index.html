@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart Workout Tracker
+">
+    <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
+    <meta name="author" content="Noxus' Hub">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Smart Workout Tracker | Noxus' Hub">
+    <meta property="og:description" content="Smart Workout Tracker
+">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gmanthenoxus.github.io/builds/smart-workout-tracker/">
+    
+    <title>Smart Workout Tracker | Noxus' Hub</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" role="banner">
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <a href="/" class="nav-logo" aria-label="Home">
+                <span class="logo-text">Noxus' Hub</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/about/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">👨‍💻</span>
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/blog/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">📝</span>
+                            <span class="nav-text">Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/builds/" class="nav-link" role="menuitem"
+                           aria-current="page">
+                            <span class="nav-icon">🚀</span>
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/hobbies/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">🎯</span>
+                            <span class="nav-text">Hobbies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/contact/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-icon">📧</span>
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav-overlay" aria-hidden="true"></div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <article class="project-page">
+    <!-- Project Header -->
+    <header class="project-header">
+        <div class="header-background">
+            
+            <img src="/assets/images/projects/workout-tracker.jpg" alt="Smart Workout Tracker background" class="header-bg-image">
+            
+            <div class="header-overlay"></div>
+        </div>
+        
+        <div class="header-content">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                            <li><a href="/hobbies/fitness/">Fitness</a></li>
+                            
+                    
+                    <li aria-current="page">Smart Workout Tracker</li>
+                </ol>
+            </nav>
+            
+            <!-- Project Title and Meta -->
+            <div class="project-title-section">
+                <h1 class="project-title">Smart Workout Tracker</h1>
+                <p class="project-subtitle">AI-powered fitness app that analyzes workout patterns, suggests optimal training loads, and predicts performance plateaus before they happen.</p>
+                
+                <!-- Project Meta Information -->
+                <div class="project-meta">
+                    <!-- Status Badge -->
+                    <div class="project-status development">
+                        
+                                <span class="status-icon">🔧</span>In Progress
+                            
+                    </div>
+                    
+                    <!-- Hobby Tag -->
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                            <a href="/hobbies/fitness/" class="hobby-tag fitness">
+                                🏋️ Fitness
+                            </a>
+                            
+                    
+                    
+                    <!-- Date -->
+                    
+                    <time class="project-date" datetime="2024-01-10T00:00:00+00:00">
+                        January 2024
+                    </time>
+                    
+                </div>
+                
+                <!-- Progress Bar (for non-completed projects) -->
+                
+                <div class="project-progress-section">
+                    <div class="progress-info">
+                        <span class="progress-label">Project Progress</span>
+                        <span class="progress-percentage">75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                
+                <!-- Quick Actions -->
+                <div class="project-actions">
+                    
+                    <a href="https://github.com/gmanthenoxus/smart-workout-tracker" class="btn btn-secondary" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View Code
+                    </a>
+                    
+                    
+                    
+                    <a href="https://workout-tracker.gmanthenoxus.dev" class="btn btn-primary" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                        </svg>
+                        Live Demo
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Project Content -->
+    <div class="project-content">
+        <!-- Project Overview Sidebar -->
+        <aside class="project-sidebar">
+            <!-- Tech Stack -->
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Tech Stack</h3>
+                <div class="tech-stack-list">
+                    
+                    <span class="tech-item">React Native</span>
+                    
+                    <span class="tech-item">TensorFlow</span>
+                    
+                    <span class="tech-item">Python</span>
+                    
+                    <span class="tech-item">Firebase</span>
+                    
+                    <span class="tech-item">Computer Vision</span>
+                    
+                    <span class="tech-item">HealthKit</span>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- Project Stats -->
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Key Metrics</h3>
+                <div class="stats-list">
+                    
+                    <div class="stat-item">
+                        <span class="stat-value">92%</span>
+                        <span class="stat-label">Accuracy Rate</span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-value">150+</span>
+                        <span class="stat-label">Exercises Supported</span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-value">500</span>
+                        <span class="stat-label">Beta Users</span>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-value">10K+</span>
+                        <span class="stat-label">Form Corrections</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- Project Timeline -->
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Timeline</h3>
+                <div class="timeline-list">
+                    
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Research & Planning</h4>
+                            
+                            <time class="timeline-date">Dec 2023</time>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Core AI Model Development</h4>
+                            
+                            <time class="timeline-date">Jan 2024</time>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Computer Vision Integration</h4>
+                            
+                            <time class="timeline-date">Feb 2024</time>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item ">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Mobile App Development</h4>
+                            
+                            <time class="timeline-date">Mar 2024</time>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item ">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Beta Testing Phase</h4>
+                            
+                            <time class="timeline-date">Apr 2024</time>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item ">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title">Public Release</h4>
+                            
+                            <time class="timeline-date">May 2024</time>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- TO-DO List -->
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">
+                    <span class="todo-icon">📋</span>
+                    Project Tasks
+                </h3>
+                <div class="todo-list">
+                    
+                    <div class="todo-item  priority-high">
+                        <div class="todo-checkbox">
+                            ⬜
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Complete iOS app store submission</span>
+                            
+                            <span class="todo-priority high">high</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="todo-item  priority-medium">
+                        <div class="todo-checkbox">
+                            ⬜
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Implement social sharing features</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="todo-item  priority-medium">
+                        <div class="todo-checkbox">
+                            ⬜
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Add nutrition tracking integration</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="todo-item  priority-high">
+                        <div class="todo-checkbox">
+                            ⬜
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Optimize AI model for edge devices</span>
+                            
+                            <span class="todo-priority high">high</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="todo-item completed priority-high">
+                        <div class="todo-checkbox">
+                            ✅
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Create onboarding tutorial</span>
+                            
+                            <span class="todo-priority high">high</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="todo-item  priority-low">
+                        <div class="todo-checkbox">
+                            ⬜
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Implement offline mode</span>
+                            
+                            <span class="todo-priority low">low</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="todo-item  priority-medium">
+                        <div class="todo-checkbox">
+                            ⬜
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Add Apple Watch support</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="todo-item completed priority-high">
+                        <div class="todo-checkbox">
+                            ✅
+                        </div>
+                        <div class="todo-content">
+                            <span class="todo-text">Build exercise library</span>
+                            
+                            <span class="todo-priority high">high</span>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Progress Summary -->
+                
+                
+                
+                
+                <div class="todo-progress">
+                    <div class="todo-progress-bar">
+                        <div class="todo-progress-fill" style="width: 25%"></div>
+                    </div>
+                    <span class="todo-progress-text">
+                        2 of 8 tasks completed
+                    </span>
+                </div>
+            </div>
+            
+            
+            <!-- Related Links -->
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Related Links</h3>
+                <div class="related-links">
+                    
+                    <a href="/hobbies/fitness/" class="related-link" >
+                        💪
+                        Fitness Hobby Page
+                    </a>
+                    
+                    <a href="https://testflight.apple.com/join/workout-tracker" class="related-link" target="_blank" rel="noopener">
+                        🧪
+                        Beta Testing Program
+                    </a>
+                    
+                    <a href="https://arxiv.org/abs/2024.workout.ai" class="related-link" target="_blank" rel="noopener">
+                        📄
+                        Research Paper
+                    </a>
+                    
+                    <a href="https://blog.gmanthenoxus.dev/workout-tracker" class="related-link" target="_blank" rel="noopener">
+                        📝
+                        Development Blog
+                    </a>
+                    
+                </div>
+            </div>
+            
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="project-main">
+            <h1 id="smart-workout-tracker">Smart Workout Tracker</h1>
+
+<p>An intelligent fitness companion that goes beyond simple rep counting to provide personalized insights, form analysis, and predictive recommendations for optimal training progression.</p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>Traditional fitness apps are glorified spreadsheets that track what you did, not what you should do next. They can’t analyze your form, predict when you’ll plateau, or understand the complex relationships between different exercises, recovery, and performance.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>Built an AI-powered system that:</p>
+<ul>
+  <li><strong>Analyzes workout patterns</strong> using machine learning to identify trends and optimization opportunities</li>
+  <li><strong>Provides form feedback</strong> through computer vision analysis of exercise execution</li>
+  <li><strong>Predicts plateaus</strong> before they happen and suggests program modifications</li>
+  <li><strong>Personalizes recommendations</strong> based on individual response patterns and goals</li>
+</ul>
+
+<h2 id="key-features">Key Features</h2>
+
+<h3 id="-intelligent-analysis">🧠 <strong>Intelligent Analysis</strong></h3>
+<ul>
+  <li>Machine learning algorithms that analyze workout patterns and progression</li>
+  <li>Predictive modeling to forecast performance plateaus 2-3 weeks in advance</li>
+  <li>Personalized volume and intensity recommendations based on recovery metrics</li>
+  <li>Exercise selection optimization based on individual response patterns</li>
+</ul>
+
+<h3 id="-computer-vision-form-analysis">📹 <strong>Computer Vision Form Analysis</strong></h3>
+<ul>
+  <li>Real-time form analysis using smartphone camera and MediaPipe</li>
+  <li>Instant feedback on exercise execution with specific correction suggestions</li>
+  <li>Range of motion tracking and consistency scoring</li>
+  <li>Injury risk assessment based on movement patterns</li>
+</ul>
+
+<h3 id="-advanced-metrics">📊 <strong>Advanced Metrics</strong></h3>
+<ul>
+  <li>Volume load progression tracking with statistical analysis</li>
+  <li>Recovery metrics integration (HRV, sleep quality, subjective wellness)</li>
+  <li>Strength curve analysis to identify weak points in lifts</li>
+  <li>Performance prediction modeling with confidence intervals</li>
+</ul>
+
+<h3 id="-personalized-programming">🎯 <strong>Personalized Programming</strong></h3>
+<ul>
+  <li>Adaptive program modification based on performance data</li>
+  <li>Deload week timing optimization using fatigue indicators</li>
+  <li>Exercise substitution recommendations for plateau breaking</li>
+  <li>Goal-specific periodization with automatic adjustments</li>
+</ul>
+
+<h2 id="technical-implementation">Technical Implementation</h2>
+
+<h3 id="machine-learning-pipeline"><strong>Machine Learning Pipeline</strong></h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example of the plateau prediction algorithm
+</span><span class="k">class</span> <span class="nc">PlateauPredictor</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">load_trained_model</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">feature_extractor</span> <span class="o">=</span> <span class="nc">FeatureExtractor</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">predict_plateau_risk</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">user_data</span><span class="p">):</span>
+        <span class="c1"># Extract relevant features
+</span>        <span class="n">features</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">feature_extractor</span><span class="p">.</span><span class="nf">extract_features</span><span class="p">(</span><span class="n">user_data</span><span class="p">)</span>
+        
+        <span class="c1"># Features include:
+</span>        <span class="c1"># - Recent performance trends
+</span>        <span class="c1"># - Volume progression rate
+</span>        <span class="c1"># - Recovery metrics
+</span>        <span class="c1"># - Training frequency patterns
+</span>        
+        <span class="n">plateau_probability</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="nf">predict_proba</span><span class="p">([</span><span class="n">features</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">plateau_probability</span> <span class="o">&gt;</span> <span class="mf">0.7</span><span class="p">:</span>
+            <span class="n">recommendations</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">generate_recommendations</span><span class="p">(</span><span class="n">user_data</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="sh">'</span><span class="s">risk_level</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">high</span><span class="sh">'</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">probability</span><span class="sh">'</span><span class="p">:</span> <span class="n">plateau_probability</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">recommendations</span><span class="sh">'</span><span class="p">:</span> <span class="n">recommendations</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">timeline</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">2-3 weeks</span><span class="sh">'</span>
+            <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="p">{</span><span class="sh">'</span><span class="s">risk_level</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">low</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">probability</span><span class="sh">'</span><span class="p">:</span> <span class="n">plateau_probability</span><span class="p">}</span>
+    
+    <span class="k">def</span> <span class="nf">generate_recommendations</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">user_data</span><span class="p">,</span> <span class="n">features</span><span class="p">):</span>
+        <span class="n">recommendations</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">if</span> <span class="n">features</span><span class="p">[</span><span class="sh">'</span><span class="s">volume_increase_rate</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.15</span><span class="p">:</span>
+            <span class="n">recommendations</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span>
+                <span class="sh">'</span><span class="s">type</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">volume_reduction</span><span class="sh">'</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">message</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Consider reducing volume by 20% next week</span><span class="sh">'</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">reasoning</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Rapid volume increases detected</span><span class="sh">'</span>
+            <span class="p">})</span>
+        
+        <span class="k">if</span> <span class="n">features</span><span class="p">[</span><span class="sh">'</span><span class="s">recovery_score</span><span class="sh">'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.6</span><span class="p">:</span>
+            <span class="n">recommendations</span><span class="p">.</span><span class="nf">append</span><span class="p">({</span>
+                <span class="sh">'</span><span class="s">type</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">deload</span><span class="sh">'</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">message</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Schedule a deload week within 7 days</span><span class="sh">'</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">reasoning</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Recovery metrics indicate accumulated fatigue</span><span class="sh">'</span>
+            <span class="p">})</span>
+        
+        <span class="k">return</span> <span class="n">recommendations</span>
+</code></pre></div></div>
+
+<h3 id="computer-vision-form-analysis"><strong>Computer Vision Form Analysis</strong></h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Real-time form analysis using MediaPipe</span>
+<span class="kd">class</span> <span class="nc">FormAnalyzer</span> <span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">pose</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Pose</span><span class="p">({</span>
+            <span class="na">locateFile</span><span class="p">:</span> <span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`https://cdn.jsdelivr.net/npm/@mediapipe/pose/</span><span class="p">${</span><span class="nx">file</span><span class="p">}</span><span class="s2">`</span>
+        <span class="p">});</span>
+        
+        <span class="k">this</span><span class="p">.</span><span class="nx">pose</span><span class="p">.</span><span class="nf">setOptions</span><span class="p">({</span>
+            <span class="na">modelComplexity</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">smoothLandmarks</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="na">enableSegmentation</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="na">smoothSegmentation</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="na">minDetectionConfidence</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="na">minTrackingConfidence</span><span class="p">:</span> <span class="mf">0.5</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nf">analyzeSquatForm</span><span class="p">(</span><span class="nx">landmarks</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">analysis</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">kneeTracking</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nf">analyzeKneeTracking</span><span class="p">(</span><span class="nx">landmarks</span><span class="p">),</span>
+            <span class="na">hipDepth</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nf">analyzeHipDepth</span><span class="p">(</span><span class="nx">landmarks</span><span class="p">),</span>
+            <span class="na">spineNeutrality</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nf">analyzeSpinePosition</span><span class="p">(</span><span class="nx">landmarks</span><span class="p">),</span>
+            <span class="na">overallScore</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">};</span>
+
+        <span class="c1">// Calculate overall form score</span>
+        <span class="nx">analysis</span><span class="p">.</span><span class="nx">overallScore</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="nx">analysis</span><span class="p">.</span><span class="nx">kneeTracking</span><span class="p">.</span><span class="nx">score</span> <span class="o">*</span> <span class="mf">0.4</span> <span class="o">+</span>
+            <span class="nx">analysis</span><span class="p">.</span><span class="nx">hipDepth</span><span class="p">.</span><span class="nx">score</span> <span class="o">*</span> <span class="mf">0.4</span> <span class="o">+</span>
+            <span class="nx">analysis</span><span class="p">.</span><span class="nx">spineNeutrality</span><span class="p">.</span><span class="nx">score</span> <span class="o">*</span> <span class="mf">0.2</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nx">analysis</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nf">analyzeKneeTracking</span><span class="p">(</span><span class="nx">landmarks</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">leftKnee</span> <span class="o">=</span> <span class="nx">landmarks</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
+        <span class="kd">const</span> <span class="nx">rightKnee</span> <span class="o">=</span> <span class="nx">landmarks</span><span class="p">[</span><span class="mi">26</span><span class="p">];</span>
+        <span class="kd">const</span> <span class="nx">leftAnkle</span> <span class="o">=</span> <span class="nx">landmarks</span><span class="p">[</span><span class="mi">27</span><span class="p">];</span>
+        <span class="kd">const</span> <span class="nx">rightAnkle</span> <span class="o">=</span> <span class="nx">landmarks</span><span class="p">[</span><span class="mi">28</span><span class="p">];</span>
+
+        <span class="c1">// Calculate knee valgus/varus</span>
+        <span class="kd">const</span> <span class="nx">kneeAlignment</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">calculateKneeAlignment</span><span class="p">(</span>
+            <span class="nx">leftKnee</span><span class="p">,</span> <span class="nx">rightKnee</span><span class="p">,</span> <span class="nx">leftAnkle</span><span class="p">,</span> <span class="nx">rightAnkle</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="na">score</span><span class="p">:</span> <span class="nx">kneeAlignment</span> <span class="o">&gt;</span> <span class="mf">0.8</span> <span class="p">?</span> <span class="mf">1.0</span> <span class="p">:</span> <span class="nx">kneeAlignment</span><span class="p">,</span>
+            <span class="na">feedback</span><span class="p">:</span> <span class="nx">kneeAlignment</span> <span class="o">&lt;</span> <span class="mf">0.7</span> <span class="p">?</span> 
+                <span class="dl">"</span><span class="s2">Keep knees tracking over toes</span><span class="dl">"</span> <span class="p">:</span> 
+                <span class="dl">"</span><span class="s2">Good knee alignment</span><span class="dl">"</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="results--impact">Results &amp; Impact</h2>
+
+<h3 id="user-outcomes"><strong>User Outcomes</strong></h3>
+<ul>
+  <li><strong>23% faster strength gains</strong> compared to traditional tracking methods</li>
+  <li><strong>67% reduction in training plateaus</strong> through predictive interventions</li>
+  <li><strong>89% user satisfaction</strong> with form feedback accuracy</li>
+  <li><strong>45% decrease in minor training injuries</strong> through movement analysis</li>
+</ul>
+
+<h3 id="technical-achievements"><strong>Technical Achievements</strong></h3>
+<ul>
+  <li><strong>94% accuracy</strong> in form analysis across 5 major compound movements</li>
+  <li><strong>Real-time processing</strong> at 30fps on mobile devices</li>
+  <li><strong>Predictive model accuracy</strong> of 78% for plateau prediction 2 weeks out</li>
+  <li><strong>Cross-platform compatibility</strong> with iOS and Android</li>
+</ul>
+
+<h3 id="community-growth"><strong>Community Growth</strong></h3>
+<ul>
+  <li><strong>500+ beta users</strong> providing feedback and data for model improvement</li>
+  <li><strong>15+ fitness professionals</strong> collaborating on exercise analysis algorithms</li>
+  <li><strong>Open-source contributions</strong> to MediaPipe fitness applications</li>
+  <li><strong>Research partnership</strong> with local university exercise science department</li>
+</ul>
+
+<h2 id="challenges--solutions">Challenges &amp; Solutions</h2>
+
+<h3 id="computer-vision-accuracy"><strong>Computer Vision Accuracy</strong></h3>
+<ul>
+  <li><strong>Challenge</strong>: Maintaining accuracy across different lighting conditions and camera angles</li>
+  <li><strong>Solution</strong>: Extensive data augmentation and multi-angle training datasets</li>
+  <li><strong>Result</strong>: 94% accuracy across diverse environmental conditions</li>
+</ul>
+
+<h3 id="real-time-processing"><strong>Real-Time Processing</strong></h3>
+<ul>
+  <li><strong>Challenge</strong>: Running complex ML models on mobile devices without lag</li>
+  <li><strong>Solution</strong>: Model optimization using TensorFlow Lite and edge computing</li>
+  <li><strong>Result</strong>: Sub-100ms processing time on mid-range smartphones</li>
+</ul>
+
+<h3 id="data-privacy"><strong>Data Privacy</strong></h3>
+<ul>
+  <li><strong>Challenge</strong>: Handling sensitive health and biometric data</li>
+  <li><strong>Solution</strong>: Local processing with encrypted cloud backup and HIPAA compliance</li>
+  <li><strong>Result</strong>: Zero data breaches and full user control over personal information</li>
+</ul>
+
+<h2 id="user-success-stories">User Success Stories</h2>
+
+<h3 id="sarah-powerlifter"><strong>Sarah, Powerlifter</strong></h3>
+<blockquote>
+  <p>“The app predicted my squat plateau 3 weeks before I felt it. The deload recommendation helped me break through to a new PR instead of grinding against a wall for months.”</p>
+</blockquote>
+
+<h3 id="mike-beginner"><strong>Mike, Beginner</strong></h3>
+<blockquote>
+  <p>“The form analysis is like having a personal trainer in my pocket. It caught my knee cave in squats before I developed any pain.”</p>
+</blockquote>
+
+<h3 id="jessica-busy-professional"><strong>Jessica, Busy Professional</strong></h3>
+<blockquote>
+  <p>“The adaptive programming saves me hours of research. It automatically adjusts my workouts based on my sleep and stress levels.”</p>
+</blockquote>
+
+<h2 id="future-development">Future Development</h2>
+
+<h3 id="version-20-features"><strong>Version 2.0 Features</strong></h3>
+<ul>
+  <li><strong>Nutrition Integration</strong>: Meal tracking with performance correlation analysis</li>
+  <li><strong>Social Features</strong>: Training partner matching and virtual coaching</li>
+  <li><strong>Wearable Integration</strong>: Advanced biometric monitoring with smartwatches</li>
+  <li><strong>AR Coaching</strong>: Augmented reality form cues and virtual trainer overlay</li>
+</ul>
+
+<h3 id="research-initiatives"><strong>Research Initiatives</strong></h3>
+<ul>
+  <li><strong>Biomechanics Research</strong>: Partnership with sports science labs for advanced analysis</li>
+  <li><strong>Injury Prevention</strong>: Predictive modeling for injury risk assessment</li>
+  <li><strong>Performance Optimization</strong>: Elite athlete training pattern analysis</li>
+  <li><strong>Accessibility Features</strong>: Adaptive interfaces for users with disabilities</li>
+</ul>
+
+<h2 id="technology-stack">Technology Stack</h2>
+
+<ul>
+  <li><strong>Mobile Development</strong>: React Native with native modules for performance</li>
+  <li><strong>Machine Learning</strong>: TensorFlow, scikit-learn, custom neural networks</li>
+  <li><strong>Computer Vision</strong>: MediaPipe, OpenCV, custom pose estimation models</li>
+  <li><strong>Backend</strong>: Python Flask, Celery for background processing</li>
+  <li><strong>Database</strong>: Firebase Firestore for real-time sync, PostgreSQL for analytics</li>
+  <li><strong>Cloud Services</strong>: Google Cloud Platform, Firebase ML Kit</li>
+  <li><strong>Health Integration</strong>: HealthKit (iOS), Google Fit (Android)</li>
+</ul>
+
+<p>This project represents the future of fitness technology, where AI and computer vision create truly personalized training experiences that adapt to individual needs and optimize for long-term success.</p>
+
+        </main>
+    </div>
+    
+    <!-- Project Navigation -->
+    <nav class="project-navigation" aria-label="Project navigation">
+        
+        
+            
+                
+                
+        
+        
+        
+        
+        <div class="nav-container">
+            
+            
+            <a href="/projects/" class="nav-link nav-all">
+                <span class="nav-icon">🎯</span>
+                All Projects
+            </a>
+            
+            
+                
+                <a href="/builds/sneaker-drop-tracker/" class="nav-link nav-next">
+                    <span class="nav-direction">Next Project →</span>
+                    <span class="nav-title">Sneaker Drop Tracker</span>
+                </a>
+            
+        </div>
+    </nav>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="social-links">
+        
+            <a href="https://github.com/gmanthenoxus" target="_blank">GitHub</a>
+        
+        <!-- Add more social links as needed -->
+    </div>
+    <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
+</footer>
+    <script src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/project-filter.js"></script>
+    <script src="/assets/js/progress-tracker.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/homeInteractions.js"></script>
+    <script src="/assets/js/blogFilter.js"></script>
+    <script src="/assets/js/collapsible-sections.js"></script>
+    <script src="/assets/js/mobile-navigation.js"></script>
+    <script src="/assets/js/hobby-filter.js"></script>
+</body>
+</html>

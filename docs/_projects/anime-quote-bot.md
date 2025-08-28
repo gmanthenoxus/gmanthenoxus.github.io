@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: project
 title: "Why I Build With My Hobbies"
 date: 2024-05-01
 categories: [thoughts, philosophy]

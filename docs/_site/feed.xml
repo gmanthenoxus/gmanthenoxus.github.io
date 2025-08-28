@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://gmanthenoxus.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gmanthenoxus.github.io/" rel="alternate" type="text/html" /><updated>2025-08-28T15:26:43+01:00</updated><id>https://gmanthenoxus.github.io/feed.xml</id><title type="html">Noxus’ Hub</title><subtitle>A portfolio showcasing my passions and projects</subtitle><entry><title type="html">Building Real-World Projects with APIs</title><link href="https://gmanthenoxus.github.io/tech/2024/12/15/building-with-apis.html" rel="alternate" type="text/html" title="Building Real-World Projects with APIs" /><published>2024-12-15T00:00:00+00:00</published><updated>2024-12-15T00:00:00+00:00</updated><id>https://gmanthenoxus.github.io/tech/2024/12/15/building-with-apis</id><content type="html" xml:base="https://gmanthenoxus.github.io/tech/2024/12/15/building-with-apis.html"><![CDATA[<h1 id="building-real-world-projects-with-apis">Building Real-World Projects with APIs</h1>
+
+<p>APIs opened up a whole new world of possibilities for my hobby projects.</p>
+
+<h2 id="the-game-changer">The Game Changer</h2>
+
+<p>When I first discovered APIs, I realized I could build applications that connected to real data - sneaker releases, anime databases, sports statistics. This transformed my projects from static demos to dynamic, useful tools.</p>
+
+<h2 id="my-api-journey">My API Journey</h2>
+
+<h3 id="starting-simple">Starting Simple</h3>
+<p>My first API integration was with a basic weather service. The thrill of seeing live data populate my application was incredible.</p>
+
+<h3 id="getting-complex">Getting Complex</h3>
+<p>As I grew more confident, I started working with:</p>
+<ul>
+  <li><strong>REST APIs</strong> for standard data operations</li>
+  <li><strong>GraphQL</strong> for more efficient queries</li>
+  <li><strong>WebSocket APIs</strong> for real-time updates</li>
+  <li><strong>Authentication flows</strong> for secure access</li>
+</ul>
+
+<h2 id="key-lessons-learned">Key Lessons Learned</h2>
+
+<h3 id="1-error-handling-is-everything">1. Error Handling is Everything</h3>
+<p>APIs fail. Networks are unreliable. Building robust error handling from day one saves countless hours of debugging.</p>
+
+<h3 id="2-rate-limiting-matters">2. Rate Limiting Matters</h3>
+<p>Respect API limits. Implement proper caching and request throttling to be a good API citizen.</p>
+
+<h3 id="3-documentation-is-your-friend">3. Documentation is Your Friend</h3>
+<p>Always read the docs thoroughly. The time invested upfront pays dividends later.</p>
+
+<h2 id="real-projects-real-impact">Real Projects, Real Impact</h2>
+
+<h3 id="sneaker-release-tracker">Sneaker Release Tracker</h3>
+<p>Using sneaker retailer APIs, I built a notification system that helped me and friends never miss a drop.</p>
+
+<h3 id="anime-recommendation-engine">Anime Recommendation Engine</h3>
+<p>By combining multiple anime database APIs, I created a personalized recommendation system that actually understood viewing preferences.</p>
+
+<h2 id="moving-forward">Moving Forward</h2>
+
+<p>APIs continue to be the backbone of my most successful projects. They bridge the gap between hobby coding and building something genuinely useful.</p>
+
+<hr />
+
+<p><em>Want to see the code behind these projects? Check out my <a href="https://github.com/yourusername">GitHub</a> for full implementations.</em></p>]]></content><author><name></name></author><category term="tech" /><category term="apis" /><category term="development" /><category term="learning" /><summary type="html"><![CDATA[How I learned to integrate APIs into my hobby projects and why it changed everything about how I build applications.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/building-apis.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/building-apis.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">From Collector to Creator: My Development Journey</title><link href="https://gmanthenoxus.github.io/journey/2024/11/20/from-collector-to-creator.html" rel="alternate" type="text/html" title="From Collector to Creator: My Development Journey" /><published>2024-11-20T00:00:00+00:00</published><updated>2024-11-20T00:00:00+00:00</updated><id>https://gmanthenoxus.github.io/journey/2024/11/20/from-collector-to-creator</id><content type="html" xml:base="https://gmanthenoxus.github.io/journey/2024/11/20/from-collector-to-creator.html"><![CDATA[<h1 id="from-collector-to-creator-my-development-journey">From Collector to Creator: My Development Journey</h1>
+
+<p>Sometimes the best career paths are the ones you never planned.</p>
+
+<h2 id="the-collector-phase">The Collector Phase</h2>
+
+<p>I started as a collector - sneakers, anime figures, trading cards. I loved the hunt, the community, the stories behind each piece. But I always felt like I was consuming rather than creating.</p>
+
+<h2 id="the-spark">The Spark</h2>
+
+<p>The turning point came when I couldn’t find the tools I needed as a collector:</p>
+<ul>
+  <li><strong>Sneaker release calendars</strong> that actually worked</li>
+  <li><strong>Anime tracking apps</strong> that understood my taste</li>
+  <li><strong>Community platforms</strong> that felt genuine</li>
+</ul>
+
+<p>So I decided to build them myself.</p>
+
+<h2 id="learning-to-code">Learning to Code</h2>
+
+<h3 id="the-early-days">The Early Days</h3>
+<ul>
+  <li>Started with HTML/CSS to build simple landing pages</li>
+  <li>Moved to JavaScript for interactivity</li>
+  <li>Discovered APIs and databases for real functionality</li>
+</ul>
+
+<h3 id="the-breakthrough-moment">The Breakthrough Moment</h3>
+<p>When I deployed my first sneaker tracker and saw other collectors actually using it - that’s when I knew I’d found my calling.</p>
+
+<h2 id="from-hobby-to-career">From Hobby to Career</h2>
+
+<h3 id="building-a-portfolio">Building a Portfolio</h3>
+<p>Each hobby project became a portfolio piece:</p>
+<ul>
+  <li><strong>Sneaker Release Tracker</strong> → Full-stack development skills</li>
+  <li><strong>Anime Recommendation Engine</strong> → Machine learning and data science</li>
+  <li><strong>Trading Card Price Monitor</strong> → Real-time data processing</li>
+</ul>
+
+<h3 id="the-job-search">The Job Search</h3>
+<p>Having real projects that solved real problems made interviews completely different. Instead of theoretical questions, we talked about actual challenges I’d solved.</p>
+
+<h2 id="key-insights">Key Insights</h2>
+
+<h3 id="1-passion-projects-stand-out">1. Passion Projects Stand Out</h3>
+<p>Employers can tell when you’ve built something because you cared about it, not just because you had to.</p>
+
+<h3 id="2-community-matters">2. Community Matters</h3>
+<p>The communities around my hobbies became my first users, my feedback providers, and eventually my professional network.</p>
+
+<h3 id="3-problems-are-opportunities">3. Problems Are Opportunities</h3>
+<p>Every frustration I had as a collector became a feature in my applications.</p>
+
+<h2 id="where-i-am-now">Where I Am Now</h2>
+
+<p>Today, I work as a developer professionally, but I still build hobby projects. The difference is now I have the skills to build exactly what I envision.</p>
+
+<h2 id="advice-for-others">Advice for Others</h2>
+
+<p>If you’re passionate about something, there’s probably a way to build around it. Start small, solve your own problems first, and don’t be afraid to share your work.</p>
+
+<hr />
+
+<p><em>What hobby could you turn into a development project? I’d love to hear your ideas - reach out on <a href="https://twitter.com/yourusername">Twitter</a>!</em></p>]]></content><author><name></name></author><category term="journey" /><category term="journey" /><category term="career" /><category term="passion" /><summary type="html"><![CDATA[How my passion for collecting sneakers and anime led me to become a developer, and why following your interests is the best career advice.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/collector-to-creator.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/collector-to-creator.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What Building Discord Bots Taught Me About User Experience</title><link href="https://gmanthenoxus.github.io/tech/2024/10/10/discord-bot-lessons.html" rel="alternate" type="text/html" title="What Building Discord Bots Taught Me About User Experience" /><published>2024-10-10T00:00:00+01:00</published><updated>2024-10-10T00:00:00+01:00</updated><id>https://gmanthenoxus.github.io/tech/2024/10/10/discord-bot-lessons</id><content type="html" xml:base="https://gmanthenoxus.github.io/tech/2024/10/10/discord-bot-lessons.html"><![CDATA[<h1 id="what-building-discord-bots-taught-me-about-user-experience">What Building Discord Bots Taught Me About User Experience</h1>
+
+<p>Sometimes the best UX lessons come from the most unexpected places.</p>
+
+<h2 id="the-discord-bot-journey">The Discord Bot Journey</h2>
+
+<p>When I started building Discord bots for my hobby communities, I thought it was just about functionality. I was wrong - it was all about user experience.</p>
+
+<h2 id="lesson-1-context-is-everything">Lesson 1: Context is Everything</h2>
+
+<h3 id="the-problem">The Problem</h3>
+<p>My first anime bot could search for shows, but users had to remember exact titles and use specific commands.</p>
+
+<h3 id="the-solution">The Solution</h3>
+<p>I learned to:</p>
+<ul>
+  <li><strong>Fuzzy search</strong> for partial matches</li>
+  <li><strong>Auto-complete</strong> suggestions</li>
+  <li><strong>Context-aware</strong> responses based on server activity</li>
+</ul>
+
+<h3 id="the-takeaway">The Takeaway</h3>
+<p>Users shouldn’t have to adapt to your interface - your interface should adapt to them.</p>
+
+<h2 id="lesson-2-feedback-is-instant-or-its-too-late">Lesson 2: Feedback is Instant or It’s Too Late</h2>
+
+<h3 id="the-problem-1">The Problem</h3>
+<p>Early bots would process requests silently, leaving users wondering if anything happened.</p>
+
+<h3 id="the-solution-1">The Solution</h3>
+<ul>
+  <li><strong>Immediate acknowledgment</strong> with loading indicators</li>
+  <li><strong>Progress updates</strong> for long operations</li>
+  <li><strong>Clear error messages</strong> when things go wrong</li>
+</ul>
+
+<h3 id="the-takeaway-1">The Takeaway</h3>
+<p>In real-time environments like Discord, perceived performance matters more than actual performance.</p>
+
+<h2 id="lesson-3-community-shapes-features">Lesson 3: Community Shapes Features</h2>
+
+<h3 id="the-sneaker-bot-evolution">The Sneaker Bot Evolution</h3>
+<p>What started as a simple release tracker became:</p>
+<ul>
+  <li><strong>Size availability checker</strong></li>
+  <li><strong>Price comparison tool</strong></li>
+  <li><strong>Raffle entry tracker</strong></li>
+  <li><strong>Community marketplace</strong></li>
+</ul>
+
+<h3 id="the-anime-bot-growth">The Anime Bot Growth</h3>
+<p>A basic search bot evolved into:</p>
+<ul>
+  <li><strong>Watch party coordinator</strong></li>
+  <li><strong>Episode discussion threads</strong></li>
+  <li><strong>Recommendation engine</strong></li>
+  <li><strong>Seasonal anime tracker</strong></li>
+</ul>
+
+<h3 id="the-takeaway-2">The Takeaway</h3>
+<p>The best features come from listening to your users, not from feature lists.</p>
+
+<h2 id="lesson-4-simplicity-wins">Lesson 4: Simplicity Wins</h2>
+
+<h3 id="the-command-complexity-problem">The Command Complexity Problem</h3>
+<p>I initially built bots with dozens of commands and options. Usage was low.</p>
+
+<h3 id="the-simplification-solution">The Simplification Solution</h3>
+<p>I reduced each bot to 3-5 core commands with smart defaults. Usage skyrocketed.</p>
+
+<h3 id="the-takeaway-3">The Takeaway</h3>
+<p>Users prefer tools that do a few things exceptionally well over tools that do everything poorly.</p>
+
+<h2 id="real-world-applications">Real-World Applications</h2>
+
+<p>These Discord bot lessons directly improved my web development:</p>
+
+<ul>
+  <li><strong>Better loading states</strong> in web apps</li>
+  <li><strong>Smarter search functionality</strong></li>
+  <li><strong>More intuitive navigation</strong></li>
+  <li><strong>Community-driven feature development</strong></li>
+</ul>
+
+<h2 id="the-unexpected-benefit">The Unexpected Benefit</h2>
+
+<p>Building for Discord communities taught me that great UX isn’t about following design trends - it’s about understanding your users’ actual workflows and pain points.</p>
+
+<hr />
+
+<p><em>Building something for a community you’re part of? The feedback loop is invaluable. Start there.</em></p>]]></content><author><name></name></author><category term="tech" /><category term="discord" /><category term="bots" /><category term="ux" /><category term="community" /><summary type="html"><![CDATA[Building bots for anime and sneaker communities taught me more about UX than any design course ever could.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/discord-bot-lessons.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/discord-bot-lessons.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">This is a Very Long Blog Post Title That Should Definitely Be Truncated on Mobile Devices to Test Our Navigation System</title><link href="https://gmanthenoxus.github.io/tech/2024/06/01/very-long-title-test.html" rel="alternate" type="text/html" title="This is a Very Long Blog Post Title That Should Definitely Be Truncated on Mobile Devices to Test Our Navigation System" /><published>2024-06-01T00:00:00+01:00</published><updated>2024-06-01T00:00:00+01:00</updated><id>https://gmanthenoxus.github.io/tech/2024/06/01/very-long-title-test</id><content type="html" xml:base="https://gmanthenoxus.github.io/tech/2024/06/01/very-long-title-test.html"><![CDATA[<h1 id="testing-mobile-navigation">Testing Mobile Navigation</h1>
+
+<p>This is a test post to check how our mobile navigation handles very long titles.</p>
+
+<p>The navigation should truncate this title appropriately on mobile devices while showing the full title on desktop and in tooltips.</p>]]></content><author><name></name></author><category term="tech" /><category term="test" /><category term="navigation" /><category term="mobile" /><summary type="html"><![CDATA[Testing mobile navigation truncation with a very long title.]]></summary></entry><entry><title type="html">How to Build a Discord Bot for Anime Notifications in 7 Steps</title><link href="https://gmanthenoxus.github.io/tech/2024/05/05/sample-how-to.html" rel="alternate" type="text/html" title="How to Build a Discord Bot for Anime Notifications in 7 Steps" /><published>2024-05-05T00:00:00+01:00</published><updated>2024-05-05T00:00:00+01:00</updated><id>https://gmanthenoxus.github.io/tech/2024/05/05/sample-how-to</id><content type="html" xml:base="https://gmanthenoxus.github.io/tech/2024/05/05/sample-how-to.html"><![CDATA[<h1 id="how-to-build-a-discord-bot-for-anime-notifications-in-7-steps">How to Build a Discord Bot for Anime Notifications in 7 Steps</h1>
+
+<p><strong>Problem Agitation:</strong> You’re tired of manually checking multiple anime sites to see if new episodes have dropped. You miss releases, forget which episodes you’ve watched, and your Discord server has no way to coordinate anime discussions.</p>
+
+<p><strong>Solution Preview:</strong> By the end of this guide, you’ll have a fully functional Discord bot that automatically monitors anime releases and notifies your server the moment new episodes are available.</p>
+
+<p><strong>Time Investment:</strong> This should take about 2 hours to complete, including testing and deployment.</p>
+
+<hr />
+
+<h2 id="what-youll-accomplish">What You’ll Accomplish</h2>
+
+<p>By the end of this guide, you’ll be able to:</p>
+<ul>
+  <li>✅ Create and configure a Discord bot from scratch</li>
+  <li>✅ Connect to anime APIs for real-time episode data</li>
+  <li>✅ Set up automated notifications for new releases</li>
+  <li>✅ Deploy your bot to run 24/7 in the cloud</li>
+  <li>✅ Add custom commands for anime search and tracking</li>
+</ul>
+
+<hr />
+
+<h2 id="before-we-start">Before We Start</h2>
+
+<p><strong>Quick Check:</strong> Make sure you have everything from the prerequisites and tools list above.</p>
+
+<p><strong>Estimated Time:</strong> This should take about 2 hours to complete.</p>
+
+<p><strong>Difficulty Level:</strong> This guide is designed for intermediate users with basic JavaScript knowledge.</p>
+
+<hr />
+
+<h2 id="step-1-set-up-discord-bot-in-developer-portal">Step 1: Set Up Discord Bot in Developer Portal</h2>
+
+<p><strong>What you’re doing:</strong> Create a new Discord application and bot user that can join servers.</p>
+
+<p><strong>Detailed Instructions:</strong></p>
+<ol>
+  <li>Go to <a href="https://discord.com/developers/applications">Discord Developer Portal</a></li>
+  <li>Click “New Application” and name it “Anime Notifier”</li>
+  <li>Navigate to the “Bot” section in the left sidebar</li>
+  <li>Click “Add Bot” and confirm the creation</li>
+  <li>Copy the bot token (keep this secret!)</li>
+  <li>Under “Privileged Gateway Intents,” enable “Message Content Intent”</li>
+</ol>
+
+<p><strong>⚠️ Beginner Mistake Alert:</strong> Never share your bot token publicly or commit it to GitHub. Use environment variables instead.</p>
+
+<p><strong>✅ Success Check:</strong> You should see your bot listed in the Developer Portal with a unique token.</p>
+
+<p><strong>⏱️ Time:</strong> Approximately 10 minutes</p>
+
+<hr />
+
+<h2 id="step-2-initialize-nodejs-project-and-install-dependencies">Step 2: Initialize Node.js Project and Install Dependencies</h2>
+
+<p><strong>What you’re doing:</strong> Set up the project structure and install required packages.</p>
+
+<p><strong>Detailed Instructions:</strong></p>
+<ol>
+  <li>Create a new folder: <code class="language-plaintext highlighter-rouge">mkdir anime-discord-bot &amp;&amp; cd anime-discord-bot</code></li>
+  <li>Initialize npm project: <code class="language-plaintext highlighter-rouge">npm init -y</code></li>
+  <li>Install dependencies: <code class="language-plaintext highlighter-rouge">npm install discord.js axios node-cron dotenv</code></li>
+  <li>Create main file: <code class="language-plaintext highlighter-rouge">touch index.js</code></li>
+  <li>Create environment file: <code class="language-plaintext highlighter-rouge">touch .env</code></li>
+  <li>Add your bot token to <code class="language-plaintext highlighter-rouge">.env</code>: <code class="language-plaintext highlighter-rouge">DISCORD_TOKEN=your_bot_token_here</code></li>
+</ol>
+
+<p><strong>💡 Pro Tip:</strong> Use <code class="language-plaintext highlighter-rouge">npm install -D nodemon</code> for development to auto-restart your bot when you make changes.</p>
+
+<p><strong>✅ Success Check:</strong> Your package.json should list discord.js, axios, node-cron, and dotenv as dependencies.</p>
+
+<p><strong>⏱️ Time:</strong> Approximately 5 minutes</p>
+
+<hr />
+
+<h2 id="step-3-create-basic-bot-structure-and-connection">Step 3: Create Basic Bot Structure and Connection</h2>
+
+<p><strong>What you’re doing:</strong> Write the foundation code to connect your bot to Discord.</p>
+
+<p><strong>Detailed Instructions:</strong></p>
+<ol>
+  <li>Open <code class="language-plaintext highlighter-rouge">index.js</code> in your text editor</li>
+  <li>Add the basic bot setup code:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotenv</span><span class="dl">'</span><span class="p">).</span><span class="nf">config</span><span class="p">();</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">Client</span><span class="p">,</span> <span class="nx">GatewayIntentBits</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">discord.js</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">cron</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-cron</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Client</span><span class="p">({</span>
+    <span class="na">intents</span><span class="p">:</span> <span class="p">[</span>
+        <span class="nx">GatewayIntentBits</span><span class="p">.</span><span class="nx">Guilds</span><span class="p">,</span>
+        <span class="nx">GatewayIntentBits</span><span class="p">.</span><span class="nx">GuildMessages</span><span class="p">,</span>
+        <span class="nx">GatewayIntentBits</span><span class="p">.</span><span class="nx">MessageContent</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nf">once</span><span class="p">(</span><span class="dl">'</span><span class="s1">ready</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Logged in as </span><span class="p">${</span><span class="nx">client</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">tag</span><span class="p">}</span><span class="s2">!`</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nf">login</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DISCORD_TOKEN</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Test the connection: <code class="language-plaintext highlighter-rouge">node index.js</code></li>
+</ol>
+
+<p><strong>📊 Insert Screenshot:</strong> [Bot should show “Logged in as YourBotName#1234!” in console]</p>
+
+<p><strong>✅ Success Check:</strong> Console should display your bot’s login confirmation.</p>
+
+<p><strong>⏱️ Time:</strong> Approximately 10 minutes</p>
+
+<hr />
+
+<h2 id="step-4-add-anime-api-integration">Step 4: Add Anime API Integration</h2>
+
+<p><strong>What you’re doing:</strong> Connect to Jikan API to fetch anime episode data.</p>
+
+<p><strong>Detailed Instructions:</strong></p>
+<ol>
+  <li>Add API helper functions to <code class="language-plaintext highlighter-rouge">index.js</code>:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// API Configuration</span>
+<span class="kd">const</span> <span class="nx">JIKAN_BASE_URL</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://api.jikan.moe/v4</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Helper function to get anime by name</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">searchAnime</span><span class="p">(</span><span class="nx">animeName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">JIKAN_BASE_URL</span><span class="p">}</span><span class="s2">/anime?q=</span><span class="p">${</span><span class="nf">encodeURIComponent</span><span class="p">(</span><span class="nx">animeName</span><span class="p">)}</span><span class="s2">&amp;limit=1`</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error searching anime:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Helper function to get latest episodes</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">getAnimeEpisodes</span><span class="p">(</span><span class="nx">animeId</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">JIKAN_BASE_URL</span><span class="p">}</span><span class="s2">/anime/</span><span class="p">${</span><span class="nx">animeId</span><span class="p">}</span><span class="s2">/episodes`</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error fetching episodes:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">[];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Add rate limiting to respect API limits</li>
+  <li>Test API connection with a sample anime search</li>
+</ol>
+
+<p><strong>Alternative Method:</strong> If Jikan API is down, you can use AniList GraphQL API as a backup.</p>
+
+<p><strong>✅ Success Check:</strong> API should return anime data when you test the search function.</p>
+
+<p><strong>⏱️ Time:</strong> Approximately 20 minutes</p>
+
+<hr />
+
+<h2 id="step-5-implement-command-system">Step 5: Implement Command System</h2>
+
+<p><strong>What you’re doing:</strong> Add Discord commands for users to interact with the bot.</p>
+
+<p><strong>Detailed Instructions:</strong></p>
+<ol>
+  <li>Add message event listener:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">client</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">messageCreate</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">message</span><span class="p">.</span><span class="nx">author</span><span class="p">.</span><span class="nx">bot</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    
+    <span class="kd">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">message</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">trim</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sr">/ +/</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">command</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nf">shift</span><span class="p">().</span><span class="nf">toLowerCase</span><span class="p">();</span>
+    
+    <span class="k">if </span><span class="p">(</span><span class="nx">command</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">anime</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">animeName</span> <span class="o">=</span> <span class="nx">args</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">animeName</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">message</span><span class="p">.</span><span class="nf">reply</span><span class="p">(</span><span class="dl">'</span><span class="s1">Please provide an anime name! Example: `!anime Attack on Titan`</span><span class="dl">'</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="kd">const</span> <span class="nx">anime</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">searchAnime</span><span class="p">(</span><span class="nx">animeName</span><span class="p">);</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">anime</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">embed</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="na">title</span><span class="p">:</span> <span class="nx">anime</span><span class="p">.</span><span class="nx">title</span><span class="p">,</span>
+                <span class="na">description</span><span class="p">:</span> <span class="nx">anime</span><span class="p">.</span><span class="nx">synopsis</span><span class="p">?.</span><span class="nf">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">thumbnail</span><span class="p">:</span> <span class="p">{</span> <span class="na">url</span><span class="p">:</span> <span class="nx">anime</span><span class="p">.</span><span class="nx">images</span><span class="p">.</span><span class="nx">jpg</span><span class="p">.</span><span class="nx">image_url</span> <span class="p">},</span>
+                <span class="na">fields</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Episodes</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">anime</span><span class="p">.</span><span class="nx">episodes</span><span class="p">?.</span><span class="nf">toString</span><span class="p">()</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">Unknown</span><span class="dl">'</span><span class="p">,</span> <span class="na">inline</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+                    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Status</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">anime</span><span class="p">.</span><span class="nx">status</span><span class="p">,</span> <span class="na">inline</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+                    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Score</span><span class="dl">'</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">anime</span><span class="p">.</span><span class="nx">score</span><span class="p">?.</span><span class="nf">toString</span><span class="p">()</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">N/A</span><span class="dl">'</span><span class="p">,</span> <span class="na">inline</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">};</span>
+            <span class="nx">message</span><span class="p">.</span><span class="nf">reply</span><span class="p">({</span> <span class="na">embeds</span><span class="p">:</span> <span class="p">[</span><span class="nx">embed</span><span class="p">]</span> <span class="p">});</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">message</span><span class="p">.</span><span class="nf">reply</span><span class="p">(</span><span class="dl">'</span><span class="s1">Anime not found! Please check the spelling and try again.</span><span class="dl">'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Test the <code class="language-plaintext highlighter-rouge">!anime</code> command in your Discord server</li>
+</ol>
+
+<p><strong>✅ Success Check:</strong> Bot should respond with anime information when you use <code class="language-plaintext highlighter-rouge">!anime [name]</code>.</p>
+
+<p><strong>⏱️ Time:</strong> Approximately 25 minutes</p>
+
+<hr />
+
+<h2 id="step-6-set-up-automated-episode-notifications">Step 6: Set Up Automated Episode Notifications</h2>
+
+<p><strong>What you’re doing:</strong> Create a scheduled task that checks for new episodes and sends notifications.</p>
+
+<p><strong>Detailed Instructions:</strong></p>
+<ol>
+  <li>Add tracking system for monitored anime:</li>
+</ol>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Store tracked anime (in production, use a database)</span>
+<span class="kd">const</span> <span class="nx">trackedAnime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">();</span>
+
+<span class="c1">// Function to add anime to tracking</span>
+<span class="kd">function</span> <span class="nf">trackAnime</span><span class="p">(</span><span class="nx">channelId</span><span class="p">,</span> <span class="nx">animeId</span><span class="p">,</span> <span class="nx">animeName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">trackedAnime</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">channelId</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">trackedAnime</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">channelId</span><span class="p">,</span> <span class="k">new</span> <span class="nc">Set</span><span class="p">());</span>
+    <span class="p">}</span>
+    <span class="nx">trackedAnime</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">channelId</span><span class="p">).</span><span class="nf">add</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="nx">animeId</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="nx">animeName</span><span class="p">,</span> <span class="na">lastEpisode</span><span class="p">:</span> <span class="mi">0</span> <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="c1">// Scheduled task to check for new episodes (runs every hour)</span>
+<span class="nx">cron</span><span class="p">.</span><span class="nf">schedule</span><span class="p">(</span><span class="dl">'</span><span class="s1">0 * * * *</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Checking for new episodes...</span><span class="dl">'</span><span class="p">);</span>
+    
+    <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="p">[</span><span class="nx">channelId</span><span class="p">,</span> <span class="nx">animeSet</span><span class="p">]</span> <span class="k">of</span> <span class="nx">trackedAnime</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">channel</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">channels</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">channelId</span><span class="p">);</span>
+        <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">channel</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+        
+        <span class="k">for </span><span class="p">(</span><span class="kd">const</span> <span class="nx">anime</span> <span class="k">of</span> <span class="nx">animeSet</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">episodes</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">getAnimeEpisodes</span><span class="p">(</span><span class="nx">anime</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+            <span class="kd">const</span> <span class="nx">latestEpisode</span> <span class="o">=</span> <span class="nx">episodes</span><span class="p">[</span><span class="nx">episodes</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+            
+            <span class="k">if </span><span class="p">(</span><span class="nx">latestEpisode</span> <span class="o">&amp;&amp;</span> <span class="nx">latestEpisode</span><span class="p">.</span><span class="nx">mal_id</span> <span class="o">&gt;</span> <span class="nx">anime</span><span class="p">.</span><span class="nx">lastEpisode</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">anime</span><span class="p">.</span><span class="nx">lastEpisode</span> <span class="o">=</span> <span class="nx">latestEpisode</span><span class="p">.</span><span class="nx">mal_id</span><span class="p">;</span>
+                
+                <span class="kd">const</span> <span class="nx">embed</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="na">title</span><span class="p">:</span> <span class="s2">`🆕 New Episode Available!`</span><span class="p">,</span>
+                    <span class="na">description</span><span class="p">:</span> <span class="s2">`**</span><span class="p">${</span><span class="nx">anime</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">** - Episode </span><span class="p">${</span><span class="nx">latestEpisode</span><span class="p">.</span><span class="nx">mal_id</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="mh">0x00ff00</span><span class="p">,</span>
+                    <span class="na">timestamp</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">()</span>
+                <span class="p">};</span>
+                
+                <span class="nx">channel</span><span class="p">.</span><span class="nf">send</span><span class="p">({</span> <span class="na">embeds</span><span class="p">:</span> <span class="p">[</span><span class="nx">embed</span><span class="p">]</span> <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Add <code class="language-plaintext highlighter-rouge">!track</code> command to start monitoring anime</li>
+  <li>Test the notification system</li>
+</ol>
+
+<p><strong>✅ Success Check:</strong> Bot should send notifications when new episodes are detected.</p>
+
+<p><strong>⏱️ Time:</strong> Approximately 30 minutes</p>
+
+<hr />
+
+<h2 id="step-7-deploy-and-test-your-bot">Step 7: Deploy and Test Your Bot</h2>
+
+<p><strong>What you’re doing:</strong> Deploy your bot to a cloud service so it runs 24/7.</p>
+
+<p><strong>Detailed Instructions:</strong></p>
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">Procfile</code> for Heroku: <code class="language-plaintext highlighter-rouge">echo "worker: node index.js" &gt; Procfile</code></li>
+  <li>Initialize git repository: <code class="language-plaintext highlighter-rouge">git init &amp;&amp; git add . &amp;&amp; git commit -m "Initial commit"</code></li>
+  <li>Deploy to Heroku:
+    <ul>
+      <li>Install Heroku CLI</li>
+      <li><code class="language-plaintext highlighter-rouge">heroku create your-anime-bot</code></li>
+      <li><code class="language-plaintext highlighter-rouge">heroku config:set DISCORD_TOKEN=your_token_here</code></li>
+      <li><code class="language-plaintext highlighter-rouge">git push heroku main</code></li>
+    </ul>
+  </li>
+  <li>Scale the worker: <code class="language-plaintext highlighter-rouge">heroku ps:scale worker=1</code></li>
+</ol>
+
+<p><strong>Alternative Method:</strong> You can also deploy to Railway, Render, or any other Node.js hosting service.</p>
+
+<p><strong>✅ Success Check:</strong> Your bot should be online 24/7 and respond to commands from any server it’s in.</p>
+
+<p><strong>⏱️ Time:</strong> Approximately 20 minutes</p>
+
+<hr />
+
+<h2 id="testing-your-results">Testing Your Results</h2>
+
+<p><strong>Verification Steps:</strong></p>
+<ol>
+  <li>Invite bot to your Discord server using OAuth2 URL from Developer Portal</li>
+  <li>Test <code class="language-plaintext highlighter-rouge">!anime [name]</code> command with various anime titles</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">!track [anime]</code> to start monitoring a currently airing series</li>
+  <li>Wait for automated notifications (or manually trigger for testing)</li>
+</ol>
+
+<p><strong>Quality Check:</strong> Bot should respond quickly, provide accurate information, and send timely notifications.</p>
+
+<hr />
+
+<h2 id="congratulations-">Congratulations! 🎉</h2>
+
+<p>You’ve successfully built a Discord anime notification bot that can:</p>
+<ul>
+  <li>Search for anime information</li>
+  <li>Track multiple series simultaneously</li>
+  <li>Send automated episode notifications</li>
+  <li>Run 24/7 in the cloud</li>
+</ul>
+
+<p><strong>What you’ve learned:</strong></p>
+<ul>
+  <li>Discord bot development with discord.js</li>
+  <li>API integration and rate limiting</li>
+  <li>Scheduled tasks with node-cron</li>
+  <li>Cloud deployment strategies</li>
+</ul>
+
+<p><strong>Your next challenge:</strong> Try extending the bot with user preferences, database storage, or integration with streaming platforms!</p>
+
+<hr />
+
+<p><em>How did this guide work for you? Share your bot in action or ask questions in the comments!</em></p>]]></content><author><name></name></author><category term="tech" /><category term="discord" /><category term="bot" /><category term="anime" /><category term="javascript" /><category term="tutorial" /><summary type="html"><![CDATA[Stop missing new anime episodes! Build a custom Discord bot that automatically notifies your server when new episodes are released.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/discord-anime-bot.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/discord-anime-bot.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Why I Build With My Hobbies</title><link href="https://gmanthenoxus.github.io/passion/2024/05/01/why-i-build.html" rel="alternate" type="text/html" title="Why I Build With My Hobbies" /><published>2024-05-01T00:00:00+01:00</published><updated>2024-05-01T00:00:00+01:00</updated><id>https://gmanthenoxus.github.io/passion/2024/05/01/why-i-build</id><content type="html" xml:base="https://gmanthenoxus.github.io/passion/2024/05/01/why-i-build.html"><![CDATA[<h1 id="why-i-build-with-my-hobbies">Why I Build With My Hobbies</h1>
+
+<p>Building at the intersection of passion and skill creates something truly unique.</p>
+
+<h2 id="the-spark">The Spark</h2>
+
+<p>Every great project starts with genuine interest. When you’re passionate about something, you’re willing to spend countless hours perfecting it, debugging it, and making it better.</p>
+
+<h2 id="the-process">The Process</h2>
+
+<p>My development process looks different for each hobby:</p>
+
+<h3 id="anime-projects">Anime Projects</h3>
+<ul>
+  <li>Focus on community and sharing</li>
+  <li>Emphasis on storytelling and emotional connection</li>
+  <li>Built for social platforms like Discord</li>
+</ul>
+
+<h3 id="sneaker-projects">Sneaker Projects</h3>
+<ul>
+  <li>Focus on utility and practicality</li>
+  <li>Emphasis on real-time data and notifications</li>
+  <li>Built for personal use and sharing with collectors</li>
+</ul>
+
+<h2 id="the-result">The Result</h2>
+
+<p>When passion drives development, the end product isn’t just functional—it’s meaningful. Users can feel the care and attention that went into every detail.</p>
+
+<h2 id="moving-forward">Moving Forward</h2>
+
+<p>I encourage everyone to build something they’re passionate about. The best projects come from the heart, not just the mind.</p>
+
+<hr />
+
+<p><em>What hobby would you like to see me build next? Let me know on <a href="https://twitter.com/yourusername">Twitter</a>!</em></p>]]></content><author><name></name></author><category term="passion" /><category term="passion" /><category term="development" /><category term="creativity" /><summary type="html"><![CDATA[Building at the intersection of passion and skill creates something truly unique. Every great project starts with genuine interest.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/why-i-build.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/why-i-build.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">How I Built a Sneaker Bot That Increased Success Rate by 340% in 3 Months</title><link href="https://gmanthenoxus.github.io/tech/2024/04/10/sample-case-study.html" rel="alternate" type="text/html" title="How I Built a Sneaker Bot That Increased Success Rate by 340% in 3 Months" /><published>2024-04-10T00:00:00+01:00</published><updated>2024-04-10T00:00:00+01:00</updated><id>https://gmanthenoxus.github.io/tech/2024/04/10/sample-case-study</id><content type="html" xml:base="https://gmanthenoxus.github.io/tech/2024/04/10/sample-case-study.html"><![CDATA[<h1 id="how-i-built-a-sneaker-bot-that-increased-success-rate-by-340-in-3-months">How I Built a Sneaker Bot That Increased Success Rate by 340% in 3 Months</h1>
+
+<p><strong>Results Teaser:</strong> In just 3 months, I transformed my sneaker copping success rate from a frustrating 15% to a consistent 66% using intelligent automation and data-driven strategies.</p>
+
+<p><strong>Hero Introduction:</strong> Meet Alex (that’s me), a software developer who was tired of taking L’s on every hyped sneaker release. Like many sneakerheads, I was manually trying to cop limited releases and failing 85% of the time.</p>
+
+<hr />
+
+<h2 id="meet-the-hero">Meet the Hero</h2>
+
+<p><strong>Background:</strong> I’m a full-stack developer with 5 years of experience, but I was a complete beginner when it came to sneaker botting. My programming skills were solid, but I knew nothing about the sneaker game’s technical side.</p>
+
+<p><strong>“Save the Cat” Moment:</strong> After missing out on the Travis Scott Jordan 1s for the third time (and watching them resell for $2000+), I decided to channel my frustration into code.</p>
+
+<p><strong>The Challenge:</strong> Build a bot that could consistently secure limited sneaker releases while staying undetected and respecting site terms of service.</p>
+
+<hr />
+
+<h2 id="the-situation">The Situation</h2>
+
+<p><strong>Before State:</strong></p>
+<ul>
+  <li>Manual copping with 15% success rate</li>
+  <li>Average checkout time: 45+ seconds</li>
+  <li>Missed 90% of hyped releases</li>
+  <li>Spent hours refreshing pages manually</li>
+  <li>Zero understanding of bot detection methods</li>
+</ul>
+
+<p><strong>Pain Points:</strong></p>
+<ul>
+  <li>Sites would crash during high-traffic releases</li>
+  <li>Payment processing errors during checkout</li>
+  <li>Getting blocked by anti-bot measures</li>
+  <li>No systematic approach to release timing</li>
+  <li>Competing against thousands of other bots</li>
+</ul>
+
+<p><strong>Previous Attempts:</strong> I tried using existing bots like Nike Bot and Supreme Bot, but they were expensive ($300+/month), often detected, and didn’t work consistently.</p>
+
+<hr />
+
+<h2 id="the-strategy">The Strategy</h2>
+
+<h3 id="step-1-research-and-intelligence-gathering">Step 1: Research and Intelligence Gathering</h3>
+<ul>
+  <li><strong>What:</strong> Analyzed successful bot architectures and anti-detection methods</li>
+  <li><strong>Why:</strong> Needed to understand the technical landscape before building</li>
+  <li><strong>How:</strong> Studied open-source projects, joined Discord communities, analyzed network traffic</li>
+  <li><strong>Timeline:</strong> Week 1-2</li>
+</ul>
+
+<h3 id="step-2-build-mvp-with-basic-automation">Step 2: Build MVP with Basic Automation</h3>
+<ul>
+  <li><strong>What:</strong> Created simple Selenium-based bot for one site (Nike SNKRS)</li>
+  <li><strong>Why:</strong> Wanted to prove the concept before scaling</li>
+  <li><strong>How:</strong> Python + Selenium WebDriver with basic form filling</li>
+  <li><strong>Timeline:</strong> Week 3-4</li>
+</ul>
+
+<h3 id="step-3-add-intelligence-and-timing-optimization">Step 3: Add Intelligence and Timing Optimization</h3>
+<ul>
+  <li><strong>What:</strong> Implemented machine learning for optimal purchase timing</li>
+  <li><strong>Why:</strong> Discovered that timing mattered more than raw speed</li>
+  <li><strong>How:</strong> TensorFlow model trained on historical release data</li>
+  <li><strong>Timeline:</strong> Week 5-8</li>
+</ul>
+
+<h3 id="step-4-scale-to-multiple-sites-and-add-anti-detection">Step 4: Scale to Multiple Sites and Add Anti-Detection</h3>
+<ul>
+  <li><strong>What:</strong> Expanded to 15+ sites with human-like behavior patterns</li>
+  <li><strong>Why:</strong> Diversification increased overall success rate</li>
+  <li><strong>How:</strong> Site-specific modules with randomized delays and mouse movements</li>
+  <li><strong>Timeline:</strong> Week 9-12</li>
+</ul>
+
+<hr />
+
+<h2 id="the-results">The Results</h2>
+
+<p><strong>Quantifiable Outcomes:</strong></p>
+<ul>
+  <li>Success Rate: 15% → 66% (+340% increase)</li>
+  <li>Average Checkout Time: 45s → 2.3s (-95% reduction)</li>
+  <li>Successful Purchases: 23 pairs in 3 months</li>
+  <li>Detection Rate: &lt;5% across all monitored sites</li>
+</ul>
+
+<p><strong>Qualitative Changes:</strong></p>
+<ul>
+  <li>Went from stressed manual copping to confident automation</li>
+  <li>Started helping friends and community members</li>
+  <li>Gained deep understanding of web scraping and anti-detection</li>
+  <li>Built a sustainable system that works long-term</li>
+</ul>
+
+<p><strong>Timeline to Results:</strong></p>
+<ul>
+  <li>Week 1-2: Research phase, 0% bot success</li>
+  <li>Month 1: First successful automated purchase (30% success rate)</li>
+  <li>Month 2-3: Optimized system achieving 66% success rate</li>
+</ul>
+
+<hr />
+
+<h2 id="what-made-the-difference">What Made the Difference</h2>
+
+<p><strong>Critical Success Factors:</strong></p>
+<ol>
+  <li><strong>Timing Intelligence:</strong> ML model that predicted optimal purchase windows</li>
+  <li><strong>Human-like Behavior:</strong> Randomized delays and realistic mouse movements</li>
+  <li><strong>Site-Specific Strategies:</strong> Custom approaches for each retailer’s unique system</li>
+</ol>
+
+<p><strong>Common Mistakes Avoided:</strong></p>
+<ul>
+  <li><strong>Mistake 1:</strong> Using the same timing for every release
+    <ul>
+      <li><strong>Why it matters:</strong> Sites have different traffic patterns and anti-bot measures</li>
+      <li><strong>Better approach:</strong> Adaptive timing based on site-specific data</li>
+    </ul>
+  </li>
+  <li><strong>Mistake 2:</strong> Focusing only on speed over stealth
+    <ul>
+      <li><strong>Consequences:</strong> Higher detection rates and IP bans</li>
+      <li><strong>Better approach:</strong> Balance speed with human-like behavior patterns</li>
+    </ul>
+  </li>
+  <li><strong>Mistake 3:</strong> Ignoring community intelligence
+    <ul>
+      <li><strong>Consequences:</strong> Missing crucial updates about site changes</li>
+      <li><strong>Better approach:</strong> Active participation in sneaker bot communities</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="your-replication-blueprint">Your Replication Blueprint</h2>
+
+<p><strong>Prerequisites:</strong></p>
+<ul>
+  <li>Intermediate Python knowledge</li>
+  <li>Basic understanding of web technologies (HTML, CSS, JavaScript)</li>
+  <li>Willingness to invest 20+ hours in initial setup</li>
+</ul>
+
+<p><strong>Step-by-Step Process:</strong></p>
+<ol>
+  <li><strong>Set up development environment</strong> (Python 3.8+, Chrome WebDriver, proxy services)</li>
+  <li><strong>Choose one target site</strong> to start with (recommend Nike SNKRS for beginners)</li>
+  <li><strong>Build basic automation</strong> using Selenium for form filling and checkout</li>
+  <li><strong>Add timing intelligence</strong> by analyzing historical release patterns</li>
+  <li><strong>Implement anti-detection measures</strong> (user agents, delays, mouse movements)</li>
+  <li><strong>Scale to additional sites</strong> using modular architecture</li>
+  <li><strong>Add monitoring and notifications</strong> for real-time success tracking</li>
+</ol>
+
+<p><strong>Success Metrics:</strong></p>
+<ul>
+  <li>30%+ success rate within first month</li>
+  <li>&lt;10% detection rate across all attempts</li>
+  <li>Sub-5 second checkout times</li>
+</ul>
+
+<p><strong>Troubleshooting:</strong></p>
+<ul>
+  <li><strong>High detection rates:</strong> Increase randomization and human-like delays</li>
+  <li><strong>Slow checkout times:</strong> Optimize form filling and payment processing</li>
+  <li><strong>Site changes breaking bot:</strong> Implement robust element selection and error handling</li>
+</ul>
+
+<hr />
+
+<h2 id="you-can-do-this-too">You Can Do This Too</h2>
+
+<p><strong>Motivation:</strong> This isn’t about having the fastest bot—it’s about building the smartest one. The techniques I used are accessible to any developer willing to learn.</p>
+
+<p><strong>Adaptation:</strong> The core principles work for any limited-release scenario: concert tickets, limited drops, flash sales, etc.</p>
+
+<p><strong>Support:</strong> The sneaker bot community is surprisingly helpful. Join Discord servers, share knowledge, and learn from others’ experiences.</p>
+
+<hr />
+
+<p><em>Ready to build your own intelligent automation system? Start with the developer challenge below and share your progress in the comments!</em></p>]]></content><author><name></name></author><category term="tech" /><category term="automation" /><category term="python" /><category term="machine-learning" /><category term="case-study" /><summary type="html"><![CDATA[From 15% to 66% success rate: the complete story of building an intelligent sneaker bot using Python, machine learning, and smart automation.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/sneaker-bot-case-study.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/sneaker-bot-case-study.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">7 Game-Changing Development Habits That Boost Productivity in 30 Days</title><link href="https://gmanthenoxus.github.io/tech/2024/03/15/sample-listicle.html" rel="alternate" type="text/html" title="7 Game-Changing Development Habits That Boost Productivity in 30 Days" /><published>2024-03-15T00:00:00+00:00</published><updated>2024-03-15T00:00:00+00:00</updated><id>https://gmanthenoxus.github.io/tech/2024/03/15/sample-listicle</id><content type="html" xml:base="https://gmanthenoxus.github.io/tech/2024/03/15/sample-listicle.html"><![CDATA[<h1 id="7-game-changing-development-habits-that-boost-productivity-in-30-days">7 Game-Changing Development Habits That Boost Productivity in 30 Days</h1>
+
+<p><strong>The Problem:</strong> You’re spending more time debugging, searching for files, and context-switching than actually building features. Your projects drag on longer than expected, and you feel like you’re always playing catch-up.</p>
+
+<p><strong>The Solution:</strong> Seven battle-tested habits that successful developers use to stay productive, focused, and consistently ship quality code.</p>
+
+<p><strong>Why This Works:</strong> These aren’t theoretical tips—they’re practices I’ve refined over years of building hobby projects and working with development teams.</p>
+
+<hr />
+
+<h2 id="1-start-every-session-with-a-5-minute-plan">1. Start Every Session with a 5-Minute Plan</h2>
+
+<p><strong>Why this works:</strong> Your brain needs direction before diving into code. Without a plan, you’ll waste the first 20 minutes figuring out what to work on.</p>
+
+<p><strong>How to implement:</strong></p>
+<ol>
+  <li>Open a simple text file or note app</li>
+  <li>Write down 3 specific tasks for this session</li>
+  <li>Estimate time for each task (be realistic)</li>
+  <li>Prioritize by impact, not ease</li>
+</ol>
+
+<p><strong>Pro tip:</strong> Use the format “I will [specific action] so that [specific outcome]” for each task.</p>
+
+<hr />
+
+<h2 id="2-master-your-development-environment">2. Master Your Development Environment</h2>
+
+<p><strong>Why this works:</strong> Every second spent navigating menus or searching for tools is a micro-interruption that breaks your flow state.</p>
+
+<p><strong>How to implement:</strong></p>
+<ol>
+  <li>Learn 10 keyboard shortcuts for your editor this week</li>
+  <li>Set up code snippets for common patterns</li>
+  <li>Configure auto-formatting and linting</li>
+  <li>Create project templates for quick starts</li>
+</ol>
+
+<p><strong>Pro tip:</strong> Spend 15 minutes each Friday optimizing one aspect of your setup. Small improvements compound quickly.</p>
+
+<hr />
+
+<h2 id="3-write-tests-before-you-think-you-need-them">3. Write Tests Before You Think You Need Them</h2>
+
+<p><strong>Why this works:</strong> Tests aren’t just about catching bugs—they’re documentation, design tools, and confidence builders all in one.</p>
+
+<p><strong>How to implement:</strong></p>
+<ol>
+  <li>Start with one simple test for your main function</li>
+  <li>Write the test before writing the implementation</li>
+  <li>Use descriptive test names that explain behavior</li>
+  <li>Run tests automatically on save or commit</li>
+</ol>
+
+<p><strong>Pro tip:</strong> If you can’t easily test it, your code is probably too complex. Use tests to guide better design.</p>
+
+<hr />
+
+<h2 id="4-document-your-decisions-not-just-your-code">4. Document Your Decisions, Not Just Your Code</h2>
+
+<p><strong>Why this works:</strong> Future you (and your teammates) need to understand why you made choices, not just what the code does.</p>
+
+<p><strong>How to implement:</strong></p>
+<ol>
+  <li>Keep a simple DECISIONS.md file in each project</li>
+  <li>Record why you chose specific libraries or approaches</li>
+  <li>Note trade-offs and alternatives you considered</li>
+  <li>Update it whenever you make significant changes</li>
+</ol>
+
+<p><strong>Pro tip:</strong> Write one sentence explaining your reasoning every time you add a new dependency.</p>
+
+<hr />
+
+<h2 id="5-use-the-two-minute-rule-for-small-tasks">5. Use the Two-Minute Rule for Small Tasks</h2>
+
+<p><strong>Why this works:</strong> Small tasks pile up and create mental overhead. Handling them immediately prevents context-switching later.</p>
+
+<p><strong>How to implement:</strong></p>
+<ol>
+  <li>When you notice a small issue, check the clock</li>
+  <li>If it takes less than 2 minutes, do it now</li>
+  <li>If it takes longer, add it to your task list</li>
+  <li>Examples: fixing typos, updating comments, small refactors</li>
+</ol>
+
+<p><strong>Pro tip:</strong> This works for non-coding tasks too—responding to messages, updating documentation, organizing files.</p>
+
+<hr />
+
+<h2 id="6-batch-similar-activities-together">6. Batch Similar Activities Together</h2>
+
+<p><strong>Why this works:</strong> Context switching is expensive. Your brain performs better when doing similar tasks in sequence.</p>
+
+<p><strong>How to implement:</strong></p>
+<ol>
+  <li>Dedicate specific time blocks to similar activities</li>
+  <li>Do all your research before coding</li>
+  <li>Handle all code reviews in one session</li>
+  <li>Batch communication (emails, messages) into set times</li>
+</ol>
+
+<p><strong>Pro tip:</strong> Use time-blocking in your calendar. “9-11 AM: Deep coding”, “2-3 PM: Code reviews and communication”.</p>
+
+<hr />
+
+<h2 id="7-end-each-session-with-a-handoff-note">7. End Each Session with a Handoff Note</h2>
+
+<p><strong>Why this works:</strong> Starting your next session is 10x easier when you know exactly where you left off and what comes next.</p>
+
+<p><strong>How to implement:</strong></p>
+<ol>
+  <li>Before closing your editor, write 2-3 sentences about:
+    <ul>
+      <li>What you just completed</li>
+      <li>What you were working on when you stopped</li>
+      <li>The next logical step</li>
+    </ul>
+  </li>
+  <li>Save this in a NOTES.md file or comment</li>
+  <li>Include any relevant links or references</li>
+</ol>
+
+<p><strong>Pro tip:</strong> Write this note as if you’re explaining to a teammate who needs to continue your work.</p>
+
+<hr />
+
+<h2 id="your-30-day-challenge">Your 30-Day Challenge</h2>
+
+<p><strong>Week 1:</strong> Implement habits 1-2 (planning and environment)
+<strong>Week 2:</strong> Add habits 3-4 (testing and documentation)<br />
+<strong>Week 3:</strong> Incorporate habits 5-6 (time management)
+<strong>Week 4:</strong> Master habit 7 and refine all others</p>
+
+<p><strong>Track Your Progress:</strong> Note how much time you save each week and which habits have the biggest impact.</p>
+
+<p><strong>Share Your Results:</strong> What habit made the biggest difference for you? I’d love to hear about your experience!</p>
+
+<hr />
+
+<p><em>Which of these habits resonates most with your current challenges? Try one this week and let me know how it goes in the comments!</em></p>]]></content><author><name></name></author><category term="tech" /><category term="productivity" /><category term="development" /><category term="habits" /><category term="workflow" /><summary type="html"><![CDATA[Struggling with slow development cycles and endless debugging? These 7 proven habits will streamline your workflow and help you ship faster.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/productivity-habits.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/productivity-habits.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Template Post 2: My Journey Story</title><link href="https://gmanthenoxus.github.io/journey/2024/02/20/template-post-2.html" rel="alternate" type="text/html" title="Template Post 2: My Journey Story" /><published>2024-02-20T00:00:00+00:00</published><updated>2024-02-20T00:00:00+00:00</updated><id>https://gmanthenoxus.github.io/journey/2024/02/20/template-post-2</id><content type="html" xml:base="https://gmanthenoxus.github.io/journey/2024/02/20/template-post-2.html"><![CDATA[<h1 id="template-post-2-my-journey-story">Template Post 2: My Journey Story</h1>
+
+<p>This is another template post for layout testing.</p>
+
+<h2 id="journey-content">Journey Content</h2>
+
+<p>This post represents the “journey” category and shows:</p>
+<ul>
+  <li>How personal stories are displayed</li>
+  <li>The featured post functionality</li>
+  <li>Different category styling</li>
+</ul>
+
+<h2 id="story-elements">Story Elements</h2>
+
+<ul>
+  <li><strong>Challenge</strong>: Designing a good blog layout</li>
+  <li><strong>Solution</strong>: Creating template posts</li>
+  <li><strong>Result</strong>: Better understanding of the design</li>
+</ul>
+
+<h2 id="reflection">Reflection</h2>
+
+<p>Template posts help us iterate on design without worrying about content quality.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Once the layout looks good, we can replace these with real content.</p>]]></content><author><name></name></author><category term="journey" /><category term="template" /><category term="design" /><category term="journey" /><summary type="html"><![CDATA[This is another template post showing how journey category posts appear in the blog grid layout.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/template-2.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/template-2.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Template Post 1: Building Something Cool</title><link href="https://gmanthenoxus.github.io/tech/2024/01/15/template-post-1.html" rel="alternate" type="text/html" title="Template Post 1: Building Something Cool" /><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://gmanthenoxus.github.io/tech/2024/01/15/template-post-1</id><content type="html" xml:base="https://gmanthenoxus.github.io/tech/2024/01/15/template-post-1.html"><![CDATA[<h1 id="template-post-1-building-something-cool">Template Post 1: Building Something Cool</h1>
+
+<p>This is a template post to help us design the blog layout.</p>
+
+<h2 id="purpose">Purpose</h2>
+
+<p>This post exists to:</p>
+<ul>
+  <li>Test the blog grid layout</li>
+  <li>Show how tech category posts appear</li>
+  <li>Help us design the UI properly</li>
+</ul>
+
+<h2 id="content">Content</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+<h3 id="code-example">Code Example</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">templatePost</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">This is a template post!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This template helps us see how the blog layout works with multiple posts.</p>]]></content><author><name></name></author><category term="tech" /><category term="template" /><category term="design" /><category term="tech" /><summary type="html"><![CDATA[This is a template post to help us design the blog layout. It shows how a tech post would look in the grid.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://gmanthenoxus.github.io/assets/images/blog/template-1.jpg" /><media:content medium="image" url="https://gmanthenoxus.github.io/assets/images/blog/template-1.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
