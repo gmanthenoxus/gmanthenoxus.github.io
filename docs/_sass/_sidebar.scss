@@ -390,8 +390,23 @@ $sidebar-active-border: $primary-green;
   }
 }
 
-// Main Content Adjustment
+// Site Wrapper and Main Content Adjustment
+.site-wrapper {
+  display: flex;
+  min-height: 100vh;
+
+  @include mobile-up {
+    flex-direction: column;
+  }
+
+  @include desktop-up {
+    flex-direction: row;
+  }
+}
+
 .main-content {
+  flex: 1;
+
   @include desktop-up {
     margin-left: $sidebar-width;
   }

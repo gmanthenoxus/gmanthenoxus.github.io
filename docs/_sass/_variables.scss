@@ -42,14 +42,14 @@ $font-primary: 'Barlow', sans-serif;    // Headings
 $font-secondary: 'Inter', sans-serif;   // Body text
 $font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-// Font Sizes (Fluid Typography)
-$font-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-$font-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-$font-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-$font-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
-$font-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-$font-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-$font-3xl: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+// Font Sizes (Simple Responsive Typography)
+$font-xs: 0.75rem;    // 12px
+$font-sm: 0.875rem;   // 14px
+$font-base: 1rem;     // 16px
+$font-lg: 1.125rem;   // 18px
+$font-xl: 1.25rem;    // 20px
+$font-2xl: 1.5rem;    // 24px
+$font-3xl: 2rem;      // 32px
 
 // Font weights
 $font-weight-normal: 400;
