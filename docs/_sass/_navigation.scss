@@ -10,6 +10,56 @@ $nav-z-index: 1000;
 $hamburger-size: 24px;
 $nav-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
+// Use existing color variables
+$primary-green: $accent-color;
+$primary-blue: $accent-secondary;
+$text-primary: $text-dark;
+$text-secondary: $text-muted;
+$bg-light: $background-light;
+$border-light: #E2E8F0;
+$gradient-primary: linear-gradient(135deg, $accent-color 0%, $accent-secondary 100%);
+$gradient-light: linear-gradient(135deg, rgba($accent-color, 0.1) 0%, rgba($accent-secondary, 0.1) 100%);
+
+// Spacing variables
+$space-1: $spacing-xxs;
+$space-2: $spacing-xs;
+$space-3: 0.75rem;
+$space-4: $spacing-sm;
+$space-5: 1.25rem;
+$space-6: $spacing-md;
+$space-8: 2rem;
+$space-12: 3rem;
+$space-16: 4rem;
+
+// Font variables
+$font-xs: 0.75rem;
+$font-sm: 0.875rem;
+$font-base: 1rem;
+$font-lg: 1.125rem;
+$font-xl: 1.25rem;
+$font-bold: $font-weight-bold;
+$font-semibold: $font-weight-semibold;
+$font-medium: $font-weight-medium;
+
+// Mixins for breakpoints
+@mixin mobile-up {
+  @media (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
 // Site Header
 .site-header {
   position: fixed;
