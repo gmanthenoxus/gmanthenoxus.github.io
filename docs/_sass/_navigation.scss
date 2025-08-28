@@ -1,90 +1,41 @@
 /* ============================================================================
-   NAVIGATION SYSTEM
-   Enhanced navigation with hamburger menu and mobile responsiveness
+   NAVIGATION SYSTEM - Hamburger Menu Only
+   Clean, modern navigation with slide-in menu for all screen sizes
    ============================================================================ */
 
-// Navigation Variables
-$nav-height: 70px;
-$nav-height-mobile: 60px;
+// Variables
+$nav-height: 60px;
 $nav-z-index: 1000;
-$hamburger-size: 24px;
 $nav-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-// Use existing color variables
-$primary-green: $accent-color;
-$primary-blue: $accent-secondary;
-$text-primary: $text-dark;
-$text-secondary: $text-muted;
-$bg-light: $background-light;
-$border-light: #E2E8F0;
-$gradient-primary: linear-gradient(135deg, $accent-color 0%, $accent-secondary 100%);
-$gradient-light: linear-gradient(135deg, rgba($accent-color, 0.1) 0%, rgba($accent-secondary, 0.1) 100%);
-
-// Spacing variables
-$space-1: $spacing-xxs;
-$space-2: $spacing-xs;
-$space-3: 0.75rem;
-$space-4: $spacing-sm;
-$space-5: 1.25rem;
-$space-6: $spacing-md;
-$space-8: 2rem;
-$space-12: 3rem;
-$space-16: 4rem;
-
-// Font variables
-$font-xs: 0.75rem;
-$font-sm: 0.875rem;
-$font-base: 1rem;
-$font-lg: 1.125rem;
-$font-xl: 1.25rem;
-$font-bold: $font-weight-bold;
-$font-semibold: $font-weight-semibold;
-$font-medium: $font-weight-medium;
-
-// Mixins for breakpoints
-@mixin mobile-up {
-  @media (min-width: 480px) {
-    @content;
-  }
-}
-
-@mixin tablet-up {
-  @media (min-width: $breakpoint-mobile) {
-    @content;
-  }
-}
-
-@mixin desktop-up {
-  @media (min-width: $breakpoint-tablet) {
-    @content;
-  }
-}
-
-// Site Header
+// ============================================================================
+// HEADER & CONTAINER
+// ============================================================================
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: $nav-z-index;
-  background: rgba(white, 0.95);
+  background: $primary-color;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba($primary-green, 0.1);
+  border-bottom: 1px solid rgba(white, 0.1);
   transition: $nav-transition;
+  box-shadow: 0 2px 12px rgba($primary-color, 0.3);
+
+  &.scrolled {
+    box-shadow: 0 4px 20px rgba($primary-color, 0.4);
+    background: darken($primary-color, 3%);
+  }
 
   @supports not (backdrop-filter: blur(10px)) {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: $primary-color;
+    box-shadow: 0 2px 12px rgba($primary-color, 0.3);
   }
 }
 
-// Navigation Container
 .site-nav {
-  height: $nav-height-mobile;
-  
-  @include tablet-up {
-    height: $nav-height;
-  }
+  height: $nav-height;
 }
 
 .nav-container {
@@ -94,38 +45,51 @@ $font-medium: $font-weight-medium;
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 $space-4;
-  
-  @include tablet-up {
-    padding: 0 $space-6;
-  }
+  padding: 0 $spacing-sm;
 }
 
-// Logo/Brand
+// ============================================================================
+// LOGO
+// ============================================================================
+
 .nav-logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  font-weight: $font-bold;
-  font-size: $font-lg;
-  color: $primary-green;
+  text-decoration: none !important;
+  font-weight: $font-weight-bold;
+  font-size: 1.25rem;
+  color: white !important;
   transition: $nav-transition;
   z-index: $nav-z-index + 1;
-  
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
   &:hover {
-    color: $primary-blue;
-    transform: scale(1.05);
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-1px);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   }
-  
+
+  &:focus {
+    outline: 2px solid rgba(white, 0.7);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
   .logo-text {
-    background: $gradient-primary;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: white !important;
+    background: none !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  &::after {
+    display: none !important;
   }
 }
 
-// Mobile Menu Toggle (Hamburger)
+// ============================================================================
+// HAMBURGER MENU BUTTON
+// ============================================================================
 .nav-toggle {
   display: flex;
   align-items: center;
@@ -139,25 +103,18 @@ $font-medium: $font-weight-medium;
   z-index: $nav-z-index + 1;
   transition: $nav-transition;
   
-  @include tablet-up {
-    display: none;
-  }
-  
   &:hover {
     transform: scale(1.1);
   }
   
   &:focus {
-    outline: 2px solid $primary-green;
+    outline: 2px solid $accent-color;
     outline-offset: 2px;
     border-radius: 4px;
   }
-  
-  // Enhanced hover state
-  &:hover {
-    .hamburger-line::before {
-      opacity: 1;
-    }
+
+  &:hover .hamburger-line::before {
+    opacity: 1;
   }
 
   // Enhanced active/expanded state with smoother animations
@@ -165,7 +122,8 @@ $font-medium: $font-weight-medium;
     .hamburger-line {
       &:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
-        background: $primary-blue;
+        background: rgba(white, 0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
       }
 
       &:nth-child(2) {
@@ -175,23 +133,22 @@ $font-medium: $font-weight-medium;
 
       &:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
-        background: $primary-blue;
+        background: rgba(white, 0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
       }
 
-      // Show gradient on active state
       &::before {
-        opacity: 0.8;
+        opacity: 0.6;
       }
     }
   }
 }
 
-// Enhanced Hamburger Icon with Smooth Animations
 .hamburger {
   display: flex;
   flex-direction: column;
-  width: $hamburger-size;
-  height: $hamburger-size;
+  width: 24px;
+  height: 24px;
   justify-content: space-between;
   position: relative;
 }
@@ -199,13 +156,13 @@ $font-medium: $font-weight-medium;
 .hamburger-line {
   width: 100%;
   height: 2px;
-  background: $primary-green;
+  background: white;
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
   position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 
-  // Enhanced visual feedback
   &::before {
     content: '';
     position: absolute;
@@ -213,140 +170,98 @@ $font-medium: $font-weight-medium;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, $primary-green, $primary-blue);
+    background: linear-gradient(90deg, rgba(white, 0.8), rgba(white, 0.6));
     border-radius: 2px;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 }
 
-// Navigation Menu
+// ============================================================================
+// MOBILE MENU PANEL
+// ============================================================================
 .nav-menu {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 280px;
+  width: 300px;
   height: 100vh;
-  background: white;
-  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, $primary-color 0%, darken($primary-color, 8%) 100%);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
   transition: right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: $nav-z-index;
   overflow-y: auto;
-  
-  @include tablet-up {
-    position: static;
-    width: auto;
-    height: auto;
-    background: transparent;
-    box-shadow: none;
-    overflow-y: visible;
-  }
-  
+  border-left: 1px solid rgba(white, 0.1);
+
   &.is-open {
     right: 0;
   }
 }
 
-// Navigation List
+// Navigation List 
 .nav-list {
   display: flex;
   flex-direction: column;
   list-style: none;
   margin: 0;
-  padding: $nav-height-mobile 0 $space-6;
-  
-  @include tablet-up {
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-    gap: $space-2;
-  }
+  padding: $nav-height 0 $spacing-md;
 }
 
 // Navigation Items
 .nav-item {
   margin: 0;
-  
-  @include tablet-up {
-    margin: 0;
-  }
 }
 
-// Navigation Links
+// ============================================================================
+// NAVIGATION LINKS
+// ============================================================================
 .nav-link {
   display: flex;
   align-items: center;
-  padding: $space-4 $space-6;
+  padding: $spacing-sm $spacing-md;
   text-decoration: none;
-  color: $text-primary;
-  font-weight: $font-medium;
-  font-size: $font-base;
+  color: rgba(white, 0.9);
+  font-weight: $font-weight-medium;
+  font-size: 1rem;
   transition: $nav-transition;
   border-left: 3px solid transparent;
-  
-  @include tablet-up {
-    padding: $space-2 $space-4;
-    border-left: none;
-    border-radius: 8px;
-    font-size: $font-sm;
-  }
-  
+
   &:hover {
-    color: $primary-green;
-    background: rgba($primary-green, 0.05);
-    border-left-color: $primary-green;
-    
-    @include tablet-up {
-      border-left-color: transparent;
-      transform: translateY(-2px);
-    }
-    
+    color: white;
+    background: rgba(white, 0.1);
+    border-left-color: $accent-color;
+
     .nav-icon {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
-  
+
   &:focus {
-    outline: 2px solid $primary-green;
+    outline: 2px solid $accent-color;
     outline-offset: -2px;
   }
-  
-  &[aria-current="page"] {
-    color: $primary-green;
-    background: rgba($primary-green, 0.1);
-    border-left-color: $primary-green;
-    font-weight: $font-semibold;
-    
-    @include tablet-up {
-      border-left-color: transparent;
-      background: $gradient-light;
-    }
+
+  // Active/current page state
+  &[aria-current="page"],
+  &.active {
+    color: white;
+    border-left-color: $accent-color;
+    background: rgba($accent-color, 0.2);
+    font-weight: $font-weight-semibold;
   }
 }
 
-// Navigation Icons and Text
+// ============================================================================
+// UTILITY CLASSES
+// ============================================================================
+
 .nav-icon {
-  font-size: $font-lg;
-  margin-right: $space-3;
+  font-size: 1.125rem;
+  margin-right: 0.75rem;
   transition: transform 0.2s ease;
-  
-  @include tablet-up {
-    font-size: $font-base;
-    margin-right: $space-2;
-  }
 }
 
-.nav-text {
-  @include tablet-up {
-    display: none;
-  }
-  
-  @include desktop-up {
-    display: inline;
-  }
-}
-
-// Mobile Menu Overlay
+// Mobile Menu Overlay - Always Present
 .nav-overlay {
   position: fixed;
   top: 0;
@@ -358,33 +273,27 @@ $font-medium: $font-weight-medium;
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: $nav-z-index - 1;
-  
-  @include tablet-up {
-    display: none;
-  }
-  
+
   &.is-open {
     opacity: 1;
     visibility: visible;
   }
 }
 
-// Body scroll lock when menu is open
+// Body scroll lock and blur effect when menu is open
 body.nav-open {
   overflow: hidden;
-  
-  @include tablet-up {
-    overflow: auto;
+
+  // Add blur effect to main content
+  .main-content,
+  .site-footer {
+    filter: blur(3px);
+    transition: filter 0.3s ease;
   }
 }
 
-// Page content offset for fixed header
 .main-content {
-  padding-top: $nav-height-mobile;
-  
-  @include tablet-up {
-    padding-top: $nav-height;
-  }
+  padding-top: $nav-height;
 }
 
 // Animation for menu items
@@ -411,34 +320,19 @@ body.nav-open {
   }
 }
 
-// Responsive adjustments
-@include mobile-up {
-  .nav-container {
-    padding: 0 $space-5;
-  }
-}
-
-@include desktop-up {
-  .nav-list {
-    gap: $space-4;
-  }
-  
-  .nav-link {
-    padding: $space-3 $space-5;
-  }
-}
-
-// High contrast mode support
+// ============================================================================
+// ACCESSIBILITY & PERFORMANCE
+// ============================================================================
 @media (prefers-contrast: high) {
   .site-header {
     background: white;
-    border-bottom: 2px solid $text-primary;
+    border-bottom: 2px solid $text-dark;
   }
   
   .nav-link {
     &:hover,
     &[aria-current="page"] {
-      background: $text-primary;
+      background: $text-dark;
       color: white;
     }
   }
