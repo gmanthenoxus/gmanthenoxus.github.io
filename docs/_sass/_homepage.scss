@@ -97,153 +97,155 @@
 // TABBED ROADMAP SECTION
 // ============================================================================
 
+// Variables for this section
+$roadmap-nav-bg: rgba(255, 255, 255, 0.85);
+$roadmap-transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+$roadmap-border-radius: 20px;
+$roadmap-glow-color: rgba($accent-color, 0.15);
+
 .tabbed-roadmap {
     padding: $spacing-xl 0;
     background: $background-light;
     position: relative;
 
-    // Subtle top border gradient
+    // Clean top accent border
     &::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 4px;
+        height: 3px;
         background: linear-gradient(90deg, $accent-color, $accent-secondary);
-        opacity: 0.6;
+        opacity: 0.8;
+    }
+}
+
+// Navigation container
+.roadmap-nav {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto $spacing-lg;
+    padding: $spacing-sm;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: $roadmap-border-radius;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-wrap: wrap;
+        gap: $spacing-xs;
+        margin: 0 $spacing-sm $spacing-lg;
+    }
+}
+
+// Navigation items
+.roadmap-nav .nav-item {
+    background: none;
+    border: none;
+    padding: $spacing-sm $spacing-lg;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $text-muted;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    margin: 0 $spacing-xs;
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-sm $spacing-md;
+        font-size: 1rem;
+        margin: 0;
+        flex: 1;
+        text-align: center;
     }
 
-    .roadmap-nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: $spacing-lg;
-        padding: $spacing-sm;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 16px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba($primary-color, 0.05);
-
-        @media (max-width: $breakpoint-mobile) {
-            flex-wrap: wrap;
-            gap: $spacing-xs;
-        }
-
-        .nav-item {
-            background: none;
-            border: none;
-            padding: $spacing-sm $spacing-lg;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: $text-muted;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border-radius: 12px;
-            margin: 0 $spacing-xs;
-
-            @media (max-width: $breakpoint-mobile) {
-                padding: $spacing-sm $spacing-md;
-                font-size: 1rem;
-                margin: 0;
-                flex: 1;
-                text-align: center;
-            }
-
-            // Hover effects
-            &:hover {
-                color: $primary-color;
-                background: linear-gradient(135deg,
-                    rgba($accent-color, 0.08),
-                    rgba($accent-secondary, 0.08));
-                transform: translateY(-3px) scale(1.02);
-                box-shadow: 0 6px 16px rgba($accent-color, 0.15);
-            }
-
-            // Active state
-            &.active {
-                color: white;
-                font-weight: 600;
-                background: linear-gradient(135deg, $accent-color, $accent-secondary);
-                transform: translateY(-2px);
-                box-shadow: 0 8px 20px rgba($accent-color, 0.25);
-
-                // Glow effect
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: -2px;
-                    left: -2px;
-                    right: -2px;
-                    bottom: -2px;
-                    background: linear-gradient(135deg, $accent-color, $accent-secondary);
-                    border-radius: 14px;
-                    z-index: -1;
-                    opacity: 0.3;
-                    filter: blur(8px);
-                }
-            }
-
-            // WIP badge animation
-            .wip-badge {
-                animation: pulse 2s infinite;
-            }
-        }
+    // Clean hover state
+    &:hover {
+        color: $accent-color;
+        background: rgba($accent-color, 0.08);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba($accent-color, 0.15);
     }
 
-    .roadmap-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 $spacing-sm;
-    }
-
-    .content-pane {
-        display: none;
-
-        &.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-    }
-
-    .content-card {
-        background: white;
-        border-radius: 20px;
-        padding: $spacing-lg;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        border: 1px solid rgba($primary-color, 0.05);
-        transition: all 0.3s ease;
+    // Active state
+    &.active {
+        color: white;
+        font-weight: 600;
+        background: linear-gradient(135deg, $accent-color, $accent-secondary);
+        box-shadow: 0 6px 20px rgba($accent-color, 0.25);
 
         &:hover {
-            box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba($accent-color, 0.3);
         }
+    }
 
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: $spacing-sm;
-            color: $primary-color;
-            position: relative;
+    // Focus state for accessibility
+    &:focus-visible {
+        outline: 2px solid $accent-color;
+        outline-offset: 2px;
+    }
 
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -8px;
-                left: 0;
-                width: 40px;
-                height: 3px;
-                background: linear-gradient(90deg, $accent-color, lighten($accent-color, 20%));
-                border-radius: 2px;
-            }
-        }
+    // WIP badge
+    .wip-badge {
+        background: rgba($accent-color, 0.1);
+        color: $accent-color;
+        padding: 0.2rem 0.6rem;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-left: 0.5rem;
+        border: 1px solid rgba($accent-color, 0.2);
+    }
+}
 
-        p {
-            color: $text-muted;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: $spacing-lg;
-        }
+// Content area
+.roadmap-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-sm;
+}
+
+.content-pane {
+    display: none;
+
+    &.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+}
+
+// Content cards
+.content-card {
+    background: white;
+    border-radius: 20px;
+    padding: $spacing-xl;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba($primary-color, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+        border-color: rgba($accent-color, 0.15);
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: $spacing-md;
+        color: $primary-color;
+        font-weight: 700;
+    }
+
+    p {
+        color: $text-muted;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: $spacing-lg;
     }
 }
 
@@ -251,209 +253,265 @@
 // PREVIEW GRID & CONTENT ITEMS
 // ============================================================================
 
+// Variables for this section
+$card-border-radius: 16px;
+$card-transition: all 0.3s ease;
+$card-shadow: 0 4px 20px rgba(0,0,0,0.08);
+$card-shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+$card-image-height: 200px;
+
+// Grid containers
 .preview-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: $spacing-lg;
+    margin: $spacing-xl 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 $spacing-sm;
 
-    // Single post - featured layout
-    .preview-item:only-child {
+    // Single item - featured layout
+    &:has(.preview-item:only-child) {
+        grid-template-columns: 1fr;
         max-width: 600px;
-        margin: 0 auto;
 
-        .preview-image {
-            height: 250px;
-        }
-
-        .preview-text {
-            padding: 2rem;
-
-            h4 {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
+        .preview-item {
+            .preview-image {
+                height: 250px;
             }
 
-            .excerpt {
-                font-size: 1.1rem;
-                margin-bottom: 1.5rem;
+            .preview-text {
+                padding: $spacing-xl;
+
+                h4 {
+                    font-size: 1.5rem;
+                }
+
+                .excerpt {
+                    font-size: 1.1rem;
+                }
             }
         }
     }
 
-    // Two posts - side by side on larger screens
+    // Two items - optimize for pair
     &:has(.preview-item:nth-child(2):last-child) {
-        @media (min-width: $breakpoint-mobile) {
-            flex-direction: row;
-            max-width: 900px;
-            margin: 2rem auto;
+        max-width: 800px;
+        grid-template-columns: repeat(2, 1fr);
 
-            .preview-item {
-                flex: 1;
-            }
+        @media (max-width: $breakpoint-mobile) {
+            grid-template-columns: 1fr;
         }
-    }
-
-    // Three or more posts - grid layout
-    &:has(.preview-item:nth-child(3)) {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        max-width: 1200px;
-        margin: 2rem auto;
     }
 }
 
 .hobby-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    gap: $spacing-lg;
+    margin: $spacing-xl 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 $spacing-sm;
 }
 
-.preview-item {
+// ============================================================================
+// UNIFIED CARD SYSTEM - Base styles for both blog and hobby cards
+// ============================================================================
+
+// Base card class (shared by preview-item and hobby-item)
+%base-card {
     display: block;
-    border-radius: 16px;
+    border-radius: $card-border-radius;
     overflow: hidden;
     background: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: $card-shadow;
+    transition: $card-transition;
     text-decoration: none;
     color: inherit;
-    position: relative;
+    border: 1px solid rgba($primary-color, 0.06);
 
     &:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        transform: translateY(-4px);
+        box-shadow: $card-shadow-hover;
+        border-color: rgba($accent-color, 0.15);
 
-        .preview-image {
-            transform: scale(1.08);
-
-            .image-overlay {
-                opacity: 0.3;
-            }
+        .card-title {
+            color: $accent-color;
         }
 
-        .preview-text h4 {
-            color: $accent-color;
+        .category {
+            transform: scale(1.05);
         }
     }
 
-    .preview-image {
-        height: 200px;
-        background-size: cover;
-        background-position: center;
-        transition: transform 0.6s ease;
-        position: relative;
+    &:focus-visible {
+        outline: 2px solid $accent-color;
+        outline-offset: 2px;
+    }
+}
+
+// Blog preview cards
+.preview-item {
+    @extend %base-card;
+}
+
+// Hobby cards (unified with blog cards)
+.hobby-item {
+    @extend %base-card;
+}
+
+// ============================================================================
+// UNIFIED IMAGE COMPONENT
+// ============================================================================
+
+// Base image styles 
+%base-card-image {
+    height: $card-image-height;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,
+        lighten($accent-color, 35%) 0%,
+        lighten($accent-secondary, 30%) 100%);
+}
+
+// Blog preview images
+.preview-item .preview-image {
+    @extend %base-card-image;
+
+    // Blog category-specific colors
+    &[data-category="tech"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    &[data-category="journey"] {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    &[data-category="passion"] {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    }
+
+    // Category icon when no image
+    &::after {
+        content: attr(data-icon);
+        font-size: 2.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        font-weight: 500;
+    }
+}
+
+// Hobby images
+.hobby-item .hobby-image {
+    @extend %base-card-image;
+
+    // Hobby emoji in corner
+    .hobby-emoji {
+        position: absolute;
+        top: $spacing-md;
+        right: $spacing-md;
+        font-size: 2rem;
+        background: rgba(0,0,0,0.6);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
+        backdrop-filter: blur(5px);
+    }
+}
 
-        // Default gradient backgrounds based on category
-        background-image: linear-gradient(135deg,
-            lighten($accent-color, 40%) 0%,
-            lighten($accent-secondary, 35%) 100%);
+// ============================================================================
+// UNIFIED TEXT CONTENT COMPONENT
+// ============================================================================
 
-        // Category-specific gradients
-        &[data-category="Philosophy"] {
-            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+// Base text content styles
+%base-card-text {
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 
-        &[data-category="Tech"] {
-            background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        &[data-category="Hobbies"] {
-            background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
-        &[data-category="Thoughts"] {
-            background-image: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        }
-
-        // Subtle pattern overlay
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
-                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 2px);
-            background-size: 30px 30px;
-            opacity: 0.3;
-        }
-
-        // Category icon in center when no image
-        &::after {
-            content: attr(data-icon);
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            z-index: 2;
-            position: relative;
-        }
-
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($accent-color, 0.1));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: 1;
-        }
+    .card-title {
+        font-size: 1.3rem;
+        margin-bottom: $spacing-sm;
+        color: $primary-color;
+        transition: color 0.3s ease;
+        line-height: 1.3;
+        font-weight: 700;
     }
 
-    .preview-text {
-        padding: 1.5rem;
+    .card-description {
+        color: $text-muted;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: auto;
         flex-grow: 1;
+    }
+}
+
+// Blog preview text
+.preview-item .preview-text {
+    @extend %base-card-text;
+
+    // Blog-specific title selector
+    h4 {
+        @extend .card-title;
+    }
+
+    // Blog excerpt
+    .excerpt {
+        @extend .card-description;
+    }
+
+    // Blog meta information
+    .meta {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        margin-top: $spacing-md;
+        padding-top: $spacing-md;
+        border-top: 1px solid rgba($primary-color, 0.08);
 
-        h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: $primary-color;
-            transition: color 0.3s ease;
-            line-height: 1.3;
-            font-weight: 700;
+        .category {
+            background: rgba($accent-color, 0.1);
+            color: $accent-color;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: transform 0.2s ease;
         }
 
-        .excerpt {
-            color: $text-muted;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: auto;
-            flex-grow: 1;
+        .date {
+            color: lighten($text-muted, 5%);
+            font-weight: 500;
         }
+    }
+}
 
-        .meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            color: lighten($text-muted, 10%);
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba($primary-color, 0.1);
+// Hobby text content
+.hobby-item .hobby-text {
+    @extend %base-card-text;
 
-            .category {
-                background: linear-gradient(135deg, rgba($accent-color, 0.1), rgba($accent-secondary, 0.1));
-                color: $accent-color;
-                padding: 0.25rem 0.75rem;
-                border-radius: 12px;
-                font-weight: 600;
-                font-size: 0.8rem;
-            }
+    // Hobby-specific title selector
+    h4 {
+        @extend .card-title;
+    }
 
-            .date {
-                color: $text-muted;
-            }
-        }
+    // Hobby description
+    p {
+        @extend .card-description;
+        margin-bottom: 0;
     }
 }
 
@@ -793,6 +851,8 @@
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
 }
+
+
 
 // ============================================================================
 // BLOG SECTION (Homepage Preview)

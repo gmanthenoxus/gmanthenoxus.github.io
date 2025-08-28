@@ -171,7 +171,6 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -690,28 +689,32 @@ body.nav-open .site-footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, #008753, #012169);
-  opacity: 0.6;
+  opacity: 0.8;
 }
-.tabbed-roadmap .roadmap-nav {
+
+.roadmap-nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(45, 55, 71, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 @media (max-width: 768px) {
-  .tabbed-roadmap .roadmap-nav {
+  .roadmap-nav {
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin: 0 1rem 2rem;
   }
 }
-.tabbed-roadmap .roadmap-nav .nav-item {
+
+.roadmap-nav .nav-item {
   background: none;
   border: none;
   padding: 1rem 2rem;
@@ -720,12 +723,12 @@ body.nav-open .site-footer {
   color: #718096;
   cursor: pointer;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   border-radius: 12px;
   margin: 0 0.5rem;
 }
 @media (max-width: 768px) {
-  .tabbed-roadmap .roadmap-nav .nav-item {
+  .roadmap-nav .nav-item {
     padding: 1rem 1.5rem;
     font-size: 1rem;
     margin: 0;
@@ -733,248 +736,241 @@ body.nav-open .site-footer {
     text-align: center;
   }
 }
-.tabbed-roadmap .roadmap-nav .nav-item:hover {
-  color: #2D3747;
-  background: linear-gradient(135deg, rgba(0, 135, 83, 0.08), rgba(1, 33, 105, 0.08));
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 6px 16px rgba(0, 135, 83, 0.15);
+.roadmap-nav .nav-item:hover {
+  color: #008753;
+  background: rgba(0, 135, 83, 0.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 135, 83, 0.15);
 }
-.tabbed-roadmap .roadmap-nav .nav-item.active {
+.roadmap-nav .nav-item.active {
   color: white;
   font-weight: 600;
   background: linear-gradient(135deg, #008753, #012169);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 135, 83, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 135, 83, 0.25);
 }
-.tabbed-roadmap .roadmap-nav .nav-item.active::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, #008753, #012169);
-  border-radius: 14px;
-  z-index: -1;
-  opacity: 0.3;
-  filter: blur(8px);
+.roadmap-nav .nav-item.active:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 135, 83, 0.3);
 }
-.tabbed-roadmap .roadmap-nav .nav-item .wip-badge {
-  animation: pulse 2s infinite;
+.roadmap-nav .nav-item:focus-visible {
+  outline: 2px solid #008753;
+  outline-offset: 2px;
 }
-.tabbed-roadmap .roadmap-content {
+.roadmap-nav .nav-item .wip-badge {
+  background: rgba(0, 135, 83, 0.1);
+  color: #008753;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  border: 1px solid rgba(0, 135, 83, 0.2);
+}
+
+.roadmap-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
-.tabbed-roadmap .content-pane {
+
+.content-pane {
   display: none;
 }
-.tabbed-roadmap .content-pane.active {
+.content-pane.active {
   display: block;
   animation: fadeIn 0.5s ease;
 }
-.tabbed-roadmap .content-card {
+
+.content-card {
   background: white;
   border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(45, 55, 71, 0.05);
+  padding: 3rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(45, 55, 71, 0.08);
   transition: all 0.3s ease;
 }
-.tabbed-roadmap .content-card:hover {
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+.content-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
+  border-color: rgba(0, 135, 83, 0.15);
 }
-.tabbed-roadmap .content-card h3 {
+.content-card h3 {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #2D3747;
-  position: relative;
+  font-weight: 700;
 }
-.tabbed-roadmap .content-card h3::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, #008753, rgb(0, 237, 145.7111111111));
-  border-radius: 2px;
-}
-.tabbed-roadmap .content-card p {
+.content-card p {
   color: #718096;
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 2rem;
 }
 
 .preview-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
-.preview-grid .preview-item:only-child {
+.preview-grid:has(.preview-item:only-child) {
+  grid-template-columns: 1fr;
   max-width: 600px;
-  margin: 0 auto;
 }
-.preview-grid .preview-item:only-child .preview-image {
+.preview-grid:has(.preview-item:only-child) .preview-item .preview-image {
   height: 250px;
 }
-.preview-grid .preview-item:only-child .preview-text {
-  padding: 2rem;
+.preview-grid:has(.preview-item:only-child) .preview-item .preview-text {
+  padding: 3rem;
 }
-.preview-grid .preview-item:only-child .preview-text h4 {
+.preview-grid:has(.preview-item:only-child) .preview-item .preview-text h4 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
 }
-.preview-grid .preview-item:only-child .preview-text .excerpt {
+.preview-grid:has(.preview-item:only-child) .preview-item .preview-text .excerpt {
   font-size: 1.1rem;
-  margin-bottom: 1.5rem;
 }
-@media (min-width: 768px) {
+.preview-grid:has(.preview-item:nth-child(2):last-child) {
+  max-width: 800px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 768px) {
   .preview-grid:has(.preview-item:nth-child(2):last-child) {
-    flex-direction: row;
-    max-width: 900px;
-    margin: 2rem auto;
+    grid-template-columns: 1fr;
   }
-  .preview-grid:has(.preview-item:nth-child(2):last-child) .preview-item {
-    flex: 1;
-  }
-}
-.preview-grid:has(.preview-item:nth-child(3)) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  max-width: 1200px;
-  margin: 2rem auto;
 }
 
 .hobby-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
-.preview-item {
+.hobby-item, .preview-item {
   display: block;
   border-radius: 16px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   text-decoration: none;
   color: inherit;
-  position: relative;
+  border: 1px solid rgba(45, 55, 71, 0.06);
 }
-.preview-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.hobby-item:hover, .preview-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 135, 83, 0.15);
 }
-.preview-item:hover .preview-image {
-  transform: scale(1.08);
-}
-.preview-item:hover .preview-image .image-overlay {
-  opacity: 0.3;
-}
-.preview-item:hover .preview-text h4 {
+.hobby-item:hover .card-title, .hobby-item:hover .hobby-text h4, .hobby-item:hover .preview-item .preview-text h4, .preview-item .preview-text .hobby-item:hover h4, .preview-item:hover .card-title, .preview-item:hover .hobby-item .hobby-text h4, .hobby-item .hobby-text .preview-item:hover h4, .preview-item:hover .preview-text h4 {
   color: #008753;
 }
-.preview-item .preview-image {
+.hobby-item:hover .category, .preview-item:hover .category {
+  transform: scale(1.05);
+}
+.hobby-item:focus-visible, .preview-item:focus-visible {
+  outline: 2px solid #008753;
+  outline-offset: 2px;
+}
+
+.hobby-item .hobby-image, .preview-item .preview-image {
   height: 200px;
   background-size: cover;
   background-position: center;
-  transition: transform 0.6s ease;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(135deg, rgb(84, 255, 189.1333333333) 0%, rgb(31.6273584906, 99.7028301887, 252.8726415094) 100%);
+  background: linear-gradient(135deg, rgb(58.5, 255, 179.3111111111) 0%, rgb(6.3679245283, 82.141509434, 252.6320754717) 100%);
 }
-.preview-item .preview-image[data-category=Philosophy] {
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+.preview-item .preview-image[data-category=tech] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
-.preview-item .preview-image[data-category=Tech] {
-  background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.preview-item .preview-image[data-category=journey] {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
-.preview-item .preview-image[data-category=Hobbies] {
-  background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-.preview-item .preview-image[data-category=Thoughts] {
-  background-image: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-.preview-item .preview-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 2px, transparent 2px), radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
-  background-size: 30px 30px;
-  opacity: 0.3;
+.preview-item .preview-image[data-category=passion] {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 }
 .preview-item .preview-image::after {
   content: attr(data-icon);
-  font-size: 3rem;
-  color: rgba(255, 255, 255, 0.8);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 2;
-  position: relative;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
 }
-.preview-item .preview-image .image-overlay {
+
+.hobby-item .hobby-image .hobby-emoji {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(45, 55, 71, 0.1), rgba(0, 135, 83, 0.1));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 1;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
 }
-.preview-item .preview-text {
-  padding: 1.5rem;
-  flex-grow: 1;
+
+.hobby-item .hobby-text, .preview-item .preview-text {
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
-.preview-item .preview-text h4 {
+.hobby-item .hobby-text .card-title, .hobby-item .hobby-text h4, .preview-item .preview-text .card-title, .preview-item .preview-text h4 {
   font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   color: #2D3747;
   transition: color 0.3s ease;
   line-height: 1.3;
   font-weight: 700;
 }
-.preview-item .preview-text .excerpt {
+.hobby-item .hobby-text .card-description, .hobby-item .hobby-text p, .preview-item .preview-text .card-description, .preview-item .preview-text .excerpt {
   color: #718096;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: auto;
   flex-grow: 1;
 }
+
 .preview-item .preview-text .meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.85rem;
-  color: rgb(142.3198380567, 154.2226720648, 171.6801619433);
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(45, 55, 71, 0.1);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(45, 55, 71, 0.08);
 }
 .preview-item .preview-text .meta .category {
-  background: linear-gradient(135deg, rgba(0, 135, 83, 0.1), rgba(1, 33, 105, 0.1));
+  background: rgba(0, 135, 83, 0.1);
   color: #008753;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 12px;
   font-weight: 600;
   font-size: 0.8rem;
+  transition: transform 0.2s ease;
 }
 .preview-item .preview-text .meta .date {
-  color: #718096;
+  color: rgb(127.6599190283, 141.1113360324, 160.8400809717);
+  font-weight: 500;
+}
+
+.hobby-item .hobby-text p {
+  margin-bottom: 0;
 }
 
 .wip-badge {
@@ -1731,56 +1727,6 @@ body.nav-open .site-footer {
   color: #718096;
 }
 
-.hobby-item {
-  display: block;
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-}
-.hobby-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-.hobby-item:hover .hobby-image {
-  transform: scale(1.05);
-}
-.hobby-item .hobby-image {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  transition: transform 0.5s ease;
-}
-.hobby-item .hobby-image .hobby-emoji {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hobby-item .hobby-text {
-  padding: 1.5rem;
-}
-.hobby-item .hobby-text h4 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #2D3747;
-}
-.hobby-item .hobby-text p {
-  color: #718096;
-  font-size: 0.95rem;
-}
-
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0) translateX(-50%);
@@ -2224,55 +2170,6 @@ a:hover {
   max-width: 400px;
   margin: 0 auto;
   line-height: 1.6;
-}
-.tabbed-roadmap .hobby-item {
-  display: block;
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-}
-.tabbed-roadmap .hobby-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-.tabbed-roadmap .hobby-item:hover .hobby-image {
-  transform: scale(1.05);
-}
-.tabbed-roadmap .hobby-item .hobby-image {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  transition: transform 0.5s ease;
-}
-.tabbed-roadmap .hobby-item .hobby-image .hobby-emoji {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.tabbed-roadmap .hobby-item .hobby-text {
-  padding: 1.5rem;
-}
-.tabbed-roadmap .hobby-item .hobby-text h4 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #2D3747;
-}
-.tabbed-roadmap .hobby-item .hobby-text p {
-  color: #718096;
-  font-size: 0.95rem;
 }
 .tabbed-roadmap .wip-badge {
   background: rgb(228.4545454545, 238.4090909091, 245.0454545455);
