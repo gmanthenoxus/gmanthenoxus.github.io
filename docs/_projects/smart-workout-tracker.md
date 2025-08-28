@@ -1,16 +1,94 @@
 ---
-layout: post
+layout: project
 title: "Smart Workout Tracker"
 date: 2024-01-10
 hobby: fitness
 description: "AI-powered fitness app that analyzes workout patterns, suggests optimal training loads, and predicts performance plateaus before they happen."
 image: "/assets/images/projects/workout-tracker.jpg"
 status: "development"
+progress: 75
 tech_stack: ["React Native", "TensorFlow", "Python", "Firebase", "Computer Vision", "HealthKit"]
 github: "https://github.com/gmanthenoxus/smart-workout-tracker"
 demo: "https://workout-tracker.gmanthenoxus.dev"
 categories: [fitness, machine-learning, mobile]
 tags: [fitness, ai, computer-vision, health, mobile-app]
+
+# Project Statistics
+stats:
+  - label: "Accuracy Rate"
+    value: "92%"
+  - label: "Exercises Supported"
+    value: "150+"
+  - label: "Beta Users"
+    value: "500"
+  - label: "Form Corrections"
+    value: "10K+"
+
+# Project Timeline
+timeline:
+  - title: "Research & Planning"
+    date: "Dec 2023"
+    completed: true
+  - title: "Core AI Model Development"
+    date: "Jan 2024"
+    completed: true
+  - title: "Computer Vision Integration"
+    date: "Feb 2024"
+    completed: true
+  - title: "Mobile App Development"
+    date: "Mar 2024"
+    completed: false
+  - title: "Beta Testing Phase"
+    date: "Apr 2024"
+    completed: false
+  - title: "Public Release"
+    date: "May 2024"
+    completed: false
+
+# Current TO-DO List
+todo:
+  - task: "Complete iOS app store submission"
+    completed: false
+    priority: "high"
+  - task: "Implement social sharing features"
+    completed: false
+    priority: "medium"
+  - task: "Add nutrition tracking integration"
+    completed: false
+    priority: "medium"
+  - task: "Optimize AI model for edge devices"
+    completed: false
+    priority: "high"
+  - task: "Create onboarding tutorial"
+    completed: true
+    priority: "high"
+  - task: "Implement offline mode"
+    completed: false
+    priority: "low"
+  - task: "Add Apple Watch support"
+    completed: false
+    priority: "medium"
+  - task: "Build exercise library"
+    completed: true
+    priority: "high"
+
+# Related Links
+related_links:
+  - title: "Fitness Hobby Page"
+    url: "/hobbies/fitness/"
+    icon: "💪"
+  - title: "Beta Testing Program"
+    url: "https://testflight.apple.com/join/workout-tracker"
+    icon: "🧪"
+    external: true
+  - title: "Research Paper"
+    url: "https://arxiv.org/abs/2024.workout.ai"
+    icon: "📄"
+    external: true
+  - title: "Development Blog"
+    url: "https://blog.gmanthenoxus.dev/workout-tracker"
+    icon: "📝"
+    external: true
 ---
 
 # Smart Workout Tracker

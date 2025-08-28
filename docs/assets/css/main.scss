@@ -6,10 +6,10 @@
 // Import modular SCSS files
 @import 'variables';
 @import 'base';
+@import 'navigation';
 @import 'components';
+@import 'projects';
 @import 'homepage';
-@import 'sidebar';
-@import 'project-page';
 
 // ========================================
 // 🔄 Animations

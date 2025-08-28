@@ -1,16 +1,78 @@
 ---
-layout: post
+layout: project
 title: "Sneaker Drop Tracker"
 date: 2024-02-20
 hobby: sneakers
 description: "Real-time notification system that monitors multiple sneaker apps and websites, alerting users to upcoming releases, restocks, and price drops with customizable filters."
 image: "/assets/images/projects/sneaker-tracker.jpg"
 status: "completed"
+progress: 100
 tech_stack: ["React Native", "Node.js", "Web Scraping", "Push Notifications", "MongoDB", "Redis"]
 github: "https://github.com/gmanthenoxus/sneaker-drop-tracker"
 demo: "https://sneaker-tracker.gmanthenoxus.dev"
 categories: [sneakers, mobile, automation]
 tags: [sneakers, notifications, web-scraping, mobile-app, real-time]
+
+# Project Statistics
+stats:
+  - label: "Retailers Monitored"
+    value: "25+"
+  - label: "Daily Active Users"
+    value: "1,200"
+  - label: "Notifications Sent"
+    value: "50K+"
+  - label: "Success Rate"
+    value: "94%"
+
+# Project Timeline
+timeline:
+  - title: "Project Planning & Research"
+    date: "Jan 2024"
+    completed: true
+  - title: "Core Monitoring System"
+    date: "Feb 2024"
+    completed: true
+  - title: "Mobile App Development"
+    date: "Mar 2024"
+    completed: true
+  - title: "Beta Testing & Refinement"
+    date: "Apr 2024"
+    completed: true
+  - title: "Public Launch"
+    date: "May 2024"
+    completed: true
+
+# TO-DO List (for ongoing improvements)
+todo:
+  - task: "Add European retailer support"
+    completed: false
+    priority: "high"
+  - task: "Implement machine learning for drop prediction"
+    completed: false
+    priority: "medium"
+  - task: "Add social features for community sharing"
+    completed: false
+    priority: "low"
+  - task: "Optimize notification delivery speed"
+    completed: true
+    priority: "high"
+  - task: "Add dark mode to mobile app"
+    completed: true
+    priority: "medium"
+
+# Related Links
+related_links:
+  - title: "Sneaker Hobby Page"
+    url: "/hobbies/sneakers/"
+    icon: "👟"
+  - title: "API Documentation"
+    url: "https://docs.sneaker-tracker.gmanthenoxus.dev"
+    icon: "📚"
+    external: true
+  - title: "Community Discord"
+    url: "https://discord.gg/sneaker-tracker"
+    icon: "💬"
+    external: true
 ---
 
 # Sneaker Drop Tracker

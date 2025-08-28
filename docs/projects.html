@@ -1,0 +1,226 @@
+---
+layout: default
+title: "Projects & Builds"
+description: "Comprehensive showcase of technical projects spanning all hobby areas, from sports analytics to automation systems."
+---
+
+<div class="projects-page">
+    <!-- Page Header -->
+    <header class="projects-header">
+        <div class="header-content">
+            <h1 class="page-title">Projects & Builds</h1>
+            <p class="page-subtitle">Where hobbies meet code and passion becomes innovation</p>
+            
+            <!-- Project Statistics -->
+            <div class="project-stats">
+                <div class="stat-item">
+                    <span class="stat-number">{{ site.projects.size }}</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">{{ site.data.hobbies.size }}</span>
+                    <span class="stat-label">Hobbies Explored</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Ideas Brewing</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Filters -->
+    <section class="project-filters" aria-label="Project filters">
+        <div class="filter-container">
+            <h2 class="filter-title">Filter by Category</h2>
+            <div class="filter-buttons" role="group" aria-label="Project category filters">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                    <span class="filter-icon">🎯</span>
+                    <span class="filter-text">All Projects</span>
+                    <span class="filter-count">{{ site.projects.size }}</span>
+                </button>
+                
+                {% for hobby in site.data.hobbies %}
+                {% assign hobby_projects = site.projects | where: "hobby", hobby.slug %}
+                {% if hobby_projects.size > 0 %}
+                <button class="filter-btn" data-filter="{{ hobby.slug }}" aria-pressed="false">
+                    <span class="filter-icon">{{ hobby.emoji }}</span>
+                    <span class="filter-text">{{ hobby.name }}</span>
+                    <span class="filter-count">{{ hobby_projects.size }}</span>
+                </button>
+                {% endif %}
+                {% endfor %}
+            </div>
+            
+            <!-- Status Filters -->
+            <div class="status-filters">
+                <h3 class="status-title">Filter by Status</h3>
+                <div class="status-buttons" role="group" aria-label="Project status filters">
+                    <button class="status-btn active" data-status="all" aria-pressed="true">All Status</button>
+                    <button class="status-btn" data-status="completed" aria-pressed="false">
+                        <span class="status-indicator completed"></span>Completed
+                    </button>
+                    <button class="status-btn" data-status="development" aria-pressed="false">
+                        <span class="status-indicator development"></span>In Progress
+                    </button>
+                    <button class="status-btn" data-status="planning" aria-pressed="false">
+                        <span class="status-indicator planning"></span>Planning
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section" aria-label="Projects showcase">
+        <div class="projects-grid" id="projects-grid">
+            {% for project in site.projects %}
+            <article class="project-card" 
+                     data-hobby="{{ project.hobby }}" 
+                     data-status="{{ project.status | default: 'completed' }}"
+                     data-categories="{{ project.categories | join: ' ' }}">
+                
+                <!-- Project Image -->
+                <div class="project-image">
+                    {% if project.image %}
+                    <img src="{{ project.image }}" alt="{{ project.title }} preview" loading="lazy">
+                    {% else %}
+                    <div class="project-placeholder">
+                        <span class="placeholder-icon">🚀</span>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Status Badge -->
+                    <div class="project-status {{ project.status | default: 'completed' }}">
+                        {% case project.status %}
+                            {% when 'development' %}
+                                <span class="status-icon">🔧</span>In Progress
+                            {% when 'planning' %}
+                                <span class="status-icon">📋</span>Planning
+                            {% when 'beta-testing' %}
+                                <span class="status-icon">🧪</span>Beta Testing
+                            {% else %}
+                                <span class="status-icon">✅</span>Completed
+                        {% endcase %}
+                    </div>
+                    
+                    <!-- Progress Bar (for non-completed projects) -->
+                    {% if project.status != 'completed' and project.progress %}
+                    <div class="project-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ project.progress }}%"></div>
+                        </div>
+                        <span class="progress-text">{{ project.progress }}% Complete</span>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Project Content -->
+                <div class="project-content">
+                    <!-- Header -->
+                    <header class="project-header">
+                        <h3 class="project-title">
+                            <a href="{{ project.url }}">{{ project.title }}</a>
+                        </h3>
+                        
+                        <!-- Hobby Tag -->
+                        {% for hobby in site.data.hobbies %}
+                            {% if hobby.slug == project.hobby %}
+                            <span class="project-hobby-tag {{ project.hobby }}">
+                                {{ hobby.emoji }} {{ hobby.name }}
+                            </span>
+                            {% break %}
+                            {% endif %}
+                        {% endfor %}
+                    </header>
+                    
+                    <!-- Description -->
+                    <p class="project-description">{{ project.description }}</p>
+                    
+                    <!-- Tech Stack -->
+                    {% if project.tech_stack %}
+                    <div class="project-tech-stack">
+                        <h4 class="tech-title">Tech Stack</h4>
+                        <div class="tech-tags">
+                            {% for tech in project.tech_stack limit: 4 %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                            {% if project.tech_stack.size > 4 %}
+                            <span class="tech-more">+{{ project.tech_stack.size | minus: 4 }} more</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Project Stats -->
+                    {% if project.stats %}
+                    <div class="project-stats-mini">
+                        {% for stat in project.stats limit: 2 %}
+                        <div class="stat-mini">
+                            <span class="stat-value">{{ stat.value }}</span>
+                            <span class="stat-label">{{ stat.label }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Project Footer -->
+                <footer class="project-footer">
+                    <div class="project-meta">
+                        {% if project.date %}
+                        <time class="project-date" datetime="{{ project.date | date_to_xmlschema }}">
+                            {{ project.date | date: "%b %Y" }}
+                        </time>
+                        {% endif %}
+                        
+                        <!-- External Links -->
+                        <div class="project-links">
+                            {% if project.github %}
+                            <a href="{{ project.github }}" class="project-link github" target="_blank" rel="noopener" aria-label="View {{ project.title }} on GitHub">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            {% endif %}
+                            
+                            {% if project.demo %}
+                            <a href="{{ project.demo }}" class="project-link demo" target="_blank" rel="noopener" aria-label="View {{ project.title }} demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                                </svg>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- View Details Button -->
+                    <a href="{{ project.url }}" class="btn btn-primary project-cta">
+                        View Details
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                        </svg>
+                    </a>
+                </footer>
+            </article>
+            {% endfor %}
+        </div>
+        
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+            <div class="empty-icon">🔍</div>
+            <h3 class="empty-title">No projects found</h3>
+            <p class="empty-description">Try adjusting your filters to see more projects.</p>
+            <button class="btn btn-secondary" onclick="resetFilters()">Reset Filters</button>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="projects-cta">
+        <div class="cta-content">
+            <h2>Have a Project Idea?</h2>
+            <p>I'm always interested in collaborating on exciting projects that combine technology with personal passions.</p>
+            <a href="/contact/" class="btn btn-primary btn-large">Get In Touch</a>
+        </div>
+    </section>
+</div>

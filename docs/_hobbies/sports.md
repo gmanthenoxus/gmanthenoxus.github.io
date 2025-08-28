@@ -129,10 +129,10 @@ current_projects:
   - name: "Fantasy Lineup Optimizer"
     icon: "🏆"
     description: "Machine learning algorithm that optimizes daily fantasy lineups by analyzing player matchups, weather conditions, injury reports, and historical performance patterns."
-    status: "Completed"
-    progress: 100
+    status: "Production"
+    progress: 95
     tech_stack: ["Python", "Scikit-learn", "Pandas", "DraftKings API", "PostgreSQL"]
-    link: "/projects/fantasy-sports-lineup-optimizer/"
+    link: "/projects/fantasy-optimizer"
   
   - name: "Sports Betting Edge Finder"
     icon: "📈"

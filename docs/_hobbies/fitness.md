@@ -131,9 +131,11 @@ current_projects:
     icon: "📱"
     description: "AI-powered fitness app that analyzes workout patterns, suggests optimal training loads, and predicts performance plateaus before they happen."
     status: "Development"
-    progress: 70
-    tech_stack: ["React Native", "TensorFlow", "Python", "Firebase", "Computer Vision"]
-    link: "/projects/smart-workout-tracker"
+    progress: 75
+    tech_stack: ["React Native", "TensorFlow", "Python", "Firebase", "Computer Vision", "HealthKit"]
+    link: "/projects/smart-workout-tracker/"
+    github: "https://github.com/gmanthenoxus/smart-workout-tracker"
+    demo: "https://workout-tracker.gmanthenoxus.dev"
   
   - name: "Form Analysis System"
     icon: "🎥"

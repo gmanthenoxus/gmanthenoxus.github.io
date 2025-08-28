@@ -130,10 +130,12 @@ current_projects:
   - name: "Sneaker Drop Tracker"
     icon: "📱"
     description: "Real-time notification system that monitors multiple sneaker apps and websites, alerting users to upcoming releases, restocks, and price drops with customizable filters."
-    status: "Production"
-    progress: 85
-    tech_stack: ["React Native", "Node.js", "Web Scraping", "Push Notifications", "MongoDB"]
-    link: "/projects/sneaker-drop-tracker"
+    status: "Completed"
+    progress: 100
+    tech_stack: ["React Native", "Node.js", "Web Scraping", "Push Notifications", "MongoDB", "Redis"]
+    link: "/projects/sneaker-drop-tracker/"
+    github: "https://github.com/gmanthenoxus/sneaker-drop-tracker"
+    demo: "https://sneaker-tracker.gmanthenoxus.dev"
 
   - name: "Collection Manager"
     icon: "👟"
