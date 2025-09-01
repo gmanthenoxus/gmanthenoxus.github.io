@@ -107,21 +107,49 @@ layout: default
     <!-- Brain Work Content -->
     <div id="brain" class="content-pane">
       <div class="content-card">
-        <div class="wip-container">
-          <h3>Brain Work Lab</h3>
-          <div class="construction">
-            <div class="building">
-              <div class="window"></div>
-              <div class="window"></div>
-              <div class="window"></div>
-              <div class="construction-sign">COMING SOON</div>
+        <div class="wip-section">
+          <div class="wip-header">
+            <h3>Brain Work Lab</h3>
+            <span class="wip-badge">
+              <span class="badge-icon">⚡</span>
+              <span class="badge-text">In Development</span>
+            </span>
+          </div>
+
+          <div class="wip-visual">
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" data-progress="75"></div>
+              </div>
+              <span class="progress-text">75% Complete</span>
+            </div>
+
+            <div class="feature-preview">
+              <div class="feature-item" style="--delay: 0s">
+                <div class="feature-icon">🧠</div>
+                <span>AI Collaboration</span>
+              </div>
+              <div class="feature-item" style="--delay: 0.2s">
+                <div class="feature-icon">💡</div>
+                <span>Idea Generation</span>
+              </div>
+              <div class="feature-item" style="--delay: 0.4s">
+                <div class="feature-icon">🔬</div>
+                <span>Research Tools</span>
+              </div>
             </div>
           </div>
-          <p>Interactive collaboration space coming soon!</p>
-          <div class="wip-form">
-            <p>Notify me when it's ready:</p>
-            <input type="email" placeholder="your.email@example.com">
-            <button class="btn-primary">Notify Me</button>
+
+          <div class="wip-content">
+            <p>An interactive collaboration space where ideas meet innovation. Get ready for AI-powered brainstorming, research tools, and creative workflows.</p>
+
+            <div class="wip-form">
+              <p>Be the first to know when it launches:</p>
+              <div class="email-input-group">
+                <input type="email" placeholder="your.email@example.com" class="email-input">
+                <button class="btn-primary notify-btn">Notify Me</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -131,25 +159,57 @@ layout: default
 
 <!-- Call to Action Section -->
 <section class="cta-section">
-  <div class="cta-container">
+  <div class="cta-background">
+    <div class="bg-particle" style="--delay: 0s; --duration: 15s;"></div>
+    <div class="bg-particle" style="--delay: 3s; --duration: 20s;"></div>
+    <div class="bg-particle" style="--delay: 6s; --duration: 18s;"></div>
+    <div class="bg-particle" style="--delay: 9s; --duration: 22s;"></div>
+  </div>
+
+  <div class="container">
     <div class="cta-content">
-      <h2>Ready to create something remarkable together?</h2>
-      <p>Whether you have a project idea, want to collaborate, or just chat about tech and passions, I'd love to connect.</p>
-      
-      <div class="cta-action">
-        <a href="/contact" class="cta-button">
-          <span>Let's Connect</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+      <div class="cta-text">
+        <h2 class="cta-title">Let's Build Something Amazing</h2>
+        <p class="cta-description">Ready to turn ideas into reality? Whether it's a project, collaboration, or just a chat about tech and innovation.</p>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="/contact" class="cta-btn primary">
+          <span class="btn-text">Get In Touch</span>
+          <div class="btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="/builds" class="cta-btn secondary">
+          <span class="btn-text">View Work</span>
+          <div class="btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M15 3H21V9M21 3L12 12M9 3H3V9M3 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
         </a>
       </div>
     </div>
-    
+
     <div class="cta-visual">
-      <div class="tech-emoji">💻</div>
-      <div class="tech-emoji">🔧</div>
-      <div class="tech-emoji">🚀</div>
+      <div class="orbit-container">
+        <div class="orbit orbit-1">
+          <div class="orbit-item">💻</div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="orbit-item">🚀</div>
+        </div>
+        <div class="orbit orbit-3">
+          <div class="orbit-item">⚡</div>
+        </div>
+        <div class="center-element">
+          <div class="pulse-ring"></div>
+          <div class="center-icon">🎯</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

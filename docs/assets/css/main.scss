@@ -7,6 +7,7 @@
 @import 'navigation';
 @import 'components';
 @import 'homepage';
+@import 'footer';
 
 // ========================================
 // 🔄 Animations
@@ -301,27 +302,7 @@ a {
 // ========================================
 
 
-// Footer
-.site-footer {
-  background: darken($primary-color, 10%);
-  color: $text-light;
-  text-align: center;
-  padding: $spacing-lg $spacing-sm;
-  margin-top: $spacing-xl;
-}
 
-.social-links {
-  margin-bottom: $spacing-sm;
-  
-  a {
-    color: $text-light;
-    margin: 0 $spacing-sm;
-    
-    &:hover {
-      color: $accent-color;
-    }
-  }
-}
 
 // Buttons
 .btn {

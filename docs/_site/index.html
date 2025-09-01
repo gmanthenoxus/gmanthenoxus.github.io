@@ -251,21 +251,49 @@
     <!-- Brain Work Content -->
     <div id="brain" class="content-pane">
       <div class="content-card">
-        <div class="wip-container">
-          <h3>Brain Work Lab</h3>
-          <div class="construction">
-            <div class="building">
-              <div class="window"></div>
-              <div class="window"></div>
-              <div class="window"></div>
-              <div class="construction-sign">COMING SOON</div>
+        <div class="wip-section">
+          <div class="wip-header">
+            <h3>Brain Work Lab</h3>
+            <span class="wip-badge">
+              <span class="badge-icon">⚡</span>
+              <span class="badge-text">In Development</span>
+            </span>
+          </div>
+
+          <div class="wip-visual">
+            <div class="progress-container">
+              <div class="progress-bar">
+                <div class="progress-fill" data-progress="75"></div>
+              </div>
+              <span class="progress-text">75% Complete</span>
+            </div>
+
+            <div class="feature-preview">
+              <div class="feature-item" style="--delay: 0s">
+                <div class="feature-icon">🧠</div>
+                <span>AI Collaboration</span>
+              </div>
+              <div class="feature-item" style="--delay: 0.2s">
+                <div class="feature-icon">💡</div>
+                <span>Idea Generation</span>
+              </div>
+              <div class="feature-item" style="--delay: 0.4s">
+                <div class="feature-icon">🔬</div>
+                <span>Research Tools</span>
+              </div>
             </div>
           </div>
-          <p>Interactive collaboration space coming soon!</p>
-          <div class="wip-form">
-            <p>Notify me when it's ready:</p>
-            <input type="email" placeholder="your.email@example.com">
-            <button class="btn-primary">Notify Me</button>
+
+          <div class="wip-content">
+            <p>An interactive collaboration space where ideas meet innovation. Get ready for AI-powered brainstorming, research tools, and creative workflows.</p>
+
+            <div class="wip-form">
+              <p>Be the first to know when it launches:</p>
+              <div class="email-input-group">
+                <input type="email" placeholder="your.email@example.com" class="email-input">
+                <button class="btn-primary notify-btn">Notify Me</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -275,38 +303,169 @@
 
 <!-- Call to Action Section -->
 <section class="cta-section">
-  <div class="cta-container">
+  <div class="cta-background">
+    <div class="bg-particle" style="--delay: 0s; --duration: 15s;"></div>
+    <div class="bg-particle" style="--delay: 3s; --duration: 20s;"></div>
+    <div class="bg-particle" style="--delay: 6s; --duration: 18s;"></div>
+    <div class="bg-particle" style="--delay: 9s; --duration: 22s;"></div>
+  </div>
+
+  <div class="container">
     <div class="cta-content">
-      <h2>Ready to create something remarkable together?</h2>
-      <p>Whether you have a project idea, want to collaborate, or just chat about tech and passions, I'd love to connect.</p>
-      
-      <div class="cta-action">
-        <a href="/contact" class="cta-button">
-          <span>Let's Connect</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+      <div class="cta-text">
+        <h2 class="cta-title">Let's Build Something Amazing</h2>
+        <p class="cta-description">Ready to turn ideas into reality? Whether it's a project, collaboration, or just a chat about tech and innovation.</p>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="/contact" class="cta-btn primary">
+          <span class="btn-text">Get In Touch</span>
+          <div class="btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </a>
+
+        <a href="/builds" class="cta-btn secondary">
+          <span class="btn-text">View Work</span>
+          <div class="btn-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M15 3H21V9M21 3L12 12M9 3H3V9M3 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
         </a>
       </div>
     </div>
-    
+
     <div class="cta-visual">
-      <div class="tech-emoji">💻</div>
-      <div class="tech-emoji">🔧</div>
-      <div class="tech-emoji">🚀</div>
+      <div class="orbit-container">
+        <div class="orbit orbit-1">
+          <div class="orbit-item">💻</div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="orbit-item">🚀</div>
+        </div>
+        <div class="orbit orbit-3">
+          <div class="orbit-item">⚡</div>
+        </div>
+        <div class="center-element">
+          <div class="pulse-ring"></div>
+          <div class="center-icon">🎯</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
     </main>
 
     <footer class="site-footer">
-    <div class="social-links">
-        
-            <a href="https://github.com/gmanthenoxus" target="_blank">GitHub</a>
-        
-        <!-- Add more social links as needed -->
+    <div class="footer-container">
+        <!-- Footer Main Content -->
+        <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h3 class="footer-logo">Noxus' Hub</h3>
+                <p class="footer-tagline">Building innovative solutions through code, creativity, and passion.</p>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/gmanthenoxus" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+
+                    <!-- Add LinkedIn if configured -->
+                    
+
+                    <!-- Add Twitter if configured -->
+                    
+
+                    <!-- Email Contact -->
+                    
+                    <a href="mailto:thisisnoxus@gmail.com" class="social-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0124 5.457z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-nav">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about" class="footer-link">About</a></li>
+                    <li><a href="/blog" class="footer-link">Blog</a></li>
+                    <li><a href="/builds" class="footer-link">Projects</a></li>
+                    <li><a href="/hobbies" class="footer-link">Hobbies</a></li>
+                    <li><a href="/contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="footer-posts">
+                <h4 class="footer-heading">Latest Posts</h4>
+                <ul class="footer-post-list">
+                    
+                    <li class="footer-post-item">
+                        <a href="/tech/2024/12/15/building-with-apis.html" class="footer-post-link">
+                            <span class="footer-post-title">Building Real-World Project...</span>
+                            <span class="footer-post-date">Dec 15</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/journey/2024/11/20/from-collector-to-creator.html" class="footer-post-link">
+                            <span class="footer-post-title">From Collector to Creator: ...</span>
+                            <span class="footer-post-date">Nov 20</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/tech/2024/10/10/discord-bot-lessons.html" class="footer-post-link">
+                            <span class="footer-post-title">What Building Discord Bots ...</span>
+                            <span class="footer-post-date">Oct 10</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="footer-newsletter">
+                <h4 class="footer-heading">Stay Connected</h4>
+                <p class="newsletter-description">Get updates on new projects and posts.</p>
+                <form class="newsletter-form" id="footer-newsletter">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="your.email@example.com" class="newsletter-email" required>
+                        <button type="submit" class="newsletter-submit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy" class="legal-link">Privacy</a>
+                <a href="/terms" class="legal-link">Terms</a>
+                <a href="/sitemap.xml" class="legal-link">Sitemap</a>
+            </div>
+        </div>
     </div>
-    <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
 </footer>
     <script src="/assets/js/navigation-simple.js"></script>
     <script src="/assets/js/project-filter.js"></script>

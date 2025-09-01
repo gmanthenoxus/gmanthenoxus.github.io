@@ -4,35 +4,7 @@
 // Navigation styles are in _navigation.scss
 // ============================================================================
 
-// Footer
-.site-footer {
-    background: darken($primary-color, 10%);
-    color: $text-light;
-    text-align: center;
-    padding: $spacing-lg 0;
-    margin-top: $spacing-xl;
-}
 
-.social-links {
-    margin-bottom: $spacing-sm;
-    
-    a {
-        color: $text-light;
-        margin: 0 $spacing-sm;
-        font-size: 1.2rem;
-        transition: color $transition-fast;
-        
-        &:hover {
-            color: $accent-color;
-            text-decoration: none;
-        }
-    }
-}
-
-.footer-copyright {
-    font-size: 0.9rem;
-    color: lighten($text-muted, 20%);
-}
 
 // Cards
 .card {
@@ -41,7 +13,7 @@
     padding: $spacing-md;
     box-shadow: $shadow-md;
     transition: transform $transition-fast, box-shadow $transition-fast;
-    
+
     &:hover {
         transform: translateY(-2px);
         box-shadow: $shadow-lg;
