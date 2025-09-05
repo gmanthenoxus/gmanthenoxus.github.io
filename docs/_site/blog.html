@@ -8,15 +8,16 @@
     <meta name="author" content="Noxus' Hub">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Get Inspired | Noxus' Hub">
+    <meta property="og:title" content="Thoughts & Insights | Noxus' Hub">
     <meta property="og:description" content="A portfolio showcasing my passions and projects">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://localhost:4000/blog.html">
     
-    <title>Get Inspired | Noxus' Hub</title>
+    <title>Thoughts & Insights | Noxus' Hub</title>
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -90,247 +91,227 @@
 
     
     <main id="main-content" class="main-content">
-        <section class="blog-hero">
-  <div class="container">
-    <h1>Get Inspired</h1>
-    <p>Thoughts, stories, and insights from my journey</p>
-    
-    <div class="category-filters">
-      <button class="filter-btn active" data-filter="all">All Topics</button>
-      <button class="filter-btn" data-filter="tech">Tech & Code</button>
-      <button class="filter-btn" data-filter="passion">Passion Projects</button>
-      <button class="filter-btn" data-filter="journey">My Journey</button>
-    </div>
-  </div>
-</section>
-
-<section class="blog-grid">
-  <div class="container">
-    <div class="posts-container">
-      
+        <main class="blog-page">
+  <!-- Blog Header -->
+  <header class="blog-header">
+    <div class="container">
+      <div class="header-content">
+        <h1>Thoughts & Insights</h1>
+        <p>Stories from my journey building at the intersection of passion and code</p>
         
-          <article class="blog-card" data-category="tech">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/building-apis.jpg" alt="Building Real-World Projects with APIs" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Tech</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/tech/2024/12/15/building-with-apis.html">Building Real-World Projects with APIs</a></h2>
-              <p class="excerpt">How I learned to integrate APIs into my hobby projects and why it changed everything about how I build applications.</p>
-              <div class="meta">
-                <span class="date">Dec 15, 2024</span>
-                
-                  <span class="read-time">7 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="journey">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/collector-to-creator.jpg" alt="From Collector to Creator: My Development Journey" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Journey</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/journey/2024/11/20/from-collector-to-creator.html">From Collector to Creator: My Development Journey</a></h2>
-              <p class="excerpt">How my passion for collecting sneakers and anime led me to become a developer, and why following your interests is the best career advice.</p>
-              <div class="meta">
-                <span class="date">Nov 20, 2024</span>
-                
-                  <span class="read-time">6 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="tech">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/discord-bot-lessons.jpg" alt="What Building Discord Bots Taught Me About User Experience" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Tech</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/tech/2024/10/10/discord-bot-lessons.html">What Building Discord Bots Taught Me About User Experience</a></h2>
-              <p class="excerpt">Building bots for anime and sneaker communities taught me more about UX than any design course ever could.</p>
-              <div class="meta">
-                <span class="date">Oct 10, 2024</span>
-                
-                  <span class="read-time">4 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="tech">
-            <div class="card-image">
-              
-              <span class="category-badge">Tech</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/tech/2024/06/01/very-long-title-test.html">This is a Very Long Blog Post Title That Should Definitely Be Truncated on Mobile Devices to Test Our Navigation System</a></h2>
-              <p class="excerpt">Testing mobile navigation truncation with a very long title.</p>
-              <div class="meta">
-                <span class="date">Jun 01, 2024</span>
-                
-                  <span class="read-time">2 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="tech">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/discord-anime-bot.jpg" alt="How to Build a Discord Bot for Anime Notifications in 7 Steps" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Tech</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/tech/2024/05/05/sample-how-to.html">How to Build a Discord Bot for Anime Notifications in 7 Steps</a></h2>
-              <p class="excerpt">Stop missing new anime episodes! Build a custom Discord bot that automatically notifies your server when new episodes are released.</p>
-              <div class="meta">
-                <span class="date">May 05, 2024</span>
-                
-                  <span class="read-time">15 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="passion">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/why-i-build.jpg" alt="Why I Build With My Hobbies" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Passion</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/passion/2024/05/01/why-i-build.html">Why I Build With My Hobbies</a></h2>
-              <p class="excerpt">Building at the intersection of passion and skill creates something truly unique. Every great project starts with genuine interest.</p>
-              <div class="meta">
-                <span class="date">May 01, 2024</span>
-                
-                  <span class="read-time">5 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="tech">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/sneaker-bot-case-study.jpg" alt="How I Built a Sneaker Bot That Increased Success Rate by 340% in 3 Months" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Tech</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/tech/2024/04/10/sample-case-study.html">How I Built a Sneaker Bot That Increased Success Rate by 340% in 3 Months</a></h2>
-              <p class="excerpt">From 15% to 66% success rate: the complete story of building an intelligent sneaker bot using Python, machine learning, and smart automat...</p>
-              <div class="meta">
-                <span class="date">Apr 10, 2024</span>
-                
-                  <span class="read-time">12 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="tech">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/productivity-habits.jpg" alt="7 Game-Changing Development Habits That Boost Productivity in 30 Days" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Tech</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/tech/2024/03/15/sample-listicle.html">7 Game-Changing Development Habits That Boost Productivity in 30 Days</a></h2>
-              <p class="excerpt">Struggling with slow development cycles and endless debugging? These 7 proven habits will streamline your workflow and help you ship faster.</p>
-              <div class="meta">
-                <span class="date">Mar 15, 2024</span>
-                
-                  <span class="read-time">6 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="journey">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/template-2.jpg" alt="Template Post 2: My Journey Story" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Journey</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/journey/2024/02/20/template-post-2.html">Template Post 2: My Journey Story</a></h2>
-              <p class="excerpt">This is another template post showing how journey category posts appear in the blog grid layout.</p>
-              <div class="meta">
-                <span class="date">Feb 20, 2024</span>
-                
-                  <span class="read-time">4 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-          <article class="blog-card" data-category="tech">
-            <div class="card-image">
-              
-                <img src="/assets/images/blog/template-1.jpg" alt="Template Post 1: Building Something Cool" onerror="this.style.display='none'">
-              
-              <span class="category-badge">Tech</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="/tech/2024/01/15/template-post-1.html">Template Post 1: Building Something Cool</a></h2>
-              <p class="excerpt">This is a template post to help us design the blog layout. It shows how a tech post would look in the grid.</p>
-              <div class="meta">
-                <span class="date">Jan 15, 2024</span>
-                
-                  <span class="read-time">3 min read</span>
-                
-              </div>
-            </div>
-          </article>
-        
-      
-    </div>
-    
-    <div class="featured-post">
-      <h2>Featured Insight</h2>
-      
-      
-        <div class="featured-card">
-          
-            <img src="/assets/images/blog/why-i-build.jpg" alt="Why I Build With My Hobbies" onerror="this.style.display='none'">
-          
-          <div class="featured-content">
-            <h3><a href="/passion/2024/05/01/why-i-build.html">Why I Build With My Hobbies</a></h3>
-            <p>Building at the intersection of passion and skill creates something truly unique. Every great project starts with genuine interest.</p>
-            <a href="/passion/2024/05/01/why-i-build.html" class="cta-btn">Read Full Story</a>
+        <!-- Prominent Search -->
+        <div class="blog-search">
+          <div class="search-wrapper">
+            <input type="search" 
+                   id="blog-search" 
+                   placeholder="Search posts..." 
+                   class="search-input"
+                   autocomplete="off">
+            <button class="search-clear" id="search-clear" aria-label="Clear search">
+              <span>×</span>
+            </button>
           </div>
         </div>
-      
-    </div>
-  </div>
-</section>
+        
 
-<section class="newsletter-cta">
-  <div class="container">
-    <div class="cta-content">
-      <h2>Never Miss an Insight</h2>
-      <p>Get my latest articles on passion-driven development directly to your inbox</p>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
+
+  <!-- Blog Content -->
+  <section class="blog-content">
+    <div class="container">
+      <!-- Featured Post (if exists) -->
+      
+      
+        <article class="featured-post">
+          <a href="/journey/2025/09/04/the-49-project-quest.html" class="featured-link">
+            <div class="featured-header">
+              <div class="featured-badge">
+                <span class="badge-icon">⭐</span>
+                <span class="badge-text">Featured</span>
+              </div>
+              <div class="featured-category-tag category-journey">
+                🚀
+                
+                Journey
+              </div>
+            </div>
+
+            <div class="featured-body">
+              <div class="featured-content">
+                <h2 class="featured-title">The 49 Project Quest</h2>
+                <p class="featured-excerpt">The Uncomfortable Truth About Technical “Success”
+</p>
+                <div class="featured-meta">
+                  <span class="featured-date">September 04, 2025</span>
+                  <span class="featured-read-time">
+                    8 min read
+                  </span>
+                </div>
+              </div>
+
+              
+                <div class="featured-image featured-image-placeholder" data-category="journey">
+                  <div class="placeholder-icon">
+                    🚀
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </a>
+        </article>
+      
+
+      <!-- Posts Grid -->
+      <div class="posts-section">
+        <div class="posts-header">
+          <div class="posts-title-section">
+            <h2>Recent Posts</h2>
+            <div class="results-count">
+              
+                <span id="results-count">3</span> posts
+              
+            </div>
+          </div>
+
+          <!-- Advanced Controls -->
+          <div class="posts-controls">
+            <div class="filter-controls">
+              <label for="category-filter" class="filter-label">Category:</label>
+              <select id="category-filter" class="category-filter">
+                <option value="all">All Categories</option>
+                <option value="tech">💻 Tech & Code</option>
+                <option value="journey">🚀 My Journey</option>
+                <option value="passion">🎯 Passion Projects</option>
+              </select>
+            </div>
+
+            <div class="sort-controls">
+              <label for="sort-select" class="sort-label">Sort by:</label>
+              <select id="sort-select" class="sort-select">
+                <option value="date-desc">Newest First</option>
+                <option value="date-asc">Oldest First</option>
+                <option value="category">By Category</option>
+                <option value="read-time">Reading Time</option>
+              </select>
+            </div>
+
+            <div class="view-controls">
+              <button class="view-btn active" data-view="grid" aria-label="Grid view">
+                <span class="view-icon">⊞</span>
+              </button>
+              <button class="view-btn" data-view="list" aria-label="List view">
+                <span class="view-icon">☰</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="posts-grid" id="posts-grid">
+          
+          
+            
+              <article class="post-card" data-category="journey">
+                <a href="/journey/2025/09/04/the-49-project-quest.html" class="card-link">
+                  <div class="card-header">
+                    <span class="category-tag category-journey">
+                      🚀
+                      
+                      Journey
+                    </span>
+                    <span class="post-date">Sep 04</span>
+                  </div>
+
+                  <div class="card-body">
+                    <h3>The 49 Project Quest</h3>
+                    <p>The Uncomfortable Truth About Technical “Success”
+</p>
+                  </div>
+
+                  <div class="card-footer">
+                    
+                      <span class="read-time">8 min read</span>
+                    
+                    <span class="read-more">Read more →</span>
+                  </div>
+                </a>
+              </article>
+            
+              <article class="post-card" data-category="tech">
+                <a href="/tech/2025/01/08/building-rest-api-nodejs.html" class="card-link">
+                  <div class="card-header">
+                    <span class="category-tag category-tech">
+                      💻
+                      
+                      Tech
+                    </span>
+                    <span class="post-date">Jan 08</span>
+                  </div>
+
+                  <div class="card-body">
+                    <h3>Building a REST API with Node.js and Express</h3>
+                    <p>Building Production-Ready APIs with Node.js
+</p>
+                  </div>
+
+                  <div class="card-footer">
+                    
+                      <span class="read-time">12 min read</span>
+                    
+                    <span class="read-more">Read more →</span>
+                  </div>
+                </a>
+              </article>
+            
+              <article class="post-card" data-category="passion">
+                <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="card-link">
+                  <div class="card-header">
+                    <span class="category-tag category-passion">
+                      🎯
+                      
+                      Passion
+                    </span>
+                    <span class="post-date">Jan 07</span>
+                  </div>
+
+                  <div class="card-body">
+                    <h3>Building My Dream Mechanical Keyboard</h3>
+                    <p>The Journey to My Perfect Keyboard
+</p>
+                  </div>
+
+                  <div class="card-footer">
+                    
+                      <span class="read-time">15 min read</span>
+                    
+                    <span class="read-more">Read more →</span>
+                  </div>
+                </a>
+              </article>
+            
+          
+
+          <!-- Dynamic empty state for search/filter results -->
+          <div class="empty-state search-empty" id="search-empty" style="display: none;">
+            <div class="empty-icon">🔍</div>
+            <h3>No posts found</h3>
+            <p>Try adjusting your search or category filter to find what you're looking for.</p>
+            <button class="clear-filters-btn" id="clear-filters">Clear all filters</button>
+          </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Clean Blog Functionality -->
+<script src="/assets/js/blogManager.js"></script>
+
     </main>
 
     <footer class="site-footer">
@@ -388,23 +369,23 @@
                 <ul class="footer-post-list">
                     
                     <li class="footer-post-item">
-                        <a href="/tech/2024/12/15/building-with-apis.html" class="footer-post-link">
-                            <span class="footer-post-title">Building Real-World Project...</span>
-                            <span class="footer-post-date">Dec 15</span>
+                        <a href="/journey/2025/09/04/the-49-project-quest.html" class="footer-post-link">
+                            <span class="footer-post-title">The 49 Project Quest</span>
+                            <span class="footer-post-date">Sep 04</span>
                         </a>
                     </li>
                     
                     <li class="footer-post-item">
-                        <a href="/journey/2024/11/20/from-collector-to-creator.html" class="footer-post-link">
-                            <span class="footer-post-title">From Collector to Creator: ...</span>
-                            <span class="footer-post-date">Nov 20</span>
+                        <a href="/tech/2025/01/08/building-rest-api-nodejs.html" class="footer-post-link">
+                            <span class="footer-post-title">Building a REST API with No...</span>
+                            <span class="footer-post-date">Jan 08</span>
                         </a>
                     </li>
                     
                     <li class="footer-post-item">
-                        <a href="/tech/2024/10/10/discord-bot-lessons.html" class="footer-post-link">
-                            <span class="footer-post-title">What Building Discord Bots ...</span>
-                            <span class="footer-post-date">Oct 10</span>
+                        <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="footer-post-link">
+                            <span class="footer-post-title">Building My Dream Mechanica...</span>
+                            <span class="footer-post-date">Jan 07</span>
                         </a>
                     </li>
                     

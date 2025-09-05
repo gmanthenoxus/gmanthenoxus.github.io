@@ -1,0 +1,402 @@
+---
+layout: default
+title: "Quest Progress Dashboard"
+description: "Live tracking of The 49 Project Quest - see completed projects, current milestones, and upcoming goals."
+---
+
+<div class="quest-progress-page">
+    <header class="quest-hero">
+        <div class="container">
+            <div class="quest-hero-content">
+                <h1>🚀 The 49 Project Quest</h1>
+                <p class="quest-subtitle">Live Progress Dashboard</p>
+                <div class="quest-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">47</span>
+                        <span class="stat-label">Projects Remaining</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4%</span>
+                        <span class="stat-label">Overall Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="quest-main">
+        <div class="container">
+            <section class="progress-overview">
+                <h2>Current Phase: Foundation</h2>
+                <div class="phase-progress">
+                    <div class="progress-bar-large">
+                        <div class="progress-fill-large" style="width: 17%"></div>
+                    </div>
+                    <p>2 of 12 foundation projects completed</p>
+                </div>
+            </section>
+
+            <section class="recent-projects">
+                <h2>Recently Completed</h2>
+                <div class="projects-grid">
+                    <div class="project-card completed">
+                        <div class="project-header">
+                            <h3>Portfolio Website</h3>
+                            <span class="project-date">Sept 2025</span>
+                        </div>
+                        <p>Built this very website using Jekyll, SCSS, and responsive design principles.</p>
+                        <div class="project-tags">
+                            <span class="tag">Jekyll</span>
+                            <span class="tag">SCSS</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card completed">
+                        <div class="project-header">
+                            <h3>Blog System</h3>
+                            <span class="project-date">Sept 2025</span>
+                        </div>
+                        <p>Created a comprehensive blog system with multiple post types and clean design.</p>
+                        <div class="project-tags">
+                            <span class="tag">Content Management</span>
+                            <span class="tag">Typography</span>
+                            <span class="tag">UX Design</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="upcoming-projects">
+                <h2>Up Next</h2>
+                <div class="projects-grid">
+                    <div class="project-card upcoming">
+                        <div class="project-header">
+                            <h3>Sports Analytics Dashboard</h3>
+                            <span class="project-status">Planning</span>
+                        </div>
+                        <p>Interactive dashboard for tracking sports statistics and performance metrics.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card upcoming">
+                        <div class="project-header">
+                            <h3>Anime Recommendation Engine</h3>
+                            <span class="project-status">Research</span>
+                        </div>
+                        <p>ML-powered recommendation system for discovering new anime based on preferences.</p>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Recommendation Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quest-timeline">
+                <h2>Quest Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Quest Launch</h4>
+                            <p>September 2025 - Officially started The 49 Project Quest</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item current">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Foundation Phase</h4>
+                            <p>Sept - Dec 2025 - Building core infrastructure and first 12 projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Momentum Phase</h4>
+                            <p>Jan - Mar 2026 - Accelerating development with 24 more projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Integration Phase</h4>
+                            <p>Apr - Jun 2026 - Creating 7 comprehensive hub applications</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Completion</h4>
+                            <p>Jul - Sep 2026 - Final projects and capstone platform</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quest-cta">
+                <div class="cta-content">
+                    <h2>Follow the Journey</h2>
+                    <p>Want to stay updated on my progress? Connect with me on social media or subscribe to the blog for regular updates.</p>
+                    <div class="cta-buttons">
+                        <a href="/blog" class="cta-btn primary">Read the Blog</a>
+                        <a href="#" class="cta-btn secondary">Follow on LinkedIn</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<style>
+.quest-progress-page {
+    min-height: 100vh;
+}
+
+.quest-hero {
+    background: linear-gradient(135deg, #008753 0%, #012169 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.quest-hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.quest-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.quest-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.quest-main {
+    padding: 3rem 0;
+    background: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.progress-overview {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.progress-bar-large {
+    width: 100%;
+    max-width: 600px;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+
+.progress-fill-large {
+    height: 100%;
+    background: linear-gradient(90deg, #008753, #012169);
+    transition: width 0.3s ease;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #e2e8f0;
+}
+
+.project-card.completed {
+    border-left-color: #48bb78;
+}
+
+.project-card.upcoming {
+    border-left-color: #667eea;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.project-date, .project-status {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background: #f1f3f4;
+    color: #5f6368;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: #e2e8f0;
+    color: #4a5568;
+    border-radius: 4px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #e2e8f0;
+    border: 3px solid white;
+}
+
+.timeline-item.completed .timeline-marker {
+    background: #48bb78;
+}
+
+.timeline-item.current .timeline-marker {
+    background: #667eea;
+    animation: pulse 2s infinite;
+}
+
+.quest-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cta-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(135deg, #008753, #012169);
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .quest-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>

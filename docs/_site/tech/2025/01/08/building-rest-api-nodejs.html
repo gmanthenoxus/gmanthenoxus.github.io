@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building Production-Ready APIs with Node.js
+">
+    <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
+    <meta name="author" content="Noxus' Hub">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Building a REST API with Node.js and Express | Noxus' Hub">
+    <meta property="og:description" content="Building Production-Ready APIs with Node.js
+">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html">
+    
+    <title>Building a REST API with Node.js and Express | Noxus' Hub</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" role="banner">
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <a href="/" class="nav-logo" aria-label="Home">
+                <span class="logo-text">Noxus' Hub</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/about" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/blog" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/builds" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/hobbies" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Hobbies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/contact" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav-overlay" aria-hidden="true"></div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <article class="blog-post tech-post" data-category="tech">
+    <!-- Post Header -->
+    <header class="post-hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="post-breadcrumb" aria-label="Breadcrumb">
+                <a href="/" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">→</span>
+                <a href="/blog" class="breadcrumb-link">Blog</a>
+                <span class="breadcrumb-separator">→</span>
+                <span class="breadcrumb-current">Building a REST API with No...</span>
+            </nav>
+
+            <!-- Post Type Badge -->
+            <div class="post-type-badge">
+                
+                    <span class="badge-icon">💻</span>
+                    <span class="badge-text">Tech & Code</span>
+                
+            </div>
+
+            <!-- Post Title & Metadata -->
+            <div class="post-header-content">
+                <h1 class="post-title">Building a REST API with Node.js and Express</h1>
+                
+                
+                <p class="post-subtitle">A comprehensive guide to creating scalable APIs with modern JavaScript</p>
+                
+
+                <div class="post-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">📅</span>
+                        <time datetime="2025-01-08T00:00:00+00:00">
+                            January 08, 2025
+                        </time>
+                    </div>
+                    
+                    <div class="meta-item">
+                        <span class="meta-icon">⏱️</span>
+                        <span>12 min read</span>
+                    </div>
+
+                    
+                    <div class="meta-item">
+                        <span class="meta-icon">👤</span>
+                        <span>Noxus</span>
+                    </div>
+                    
+                </div>
+
+                <!-- Tags -->
+                
+                <div class="post-tags">
+                    
+                        <span class="post-tag">#nodejs</span>
+                    
+                        <span class="post-tag">#express</span>
+                    
+                        <span class="post-tag">#api</span>
+                    
+                        <span class="post-tag">#javascript</span>
+                    
+                        <span class="post-tag">#backend</span>
+                    
+                        <span class="post-tag">#tutorial</span>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <main class="post-main">
+        <div class="container">
+            <div class="post-layout">
+                <!-- Main Content Area -->
+                <div class="post-content">
+
+
+                    <!-- Main Article Content -->
+                    <div class="article-content">
+                        <!-- Tech-specific enhancements will be added via CSS classes and additional sections -->
+
+<!-- This template extends the base post.html layout -->
+<!-- Tech posts automatically get enhanced styling for:
+     - Code syntax highlighting
+     - Technical diagrams
+     - Tool recommendations
+     - API documentation
+     - Live code examples
+-->
+
+<!-- Additional tech-specific content sections can be added here -->
+
+<div class="tech-stack-section">
+    <h3 class="tech-stack-title">
+        <span class="tech-icon">🛠️</span>
+        Tech Stack Used
+    </h3>
+    <div class="tech-stack-grid">
+        
+        <div class="tech-item">
+            
+                <span class="tech-item-icon">🟢</span>
+            
+            <div class="tech-item-content">
+                <h4 class="tech-item-name">Node.js</h4>
+                
+                    <p class="tech-item-description">JavaScript runtime for server-side development</p>
+                
+                
+                    <span class="tech-item-version">v18.17.0</span>
+                
+            </div>
+        </div>
+        
+        <div class="tech-item">
+            
+                <span class="tech-item-icon">🚀</span>
+            
+            <div class="tech-item-content">
+                <h4 class="tech-item-name">Express.js</h4>
+                
+                    <p class="tech-item-description">Fast, unopinionated web framework for Node.js</p>
+                
+                
+                    <span class="tech-item-version">v4.18.2</span>
+                
+            </div>
+        </div>
+        
+        <div class="tech-item">
+            
+                <span class="tech-item-icon">🍃</span>
+            
+            <div class="tech-item-content">
+                <h4 class="tech-item-name">MongoDB</h4>
+                
+                    <p class="tech-item-description">NoSQL database for flexible data storage</p>
+                
+                
+                    <span class="tech-item-version">v6.0</span>
+                
+            </div>
+        </div>
+        
+        <div class="tech-item">
+            
+                <span class="tech-item-icon">📦</span>
+            
+            <div class="tech-item-content">
+                <h4 class="tech-item-name">Mongoose</h4>
+                
+                    <p class="tech-item-description">MongoDB object modeling for Node.js</p>
+                
+                
+                    <span class="tech-item-version">v7.5.0</span>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="code-examples-section">
+    <h3 class="code-examples-title">
+        <span class="code-icon">💻</span>
+        Code Examples
+    </h3>
+    
+    <div class="code-example">
+        <div class="code-example-header">
+            <h4 class="code-example-title">Basic Express Server Setup</h4>
+            
+                <span class="code-language">javascript</span>
+            
+        </div>
+        
+            <p class="code-example-description">Setting up a basic Express server with middleware</p>
+        
+        <div class="code-example-content">
+            <pre><code class="language-javascript">const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middleware
+app.use(helmet());
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'OK', 
+    timestamp: new Date().toISOString() 
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+</code></pre>
+        </div>
+        
+            <div class="code-explanation">
+                <p>This basic setup includes essential middleware for security (helmet), cross-origin requests (cors), and JSON parsing. The health check endpoint is useful for monitoring and deployment.</p>
+
+            </div>
+        
+    </div>
+    
+    <div class="code-example">
+        <div class="code-example-header">
+            <h4 class="code-example-title">User Model with Mongoose</h4>
+            
+                <span class="code-language">javascript</span>
+            
+        </div>
+        
+            <p class="code-example-description">Defining a user schema with validation and methods</p>
+        
+        <div class="code-example-content">
+            <pre><code class="language-javascript">const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: [true, 'Username is required'],
+    unique: true,
+    trim: true,
+    minlength: 3,
+    maxlength: 30
+  },
+  email: {
+    type: String,
+    required: [true, 'Email is required'],
+    unique: true,
+    lowercase: true,
+    match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Invalid email']
+  },
+  password: {
+    type: String,
+    required: [true, 'Password is required'],
+    minlength: 6
+  }
+}, {
+  timestamps: true
+});
+
+// Hash password before saving
+userSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) return next();
+  this.password = await bcrypt.hash(this.password, 12);
+  next();
+});
+
+module.exports = mongoose.model('User', userSchema);
+</code></pre>
+        </div>
+        
+            <div class="code-explanation">
+                <p>This schema includes validation, automatic password hashing, and timestamps. The pre-save middleware ensures passwords are always hashed before storage.</p>
+
+            </div>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="tools-section">
+    <h3 class="tools-title">
+        <span class="tools-icon">🔧</span>
+        Tools & Resources
+    </h3>
+    <div class="tools-grid">
+        
+        <div class="tool-card">
+            
+                <div class="tool-icon">📮</div>
+            
+            <div class="tool-content">
+                <h4 class="tool-name">
+                    
+                        <a href="https://postman.com" target="_blank" rel="noopener">Postman</a>
+                    
+                </h4>
+                
+                    <p class="tool-description">API testing and documentation tool</p>
+                
+                
+                    <span class="tool-category">Testing</span>
+                
+            </div>
+        </div>
+        
+        <div class="tool-card">
+            
+                <div class="tool-icon">🧭</div>
+            
+            <div class="tool-content">
+                <h4 class="tool-name">
+                    
+                        <a href="https://mongodb.com/compass" target="_blank" rel="noopener">MongoDB Compass</a>
+                    
+                </h4>
+                
+                    <p class="tool-description">GUI for MongoDB database management</p>
+                
+                
+                    <span class="tool-category">Database</span>
+                
+            </div>
+        </div>
+        
+        <div class="tool-card">
+            
+                <div class="tool-icon">🔄</div>
+            
+            <div class="tool-content">
+                <h4 class="tool-name">
+                    
+                        Nodemon
+                    
+                </h4>
+                
+                    <p class="tool-description">Development tool for auto-restarting Node.js applications</p>
+                
+                
+                    <span class="tool-category">Development</span>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="api-docs-section">
+    <h3 class="api-docs-title">
+        <span class="api-icon">📡</span>
+        API Documentation
+    </h3>
+    
+    <div class="api-endpoint">
+        <div class="api-endpoint-header">
+            <span class="api-method post">POST</span>
+            <code class="api-url">/api/auth/register</code>
+        </div>
+        
+            <p class="api-description">Register a new user account</p>
+        
+        
+        
+        <div class="api-parameters">
+            <h5>Parameters:</h5>
+            <table class="api-params-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><code>username</code></td>
+                        <td><span class="param-type">string</span></td>
+                        <td>
+                            
+                                <span class="required">Yes</span>
+                            
+                        </td>
+                        <td>Unique username (3-30 characters)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><code>email</code></td>
+                        <td><span class="param-type">string</span></td>
+                        <td>
+                            
+                                <span class="required">Yes</span>
+                            
+                        </td>
+                        <td>Valid email address</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><code>password</code></td>
+                        <td><span class="param-type">string</span></td>
+                        <td>
+                            
+                                <span class="required">Yes</span>
+                            
+                        </td>
+                        <td>Password (minimum 6 characters)</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        
+        <div class="api-example">
+            <h5>Example Request:</h5>
+            <pre><code class="language-json">{
+  "username": "johndoe",
+  "email": "john@example.com",
+  "password": "securepassword123"
+}
+</code></pre>
+        </div>
+        
+
+        
+        <div class="api-example">
+            <h5>Example Response:</h5>
+            <pre><code class="language-json">{
+  "success": true,
+  "message": "User registered successfully",
+  "data": {
+    "user": {
+      "id": "64a7b8c9d1e2f3g4h5i6j7k8",
+      "username": "johndoe",
+      "email": "john@example.com",
+      "createdAt": "2025-01-08T10:30:00.000Z"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
+}
+</code></pre>
+        </div>
+        
+    </div>
+    
+    <div class="api-endpoint">
+        <div class="api-endpoint-header">
+            <span class="api-method get">GET</span>
+            <code class="api-url">/api/users/:id</code>
+        </div>
+        
+            <p class="api-description">Get user profile by ID</p>
+        
+        
+        
+        <div class="api-parameters">
+            <h5>Parameters:</h5>
+            <table class="api-params-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><code>id</code></td>
+                        <td><span class="param-type">string</span></td>
+                        <td>
+                            
+                                <span class="required">Yes</span>
+                            
+                        </td>
+                        <td>User ID (MongoDB ObjectId)</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+
+        
+
+        
+        <div class="api-example">
+            <h5>Example Response:</h5>
+            <pre><code class="language-json">{
+  "success": true,
+  "data": {
+    "user": {
+      "id": "64a7b8c9d1e2f3g4h5i6j7k8",
+      "username": "johndoe",
+      "email": "john@example.com",
+      "createdAt": "2025-01-08T10:30:00.000Z",
+      "updatedAt": "2025-01-08T10:30:00.000Z"
+    }
+  }
+}
+</code></pre>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="performance-section">
+    <h3 class="performance-title">
+        <span class="performance-icon">⚡</span>
+        Performance Metrics
+    </h3>
+    <div class="metrics-grid">
+        
+        <div class="metric-card">
+            <div class="metric-value">< 100ms</div>
+            <div class="metric-label">Response Time</div>
+            
+                <div class="metric-improvement">
+                    <span class="improvement-icon">📈</span>
+                    40% faster than previous version improvement
+                </div>
+            
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-value">1000 req/sec</div>
+            <div class="metric-label">Throughput</div>
+            
+                <div class="metric-improvement">
+                    <span class="improvement-icon">📈</span>
+                    3x increase improvement
+                </div>
+            
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-value">45MB</div>
+            <div class="metric-label">Memory Usage</div>
+            
+                <div class="metric-improvement">
+                    <span class="improvement-icon">📈</span>
+                    25% reduction improvement
+                </div>
+            
+        </div>
+        
+        <div class="metric-card">
+            <div class="metric-value">< 0.1%</div>
+            <div class="metric-label">Error Rate</div>
+            
+        </div>
+        
+    </div>
+</div>
+
+
+<!-- Live Demo Section -->
+
+<div class="live-demo-section">
+    <h3 class="demo-title">
+        <span class="demo-icon">🚀</span>
+        Live Demo
+    </h3>
+    <div class="demo-container">
+        
+            <p class="demo-description">Try out the API endpoints with our interactive demo</p>
+        
+        
+        <div class="demo-actions">
+            
+                <a href="https://api-demo.example.com" class="demo-btn primary" target="_blank" rel="noopener">
+                    <span class="btn-icon">🔗</span>
+                    View Live Demo
+                </a>
+            
+            
+            
+                <a href="https://github.com/yourusername/nodejs-rest-api" class="demo-btn secondary" target="_blank" rel="noopener">
+                    <span class="btn-icon">📂</span>
+                    View Source Code
+                </a>
+            
+        </div>
+
+        
+    </div>
+</div>
+
+
+<style>
+/* Tech-specific styling will be added to the main CSS file */
+.tech-post {
+    /* Enhanced styling for technical content */
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.code-examples-section {
+    margin: 2rem 0;
+}
+
+.code-example {
+    margin-bottom: 2rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.code-example-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.api-endpoint {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.api-method {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.api-method.get { background: #d4edda; color: #155724; }
+.api-method.post { background: #cce5ff; color: #004085; }
+.api-method.put { background: #fff3cd; color: #856404; }
+.api-method.delete { background: #f8d7da; color: #721c24; }
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.metric-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.demo-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.demo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.demo-btn.primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.demo-btn.secondary {
+    background: #6c757d;
+    color: white;
+}
+</style>
+
+                    </div>
+
+                    <!-- Community Challenge Section -->
+                    
+
+                    <!-- Follow Journey Section -->
+                    <div class="follow-journey-section">
+                        <h3><i class="fas fa-compass"></i> Follow the Journey</h3>
+                        <p>Want to see how this experiment unfolds? I'm documenting everything—the successes, the failures, the unexpected discoveries, and the lessons learned along the way.</p>
+                        <div class="progress-cta">
+                            <a href="/quest-progress" class="progress-btn">
+                                <i class="fas fa-chart-line"></i>
+                                Track My Progress
+                            </a>
+                            <p class="progress-subtitle">Live updates • Project showcases • Lessons learned • Community challenges</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Sharing after Follow Journey -->
+                    <div class="post-social-sharing">
+                        <h4 class="sharing-title">
+                            <i class="fas fa-share-alt"></i>
+                            Share This Post
+                        </h4>
+                        <div class="sharing-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=Building+a+REST+API+with+Node.js+and+Express&url=http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html"
+                               class="share-btn twitter" target="_blank" rel="noopener">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html"
+                               class="share-btn linkedin" target="_blank" rel="noopener">
+                                <i class="fab fa-linkedin-in"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html"
+                               class="share-btn facebook" target="_blank" rel="noopener">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebook
+                            </a>
+                            <button class="share-btn copy-link" onclick="copyToClipboard('http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html')">
+                                <i class="fas fa-link"></i>
+                                Copy Link
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- References & Attribution -->
+                    
+                    <div class="post-references">
+                        <h3 class="references-title">
+                            <span class="references-icon">📚</span>
+                            References & Further Reading
+                        </h3>
+                        
+                        
+                        <div class="references-section">
+                            <h4>References:</h4>
+                            <ul class="references-list">
+                                
+                                <li>
+                                    
+                                        <a href="https://expressjs.com/" target="_blank" rel="noopener">Express.js Official Documentation</a>
+                                    
+                                    
+                                </li>
+                                
+                                <li>
+                                    
+                                        <a href="https://mongoosejs.com/" target="_blank" rel="noopener">Mongoose Documentation</a>
+                                    
+                                     - Mongoose Team
+                                </li>
+                                
+                                <li>
+                                    
+                                        <a href="https://github.com/goldbergyoni/nodebestpractices" target="_blank" rel="noopener">Node.js Best Practices</a>
+                                    
+                                     - Yoni Goldberg
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+
+                        
+
+                        
+                        <div class="further-reading-section">
+                            <h4>Further Reading:</h4>
+                            <ul class="further-reading-list">
+                                
+                                <li>
+                                    <a href="https://restfulapi.net/" target="_blank" rel="noopener">RESTful API Design Best Practices</a>
+                                     - Comprehensive guide to designing clean, maintainable APIs
+                                </li>
+                                
+                                <li>
+                                    <a href="https://blog.risingstack.com/node-js-security-checklist/" target="_blank" rel="noopener">Node.js Security Checklist</a>
+                                     - Essential security practices for Node.js applications
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <!-- Sidebar removed for cleaner layout -->
+                <aside class="post-sidebar" style="display: none;">
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Post Footer -->
+    <footer class="post-footer">
+        <div class="container">
+            <!-- Post Navigation -->
+            <nav class="post-navigation">
+                
+                <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="nav-link nav-prev">
+                    <div class="nav-direction">← Previous</div>
+                    <div class="nav-title">Building My Dream Mechanical Keyboard</div>
+                </a>
+                
+                
+                
+                <a href="/journey/2025/09/04/the-49-project-quest.html" class="nav-link nav-next">
+                    <div class="nav-direction">Next →</div>
+                    <div class="nav-title">The 49 Project Quest</div>
+                </a>
+                
+            </nav>
+
+            <!-- Back to Blog -->
+            <div class="back-to-blog">
+                <a href="/blog" class="back-link">
+                    <span class="back-icon">←</span>
+                    Back to All Posts
+                </a>
+            </div>
+        </div>
+    </footer>
+</article>
+
+<!-- JavaScript for enhanced functionality -->
+<script>
+// Table of Contents Generation
+document.addEventListener('DOMContentLoaded', function() {
+    generateTableOfContents();
+});
+
+function generateTableOfContents() {
+    const toc = document.getElementById('toc');
+    const headings = document.querySelectorAll('.article-content h2, .article-content h3, .article-content h4');
+    
+    if (headings.length === 0) {
+        document.querySelector('.toc-container').style.display = 'none';
+        return;
+    }
+    
+    let tocHTML = '<ul class="toc-list">';
+    headings.forEach((heading, index) => {
+        const id = `heading-${index}`;
+        heading.id = id;
+        const level = heading.tagName.toLowerCase();
+        const text = heading.textContent;
+        
+        tocHTML += `<li class="toc-item toc-${level}">
+            <a href="#${id}" class="toc-link">${text}</a>
+        </li>`;
+    });
+    tocHTML += '</ul>';
+    
+    toc.innerHTML = tocHTML;
+}
+
+// Copy to Clipboard Function
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        // Show success feedback
+        const btn = event.target.closest('.copy-link');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="share-icon">✅</span>Copied!';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+        }, 2000);
+    });
+}
+
+// Smooth scrolling for TOC links
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('toc-link')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
+</script>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        <!-- Footer Main Content -->
+        <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h3 class="footer-logo">Noxus' Hub</h3>
+                <p class="footer-tagline">Building innovative solutions through code, creativity, and passion.</p>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/gmanthenoxus" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+
+                    <!-- Add LinkedIn if configured -->
+                    
+
+                    <!-- Add Twitter if configured -->
+                    
+
+                    <!-- Email Contact -->
+                    
+                    <a href="mailto:thisisnoxus@gmail.com" class="social-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0124 5.457z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-nav">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about" class="footer-link">About</a></li>
+                    <li><a href="/blog" class="footer-link">Blog</a></li>
+                    <li><a href="/builds" class="footer-link">Projects</a></li>
+                    <li><a href="/hobbies" class="footer-link">Hobbies</a></li>
+                    <li><a href="/contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="footer-posts">
+                <h4 class="footer-heading">Latest Posts</h4>
+                <ul class="footer-post-list">
+                    
+                    <li class="footer-post-item">
+                        <a href="/journey/2025/09/04/the-49-project-quest.html" class="footer-post-link">
+                            <span class="footer-post-title">The 49 Project Quest</span>
+                            <span class="footer-post-date">Sep 04</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/tech/2025/01/08/building-rest-api-nodejs.html" class="footer-post-link">
+                            <span class="footer-post-title">Building a REST API with No...</span>
+                            <span class="footer-post-date">Jan 08</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="footer-post-link">
+                            <span class="footer-post-title">Building My Dream Mechanica...</span>
+                            <span class="footer-post-date">Jan 07</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="footer-newsletter">
+                <h4 class="footer-heading">Stay Connected</h4>
+                <p class="newsletter-description">Get updates on new projects and posts.</p>
+                <form class="newsletter-form" id="footer-newsletter">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="your.email@example.com" class="newsletter-email" required>
+                        <button type="submit" class="newsletter-submit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy" class="legal-link">Privacy</a>
+                <a href="/terms" class="legal-link">Terms</a>
+                <a href="/sitemap.xml" class="legal-link">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/navigation-simple.js"></script>
+    <script src="/assets/js/project-filter.js"></script>
+    <script src="/assets/js/progress-tracker.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/homeInteractions.js"></script>
+    <script src="/assets/js/blogFilter.js"></script>
+    <script src="/assets/js/collapsible-sections.js"></script>
+    <script src="/assets/js/mobile-navigation.js"></script>
+    <script src="/assets/js/hobby-filter.js"></script>
+</body>
+</html>

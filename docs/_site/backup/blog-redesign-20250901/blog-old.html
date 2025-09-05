@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio showcasing my passions and projects">
+    <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
+    <meta name="author" content="Noxus' Hub">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Get Inspired | Noxus' Hub">
+    <meta property="og:description" content="A portfolio showcasing my passions and projects">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/backup/blog-redesign-20250901/blog-old.html">
+    
+    <title>Get Inspired | Noxus' Hub</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" role="banner">
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <a href="/" class="nav-logo" aria-label="Home">
+                <span class="logo-text">Noxus' Hub</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/about" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/blog" class="nav-link" role="menuitem"
+                           aria-current="page">
+                            <span class="nav-text">Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/builds" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/hobbies" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Hobbies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/contact" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav-overlay" aria-hidden="true"></div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <section class="blog-hero">
+  <div class="container">
+    <h1>Get Inspired</h1>
+    <p>Thoughts, stories, and insights from my journey</p>
+    
+    <!-- Enhanced Search and Filter System -->
+    <div class="blog-controls">
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <input type="text" id="blog-search" placeholder="Search posts..." class="search-input">
+          <button class="search-clear" id="search-clear" aria-label="Clear search">
+            <span class="clear-icon">×</span>
+          </button>
+        </div>
+        <div class="search-results-count" id="search-results">
+          <span id="results-count">3</span> posts found
+        </div>
+      </div>
+
+      <div class="filter-controls">
+        <div class="category-filters">
+          <button class="filter-btn active" data-filter="all">All Topics</button>
+          <button class="filter-btn" data-filter="tech">Tech & Code</button>
+          <button class="filter-btn" data-filter="passion">Passion Projects</button>
+          <button class="filter-btn" data-filter="journey">My Journey</button>
+        </div>
+
+        <div class="tag-filters" id="tag-filters">
+          <button class="tag-filter-btn active" data-tag="all">All Tags</button>
+          
+          
+            
+              <button class="tag-filter-btn" data-tag="api">Api</button>
+            
+          
+            
+              <button class="tag-filter-btn" data-tag="backend">Backend</button>
+            
+          
+            
+              <button class="tag-filter-btn" data-tag="building-in-public">Building-in-public</button>
+            
+          
+            
+              <button class="tag-filter-btn" data-tag="career-change">Career-change</button>
+            
+          
+            
+              <button class="tag-filter-btn" data-tag="custom-build">Custom-build</button>
+            
+          
+            
+              <button class="tag-filter-btn" data-tag="diy">Diy</button>
+            
+          
+            
+              <button class="tag-filter-btn" data-tag="express">Express</button>
+            
+          
+            
+              <button class="tag-filter-btn" data-tag="goals">Goals</button>
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-grid">
+  <div class="container">
+    <div class="posts-container">
+      
+        
+          <article class="blog-card" data-category="journey">
+            
+            
+
+            <div class="card-image"
+                 data-category="journey"
+                 data-icon="🚀">
+              
+              <span class="category-badge" data-category="journey">Journey</span>
+            </div>
+            <div class="card-content">
+              <h2><a href="/journey/2025/09/04/the-49-project-quest.html">The 49 Project Quest</a></h2>
+              <p class="excerpt">The Uncomfortable Truth About Technical “Success”
+</p>
+              <div class="meta">
+                <span class="date">Sep 04, 2025</span>
+                
+                  <span class="read-time">8 min read</span>
+                
+              </div>
+              <div class="card-actions">
+                <a href="/journey/2025/09/04/the-49-project-quest.html" class="read-more-btn">Read More</a>
+                <div class="social-share" data-title="The 49 Project Quest" data-url="http://localhost:4000/journey/2025/09/04/the-49-project-quest.html">
+                  <button class="share-btn" aria-label="Share post">
+                    <span class="share-icon">📤</span>
+                  </button>
+                  <div class="share-dropdown">
+                    <a href="#" class="share-link twitter" data-platform="twitter">Twitter</a>
+                    <a href="#" class="share-link linkedin" data-platform="linkedin">LinkedIn</a>
+                    <a href="#" class="share-link facebook" data-platform="facebook">Facebook</a>
+                    <button class="share-link copy" data-platform="copy">Copy Link</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        
+          <article class="blog-card" data-category="tech">
+            
+            
+
+            <div class="card-image"
+                 data-category="tech"
+                 data-icon="💻">
+              
+              <span class="category-badge" data-category="tech">Tech</span>
+            </div>
+            <div class="card-content">
+              <h2><a href="/tech/2025/01/08/building-rest-api-nodejs.html">Building a REST API with Node.js and Express</a></h2>
+              <p class="excerpt">Building Production-Ready APIs with Node.js
+</p>
+              <div class="meta">
+                <span class="date">Jan 08, 2025</span>
+                
+                  <span class="read-time">12 min read</span>
+                
+              </div>
+              <div class="card-actions">
+                <a href="/tech/2025/01/08/building-rest-api-nodejs.html" class="read-more-btn">Read More</a>
+                <div class="social-share" data-title="Building a REST API with Node.js and Express" data-url="http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html">
+                  <button class="share-btn" aria-label="Share post">
+                    <span class="share-icon">📤</span>
+                  </button>
+                  <div class="share-dropdown">
+                    <a href="#" class="share-link twitter" data-platform="twitter">Twitter</a>
+                    <a href="#" class="share-link linkedin" data-platform="linkedin">LinkedIn</a>
+                    <a href="#" class="share-link facebook" data-platform="facebook">Facebook</a>
+                    <button class="share-link copy" data-platform="copy">Copy Link</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        
+          <article class="blog-card" data-category="passion">
+            
+            
+
+            <div class="card-image"
+                 data-category="passion"
+                 data-icon="🎯">
+              
+              <span class="category-badge" data-category="passion">Passion</span>
+            </div>
+            <div class="card-content">
+              <h2><a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html">Building My Dream Mechanical Keyboard</a></h2>
+              <p class="excerpt">The Journey to My Perfect Keyboard
+</p>
+              <div class="meta">
+                <span class="date">Jan 07, 2025</span>
+                
+                  <span class="read-time">15 min read</span>
+                
+              </div>
+              <div class="card-actions">
+                <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="read-more-btn">Read More</a>
+                <div class="social-share" data-title="Building My Dream Mechanical Keyboard" data-url="http://localhost:4000/passion/2025/01/07/custom-mechanical-keyboard-build.html">
+                  <button class="share-btn" aria-label="Share post">
+                    <span class="share-icon">📤</span>
+                  </button>
+                  <div class="share-dropdown">
+                    <a href="#" class="share-link twitter" data-platform="twitter">Twitter</a>
+                    <a href="#" class="share-link linkedin" data-platform="linkedin">LinkedIn</a>
+                    <a href="#" class="share-link facebook" data-platform="facebook">Facebook</a>
+                    <button class="share-link copy" data-platform="copy">Copy Link</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        
+      
+    </div>
+    
+    <div class="featured-post">
+      <h2>Featured Insight</h2>
+      
+      
+        <div class="featured-card">
+          
+          <div class="featured-content">
+            <h3><a href="/journey/2025/09/04/the-49-project-quest.html">The 49 Project Quest</a></h3>
+            <p>The Uncomfortable Truth About Technical “Success”
+</p>
+            <a href="/journey/2025/09/04/the-49-project-quest.html" class="cta-btn">Read Full Story</a>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Never Miss an Insight</h2>
+      <p>Get my latest articles on passion-driven development directly to your inbox</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Blog Functionality -->
+<script src="/assets/js/blogEnhancements.js"></script>
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        <!-- Footer Main Content -->
+        <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h3 class="footer-logo">Noxus' Hub</h3>
+                <p class="footer-tagline">Building innovative solutions through code, creativity, and passion.</p>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/gmanthenoxus" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+
+                    <!-- Add LinkedIn if configured -->
+                    
+
+                    <!-- Add Twitter if configured -->
+                    
+
+                    <!-- Email Contact -->
+                    
+                    <a href="mailto:thisisnoxus@gmail.com" class="social-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0124 5.457z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-nav">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about" class="footer-link">About</a></li>
+                    <li><a href="/blog" class="footer-link">Blog</a></li>
+                    <li><a href="/builds" class="footer-link">Projects</a></li>
+                    <li><a href="/hobbies" class="footer-link">Hobbies</a></li>
+                    <li><a href="/contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="footer-posts">
+                <h4 class="footer-heading">Latest Posts</h4>
+                <ul class="footer-post-list">
+                    
+                    <li class="footer-post-item">
+                        <a href="/journey/2025/09/04/the-49-project-quest.html" class="footer-post-link">
+                            <span class="footer-post-title">The 49 Project Quest</span>
+                            <span class="footer-post-date">Sep 04</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/tech/2025/01/08/building-rest-api-nodejs.html" class="footer-post-link">
+                            <span class="footer-post-title">Building a REST API with No...</span>
+                            <span class="footer-post-date">Jan 08</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="footer-post-link">
+                            <span class="footer-post-title">Building My Dream Mechanica...</span>
+                            <span class="footer-post-date">Jan 07</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="footer-newsletter">
+                <h4 class="footer-heading">Stay Connected</h4>
+                <p class="newsletter-description">Get updates on new projects and posts.</p>
+                <form class="newsletter-form" id="footer-newsletter">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="your.email@example.com" class="newsletter-email" required>
+                        <button type="submit" class="newsletter-submit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy" class="legal-link">Privacy</a>
+                <a href="/terms" class="legal-link">Terms</a>
+                <a href="/sitemap.xml" class="legal-link">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/navigation-simple.js"></script>
+    <script src="/assets/js/project-filter.js"></script>
+    <script src="/assets/js/progress-tracker.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/homeInteractions.js"></script>
+    <script src="/assets/js/blogFilter.js"></script>
+    <script src="/assets/js/collapsible-sections.js"></script>
+    <script src="/assets/js/mobile-navigation.js"></script>
+    <script src="/assets/js/hobby-filter.js"></script>
+</body>
+</html>

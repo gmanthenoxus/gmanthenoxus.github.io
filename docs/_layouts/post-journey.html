@@ -1,0 +1,502 @@
+---
+layout: post
+---
+
+<!-- Main blog post content first -->
+{{ content }}
+
+<!-- Journey-specific enhancements - Clean & Minimal -->
+
+<!-- Quest Structure Section -->
+{% if page.quest_structure %}
+<div class="quest-structure-section">
+    <h3>The Quest Structure</h3>
+    <div class="quest-grid">
+        {% for item in page.quest_structure %}
+        <div class="quest-item">
+            <div class="quest-icon">
+                <i class="{{ item.icon }}"></i>
+            </div>
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Lessons Learned Section -->
+{% if page.lessons_learned %}
+<div class="lessons-section">
+    <h3><i class="fas fa-lightbulb"></i> What I've Learned So Far</h3>
+    <div class="lessons-content">
+        {{ page.lessons_learned | markdownify }}
+    </div>
+</div>
+{% endif %}
+
+
+<!-- Challenges & Solutions Section -->
+{% if page.challenges %}
+<div class="challenges-section">
+    <h3 class="challenges-title">
+        <span class="challenges-icon">⚡</span>
+        Challenges & Solutions
+    </h3>
+    {% for challenge in page.challenges %}
+    <div class="challenge-item">
+        <div class="challenge-problem">
+            <h4 class="challenge-problem-title">
+                <span class="problem-icon">❗</span>
+                Challenge: {{ challenge.problem }}
+            </h4>
+            {% if challenge.description %}
+                <p class="challenge-description">{{ challenge.description }}</p>
+            {% endif %}
+        </div>
+        {% if challenge.solution %}
+        <div class="challenge-solution">
+            <h4 class="challenge-solution-title">
+                <span class="solution-icon">💡</span>
+                Solution:
+            </h4>
+            <div class="solution-content">
+                {{ challenge.solution | markdownify }}
+            </div>
+        </div>
+        {% endif %}
+        {% if challenge.outcome %}
+        <div class="challenge-outcome">
+            <h4 class="challenge-outcome-title">
+                <span class="outcome-icon">🎉</span>
+                Outcome:
+            </h4>
+            <p class="outcome-content">{{ challenge.outcome }}</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Progress Photos/Gallery -->
+{% if page.progress_gallery %}
+<div class="progress-gallery-section">
+    <h3 class="gallery-title">
+        <span class="gallery-icon">📸</span>
+        Progress Gallery
+    </h3>
+    <div class="progress-gallery">
+        {% for image in page.progress_gallery %}
+        <div class="gallery-item">
+            <img src="{{ image.src }}" alt="{{ image.alt }}" class="gallery-image">
+            <div class="gallery-caption">
+                <div class="gallery-date">{{ image.date }}</div>
+                <p class="gallery-description">{{ image.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Next Steps Section -->
+{% if page.next_steps %}
+<div class="next-steps-section">
+    <h3 class="next-steps-title">
+        <span class="next-steps-icon">🚀</span>
+        What's Next?
+    </h3>
+    <div class="next-steps-content">
+        {% if page.next_steps.description %}
+            <p class="next-steps-description">{{ page.next_steps.description }}</p>
+        {% endif %}
+        
+        {% if page.next_steps.immediate %}
+        <div class="immediate-steps">
+            <h4>Immediate Next Steps:</h4>
+            <ul class="steps-list">
+                {% for step in page.next_steps.immediate %}
+                    <li class="step-item">{{ step }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if page.next_steps.long_term %}
+        <div class="long-term-steps">
+            <h4>Long-term Goals:</h4>
+            <ul class="steps-list">
+                {% for step in page.next_steps.long_term %}
+                    <li class="step-item">{{ step }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Community & Support Section -->
+{% if page.community %}
+<div class="community-section">
+    <h3 class="community-title">
+        <span class="community-icon">👥</span>
+        Community & Support
+    </h3>
+    <div class="community-content">
+        {% if page.community.description %}
+            <p class="community-description">{{ page.community.description }}</p>
+        {% endif %}
+        
+        {% if page.community.acknowledgments %}
+        <div class="acknowledgments">
+            <h4>Special Thanks To:</h4>
+            <ul class="acknowledgments-list">
+                {% for person in page.community.acknowledgments %}
+                    <li class="acknowledgment-item">
+                        {% if person.url %}
+                            <a href="{{ person.url }}" target="_blank" rel="noopener">{{ person.name }}</a>
+                        {% else %}
+                            {{ person.name }}
+                        {% endif %}
+                        {% if person.contribution %} - {{ person.contribution }}{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if page.community.resources %}
+        <div class="community-resources">
+            <h4>Helpful Resources:</h4>
+            <ul class="resources-list">
+                {% for resource in page.community.resources %}
+                    <li class="resource-item">
+                        <a href="{{ resource.url }}" target="_blank" rel="noopener">{{ resource.name }}</a>
+                        {% if resource.description %} - {{ resource.description }}{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<style>
+/* Journey-specific styling - Clean & Minimal */
+.journey-post {
+    
+}
+
+/* Quest Structure - Inspired by hobby stats */
+.quest-structure-section {
+    margin: 2rem 0;
+}
+
+.quest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.quest-item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.quest-item:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.quest-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.quest-item h4 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.quest-item p {
+    margin: 0;
+    color: #718096;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Goals Grid - Simplified */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.goal-card {
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.goal-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.goal-card.completed {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0.75rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+/* Reflection - Clean blockquote style */
+.reflection-content {
+    padding: 1.5rem;
+    background: #f7fafc;
+    border-left: 3px solid #667eea;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #4a5568;
+    margin: 2rem 0;
+}
+
+/* Lessons Grid - Minimal cards */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.lesson-card {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.lesson-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+/* Milestones Section */
+.milestones-section {
+    margin: 2rem 0;
+}
+
+.milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.milestone-card {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.milestone-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.milestone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.milestone-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.milestone-target {
+    font-size: 0.85rem;
+    color: #667eea;
+    font-weight: 500;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.milestone-progress {
+    margin-top: 1rem;
+}
+
+.milestone-progress .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+/* Lessons Learned Section - Clean Text */
+.lessons-section {
+    margin: 3rem 0;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.lessons-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2d3748;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.lessons-section h3 i {
+    color: #f59e0b;
+    font-size: 1.2rem;
+}
+
+.lessons-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #374151;
+}
+
+.lessons-content p {
+    margin-bottom: 1.5rem;
+}
+
+.lessons-content strong {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* Progress CTA Button - Shared Styling */
+.progress-cta {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.progress-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #008753 0%, #012169 100%);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 135, 83, 0.3);
+    margin-bottom: 1rem;
+}
+
+.progress-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 135, 83, 0.4);
+    color: white !important;
+    text-decoration: none;
+}
+
+.progress-btn i {
+    font-size: 1.1rem;
+}
+
+.progress-subtitle {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .quest-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .quest-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .quest-icon {
+        font-size: 2rem;
+    }
+
+    .goals-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .milestones-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .milestone-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+</style>

@@ -1,0 +1,245 @@
+// ============================================================================
+// BLOG HEADER - Hero, Search, Navigation
+// Clean, focused header design matching homepage aesthetic
+// ============================================================================
+
+// ============================================================================
+// BLOG HEADER SECTION
+// ============================================================================
+
+.blog-header {
+    background: linear-gradient(135deg, $accent-color 0%, $accent-secondary 100%);
+    color: white;
+    padding: 6rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+
+    // Subtle pattern overlay (matching homepage)
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        z-index: 1;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 $spacing-md;
+
+        @media (max-width: $breakpoint-mobile) {
+            padding: 0 $spacing-sm;
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 4rem 0 3rem;
+    }
+}
+
+// ============================================================================
+// HEADER CONTENT
+// ============================================================================
+
+.header-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+
+    h1 {
+        font-size: clamp(2.8rem, 5vw, 4rem);
+        font-weight: 800;
+        margin-bottom: $spacing-md;
+        color: white;
+        text-shadow:
+            0 2px 8px rgba(0,0,0,0.2),
+            0 4px 16px rgba(0,0,0,0.1);
+        letter-spacing: -0.025em;
+        line-height: 1.05;
+
+        // Better text rendering
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    p {
+        font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+        color: white;
+        opacity: 0.95;
+        margin-bottom: $spacing-xl;
+        line-height: 1.65;
+        font-weight: 400;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+
+        // Better text rendering
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+// ============================================================================
+// BLOG SEARCH
+// ============================================================================
+
+.blog-search {
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+        margin-bottom: $spacing-lg;
+    }
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.1rem;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+
+    // Hide browser's native search clear button
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    &::-webkit-search-decoration {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+        transition: opacity 0.3s ease;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow:
+            0 0 0 3px rgba(255, 255, 255, 0.1),
+            0 4px 12px rgba(0, 0, 0, 0.08);
+
+        &::placeholder {
+            opacity: 0.5;
+        }
+    }
+
+    // Typing state - subtle background change only
+    &:not(:placeholder-shown) {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 0.9rem 2.5rem 0.9rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+.search-clear {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+}
+
+
+
+// ============================================================================
+// SEARCH STATES & ANIMATIONS
+// ============================================================================
+
+// Search focus state
+.search-wrapper.focused {
+    .search-input {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+}
+
+// Loading state for search - subtle effect
+.search-loading {
+    .search-input {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+
+        // Subtle pulse instead of shimmer
+        animation: searchPulse 2s infinite ease-in-out;
+    }
+}
+
+// Enhanced search states
+.search-wrapper {
+    &.has-results {
+        .search-input {
+            border-color: rgba(34, 197, 94, 0.4);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+    }
+
+    &.no-results {
+        .search-input {
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+// Subtle search pulse animation
+@keyframes searchPulse {
+    0%, 100% {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+}

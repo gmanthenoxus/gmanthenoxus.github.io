@@ -1,0 +1,359 @@
+---
+layout: default
+---
+
+<article class="blog-post {{ page.category }}-post" data-category="{{ page.category }}">
+    <!-- Post Header -->
+    <header class="post-hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="post-breadcrumb" aria-label="Breadcrumb">
+                <a href="/" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator">→</span>
+                <a href="/blog" class="breadcrumb-link">Blog</a>
+                <span class="breadcrumb-separator">→</span>
+                <span class="breadcrumb-current">{{ page.title | truncate: 30 }}</span>
+            </nav>
+
+            <!-- Post Type Badge -->
+            <div class="post-type-badge">
+                {% if page.category == "tech" %}
+                    <span class="badge-icon">💻</span>
+                    <span class="badge-text">Tech & Code</span>
+                {% elsif page.category == "journey" %}
+                    <span class="badge-icon">🚀</span>
+                    <span class="badge-text">My Journey</span>
+                {% elsif page.category == "passion" %}
+                    <span class="badge-icon">🎯</span>
+                    <span class="badge-text">Passion Project</span>
+                {% else %}
+                    <span class="badge-icon">📝</span>
+                    <span class="badge-text">Article</span>
+                {% endif %}
+            </div>
+
+            <!-- Post Title & Metadata -->
+            <div class="post-header-content">
+                <h1 class="post-title">{{ page.title }}</h1>
+                
+                {% if page.subtitle %}
+                <p class="post-subtitle">{{ page.subtitle }}</p>
+                {% endif %}
+
+                <div class="post-meta">
+                    <div class="meta-item">
+                        <span class="meta-icon">📅</span>
+                        <time datetime="{{ page.date | date_to_xmlschema }}">
+                            {{ page.date | date: "%B %d, %Y" }}
+                        </time>
+                    </div>
+                    
+                    <div class="meta-item">
+                        <span class="meta-icon">⏱️</span>
+                        <span>{{ page.read_time | default: "5 min read" }}</span>
+                    </div>
+
+                    {% if page.author %}
+                    <div class="meta-item">
+                        <span class="meta-icon">👤</span>
+                        <span>{{ page.author }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Tags -->
+                {% if page.tags and page.tags.size > 0 %}
+                <div class="post-tags">
+                    {% for tag in page.tags %}
+                        <span class="post-tag">#{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <main class="post-main">
+        <div class="container">
+            <div class="post-layout">
+                <!-- Main Content Area -->
+                <div class="post-content">
+
+
+                    <!-- Main Article Content -->
+                    <div class="article-content">
+                        {{ content }}
+                    </div>
+
+                    <!-- Community Challenge Section -->
+                    {% if page.community_challenge %}
+                    <div class="developer-challenge">
+                        <div class="challenge-header">
+                            <h3 class="challenge-title">
+                                <i class="fas fa-code"></i>
+                                {% if page.community_challenge.title %}{{ page.community_challenge.title }}{% else %}Community Challenge{% endif %}
+                            </h3>
+                            <div class="challenge-meta">
+                                {% if page.community_challenge.difficulty_stars %}
+                                <div class="difficulty-rating">
+                                    <span class="rating-label">Difficulty:</span>
+                                    <div class="stars">
+                                        {% for i in (1..5) %}
+                                            {% if i <= page.community_challenge.difficulty_stars %}
+                                                <i class="fas fa-star"></i>
+                                            {% else %}
+                                                <i class="far fa-star"></i>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endif %}
+
+                                {% if page.community_challenge.time_commitment %}
+                                <div class="time-commitment">
+                                    <i class="fas fa-clock"></i>
+                                    {{ page.community_challenge.time_commitment }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="challenge-content">
+                            <div class="challenge-description">
+                                {{ page.community_challenge.description | markdownify }}
+                            </div>
+
+                            {% if page.community_challenge.challenge_steps %}
+                                <div class="challenge-steps">
+                                    <h4><i class="fas fa-list-ol"></i> The Challenge</h4>
+                                    {{ page.community_challenge.challenge_steps | markdownify }}
+                                </div>
+                            {% endif %}
+
+                            {% if page.community_challenge.success_criteria %}
+                                <div class="challenge-success">
+                                    <h4><i class="fas fa-trophy"></i> Success Criteria</h4>
+                                    {{ page.community_challenge.success_criteria | markdownify }}
+                                </div>
+                            {% endif %}
+
+                            {% if page.community_challenge.skills %}
+                            <div class="challenge-skills">
+                                <h4><i class="fas fa-tools"></i> Skills You'll Practice</h4>
+                                <div class="skills-list">
+                                    {% for skill in page.community_challenge.skills %}
+                                        <span class="skill-tag">{{ skill | replace: "-", " " | capitalize }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+
+                            {% if page.community_challenge.community_aspect %}
+                                <div class="challenge-community">
+                                    <h4><i class="fas fa-users"></i> Join the Community</h4>
+                                    {{ page.community_challenge.community_aspect | markdownify }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Follow Journey Section -->
+                    <div class="follow-journey-section">
+                        <h3><i class="fas fa-compass"></i> Follow the Journey</h3>
+                        <p>Want to see how this experiment unfolds? I'm documenting everything—the successes, the failures, the unexpected discoveries, and the lessons learned along the way.</p>
+                        <div class="progress-cta">
+                            <a href="/quest-progress" class="progress-btn">
+                                <i class="fas fa-chart-line"></i>
+                                Track My Progress
+                            </a>
+                            <p class="progress-subtitle">Live updates • Project showcases • Lessons learned • Community challenges</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Sharing after Follow Journey -->
+                    <div class="post-social-sharing">
+                        <h4 class="sharing-title">
+                            <i class="fas fa-share-alt"></i>
+                            Share This Post
+                        </h4>
+                        <div class="sharing-buttons">
+                            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ page.url }}"
+                               class="share-btn twitter" target="_blank" rel="noopener">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+                               class="share-btn linkedin" target="_blank" rel="noopener">
+                                <i class="fab fa-linkedin-in"></i>
+                                LinkedIn
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+                               class="share-btn facebook" target="_blank" rel="noopener">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebook
+                            </a>
+                            <button class="share-btn copy-link" onclick="copyToClipboard('{{ site.url }}{{ page.url }}')">
+                                <i class="fas fa-link"></i>
+                                Copy Link
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- References & Attribution -->
+                    {% if page.references or page.inspiration or page.further_reading %}
+                    <div class="post-references">
+                        <h3 class="references-title">
+                            <span class="references-icon">📚</span>
+                            References & Further Reading
+                        </h3>
+                        
+                        {% if page.references %}
+                        <div class="references-section">
+                            <h4>References:</h4>
+                            <ul class="references-list">
+                                {% for ref in page.references %}
+                                <li>
+                                    {% if ref.url %}
+                                        <a href="{{ ref.url }}" target="_blank" rel="noopener">{{ ref.title }}</a>
+                                    {% else %}
+                                        {{ ref.title }}
+                                    {% endif %}
+                                    {% if ref.author %} - {{ ref.author }}{% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+
+                        {% if page.inspiration %}
+                        <div class="inspiration-section">
+                            <h4>Inspiration:</h4>
+                            <ul class="inspiration-list">
+                                {% for item in page.inspiration %}
+                                <li>
+                                    {% if item.url %}
+                                        <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+                                    {% else %}
+                                        {{ item.title }}
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+
+                        {% if page.further_reading %}
+                        <div class="further-reading-section">
+                            <h4>Further Reading:</h4>
+                            <ul class="further-reading-list">
+                                {% for item in page.further_reading %}
+                                <li>
+                                    <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+                                    {% if item.description %} - {{ item.description }}{% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Sidebar removed for cleaner layout -->
+                <aside class="post-sidebar" style="display: none;">
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Post Footer -->
+    <footer class="post-footer">
+        <div class="container">
+            <!-- Post Navigation -->
+            <nav class="post-navigation">
+                {% if page.previous %}
+                <a href="{{ page.previous.url }}" class="nav-link nav-prev">
+                    <div class="nav-direction">← Previous</div>
+                    <div class="nav-title">{{ page.previous.title | truncate: 40 }}</div>
+                </a>
+                {% endif %}
+                
+                {% if page.next %}
+                <a href="{{ page.next.url }}" class="nav-link nav-next">
+                    <div class="nav-direction">Next →</div>
+                    <div class="nav-title">{{ page.next.title | truncate: 40 }}</div>
+                </a>
+                {% endif %}
+            </nav>
+
+            <!-- Back to Blog -->
+            <div class="back-to-blog">
+                <a href="/blog" class="back-link">
+                    <span class="back-icon">←</span>
+                    Back to All Posts
+                </a>
+            </div>
+        </div>
+    </footer>
+</article>
+
+<!-- JavaScript for enhanced functionality -->
+<script>
+// Table of Contents Generation
+document.addEventListener('DOMContentLoaded', function() {
+    generateTableOfContents();
+});
+
+function generateTableOfContents() {
+    const toc = document.getElementById('toc');
+    const headings = document.querySelectorAll('.article-content h2, .article-content h3, .article-content h4');
+    
+    if (headings.length === 0) {
+        document.querySelector('.toc-container').style.display = 'none';
+        return;
+    }
+    
+    let tocHTML = '<ul class="toc-list">';
+    headings.forEach((heading, index) => {
+        const id = `heading-${index}`;
+        heading.id = id;
+        const level = heading.tagName.toLowerCase();
+        const text = heading.textContent;
+        
+        tocHTML += `<li class="toc-item toc-${level}">
+            <a href="#${id}" class="toc-link">${text}</a>
+        </li>`;
+    });
+    tocHTML += '</ul>';
+    
+    toc.innerHTML = tocHTML;
+}
+
+// Copy to Clipboard Function
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        // Show success feedback
+        const btn = event.target.closest('.copy-link');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="share-icon">✅</span>Copied!';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+        }, 2000);
+    });
+}
+
+// Smooth scrolling for TOC links
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('toc-link')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
+</script>

@@ -1,0 +1,269 @@
+// ============================================================================
+// BLOG RESPONSIVE - Mobile Adaptations & Touch Enhancements
+// Mobile-first responsive design for optimal user experience
+// ============================================================================
+
+// ============================================================================
+// MOBILE HEADER ADAPTATIONS
+// ============================================================================
+
+@media (max-width: $breakpoint-mobile) {
+    .blog-header {
+        .header-content {
+            h1 {
+                font-size: 2.2rem;
+                margin-bottom: $spacing-sm;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: $spacing-lg;
+            }
+        }
+
+        .blog-search {
+            margin-bottom: $spacing-lg;
+        }
+
+        .category-nav {
+            gap: $spacing-xs;
+            
+            .category-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
+                
+                .category-label {
+                    display: none;
+                }
+                
+                .category-icon {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// ============================================================================
+// MOBILE CONTENT ADAPTATIONS
+// ============================================================================
+
+@media (max-width: $breakpoint-mobile) {
+    .blog-content {
+        padding: $spacing-lg 0;
+    }
+
+    .posts-section {
+        margin-top: $spacing-lg;
+    }
+
+    .posts-header {
+        margin-bottom: $spacing-md;
+        
+        h2 {
+            font-size: 1.6rem;
+        }
+    }
+
+    .posts-grid {
+        gap: $spacing-md;
+    }
+}
+
+// ============================================================================
+// MOBILE CARD ADAPTATIONS
+// ============================================================================
+
+@media (max-width: $breakpoint-mobile) {
+    .post-card {
+        .card-header {
+            padding: $spacing-sm $spacing-sm $spacing-xs;
+        }
+
+        .card-body {
+            padding: $spacing-sm;
+
+            h3 {
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .card-footer {
+            padding: $spacing-xs $spacing-sm $spacing-sm;
+            font-size: 0.85rem;
+        }
+    }
+
+    .category-tag {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.75rem;
+    }
+
+    .featured-post {
+        .featured-content {
+            padding: $spacing-lg $spacing-md;
+        }
+
+        .featured-text {
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+        }
+    }
+}
+
+// ============================================================================
+// TOUCH DEVICE ENHANCEMENTS
+// ============================================================================
+
+// Touch-friendly interactions
+.touch-device {
+    .post-card {
+        &:active {
+            transform: translateY(-2px);
+            transition: transform 0.1s ease;
+        }
+    }
+
+    .category-btn {
+        min-height: 44px; // Touch-friendly minimum
+        min-width: 44px;
+
+        &:active {
+            transform: translateY(-1px);
+            transition: transform 0.1s ease;
+        }
+    }
+
+    .search-input {
+        &:focus {
+            transform: none; // Disable scale on touch devices
+        }
+    }
+}
+
+// ============================================================================
+// TABLET ADAPTATIONS
+// ============================================================================
+
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+    .posts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: $spacing-md;
+    }
+
+    .blog-header {
+        .category-nav {
+            .category-btn {
+                padding: 0.6rem 1.2rem;
+                
+                .category-label {
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .featured-post {
+        .featured-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+}
+
+// ============================================================================
+// LARGE SCREEN OPTIMIZATIONS
+// ============================================================================
+
+@media (min-width: 1400px) {
+    .blog-content .container {
+        max-width: 1400px;
+    }
+
+    .posts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: $spacing-xl;
+    }
+
+    .featured-post {
+        .featured-content {
+            padding: $spacing-xl * 1.5;
+        }
+    }
+}
+
+// ============================================================================
+// ACCESSIBILITY ENHANCEMENTS
+// ============================================================================
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+    .post-card {
+        border: 2px solid $text-dark;
+        
+        &:hover {
+            border-color: $accent-color;
+        }
+    }
+
+    .category-tag {
+        border: 1px solid currentColor;
+    }
+
+    .featured-post {
+        border: 3px solid $accent-color;
+    }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+    .post-card,
+    .category-btn,
+    .search-input,
+    .featured-post {
+        transition: none;
+    }
+
+    .blog-header::before {
+        animation: none;
+    }
+}
+
+// ============================================================================
+// PRINT STYLES
+// ============================================================================
+
+@media print {
+    .blog-header {
+        background: none !important;
+        color: $text-dark !important;
+        padding: $spacing-md 0 !important;
+        
+        .blog-search,
+        .category-nav {
+            display: none;
+        }
+    }
+
+    .post-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+        margin-bottom: $spacing-md;
+    }
+
+    .featured-post {
+        box-shadow: none;
+        border: 2px solid #333;
+    }
+}

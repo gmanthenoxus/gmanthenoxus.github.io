@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio showcasing my passions and projects">
+    <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
+    <meta name="author" content="Noxus' Hub">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Quest Progress Dashboard | Noxus' Hub">
+    <meta property="og:description" content="A portfolio showcasing my passions and projects">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/quest-progress.html">
+    
+    <title>Quest Progress Dashboard | Noxus' Hub</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" role="banner">
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <a href="/" class="nav-logo" aria-label="Home">
+                <span class="logo-text">Noxus' Hub</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/about" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/blog" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/builds" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/hobbies" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Hobbies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/contact" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav-overlay" aria-hidden="true"></div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <div class="quest-progress-page">
+    <header class="quest-hero">
+        <div class="container">
+            <div class="quest-hero-content">
+                <h1>🚀 The 49 Project Quest</h1>
+                <p class="quest-subtitle">Live Progress Dashboard</p>
+                <div class="quest-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">47</span>
+                        <span class="stat-label">Projects Remaining</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4%</span>
+                        <span class="stat-label">Overall Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="quest-main">
+        <div class="container">
+            <section class="progress-overview">
+                <h2>Current Phase: Foundation</h2>
+                <div class="phase-progress">
+                    <div class="progress-bar-large">
+                        <div class="progress-fill-large" style="width: 17%"></div>
+                    </div>
+                    <p>2 of 12 foundation projects completed</p>
+                </div>
+            </section>
+
+            <section class="recent-projects">
+                <h2>Recently Completed</h2>
+                <div class="projects-grid">
+                    <div class="project-card completed">
+                        <div class="project-header">
+                            <h3>Portfolio Website</h3>
+                            <span class="project-date">Sept 2025</span>
+                        </div>
+                        <p>Built this very website using Jekyll, SCSS, and responsive design principles.</p>
+                        <div class="project-tags">
+                            <span class="tag">Jekyll</span>
+                            <span class="tag">SCSS</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card completed">
+                        <div class="project-header">
+                            <h3>Blog System</h3>
+                            <span class="project-date">Sept 2025</span>
+                        </div>
+                        <p>Created a comprehensive blog system with multiple post types and clean design.</p>
+                        <div class="project-tags">
+                            <span class="tag">Content Management</span>
+                            <span class="tag">Typography</span>
+                            <span class="tag">UX Design</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="upcoming-projects">
+                <h2>Up Next</h2>
+                <div class="projects-grid">
+                    <div class="project-card upcoming">
+                        <div class="project-header">
+                            <h3>Sports Analytics Dashboard</h3>
+                            <span class="project-status">Planning</span>
+                        </div>
+                        <p>Interactive dashboard for tracking sports statistics and performance metrics.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card upcoming">
+                        <div class="project-header">
+                            <h3>Anime Recommendation Engine</h3>
+                            <span class="project-status">Research</span>
+                        </div>
+                        <p>ML-powered recommendation system for discovering new anime based on preferences.</p>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Recommendation Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quest-timeline">
+                <h2>Quest Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Quest Launch</h4>
+                            <p>September 2025 - Officially started The 49 Project Quest</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item current">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Foundation Phase</h4>
+                            <p>Sept - Dec 2025 - Building core infrastructure and first 12 projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Momentum Phase</h4>
+                            <p>Jan - Mar 2026 - Accelerating development with 24 more projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Integration Phase</h4>
+                            <p>Apr - Jun 2026 - Creating 7 comprehensive hub applications</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item upcoming">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Completion</h4>
+                            <p>Jul - Sep 2026 - Final projects and capstone platform</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quest-cta">
+                <div class="cta-content">
+                    <h2>Follow the Journey</h2>
+                    <p>Want to stay updated on my progress? Connect with me on social media or subscribe to the blog for regular updates.</p>
+                    <div class="cta-buttons">
+                        <a href="/blog" class="cta-btn primary">Read the Blog</a>
+                        <a href="#" class="cta-btn secondary">Follow on LinkedIn</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<style>
+.quest-progress-page {
+    min-height: 100vh;
+}
+
+.quest-hero {
+    background: linear-gradient(135deg, #008753 0%, #012169 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.quest-hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.quest-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.quest-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.quest-main {
+    padding: 3rem 0;
+    background: #fafafa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.progress-overview {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.progress-bar-large {
+    width: 100%;
+    max-width: 600px;
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 6px;
+    margin: 1rem auto;
+    overflow: hidden;
+}
+
+.progress-fill-large {
+    height: 100%;
+    background: linear-gradient(90deg, #008753, #012169);
+    transition: width 0.3s ease;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #e2e8f0;
+}
+
+.project-card.completed {
+    border-left-color: #48bb78;
+}
+
+.project-card.upcoming {
+    border-left-color: #667eea;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.project-date, .project-status {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background: #f1f3f4;
+    color: #5f6368;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: #e2e8f0;
+    color: #4a5568;
+    border-radius: 4px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #e2e8f0;
+    border: 3px solid white;
+}
+
+.timeline-item.completed .timeline-marker {
+    background: #48bb78;
+}
+
+.timeline-item.current .timeline-marker {
+    background: #667eea;
+    animation: pulse 2s infinite;
+}
+
+.quest-cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 3rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cta-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+    background: linear-gradient(135deg, #008753, #012169);
+    color: white;
+}
+
+.cta-btn.secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .quest-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        <!-- Footer Main Content -->
+        <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h3 class="footer-logo">Noxus' Hub</h3>
+                <p class="footer-tagline">Building innovative solutions through code, creativity, and passion.</p>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/gmanthenoxus" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+
+                    <!-- Add LinkedIn if configured -->
+                    
+
+                    <!-- Add Twitter if configured -->
+                    
+
+                    <!-- Email Contact -->
+                    
+                    <a href="mailto:thisisnoxus@gmail.com" class="social-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0124 5.457z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-nav">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about" class="footer-link">About</a></li>
+                    <li><a href="/blog" class="footer-link">Blog</a></li>
+                    <li><a href="/builds" class="footer-link">Projects</a></li>
+                    <li><a href="/hobbies" class="footer-link">Hobbies</a></li>
+                    <li><a href="/contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="footer-posts">
+                <h4 class="footer-heading">Latest Posts</h4>
+                <ul class="footer-post-list">
+                    
+                    <li class="footer-post-item">
+                        <a href="/journey/2025/09/04/the-49-project-quest.html" class="footer-post-link">
+                            <span class="footer-post-title">The 49 Project Quest</span>
+                            <span class="footer-post-date">Sep 04</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/tech/2025/01/08/building-rest-api-nodejs.html" class="footer-post-link">
+                            <span class="footer-post-title">Building a REST API with No...</span>
+                            <span class="footer-post-date">Jan 08</span>
+                        </a>
+                    </li>
+                    
+                    <li class="footer-post-item">
+                        <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="footer-post-link">
+                            <span class="footer-post-title">Building My Dream Mechanica...</span>
+                            <span class="footer-post-date">Jan 07</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="footer-newsletter">
+                <h4 class="footer-heading">Stay Connected</h4>
+                <p class="newsletter-description">Get updates on new projects and posts.</p>
+                <form class="newsletter-form" id="footer-newsletter">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="your.email@example.com" class="newsletter-email" required>
+                        <button type="submit" class="newsletter-submit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy" class="legal-link">Privacy</a>
+                <a href="/terms" class="legal-link">Terms</a>
+                <a href="/sitemap.xml" class="legal-link">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/navigation-simple.js"></script>
+    <script src="/assets/js/project-filter.js"></script>
+    <script src="/assets/js/progress-tracker.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/homeInteractions.js"></script>
+    <script src="/assets/js/blogFilter.js"></script>
+    <script src="/assets/js/collapsible-sections.js"></script>
+    <script src="/assets/js/mobile-navigation.js"></script>
+    <script src="/assets/js/hobby-filter.js"></script>
+</body>
+</html>

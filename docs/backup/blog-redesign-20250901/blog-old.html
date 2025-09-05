@@ -1,0 +1,160 @@
+---
+layout: default
+title: Get Inspired
+subtitle: Thoughts, stories, and insights from my journey
+---
+
+<section class="blog-hero">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.subtitle }}</p>
+    
+    <!-- Enhanced Search and Filter System -->
+    <div class="blog-controls">
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <input type="text" id="blog-search" placeholder="Search posts..." class="search-input">
+          <button class="search-clear" id="search-clear" aria-label="Clear search">
+            <span class="clear-icon">×</span>
+          </button>
+        </div>
+        <div class="search-results-count" id="search-results">
+          <span id="results-count">{{ site.posts.size }}</span> posts found
+        </div>
+      </div>
+
+      <div class="filter-controls">
+        <div class="category-filters">
+          <button class="filter-btn active" data-filter="all">All Topics</button>
+          <button class="filter-btn" data-filter="tech">Tech & Code</button>
+          <button class="filter-btn" data-filter="passion">Passion Projects</button>
+          <button class="filter-btn" data-filter="journey">My Journey</button>
+        </div>
+
+        <div class="tag-filters" id="tag-filters">
+          <button class="tag-filter-btn active" data-tag="all">All Tags</button>
+          {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+          {% for tag in all_tags limit:8 %}
+            {% if tag != '' %}
+              <button class="tag-filter-btn" data-tag="{{ tag | strip }}">{{ tag | strip | capitalize }}</button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-grid">
+  <div class="container">
+    <div class="posts-container">
+      {% if site.posts.size > 0 %}
+        {% for post in site.posts %}
+          <article class="blog-card" data-category="{{ post.category }}">
+            {% assign category_icon = "📝" %}
+            {% if post.category == "tech" %}
+              {% assign category_icon = "💻" %}
+            {% elsif post.category == "journey" %}
+              {% assign category_icon = "🚀" %}
+            {% elsif post.category == "passion" %}
+              {% assign category_icon = "🎯" %}
+            {% endif %}
+
+            <div class="card-image"
+                 data-category="{{ post.category | default: 'general' }}"
+                 data-icon="{{ category_icon }}">
+              {% if post.image %}
+                <img src="{{ post.image }}" alt="{{ post.title }}" onerror="this.style.display='none'">
+                <div class="image-overlay"></div>
+              {% endif %}
+              <span class="category-badge" data-category="{{ post.category }}">{{ post.category | capitalize }}</span>
+            </div>
+            <div class="card-content">
+              <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+              <div class="meta">
+                <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+                {% if post.read_time %}
+                  <span class="read-time">{{ post.read_time }}</span>
+                {% endif %}
+              </div>
+              <div class="card-actions">
+                <a href="{{ post.url }}" class="read-more-btn">Read More</a>
+                <div class="social-share" data-title="{{ post.title | escape }}" data-url="{{ site.url }}{{ post.url }}">
+                  <button class="share-btn" aria-label="Share post">
+                    <span class="share-icon">📤</span>
+                  </button>
+                  <div class="share-dropdown">
+                    <a href="#" class="share-link twitter" data-platform="twitter">Twitter</a>
+                    <a href="#" class="share-link linkedin" data-platform="linkedin">LinkedIn</a>
+                    <a href="#" class="share-link facebook" data-platform="facebook">Facebook</a>
+                    <button class="share-link copy" data-platform="copy">Copy Link</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-icon">📝</div>
+          <h3>No Posts Yet</h3>
+          <p>I'm working on some great content. Check back soon!</p>
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="featured-post">
+      <h2>Featured Insight</h2>
+      {% assign featured = site.posts | where: "featured", true | first %}
+      {% if featured %}
+        <div class="featured-card">
+          {% if featured.image %}
+            <img src="{{ featured.image }}" alt="{{ featured.title }}" onerror="this.style.display='none'">
+          {% endif %}
+          <div class="featured-content">
+            <h3><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
+            <p>{{ featured.excerpt | strip_html | truncate: 200 }}</p>
+            <a href="{{ featured.url }}" class="cta-btn">Read Full Story</a>
+          </div>
+        </div>
+      {% else %}
+        {% assign latest = site.posts | first %}
+        {% if latest %}
+          <div class="featured-card">
+            {% if latest.image %}
+              <img src="{{ latest.image }}" alt="{{ latest.title }}" onerror="this.style.display='none'">
+            {% endif %}
+            <div class="featured-content">
+              <h3><a href="{{ latest.url }}">{{ latest.title }}</a></h3>
+              <p>{{ latest.excerpt | strip_html | truncate: 200 }}</p>
+              <a href="{{ latest.url }}" class="cta-btn">Read Full Story</a>
+            </div>
+          </div>
+        {% else %}
+          <div class="featured-placeholder">
+            <div class="placeholder-icon">✨</div>
+            <h3>Coming Soon</h3>
+            <p>I'm working on some amazing content to share with you. Stay tuned!</p>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Never Miss an Insight</h2>
+      <p>Get my latest articles on passion-driven development directly to your inbox</p>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Blog Functionality -->
+<script src="{{ '/assets/js/blogEnhancements.js' | relative_url }}"></script>

@@ -1,104 +1,239 @@
 ---
 layout: default
-title: Get Inspired
-subtitle: Thoughts, stories, and insights from my journey
+title: "Thoughts & Insights"
+subtitle: "Stories from my journey building at the intersection of passion and code"
 ---
 
-<section class="blog-hero">
-  <div class="container">
-    <h1>{{ page.title }}</h1>
-    <p>{{ page.subtitle }}</p>
-    
-    <div class="category-filters">
-      <button class="filter-btn active" data-filter="all">All Topics</button>
-      <button class="filter-btn" data-filter="tech">Tech & Code</button>
-      <button class="filter-btn" data-filter="passion">Passion Projects</button>
-      <button class="filter-btn" data-filter="journey">My Journey</button>
-    </div>
-  </div>
-</section>
-
-<section class="blog-grid">
-  <div class="container">
-    <div class="posts-container">
-      {% if site.posts.size > 0 %}
-        {% for post in site.posts %}
-          <article class="blog-card" data-category="{{ post.category }}">
-            <div class="card-image">
-              {% if post.image %}
-                <img src="{{ post.image }}" alt="{{ post.title }}" onerror="this.style.display='none'">
-              {% endif %}
-              <span class="category-badge">{{ post.category | capitalize }}</span>
-            </div>
-            <div class="card-content">
-              <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-              <p class="excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
-              <div class="meta">
-                <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
-                {% if post.read_time %}
-                  <span class="read-time">{{ post.read_time }}</span>
-                {% endif %}
-              </div>
-            </div>
-          </article>
-        {% endfor %}
-      {% else %}
-        <div class="empty-state">
-          <div class="empty-icon">📝</div>
-          <h3>No Posts Yet</h3>
-          <p>I'm working on some great content. Check back soon!</p>
+<main class="blog-page">
+  <!-- Blog Header -->
+  <header class="blog-header">
+    <div class="container">
+      <div class="header-content">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.subtitle }}</p>
+        
+        <!-- Prominent Search -->
+        <div class="blog-search">
+          <div class="search-wrapper">
+            <input type="search" 
+                   id="blog-search" 
+                   placeholder="Search posts..." 
+                   class="search-input"
+                   autocomplete="off">
+            <button class="search-clear" id="search-clear" aria-label="Clear search">
+              <span>×</span>
+            </button>
+          </div>
         </div>
-      {% endif %}
+        
+
+      </div>
     </div>
-    
-    <div class="featured-post">
-      <h2>Featured Insight</h2>
+  </header>
+
+  <!-- Blog Content -->
+  <section class="blog-content">
+    <div class="container">
+      <!-- Featured Post (if exists) -->
       {% assign featured = site.posts | where: "featured", true | first %}
       {% if featured %}
-        <div class="featured-card">
-          {% if featured.image %}
-            <img src="{{ featured.image }}" alt="{{ featured.title }}" onerror="this.style.display='none'">
-          {% endif %}
-          <div class="featured-content">
-            <h3><a href="{{ featured.url }}">{{ featured.title }}</a></h3>
-            <p>{{ featured.excerpt | strip_html | truncate: 200 }}</p>
-            <a href="{{ featured.url }}" class="cta-btn">Read Full Story</a>
-          </div>
-        </div>
-      {% else %}
-        {% assign latest = site.posts | first %}
-        {% if latest %}
-          <div class="featured-card">
-            {% if latest.image %}
-              <img src="{{ latest.image }}" alt="{{ latest.title }}" onerror="this.style.display='none'">
-            {% endif %}
-            <div class="featured-content">
-              <h3><a href="{{ latest.url }}">{{ latest.title }}</a></h3>
-              <p>{{ latest.excerpt | strip_html | truncate: 200 }}</p>
-              <a href="{{ latest.url }}" class="cta-btn">Read Full Story</a>
+        <article class="featured-post">
+          <a href="{{ featured.url }}" class="featured-link">
+            <div class="featured-header">
+              <div class="featured-badge">
+                <span class="badge-icon">⭐</span>
+                <span class="badge-text">Featured</span>
+              </div>
+              <div class="featured-category-tag category-{{ featured.category }}">
+                {% if featured.category == "tech" %}💻
+                {% elsif featured.category == "journey" %}🚀
+                {% elsif featured.category == "passion" %}🎯
+                {% else %}📝{% endif %}
+                {{ featured.category | capitalize | default: "General" }}
+              </div>
+            </div>
+
+            <div class="featured-body">
+              <div class="featured-content">
+                <h2 class="featured-title">{{ featured.title }}</h2>
+                <p class="featured-excerpt">{{ featured.excerpt | strip_html | truncate: 160 }}</p>
+                <div class="featured-meta">
+                  <span class="featured-date">{{ featured.date | date: "%B %d, %Y" }}</span>
+                  <span class="featured-read-time">
+                    {% if featured.read_time %}{{ featured.read_time }}{% else %}5 min read{% endif %}
+                  </span>
+                </div>
+              </div>
+
+              {% if featured.image %}
+                <div class="featured-image">
+                  <img src="{{ featured.image }}" alt="{{ featured.title }}" loading="lazy">
+                  <div class="image-overlay"></div>
+                </div>
+              {% else %}
+                <div class="featured-image featured-image-placeholder" data-category="{{ featured.category }}">
+                  <div class="placeholder-icon">
+                    {% if featured.category == "tech" %}💻
+                    {% elsif featured.category == "journey" %}🚀
+                    {% elsif featured.category == "passion" %}🎯
+                    {% else %}📝{% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        </article>
+      {% endif %}
+
+      <!-- Posts Grid -->
+      <div class="posts-section">
+        <div class="posts-header">
+          <div class="posts-title-section">
+            <h2>Recent Posts</h2>
+            <div class="results-count">
+              {% if paginator %}
+                <span id="results-count">{{ paginator.posts.size }}</span> of {{ paginator.total_posts }} posts
+              {% else %}
+                <span id="results-count">{{ site.posts.size }}</span> posts
+              {% endif %}
             </div>
           </div>
-        {% else %}
-          <div class="featured-placeholder">
-            <div class="placeholder-icon">✨</div>
-            <h3>Coming Soon</h3>
-            <p>I'm working on some amazing content to share with you. Stay tuned!</p>
-          </div>
-        {% endif %}
-      {% endif %}
-    </div>
-  </div>
-</section>
 
-<section class="newsletter-cta">
-  <div class="container">
-    <div class="cta-content">
-      <h2>Never Miss an Insight</h2>
-      <p>Get my latest articles on passion-driven development directly to your inbox</p>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
+          <!-- Advanced Controls -->
+          <div class="posts-controls">
+            <div class="filter-controls">
+              <label for="category-filter" class="filter-label">Category:</label>
+              <select id="category-filter" class="category-filter">
+                <option value="all">All Categories</option>
+                <option value="tech">💻 Tech & Code</option>
+                <option value="journey">🚀 My Journey</option>
+                <option value="passion">🎯 Passion Projects</option>
+              </select>
+            </div>
+
+            <div class="sort-controls">
+              <label for="sort-select" class="sort-label">Sort by:</label>
+              <select id="sort-select" class="sort-select">
+                <option value="date-desc">Newest First</option>
+                <option value="date-asc">Oldest First</option>
+                <option value="category">By Category</option>
+                <option value="read-time">Reading Time</option>
+              </select>
+            </div>
+
+            <div class="view-controls">
+              <button class="view-btn active" data-view="grid" aria-label="Grid view">
+                <span class="view-icon">⊞</span>
+              </button>
+              <button class="view-btn" data-view="list" aria-label="List view">
+                <span class="view-icon">☰</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="posts-grid" id="posts-grid">
+          {% assign posts_to_show = paginator.posts | default: site.posts %}
+          {% if posts_to_show.size > 0 %}
+            {% for post in posts_to_show %}
+              <article class="post-card" data-category="{{ post.category | default: 'general' }}">
+                <a href="{{ post.url }}" class="card-link">
+                  <div class="card-header">
+                    <span class="category-tag category-{{ post.category }}">
+                      {% if post.category == "tech" %}💻
+                      {% elsif post.category == "journey" %}🚀
+                      {% elsif post.category == "passion" %}🎯
+                      {% else %}📝{% endif %}
+                      {{ post.category | capitalize | default: "General" }}
+                    </span>
+                    <span class="post-date">{{ post.date | date: "%b %d" }}</span>
+                  </div>
+
+                  <div class="card-body">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                  </div>
+
+                  <div class="card-footer">
+                    {% if post.read_time %}
+                      <span class="read-time">{{ post.read_time }}</span>
+                    {% else %}
+                      <span class="read-time">5 min read</span>
+                    {% endif %}
+                    <span class="read-more">Read more →</span>
+                  </div>
+                </a>
+              </article>
+            {% endfor %}
+          {% else %}
+            <div class="empty-state">
+              <div class="empty-icon">📝</div>
+              <h3>No posts yet</h3>
+              <p>Check back soon for new content!</p>
+            </div>
+          {% endif %}
+
+          <!-- Dynamic empty state for search/filter results -->
+          <div class="empty-state search-empty" id="search-empty" style="display: none;">
+            <div class="empty-icon">🔍</div>
+            <h3>No posts found</h3>
+            <p>Try adjusting your search or category filter to find what you're looking for.</p>
+            <button class="clear-filters-btn" id="clear-filters">Clear all filters</button>
+          </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        {% if paginator.total_pages > 1 %}
+          <nav class="pagination" aria-label="Blog pagination">
+            <div class="pagination-info">
+              <span class="pagination-text">
+                Page {{ paginator.page }} of {{ paginator.total_pages }}
+              </span>
+            </div>
+
+            <div class="pagination-controls">
+              {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn pagination-prev">
+                  <span class="btn-icon">←</span>
+                  <span class="btn-text">Previous</span>
+                </a>
+              {% else %}
+                <span class="pagination-btn pagination-prev disabled">
+                  <span class="btn-icon">←</span>
+                  <span class="btn-text">Previous</span>
+                </span>
+              {% endif %}
+
+              <div class="pagination-numbers">
+                {% for page in (1..paginator.total_pages) %}
+                  {% if page == paginator.page %}
+                    <span class="pagination-number active">{{ page }}</span>
+                  {% elsif page == 1 %}
+                    <a href="{{ '/blog/' | relative_url }}" class="pagination-number">{{ page }}</a>
+                  {% else %}
+                    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pagination-number">{{ page }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+              {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn pagination-next">
+                  <span class="btn-text">Next</span>
+                  <span class="btn-icon">→</span>
+                </a>
+              {% else %}
+                <span class="pagination-btn pagination-next disabled">
+                  <span class="btn-text">Next</span>
+                  <span class="btn-icon">→</span>
+                </span>
+              {% endif %}
+            </div>
+          </nav>
+        {% endif %}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
+
+<!-- Clean Blog Functionality -->
+<script src="{{ '/assets/js/blogManager.js' | relative_url }}"></script>

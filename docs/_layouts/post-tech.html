@@ -1,0 +1,343 @@
+---
+layout: post
+---
+
+<!-- Tech-specific enhancements will be added via CSS classes and additional sections -->
+
+<!-- This template extends the base post.html layout -->
+<!-- Tech posts automatically get enhanced styling for:
+     - Code syntax highlighting
+     - Technical diagrams
+     - Tool recommendations
+     - API documentation
+     - Live code examples
+-->
+
+<!-- Additional tech-specific content sections can be added here -->
+{% if page.tech_stack %}
+<div class="tech-stack-section">
+    <h3 class="tech-stack-title">
+        <span class="tech-icon">🛠️</span>
+        Tech Stack Used
+    </h3>
+    <div class="tech-stack-grid">
+        {% for tech in page.tech_stack %}
+        <div class="tech-item">
+            {% if tech.icon %}
+                <span class="tech-item-icon">{{ tech.icon }}</span>
+            {% endif %}
+            <div class="tech-item-content">
+                <h4 class="tech-item-name">{{ tech.name }}</h4>
+                {% if tech.description %}
+                    <p class="tech-item-description">{{ tech.description }}</p>
+                {% endif %}
+                {% if tech.version %}
+                    <span class="tech-item-version">v{{ tech.version }}</span>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if page.code_examples %}
+<div class="code-examples-section">
+    <h3 class="code-examples-title">
+        <span class="code-icon">💻</span>
+        Code Examples
+    </h3>
+    {% for example in page.code_examples %}
+    <div class="code-example">
+        <div class="code-example-header">
+            <h4 class="code-example-title">{{ example.title }}</h4>
+            {% if example.language %}
+                <span class="code-language">{{ example.language }}</span>
+            {% endif %}
+        </div>
+        {% if example.description %}
+            <p class="code-example-description">{{ example.description }}</p>
+        {% endif %}
+        <div class="code-example-content">
+            <pre><code class="language-{{ example.language | default: 'text' }}">{{ example.code }}</code></pre>
+        </div>
+        {% if example.explanation %}
+            <div class="code-explanation">
+                {{ example.explanation | markdownify }}
+            </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if page.tools_used %}
+<div class="tools-section">
+    <h3 class="tools-title">
+        <span class="tools-icon">🔧</span>
+        Tools & Resources
+    </h3>
+    <div class="tools-grid">
+        {% for tool in page.tools_used %}
+        <div class="tool-card">
+            {% if tool.icon %}
+                <div class="tool-icon">{{ tool.icon }}</div>
+            {% endif %}
+            <div class="tool-content">
+                <h4 class="tool-name">
+                    {% if tool.url %}
+                        <a href="{{ tool.url }}" target="_blank" rel="noopener">{{ tool.name }}</a>
+                    {% else %}
+                        {{ tool.name }}
+                    {% endif %}
+                </h4>
+                {% if tool.description %}
+                    <p class="tool-description">{{ tool.description }}</p>
+                {% endif %}
+                {% if tool.category %}
+                    <span class="tool-category">{{ tool.category }}</span>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if page.api_documentation %}
+<div class="api-docs-section">
+    <h3 class="api-docs-title">
+        <span class="api-icon">📡</span>
+        API Documentation
+    </h3>
+    {% for endpoint in page.api_documentation %}
+    <div class="api-endpoint">
+        <div class="api-endpoint-header">
+            <span class="api-method {{ endpoint.method | downcase }}">{{ endpoint.method }}</span>
+            <code class="api-url">{{ endpoint.url }}</code>
+        </div>
+        {% if endpoint.description %}
+            <p class="api-description">{{ endpoint.description }}</p>
+        {% endif %}
+        
+        {% if endpoint.parameters %}
+        <div class="api-parameters">
+            <h5>Parameters:</h5>
+            <table class="api-params-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for param in endpoint.parameters %}
+                    <tr>
+                        <td><code>{{ param.name }}</code></td>
+                        <td><span class="param-type">{{ param.type }}</span></td>
+                        <td>
+                            {% if param.required %}
+                                <span class="required">Yes</span>
+                            {% else %}
+                                <span class="optional">No</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ param.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        {% if endpoint.example_request %}
+        <div class="api-example">
+            <h5>Example Request:</h5>
+            <pre><code class="language-json">{{ endpoint.example_request }}</code></pre>
+        </div>
+        {% endif %}
+
+        {% if endpoint.example_response %}
+        <div class="api-example">
+            <h5>Example Response:</h5>
+            <pre><code class="language-json">{{ endpoint.example_response }}</code></pre>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if page.performance_metrics %}
+<div class="performance-section">
+    <h3 class="performance-title">
+        <span class="performance-icon">⚡</span>
+        Performance Metrics
+    </h3>
+    <div class="metrics-grid">
+        {% for metric in page.performance_metrics %}
+        <div class="metric-card">
+            <div class="metric-value">{{ metric.value }}</div>
+            <div class="metric-label">{{ metric.label }}</div>
+            {% if metric.improvement %}
+                <div class="metric-improvement">
+                    <span class="improvement-icon">📈</span>
+                    {{ metric.improvement }} improvement
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Live Demo Section -->
+{% if page.live_demo %}
+<div class="live-demo-section">
+    <h3 class="demo-title">
+        <span class="demo-icon">🚀</span>
+        Live Demo
+    </h3>
+    <div class="demo-container">
+        {% if page.live_demo.description %}
+            <p class="demo-description">{{ page.live_demo.description }}</p>
+        {% endif %}
+        
+        <div class="demo-actions">
+            {% if page.live_demo.url %}
+                <a href="{{ page.live_demo.url }}" class="demo-btn primary" target="_blank" rel="noopener">
+                    <span class="btn-icon">🔗</span>
+                    View Live Demo
+                </a>
+            {% endif %}
+            
+            {% if page.live_demo.github %}
+                <a href="{{ page.live_demo.github }}" class="demo-btn secondary" target="_blank" rel="noopener">
+                    <span class="btn-icon">📂</span>
+                    View Source Code
+                </a>
+            {% endif %}
+        </div>
+
+        {% if page.live_demo.embed %}
+        <div class="demo-embed">
+            {{ page.live_demo.embed }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<style>
+/* Tech-specific styling will be added to the main CSS file */
+.tech-post {
+    /* Enhanced styling for technical content */
+}
+
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.code-examples-section {
+    margin: 2rem 0;
+}
+
+.code-example {
+    margin-bottom: 2rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.code-example-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.api-endpoint {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.api-method {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.api-method.get { background: #d4edda; color: #155724; }
+.api-method.post { background: #cce5ff; color: #004085; }
+.api-method.put { background: #fff3cd; color: #856404; }
+.api-method.delete { background: #f8d7da; color: #721c24; }
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.metric-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.demo-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.demo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.demo-btn.primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.demo-btn.secondary {
+    background: #6c757d;
+    color: white;
+}
+</style>

@@ -1,0 +1,711 @@
+---
+layout: post
+---
+
+<!-- Passion Project-specific enhancements for hobby and project showcase posts -->
+
+<!-- Project Overview Section -->
+{% if page.project_overview %}
+<div class="project-overview-section">
+    <h3 class="overview-title">
+        <span class="overview-icon">🎯</span>
+        Project Overview
+    </h3>
+    <div class="overview-content">
+        <div class="overview-grid">
+            {% if page.project_overview.status %}
+            <div class="overview-item">
+                <div class="overview-label">Status</div>
+                <div class="overview-value status-{{ page.project_overview.status | downcase }}">
+                    {{ page.project_overview.status }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if page.project_overview.duration %}
+            <div class="overview-item">
+                <div class="overview-label">Duration</div>
+                <div class="overview-value">{{ page.project_overview.duration }}</div>
+            </div>
+            {% endif %}
+
+            {% if page.project_overview.difficulty %}
+            <div class="overview-item">
+                <div class="overview-label">Difficulty</div>
+                <div class="overview-value difficulty-{{ page.project_overview.difficulty | downcase }}">
+                    {{ page.project_overview.difficulty }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if page.project_overview.budget %}
+            <div class="overview-item">
+                <div class="overview-label">Budget</div>
+                <div class="overview-value">{{ page.project_overview.budget }}</div>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if page.project_overview.description %}
+        <div class="overview-description">
+            {{ page.project_overview.description | markdownify }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Materials & Equipment Section -->
+{% if page.materials %}
+<div class="materials-section">
+    <h3 class="materials-title">
+        <span class="materials-icon">🛠️</span>
+        Materials & Equipment
+    </h3>
+    <div class="materials-grid">
+        {% for material in page.materials %}
+        <div class="material-card">
+            {% if material.image %}
+                <div class="material-image">
+                    <img src="{{ material.image }}" alt="{{ material.name }}">
+                </div>
+            {% endif %}
+            <div class="material-content">
+                <h4 class="material-name">{{ material.name }}</h4>
+                {% if material.description %}
+                    <p class="material-description">{{ material.description }}</p>
+                {% endif %}
+                <div class="material-meta">
+                    {% if material.cost %}
+                        <span class="material-cost">{{ material.cost }}</span>
+                    {% endif %}
+                    {% if material.where_to_buy %}
+                        <a href="{{ material.where_to_buy }}" class="material-link" target="_blank" rel="noopener">
+                            Where to Buy
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Process Steps Section -->
+{% if page.process_steps %}
+<div class="process-section">
+    <h3 class="process-title">
+        <span class="process-icon">📋</span>
+        Step-by-Step Process
+    </h3>
+    <div class="process-steps">
+        {% for step in page.process_steps %}
+        <div class="process-step">
+            <div class="step-number">{{ forloop.index }}</div>
+            <div class="step-content">
+                <h4 class="step-title">{{ step.title }}</h4>
+                {% if step.description %}
+                    <div class="step-description">
+                        {{ step.description | markdownify }}
+                    </div>
+                {% endif %}
+                {% if step.image %}
+                    <div class="step-image">
+                        <img src="{{ step.image }}" alt="{{ step.title }}">
+                    </div>
+                {% endif %}
+                {% if step.tips %}
+                    <div class="step-tips">
+                        <h5>💡 Pro Tips:</h5>
+                        <ul>
+                            {% for tip in step.tips %}
+                                <li>{{ tip }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                {% if step.time_required %}
+                    <div class="step-time">
+                        <span class="time-icon">⏱️</span>
+                        Time Required: {{ step.time_required }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Before & After Gallery -->
+{% if page.before_after %}
+<div class="before-after-section">
+    <h3 class="before-after-title">
+        <span class="before-after-icon">🔄</span>
+        Before & After
+    </h3>
+    <div class="before-after-gallery">
+        {% for comparison in page.before_after %}
+        <div class="comparison-item">
+            <div class="comparison-images">
+                <div class="before-image">
+                    <img src="{{ comparison.before }}" alt="Before">
+                    <div class="image-label">Before</div>
+                </div>
+                <div class="after-image">
+                    <img src="{{ comparison.after }}" alt="After">
+                    <div class="image-label">After</div>
+                </div>
+            </div>
+            {% if comparison.description %}
+                <p class="comparison-description">{{ comparison.description }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Skills Developed Section -->
+{% if page.skills_developed %}
+<div class="skills-section">
+    <h3 class="skills-title">
+        <span class="skills-icon">🎓</span>
+        Skills Developed
+    </h3>
+    <div class="skills-grid">
+        {% for skill in page.skills_developed %}
+        <div class="skill-card">
+            {% if skill.icon %}
+                <div class="skill-icon">{{ skill.icon }}</div>
+            {% endif %}
+            <div class="skill-content">
+                <h4 class="skill-name">{{ skill.name }}</h4>
+                {% if skill.description %}
+                    <p class="skill-description">{{ skill.description }}</p>
+                {% endif %}
+                {% if skill.level %}
+                    <div class="skill-level">
+                        <span class="level-label">Level:</span>
+                        <div class="level-bar">
+                            <div class="level-fill" style="width: {{ skill.level }}%"></div>
+                        </div>
+                        <span class="level-text">{{ skill.level }}%</span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Project Gallery -->
+{% if page.project_gallery %}
+<div class="project-gallery-section">
+    <h3 class="gallery-title">
+        <span class="gallery-icon">📸</span>
+        Project Gallery
+    </h3>
+    <div class="project-gallery">
+        {% for image in page.project_gallery %}
+        <div class="gallery-item" onclick="openLightbox('{{ image.src }}', '{{ image.caption }}')">
+            <img src="{{ image.src }}" alt="{{ image.caption }}" class="gallery-image">
+            <div class="gallery-overlay">
+                <span class="gallery-zoom">🔍</span>
+            </div>
+            {% if image.caption %}
+                <div class="gallery-caption">{{ image.caption }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Lightbox for gallery images -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-image" src="" alt="">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Related Hobbies/Projects -->
+{% if page.related_projects %}
+<div class="related-projects-section">
+    <h3 class="related-title">
+        <span class="related-icon">🔗</span>
+        Related Projects
+    </h3>
+    <div class="related-projects-grid">
+        {% for project in page.related_projects %}
+        <div class="related-project-card">
+            {% if project.image %}
+                <div class="related-project-image">
+                    <img src="{{ project.image }}" alt="{{ project.title }}">
+                </div>
+            {% endif %}
+            <div class="related-project-content">
+                <h4 class="related-project-title">
+                    {% if project.url %}
+                        <a href="{{ project.url }}">{{ project.title }}</a>
+                    {% else %}
+                        {{ project.title }}
+                    {% endif %}
+                </h4>
+                {% if project.description %}
+                    <p class="related-project-description">{{ project.description }}</p>
+                {% endif %}
+                {% if project.status %}
+                    <span class="related-project-status status-{{ project.status | downcase }}">
+                        {{ project.status }}
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Lessons & Improvements -->
+{% if page.lessons_and_improvements %}
+<div class="lessons-improvements-section">
+    <h3 class="lessons-improvements-title">
+        <span class="lessons-icon">💡</span>
+        Lessons & Future Improvements
+    </h3>
+    <div class="lessons-improvements-content">
+        {% if page.lessons_and_improvements.what_worked %}
+        <div class="what-worked">
+            <h4 class="section-subtitle">
+                <span class="success-icon">✅</span>
+                What Worked Well
+            </h4>
+            <ul class="success-list">
+                {% for item in page.lessons_and_improvements.what_worked %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if page.lessons_and_improvements.challenges %}
+        <div class="challenges-faced">
+            <h4 class="section-subtitle">
+                <span class="challenge-icon">⚠️</span>
+                Challenges Faced
+            </h4>
+            <ul class="challenge-list">
+                {% for item in page.lessons_and_improvements.challenges %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if page.lessons_and_improvements.improvements %}
+        <div class="future-improvements">
+            <h4 class="section-subtitle">
+                <span class="improvement-icon">🚀</span>
+                Future Improvements
+            </h4>
+            <ul class="improvement-list">
+                {% for item in page.lessons_and_improvements.improvements %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+
+<style>
+/* Passion Project-specific styling */
+.passion-post {
+    /* Enhanced styling for hobby/project content */
+}
+
+.project-overview-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.overview-item {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.overview-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.overview-value {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.status-completed { color: #28a745; }
+.status-in-progress { color: #ffc107; }
+.status-planned { color: #6c757d; }
+
+.difficulty-easy { color: #28a745; }
+.difficulty-medium { color: #ffc107; }
+.difficulty-hard { color: #dc3545; }
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.material-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-4px);
+}
+
+.material-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.material-content {
+    padding: 1rem;
+}
+
+.process-steps {
+    counter-reset: step-counter;
+}
+
+.process-step {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.step-tips {
+    background: #fff3cd;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+    margin: 1rem 0;
+}
+
+.before-after-gallery {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.comparison-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.before-image, .after-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.before-image img, .after-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.skill-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.skill-level {
+    margin-top: 1rem;
+}
+
+.level-bar {
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.level-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+    transition: width 0.3s ease;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-zoom {
+    color: white;
+    font-size: 2rem;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+.lightbox-caption {
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.related-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.related-project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.related-project-card:hover {
+    transform: translateY(-2px);
+}
+
+.lessons-improvements-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.what-worked, .challenges-faced, .future-improvements {
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.what-worked {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-left: 4px solid #28a745;
+}
+
+.challenges-faced {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border-left: 4px solid #ffc107;
+}
+
+.future-improvements {
+    background: linear-gradient(135deg, #cce5ff 0%, #b3d9ff 100%);
+    border-left: 4px solid #007bff;
+}
+
+@media (max-width: 768px) {
+    .comparison-images {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-number {
+        align-self: center;
+    }
+}
+</style>
+
+<script>
+// Lightbox functionality
+function openLightbox(src, caption) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    
+    lightboxImage.src = src;
+    lightboxCaption.textContent = caption;
+    lightbox.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+</script>

@@ -1,0 +1,399 @@
+// ============================================================================
+// BLOG PAGINATION & CONTROLS
+// Advanced pagination system with sorting and view controls
+// ============================================================================
+
+// ============================================================================
+// POSTS HEADER ENHANCEMENTS
+// ============================================================================
+
+.posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-md;
+    border-bottom: 2px solid rgba($primary-color, 0.1);
+    gap: $spacing-md;
+
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: $spacing-md;
+    }
+}
+
+.posts-title-section {
+    flex: 1;
+
+    h2 {
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+        font-weight: 700;
+        color: $text-dark;
+        margin: 0 0 $spacing-xs 0;
+    }
+
+    .results-count {
+        color: $text-muted;
+        font-size: 0.95rem;
+        font-weight: 500;
+
+        #results-count {
+            font-weight: 700;
+            color: $accent-color;
+        }
+    }
+}
+
+// ============================================================================
+// ADVANCED CONTROLS
+// ============================================================================
+
+.posts-controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-tablet) {
+        justify-content: space-between;
+        gap: $spacing-md;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: $spacing-sm;
+    }
+}
+
+// Filter Controls
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    .filter-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $text-dark;
+        white-space: nowrap;
+    }
+
+    .category-filter {
+        padding: 0.5rem 1rem;
+        border: 2px solid rgba($primary-color, 0.1);
+        border-radius: 8px;
+        background: white;
+        color: $text-dark;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 160px;
+
+        &:hover {
+            border-color: rgba($accent-color, 0.3);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $accent-color;
+            box-shadow: 0 0 0 3px rgba($accent-color, 0.1);
+        }
+    }
+}
+
+// Sort Controls
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    .sort-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $text-dark;
+        white-space: nowrap;
+    }
+
+    .sort-select {
+        padding: 0.5rem 1rem;
+        border: 2px solid rgba($primary-color, 0.1);
+        border-radius: 8px;
+        background: white;
+        color: $text-dark;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 140px;
+
+        &:hover {
+            border-color: rgba($accent-color, 0.3);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $accent-color;
+            box-shadow: 0 0 0 3px rgba($accent-color, 0.1);
+        }
+    }
+}
+
+// View Controls
+.view-controls {
+    display: flex;
+    background: rgba($primary-color, 0.05);
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+
+    .view-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: transparent;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: $text-muted;
+
+        .view-icon {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        &:hover {
+            background: rgba($accent-color, 0.1);
+            color: $accent-color;
+        }
+
+        &.active {
+            background: white;
+            color: $accent-color;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    }
+}
+
+// ============================================================================
+// PAGINATION SYSTEM
+// ============================================================================
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacing-xl;
+    padding: $spacing-lg;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid rgba($primary-color, 0.06);
+
+    @media (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+        gap: $spacing-md;
+        text-align: center;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-md;
+        margin-top: $spacing-lg;
+    }
+}
+
+.pagination-info {
+    .pagination-text {
+        color: $text-muted;
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    @media (max-width: $breakpoint-mobile) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    background: white;
+    border: 2px solid rgba($primary-color, 0.1);
+    border-radius: 8px;
+    color: $text-dark;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    .btn-icon {
+        font-size: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .btn-text {
+        @media (max-width: $breakpoint-mobile) {
+            display: none;
+        }
+    }
+
+    &:hover:not(.disabled) {
+        background: $accent-color;
+        color: white;
+        border-color: $accent-color;
+        transform: translateY(-1px);
+        text-decoration: none;
+
+        &.pagination-prev .btn-icon {
+            transform: translateX(-2px);
+        }
+
+        &.pagination-next .btn-icon {
+            transform: translateX(2px);
+        }
+    }
+
+    &.disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 4px;
+    margin: 0 $spacing-sm;
+
+    @media (max-width: $breakpoint-mobile) {
+        margin: 0;
+        order: -1;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: $spacing-sm;
+    }
+}
+
+.pagination-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid rgba($primary-color, 0.1);
+    border-radius: 8px;
+    color: $text-dark;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+
+    &:hover:not(.active) {
+        background: rgba($accent-color, 0.1);
+        border-color: rgba($accent-color, 0.3);
+        color: $accent-color;
+        text-decoration: none;
+    }
+
+    &.active {
+        background: linear-gradient(135deg, $accent-color, $accent-secondary);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 2px 8px rgba($accent-color, 0.3);
+    }
+}
+
+// ============================================================================
+// LIST VIEW STYLES
+// ============================================================================
+
+.posts-grid.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    .post-card {
+        .card-link {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: $spacing-lg;
+            padding: $spacing-md;
+
+            @media (max-width: $breakpoint-tablet) {
+                grid-template-columns: 1fr;
+                gap: $spacing-sm;
+            }
+        }
+
+        .card-header {
+            padding: 0;
+            border: none;
+            justify-content: flex-start;
+            gap: $spacing-sm;
+        }
+
+        .card-body {
+            padding: 0;
+            
+            h3 {
+                margin-bottom: $spacing-xs;
+                font-size: 1.2rem;
+            }
+
+            p {
+                margin: 0;
+                font-size: 0.9rem;
+            }
+        }
+
+        .card-footer {
+            padding: 0;
+            justify-content: flex-end;
+        }
+    }
+}
+
+// ============================================================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================================================
+
+@media (max-width: $breakpoint-mobile) {
+    .posts-controls {
+        .sort-controls {
+            flex: 1;
+            
+            .sort-select {
+                flex: 1;
+                min-width: auto;
+            }
+        }
+    }
+
+    .pagination-controls {
+        .pagination-btn {
+            padding: 0.5rem 0.8rem;
+            
+            &.pagination-prev,
+            &.pagination-next {
+                min-width: 44px;
+                justify-content: center;
+            }
+        }
+    }
+}
