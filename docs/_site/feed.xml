@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-09-05T16:07:48+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Noxus’ Hub</title><subtitle>A portfolio showcasing my passions and projects</subtitle><entry><title type="html">The 49 Project Quest</title><link href="http://localhost:4000/journey/2025/09/04/the-49-project-quest.html" rel="alternate" type="text/html" title="The 49 Project Quest" /><published>2025-09-04T00:00:00+01:00</published><updated>2025-09-04T00:00:00+01:00</updated><id>http://localhost:4000/journey/2025/09/04/the-49-project-quest</id><content type="html" xml:base="http://localhost:4000/journey/2025/09/04/the-49-project-quest.html"><![CDATA[<h2 id="the-uncomfortable-truth-about-technical-success">The Uncomfortable Truth About Technical “Success”</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-01T17:08:42+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Noxus’ Hub</title><subtitle>A portfolio showcasing my passions and projects</subtitle><entry><title type="html">The 49 Project Quest</title><link href="http://localhost:4000/journey/2025/09/04/the-49-project-quest.html" rel="alternate" type="text/html" title="The 49 Project Quest" /><published>2025-09-04T00:00:00+01:00</published><updated>2025-09-04T00:00:00+01:00</updated><id>http://localhost:4000/journey/2025/09/04/the-49-project-quest</id><content type="html" xml:base="http://localhost:4000/journey/2025/09/04/the-49-project-quest.html"><![CDATA[<h2 id="the-uncomfortable-truth-about-technical-success">The Uncomfortable Truth About Technical “Success”</h2>
 
 <p><strong>Most of us with technical skills are living someone else’s definition of success.</strong></p>
 
@@ -7,6 +7,21 @@
 <p>Think about it. You spend 8+ hours a day solving other people’s problems, analyzing other people’s data, building other people’s visions—while your own passions collect dust in the corner of your life labeled “hobbies.”</p>
 
 <p><strong>This is the technical professional’s paradox, and I was caught in it for over twelve years.</strong></p>
+
+<div class="stats-grid">
+    <div class="stat">
+        <span class="number">12</span>
+        <span class="label">Years of divide</span>
+    </div>
+    <div class="stat">
+        <span class="number">7</span>
+        <span class="label">Passion domains</span>
+    </div>
+    <div class="stat">
+        <span class="number">49</span>
+        <span class="label">Projects to bridge the gap</span>
+    </div>
+</div>
 
 <p>For over twelve years, my life has had a constant, frustrating divide. On one side, there’s the technical me: passionate about data, solving complex problems, building systems, and the clean logic of analysis. On the other side, there’s the rest of me: the sports fan, the anime enthusiast, the fitness junkie, the gamer, the foodie, and the music lover.</p>
 
@@ -18,9 +33,18 @@
 
 <p><strong>Here’s what I’ve discovered: This divide isn’t unique to me.</strong></p>
 
-<p>Think about it: How many people do you know who can build complex data models but can’t create a simple system to track their own fitness progress? Who can analyze millions of data points for work but use a basic spreadsheet to manage their fantasy sports team? Who understand algorithms and automation but rely on generic apps to discover new anime or plan their meals?</p>
+<div class="interactive-question">
+    <h4>Does this sound familiar?</h4>
+    <p>Think about it: How many people do you know who can build complex data models but can't create a simple system to track their own fitness progress? Who can analyze millions of data points for work but use a basic spreadsheet to manage their fantasy sports team?</p>
+    <button class="response-btn" data-response="yes">Yes, this is me! 🙋‍♂️</button>
+    <button class="response-btn" data-response="no">Not really 🤔</button>
+</div>
 
-<p><strong>We’ve become experts at solving everyone else’s problems while our own remain unsolved.</strong></p>
+<div class="blog-visuals">
+    <blockquote class="pull-quote">
+        "We've become experts at solving everyone else's problems while our own remain unsolved."
+    </blockquote>
+</div>
 
 <p>We’ve been trained to think our technical skills and personal interests exist in separate universes. <strong>But what if that’s the biggest lie we’ve been told?</strong></p>
 
@@ -46,6 +70,25 @@
 
 <p>That night, I started sketching out what would become Athlehub: a sports-first social hub that makes playing, tracking, and experiencing sports seamless. A platform where every casual game becomes an opportunity for growth, recognition, and connection.</p>
 
+<div class="timeline">
+    <div class="timeline-item">
+        <div class="timeline-date">Junior School</div>
+        <div class="timeline-content">Early problem-solving mindset with friends</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-date">12 Years Later</div>
+        <div class="timeline-content">Technical-professional divide becomes clear</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-date">Basketball Moment</div>
+        <div class="timeline-content">The catalyst for systematic change</div>
+    </div>
+    <div class="timeline-item">
+        <div class="timeline-date">The Quest Begins</div>
+        <div class="timeline-content">49 projects to bridge skills and passions</div>
+    </div>
+</div>
+
 <p><strong>That’s when The 49 Project Quest was born</strong> not as a portfolio building exercise, but as a systematic approach to bridging the gap between my technical skills and the problems I actually cared about solving in my daily life.</p>
 
 <h2 id="why-this-structure-actually-works">Why This Structure Actually Works</h2>
@@ -59,6 +102,14 @@
 <p><strong>But here’s the crucial difference:</strong> This isn’t about building 49 random projects. Each project solves a real problem I face in that domain. Athlehub addresses the coordination and tracking issues I experienced in sports. The fitness projects will optimize my workout routines. The anime projects will help me discover new series based on complex preference algorithms.</p>
 
 <p><strong>This is applied passion development.</strong> I’m not just building a portfolio, I’m building tools that will make my hobbies more enjoyable, more efficient, and more connected to my professional growth.</p>
+
+<div class="content-break"></div>
+
+<div class="blog-visuals">
+    <blockquote class="pull-quote">
+        "This is applied passion development. I'm not just building a portfolio—I'm building tools that will make my hobbies more enjoyable, more efficient, and more connected to my professional growth."
+    </blockquote>
+</div>
 
 <h2 id="the-psychology-of-public-building">The Psychology of Public Building</h2>
 
@@ -103,251 +154,4 @@
 
 <p><strong>The question isn’t whether you should align your skills with your passions. The question is: can you afford not to?</strong></p>
 
-<p><strong>Here’s to the first of 49 quests. Let’s build something that actually matters.</strong></p>]]></content><author><name>Noxus</name></author><category term="journey" /><category term="journey" /><category term="projects" /><category term="building-in-public" /><category term="goals" /><category term="personal-growth" /><category term="career-change" /><summary type="html"><![CDATA[The Uncomfortable Truth About Technical “Success”]]></summary></entry><entry><title type="html">Building a REST API with Node.js and Express</title><link href="http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html" rel="alternate" type="text/html" title="Building a REST API with Node.js and Express" /><published>2025-01-08T00:00:00+00:00</published><updated>2025-01-08T00:00:00+00:00</updated><id>http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs</id><content type="html" xml:base="http://localhost:4000/tech/2025/01/08/building-rest-api-nodejs.html"><![CDATA[<h1 id="building-production-ready-apis-with-nodejs">Building Production-Ready APIs with Node.js</h1>
-
-<p>Creating a robust REST API is one of the most fundamental skills in modern web development. In this comprehensive guide, we’ll build a complete API from scratch using Node.js and Express, covering everything from basic setup to advanced security practices.</p>
-
-<h2 id="why-nodejs-for-apis">Why Node.js for APIs?</h2>
-
-<p>Node.js has become the go-to choice for API development due to its:</p>
-
-<ul>
-  <li><strong>Performance</strong>: Non-blocking I/O makes it perfect for handling concurrent requests</li>
-  <li><strong>JavaScript everywhere</strong>: Use the same language for frontend and backend</li>
-  <li><strong>Rich ecosystem</strong>: NPM provides packages for almost everything</li>
-  <li><strong>Scalability</strong>: Built-in clustering and microservices support</li>
-</ul>
-
-<h2 id="project-structure">Project Structure</h2>
-
-<p>Let’s start with a clean, scalable project structure:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nodejs-api/
-├── src/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middleware/
-│   ├── utils/
-│   └── config/
-├── tests/
-├── docs/
-└── package.json
-</code></pre></div></div>
-
-<p>This structure separates concerns and makes the codebase maintainable as it grows.</p>
-
-<h2 id="database-integration">Database Integration</h2>
-
-<p>We’re using MongoDB with Mongoose for several reasons:</p>
-
-<ol>
-  <li><strong>Flexible schema</strong>: Perfect for evolving APIs</li>
-  <li><strong>JSON-native</strong>: Natural fit with JavaScript</li>
-  <li><strong>Powerful querying</strong>: Rich query language and aggregation</li>
-  <li><strong>Scalability</strong>: Built for horizontal scaling</li>
-</ol>
-
-<h2 id="security-best-practices">Security Best Practices</h2>
-
-<p>Security isn’t an afterthought—it’s built into every layer:</p>
-
-<h3 id="input-validation">Input Validation</h3>
-<ul>
-  <li>Validate all incoming data</li>
-  <li>Sanitize user inputs</li>
-  <li>Use schema validation with Mongoose</li>
-</ul>
-
-<h3 id="authentication--authorization">Authentication &amp; Authorization</h3>
-<ul>
-  <li>JWT tokens for stateless authentication</li>
-  <li>Role-based access control</li>
-  <li>Secure password hashing with bcrypt</li>
-</ul>
-
-<h3 id="general-security">General Security</h3>
-<ul>
-  <li>Helmet.js for security headers</li>
-  <li>Rate limiting to prevent abuse</li>
-  <li>CORS configuration for cross-origin requests</li>
-</ul>
-
-<h2 id="error-handling-strategy">Error Handling Strategy</h2>
-
-<p>Consistent error handling is crucial for API reliability:</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Global error handler</span>
-<span class="nx">app</span><span class="p">.</span><span class="nf">use</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">statusCode</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="nx">message</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">err</span><span class="p">;</span>
-  
-  <span class="nx">res</span><span class="p">.</span><span class="nf">status</span><span class="p">(</span><span class="nx">statusCode</span><span class="p">).</span><span class="nf">json</span><span class="p">({</span>
-    <span class="na">success</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="na">error</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nx">message</span><span class="p">,</span>
-      <span class="p">...(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">development</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="p">{</span> <span class="na">stack</span><span class="p">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">stack</span> <span class="p">})</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<h2 id="testing-your-api">Testing Your API</h2>
-
-<p>A good API needs comprehensive testing:</p>
-
-<ul>
-  <li><strong>Unit tests</strong>: Test individual functions and methods</li>
-  <li><strong>Integration tests</strong>: Test API endpoints end-to-end</li>
-  <li><strong>Load tests</strong>: Ensure performance under stress</li>
-</ul>
-
-<h2 id="deployment-considerations">Deployment Considerations</h2>
-
-<p>When deploying to production:</p>
-
-<ol>
-  <li><strong>Environment variables</strong>: Keep secrets out of code</li>
-  <li><strong>Process management</strong>: Use PM2 or similar for process management</li>
-  <li><strong>Monitoring</strong>: Implement logging and health checks</li>
-  <li><strong>Scaling</strong>: Consider load balancing and clustering</li>
-</ol>
-
-<h2 id="next-steps">Next Steps</h2>
-
-<p>This API provides a solid foundation, but there’s always room for improvement:</p>
-
-<ul>
-  <li>Add caching with Redis</li>
-  <li>Implement real-time features with WebSockets</li>
-  <li>Add comprehensive logging with Winston</li>
-  <li>Set up CI/CD pipelines</li>
-  <li>Consider GraphQL for more flexible queries</li>
-</ul>
-
-<p>Building APIs is both an art and a science. Start with solid fundamentals, follow best practices, and iterate based on real-world usage. Happy coding! 🚀</p>]]></content><author><name>Noxus</name></author><category term="tech" /><category term="nodejs" /><category term="express" /><category term="api" /><category term="javascript" /><category term="backend" /><category term="tutorial" /><summary type="html"><![CDATA[Building Production-Ready APIs with Node.js]]></summary></entry><entry><title type="html">Building My Dream Mechanical Keyboard</title><link href="http://localhost:4000/passion/2025/01/07/custom-mechanical-keyboard-build.html" rel="alternate" type="text/html" title="Building My Dream Mechanical Keyboard" /><published>2025-01-07T00:00:00+00:00</published><updated>2025-01-07T00:00:00+00:00</updated><id>http://localhost:4000/passion/2025/01/07/custom-mechanical-keyboard-build</id><content type="html" xml:base="http://localhost:4000/passion/2025/01/07/custom-mechanical-keyboard-build.html"><![CDATA[<h1 id="the-journey-to-my-perfect-keyboard">The Journey to My Perfect Keyboard</h1>
-
-<p>As a developer who spends 8+ hours a day typing, I’ve always been fascinated by the tools that connect my thoughts to the screen. After years of using standard keyboards, I finally decided to dive into the world of custom mechanical keyboards and build something truly personal.</p>
-
-<h2 id="why-go-custom">Why Go Custom?</h2>
-
-<p>The mechanical keyboard hobby might seem excessive to outsiders, but there are real benefits:</p>
-
-<h3 id="typing-experience">Typing Experience</h3>
-<ul>
-  <li><strong>Tactile feedback</strong>: Every keypress feels intentional and satisfying</li>
-  <li><strong>Consistency</strong>: Each key has the same actuation force and travel</li>
-  <li><strong>Durability</strong>: Quality switches are rated for 50+ million keypresses</li>
-</ul>
-
-<h3 id="customization">Customization</h3>
-<ul>
-  <li><strong>Layout optimization</strong>: Remove unused keys, add macros where needed</li>
-  <li><strong>Switch selection</strong>: Choose the exact feel and sound you prefer</li>
-  <li><strong>Aesthetic control</strong>: Create a keyboard that matches your style</li>
-</ul>
-
-<h3 id="learning-experience">Learning Experience</h3>
-<ul>
-  <li><strong>Electronics knowledge</strong>: Understanding PCBs, switches, and firmware</li>
-  <li><strong>Fine motor skills</strong>: Precision assembly and adjustment</li>
-  <li><strong>Community engagement</strong>: Joining a passionate, helpful community</li>
-</ul>
-
-<h2 id="the-planning-phase">The Planning Phase</h2>
-
-<p>Choosing components for a custom keyboard can be overwhelming. Here’s how I approached it:</p>
-
-<h3 id="layout-selection">Layout Selection</h3>
-<p>I chose 75% because it offers:</p>
-<ul>
-  <li><strong>Compact footprint</strong>: Saves desk space compared to full-size</li>
-  <li><strong>Function keys</strong>: Essential for development work</li>
-  <li><strong>Arrow keys</strong>: Crucial for navigation and gaming</li>
-  <li><strong>Dedicated delete key</strong>: More convenient than Fn combinations</li>
-</ul>
-
-<h3 id="switch-research">Switch Research</h3>
-<p>After testing various switches at a local store, I settled on Gateron Oil Kings:</p>
-<ul>
-  <li><strong>Linear feel</strong>: Smooth travel without tactile bump</li>
-  <li><strong>Medium weight</strong>: 55g actuation force for balanced typing</li>
-  <li><strong>Factory lubed</strong>: Smooth operation out of the box</li>
-  <li><strong>Excellent reputation</strong>: Consistently praised in the community</li>
-</ul>
-
-<h2 id="the-build-process">The Build Process</h2>
-
-<h3 id="preparation-is-key">Preparation is Key</h3>
-<p>Before touching any components, I:</p>
-<ul>
-  <li>Watched multiple build guides for my specific keyboard</li>
-  <li>Prepared a clean, well-lit workspace</li>
-  <li>Gathered all necessary tools (screwdrivers, switch puller, keycap puller)</li>
-  <li>Downloaded and tested the configuration software (VIA)</li>
-</ul>
-
-<h3 id="assembly-challenges">Assembly Challenges</h3>
-<p>The most challenging part was stabilizer tuning. These components affect the feel of larger keys (spacebar, shift, enter), and getting them right requires patience:</p>
-
-<ol>
-  <li><strong>Initial test</strong>: Spacebar felt mushy and inconsistent</li>
-  <li><strong>Disassembly</strong>: Removed keycaps and switches to access stabilizers</li>
-  <li><strong>Lubrication</strong>: Applied thin layer of Krytox 205g0 to contact points</li>
-  <li><strong>Band-aid mod</strong>: Added foam tape to reduce rattle</li>
-  <li><strong>Reassembly and testing</strong>: Much improved feel and sound</li>
-</ol>
-
-<h3 id="programming-and-customization">Programming and Customization</h3>
-<p>Using VIA software, I created a custom layout optimized for my workflow:</p>
-<ul>
-  <li><strong>Layer 0</strong>: Standard QWERTY with minor modifications</li>
-  <li><strong>Layer 1</strong>: Function keys, media controls, and RGB settings</li>
-  <li><strong>Layer 2</strong>: Programming symbols and shortcuts</li>
-  <li><strong>Rotary knob</strong>: Volume control with push-to-mute</li>
-</ul>
-
-<h2 id="living-with-the-custom-keyboard">Living with the Custom Keyboard</h2>
-
-<p>After three months of daily use, here are my observations:</p>
-
-<h3 id="productivity-impact">Productivity Impact</h3>
-<ul>
-  <li><strong>Typing speed</strong>: Increased from 85 WPM to 95 WPM</li>
-  <li><strong>Accuracy</strong>: Fewer typos due to consistent key feel</li>
-  <li><strong>Comfort</strong>: Less finger fatigue during long coding sessions</li>
-  <li><strong>Satisfaction</strong>: Genuine enjoyment from the typing experience</li>
-</ul>
-
-<h3 id="unexpected-benefits">Unexpected Benefits</h3>
-<ul>
-  <li><strong>Conversation starter</strong>: Colleagues often ask about the unique keyboard</li>
-  <li><strong>Attention to tools</strong>: Increased awareness of other workspace ergonomics</li>
-  <li><strong>Community connection</strong>: Joined online forums and local meetups</li>
-  <li><strong>Gateway hobby</strong>: Led to interest in other DIY electronics projects</li>
-</ul>
-
-<h2 id="lessons-learned">Lessons Learned</h2>
-
-<h3 id="what-id-do-differently">What I’d Do Differently</h3>
-<ul>
-  <li><strong>Start with a switch tester</strong>: Would have saved time and money</li>
-  <li><strong>Budget for extras</strong>: Always need spare switches and keycaps</li>
-  <li><strong>Consider sound</strong>: Didn’t realize how much keyboard sound matters in shared spaces</li>
-  <li><strong>Plan for iteration</strong>: This won’t be my last custom keyboard</li>
-</ul>
-
-<h3 id="advice-for-beginners">Advice for Beginners</h3>
-<ul>
-  <li><strong>Start simple</strong>: Don’t overcomplicate your first build</li>
-  <li><strong>Join the community</strong>: r/MechanicalKeyboards is incredibly helpful</li>
-  <li><strong>Budget realistically</strong>: Quality components cost more but last longer</li>
-  <li><strong>Enjoy the process</strong>: The journey is as rewarding as the destination</li>
-</ul>
-
-<h2 id="the-rabbit-hole-continues">The Rabbit Hole Continues</h2>
-
-<p>Building this keyboard opened up a whole new world of customization and craftsmanship. I’m already planning my next build—a split ergonomic keyboard for even better typing ergonomics.</p>
-
-<p>The mechanical keyboard hobby teaches patience, attention to detail, and the value of quality tools. More than that, it’s a reminder that the things we use every day deserve thoughtful consideration and personal touch.</p>
-
-<p>Whether you’re a developer, writer, or anyone who spends significant time typing, I encourage you to explore what a custom keyboard might offer. Your fingers (and your productivity) might thank you! ⌨️✨</p>]]></content><author><name>Noxus</name></author><category term="passion" /><category term="mechanical-keyboards" /><category term="diy" /><category term="hardware" /><category term="custom-build" /><category term="hobby" /><summary type="html"><![CDATA[The Journey to My Perfect Keyboard]]></summary></entry></feed>
+<p><strong>Here’s to the first of 49 quests. Let’s build something that actually matters.</strong></p>]]></content><author><name>Noxus</name></author><category term="journey" /><category term="journey" /><category term="projects" /><category term="building-in-public" /><category term="goals" /><category term="personal-growth" /><category term="career-change" /><summary type="html"><![CDATA[The Uncomfortable Truth About Technical “Success”]]></summary></entry></feed>

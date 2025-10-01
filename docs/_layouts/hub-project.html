@@ -1,0 +1,397 @@
+---
+layout: default
+---
+
+<!-- Hub Project Page Layout -->
+<div class="hub-project-page">
+    <!-- Hero Section -->
+    <section class="hub-hero">
+        <div class="container">
+            <div class="hub-hero-content">
+                <div class="hub-icon-large" style="color: {{ page.color }}">
+                    <i class="{{ page.icon }}"></i>
+                </div>
+                <h1 class="hub-title">{{ page.title }}</h1>
+                <p class="hub-tagline">{{ page.description }}</p>
+                
+                <!-- Status and Progress -->
+                <div class="hub-status-bar">
+                    <div class="status-info">
+                        {% if page.status == 'completed' %}
+                            <span class="status-badge completed">✅ Launched</span>
+                        {% elsif page.status == 'in-progress' %}
+                            <span class="status-badge in-progress">🔄 Building</span>
+                        {% else %}
+                            <span class="status-badge planned">⏳ Planned</span>
+                        {% endif %}
+                        <span class="progress-text">{{ page.completed_features | default: 0 }}/{{ page.target_features | default: 6 }} Features</span>
+                    </div>
+                    <div class="progress-bar-hero">
+                        <div class="progress-fill" style="width: {{ page.progress }}%; background: {{ page.color }}"></div>
+                    </div>
+                    <span class="progress-percentage">{{ page.progress }}%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Pitch Sections -->
+    <div class="container">
+        <!-- The Backstory -->
+        {% if page.backstory %}
+        <section class="pitch-section backstory">
+            <div class="section-icon">📖</div>
+            <h2>The Backstory</h2>
+            <div class="pitch-content">
+                {{ page.backstory | markdownify }}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- The Solution -->
+        {% if page.solution %}
+        <section class="pitch-section solution">
+            <div class="section-icon">💡</div>
+            <h2>The Solution</h2>
+            <div class="pitch-content">
+                {{ page.solution | markdownify }}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- The Mission -->
+        {% if page.mission %}
+        <section class="pitch-section mission">
+            <div class="section-icon">🎯</div>
+            <h2>The Mission</h2>
+            <div class="pitch-content">
+                {{ page.mission | markdownify }}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Features -->
+        {% if page.features %}
+        <section class="pitch-section features">
+            <div class="section-icon">📲</div>
+            <h2>What {{ page.title }} Offers</h2>
+            <div class="features-grid">
+                {% for feature in page.features %}
+                <div class="feature-card" data-status="{{ feature.status }}">
+                    <div class="feature-header">
+                        <h3>{{ feature.name }}</h3>
+                        <span class="feature-status">
+                            {% if feature.status == 'completed' %}✅
+                            {% elsif feature.status == 'in-progress' %}🔄
+                            {% else %}⏳{% endif %}
+                        </span>
+                    </div>
+                    <p>{{ feature.description }}</p>
+                    {% if feature.target_date %}
+                        <div class="feature-date">Target: {{ feature.target_date }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Why Now -->
+        {% if page.why_now %}
+        <section class="pitch-section why-now">
+            <div class="section-icon">🚀</div>
+            <h2>Why Now?</h2>
+            <div class="pitch-content">
+                {{ page.why_now | markdownify }}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Development Timeline -->
+        {% if page.timeline %}
+        <section class="pitch-section timeline">
+            <div class="section-icon">📅</div>
+            <h2>Development Timeline</h2>
+            <div class="timeline-container">
+                {% for milestone in page.timeline %}
+                <div class="timeline-item" data-status="{{ milestone.status }}">
+                    <div class="timeline-date">{{ milestone.date }}</div>
+                    <div class="timeline-content">
+                        <h4>{{ milestone.title }}</h4>
+                        <p>{{ milestone.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Call to Action -->
+        <section class="hub-cta">
+            <div class="cta-content">
+                <h2>Follow the Development</h2>
+                <p>Want to see {{ page.title }} come to life? Follow the quest progress and get updates on every milestone.</p>
+                <div class="cta-buttons">
+                    <a href="/quest-progress" class="btn-primary">
+                        <i class="fas fa-chart-line"></i>
+                        Track Progress
+                    </a>
+                    <a href="/blog" class="btn-secondary">
+                        <i class="fas fa-blog"></i>
+                        Read Updates
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+/* Hub Project Page Styles */
+.hub-project-page {
+    min-height: 100vh;
+}
+
+.hub-hero {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hub-icon-large {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hub-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #1a202c;
+}
+
+.hub-tagline {
+    font-size: 1.3rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.hub-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.status-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.status-badge.completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.in-progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.planned {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.progress-bar-hero {
+    width: 200px;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1.5s ease-in-out;
+}
+
+.progress-percentage {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #374151;
+}
+
+/* Pitch Sections */
+.pitch-section {
+    margin: 4rem 0;
+    padding: 3rem 0;
+}
+
+.pitch-section:not(:last-child) {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.section-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.pitch-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1a202c;
+}
+
+.pitch-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.feature-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.feature-status {
+    font-size: 1.2rem;
+}
+
+.feature-date {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* CTA Section */
+.hub-cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin: 4rem 0;
+    color: white;
+}
+
+.hub-cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hub-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: white;
+    color: #667eea;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .hub-title {
+        font-size: 2rem;
+    }
+    
+    .hub-status-bar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>

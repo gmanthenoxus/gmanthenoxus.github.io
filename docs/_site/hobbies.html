@@ -97,14 +97,14 @@
       <h1>My Passions</h1>
       <p class="hero-subtitle">Where obsessions meet code</p>
       <div class="floating-icons">
-        <span class="float-icon" style="--delay: 0s">🎌</span>
-        <span class="float-icon" style="--delay: 0.2s">⚽️</span>
-        <span class="float-icon" style="--delay: 0.4s">👟</span>
-        <span class="float-icon" style="--delay: 0.6s">🎮</span>
-        <span class="float-icon" style="--delay: 0.8s">💻</span>
-        <span class="float-icon" style="--delay: 1s">🏋️</span>
-        <span class="float-icon" style="--delay: 1.2s">🍔</span>
-        <span class="float-icon" style="--delay: 1.4s">🎵</span>
+        <span class="float-icon" style="--delay: 0s"><i class="fas fa-tv"></i></span>
+        <span class="float-icon" style="--delay: 0.2s"><i class="fas fa-basketball-ball"></i></span>
+        <span class="float-icon" style="--delay: 0.4s"><i class="fas fa-shoe-prints"></i></span>
+        <span class="float-icon" style="--delay: 0.6s"><i class="fas fa-gamepad"></i></span>
+        <span class="float-icon" style="--delay: 0.8s"><i class="fas fa-microchip"></i></span>
+        <span class="float-icon" style="--delay: 1s"><i class="fas fa-dumbbell"></i></span>
+        <span class="float-icon" style="--delay: 1.2s"><i class="fas fa-utensils"></i></span>
+        <span class="float-icon" style="--delay: 1.4s"><i class="fas fa-music"></i></span>
       </div>
     </div>
   </div>
@@ -118,18 +118,18 @@
         <p>Every hobby tells a story. Every interest sparks innovation. Here's where curiosity meets code, and personal passions transform into digital solutions.</p>
         <div class="intro-highlights">
           <div class="highlight-item">
-            <span class="highlight-icon">🚀</span>
+            <span class="highlight-icon"><i class="fas fa-rocket"></i></span>
             <span class="highlight-text">Turning interests into applications</span>
           </div>
           <div class="highlight-item">
-            <span class="highlight-icon">💡</span>
+            <span class="highlight-icon"><i class="fas fa-lightbulb"></i></span>
             <span class="highlight-text">Learning through building</span>
           </div>
           <div class="highlight-item">
-            <span class="highlight-icon">🎯</span>
+            <span class="highlight-icon"><i class="fas fa-bullseye"></i></span>
             <span class="highlight-text">Solving real-world problems</span>
           </div>
-        </div>
+        </a>
       </div>
 
       <div class="hobby-stats">
@@ -150,189 +150,168 @@
       </div>
     </div>
 
+
+
     <div class="hobby-filters">
-      <button class="filter-btn active" data-filter="all">All Hobbies</button>
-      <button class="filter-btn" data-filter="creative">🎨 Creative</button>
-      <button class="filter-btn" data-filter="active">🏃 Active</button>
-      <button class="filter-btn" data-filter="tech">💻 Tech</button>
-      <button class="filter-btn" data-filter="entertainment">🎮 Entertainment</button>
+      <button class="filter-btn active" data-filter="all">
+        <i class="fas fa-th-large"></i>
+        All Passions
+      </button>
+      <button class="filter-btn" data-filter="digital">
+        <i class="fas fa-desktop"></i>
+        Digital
+      </button>
+      <button class="filter-btn" data-filter="physical">
+        <i class="fas fa-running"></i>
+        Physical
+      </button>
+      <button class="filter-btn" data-filter="creative">
+        <i class="fas fa-palette"></i>
+        Creative
+      </button>
+      <button class="filter-btn" data-filter="social">
+        <i class="fas fa-users"></i>
+        Social
+      </button>
     </div>
     
     <div class="hobbies-grid">
       
-        
-        
-        <div class="hobby-card" data-hobby="anime" data-category="creative" style="background-image: url('/assets/images/anime-bg.jpg');">
+        <a href="/hobbies/anime/" class="hobby-card" data-hobby="anime" data-category="digital" style="background-image: url('/assets/images/anime-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">🎌</span>
-            <h2>Anime</h2>
-          </div>
-          <div class="hobby-content">
-            <p>Where storytelling meets artistry. My journey through Japanese animation.</p>
-            
-            <div class="hobby-projects">
-              <h3>Featured Projects</h3>
-              <ul>
-                
-                  <li>
-                    <a href="/projects/anime-quotes">Anime Quote Generator</a>
-                    <span>API for random anime quotes</span>
-                  </li>
-                
-              </ul>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-tv"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Anime</h2>
+              <div class="hobby-description">
+                <p>Where storytelling meets artistry. My journey through Japanese animation and manga.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/anime/" class="cta-btn">Explore Anime</a>
-        </div>
+        </a>
       
-        
-        
-        <div class="hobby-card" data-hobby="sports" data-category="active" style="background-image: url('/assets/images/sports-bg.jpg');">
+        <a href="/hobbies/sports/" class="hobby-card" data-hobby="sports" data-category="physical" style="background-image: url('/assets/images/sports-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">🏀</span>
-            <h2>Sports</h2>
-          </div>
-          <div class="hobby-content">
-            <p>From the court to the field. The world of sports.</p>
-            
-            <div class="hobby-projects">
-              <h3>Featured Projects</h3>
-              <ul>
-                
-                  <li>
-                    <a href="/projects/nba-predictor">NBA Stat Predictor</a>
-                    <span>Machine learning model for player performance</span>
-                  </li>
-                
-              </ul>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-basketball-ball"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Sports</h2>
+              <div class="hobby-description">
+                <p>From the court to the field. Building tools for grassroots sports coordination.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/sports/" class="cta-btn">Explore Sports</a>
-        </div>
+        </a>
       
-        
-        
-        <div class="hobby-card" data-hobby="sneakers" data-category="entertainment" style="background-image: url('/assets/images/sneakers-bg.jpg');">
+        <a href="/hobbies/sneakers/" class="hobby-card" data-hobby="sneakers" data-category="creative" style="background-image: url('/assets/images/sneakers-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">👟</span>
-            <h2>Sneakers</h2>
-          </div>
-          <div class="hobby-content">
-            <p>From collecting to customizing. The culture, the craft, the community.</p>
-            
-            <div class="hobby-projects">
-              <h3>Coming Soon</h3>
-              <p style="color: rgba(255,255,255,0.7); font-style: italic;">Exciting projects in development!</p>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-shoe-prints"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Sneakers</h2>
+              <div class="hobby-description">
+                <p>From collecting to customizing. The culture, the craft, the community.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/sneakers/" class="cta-btn">Explore Sneakers</a>
-        </div>
+        </a>
       
-        
-        
-        <div class="hobby-card" data-hobby="boardgames" data-category="tech" style="background-image: url('/assets/images/boardgames-bg.jpg');">
+        <a href="/hobbies/games/" class="hobby-card" data-hobby="games" data-category="digital" style="background-image: url('/assets/images/games-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">🎮</span>
-            <h2>Games</h2>
-          </div>
-          <div class="hobby-content">
-            <p>From board games to video games. Strategic thinking meets digital innovation.</p>
-            
-            <div class="hobby-projects">
-              <h3>Coming Soon</h3>
-              <p style="color: rgba(255,255,255,0.7); font-style: italic;">Exciting projects in development!</p>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-gamepad"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Games</h2>
+              <div class="hobby-description">
+                <p>From board games to video games. Strategic thinking meets digital innovation.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/board-games/" class="cta-btn">Explore Games</a>
-        </div>
+        </a>
       
-        
-        
-        <div class="hobby-card" data-hobby="tech" data-category="tech" style="background-image: url('/assets/images/tech-bg.jpg');">
+        <a href="/hobbies/tech/" class="hobby-card" data-hobby="tech" data-category="digital" style="background-image: url('/assets/images/tech-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">💻</span>
-            <h2>Tech</h2>
-          </div>
-          <div class="hobby-content">
-            <p>From hardware to software. Exploring the cutting edge of technology and innovation.</p>
-            
-            <div class="hobby-projects">
-              <h3>Coming Soon</h3>
-              <p style="color: rgba(255,255,255,0.7); font-style: italic;">Exciting projects in development!</p>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-microchip"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Tech</h2>
+              <div class="hobby-description">
+                <p>From hardware to software. Exploring the cutting edge of technology and innovation.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/tech/" class="cta-btn">Explore Tech</a>
-        </div>
+        </a>
       
-        
-        
-        <div class="hobby-card" data-hobby="fitness" data-category="entertainment" style="background-image: url('/assets/images/gym-bg.jpg');">
+        <a href="/hobbies/fitness/" class="hobby-card" data-hobby="fitness" data-category="physical" style="background-image: url('/assets/images/gym-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">🏋️</span>
-            <h2>Fitness</h2>
-          </div>
-          <div class="hobby-content">
-            <p>From weights to cardio. The world of fitness.</p>
-            
-            <div class="hobby-projects">
-              <h3>Coming Soon</h3>
-              <p style="color: rgba(255,255,255,0.7); font-style: italic;">Exciting projects in development!</p>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-dumbbell"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Fitness</h2>
+              <div class="hobby-description">
+                <p>From weights to cardio. Building intelligent fitness tracking systems.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/fitness/" class="cta-btn">Explore Fitness</a>
-        </div>
+        </a>
       
-        
-        
-        <div class="hobby-card" data-hobby="food" data-category="creative" style="background-image: url('/assets/images/food-bg.jpg');">
+        <a href="/hobbies/food/" class="hobby-card" data-hobby="food" data-category="social" style="background-image: url('/assets/images/food-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">🍔</span>
-            <h2>Food</h2>
-          </div>
-          <div class="hobby-content">
-            <p>From street food to fine dining. The world of food.</p>
-            
-            <div class="hobby-projects">
-              <h3>Coming Soon</h3>
-              <p style="color: rgba(255,255,255,0.7); font-style: italic;">Exciting projects in development!</p>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Food</h2>
+              <div class="hobby-description">
+                <p>From street food to fine dining. Creating social kitchen coordination tools.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/food/" class="cta-btn">Explore Food</a>
-        </div>
+        </a>
       
-        
-        
-        <div class="hobby-card" data-hobby="music" data-category="creative" style="background-image: url('/assets/images/music-bg.jpg');">
+        <a href="/hobbies/music/" class="hobby-card" data-hobby="music" data-category="creative" style="background-image: url('/assets/images/music-bg.jpg');">
           <div class="hobby-overlay"></div>
           <div class="hobby-header">
-            <span class="hobby-emoji">🎵</span>
-            <h2>Music</h2>
-          </div>
-          <div class="hobby-content">
-            <p>From indie to pop. The world of music.</p>
-            
-            <div class="hobby-projects">
-              <h3>Coming Soon</h3>
-              <p style="color: rgba(255,255,255,0.7); font-style: italic;">Exciting projects in development!</p>
+            <div class="hobby-header-top">
+              <div class="hobby-icon">
+                <i class="fas fa-music"></i>
+              </div>
             </div>
-            
+            <div class="hobby-header-bottom">
+              <h2>Music</h2>
+              <div class="hobby-description">
+                <p>From indie to pop. Building active music discovery companions.</p>
+              </div>
+            </div>
           </div>
-          <a href="/hobbies/music/" class="cta-btn">Explore Music</a>
-        </div>
+        </a>
       
     </div>
   </div>
@@ -377,6 +356,8 @@
     </div>
   </div>
 </section>
+
+
     </main>
 
     <footer class="site-footer">
@@ -437,20 +418,6 @@
                         <a href="/journey/2025/09/04/the-49-project-quest.html" class="footer-post-link">
                             <span class="footer-post-title">The 49 Project Quest</span>
                             <span class="footer-post-date">Sep 04</span>
-                        </a>
-                    </li>
-                    
-                    <li class="footer-post-item">
-                        <a href="/tech/2025/01/08/building-rest-api-nodejs.html" class="footer-post-link">
-                            <span class="footer-post-title">Building a REST API with No...</span>
-                            <span class="footer-post-date">Jan 08</span>
-                        </a>
-                    </li>
-                    
-                    <li class="footer-post-item">
-                        <a href="/passion/2025/01/07/custom-mechanical-keyboard-build.html" class="footer-post-link">
-                            <span class="footer-post-title">Building My Dream Mechanica...</span>
-                            <span class="footer-post-date">Jan 07</span>
                         </a>
                     </li>
                     

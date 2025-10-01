@@ -1,8 +1,26 @@
 ---
 layout: default
-title: "Quest Progress Dashboard"
-description: "Live tracking of The 49 Project Quest - see completed projects, current milestones, and upcoming goals."
+title: "The 49 Project Quest - Live Progress"
+description: "Follow my journey building 49 projects across 7 passion domains. Real-time progress, live updates, and transparent development."
+image: "/assets/images/quest-progress-og.jpg"
 ---
+
+<!-- Social Media Meta Tags for Link Unfurling -->
+<meta property="og:title" content="The 49 Project Quest - Live Progress">
+<meta property="og:description" content="Follow my journey building 49 projects across 7 passion domains. Real-time progress, live updates, and transparent development.">
+<meta property="og:image" content="{{ site.url }}/assets/images/quest-progress-og.jpg">
+<meta property="og:url" content="{{ site.url }}/quest-progress">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The 49 Project Quest - Live Progress">
+<meta name="twitter:description" content="Follow my journey building 49 projects across 7 passion domains. Real-time progress, live updates, and transparent development.">
+<meta name="twitter:image" content="{{ site.url }}/assets/images/quest-progress-og.jpg">
+
+<meta name="linkedin:title" content="The 49 Project Quest - Live Progress">
+<meta name="linkedin:description" content="Follow my journey building 49 projects across 7 passion domains. Real-time progress, live updates, and transparent development.">
+<meta name="linkedin:image" content="{{ site.url }}/assets/images/quest-progress-og.jpg">
 
 <div class="quest-progress-page">
     <header class="quest-hero">
@@ -12,15 +30,16 @@ description: "Live tracking of The 49 Project Quest - see completed projects, cu
                 <p class="quest-subtitle">Live Progress Dashboard</p>
                 <div class="quest-stats">
                     <div class="stat-item">
-                        <span class="stat-number">2</span>
+                        <span class="stat-number" data-target="{{ site.data.quest.quest.completed_projects }}">0</span>
                         <span class="stat-label">Projects Completed</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">47</span>
+                        <span class="stat-number">{{ site.data.quest.quest.total_projects | minus: site.data.quest.quest.completed_projects }}</span>
                         <span class="stat-label">Projects Remaining</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">4%</span>
+                        <span class="stat-number" data-target="{{ site.data.quest.quest.completed_projects | times: 100 | divided_by: site.data.quest.quest.total_projects }}">0</span>
+                        <span class="stat-suffix">%</span>
                         <span class="stat-label">Overall Progress</span>
                     </div>
                 </div>
@@ -31,43 +50,112 @@ description: "Live tracking of The 49 Project Quest - see completed projects, cu
     <main class="quest-main">
         <div class="container">
             <section class="progress-overview">
-                <h2>Current Phase: Foundation</h2>
+                <h2>Current Phase: {{ site.data.quest.quest.current_phase }}</h2>
                 <div class="phase-progress">
                     <div class="progress-bar-large">
-                        <div class="progress-fill-large" style="width: 17%"></div>
+                        {% assign current_phase = site.data.quest.quest.phases | where: "name", site.data.quest.quest.current_phase | first %}
+                        <div class="progress-fill-large" style="width: {{ current_phase.completed_projects | times: 100 | divided_by: current_phase.target_projects }}%"></div>
                     </div>
-                    <p>2 of 12 foundation projects completed</p>
+                    <p>{{ current_phase.completed_projects }} of {{ current_phase.target_projects }} {{ site.data.quest.quest.current_phase | downcase }} projects completed</p>
                 </div>
             </section>
 
-            <section class="recent-projects">
-                <h2>Recently Completed</h2>
-                <div class="projects-grid">
-                    <div class="project-card completed">
-                        <div class="project-header">
-                            <h3>Portfolio Website</h3>
-                            <span class="project-date">Sept 2025</span>
+            <!-- The 7 Hubs - Heart of the Quest -->
+            <section class="quest-hubs">
+                <h2>The 7 Major Hubs</h2>
+                <p class="section-subtitle">Each hub represents a comprehensive platform integrating 6 feature projects</p>
+
+                <div class="hubs-grid">
+                    {% for hub in site.data.quest.quest.hubs %}
+                    <a href="/hubs/{{ hub.name | downcase | replace: ' ', '' }}" class="hub-card-link">
+                        <div class="hub-card" data-status="{{ hub.status }}">
+                            <div class="hub-header">
+                                <div class="hub-icon" style="color: {{ hub.color }}">
+                                    <i class="{{ hub.icon }}"></i>
+                                </div>
+                                <div class="hub-info">
+                                    <h3 class="hub-name">{{ hub.name }}</h3>
+                                    <span class="hub-category">{{ hub.category | capitalize }}</span>
+                                </div>
+                                <div class="hub-status">
+                                    {% if hub.status == 'completed' %}
+                                        <span class="status-badge completed">✅ Launched</span>
+                                    {% elsif hub.status == 'in-progress' %}
+                                        <span class="status-badge in-progress">🔄 Building</span>
+                                    {% else %}
+                                        <span class="status-badge planned">⏳ Planned</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                        <p class="hub-description">{{ hub.description }}</p>
+
+                        <!-- Hub Progress -->
+                        <div class="hub-progress">
+                            <div class="progress-header">
+                                <span class="progress-text">{{ hub.completed_features | default: 0 }}/{{ hub.target_features | default: 6 }} Features</span>
+                                <span class="progress-percentage">{{ hub.progress }}%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-width="{{ hub.progress }}%" style="background: {{ hub.color }}"></div>
+                            </div>
                         </div>
-                        <p>Built this very website using Jekyll, SCSS, and responsive design principles.</p>
-                        <div class="project-tags">
-                            <span class="tag">Jekyll</span>
-                            <span class="tag">SCSS</span>
-                            <span class="tag">Responsive Design</span>
+
+                        <!-- Feature List (if available) -->
+                        {% if hub.features %}
+                        <div class="hub-features">
+                            {% for feature in hub.features limit: 3 %}
+                            <div class="feature-item" data-status="{{ feature.status }}">
+                                <span class="feature-status">
+                                    {% if feature.status == 'completed' %}✅
+                                    {% elsif feature.status == 'in-progress' %}🔄
+                                    {% else %}⏳{% endif %}
+                                </span>
+                                <span class="feature-name">{{ feature.name }}</span>
+                            </div>
+                            {% endfor %}
+                            {% if hub.features.size > 3 %}
+                            <div class="feature-more">+{{ hub.features.size | minus: 3 }} more features</div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Live Activity Feed - The Engagement Engine -->
+            <section class="activity-feed">
+                <h2>Live Activity Feed</h2>
+                <p class="section-subtitle">Real-time updates from the quest</p>
+
+                <div class="activity-timeline">
+                    {% for activity in site.data.quest.quest.activity_log limit: 5 %}
+                    <div class="activity-item" data-type="{{ activity.type }}">
+                        <div class="activity-date">{{ activity.date | date: "%b %d" }}</div>
+                        <div class="activity-content">
+                            <div class="activity-type">
+                                {% if activity.type == 'project-complete' %}
+                                    <span class="activity-icon completed">🚀</span>
+                                {% elsif activity.type == 'blog-post' %}
+                                    <span class="activity-icon blog">📝</span>
+                                {% elsif activity.type == 'milestone' %}
+                                    <span class="activity-icon milestone">🎯</span>
+                                {% else %}
+                                    <span class="activity-icon general">⚡</span>
+                                {% endif %}
+                            </div>
+                            <div class="activity-details">
+                                <h4>{{ activity.title }}</h4>
+                                <p>{{ activity.description }}</p>
+                                {% if activity.link %}
+                                    <a href="{{ activity.link }}" class="activity-link">View Project →</a>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="project-card completed">
-                        <div class="project-header">
-                            <h3>Blog System</h3>
-                            <span class="project-date">Sept 2025</span>
-                        </div>
-                        <p>Created a comprehensive blog system with multiple post types and clean design.</p>
-                        <div class="project-tags">
-                            <span class="tag">Content Management</span>
-                            <span class="tag">Typography</span>
-                            <span class="tag">UX Design</span>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </section>
 
@@ -384,19 +472,268 @@ description: "Live tracking of The 49 Project Quest - see completed projects, cu
     100% { transform: scale(1); }
 }
 
+/* Hub Cards Styling */
+.quest-hubs {
+    margin: 3rem 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+.hubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hub-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.hub-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.hub-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.hub-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hub-icon {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.hub-info {
+    flex: 1;
+}
+
+.hub-name {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.hub-category {
+    font-size: 0.85rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.status-badge.completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.in-progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.planned {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.hub-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.hub-progress {
+    margin-bottom: 1rem;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.progress-percentage {
+    font-weight: 600;
+    color: #374151;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1.5s ease-in-out;
+}
+
+.hub-features {
+    margin-top: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.feature-status {
+    font-size: 0.8rem;
+}
+
+.feature-name {
+    color: #374151;
+}
+
+.feature-more {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* Activity Feed Styling */
+.activity-feed {
+    margin: 3rem 0;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.activity-timeline {
+    margin-top: 2rem;
+}
+
+.activity-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-date {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 600;
+    min-width: 60px;
+}
+
+.activity-content {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+}
+
+.activity-icon {
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f3f4f6;
+}
+
+.activity-details h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.activity-details p {
+    margin: 0 0 0.5rem 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.activity-link {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.activity-link:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .quest-stats {
         flex-direction: column;
         gap: 1.5rem;
     }
-    
-    .projects-grid {
+
+    .projects-grid, .hubs-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    .hub-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .activity-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .activity-content {
+        gap: 0.5rem;
     }
 }
 </style>

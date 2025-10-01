@@ -90,11 +90,17 @@ layout: default
           {% for hobby in site.data.hobbies limit:3 %}
           <a href="{{ hobby.url }}" class="hobby-item">
             <div class="hobby-image" style="background-image: url('{{ hobby.featured_image }}');">
-              <span class="hobby-emoji">{{ hobby.emoji }}</span>
+              <div class="hobby-overlay"></div>
+              <div class="hobby-content">
+                <div class="hobby-icon">
+                  <i class="{{ hobby.icon }}"></i>
+                </div>
+                <h4>{{ hobby.name }}</h4>
+              </div>
             </div>
             <div class="hobby-text">
-              <h4>{{ hobby.name }}</h4>
               <p>{{ hobby.description | truncate: 80 }}</p>
+              <div class="hobby-category">{{ hobby.category | capitalize }}</div>
             </div>
           </a>
           {% endfor %}

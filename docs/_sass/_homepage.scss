@@ -402,15 +402,36 @@ $card-image-height: 200px;
 // UNIFIED IMAGE COMPONENT
 // ============================================================================
 
-// Base image styles 
+// Base image styles
 %base-card-image {
     height: $card-image-height;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: local;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: $card-border-radius $card-border-radius 0 0;
+    overflow: hidden;
+
+    // Ensure images are properly contained
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+    // Fallback gradient if image doesn't load
     background: linear-gradient(135deg,
         lighten($accent-color, 35%) 0%,
         lighten($accent-secondary, 30%) 100%);
@@ -443,25 +464,114 @@ $card-image-height: 200px;
     }
 }
 
-// Hobby images
+// Hobby images - Redesigned
 .hobby-item .hobby-image {
     @extend %base-card-image;
+    position: relative;
+    overflow: hidden;
 
-    // Hobby emoji in corner
-    .hobby-emoji {
+    // Overlay
+    .hobby-overlay {
         position: absolute;
-        top: $spacing-md;
-        right: $spacing-md;
-        font-size: 2rem;
-        background: rgba(0,0,0,0.6);
-        border-radius: 50%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(102, 126, 234, 0.8) 0%,
+            rgba(118, 75, 162, 0.8) 100%
+        );
+        z-index: 1;
+        transition: all 0.3s ease;
+        opacity: 0.85;
+    }
+
+    // Content container
+    .hobby-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        padding: $spacing-lg;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: white;
+    }
+
+    // Hobby icon
+    .hobby-icon {
         width: 50px;
         height: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        backdrop-filter: blur(5px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        align-self: flex-start;
+
+        i {
+            font-size: 1.5rem;
+            color: white;
+        }
     }
+
+    h4 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        line-height: 1.2;
+    }
+}
+
+.hobby-item:hover .hobby-image {
+    .hobby-overlay {
+        opacity: 0.75;
+    }
+
+    .hobby-icon {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    h4 {
+        transform: translateY(-3px);
+    }
+}
+
+// Hobby category styling
+.hobby-category {
+    font-size: 0.8rem;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.hobby-category-badge {
+    position: absolute;
+    bottom: $spacing-md;
+    left: $spacing-md;
+    background: rgba(255, 255, 255, 0.9);
+    color: $text-dark;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+    z-index: 5;
 }
 
 // ============================================================================
@@ -546,7 +656,22 @@ $card-image-height: 200px;
     // Hobby description
     p {
         @extend .card-description;
-        margin-bottom: 0;
+        margin-bottom: 1rem;
+    }
+
+    // Hobby category
+    .hobby-category {
+        font-size: 0.8rem;
+        color: $text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        background: rgba($accent-color, 0.1);
+        border-radius: 12px;
+        display: inline-block;
+        width: fit-content;
     }
 }
 

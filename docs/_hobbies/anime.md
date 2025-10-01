@@ -18,7 +18,7 @@ quotes:
     author: "Kaiki Deishuu, Monogatari Series"
 
 # Live Statistics Dashboard
-stats:
+personal_stats:
   - value: "500+"
     label: "Series Watched"
     context: "Equivalent to 2+ years of continuous viewing"
@@ -79,32 +79,20 @@ personal_journey:
     - name: "Attack on Titan"
       reason: "Complex narrative structure and philosophical depth"
 
-# Fun Facts & Trivia
+# Fun Facts
 fun_facts:
-  - icon: "📊"
-    title: "Data-Driven Viewing"
+  - title: "Data-Driven Viewing"
     description: "I track every anime I watch with custom metrics including emotional impact scores, animation quality ratings, and rewatchability indices. My database contains over 15,000 data points."
-    source: "Personal tracking system"
-  - icon: "🎭"
-    title: "Genre Explorer"
+  - title: "Genre Explorer"
     description: "I've watched anime from 47 different genres, including obscure ones like 'Iyashikei' (healing anime) and 'Denpa' (electromagnetic wave). Most people only know about 10-15 genres."
-    source: "MyAnimeList genre analysis"
-  - icon: "🏆"
-    title: "Prediction Master"
+  - title: "Prediction Master"
     description: "My anime rating predictions have a 78% correlation with MyAnimeList community scores, better than most recommendation algorithms. I can usually predict if I'll like a series within 3 episodes."
-    source: "Personal algorithm testing"
-  - icon: "🌍"
-    title: "Cultural Bridge"
+  - title: "Cultural Bridge"
     description: "Anime sparked my interest in Japanese culture, leading to studying the language and planning my first trip to Japan. I can now understand about 40% of anime dialogue without subtitles."
-    source: "Language learning progress"
-  - icon: "🎨"
-    title: "Animation Appreciation"
+  - title: "Animation Appreciation"
     description: "I can identify the work of specific animation studios and directors just by watching a few scenes. Studio Ghibli, Madhouse, and Wit Studio have the most distinctive styles."
-    source: "Visual pattern recognition"
-  - icon: "💡"
-    title: "Industry Insights"
+  - title: "Industry Insights"
     description: "The average anime episode costs $100,000-300,000 to produce, but streaming has made it profitable for niche series that would never have been made in the TV-only era."
-    source: "Anime Industry Economics Report"
 
 # External Platforms
 external_platforms:
@@ -129,61 +117,35 @@ external_platforms:
     url: "https://open.spotify.com/playlist/anime-favorites"
     stats: "200+ tracks, 15 hours"
 
-# Fun Facts (General interesting content)
-fun_facts:
-  - icon: "🎨"
-    title: "Animation Economics"
-    description: "The average anime episode costs $100,000-300,000 to produce, but streaming has made it profitable for niche series that would never have been made in the TV-only era."
-    source: "Anime Industry Economics Report"
-  - icon: "🌍"
-    title: "Global Phenomenon"
-    description: "Anime is now watched in over 100 countries, with the largest international audiences in the US, China, and Brazil. The global fanbase has grown 400% since 2010."
-    source: "Crunchyroll Global Survey 2024"
-  - icon: "🎭"
-    title: "Studio Recognition"
-    description: "Studio Ghibli films have won over 50 international awards, including an Academy Award. Their movies are considered cultural treasures in Japan and have influenced Western animation."
-    source: "Studio Ghibli Archives"
-  - icon: "📊"
-    title: "Streaming Revolution"
-    description: "Over 70% of anime consumption now happens through streaming platforms, completely changing how series are produced and distributed globally."
-    source: "Digital Entertainment Report 2024"
+
 
 # Interactive Trivia
 trivia:
   - question: "Which anime holds the record for the most episodes ever produced?"
     options:
-      - text: "One Piece"
-        correct: false
-      - text: "Sazae-san"
-        correct: true
-      - text: "Detective Conan"
-        correct: false
-      - text: "Naruto (including Shippuden)"
-        correct: false
+      - "One Piece"
+      - "Sazae-san"
+      - "Detective Conan"
+      - "Naruto (including Shippuden)"
+    correct_answer: 1
     explanation: "Sazae-san has been running since 1969 and has over 7,000 episodes, making it the longest-running animated series in the world!"
 
   - question: "What does the term 'otaku' originally mean in Japanese?"
     options:
-      - text: "Anime fan"
-        correct: false
-      - text: "Your house/home"
-        correct: true
-      - text: "Obsessed person"
-        correct: false
-      - text: "Japanese culture enthusiast"
-        correct: false
+      - "Anime fan"
+      - "Your house/home"
+      - "Obsessed person"
+      - "Japanese culture enthusiast"
+    correct_answer: 1
     explanation: "Otaku literally means 'your house' and was originally used as a polite way to address someone. It became associated with obsessive fans in the 1980s."
 
   - question: "Which Studio Ghibli film was the first to win an Academy Award?"
     options:
-      - text: "Princess Mononoke"
-        correct: false
-      - text: "My Neighbor Totoro"
-        correct: false
-      - text: "Spirited Away"
-        correct: true
-      - text: "Howl's Moving Castle"
-        correct: false
+      - "Princess Mononoke"
+      - "My Neighbor Totoro"
+      - "Spirited Away"
+      - "Howl's Moving Castle"
+    correct_answer: 2
     explanation: "Spirited Away won the Academy Award for Best Animated Feature in 2003, becoming the first hand-drawn and Japanese animated film to win this award."
 
 # Current Projects
@@ -204,20 +166,24 @@ current_projects:
     tech_stack: ["Node.js", "Discord.js", "MongoDB", "Web Scraping"]
     link: "/projects/seasonal-tracker"
 
-# Empty States (personality-driven placeholders)
-empty_states:
-  projects: "Even the best anime have filler episodes - my projects are just in their development arc!"
-  projects_icon: "🎬"
-  projects_title: "Plot Twist Coming Soon"
-  projects_description: "Like waiting for the next season of your favorite anime, great projects take time to develop. The next breakthrough could be more epic than a Shonen power-up!"
+# Call to Action
+cta:
+  title: "Love Anime?"
+  description: "Let's talk about the future of fan tools, from better discovery to social sharing."
+  button_text: "Start a Conversation"
+  button_url: "/contact"
 ---
 
-<div class="project-highlight">
-  <h3>🚀 Current Project: Anime Analytics Dashboard</h3>
-  <p>Building a comprehensive platform that analyzes viewing patterns, seasonal trends, and recommendation algorithms to help fellow anime enthusiasts discover their next favorite series.</p>
-  <a href="/projects/anime-analytics" class="btn">View Project Details</a>
-</div>
+## My Anime Journey
 
-## Philosophy & Impact
+My journey began in junior secondary school, fueled by the passionate discussions of my roommates. I took the plunge with *Bleach*, completely unaware of the massive world I was stepping into. The hook was set deep the first time Ichigo unleashed his Bankai. The sheer scale, the power shift, the visual spectacle—it was a defining "I get it now" moment that transformed me from a curious observer into a dedicated fan.
 
-Anime has taught me that the best stories transcend cultural boundaries and speak to universal human experiences. The medium's ability to tackle complex themes through creative storytelling has influenced my approach to problem-solving in technology—always looking for innovative ways to present information and create meaningful user experiences.
+From there, I dove headfirst into the world of light novels and isekai. *Overlord* was my gateway drug. It wasn't just about the power fantasy; it was the adventure, the freedom to shape a world, the stunning beauty of its scenes, and the philosophical question of what one *does* with absolute power.
+
+Now, I'm a daily consumer. My ritual is built on the mental patience to wait a week for a new episode, filled by restarting old favorites to catch missed plots and hunting for hidden gems. Anime is my companion for meals, my rest after work, and my perfect distraction. I've reached that point where it feels like there's no isekai left unseen.
+
+## The Problem & The Passion
+
+This deep dive has made the industry's pain points painfully clear. I've spent hours, like searching for the psychological sports masterpiece *One Outs*, only to find it tucked away on an obscure YouTube channel. Keeping up with seasonal releases is a part-time job, and there's no easy way to share the experience—to see what my friends are watching or to build a shared watchlist.
+
+This frustration is where my passion for anime meets my skills as a builder. I see a world where better tools can make being a fan seamless and more social. My goal is to build that world.
