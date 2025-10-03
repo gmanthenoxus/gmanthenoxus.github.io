@@ -30,30 +30,30 @@ layout: default
   <div class="roadmap-content">
     <!-- Blog Content -->
     <div id="blog" class="content-pane active">
-      <div class="content-card">
+      <div class="card card-lg content-wrapper">
         <h3>Latest Inspiration</h3>
         <p>Fresh thoughts and stories from my journey</p>
 
         {% if site.posts.size > 0 %}
         <div class="preview-grid">
           {% for post in site.posts limit:3 %}
-          <a href="{{ post.url }}" class="preview-item">
-            {% assign category_icon = "📝" %}
+          <a href="{{ post.url }}" class="card preview-card">
+            {% assign category_icon = "fa-solid fa-pen-to-square" %}
             {% if post.category == "tech" %}
-              {% assign category_icon = "💻" %}
+              {% assign category_icon = "fa-solid fa-code" %}
             {% elsif post.category == "journey" %}
-              {% assign category_icon = "🚀" %}
+              {% assign category_icon = "fa-solid fa-rocket" %}
             {% elsif post.category == "passion" %}
-              {% assign category_icon = "🎯" %}
+              {% assign category_icon = "fa-solid fa-bullseye" %}
             {% endif %}
 
-            <div class="preview-image"
+            <div class="card-image"
                  data-category="{{ post.category | default: 'general' }}"
-                 data-icon="{{ category_icon }}"
                  {% if post.image %}style="background-image: url('{{ post.image }}');"{% endif %}>
               <div class="image-overlay"></div>
+              <i class="{{ category_icon }} category-icon"></i>
             </div>
-            <div class="preview-text">
+            <div class="card-content">
               <h4>{{ post.title }}</h4>
               {% if post.excerpt %}
               <p class="excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
@@ -61,7 +61,7 @@ layout: default
               <div class="meta">
                 <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
                 {% if post.category %}
-                <span class="category">{{ post.category | capitalize }}</span>
+                <span class="badge badge-{{ post.category }}">{{ post.category | capitalize }}</span>
                 {% endif %}
               </div>
             </div>
@@ -70,9 +70,9 @@ layout: default
         </div>
         {% else %}
         <div class="empty-state">
-          <div class="empty-icon">📝</div>
-          <h4>Coming Soon</h4>
-          <p>I'm working on some inspiring content. Check back soon!</p>
+          <div class="empty-icon emoji">📝</div>
+          <h3 class="empty-title">Coming Soon</h3>
+          <p class="empty-description">I'm working on some inspiring content. Check back soon!</p>
         </div>
         {% endif %}
 
@@ -82,15 +82,15 @@ layout: default
     
     <!-- Hobbies Content -->
     <div id="hobbies" class="content-pane">
-      <div class="content-card">
+      <div class="card card-lg content-wrapper">
         <h3>My Passion Projects</h3>
         <p>Where obsessions meet code and create solutions</p>
-        
+
         <div class="hobby-grid">
           {% for hobby in site.data.hobbies limit:3 %}
-          <a href="{{ hobby.url }}" class="hobby-item">
-            <div class="hobby-image" style="background-image: url('{{ hobby.featured_image }}');">
-              <div class="hobby-overlay"></div>
+          <a href="{{ hobby.url }}" class="card hobby-card">
+            <div class="card-image hobby-image" style="background-image: url('{{ hobby.featured_image }}');">
+              <div class="image-overlay hobby-overlay"></div>
               <div class="hobby-content">
                 <div class="hobby-icon">
                   <i class="{{ hobby.icon }}"></i>
@@ -98,25 +98,25 @@ layout: default
                 <h4>{{ hobby.name }}</h4>
               </div>
             </div>
-            <div class="hobby-text">
+            <div class="card-content hobby-text">
               <p>{{ hobby.description | truncate: 80 }}</p>
-              <div class="hobby-category">{{ hobby.category | capitalize }}</div>
+              <div class="badge hobby-category">{{ hobby.category | capitalize }}</div>
             </div>
           </a>
           {% endfor %}
         </div>
-        
+
         <a href="/hobbies" class="btn-text">Explore All Hobbies</a>
       </div>
     </div>
     
     <!-- Brain Work Content -->
     <div id="brain" class="content-pane">
-      <div class="content-card">
+      <div class="card card-lg content-wrapper">
         <div class="wip-section">
           <div class="wip-header">
             <h3>Brain Work Lab</h3>
-            <span class="wip-badge">
+            <span class="badge badge-in-progress wip-badge">
               <span class="badge-icon">⚡</span>
               <span class="badge-text">In Development</span>
             </span>
@@ -125,7 +125,7 @@ layout: default
           <div class="wip-visual">
             <div class="progress-container">
               <div class="progress-bar">
-                <div class="progress-fill" data-progress="75"></div>
+                <div class="progress-fill" style="width: 75%"></div>
               </div>
               <span class="progress-text">75% Complete</span>
             </div>
@@ -165,55 +165,43 @@ layout: default
 
 <!-- Call to Action Section -->
 <section class="cta-section">
-  <div class="cta-background">
-    <div class="bg-particle" style="--delay: 0s; --duration: 15s;"></div>
-    <div class="bg-particle" style="--delay: 3s; --duration: 20s;"></div>
-    <div class="bg-particle" style="--delay: 6s; --duration: 18s;"></div>
-    <div class="bg-particle" style="--delay: 9s; --duration: 22s;"></div>
-  </div>
-
-  <div class="container">
+  <div class="cta-container">
     <div class="cta-content">
-      <div class="cta-text">
-        <h2 class="cta-title">Let's Build Something Amazing</h2>
-        <p class="cta-description">Ready to turn ideas into reality? Whether it's a project, collaboration, or just a chat about tech and innovation.</p>
-      </div>
+      <h2 class="cta-title">Let's Build Something Amazing</h2>
+      <p class="cta-description">Ready to turn ideas into reality? Whether it's a project, collaboration, or just a chat about tech and innovation.</p>
 
       <div class="cta-buttons">
-        <a href="/contact" class="cta-btn primary">
-          <span class="btn-text">Get In Touch</span>
-          <div class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+        <a href="/contact" class="btn-primary cta-btn">
+          <span>Get In Touch</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </a>
 
-        <a href="/builds" class="cta-btn secondary">
-          <span class="btn-text">View Work</span>
-          <div class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M15 3H21V9M21 3L12 12M9 3H3V9M3 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+        <a href="/projects" class="btn-outline cta-btn">
+          <span>View Projects</span>
+          <i class="fa-solid fa-folder-open"></i>
         </a>
       </div>
     </div>
 
     <div class="cta-visual">
-      <div class="orbit-container">
-        <div class="orbit orbit-1">
-          <div class="orbit-item">💻</div>
+      <div class="floating-icons">
+        <div class="icon-item" style="--delay: 0s;">
+          <i class="fa-solid fa-code"></i>
         </div>
-        <div class="orbit orbit-2">
-          <div class="orbit-item">🚀</div>
+        <div class="icon-item" style="--delay: 0.5s;">
+          <i class="fa-solid fa-rocket"></i>
         </div>
-        <div class="orbit orbit-3">
-          <div class="orbit-item">⚡</div>
+        <div class="icon-item" style="--delay: 1s;">
+          <i class="fa-solid fa-lightbulb"></i>
         </div>
-        <div class="center-element">
-          <div class="pulse-ring"></div>
-          <div class="center-icon">🎯</div>
+        <div class="icon-item" style="--delay: 1.5s;">
+          <i class="fa-solid fa-palette"></i>
+        </div>
+        <div class="icon-item" style="--delay: 2s;">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="icon-item" style="--delay: 2.5s;">
+          <i class="fa-solid fa-star"></i>
         </div>
       </div>
     </div>

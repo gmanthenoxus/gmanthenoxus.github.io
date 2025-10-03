@@ -170,56 +170,69 @@ a {
 .tabbed-roadmap {
   padding: $spacing-xl 0;
   background: $background-light;
-  
+
   .roadmap-nav {
     display: flex;
     justify-content: center;
-    margin-bottom: $spacing-md;
-    border-bottom: 1px solid darken($background-light, 10%);
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
     padding: 0 $spacing-sm;
+    flex-wrap: wrap;
 
     .nav-item {
-      background: none;
-      border: none;
-      padding: $spacing-sm $spacing-md;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: $text-muted;
+      background: white;
+      border: 2px solid rgba($primary-color, 0.1);
+      padding: $spacing-sm $spacing-lg;
+      font-size: 1rem;
+      font-weight: $font-weight-semibold;
+      color: $text-dark;
       cursor: pointer;
       position: relative;
-      transition: all 0.3s ease;
-      border-radius: 8px 8px 0 0;
+      transition: all $transition-medium;
+      border-radius: $radius-pill;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: transparent;
-        transition: all 0.3s ease;
-        border-radius: 2px;
+      // Remove any underlines
+      text-decoration: none;
+
+      // WIP badge styling
+      .wip-badge {
+        display: inline-block;
+        margin-left: $spacing-xs;
+        padding: 0.15rem 0.5rem;
+        background: linear-gradient(135deg, rgba($accent-color, 0.15), rgba($accent-color, 0.25));
+        color: $accent-color;
+        border-radius: $radius-pill;
+        font-size: 0.7rem;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
       }
 
       &:hover {
-        color: $text-dark;
+        color: $accent-color;
         background: rgba($accent-color, 0.05);
-        transform: translateY(-2px);
-
-        &:after {
-          background: rgba($accent-color, 0.3);
-        }
+        border-color: rgba($accent-color, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba($accent-color, 0.15);
+        text-decoration: none;
       }
 
       &.active {
-        color: $accent-color;
-        font-weight: 600;
-        background: rgba($accent-color, 0.08);
+        color: white;
+        font-weight: $font-weight-bold;
+        background: linear-gradient(135deg, $hero-green, $hero-blue);
+        border-color: transparent;
+        box-shadow: $shadow-accent;
 
-        &:after {
-          background: $accent-color;
-          height: 4px;
+        .wip-badge {
+          background: rgba(255, 255, 255, 0.25);
+          color: white;
+        }
+
+        &:hover {
+          transform: translateY(-3px) scale(1.02);
+          box-shadow: $shadow-accent-hover;
         }
       }
     }
@@ -233,185 +246,15 @@ a {
   
   .content-pane {
     display: none;
-    
+
     &.active {
       display: block;
       animation: fadeIn 0.5s ease;
     }
   }
-  
-  .content-card {
-    background: white;
-    border-radius: 20px;
-    padding: $spacing-lg;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    border: 1px solid rgba($primary-color, 0.05);
-    transition: all 0.3s ease;
 
-    &:hover {
-      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-      transform: translateY(-2px);
-    }
-
-    h3 {
-      font-size: 1.8rem;
-      margin-bottom: $spacing-sm;
-      color: $primary-color;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        left: 0;
-        width: 40px;
-        height: 3px;
-        background: linear-gradient(90deg, $accent-color, lighten($accent-color, 20%));
-        border-radius: 2px;
-      }
-    }
-
-    > p {
-      color: $text-muted;
-      font-size: 1.1rem;
-      margin-bottom: $spacing-lg;
-      line-height: 1.6;
-    }
-  }
-  
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-
-  // Handle single item better
-  &:has(.preview-item:only-child) {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 2rem auto;
-  }
-
-  // Handle two items
-  &:has(.preview-item:nth-child(2):last-child) {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-    margin: 2rem auto;
-  }
-}
-
-
-
-.preview-item {
-  display: block;
-  border-radius: 16px;
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-
-  &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-
-    .preview-image {
-      transform: scale(1.08);
-
-      .image-overlay {
-        opacity: 0.3;
-      }
-    }
-
-    .preview-text h4 {
-      color: $accent-color;
-    }
-  }
-
-  .preview-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-color: darken($background-light, 5%);
-    transition: transform 0.6s ease;
-    position: relative;
-
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($accent-color, 0.1));
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-  }
-
-  .preview-text {
-    padding: 1.5rem;
-
-    h4 {
-      font-size: 1.3rem;
-      margin-bottom: 0.8rem;
-      color: $primary-color;
-      transition: color 0.3s ease;
-      line-height: 1.3;
-    }
-
-    .excerpt {
-      color: $text-muted;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-
-    .meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: lighten($text-muted, 10%);
-
-      .category {
-        background: linear-gradient(135deg, rgba($accent-color, 0.1), rgba($accent-color, 0.15));
-        color: $accent-color;
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.8rem;
-      }
-    }
-  }
-}
-
-// Empty state styling
-.empty-state {
-  text-align: center;
-  padding: $spacing-xl 0;
-  color: $text-muted;
-
-  .empty-icon {
-    font-size: 4rem;
-    margin-bottom: $spacing-md;
-    opacity: 0.7;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-    margin-bottom: $spacing-sm;
-    color: $primary-color;
-  }
-
-  p {
-    font-size: 1.1rem;
-    max-width: 400px;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-}
+  // Content cards now use unified .card-lg component
+  // Customizations in _homepage.scss
 }
 
 // Project Highlight
@@ -433,166 +276,10 @@ a {
 }
 
 // ========================================
-// 📞 CTA SECTION (Mobile & Desktop Optimized)
+// 📞 CTA SECTION
+// Main styles in _homepage.scss
 // ========================================
-.cta-section {
-  padding: 6rem 0;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, darken($primary-color, 5%) 0%, lighten($primary-color, 5%) 100%);
-  
-  @media (max-width: $breakpoint-mobile) {
-    padding: 4rem 0;
-  }
-  
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-      circle at center,
-      rgba($accent-color, 0.1) 0%,
-      transparent 70%
-    );
-    z-index: 1;
-  }
-}
-
-.cta-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 $spacing-md;
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  position: relative;
-  z-index: 2;
-  
-  @media (max-width: $breakpoint-mobile) {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    padding: 0 $spacing-sm;
-  }
-}
-
-.cta-content {
-  flex: 1;
-  
-  h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: $spacing-md;
-    color: white;
-    line-height: 1.2;
-    
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 2.2rem;
-    }
-  }
-  
-  p {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: $spacing-lg;
-    line-height: 1.6;
-    
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 1.1rem;
-    }
-  }
-}
-
-
-
-.cta-visual {
-  flex: 1;
-  position: relative;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  @media (max-width: $breakpoint-mobile) {
-    height: 150px;
-    width: 100%;
-    order: -1; // Move visual above content on mobile
-    margin-bottom: 1rem;
-  }
-  
-  .tech-emoji {
-    position: absolute;
-    font-size: 4rem;
-    opacity: 0.8;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-    
-    &:nth-child(1) {
-      top: 20%;
-      left: 15%;
-      animation: floatMobile 6s ease-in-out infinite;
-    }
-    
-    &:nth-child(2) {
-      top: 50%;
-      right: 20%;
-      animation: floatMobile 8s ease-in-out infinite reverse;
-      animation-delay: 1s;
-    }
-    
-    &:nth-child(3) {
-      bottom: 15%;
-      left: 30%;
-      animation: floatMobile 7s ease-in-out infinite;
-      animation-delay: 2s;
-    }
-    
-    @media (min-width: $breakpoint-mobile) {
-      font-size: 5rem;
-      animation: floatDesktop 8s ease-in-out infinite;
-      
-      &:nth-child(1) {
-        top: 10%;
-        left: 10%;
-      }
-      
-      &:nth-child(2) {
-        top: 60%;
-        right: 15%;
-        animation: floatDesktop 10s ease-in-out infinite reverse;
-      }
-      
-      &:nth-child(3) {
-        bottom: 20%;
-        left: 25%;
-        animation: floatDesktop 9s ease-in-out infinite;
-      }
-    }
-  }
-
-  // Mobile-specific adjustments for floating emojis
-  @media (max-width: $breakpoint-mobile) {
-    .floating-emoji {
-      font-size: 1.2rem !important;
-
-      &:nth-child(1) {
-        top: 10% !important;
-        right: 10% !important;
-      }
-
-      &:nth-child(2) {
-        top: 40% !important;
-        right: 15% !important;
-      }
-
-      &:nth-child(3) {
-        bottom: 10% !important;
-        left: 10% !important;
-      }
-    }
-  }
-}
+// CTA section styles moved to _homepage.scss for better organization
 
 // Animations
 @keyframes pulse {

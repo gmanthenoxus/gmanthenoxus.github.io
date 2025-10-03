@@ -63,7 +63,7 @@
                         </a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="/builds" class="nav-link" role="menuitem"
+                        <a href="/projects" class="nav-link" role="menuitem"
                            >
                             <span class="nav-text">Projects</span>
                         </a>
@@ -119,24 +119,24 @@
   <div class="roadmap-content">
     <!-- Blog Content -->
     <div id="blog" class="content-pane active">
-      <div class="content-card">
+      <div class="card card-lg content-wrapper">
         <h3>Latest Inspiration</h3>
         <p>Fresh thoughts and stories from my journey</p>
 
         
         <div class="preview-grid">
           
-          <a href="/journey/2025/09/04/the-49-project-quest.html" class="preview-item">
+          <a href="/journey/2025/09/04/the-49-project-quest.html" class="card preview-card">
             
             
 
-            <div class="preview-image"
+            <div class="card-image"
                  data-category="journey"
-                 data-icon="🚀"
                  >
               <div class="image-overlay"></div>
+              <i class="fa-solid fa-rocket category-icon"></i>
             </div>
-            <div class="preview-text">
+            <div class="card-content">
               <h4>The 49 Project Quest</h4>
               
               <p class="excerpt">The Uncomfortable Truth About Technical “Success”
@@ -145,7 +145,7 @@
               <div class="meta">
                 <span class="date">Sep 04, 2025</span>
                 
-                <span class="category">Journey</span>
+                <span class="badge badge-journey">Journey</span>
                 
               </div>
             </div>
@@ -160,15 +160,15 @@
     
     <!-- Hobbies Content -->
     <div id="hobbies" class="content-pane">
-      <div class="content-card">
+      <div class="card card-lg content-wrapper">
         <h3>My Passion Projects</h3>
         <p>Where obsessions meet code and create solutions</p>
-        
+
         <div class="hobby-grid">
           
-          <a href="/hobbies/anime/" class="hobby-item">
-            <div class="hobby-image" style="background-image: url('/assets/images/anime-bg.jpg');">
-              <div class="hobby-overlay"></div>
+          <a href="/hobbies/anime/" class="card hobby-card">
+            <div class="card-image hobby-image" style="background-image: url('/assets/images/anime-bg.jpg');">
+              <div class="image-overlay hobby-overlay"></div>
               <div class="hobby-content">
                 <div class="hobby-icon">
                   <i class="fas fa-tv"></i>
@@ -176,15 +176,15 @@
                 <h4>Anime</h4>
               </div>
             </div>
-            <div class="hobby-text">
+            <div class="card-content hobby-text">
               <p>Where storytelling meets artistry. My journey through Japanese animation and ...</p>
-              <div class="hobby-category">Digital</div>
+              <div class="badge hobby-category">Digital</div>
             </div>
           </a>
           
-          <a href="/hobbies/sports/" class="hobby-item">
-            <div class="hobby-image" style="background-image: url('/assets/images/sports-bg.jpg');">
-              <div class="hobby-overlay"></div>
+          <a href="/hobbies/sports/" class="card hobby-card">
+            <div class="card-image hobby-image" style="background-image: url('/assets/images/sports-bg.jpg');">
+              <div class="image-overlay hobby-overlay"></div>
               <div class="hobby-content">
                 <div class="hobby-icon">
                   <i class="fas fa-basketball-ball"></i>
@@ -192,15 +192,15 @@
                 <h4>Sports</h4>
               </div>
             </div>
-            <div class="hobby-text">
+            <div class="card-content hobby-text">
               <p>From the court to the field. Building tools for grassroots sports coordination.</p>
-              <div class="hobby-category">Physical</div>
+              <div class="badge hobby-category">Physical</div>
             </div>
           </a>
           
-          <a href="/hobbies/sneakers/" class="hobby-item">
-            <div class="hobby-image" style="background-image: url('/assets/images/sneakers-bg.jpg');">
-              <div class="hobby-overlay"></div>
+          <a href="/hobbies/sneakers/" class="card hobby-card">
+            <div class="card-image hobby-image" style="background-image: url('/assets/images/sneakers-bg.jpg');">
+              <div class="image-overlay hobby-overlay"></div>
               <div class="hobby-content">
                 <div class="hobby-icon">
                   <i class="fas fa-shoe-prints"></i>
@@ -208,25 +208,25 @@
                 <h4>Sneakers</h4>
               </div>
             </div>
-            <div class="hobby-text">
+            <div class="card-content hobby-text">
               <p>From collecting to customizing. The culture, the craft, the community.</p>
-              <div class="hobby-category">Creative</div>
+              <div class="badge hobby-category">Creative</div>
             </div>
           </a>
           
         </div>
-        
+
         <a href="/hobbies" class="btn-text">Explore All Hobbies</a>
       </div>
     </div>
     
     <!-- Brain Work Content -->
     <div id="brain" class="content-pane">
-      <div class="content-card">
+      <div class="card card-lg content-wrapper">
         <div class="wip-section">
           <div class="wip-header">
             <h3>Brain Work Lab</h3>
-            <span class="wip-badge">
+            <span class="badge badge-in-progress wip-badge">
               <span class="badge-icon">⚡</span>
               <span class="badge-text">In Development</span>
             </span>
@@ -235,7 +235,7 @@
           <div class="wip-visual">
             <div class="progress-container">
               <div class="progress-bar">
-                <div class="progress-fill" data-progress="75"></div>
+                <div class="progress-fill" style="width: 75%"></div>
               </div>
               <span class="progress-text">75% Complete</span>
             </div>
@@ -275,55 +275,43 @@
 
 <!-- Call to Action Section -->
 <section class="cta-section">
-  <div class="cta-background">
-    <div class="bg-particle" style="--delay: 0s; --duration: 15s;"></div>
-    <div class="bg-particle" style="--delay: 3s; --duration: 20s;"></div>
-    <div class="bg-particle" style="--delay: 6s; --duration: 18s;"></div>
-    <div class="bg-particle" style="--delay: 9s; --duration: 22s;"></div>
-  </div>
-
-  <div class="container">
+  <div class="cta-container">
     <div class="cta-content">
-      <div class="cta-text">
-        <h2 class="cta-title">Let's Build Something Amazing</h2>
-        <p class="cta-description">Ready to turn ideas into reality? Whether it's a project, collaboration, or just a chat about tech and innovation.</p>
-      </div>
+      <h2 class="cta-title">Let's Build Something Amazing</h2>
+      <p class="cta-description">Ready to turn ideas into reality? Whether it's a project, collaboration, or just a chat about tech and innovation.</p>
 
       <div class="cta-buttons">
-        <a href="/contact" class="cta-btn primary">
-          <span class="btn-text">Get In Touch</span>
-          <div class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+        <a href="/contact" class="btn-primary cta-btn">
+          <span>Get In Touch</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </a>
 
-        <a href="/builds" class="cta-btn secondary">
-          <span class="btn-text">View Work</span>
-          <div class="btn-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M15 3H21V9M21 3L12 12M9 3H3V9M3 3L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
+        <a href="/projects" class="btn-outline cta-btn">
+          <span>View Projects</span>
+          <i class="fa-solid fa-folder-open"></i>
         </a>
       </div>
     </div>
 
     <div class="cta-visual">
-      <div class="orbit-container">
-        <div class="orbit orbit-1">
-          <div class="orbit-item">💻</div>
+      <div class="floating-icons">
+        <div class="icon-item" style="--delay: 0s;">
+          <i class="fa-solid fa-code"></i>
         </div>
-        <div class="orbit orbit-2">
-          <div class="orbit-item">🚀</div>
+        <div class="icon-item" style="--delay: 0.5s;">
+          <i class="fa-solid fa-rocket"></i>
         </div>
-        <div class="orbit orbit-3">
-          <div class="orbit-item">⚡</div>
+        <div class="icon-item" style="--delay: 1s;">
+          <i class="fa-solid fa-lightbulb"></i>
         </div>
-        <div class="center-element">
-          <div class="pulse-ring"></div>
-          <div class="center-icon">🎯</div>
+        <div class="icon-item" style="--delay: 1.5s;">
+          <i class="fa-solid fa-palette"></i>
+        </div>
+        <div class="icon-item" style="--delay: 2s;">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="icon-item" style="--delay: 2.5s;">
+          <i class="fa-solid fa-star"></i>
         </div>
       </div>
     </div>
@@ -344,24 +332,17 @@
                 <div class="footer-social">
                     
                     <a href="https://github.com/gmanthenoxus" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
+                        <i class="fa-brands fa-github"></i>
                     </a>
                     
 
-                    <!-- Add LinkedIn if configured -->
                     
 
-                    <!-- Add Twitter if configured -->
                     
 
-                    <!-- Email Contact -->
                     
                     <a href="mailto:thisisnoxus@gmail.com" class="social-link" aria-label="Email">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0124 5.457z"/>
-                        </svg>
+                        <i class="fa-solid fa-envelope"></i>
                     </a>
                     
                 </div>
@@ -374,7 +355,7 @@
                     <li><a href="/" class="footer-link">Home</a></li>
                     <li><a href="/about" class="footer-link">About</a></li>
                     <li><a href="/blog" class="footer-link">Blog</a></li>
-                    <li><a href="/builds" class="footer-link">Projects</a></li>
+                    <li><a href="/projects" class="footer-link">Projects</a></li>
                     <li><a href="/hobbies" class="footer-link">Hobbies</a></li>
                     <li><a href="/contact" class="footer-link">Contact</a></li>
                 </ul>
@@ -403,9 +384,7 @@
                     <div class="newsletter-input-group">
                         <input type="email" placeholder="your.email@example.com" class="newsletter-email" required>
                         <button type="submit" class="newsletter-submit">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12H19M19 12L13 6M19 12L13 18"/>
-                            </svg>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
                 </form>
