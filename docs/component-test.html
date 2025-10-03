@@ -1,0 +1,334 @@
+---
+layout: default
+title: Component System Test
+---
+
+<style>
+/* Test page specific styles */
+.test-section {
+    padding: 3rem 0;
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.test-section:last-child {
+    border-bottom: none;
+}
+
+.test-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.test-header h2 {
+    font-size: 2rem;
+    color: #2D3747;
+    margin-bottom: 0.5rem;
+}
+
+.test-header p {
+    color: #718096;
+}
+
+.component-demo {
+    background: #F7FAFC;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.component-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4B5563;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+</style>
+
+<div class="container">
+    <div class="test-header" style="padding: 4rem 0 2rem;">
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">🎨 Component System Test</h1>
+        <p style="font-size: 1.25rem; color: #718096;">Testing all unified components from _components.scss</p>
+    </div>
+
+    <!-- Button Components -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Buttons</h2>
+            <p>Primary, Outline, and Text button variants</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Primary Gradient Button</div>
+            <button class="btn-primary">Get Started</button>
+            <button class="btn-primary btn-sm">Small Button</button>
+            <button class="btn-primary btn-lg">Large Button</button>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Outline Button</div>
+            <button class="btn-outline">Learn More</button>
+            <button class="btn-outline btn-sm">Small Outline</button>
+            <button class="btn-outline btn-lg">Large Outline</button>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Text Button</div>
+            <a href="#" class="btn-text">View All Projects</a>
+            <a href="#" class="btn-text">Read More</a>
+        </div>
+    </section>
+
+    <!-- Card Components -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Cards</h2>
+            <p>Standard, Large, and Small card variants</p>
+        </div>
+
+        <div class="grid grid-cols-3">
+            <div class="card">
+                <h3 style="margin-bottom: 0.5rem;">Standard Card</h3>
+                <p style="color: #718096;">This is a standard card with default styling. Hover to see the lift effect.</p>
+            </div>
+
+            <div class="card-lg">
+                <h3 style="margin-bottom: 0.5rem;">Large Card</h3>
+                <p style="color: #718096;">This is a large card with more padding and larger border radius.</p>
+            </div>
+
+            <div class="card-sm">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1rem;">Small Card</h3>
+                <p style="color: #718096; font-size: 0.875rem;">Compact card with less padding.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bars -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Progress Bars</h2>
+            <p>Different sizes and styles</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Standard Progress Bar (8px)</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Small Progress Bar (4px)</div>
+            <div class="progress-bar-sm">
+                <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Large Progress Bar (12px)</div>
+            <div class="progress-bar-lg">
+                <div class="progress-fill" style="width: 90%;"></div>
+            </div>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Gradient Progress Bar</div>
+            <div class="progress-bar-gradient">
+                <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Badges</h2>
+            <p>Status and category badges</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Status Badges</div>
+            <span class="badge-completed">Completed</span>
+            <span class="badge-in-progress">In Progress</span>
+            <span class="badge-planning">Planning</span>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Category Badges</div>
+            <span class="badge-tech">Tech</span>
+            <span class="badge-journey">Journey</span>
+            <span class="badge-passion">Passion</span>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Generic Badges (Different Sizes)</div>
+            <span class="badge-sm">Small</span>
+            <span class="badge">Medium</span>
+            <span class="badge-lg">Large</span>
+        </div>
+    </section>
+
+    <!-- Tech Tags -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Tech Tags</h2>
+            <p>Technology stack indicators</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Standard Tech Tags</div>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Tech Tags with Icons</div>
+            <span class="tech-tag-icon">
+                <i class="fab fa-react"></i>
+                React
+            </span>
+            <span class="tech-tag-icon">
+                <i class="fab fa-node-js"></i>
+                Node.js
+            </span>
+            <span class="tech-tag-icon">
+                <i class="fab fa-python"></i>
+                Python
+            </span>
+        </div>
+    </section>
+
+    <!-- Statistics Cards -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Statistics Cards</h2>
+            <p>Display key metrics and numbers</p>
+        </div>
+
+        <div class="grid grid-cols-3">
+            <div class="stat-card">
+                <div class="stat-number">42</div>
+                <div class="stat-label">Projects</div>
+                <div class="stat-context">Across 7 hobbies</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Hobbies</div>
+                <div class="stat-context">Passion domains</div>
+            </div>
+
+            <div class="stat-card-progress">
+                <div class="stat-number">75%</div>
+                <div class="stat-label">Completion</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty State -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Empty States</h2>
+            <p>Friendly messages when content is missing</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="empty-state">
+                <div class="empty-icon emoji">📭</div>
+                <h3 class="empty-title">No Projects Yet</h3>
+                <p class="empty-description">
+                    Start your journey by creating your first project! It's easy to get started.
+                </p>
+                <div class="empty-action">
+                    <button class="btn-primary">Create Project</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Timeline</h2>
+            <p>Vertical timeline with different states</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2025</div>
+                        <h4 class="timeline-title">Project Started</h4>
+                        <p class="timeline-description">Initial planning and setup completed successfully.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item current">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">October 2025</div>
+                        <h4 class="timeline-title">Development Phase</h4>
+                        <p class="timeline-description">Currently building core features and components.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item upcoming">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">December 2025</div>
+                        <h4 class="timeline-title">Launch</h4>
+                        <p class="timeline-description">Public release and deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid System -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Grid System</h2>
+            <p>Responsive grid layouts</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">3-Column Grid (collapses on mobile)</div>
+            <div class="grid grid-cols-3">
+                <div class="card-sm">
+                    <h4>Column 1</h4>
+                    <p style="font-size: 0.875rem; color: #718096;">Grid item</p>
+                </div>
+                <div class="card-sm">
+                    <h4>Column 2</h4>
+                    <p style="font-size: 0.875rem; color: #718096;">Grid item</p>
+                </div>
+                <div class="card-sm">
+                    <h4>Column 3</h4>
+                    <p style="font-size: 0.875rem; color: #718096;">Grid item</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 4rem 0;">
+        <h2 style="color: #10b981; margin-bottom: 1rem;">✅ All Components Loaded Successfully!</h2>
+        <p style="color: #718096; margin-bottom: 2rem;">If you can see all components above with proper styling, the component system is working correctly.</p>
+        <a href="/" class="btn-primary">Back to Home</a>
+    </div>
+</div>
+

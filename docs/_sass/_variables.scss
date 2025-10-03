@@ -47,6 +47,17 @@ $breakpoint-desktop: 1200px;
 $shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+$shadow-card: 0 8px 25px rgba(0, 0, 0, 0.06);
+$shadow-card-hover: 0 12px 35px rgba(0, 0, 0, 0.1);
+$shadow-accent: 0 4px 15px rgba($accent-color, 0.3);
+$shadow-accent-hover: 0 8px 25px rgba($accent-color, 0.4);
+
+// Border Radius Scale
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-pill: 50px;
 
 // Transitions
 $transition-fast: 0.2s ease;

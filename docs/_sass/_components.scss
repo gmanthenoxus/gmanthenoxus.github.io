@@ -4,51 +4,95 @@
 // Navigation styles are in _navigation.scss
 // ============================================================================
 
+// ============================================================================
+// MIXINS - Reusable component patterns
+// ============================================================================
 
+// ----------------------------------------------------------------------------
+// Card Mixins
+// ----------------------------------------------------------------------------
 
-// Cards
-.card {
+// Base card styling
+@mixin card-base($radius: $radius-md, $shadow: $shadow-card, $padding: $spacing-md) {
     background: white;
-    border-radius: 8px;
-    padding: $spacing-md;
-    box-shadow: $shadow-md;
-    transition: transform $transition-fast, box-shadow $transition-fast;
+    border-radius: $radius;
+    padding: $padding;
+    box-shadow: $shadow;
+    transition: transform $transition-medium, box-shadow $transition-medium;
+}
 
+// Card hover effect
+@mixin card-hover($lift: -4px, $shadow: $shadow-card-hover) {
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: $shadow-lg;
+        transform: translateY($lift);
+        box-shadow: $shadow;
     }
 }
 
-// Buttons
-.btn {
+// Card with top colored border
+@mixin card-top-border($color, $width: 4px) {
+    border-top: $width solid $color;
+}
+
+// Card with image section
+@mixin card-with-image($image-height: 200px) {
+    overflow: hidden;
+
+    .card-image {
+        height: $image-height;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.6s ease;
+        position: relative;
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($accent-color, 0.1));
+            opacity: 0;
+            transition: opacity $transition-medium;
+        }
+    }
+
+    &:hover .card-image {
+        transform: scale(1.05);
+
+        .image-overlay {
+            opacity: 0.3;
+        }
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Button Mixins
+// ----------------------------------------------------------------------------
+
+// Base button styling
+@mixin btn-base {
     display: inline-block;
     padding: $spacing-sm $spacing-md;
-    border-radius: 30px;
+    border-radius: $radius-pill;
     text-decoration: none;
     font-weight: $font-weight-semibold;
     font-size: 1rem;
     text-align: center;
-    transition: all $transition-fast;
+    transition: all $transition-medium;
     border: none;
     cursor: pointer;
+    font-family: $font-secondary;
 }
 
-.btn-primary {
-    @extend .btn;
+// Gradient button with shine effect
+@mixin btn-gradient {
+    @include btn-base;
     background: linear-gradient(135deg, $accent-color 0%, $accent-secondary 100%);
     color: white;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba($accent-color, 0.3);
-    border: none;
-
-    &:hover {
-        color: white;
-        text-decoration: none;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba($accent-color, 0.4);
-    }
+    box-shadow: $shadow-accent;
 
     &::before {
         content: "";
@@ -63,16 +107,24 @@
             rgba(255, 255, 255, 0.2),
             transparent
         );
-        transition: 0.5s;
+        transition: $transition-slow;
     }
 
-    &:hover::before {
-        left: 100%;
+    &:hover {
+        color: white;
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: $shadow-accent-hover;
+
+        &::before {
+            left: 100%;
+        }
     }
 }
 
-.btn-outline {
-    @extend .btn;
+// Outline button
+@mixin btn-outline {
+    @include btn-base;
     background: transparent;
     color: $accent-color;
     border: 2px solid transparent;
@@ -82,14 +134,6 @@
     position: relative;
     overflow: hidden;
 
-    &:hover {
-        background: linear-gradient(135deg, $accent-color, $accent-secondary);
-        color: white;
-        text-decoration: none;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba($accent-color, 0.3);
-    }
-
     &::before {
         content: "";
         position: absolute;
@@ -103,16 +147,25 @@
             rgba(255, 255, 255, 0.2),
             transparent
         );
-        transition: 0.5s;
+        transition: $transition-slow;
     }
 
-    &:hover::before {
-        left: 100%;
+    &:hover {
+        background: linear-gradient(135deg, $accent-color, $accent-secondary);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: $shadow-accent;
+
+        &::before {
+            left: 100%;
+        }
     }
 }
 
-.btn-text {
-    @extend .btn;
+// Text button with arrow
+@mixin btn-text {
+    @include btn-base;
     background: transparent;
     color: $accent-color;
     border: none;
@@ -123,7 +176,7 @@
     &::after {
         content: '→';
         margin-left: 0.5rem;
-        transition: transform 0.3s ease;
+        transition: transform $transition-medium;
     }
 
     &:hover {
@@ -136,6 +189,427 @@
         }
     }
 }
+
+// ============================================================================
+// COMPONENT CLASSES - Apply mixins to create reusable classes
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// Cards
+// ----------------------------------------------------------------------------
+
+.card {
+    @include card-base;
+    @include card-hover;
+}
+
+.card-lg {
+    @include card-base($radius: $radius-lg, $padding: $spacing-lg);
+    @include card-hover;
+}
+
+.card-sm {
+    @include card-base($radius: $radius-sm, $padding: $spacing-sm);
+    @include card-hover(-2px, $shadow-md);
+}
+
+// ----------------------------------------------------------------------------
+// Buttons
+// ----------------------------------------------------------------------------
+
+.btn {
+    @include btn-base;
+}
+
+.btn-primary {
+    @include btn-gradient;
+}
+
+.btn-outline {
+    @include btn-outline;
+}
+
+.btn-text {
+    @include btn-text;
+}
+
+// Button sizes
+.btn-sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: $spacing-md $spacing-lg;
+    font-size: 1.125rem;
+}
+
+// ----------------------------------------------------------------------------
+// Progress Bars
+// ----------------------------------------------------------------------------
+
+@mixin progress-bar($height: 8px, $bg-color: rgba($accent-color, 0.1), $fill-color: $accent-color, $duration: 0.8s) {
+    width: 100%;
+    height: $height;
+    background: $bg-color;
+    border-radius: calc($height / 2);
+    overflow: hidden;
+
+    .progress-fill {
+        height: 100%;
+        background: $fill-color;
+        border-radius: calc($height / 2);
+        transition: width $duration ease;
+    }
+}
+
+.progress-bar {
+    @include progress-bar;
+}
+
+.progress-bar-sm {
+    @include progress-bar($height: 4px);
+}
+
+.progress-bar-lg {
+    @include progress-bar($height: 12px);
+}
+
+// Progress bar with gradient fill
+.progress-bar-gradient {
+    @include progress-bar($fill-color: linear-gradient(135deg, $accent-color, $accent-secondary));
+}
+
+// Progress bar with custom color (use CSS custom properties)
+.progress-bar-custom {
+    @include progress-bar($bg-color: rgba(var(--hobby-color-rgb), 0.1), $fill-color: var(--hobby-gradient));
+}
+
+// ----------------------------------------------------------------------------
+// Badges
+// ----------------------------------------------------------------------------
+
+@mixin badge-base($bg-color, $text-color, $size: medium) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-pill;
+    white-space: nowrap;
+
+    @if $size == small {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+    } @else if $size == large {
+        padding: 0.5rem 1.25rem;
+        font-size: 1rem;
+    } @else {
+        padding: 0.375rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    background: $bg-color;
+    color: $text-color;
+}
+
+// Status badges
+.badge-completed {
+    @include badge-base(#D1FAE5, #065F46);
+
+    &::before {
+        content: '✓';
+        font-weight: bold;
+    }
+}
+
+.badge-in-progress {
+    @include badge-base(#DBEAFE, #1E40AF);
+
+    &::before {
+        content: '⟳';
+        font-weight: bold;
+    }
+}
+
+.badge-planning {
+    @include badge-base(#F3F4F6, #4B5563);
+
+    &::before {
+        content: '○';
+        font-weight: bold;
+    }
+}
+
+// Category badges (for blog posts)
+.badge-tech {
+    @include badge-base(rgba($accent-secondary, 0.1), $accent-secondary);
+}
+
+.badge-journey {
+    @include badge-base(rgba($accent-color, 0.1), $accent-color);
+}
+
+.badge-passion {
+    @include badge-base(rgba(#E056FD, 0.1), #E056FD);
+}
+
+// Generic badge (customizable)
+.badge {
+    @include badge-base(rgba($accent-color, 0.1), $accent-color);
+}
+
+.badge-sm {
+    @include badge-base(rgba($accent-color, 0.1), $accent-color, small);
+}
+
+.badge-lg {
+    @include badge-base(rgba($accent-color, 0.1), $accent-color, large);
+}
+
+// ----------------------------------------------------------------------------
+// Tech Tags
+// ----------------------------------------------------------------------------
+
+@mixin tech-tag($color: $accent-color) {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba($color, 0.1);
+    color: $color;
+    border-radius: $radius-sm;
+    font-size: 0.75rem;
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+    transition: all $transition-fast;
+
+    &:hover {
+        background: rgba($color, 0.15);
+        transform: translateY(-1px);
+    }
+}
+
+.tech-tag {
+    @include tech-tag;
+}
+
+// Tech tag with icon
+.tech-tag-icon {
+    @include tech-tag;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+
+    i {
+        font-size: 0.875rem;
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Statistics Cards
+// ----------------------------------------------------------------------------
+
+@mixin stat-card {
+    @include card-base($padding: $spacing-lg);
+    text-align: center;
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: $font-weight-bold;
+        color: $accent-color;
+        line-height: 1;
+        margin-bottom: $spacing-xs;
+
+        background: linear-gradient(135deg, $accent-color, $accent-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+        color: $text-muted;
+        font-weight: $font-weight-medium;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .stat-context {
+        font-size: 0.75rem;
+        color: $text-light;
+        margin-top: $spacing-xs;
+    }
+}
+
+.stat-card {
+    @include stat-card;
+}
+
+// Stat card with progress bar
+.stat-card-progress {
+    @include stat-card;
+
+    .progress-bar {
+        margin-top: $spacing-sm;
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Empty States
+// ----------------------------------------------------------------------------
+
+@mixin empty-state {
+    text-align: center;
+    padding: $spacing-xxl $spacing-lg;
+    color: $text-muted;
+
+    .empty-icon {
+        font-size: 4rem;
+        margin-bottom: $spacing-md;
+        opacity: 0.7;
+
+        // Support for emoji or icon
+        &.emoji {
+            filter: grayscale(0.3);
+        }
+    }
+
+    .empty-title {
+        font-size: 1.5rem;
+        font-weight: $font-weight-semibold;
+        color: $text-dark;
+        margin-bottom: $spacing-sm;
+    }
+
+    .empty-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: $spacing-lg;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .empty-action {
+        margin-top: $spacing-md;
+    }
+}
+
+.empty-state {
+    @include empty-state;
+}
+
+// Empty state with personality (fun messaging)
+.empty-state-fun {
+    @include empty-state;
+
+    .empty-icon {
+        animation: float 3s ease-in-out infinite;
+    }
+}
+
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Timeline Component
+// ----------------------------------------------------------------------------
+
+@mixin timeline {
+    position: relative;
+    padding-left: $spacing-lg;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, $accent-color, $accent-secondary);
+    }
+
+    .timeline-item {
+        position: relative;
+        padding-bottom: $spacing-lg;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: calc(-#{$spacing-lg} - 6px);
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid $accent-color;
+            z-index: 1;
+        }
+
+        &.completed .timeline-marker {
+            background: $accent-color;
+            border-color: $accent-color;
+        }
+
+        &.current .timeline-marker {
+            background: $accent-secondary;
+            border-color: $accent-secondary;
+            animation: pulse-marker 2s ease-in-out infinite;
+        }
+
+        &.upcoming .timeline-marker {
+            background: white;
+            border-color: $text-light;
+        }
+
+        .timeline-content {
+            .timeline-date {
+                font-size: 0.75rem;
+                color: $text-muted;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: $spacing-xs;
+            }
+
+            .timeline-title {
+                font-size: 1.125rem;
+                font-weight: $font-weight-semibold;
+                color: $text-dark;
+                margin-bottom: $spacing-xs;
+            }
+
+            .timeline-description {
+                font-size: 0.875rem;
+                color: $text-muted;
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+.timeline {
+    @include timeline;
+}
+
+@keyframes pulse-marker {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba($accent-secondary, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba($accent-secondary, 0);
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Utility Classes
+// ----------------------------------------------------------------------------
 
 // Emoji styling
 .emoji {
@@ -162,6 +636,18 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (min-width: $breakpoint-mobile) {
     .grid-cols-2-mobile {
         grid-template-columns: repeat(2, 1fr);
@@ -172,8 +658,12 @@
     .grid-cols-2-tablet {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .grid-cols-3-tablet {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-cols-4-tablet {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

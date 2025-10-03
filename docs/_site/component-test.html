@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A portfolio showcasing my passions and projects">
+    <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
+    <meta name="author" content="Noxus' Hub">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Component System Test | Noxus' Hub">
+    <meta property="og:description" content="A portfolio showcasing my passions and projects">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/component-test.html">
+    
+    <title>Component System Test | Noxus' Hub</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" role="banner">
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <a href="/" class="nav-logo" aria-label="Home">
+                <span class="logo-text">Noxus' Hub</span>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-menu">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="/" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/about" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/blog" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Blog</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/builds" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/hobbies" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Hobbies</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="/contact" class="nav-link" role="menuitem"
+                           >
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav-overlay" aria-hidden="true"></div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main id="main-content" class="main-content">
+        <style>
+/* Test page specific styles */
+.test-section {
+    padding: 3rem 0;
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.test-section:last-child {
+    border-bottom: none;
+}
+
+.test-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.test-header h2 {
+    font-size: 2rem;
+    color: #2D3747;
+    margin-bottom: 0.5rem;
+}
+
+.test-header p {
+    color: #718096;
+}
+
+.component-demo {
+    background: #F7FAFC;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.component-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4B5563;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+</style>
+
+<div class="container">
+    <div class="test-header" style="padding: 4rem 0 2rem;">
+        <h1 style="font-size: 3rem; margin-bottom: 1rem;">🎨 Component System Test</h1>
+        <p style="font-size: 1.25rem; color: #718096;">Testing all unified components from _components.scss</p>
+    </div>
+
+    <!-- Button Components -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Buttons</h2>
+            <p>Primary, Outline, and Text button variants</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Primary Gradient Button</div>
+            <button class="btn-primary">Get Started</button>
+            <button class="btn-primary btn-sm">Small Button</button>
+            <button class="btn-primary btn-lg">Large Button</button>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Outline Button</div>
+            <button class="btn-outline">Learn More</button>
+            <button class="btn-outline btn-sm">Small Outline</button>
+            <button class="btn-outline btn-lg">Large Outline</button>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Text Button</div>
+            <a href="#" class="btn-text">View All Projects</a>
+            <a href="#" class="btn-text">Read More</a>
+        </div>
+    </section>
+
+    <!-- Card Components -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Cards</h2>
+            <p>Standard, Large, and Small card variants</p>
+        </div>
+
+        <div class="grid grid-cols-3">
+            <div class="card">
+                <h3 style="margin-bottom: 0.5rem;">Standard Card</h3>
+                <p style="color: #718096;">This is a standard card with default styling. Hover to see the lift effect.</p>
+            </div>
+
+            <div class="card-lg">
+                <h3 style="margin-bottom: 0.5rem;">Large Card</h3>
+                <p style="color: #718096;">This is a large card with more padding and larger border radius.</p>
+            </div>
+
+            <div class="card-sm">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1rem;">Small Card</h3>
+                <p style="color: #718096; font-size: 0.875rem;">Compact card with less padding.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bars -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Progress Bars</h2>
+            <p>Different sizes and styles</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Standard Progress Bar (8px)</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Small Progress Bar (4px)</div>
+            <div class="progress-bar-sm">
+                <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Large Progress Bar (12px)</div>
+            <div class="progress-bar-lg">
+                <div class="progress-fill" style="width: 90%;"></div>
+            </div>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Gradient Progress Bar</div>
+            <div class="progress-bar-gradient">
+                <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Badges</h2>
+            <p>Status and category badges</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Status Badges</div>
+            <span class="badge-completed">Completed</span>
+            <span class="badge-in-progress">In Progress</span>
+            <span class="badge-planning">Planning</span>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Category Badges</div>
+            <span class="badge-tech">Tech</span>
+            <span class="badge-journey">Journey</span>
+            <span class="badge-passion">Passion</span>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Generic Badges (Different Sizes)</div>
+            <span class="badge-sm">Small</span>
+            <span class="badge">Medium</span>
+            <span class="badge-lg">Large</span>
+        </div>
+    </section>
+
+    <!-- Tech Tags -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Tech Tags</h2>
+            <p>Technology stack indicators</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Standard Tech Tags</div>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">Tech Tags with Icons</div>
+            <span class="tech-tag-icon">
+                <i class="fab fa-react"></i>
+                React
+            </span>
+            <span class="tech-tag-icon">
+                <i class="fab fa-node-js"></i>
+                Node.js
+            </span>
+            <span class="tech-tag-icon">
+                <i class="fab fa-python"></i>
+                Python
+            </span>
+        </div>
+    </section>
+
+    <!-- Statistics Cards -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Statistics Cards</h2>
+            <p>Display key metrics and numbers</p>
+        </div>
+
+        <div class="grid grid-cols-3">
+            <div class="stat-card">
+                <div class="stat-number">42</div>
+                <div class="stat-label">Projects</div>
+                <div class="stat-context">Across 7 hobbies</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Hobbies</div>
+                <div class="stat-context">Passion domains</div>
+            </div>
+
+            <div class="stat-card-progress">
+                <div class="stat-number">75%</div>
+                <div class="stat-label">Completion</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty State -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Empty States</h2>
+            <p>Friendly messages when content is missing</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="empty-state">
+                <div class="empty-icon emoji">📭</div>
+                <h3 class="empty-title">No Projects Yet</h3>
+                <p class="empty-description">
+                    Start your journey by creating your first project! It's easy to get started.
+                </p>
+                <div class="empty-action">
+                    <button class="btn-primary">Create Project</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Timeline</h2>
+            <p>Vertical timeline with different states</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="timeline">
+                <div class="timeline-item completed">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2025</div>
+                        <h4 class="timeline-title">Project Started</h4>
+                        <p class="timeline-description">Initial planning and setup completed successfully.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item current">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">October 2025</div>
+                        <h4 class="timeline-title">Development Phase</h4>
+                        <p class="timeline-description">Currently building core features and components.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item upcoming">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">December 2025</div>
+                        <h4 class="timeline-title">Launch</h4>
+                        <p class="timeline-description">Public release and deployment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid System -->
+    <section class="test-section">
+        <div class="test-header">
+            <h2>Grid System</h2>
+            <p>Responsive grid layouts</p>
+        </div>
+
+        <div class="component-demo">
+            <div class="component-label">3-Column Grid (collapses on mobile)</div>
+            <div class="grid grid-cols-3">
+                <div class="card-sm">
+                    <h4>Column 1</h4>
+                    <p style="font-size: 0.875rem; color: #718096;">Grid item</p>
+                </div>
+                <div class="card-sm">
+                    <h4>Column 2</h4>
+                    <p style="font-size: 0.875rem; color: #718096;">Grid item</p>
+                </div>
+                <div class="card-sm">
+                    <h4>Column 3</h4>
+                    <p style="font-size: 0.875rem; color: #718096;">Grid item</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 4rem 0;">
+        <h2 style="color: #10b981; margin-bottom: 1rem;">✅ All Components Loaded Successfully!</h2>
+        <p style="color: #718096; margin-bottom: 2rem;">If you can see all components above with proper styling, the component system is working correctly.</p>
+        <a href="/" class="btn-primary">Back to Home</a>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer class="site-footer">
+    <div class="footer-container">
+        <!-- Footer Main Content -->
+        <div class="footer-main">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h3 class="footer-logo">Noxus' Hub</h3>
+                <p class="footer-tagline">Building innovative solutions through code, creativity, and passion.</p>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/gmanthenoxus" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+
+                    <!-- Add LinkedIn if configured -->
+                    
+
+                    <!-- Add Twitter if configured -->
+                    
+
+                    <!-- Email Contact -->
+                    
+                    <a href="mailto:thisisnoxus@gmail.com" class="social-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.904.732-1.636 1.636-1.636h3.819l6.545 4.91 6.545-4.91h3.819A1.636 1.636 0 0124 5.457z"/>
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-nav">
+                    <li><a href="/" class="footer-link">Home</a></li>
+                    <li><a href="/about" class="footer-link">About</a></li>
+                    <li><a href="/blog" class="footer-link">Blog</a></li>
+                    <li><a href="/builds" class="footer-link">Projects</a></li>
+                    <li><a href="/hobbies" class="footer-link">Hobbies</a></li>
+                    <li><a href="/contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="footer-posts">
+                <h4 class="footer-heading">Latest Posts</h4>
+                <ul class="footer-post-list">
+                    
+                    <li class="footer-post-item">
+                        <a href="/journey/2025/09/04/the-49-project-quest.html" class="footer-post-link">
+                            <span class="footer-post-title">The 49 Project Quest</span>
+                            <span class="footer-post-date">Sep 04</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="footer-newsletter">
+                <h4 class="footer-heading">Stay Connected</h4>
+                <p class="newsletter-description">Get updates on new projects and posts.</p>
+                <form class="newsletter-form" id="footer-newsletter">
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="your.email@example.com" class="newsletter-email" required>
+                        <button type="submit" class="newsletter-submit">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12H19M19 12L13 6M19 12L13 18"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Noxus' Hub. All rights reserved.</p>
+            </div>
+            <div class="footer-legal">
+                <a href="/privacy" class="legal-link">Privacy</a>
+                <a href="/terms" class="legal-link">Terms</a>
+                <a href="/sitemap.xml" class="legal-link">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/navigation-simple.js"></script>
+    <script src="/assets/js/project-filter.js"></script>
+    <script src="/assets/js/progress-tracker.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/homeInteractions.js"></script>
+    <script src="/assets/js/blogFilter.js"></script>
+    <script src="/assets/js/collapsible-sections.js"></script>
+    <script src="/assets/js/mobile-navigation.js"></script>
+    <script src="/assets/js/hobby-filter.js"></script>
+</body>
+</html>
