@@ -12,12 +12,12 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  # - jekyll-sitemap  # Temporarily disabled - gem not installed
 
 # Pagination settings
 paginate: 6
 paginate_path: "/blog/page/:num/"
 
-# Add this to your _config.yml if not already there
 # Collections
 collections:
   hobbies:
@@ -54,3 +54,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - _documentation/

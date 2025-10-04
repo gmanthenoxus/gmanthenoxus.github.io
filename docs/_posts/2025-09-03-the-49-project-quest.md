@@ -1,7 +1,7 @@
 ---
 layout: post-journey
 title: "The 49 Project Quest"
-date: 2025-09-04
+date: 2025-09-03
 category: journey
 author: "Noxus"
 read_time: "10 min read"

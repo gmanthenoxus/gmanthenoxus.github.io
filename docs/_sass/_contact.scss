@@ -1,0 +1,566 @@
+// ============================================================================
+// CONTACT PAGE - Modern Design with Unified Components
+// ============================================================================
+
+.contact-page {
+    min-height: 100vh;
+}
+
+// ============================================================================
+// ANIMATIONS
+// ============================================================================
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+// ============================================================================
+// HERO SECTION
+// ============================================================================
+
+.contact-hero {
+    position: relative;
+    padding: 6rem 0 5rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, $hero-green 0%, $hero-blue 100%);
+    color: white;
+    text-align: center;
+    
+    // Subtle overlay pattern
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+            radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        z-index: 1;
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+        padding: 4rem 0 3rem;
+    }
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 $spacing-xl;
+    position: relative;
+    z-index: 2;
+    
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 700;
+        margin-bottom: $spacing-md;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.1rem, 2vw, 1.3rem);
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        margin-bottom: $spacing-xl;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.quick-contact-icons {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    margin-top: $spacing-xl;
+}
+
+.quick-contact-link {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: all $transition-medium;
+    text-decoration: none;
+    
+    &:hover {
+        background: white;
+        color: $accent-color;
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+}
+
+// ============================================================================
+// CONTACT METHODS SECTION
+// ============================================================================
+
+.contact-methods-section {
+    padding: $spacing-xxl * 2 0;
+    background: white;
+}
+
+.contact-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-xl;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-xl;
+    
+    @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+}
+
+.contact-method-card {
+    @include card-base;
+    padding: $spacing-xxl;
+    text-align: center;
+    transition: all $transition-medium;
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+    position: relative;
+    overflow: hidden;
+    
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.3s; }
+    
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(0, 135, 83, 0.03), rgba(1, 33, 105, 0.03));
+        opacity: 0;
+        transition: opacity $transition-medium;
+    }
+    
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-lg;
+        
+        &::before {
+            opacity: 1;
+        }
+        
+        .method-icon {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.method-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto $spacing-lg;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $hero-green, $hero-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $transition-medium;
+    
+    i {
+        font-size: 2rem;
+        color: white;
+    }
+}
+
+.contact-method-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+    color: $text-dark;
+}
+
+.contact-method-card > p {
+    font-size: 1rem;
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+    line-height: 1.6;
+}
+
+.method-link {
+    display: inline-block;
+    color: $accent-color;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all $transition-medium;
+    
+    &:hover {
+        color: $hero-green;
+        transform: translateX(5px);
+    }
+}
+
+.social-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-xs;
+        color: $accent-color;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all $transition-medium;
+        
+        i {
+            font-size: 1.2rem;
+            transition: transform $transition-medium;
+        }
+        
+        &:hover {
+            color: $hero-green;
+            
+            i {
+                transform: translateX(5px);
+            }
+        }
+    }
+}
+
+.availability-info {
+    .status-badge {
+        display: inline-block;
+        padding: $spacing-xs $spacing-md;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        border-radius: $radius-full;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: $spacing-md;
+    }
+    
+    p {
+        font-size: 0.95rem;
+        color: $text-muted;
+        margin: 0;
+    }
+}
+
+// ============================================================================
+// CONTACT FORM SECTION
+// ============================================================================
+
+.contact-form-section {
+    padding: $spacing-xxl * 2 0;
+    background: linear-gradient(135deg, rgba(0, 135, 83, 0.02), rgba(1, 33, 105, 0.02));
+}
+
+.form-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 $spacing-xl;
+    animation: fadeInUp 0.6s ease-out 0.4s;
+    animation-fill-mode: both;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: $spacing-xxl;
+    
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: $spacing-md;
+        color: $text-dark;
+    }
+    
+    p {
+        font-size: 1.1rem;
+        color: $text-muted;
+        line-height: 1.6;
+    }
+}
+
+.contact-form {
+    @include card-base;
+    padding: $spacing-xxl;
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-xl;
+    }
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    margin-bottom: $spacing-lg;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-sm;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: $text-dark;
+
+        i {
+            color: $accent-color;
+            font-size: 1rem;
+        }
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: $spacing-md;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: $radius-md;
+        font-family: inherit;
+        font-size: 1rem;
+        color: $text-dark;
+        transition: all $transition-medium;
+        background: white;
+
+        &::placeholder {
+            color: $text-muted;
+            opacity: 0.6;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: transparent;
+            box-shadow: 0 0 0 3px rgba(0, 135, 83, 0.2);
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(135deg, $hero-green, $hero-blue) border-box;
+            border: 2px solid transparent;
+        }
+
+        &:invalid:not(:placeholder-shown) {
+            border-color: #ef4444;
+        }
+
+        &:valid:not(:placeholder-shown) {
+            border-color: #10b981;
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 150px;
+        line-height: 1.6;
+    }
+}
+
+.contact-form button[type="submit"] {
+    @include btn-gradient;
+    width: 100%;
+    margin-top: $spacing-md;
+    font-size: 1.1rem;
+    padding: $spacing-md $spacing-xl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+
+    i {
+        transition: transform $transition-medium;
+    }
+
+    &:hover i {
+        transform: translateX(5px);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+// Form Success/Error States
+.form-success,
+.form-error {
+    @include card-base;
+    padding: $spacing-xxl;
+    text-align: center;
+    display: none;
+
+    &.show {
+        display: block;
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    i {
+        font-size: 4rem;
+        margin-bottom: $spacing-lg;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: $text-muted;
+        line-height: 1.6;
+    }
+}
+
+.form-success {
+    i {
+        color: #10b981;
+    }
+
+    h3 {
+        color: #10b981;
+    }
+}
+
+.form-error {
+    i {
+        color: #ef4444;
+    }
+
+    h3 {
+        color: #ef4444;
+    }
+}
+
+// ============================================================================
+// ALTERNATIVE CONTACT CTA
+// ============================================================================
+
+.alt-contact-cta {
+    position: relative;
+    padding: 5rem 3rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, $hero-green 0%, $hero-blue 100%);
+    text-align: center;
+    color: white;
+
+    // Subtle overlay pattern
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+            radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        z-index: 1;
+    }
+
+    .cta-content {
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: $spacing-md;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: $spacing-xl;
+            line-height: 1.6;
+        }
+
+        .btn-outline-light {
+            display: inline-flex;
+            align-items: center;
+            gap: $spacing-sm;
+
+            i {
+                transition: transform $transition-medium;
+            }
+
+            &:hover i {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 3rem 2rem;
+
+        .cta-content h2 {
+            font-size: 2rem;
+        }
+
+        .cta-content p {
+            font-size: 1.05rem;
+        }
+    }
+}
+
+// ============================================================================
+// RESPONSIVE DESIGN
+// ============================================================================
+
+@media (max-width: $breakpoint-mobile) {
+    .quick-contact-link {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .method-icon {
+        width: 70px;
+        height: 70px;
+
+        i {
+            font-size: 1.8rem;
+        }
+    }
+
+    .contact-method-card {
+        padding: $spacing-xl;
+    }
+
+    .form-header h2 {
+        font-size: 2rem;
+    }
+}
+
