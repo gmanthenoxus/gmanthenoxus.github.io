@@ -1,5 +1,7 @@
 // Base Styles & Reset
 
+@use "sass:color";
+
 * {
     margin: 0;
     padding: 0;
@@ -60,7 +62,7 @@ a {
     transition: color $transition-fast;
     
     &:hover {
-        color: darken($accent-color, 15%);
+        color: color.adjust($accent-color, $lightness: -15%);
         text-decoration: underline;
     }
 }

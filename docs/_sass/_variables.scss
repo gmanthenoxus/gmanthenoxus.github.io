@@ -4,8 +4,10 @@ $accent-color: #008753;         // Green from hero gradient
 $accent-secondary: #012169;     // Blue from hero gradient
 $background-light: #F7FAFC;     // Light gray background
 $text-dark: #2D3747;           // Dark text
+$text-primary: #1a202c;        // Primary text color
 $text-light: #CBD5E0;          // Light text
 $text-muted: #718096;          // Muted text
+$border-color: #e5e7eb;        // Border color
 
 // Hero gradient colors
 $hero-green: #008753;
@@ -61,6 +63,7 @@ $radius-pill: 50px;
 $radius-full: 9999px; // Full rounded (for circles and pills)
 
 // Transitions
+$transition-base: 0.3s ease;
 $transition-fast: 0.2s ease;
 $transition-medium: 0.3s ease;
 $transition-slow: 0.5s ease;

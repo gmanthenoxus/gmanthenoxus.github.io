@@ -3,6 +3,8 @@
 // Focused on readability, typography, and aesthetic simplicity
 // ============================================================================
 
+@use "sass:color";
+
 // ============================================================================
 // POST HERO SECTION - Simplified
 // ============================================================================
@@ -1344,7 +1346,7 @@
         transition: background-color 0.2s ease;
 
         &:hover {
-            background: darken($accent-color, 10%);
+            background: color.adjust($accent-color, $lightness: -10%);
         }
 
         .back-icon {

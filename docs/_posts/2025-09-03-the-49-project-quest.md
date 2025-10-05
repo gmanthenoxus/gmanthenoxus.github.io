@@ -2,7 +2,7 @@
 layout: post-journey
 title: "The 49 Project Quest"
 date: 2025-09-03
-category: journey
+category: tech
 author: "Noxus"
 read_time: "10 min read"
 featured: true

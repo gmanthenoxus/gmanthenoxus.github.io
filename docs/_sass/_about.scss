@@ -364,10 +364,10 @@
 }
 
 // ============================================================================
-// 49 PROJECT QUEST FEATURE SECTION
+// GOALS & TARGETS SECTION
 // ============================================================================
 
-.quest-feature {
+.goals-section {
     @include card-base;
     padding: $spacing-xxl;
     background: linear-gradient(135deg,
@@ -376,19 +376,14 @@
     border: 2px solid rgba($accent-color, 0.2);
 }
 
-.quest-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.section-header-with-icon {
     margin-bottom: $spacing-lg;
-    flex-wrap: wrap;
-    gap: $spacing-md;
 
     h2 {
-        margin: 0;
         display: flex;
         align-items: center;
         gap: $spacing-sm;
+        margin: 0 0 $spacing-md 0;
 
         i {
             color: $accent-color;
@@ -396,104 +391,90 @@
     }
 }
 
-.badge-in-progress {
-    display: inline-block;
-    padding: $spacing-xs $spacing-md;
-    background: linear-gradient(135deg, $hero-green, $hero-blue);
-    color: white;
-    border-radius: $radius-full;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-xl;
+    margin-top: $spacing-xl;
 }
 
-.quest-progress-container {
-    margin: $spacing-xl 0;
+.goal-card {
+    @include card-base;
     padding: $spacing-xl;
     background: white;
-    border-radius: $radius-md;
-    box-shadow: $shadow-sm;
-}
+    border: 2px solid $border-color;
+    transition: all $transition-base;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
 
-.quest-stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: $spacing-lg;
-    margin-bottom: $spacing-xl;
-}
-
-.quest-stat {
-    text-align: center;
-}
-
-.quest-stat-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: $accent-color;
-    margin-bottom: $spacing-xs;
-}
-
-.quest-stat-label {
-    display: block;
-    font-size: 0.85rem;
-    color: $text-muted;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.quest-progress-container .progress-bar {
-    width: 100%;
-    height: 12px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: $radius-full;
-    overflow: hidden;
-    margin-bottom: $spacing-sm;
-}
-
-.quest-progress-container .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, $hero-green, $hero-blue);
-    border-radius: $radius-full;
-    transition: width $transition-slow;
-    position: relative;
-
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
-        );
-        animation: shimmer 2s infinite;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-lg;
+        border-color: rgba($accent-color, 0.3);
     }
 }
 
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-.quest-progress-container .progress-text {
-    display: block;
-    text-align: center;
-    font-size: 0.9rem;
-    color: $text-muted;
-    font-weight: 600;
-}
-
-.quest-actions {
+.goal-icon {
+    width: 60px;
+    height: 60px;
     display: flex;
-    gap: $spacing-md;
-    margin-top: $spacing-xl;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba($hero-green, 0.1), rgba($hero-blue, 0.1));
+    border-radius: $radius-md;
+    color: $accent-color;
+    font-size: 1.8rem;
+    margin-bottom: $spacing-sm;
+    border: 2px solid rgba($accent-color, 0.2);
+}
+
+.goal-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: $text-primary;
+    margin: 0;
+}
+
+.goal-card p {
+    color: $text-muted;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
+}
+
+.goal-status {
+    margin-top: $spacing-sm;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $radius-full;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &.in-progress {
+        background: linear-gradient(135deg, $hero-green, $hero-blue);
+        color: white;
+    }
+
+    &.ongoing {
+        background: #dbeafe;
+        color: #1e40af;
+    }
+
+    &.planned {
+        background: #f3f4f6;
+        color: #6b7280;
+    }
+
+    &.completed {
+        background: #d1fae5;
+        color: #065f46;
+    }
 }
 
 // ============================================================================
@@ -956,11 +937,29 @@
         }
     }
 
-    .philosophy-cards,
-    .value-props,
-    .hobbies-grid,
+    .philosophy-cards {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+
+    .value-props {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+
+    .goals-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+
+    .hobbies-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-md;
+    }
+
     .tech-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: $spacing-md;
     }
 
     .connect-options {
@@ -975,6 +974,215 @@
     .social-link {
         width: 44px;
         height: 44px;
+    }
+}
+
+// Mobile Responsive Styles
+@media (max-width: $breakpoint-mobile) {
+    .about-hero {
+        padding: 4rem 0 3rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    .profile-section {
+        gap: $spacing-lg;
+    }
+
+    .profile-placeholder {
+        width: 100px;
+        height: 100px;
+
+        i {
+            font-size: 2.5rem;
+        }
+    }
+
+    .profile-info h1 {
+        font-size: 2rem;
+    }
+
+    .profile-info .tagline {
+        font-size: 1rem;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-sm;
+        padding: 1.5rem 0;
+    }
+
+    .stat-item {
+        padding: $spacing-md;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .about-section {
+        padding: $spacing-xl;
+
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: $spacing-md;
+
+            i {
+                font-size: 1rem;
+            }
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
+    .goals-section,
+    .value-props-section {
+        padding: $spacing-lg;
+    }
+
+    .goals-grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+
+    .goal-card {
+        padding: $spacing-lg;
+    }
+
+    .goal-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .goal-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .value-props {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+
+    .value-prop {
+        padding: $spacing-lg;
+    }
+
+    .value-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .value-prop h3 {
+        font-size: 1.1rem;
+    }
+
+    .philosophy-cards {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+    }
+
+    .philosophy-card {
+        padding: $spacing-lg;
+    }
+
+    .philosophy-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .philosophy-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-sm;
+    }
+
+    .hobby-item {
+        padding: $spacing-md;
+        min-height: 140px;
+
+        i {
+            font-size: 2rem;
+        }
+
+        .hobby-name {
+            font-size: 0.9rem;
+        }
+
+        .hobby-desc {
+            font-size: 0.75rem;
+        }
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-sm;
+    }
+
+    .tech-card {
+        padding: $spacing-md;
+
+        i {
+            font-size: 2rem;
+        }
+
+        .tech-name {
+            font-size: 0.85rem;
+        }
+    }
+
+    .highlight-box {
+        padding: $spacing-lg;
+
+        i {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: $spacing-md;
+
+        a {
+            width: 100%;
+            padding: $spacing-md $spacing-lg;
+            font-size: 0.95rem;
+        }
+    }
+
+    .proficiency-legend {
+        flex-direction: column;
+        gap: $spacing-sm;
+        align-items: flex-start;
+    }
+
+    .tech-category {
+        margin-bottom: $spacing-xl;
+
+        h3 {
+            font-size: 1.1rem;
+        }
     }
 }
 

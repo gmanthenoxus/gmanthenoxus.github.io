@@ -41,14 +41,19 @@ subtitle: "Stories from my journey building at the intersection of passion and c
           <a href="{{ featured.url }}" class="featured-link">
             <div class="featured-header">
               <div class="featured-badge">
-                <span class="badge-icon">⭐</span>
+                <i class="fas fa-star badge-icon"></i>
                 <span class="badge-text">Featured</span>
               </div>
               <div class="featured-category-tag category-{{ featured.category }}">
-                {% if featured.category == "tech" %}💻
-                {% elsif featured.category == "journey" %}🚀
-                {% elsif featured.category == "passion" %}🎯
-                {% else %}📝{% endif %}
+                {% if featured.category == "tech" %}
+                  <i class="fas fa-code"></i>
+                {% elsif featured.category == "journey" %}
+                  <i class="fas fa-rocket"></i>
+                {% elsif featured.category == "passion" %}
+                  <i class="fas fa-heart"></i>
+                {% else %}
+                  <i class="fas fa-file-alt"></i>
+                {% endif %}
                 {{ featured.category | capitalize | default: "General" }}
               </div>
             </div>
@@ -58,10 +63,18 @@ subtitle: "Stories from my journey building at the intersection of passion and c
                 <h2 class="featured-title">{{ featured.title }}</h2>
                 <p class="featured-excerpt">{{ featured.excerpt | strip_html | truncate: 160 }}</p>
                 <div class="featured-meta">
-                  <span class="featured-date">{{ featured.date | date: "%B %d, %Y" }}</span>
+                  <span class="featured-date">
+                    <i class="far fa-calendar"></i>
+                    {{ featured.date | date: "%B %d, %Y" }}
+                  </span>
                   <span class="featured-read-time">
+                    <i class="far fa-clock"></i>
                     {% if featured.read_time %}{{ featured.read_time }}{% else %}5 min read{% endif %}
                   </span>
+                </div>
+                <div class="featured-cta">
+                  <span class="cta-text">Read Full Article</span>
+                  <i class="fas fa-arrow-right cta-arrow"></i>
                 </div>
               </div>
 
@@ -73,10 +86,15 @@ subtitle: "Stories from my journey building at the intersection of passion and c
               {% else %}
                 <div class="featured-image featured-image-placeholder" data-category="{{ featured.category }}">
                   <div class="placeholder-icon">
-                    {% if featured.category == "tech" %}💻
-                    {% elsif featured.category == "journey" %}🚀
-                    {% elsif featured.category == "passion" %}🎯
-                    {% else %}📝{% endif %}
+                    {% if featured.category == "tech" %}
+                      <i class="fas fa-code"></i>
+                    {% elsif featured.category == "journey" %}
+                      <i class="fas fa-rocket"></i>
+                    {% elsif featured.category == "passion" %}
+                      <i class="fas fa-heart"></i>
+                    {% else %}
+                      <i class="fas fa-file-alt"></i>
+                    {% endif %}
                   </div>
                 </div>
               {% endif %}
@@ -140,13 +158,21 @@ subtitle: "Stories from my journey building at the intersection of passion and c
                 <a href="{{ post.url }}" class="card-link">
                   <div class="card-header">
                     <span class="category-tag category-{{ post.category }}">
-                      {% if post.category == "tech" %}💻
-                      {% elsif post.category == "journey" %}🚀
-                      {% elsif post.category == "passion" %}🎯
-                      {% else %}📝{% endif %}
+                      {% if post.category == "tech" %}
+                        <i class="fas fa-code"></i>
+                      {% elsif post.category == "journey" %}
+                        <i class="fas fa-rocket"></i>
+                      {% elsif post.category == "passion" %}
+                        <i class="fas fa-heart"></i>
+                      {% else %}
+                        <i class="fas fa-file-alt"></i>
+                      {% endif %}
                       {{ post.category | capitalize | default: "General" }}
                     </span>
-                    <span class="post-date">{{ post.date | date: "%b %d" }}</span>
+                    <span class="post-date">
+                      <i class="far fa-calendar-alt"></i>
+                      {{ post.date | date: "%b %d" }}
+                    </span>
                   </div>
 
                   <div class="card-body">
@@ -155,19 +181,23 @@ subtitle: "Stories from my journey building at the intersection of passion and c
                   </div>
 
                   <div class="card-footer">
-                    {% if post.read_time %}
-                      <span class="read-time">{{ post.read_time }}</span>
-                    {% else %}
-                      <span class="read-time">5 min read</span>
-                    {% endif %}
-                    <span class="read-more">Read more →</span>
+                    <span class="read-time">
+                      <i class="far fa-clock"></i>
+                      {% if post.read_time %}{{ post.read_time }}{% else %}5 min read{% endif %}
+                    </span>
+                    <span class="read-more">
+                      Read more
+                      <i class="fas fa-arrow-right"></i>
+                    </span>
                   </div>
                 </a>
               </article>
             {% endfor %}
           {% else %}
             <div class="empty-state">
-              <div class="empty-icon">📝</div>
+              <div class="empty-icon">
+                <i class="fas fa-pen-fancy"></i>
+              </div>
               <h3>No posts yet</h3>
               <p>Check back soon for new content!</p>
             </div>
@@ -175,10 +205,15 @@ subtitle: "Stories from my journey building at the intersection of passion and c
 
           <!-- Dynamic empty state for search/filter results -->
           <div class="empty-state search-empty" id="search-empty" style="display: none;">
-            <div class="empty-icon">🔍</div>
+            <div class="empty-icon">
+              <i class="fas fa-search"></i>
+            </div>
             <h3>No posts found</h3>
             <p>Try adjusting your search or category filter to find what you're looking for.</p>
-            <button class="clear-filters-btn" id="clear-filters">Clear all filters</button>
+            <button class="clear-filters-btn" id="clear-filters">
+              <i class="fas fa-times-circle"></i>
+              Clear all filters
+            </button>
           </div>
         </div>
 

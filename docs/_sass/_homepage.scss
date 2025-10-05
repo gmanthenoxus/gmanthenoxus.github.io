@@ -9,6 +9,8 @@
 // Homepage-specific styling for unified components
 // ============================================================================
 
+@use "sass:color";
+
 // Content Wrapper (Tabbed Section Cards)
 .content-wrapper {
   h3 {
@@ -25,7 +27,7 @@
       left: 0;
       width: 40px;
       height: 3px;
-      background: linear-gradient(90deg, $accent-color, lighten($accent-color, 20%));
+      background: linear-gradient(90deg, $accent-color, color.adjust($accent-color, $lightness: 20%));
       border-radius: 2px;
     }
   }
@@ -258,7 +260,7 @@
         font-size: clamp(1rem, 2vw, 1.5rem);
         margin-bottom: 3rem;
         opacity: 0.9;
-        color: lighten($text-light, 20%);
+        color: color.adjust($text-light, $lightness: 20%);
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
@@ -638,8 +640,8 @@ $card-image-height: 200px;
 
     // Fallback gradient if image doesn't load
     background: linear-gradient(135deg,
-        lighten($accent-color, 35%) 0%,
-        lighten($accent-secondary, 30%) 100%);
+        color.adjust($accent-color, $lightness: 35%) 0%,
+        color.adjust($accent-secondary, $lightness: 30%) 100%);
 }
 
 // Blog preview images
@@ -843,7 +845,7 @@ $card-image-height: 200px;
         }
 
         .date {
-            color: lighten($text-muted, 5%);
+            color: color.adjust($text-muted, $lightness: 5%);
             font-weight: 500;
         }
     }
@@ -1139,7 +1141,7 @@ $wip-animation-duration: 0.6s;
                 }
 
                 &::placeholder {
-                    color: lighten($text-muted, 10%);
+                    color: color.adjust($text-muted, $lightness: 10%);
                 }
             }
 

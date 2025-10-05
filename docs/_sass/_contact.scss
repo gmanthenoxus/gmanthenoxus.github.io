@@ -72,12 +72,13 @@
         font-size: clamp(2.5rem, 5vw, 3.5rem);
         font-weight: 700;
         margin-bottom: $spacing-md;
+        color: white;
         text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1.1rem, 2vw, 1.3rem);
-        color: rgba(255, 255, 255, 0.9);
+        color: rgba(255, 255, 255, 0.95);
         line-height: 1.6;
         margin-bottom: $spacing-xl;
         max-width: 600px;
@@ -214,10 +215,11 @@
     font-size: 1.05rem;
     text-decoration: none;
     transition: all $transition-medium;
-    
+
     &:hover {
         color: $hero-green;
         transform: translateX(5px);
+        text-decoration: none;
     }
 }
 
@@ -242,7 +244,8 @@
         
         &:hover {
             color: $hero-green;
-            
+            text-decoration: none;
+
             i {
                 transform: translateX(5px);
             }
@@ -308,7 +311,42 @@
 
 .contact-form {
     @include card-base;
-    padding: $spacing-xxl;
+    padding: $spacing-xxl * 1.5;
+    position: relative;
+    overflow: hidden;
+
+    // Subtle gradient overlay
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 135, 83, 0.02), rgba(1, 33, 105, 0.02));
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    // Decorative corner accent
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(135deg, $hero-green, $hero-blue);
+        opacity: 0.05;
+        border-radius: 0 0 0 100%;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
 
     @media (max-width: $breakpoint-mobile) {
         padding: $spacing-xl;
@@ -338,43 +376,55 @@
         color: $text-dark;
 
         i {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(0, 135, 83, 0.1), rgba(1, 33, 105, 0.1));
             color: $accent-color;
-            font-size: 1rem;
+            font-size: 0.75rem;
+            padding: 2px;
         }
     }
 
     input,
     textarea {
         width: 100%;
-        padding: $spacing-md;
-        border: 2px solid rgba(0, 0, 0, 0.1);
+        padding: $spacing-md $spacing-md $spacing-md $spacing-lg;
+        border: 2px solid rgba(0, 0, 0, 0.08);
         border-radius: $radius-md;
         font-family: inherit;
         font-size: 1rem;
         color: $text-dark;
         transition: all $transition-medium;
         background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 
         &::placeholder {
             color: $text-muted;
-            opacity: 0.6;
+            opacity: 0.5;
         }
 
         &:focus {
             outline: none;
             border-color: transparent;
-            box-shadow: 0 0 0 3px rgba(0, 135, 83, 0.2);
+            box-shadow: 0 0 0 3px rgba(0, 135, 83, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
             background: linear-gradient(white, white) padding-box,
                         linear-gradient(135deg, $hero-green, $hero-blue) border-box;
             border: 2px solid transparent;
+            transform: translateY(-2px);
         }
 
         &:invalid:not(:placeholder-shown) {
             border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
         }
 
         &:valid:not(:placeholder-shown) {
             border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
     }
 
@@ -388,13 +438,33 @@
 .contact-form button[type="submit"] {
     @include btn-gradient;
     width: 100%;
-    margin-top: $spacing-md;
+    margin-top: $spacing-lg;
     font-size: 1.1rem;
-    padding: $spacing-md $spacing-xl;
+    padding: $spacing-md * 1.2 $spacing-xl;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: $spacing-sm;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+
+    // Shine effect on hover
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
 
     i {
         transition: transform $transition-medium;
@@ -407,6 +477,10 @@
     &:disabled {
         opacity: 0.6;
         cursor: not-allowed;
+
+        &::before {
+            display: none;
+        }
     }
 }
 
