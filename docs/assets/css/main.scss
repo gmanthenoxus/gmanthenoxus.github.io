@@ -1,8 +1,6 @@
 ---
 ---
 
-@use "sass:color";
-
 // Import modular SCSS files
 @import 'variables';
 @import 'base';
@@ -118,7 +116,7 @@ a {
   transition: color 0.2s ease;
   
   &:hover {
-    color: color.adjust($accent-color, $lightness: -10%);
+    color: darken($accent-color, 10%);
   }
 }
 
@@ -2040,7 +2038,7 @@ body .hobby-intro {
 }
 
 body .hobby-cta {
-  background: linear-gradient(135deg, $primary-color 0%, color.adjust($primary-color, $lightness: 5%) 100%) !important;
+  background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 5%) 100%) !important;
   color: white !important;
   padding: 6rem 0 !important;
   position: relative !important;

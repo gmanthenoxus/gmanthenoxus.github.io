@@ -27,7 +27,7 @@ $nav-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &.scrolled {
     box-shadow: 0 4px 20px rgba($primary-color, 0.4);
-    background: color.adjust($primary-color, $lightness: -3%);
+    background: darken($primary-color, 3%);
   }
 
   @supports not (backdrop-filter: blur(10px)) {
@@ -187,7 +187,7 @@ $nav-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   right: -100%;
   width: 300px;
   height: 100vh;
-  background: linear-gradient(180deg, $primary-color 0%, color.adjust($primary-color, $lightness: -8%) 100%);
+  background: linear-gradient(180deg, $primary-color 0%, darken($primary-color, 8%) 100%);
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
   transition: right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: $nav-z-index;
