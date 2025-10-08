@@ -51,23 +51,132 @@ layout: default
     <main class="hobby-main">
         <div class="container">
             
-            <!-- Live Statistics Dashboard -->
-            {% if page.personal_stats and page.personal_stats.size > 0 %}
+            <!-- Enhanced Statistics Dashboard -->
+            {% if page.statistics and page.statistics.stats and page.statistics.stats.size > 0 %}
             <section class="stats-dashboard">
-                <h2><i class="fas fa-chart-line"></i> Live Statistics</h2>
+                <div class="stats-header">
+                    <h2><i class="fas fa-chart-line"></i> Statistics Dashboard</h2>
+
+                    <!-- Time Filters -->
+                    {% if page.statistics.time_periods and page.statistics.time_periods.size > 0 %}
+                    <div class="time-filters">
+                        {% for period in page.statistics.time_periods %}
+                        <button class="time-filter-btn {% if period.active %}active{% endif %}"
+                                data-period="{{ period.id }}">
+                            {{ period.label }}
+                        </button>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Main Stats Grid -->
                 <div class="stats-grid">
-                    {% for stat in page.personal_stats %}
-                    <div class="stat-card">
+                    {% for stat in page.statistics.stats %}
+                    <div class="stat-card enhanced" data-stat-id="{{ stat.id }}">
+                        <!-- Icon -->
+                        <div class="stat-icon">
+                            <i class="{{ stat.icon }}"></i>
+                        </div>
+
+                        <!-- Label -->
                         <div class="stat-label">{{ stat.label }}</div>
+
+                        <!-- Value -->
                         <div class="stat-value">{{ stat.value }}</div>
+
+                        <!-- Progress Bar -->
                         {% if stat.progress %}
                         <div class="stat-progress">
                             <div class="progress-bar" data-progress="{{ stat.progress }}"></div>
                         </div>
                         {% endif %}
+
+                        <!-- Trend Indicator -->
+                        {% if stat.trend %}
+                        <div class="stat-trend trend-{{ stat.trend }}">
+                            {% if stat.trend == "up" %}
+                            <i class="fas fa-arrow-up"></i>
+                            {% elsif stat.trend == "down" %}
+                            <i class="fas fa-arrow-down"></i>
+                            {% else %}
+                            <i class="fas fa-minus"></i>
+                            {% endif %}
+                            <span>{{ stat.progress }}%</span>
+                            <span class="trend-value">{{ stat.trend_value }}</span>
+                        </div>
+                        {% endif %}
+
+                        <!-- Comparison -->
+                        {% if stat.comparison %}
+                        <div class="stat-comparison">
+                            <div class="comparison-label">{{ stat.comparison.label }}</div>
+                            <div class="comparison-value">{{ stat.comparison.value }}</div>
+                            {% if stat.comparison.percentage %}
+                            <div class="comparison-percentage">
+                                {{ stat.comparison.percentage }}%
+                                {% if stat.comparison.percentage > 50 %}
+                                <i class="fas fa-arrow-up"></i>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Milestone Badge -->
+                        {% if stat.milestone %}
+                        <div class="stat-milestone {% if stat.milestone.reached %}reached{% else %}in-progress{% endif %}">
+                            <span class="milestone-icon">{{ stat.milestone.icon }}</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">{{ stat.milestone.title }}</div>
+                                <div class="milestone-description">{{ stat.milestone.description }}</div>
+                                {% if stat.milestone.reached == false and stat.milestone.progress %}
+                                <div class="milestone-progress">
+                                    <div class="milestone-progress-bar" style="width: {{ stat.milestone.progress }}%"></div>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Mini Chart -->
+                        {% if stat.chart_data %}
+                        <div class="stat-chart">
+                            <canvas class="mini-chart"
+                                    data-chart="{{ stat.chart_data | join: ',' }}"
+                                    width="200"
+                                    height="40"></canvas>
+                        </div>
+                        {% endif %}
+
+                        <!-- Tooltip -->
+                        {% if stat.tooltip %}
+                        <div class="stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="tooltip-content">{{ stat.tooltip }}</div>
+                        </div>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 </div>
+
+                <!-- Quick Stats -->
+                {% if page.statistics.quick_stats and page.statistics.quick_stats.size > 0 %}
+                <div class="quick-stats-section">
+                    <h3><i class="fas fa-bolt"></i> Quick Stats</h3>
+                    <div class="quick-stats-grid">
+                        {% for quick_stat in page.statistics.quick_stats %}
+                        <div class="quick-stat-card">
+                            <span class="quick-stat-icon">{{ quick_stat.icon }}</span>
+                            <div class="quick-stat-info">
+                                <div class="quick-stat-label">{{ quick_stat.label }}</div>
+                                <div class="quick-stat-value">{{ quick_stat.value }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
             </section>
             {% endif %}
 
@@ -103,7 +212,7 @@ layout: default
                 <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
                 <div class="trivia-container">
                     {% for question in page.trivia %}
-                    <div class="trivia-card" data-question="{{ forloop.index0 }}">
+                    <div class="trivia-card" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}">
                         <h3>{{ question.question }}</h3>
                         <div class="options-grid">
                             {% for option in question.options %}
@@ -113,6 +222,7 @@ layout: default
                             {% endfor %}
                         </div>
                         <div class="trivia-feedback" style="display: none;">
+                            <p><strong>{% if forloop.index0 == question.correct_answer %}✅ Correct!{% else %}❌ Incorrect{% endif %}</strong></p>
                             <p>{{ question.explanation }}</p>
                         </div>
                     </div>

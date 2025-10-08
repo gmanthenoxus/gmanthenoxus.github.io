@@ -11,9 +11,9 @@
 
 /* Hero Section */
 .hobby-hero {
-    background: linear-gradient(135deg, var(--hobby-color) 0%, rgba(0, 0, 0, 0.8) 100%);
-    color: white;
-    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, var(--hobby-color) 0%, rgba(255, 255, 255, 0.95) 100%);
+    color: var(--hobby-color);
+    padding: 8rem 0 5rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -30,8 +30,8 @@
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
     z-index: 1;
 }
 
@@ -45,50 +45,46 @@
 /* Hero Icon/Emoji */
 .hobby-icon-large,
 .hobby-emoji-large {
-    font-size: 5rem;
+    font-size: 6rem;
     margin-bottom: 2rem;
-    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.15));
     animation: floatGently 6s ease-in-out infinite;
 }
 
 .hobby-icon-large i {
-    color: white;
-    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    color: var(--hobby-color);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes floatGently {
     0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-10px) scale(1.05); }
+    50% { transform: translateY(-15px) scale(1.05); }
 }
 
 /* Hero Typography */
 .hobby-hero h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     line-height: 1.1;
     letter-spacing: -0.02em;
+    color: var(--hobby-color);
 }
 
 .hobby-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 2.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 400;
-    line-height: 1.6;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    display: none; /* Removed from design */
 }
 
 
 /* Rotating Quotes */
 .quotes-container {
-    margin: 2rem 0;
-    min-height: 120px;
+    margin: 2.5rem 0 0;
+    min-height: 160px;
     position: relative;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .quote-item {
@@ -99,6 +95,7 @@
     opacity: 0;
     transition: opacity 0.8s ease;
     text-align: center;
+    padding: 0 2rem;
 }
 
 .quote-item:first-child {
@@ -106,47 +103,57 @@
 }
 
 .quote-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-style: italic;
     margin-bottom: 1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.75);
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    max-height: 100px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .quote-author {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
+    font-size: 0.95rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
     font-style: normal;
 }
 
-/* Hero Navigation */
+/* Hero Navigation - Fixed Top-Left */
 .hero-nav {
-    margin-top: 3rem;
+    position: fixed;
+    top: 5rem; /* Below 60px nav bar + spacing */
+    left: 2rem;
+    z-index: 999; /* Below main nav (1000) */
 }
 
 .back-btn {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--hobby-color);
     text-decoration: none;
     font-weight: 600;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 50px;
     backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--hobby-color);
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .back-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
+    background: var(--hobby-color);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
 }
 
 /* Main Content Area */
@@ -183,14 +190,62 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+/* Stats Header with Time Filters */
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.stat-card {
+.stats-header h2 {
+    margin-bottom: 0;
+}
+
+/* Time Filters */
+.time-filters {
+    display: flex;
+    gap: 0.5rem;
+    background: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+.time-filter-btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-filter-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--hobby-color);
+}
+
+.time-filter-btn.active {
+    background: white;
+    color: var(--hobby-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Enhanced Stat Card */
+.stat-card.enhanced {
     background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
     border: 2px solid var(--hobby-color-light);
     border-radius: 20px;
@@ -198,32 +253,44 @@
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+.stat-card.enhanced:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     border-color: var(--hobby-color);
 }
 
+/* Stat Icon */
+.stat-icon {
+    font-size: 2rem;
+    color: var(--hobby-color);
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Stat Label */
 .stat-label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #6b7280;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
+/* Stat Value */
 .stat-value {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 900;
     color: var(--hobby-color);
     margin-bottom: 1rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1;
 }
 
+/* Progress Bar */
 .stat-progress {
     width: 100%;
     height: 8px;
@@ -231,6 +298,7 @@
     border-radius: 4px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 1.5rem;
 }
 
 .progress-bar {
@@ -245,6 +313,270 @@
 @keyframes progressFill {
     from { width: 0%; }
     to { width: var(--progress, 0%); }
+}
+
+/* Trend Indicator */
+.stat-trend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.stat-trend i {
+    font-size: 1rem;
+}
+
+.stat-trend.trend-up {
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.stat-trend.trend-down {
+    color: #EF4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.stat-trend.trend-stable {
+    color: #6B7280;
+    background: rgba(107, 114, 128, 0.1);
+}
+
+.trend-value {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Comparison Section */
+.stat-comparison {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.comparison-label {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.comparison-value {
+    font-size: 0.95rem;
+    color: #1a202c;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.comparison-percentage {
+    font-size: 0.85rem;
+    color: var(--hobby-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.comparison-percentage i {
+    font-size: 0.75rem;
+}
+
+/* Milestone Badge */
+.stat-milestone {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+    border: 2px solid rgba(245, 158, 11, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+}
+
+.stat-milestone.reached {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%);
+    border-color: rgba(245, 158, 11, 0.5);
+    animation: milestoneGlow 2s ease-in-out infinite;
+}
+
+.stat-milestone.in-progress {
+    background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.5) 100%);
+    border-color: var(--hobby-color-light);
+}
+
+@keyframes milestoneGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
+}
+
+.milestone-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.milestone-info {
+    flex: 1;
+}
+
+.milestone-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.25rem;
+}
+
+.milestone-description {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-progress {
+    width: 100%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.milestone-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+/* Mini Chart */
+.stat-chart {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mini-chart {
+    width: 100%;
+    height: 40px;
+    opacity: 0.7;
+}
+
+/* Tooltip */
+.stat-tooltip {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: help;
+}
+
+.stat-tooltip i {
+    color: #9ca3af;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.stat-tooltip:hover i {
+    color: var(--hobby-color);
+}
+
+.tooltip-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    background: #1a202c;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    width: 250px;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-tooltip:hover .tooltip-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Quick Stats Section */
+.quick-stats-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.quick-stats-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.quick-stats-section h3 i {
+    color: var(--hobby-color);
+    font-size: 1.3rem;
+}
+
+.quick-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.quick-stat-card {
+    background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.5) 100%);
+    border: 2px solid var(--hobby-color-light);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.quick-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--hobby-color);
+}
+
+.quick-stat-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.quick-stat-info {
+    flex: 1;
+    text-align: left;
+}
+
+.quick-stat-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.quick-stat-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--hobby-color);
 }
 
 /* Personal Journey Section */
@@ -736,30 +1068,42 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .hobby-hero {
-        padding: 4rem 0 3rem;
+        padding: 6rem 0 3rem;
         min-height: 50vh;
     }
 
     .hobby-hero h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
 
     .hobby-subtitle {
-        font-size: 1.2rem;
+        display: none; /* Already hidden */
     }
 
     .hobby-icon-large,
     .hobby-emoji-large {
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
 
     .quote-text {
         font-size: 1.1rem;
+        -webkit-line-clamp: 3;
+        max-height: 90px;
+    }
+
+    .quotes-container {
+        min-height: 140px;
+        padding: 0 1rem;
+    }
+
+    .hero-nav {
+        top: 4.5rem; /* Below nav bar on mobile */
+        left: 1rem;
     }
 
     .back-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
     }
 
     .hobby-main h2 {
@@ -768,12 +1112,76 @@
         gap: 0.5rem;
     }
 
+    /* Statistics Dashboard Responsive */
+    .stats-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .time-filters {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .time-filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
     .stats-grid,
     .facts-grid,
     .projects-grid,
     .platforms-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .stat-card.enhanced {
+        padding: 1.5rem;
+    }
+
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .stat-value {
+        font-size: 2.2rem;
+    }
+
+    .stat-comparison {
+        padding: 0.75rem;
+    }
+
+    .stat-milestone {
+        padding: 0.75rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .milestone-icon {
+        font-size: 1.5rem;
+    }
+
+    .quick-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .quick-stat-card {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quick-stat-icon {
+        font-size: 1.5rem;
+    }
+
+    .quick-stat-value {
+        font-size: 1rem;
     }
 
     .stats-dashboard,
@@ -818,16 +1226,36 @@
 
 @media (max-width: 480px) {
     .hobby-hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .hobby-subtitle {
-        font-size: 1rem;
+        display: none; /* Already hidden */
     }
 
     .hobby-icon-large,
     .hobby-emoji-large {
-        font-size: 3.5rem;
+        font-size: 4rem;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+        -webkit-line-clamp: 2;
+        max-height: 70px;
+    }
+
+    .quotes-container {
+        min-height: 120px;
+    }
+
+    .hero-nav {
+        top: 4rem; /* Below nav bar on small mobile */
+        left: 0.75rem;
+    }
+
+    .back-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
     }
 
     .quote-text {
@@ -840,6 +1268,57 @@
 
     .stat-value {
         font-size: 2rem;
+    }
+
+    /* Statistics Dashboard Mobile */
+    .time-filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .stat-icon {
+        font-size: 1.3rem;
+    }
+
+    .stat-trend {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+
+    .stat-comparison {
+        padding: 0.6rem;
+    }
+
+    .comparison-label {
+        font-size: 0.7rem;
+    }
+
+    .comparison-value {
+        font-size: 0.85rem;
+    }
+
+    .stat-milestone {
+        padding: 0.6rem;
+    }
+
+    .milestone-title {
+        font-size: 0.8rem;
+    }
+
+    .milestone-description {
+        font-size: 0.7rem;
+    }
+
+    .stat-chart {
+        display: none; /* Hide charts on very small screens */
+    }
+
+    .quick-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-stat-card {
+        padding: 0.75rem;
     }
 
     .journey-content p {

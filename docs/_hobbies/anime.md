@@ -3,172 +3,191 @@ layout: hobby
 title: "Anime & Manga"
 slug: anime
 emoji: "🎌"
+description: "From Bleach's first Bankai to the depths of isekai. My journey from casual viewer to daily consumer and aspiring creator."
 color: "#FF6B9D"
-description: "Where storytelling meets artistry. My journey through Japanese animation and the tech projects it inspires."
 
-# Rotating Quotes
 quotes:
-  - text: "The world is not beautiful, therefore it is."
-    author: "Kino's Journey"
-  - text: "People die when they are killed... That's the way it should be."
-    author: "Shirou Emiya, Fate/stay night"
-  - text: "I am not alone. I can hear them... I can hear everyone's voices... I can sense everyone's feelings... I am not alone... Everyone's feelings... They support me... They are what give me the will to stand and fight!"
-    author: "Natsu Dragneel, Fairy Tail"
-  - text: "The fake is of far greater value. In its deliberate attempt to be real, it's more real than the real thing."
-    author: "Kaiki Deishuu, Monogatari Series"
+  - text: "Nothing... happened."
+    author: "Roronoa Zoro"
+    source: "One Piece"
+    episode: "Episode 377"
+    context: "After enduring his captain's pain to save his life, defining ultimate crew loyalty."
+  - text: "Wake up to reality. Nothing ever goes as planned in this accursed world. The longer you live, the more you realize that only pain, suffering, and futility exist in this reality."
+    author: "Madara Uchiha"
+    source: "Naruto Shippuden"
+    episode: "Episode 344"
+    context: "A nihilistic philosophy delivered to break a hero's spirit."
+  - text: "A lesson without pain is meaningless. For you cannot gain anything without sacrificing something first. But once you have recovered from the pain and overcome it, you will find that you have a heart strong enough to overcome any obstacle."
+    author: "Roy Mustang"
+    source: "Fullmetal Alchemist: Brotherhood"
+    episode: "Episode 50"
+    context: "Reframing Equivalent Exchange into a lesson on human resilience."
+  - text: "I'll leave tomorrow's problems to tomorrow's me."
+    author: "Saitama"
+    source: "One-Punch Man"
+    episode: "Episode 5"
+    context: "The ultimate anti-stress philosophy from a hero too powerful for anxieties."
+  - text: "I don't know the answer. I never have. Whether I trusted myself or the choices of my dependable comrades, there was no way to know the outcome. So… choose for yourself whichever decision you will regret the least."
+    author: "Levi Ackerman"
+    source: "Attack on Titan"
+    episode: "Episode 54"
+    context: "A captain's honest advice about making impossible choices."
 
-# Live Statistics Dashboard
-personal_stats:
-  - value: "500+"
-    label: "Series Watched"
-    context: "Equivalent to 2+ years of continuous viewing"
-    progress: 75
-  - value: "15,000+"
-    label: "Episodes Completed"
-    context: "More episodes than One Piece has aired"
-  - value: "50+"
-    label: "Manga Series Read"
-    context: "From classics to hidden gems"
-    progress: 60
-  - value: "3"
-    label: "Active Projects"
-    context: "Anime-related tech projects in development"
-    progress: 45
+statistics:
+  # Time filter options
+  time_periods:
+    - id: "week"
+      label: "This Week"
+      active: false
+    - id: "month"
+      label: "This Month"
+      active: false
+    - id: "year"
+      label: "This Year"
+      active: false
+    - id: "all"
+      label: "All Time"
+      active: true
 
-# World Statistics for Context
-world_stats:
-  - icon: "🌍"
-    value: "430 billion"
-    label: "Global anime market value (USD)"
-    source: "Anime Industry Report 2024"
-  - icon: "📺"
-    value: "12,000+"
-    label: "Anime series produced since 1960"
-    source: "MyAnimeList Database"
-  - icon: "🎬"
-    value: "300+"
-    label: "New anime series per year"
-    source: "Anime News Network"
-  - icon: "👥"
-    value: "44%"
-    label: "Of Gen Z watches anime regularly"
-    source: "Crunchyroll Survey 2024"
+  # Main statistics
+  stats:
+    - id: "experience"
+      label: "Years in the Fandom"
+      icon: "fas fa-calendar-alt"
+      value: "15+"
+      numeric_value: 15
+      progress: 90
+      trend: "stable"
+      trend_value: "+0 this year"
+      comparison:
+        type: "average"
+        label: "vs Average Fan"
+        value: "8 years"
+        percentage: 87
+      tooltip: "Been watching anime since 2010, starting with Bleach in junior secondary school"
+      milestone:
+        reached: true
+        title: "Veteran Fan"
+        icon: "🏆"
+        description: "15+ years in the fandom"
+      chart_data: [5, 8, 10, 12, 14, 15]
 
-# Personal Journey
-personal_journey:
-  origin_story: "Started with Toonami classics like Dragon Ball Z and Sailor Moon in middle school. What began as after-school entertainment evolved into a deep appreciation for Japanese storytelling, animation techniques, and cultural nuances that would shape my creative perspective."
-  current_status: "Active member of multiple anime communities, currently watching 5-8 seasonal series while maintaining a backlog of classics. Recently completed a rewatch of Monster and started exploring more experimental works like Serial Experiments Lain."
-  goals:
-    - "Complete the 'Big Three' (One Piece, Naruto, Bleach) - currently 60% through One Piece"
-    - "Watch all Studio Ghibli films with director's commentary"
-    - "Build a comprehensive anime recommendation engine using machine learning"
-    - "Attend Anime Expo and Comiket at least once"
-    - "Learn enough Japanese to watch anime without subtitles"
-  achievements:
-    - "Completed 100+ anime series in 2023 alone"
-    - "Built a personal anime tracking system with 95% accuracy"
-    - "Successfully predicted 3 'Anime of the Year' winners using data analysis"
-    - "Created viral anime recommendation thread with 10k+ upvotes on Reddit"
-  favorites:
-    - name: "Monster"
-      reason: "Masterclass in psychological storytelling and character development"
-    - name: "Spirited Away"
-      reason: "Perfect blend of environmental themes and stunning visuals"
-    - name: "Serial Experiments Lain"
-      reason: "Prophetic exploration of digital identity and reality"
-    - name: "Attack on Titan"
-      reason: "Complex narrative structure and philosophical depth"
+    - id: "watched"
+      label: "Anime Watched"
+      icon: "fas fa-tv"
+      value: "500+"
+      numeric_value: 500
+      progress: 85
+      trend: "up"
+      trend_value: "+12 this month"
+      comparison:
+        type: "goal"
+        label: "Goal: 600"
+        value: "100 to go"
+        percentage: 83
+      tooltip: "Completed series across all genres, from action to slice-of-life"
+      milestone:
+        reached: false
+        title: "Completionist"
+        icon: "🎯"
+        description: "Watch 600 anime"
+        progress: 83
+      chart_data: [450, 465, 478, 485, 492, 500]
 
-# Fun Facts
+    - id: "genres"
+      label: "Genres Explored"
+      icon: "fas fa-compass"
+      value: "25+"
+      numeric_value: 25
+      progress: 95
+      trend: "stable"
+      trend_value: "+1 this year"
+      comparison:
+        type: "coverage"
+        label: "Genre Coverage"
+        value: "95% of all genres"
+        percentage: 95
+      tooltip: "From action to slice-of-life, explored almost every genre in anime"
+      milestone:
+        reached: true
+        title: "Genre Master"
+        icon: "🌟"
+        description: "Explored 25+ genres"
+      chart_data: [15, 18, 20, 22, 24, 25]
+
+    - id: "weekly"
+      label: "Weekly Episodes"
+      icon: "fas fa-fire"
+      value: "12-15"
+      numeric_value: 13.5
+      progress: 70
+      trend: "down"
+      trend_value: "-3 from last week"
+      comparison:
+        type: "average"
+        label: "vs Average Viewer"
+        value: "8 episodes"
+        percentage: 68
+      tooltip: "Currently following 5 seasonal anime releases"
+      milestone:
+        reached: false
+        title: "Marathon Master"
+        icon: "⚡"
+        description: "Watch 20+ episodes in a week"
+        progress: 67
+      chart_data: [10, 12, 15, 18, 16, 13]
+
+  # Quick stats (smaller, simpler)
+  quick_stats:
+    - label: "Favorite Genre"
+      value: "Isekai"
+      icon: "🗺️"
+    - label: "Current Streak"
+      value: "45 days"
+      icon: "🔥"
+    - label: "Avg Rating"
+      value: "8.2/10"
+      icon: "⭐"
+    - label: "Rewatched"
+      value: "15 series"
+      icon: "🔄"
+
 fun_facts:
-  - title: "Data-Driven Viewing"
-    description: "I track every anime I watch with custom metrics including emotional impact scores, animation quality ratings, and rewatchability indices. My database contains over 15,000 data points."
-  - title: "Genre Explorer"
-    description: "I've watched anime from 47 different genres, including obscure ones like 'Iyashikei' (healing anime) and 'Denpa' (electromagnetic wave). Most people only know about 10-15 genres."
-  - title: "Prediction Master"
-    description: "My anime rating predictions have a 78% correlation with MyAnimeList community scores, better than most recommendation algorithms. I can usually predict if I'll like a series within 3 episodes."
-  - title: "Cultural Bridge"
-    description: "Anime sparked my interest in Japanese culture, leading to studying the language and planning my first trip to Japan. I can now understand about 40% of anime dialogue without subtitles."
-  - title: "Animation Appreciation"
-    description: "I can identify the work of specific animation studios and directors just by watching a few scenes. Studio Ghibli, Madhouse, and Wit Studio have the most distinctive styles."
-  - title: "Industry Insights"
-    description: "The average anime episode costs $100,000-300,000 to produce, but streaming has made it profitable for niche series that would never have been made in the TV-only era."
+  - title: "The Naruto Run is Real"
+    description: "The iconic run style is based on a real technique that reduces wind resistance. It's not just for looking cool!"
+  - title: "Truck-kun is a Busy Guy"
+    description: "The isekai trope of being reincarnated by a truck is so common it's nicknamed 'Truck-kun' by western fans."
+  - title: "Anime Boosts Tourism"
+    description: "The city of Ōarai, Japan, saw tourist visits increase by 30% after being featured in the anime 'Girls und Panzer'."
 
-# External Platforms
-external_platforms:
-  - name: "MyAnimeList"
-    icon: "📺"
-    description: "Complete anime & manga tracking with detailed reviews"
-    url: "https://myanimelist.net/profile/gmanthenoxus"
-    stats: "500+ completed series"
-  - name: "Anilist"
-    icon: "📊"
-    description: "Advanced statistics and social features"
-    url: "https://anilist.co/user/gmanthenoxus"
-    stats: "95% compatibility score"
-  - name: "Crunchyroll"
-    icon: "🎌"
-    description: "Primary streaming platform for seasonal anime"
-    url: "https://crunchyroll.com/user/gmanthenoxus"
-    stats: "Premium subscriber since 2018"
-  - name: "Anime Spotify Playlist"
-    icon: "🎵"
-    description: "Curated collection of anime openings & soundtracks"
-    url: "https://open.spotify.com/playlist/anime-favorites"
-    stats: "200+ tracks, 15 hours"
-
-
-
-# Interactive Trivia
 trivia:
-  - question: "Which anime holds the record for the most episodes ever produced?"
-    options:
-      - "One Piece"
-      - "Sazae-san"
-      - "Detective Conan"
-      - "Naruto (including Shippuden)"
+  - question: "In 'Bleach', what is the name of Ichigo's Zanpakutō that he first unleashes as a Bankai?"
+    options: ["Zangetsu", "Tensa Zangetsu", "Engetsu", "Benihime"]
     correct_answer: 1
-    explanation: "Sazae-san has been running since 1969 and has over 7,000 episodes, making it the longest-running animated series in the world!"
-
-  - question: "What does the term 'otaku' originally mean in Japanese?"
-    options:
-      - "Anime fan"
-      - "Your house/home"
-      - "Obsessed person"
-      - "Japanese culture enthusiast"
-    correct_answer: 1
-    explanation: "Otaku literally means 'your house' and was originally used as a polite way to address someone. It became associated with obsessive fans in the 1980s."
-
-  - question: "Which Studio Ghibli film was the first to win an Academy Award?"
-    options:
-      - "Princess Mononoke"
-      - "My Neighbor Totoro"
-      - "Spirited Away"
-      - "Howl's Moving Castle"
+    explanation: "Tensa Zangetsu is the name of his Bankai, manifesting as a sleek, black-bladed katana."
+  - question: "Which of these is NOT a common isekai trope?"
+    options: ["Reincarnated by a truck", "Getting stuck in a video game", "Attending a magic high school", "Becoming a famous musician in Tokyo"]
+    correct_answer: 3
+    explanation: "While music anime exist, it's not a standard trope for the isekai (another world) genre."
+  - question: "What is the core alchemical principle in 'Fullmetal Alchemist'?"
+    options: ["The Law of Surprise", "The Force", "Equivalent Exchange", "The Way of the Samurai"]
     correct_answer: 2
-    explanation: "Spirited Away won the Academy Award for Best Animated Feature in 2003, becoming the first hand-drawn and Japanese animated film to win this award."
+    explanation: "Equivalent Exchange is the fundamental law: to obtain, something of equal value must be lost."
 
-# Current Projects
 current_projects:
-  - name: "Anime Recommendation Engine"
-    icon: "🤖"
-    description: "Machine learning model that analyzes viewing patterns, genre preferences, and rating correlations to suggest anime with 85% accuracy rate."
-    status: "Beta Testing"
-    progress: 78
-    tech_stack: ["Python", "TensorFlow", "Pandas", "MyAnimeList API", "React"]
-    link: "/projects/anime-recommender"
+  - name: "The Ultimate Watchlist & Tracker"
+    description: "A unified platform to track seasonal anime, share lists with friends, and never miss an episode."
+    tech_stack: ["TBD"]
+    status: "Vision Stage"
+    url: "#"
+  - name: "The Hidden Gem Discovery Engine"
+    description: "Tired of the same recommendations? A tool to unearth old and obscure anime you'll actually love."
+    tech_stack: ["TBD"]
+    status: "Ideation"
+    url: "#"
 
-  - name: "Seasonal Tracker Bot"
-    icon: "📅"
-    description: "Automated Discord bot that tracks new anime releases, aggregates reviews, and sends personalized weekly recommendations."
-    status: "Active Development"
-    progress: 65
-    tech_stack: ["Node.js", "Discord.js", "MongoDB", "Web Scraping"]
-    link: "/projects/seasonal-tracker"
-
-# Call to Action
 cta:
-  title: "Love Anime?"
+  title: "Love Anime Tech?"
   description: "Let's talk about the future of fan tools, from better discovery to social sharing."
   button_text: "Start a Conversation"
   button_url: "/contact"
