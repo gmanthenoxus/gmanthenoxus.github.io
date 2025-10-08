@@ -20,10 +20,10 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
 
                 <!-- Epic Progress Ring -->
                 <div class="progress-ring-container">
-                    <svg class="progress-ring" width="200" height="200">
+                    <svg class="progress-ring" width="200" height="200" viewBox="0 0 200 200">
                         <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85" />
                         <circle class="progress-ring-circle" cx="100" cy="100" r="85"
-                                style="stroke-dasharray: 534; stroke-dashoffset: {{ 534 | minus: site.data.quest.quest.completed_projects | times: 534 | divided_by: site.data.quest.quest.total_projects }};" />
+                                style="stroke-dasharray: 534; stroke-dashoffset: 534;" />
                     </svg>
                     <div class="progress-ring-text">
                         <span class="progress-number">{{ site.data.quest.quest.completed_projects }}</span>
@@ -34,31 +34,31 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
                 <!-- Quick Stats Grid -->
                 <div class="hero-stats-grid">
                     <div class="hero-stat">
-                        <i class="fas fa-calendar-check"></i>
+                        <i class="fas fa-rocket"></i>
                         <div class="stat-content">
-                            <span class="stat-value">{{ site.data.quest.quest.completed_projects }}</span>
-                            <span class="stat-label">Completed</span>
+                            <span class="stat-value">Phase 1</span>
+                            <span class="stat-label">Current Phase</span>
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="stat-content">
+                            <span class="stat-value">{{ site.data.quest.quest.completed_projects }}/7</span>
+                            <span class="stat-label">Micro-Projects</span>
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <i class="fas fa-calendar-day"></i>
+                        <div class="stat-content">
+                            <span class="stat-value">Week 2</span>
+                            <span class="stat-label">Of Month 1</span>
                         </div>
                     </div>
                     <div class="hero-stat">
                         <i class="fas fa-fire"></i>
                         <div class="stat-content">
-                            <span class="stat-value">{{ site.data.quest.quest.total_projects | minus: site.data.quest.quest.completed_projects }}</span>
-                            <span class="stat-label">Remaining</span>
-                        </div>
-                    </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-layer-group"></i>
-                        <div class="stat-content">
                             <span class="stat-value">7</span>
-                            <span class="stat-label">Hub Apps</span>
-                        </div>
-                    </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-clock"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">12</span>
-                            <span class="stat-label">Months</span>
+                            <span class="stat-label">To Phase 2</span>
                         </div>
                     </div>
                 </div>
@@ -114,38 +114,62 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
 
                 <div class="phases-timeline">
                     {% for phase in site.data.quest.quest.phases %}
-                    <div class="phase-card {% if phase.status == 'in-progress' %}active{% elsif phase.status == 'completed' %}completed{% endif %}">
-                        <div class="phase-header">
+                    <div class="phase-card {% if phase.status == 'in-progress' %}active{% elsif phase.status == 'completed' %}completed{% endif %}" data-phase="{{ phase.phase_number }}">
+                        <div class="phase-header-clickable" onclick="togglePhase({{ phase.phase_number }})">
                             <div class="phase-icon">
-                                {% if phase.status == 'completed' %}
-                                    <i class="fas fa-check-circle"></i>
-                                {% elsif phase.status == 'in-progress' %}
-                                    <i class="fas fa-spinner fa-pulse"></i>
-                                {% else %}
-                                    <i class="fas fa-circle"></i>
-                                {% endif %}
+                                <i class="{{ phase.icon }}"></i>
                             </div>
                             <div class="phase-info">
-                                <h3>{{ phase.name }}</h3>
+                                <h3>Phase {{ phase.phase_number }}: {{ phase.name }}</h3>
                                 <span class="phase-dates">{{ phase.start }} - {{ phase.end }}</span>
                             </div>
-                            <div class="phase-status">
+                            <div class="phase-summary">
+                                {% if phase.target_projects > 0 %}
+                                <span class="phase-percentage">{{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%</span>
+                                {% endif %}
                                 <span class="status-badge {{ phase.status }}">
-                                    {% if phase.status == 'completed' %}✅ Done
-                                    {% elsif phase.status == 'in-progress' %}🔄 Active
-                                    {% else %}⏳ Planned{% endif %}
+                                    {% if phase.status == 'completed' %}
+                                        <span class="badge-icon">✓</span>
+                                        <span class="badge-text">Done</span>
+                                    {% elsif phase.status == 'in-progress' %}
+                                        <span class="badge-icon pulse">●</span>
+                                        <span class="badge-text">Active</span>
+                                    {% else %}
+                                        <span class="badge-icon">○</span>
+                                        <span class="badge-text">Planned</span>
+                                    {% endif %}
                                 </span>
                             </div>
+                            <div class="phase-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
-                        <p class="phase-description">{{ phase.description }}</p>
-                        <div class="phase-progress">
-                            <div class="phase-progress-header">
-                                <span>{{ phase.completed_projects }}/{{ phase.target_projects }} Projects</span>
-                                <span>{{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%</span>
+
+                        <div class="phase-details" id="phase-{{ phase.phase_number }}-details">
+                            <p class="phase-description">{{ phase.description }}</p>
+
+                            {% if phase.goals %}
+                            <div class="phase-goals">
+                                <h4><i class="fas fa-bullseye"></i> Key Goals</h4>
+                                <ul>
+                                    {% for goal in phase.goals %}
+                                    <li class="{% if goal.completed %}completed{% endif %}">{{ goal.text }}</li>
+                                    {% endfor %}
+                                </ul>
                             </div>
-                            <div class="phase-progress-bar">
-                                <div class="phase-progress-fill" style="width: {{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%"></div>
+                            {% endif %}
+
+                            {% if phase.target_projects > 0 %}
+                            <div class="phase-progress">
+                                <div class="phase-progress-header">
+                                    <span>{{ phase.completed_projects }}/{{ phase.target_projects }} Projects</span>
+                                    <span>{{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%</span>
+                                </div>
+                                <div class="phase-progress-bar">
+                                    <div class="phase-progress-fill" style="width: {{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%"></div>
+                                </div>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
@@ -196,32 +220,15 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
                         <!-- Progress Section -->
                         <div class="hub-progress-section">
                             <div class="progress-info">
-                                <span class="progress-label">Development Progress</span>
-                                <span class="progress-percentage">{{ hub.progress }}%</span>
+                                <span class="progress-label">{{ hub.progress }}% Complete</span>
+                                {% if hub.target_features %}
+                                <span class="progress-count">{{ hub.completed_features }}/{{ hub.target_features }} Features</span>
+                                {% endif %}
                             </div>
                             <div class="hub-progress-bar">
                                 <div class="hub-progress-fill" style="width: {{ hub.progress }}%; background: {{ hub.color }};"></div>
                             </div>
                         </div>
-
-                        <!-- Features List -->
-                        {% if hub.features %}
-                        <div class="hub-features-list">
-                            <h4><i class="fas fa-list-check"></i> Key Features</h4>
-                            <div class="features-grid">
-                                {% for feature in hub.features %}
-                                <div class="feature-item {{ feature.status }}">
-                                    <span class="feature-icon">
-                                        {% if feature.status == 'completed' %}<i class="fas fa-check-circle"></i>
-                                        {% elsif feature.status == 'in-progress' %}<i class="fas fa-spinner fa-pulse"></i>
-                                        {% else %}<i class="far fa-circle"></i>{% endif %}
-                                    </span>
-                                    <span class="feature-name">{{ feature.name }}</span>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        {% endif %}
 
                         <!-- Hub Footer -->
                         <div class="hub-card-footer">
@@ -344,3 +351,29 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
         </div>
     </section>
 </div>
+
+<script>
+// Toggle phase details
+function togglePhase(phaseNumber) {
+    const details = document.getElementById(`phase-${phaseNumber}-details`);
+    const card = document.querySelector(`[data-phase="${phaseNumber}"]`);
+    const toggle = card.querySelector('.phase-toggle i');
+
+    if (details.classList.contains('expanded')) {
+        details.classList.remove('expanded');
+        toggle.style.transform = 'rotate(0deg)';
+    } else {
+        details.classList.add('expanded');
+        toggle.style.transform = 'rotate(180deg)';
+    }
+}
+
+// Auto-expand active phase on load
+document.addEventListener('DOMContentLoaded', function() {
+    const activePhase = document.querySelector('.phase-card.active');
+    if (activePhase) {
+        const phaseNumber = activePhase.getAttribute('data-phase');
+        togglePhase(phaseNumber);
+    }
+});
+</script>

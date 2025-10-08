@@ -124,6 +124,10 @@
     display: flex;
     gap: $spacing-md;
     margin-top: $spacing-md;
+
+    @media (max-width: $breakpoint-mobile) {
+        justify-content: center;
+    }
 }
 
 .social-link {

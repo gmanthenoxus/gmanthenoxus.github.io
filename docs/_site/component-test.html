@@ -91,7 +91,10 @@
 
     
     <main id="main-content" class="main-content">
-        <style>
+        <!-- Import Projects SCSS for card styling -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<style>
 /* Test page specific styles */
 .test-section {
     padding: 3rem 0;
@@ -413,6 +416,137 @@
         </div>
     </section>
 
+    <!-- Project Card Component -->
+    <section class="test-section">
+        <div class="container">
+            <div class="test-header">
+                <h2>Project Card Component</h2>
+                <p>Reusable project card design from projects page</p>
+            </div>
+
+            <div class="component-demo">
+                <div class="component-label">Sample Project Card</div>
+                <div class="projects-grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;">
+                    <article class="project-card">
+                        <!-- Project Header -->
+                        <div class="project-header">
+                            <!-- Background Image -->
+                            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop');">
+                                <div class="project-overlay"></div>
+                            </div>
+
+                            <!-- Status Badge -->
+                            <div class="project-status completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Completed</span>
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div class="project-progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="project-content">
+                            <!-- Hobby Tag -->
+                            <div class="project-hobby-tag tech">
+                                <i class="fas fa-code"></i>
+                                <span>Tech</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                <a href="#">Sample Project Title</a>
+                            </h3>
+
+                            <p class="project-description">This is a sample project card demonstrating the design and layout used across the projects page. It includes all key elements like status, progress, tech stack, and links.</p>
+
+                            <!-- Tech Stack -->
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">+2 more</span>
+                            </div>
+                        </div>
+
+                        <!-- Project Footer -->
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View on GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="project-view-more">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <!-- Project Header -->
+                        <div class="project-header">
+                            <!-- Background Image -->
+                            <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop');">
+                                <div class="project-overlay"></div>
+                            </div>
+
+                            <!-- Status Badge -->
+                            <div class="project-status development">
+                                <i class="fas fa-cog fa-spin"></i>
+                                <span>In Progress</span>
+                            </div>
+
+                            <!-- Progress Bar -->
+                            <div class="project-progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Project Content -->
+                        <div class="project-content">
+                            <!-- Hobby Tag -->
+                            <div class="project-hobby-tag fitness">
+                                <i class="fas fa-dumbbell"></i>
+                                <span>Fitness</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                <a href="#">In Progress Project</a>
+                            </h3>
+
+                            <p class="project-description">This card shows a project currently in development with 65% progress. The status badge animates to indicate active work.</p>
+
+                            <!-- Tech Stack -->
+                            <div class="project-tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Flask</span>
+                            </div>
+                        </div>
+
+                        <!-- Project Footer -->
+                        <div class="project-footer">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View on GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="project-view-more">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div style="text-align: center; padding: 4rem 0;">
         <h2 style="color: #10b981; margin-bottom: 1rem;">✅ All Components Loaded Successfully!</h2>
         <p style="color: #718096; margin-bottom: 2rem;">If you can see all components above with proper styling, the component system is working correctly.</p>
@@ -469,20 +603,6 @@
             <div class="footer-posts">
                 <h4 class="footer-heading">Latest Posts</h4>
                 <ul class="footer-post-list">
-                    
-                    <li class="footer-post-item">
-                        <a href="/passion/2025/09/04/the-49-project-quest-copy-2.html" class="footer-post-link">
-                            <span class="footer-post-title">The 49 Project Quest</span>
-                            <span class="footer-post-date">Sep 04</span>
-                        </a>
-                    </li>
-                    
-                    <li class="footer-post-item">
-                        <a href="/tech/2025/09/03/the-49-project-quest.html" class="footer-post-link">
-                            <span class="footer-post-title">The 49 Project Quest</span>
-                            <span class="footer-post-date">Sep 03</span>
-                        </a>
-                    </li>
                     
                     <li class="footer-post-item">
                         <a href="/journey/2025/09/03/the-49-project-quest-copy.html" class="footer-post-link">

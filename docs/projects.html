@@ -15,23 +15,6 @@ description: "Explore my collection of passion-driven projects across multiple d
                 </div>
                 <h1>{{ page.title }}</h1>
                 <p class="hero-subtitle">{{ page.description }}</p>
-                <div class="hero-description">
-                    <p>Every project is a journey from idea to reality. Each build represents countless hours of learning, problem-solving, and creative exploration across my favorite domains.</p>
-                </div>
-                <div class="hero-quick-stats">
-                    <div class="quick-stat">
-                        <i class="fas fa-code"></i>
-                        <span>{{ site.projects.size }} Projects</span>
-                    </div>
-                    <div class="quick-stat">
-                        <i class="fas fa-heart"></i>
-                        <span>8 Hobbies</span>
-                    </div>
-                    <div class="quick-stat">
-                        <i class="fas fa-infinity"></i>
-                        <span>Always Building</span>
-                    </div>
-                </div>
             </div>
             
             <!-- Floating Tech Icons -->
@@ -56,6 +39,7 @@ description: "Explore my collection of passion-driven projects across multiple d
                 <p>A collection of passion-driven builds spanning multiple domains</p>
             </div>
             
+            {% if site.projects.size > 0 %}
             <div class="projects-grid">
                 {% for project in site.projects %}
                 <article class="project-card" data-hobby="{{ project.hobby }}">
@@ -68,7 +52,7 @@ description: "Explore my collection of passion-driven projects across multiple d
                                 <i class="fas fa-code"></i>
                             </div>
                         {% endif %}
-                        
+
                         <!-- Status Badge -->
                         <div class="project-status {{ project.status | default: 'completed' }}">
                             {% if project.status == 'development' %}
@@ -82,13 +66,13 @@ description: "Explore my collection of passion-driven projects across multiple d
                                 <span>Completed</span>
                             {% endif %}
                         </div>
-                        
+
                         <!-- Progress Bar -->
                         <div class="project-progress-bar">
                             <div class="progress-fill" style="width: {{ project.progress | default: 100 }}%"></div>
                         </div>
                     </div>
-                    
+
                     <!-- Project Content -->
                     <div class="project-content">
                         <!-- Hobby Tag -->
@@ -97,13 +81,13 @@ description: "Explore my collection of passion-driven projects across multiple d
                             <i class="{{ hobby_data.icon }}"></i>
                             <span>{{ hobby_data.name }}</span>
                         </div>
-                        
+
                         <h3 class="project-title">
                             <a href="{{ project.url }}">{{ project.title }}</a>
                         </h3>
-                        
+
                         <p class="project-description">{{ project.description }}</p>
-                        
+
                         <!-- Tech Stack -->
                         {% if project.tech_stack %}
                         <div class="project-tech-stack">
@@ -116,7 +100,7 @@ description: "Explore my collection of passion-driven projects across multiple d
                         </div>
                         {% endif %}
                     </div>
-                    
+
                     <!-- Project Footer -->
                     <div class="project-footer">
                         <div class="project-links">
@@ -139,6 +123,76 @@ description: "Explore my collection of passion-driven projects across multiple d
                 </article>
                 {% endfor %}
             </div>
+            {% else %}
+            <!-- Empty State -->
+            <div class="projects-empty-state">
+                <div class="empty-state-content">
+                    <div class="empty-state-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2>The Journey Begins</h2>
+                    <p class="empty-state-subtitle">The 49 Project Quest is underway, and projects will appear here as they're completed.</p>
+
+                    <div class="empty-state-stats">
+                        <div class="empty-stat">
+                            <span class="stat-number">49</span>
+                            <span class="stat-label">Projects Planned</span>
+                        </div>
+                        <div class="empty-stat">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Domains</span>
+                        </div>
+                        <div class="empty-stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Months</span>
+                        </div>
+                    </div>
+
+                    <div class="empty-state-message">
+                        <i class="fas fa-info-circle"></i>
+                        <p>Currently in <strong>Phase 1: Foundation & Momentum</strong> — building the first 7 micro-projects to establish systems and validate ideas.</p>
+                    </div>
+
+                    <div class="empty-state-actions">
+                        <a href="/quest-progress/" class="btn btn-primary btn-large">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Track Quest Progress</span>
+                        </a>
+                        <a href="/blog/49-project-quest/" class="btn btn-secondary btn-large">
+                            <i class="fas fa-book-open"></i>
+                            <span>Read About the Quest</span>
+                        </a>
+                    </div>
+
+                    <div class="empty-state-timeline">
+                        <h3><i class="fas fa-calendar-alt"></i> What's Coming</h3>
+                        <div class="timeline-items">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <h4>Phase 1 (Months 1-2)</h4>
+                                    <p>7 micro-projects across all domains</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <h4>Phase 2 (Months 3-8)</h4>
+                                    <p>42 core projects, one domain at a time</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <h4>Phase 3 (Months 9-10)</h4>
+                                    <p>7 hub applications integrating projects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </section>
 

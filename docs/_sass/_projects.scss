@@ -745,50 +745,80 @@
   animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+// Scoped button styles for projects page only
+.projects-page,
+.projects-empty-state {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 
-  i {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
+    span, i {
+      position: relative;
+      z-index: 2;
+    }
+
+    i {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover i {
+      transform: scale(1.1);
+    }
   }
 
-  &:hover i {
-    transform: scale(1.1);
+  .btn-primary {
+    background: linear-gradient(135deg, $hero-green, $hero-blue);
+    color: white !important;
+    box-shadow: 0 6px 20px rgba($hero-green, 0.3);
+    border: none;
+
+    // Shine effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+      z-index: 1;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba($hero-green, 0.4);
+      color: white !important;
+
+      &::before {
+        left: 100%;
+      }
+    }
   }
-}
 
-.btn-primary {
-  background: white;
-  color: $hero-green;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  .btn-secondary {
+    background: white;
+    color: $hero-green !important;
+    border: 2px solid $hero-green;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  }
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px);
+    &:hover {
+      background: $hero-green;
+      color: white !important;
+      border-color: $hero-green;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba($hero-green, 0.3);
+    }
   }
 }
 
@@ -981,6 +1011,222 @@
 
   .project-title a {
     font-size: 1.25rem;
+  }
+}
+
+// Empty State Styles
+.projects-empty-state {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.empty-state-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.empty-state-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, $hero-green, $hero-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 40px rgba($hero-green, 0.3);
+  animation: floatIcon 3s ease-in-out infinite;
+
+  i {
+    font-size: 3.5rem;
+    color: white;
+  }
+}
+
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.empty-state-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.empty-state-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.empty-state-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 20px;
+  border: 2px solid #e5e7eb;
+}
+
+.empty-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, $hero-green, $hero-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.empty-state-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba($hero-green, 0.05), rgba($hero-blue, 0.05));
+  border-radius: 16px;
+  border: 2px solid rgba($hero-green, 0.2);
+  margin-bottom: 3rem;
+
+  i {
+    font-size: 1.5rem;
+    color: $hero-green;
+    flex-shrink: 0;
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: #374151;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+.empty-state-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.empty-state-timeline {
+  text-align: left;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 2rem;
+
+    i {
+      color: $hero-green;
+    }
+  }
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.timeline-marker {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, $hero-green, $hero-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba($hero-green, 0.3);
+}
+
+.timeline-content {
+  flex: 1;
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+  }
+}
+
+// Empty State Responsive
+@media (max-width: 768px) {
+  .empty-state-content h2 {
+    font-size: 2rem;
+  }
+
+  .empty-state-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .empty-state-actions {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .empty-state-timeline {
+    padding: 2rem 1.5rem;
+  }
+
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 }
 

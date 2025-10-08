@@ -13,29 +13,6 @@ subtitle: Where obsessions meet code
       </div>
       <h1>{{ page.title }}</h1>
       <p class="hero-subtitle">{{ page.subtitle }}</p>
-      <div class="hero-description">
-        <p>Every hobby tells a story. Every interest sparks innovation. Here's where curiosity meets code, and personal passions transform into digital solutions.</p>
-      </div>
-      <div class="hero-quick-stats">
-        {% assign project_count = 0 %}
-        {% for hobby in site.data.hobbies %}
-          {% if hobby.projects %}
-            {% assign project_count = project_count | plus: hobby.projects.size %}
-          {% endif %}
-        {% endfor %}
-        <div class="quick-stat">
-          <i class="fas fa-code"></i>
-          <span>{{ project_count }} Projects</span>
-        </div>
-        <div class="quick-stat">
-          <i class="fas fa-clock"></i>
-          <span>1000+ Hours</span>
-        </div>
-        <div class="quick-stat">
-          <i class="fas fa-infinity"></i>
-          <span>Endless Ideas</span>
-        </div>
-      </div>
     </div>
     <div class="floating-icons">
       <span class="float-icon" style="--delay: 0s"><i class="fas fa-tv"></i></span>

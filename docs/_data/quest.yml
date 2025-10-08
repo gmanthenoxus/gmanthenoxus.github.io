@@ -3,83 +3,204 @@
 
 quest:
   total_projects: 49
-  completed_projects: 2
+  completed_projects: 0
   start_date: "2025-09-01"
-  target_completion: "2026-09-01"
-  current_phase: "Foundation"
-  
-  # Quest phases with detailed tracking
+  target_completion: "2026-08-31"
+  current_phase: "Foundation & Momentum"
+  duration_months: 12
+
+  # Quest phases with detailed tracking (12-month journey)
   phases:
-    - name: "Foundation"
-      start: "Sept 2025"
-      end: "Dec 2025"
-      target_projects: 12
-      completed_projects: 2
+    - name: "Foundation & Momentum"
+      phase_number: 1
+      start: "Month 1"
+      end: "Month 2"
+      duration: "2 months"
+      target_projects: 7
+      completed_projects: 0
       status: "in-progress"
-      description: "Set up infrastructure and complete first 12 projects"
-      
-    - name: "Momentum"
-      start: "Jan 2026"
-      end: "Mar 2026"
-      target_projects: 12
+      description: "Establish systems, validate project ideas with micro-projects, and build public momentum"
+      icon: "fas fa-rocket"
+      goals:
+        - text: "Setup GitHub Org, Project Boards, and Public Blog"
+          completed: false
+        - text: "Finalize tech stack (Next.js, Supabase, Tailwind)"
+          completed: false
+        - text: "Complete Passion-Skills Audit for all 7 domains"
+          completed: false
+        - text: "Deploy 7 functional micro-projects"
+          completed: false
+        - text: "Establish consistent weekly work rhythm"
+          completed: false
+
+    - name: "Domain Deep Dive & Execution"
+      phase_number: 2
+      start: "Month 3"
+      end: "Month 8"
+      duration: "6 months"
+      target_projects: 42
       completed_projects: 0
       status: "planned"
-      description: "Build 12 more projects and establish workflow"
-      
-    - name: "Expansion"
-      start: "Apr 2026"
-      end: "Jun 2026"
-      target_projects: 12
-      completed_projects: 0
-      status: "planned"
-      description: "Scale up and create more complex integrations"
-      
-    - name: "Integration"
-      start: "Jul 2026"
-      end: "Aug 2026"
+      description: "Systematically build the core 42 projects, one domain at a time, advancing skills in each area"
+      icon: "fas fa-code"
+      goals:
+        - text: "Complete 42 projects across 7 domains"
+          completed: false
+        - text: "Demonstrate depth of skill in each domain"
+          completed: false
+        - text: "Collect and incorporate user feedback"
+          completed: false
+        - text: "Follow monthly rhythm: 2 weeks dev, 1 week testing, 1 week docs"
+          completed: false
+      monthly_focus:
+        - month: 3
+          domain: "Sports"
+          projects: 6
+        - month: 4
+          domain: "Anime"
+          projects: 6
+        - month: 5
+          domain: "Fitness"
+          projects: 6
+        - month: 6
+          domain: "Games"
+          projects: 6
+        - month: 7
+          domain: "Sneakers & Music"
+          projects: 4
+        - month: 8
+          domain: "Sneakers, Music & Tech"
+          projects: 14
+
+    - name: "Hub Integration & Refinement"
+      phase_number: 3
+      start: "Month 9"
+      end: "Month 10"
+      duration: "2 months"
       target_projects: 7
       completed_projects: 0
       status: "planned"
-      description: "Create 7 hub applications"
-      
-    - name: "Completion"
-      start: "Sep 2026"
-      end: "Sep 2026"
-      target_projects: 6
+      description: "Revisit and enhance the 7 hub applications, integrating the best projects from Phase 2 as core features"
+      icon: "fas fa-puzzle-piece"
+      goals:
+        - text: "Refine 7 feature-rich hub applications"
+          completed: false
+        - text: "Integrate Phase 2 projects as core features"
+          completed: false
+        - text: "Create seamless user experience within each hub"
+          completed: false
+        - text: "Establish hubs as definitive entry points"
+          completed: false
+
+    - name: "Ecosystem Unification"
+      phase_number: 4
+      start: "Month 11"
+      end: "Month 11"
+      duration: "1 month"
+      target_projects: 1
       completed_projects: 0
       status: "planned"
-      description: "Final 6 projects and capstone platform"
+      description: "Build the capstone platform that connects all hubs into a single, cohesive ecosystem"
+      icon: "fas fa-network-wired"
+      goals:
+        - text: "Unified 'Passport' Authentication across all hubs"
+          completed: false
+        - text: "Centralized Dashboard showing activity from all hubs"
+          completed: false
+        - text: "Cross-Domain Discovery features"
+          completed: false
+        - text: "Community & Social Layer"
+          completed: false
+        - text: "Public API Gateway"
+          completed: false
+
+    - name: "Launch & Evolution"
+      phase_number: 5
+      start: "Month 12"
+      end: "Month 12"
+      duration: "1 month"
+      target_projects: 0
+      completed_projects: 0
+      status: "planned"
+      description: "Public launch, community building, and strategic planning for the future"
+      icon: "fas fa-trophy"
+      goals:
+        - text: "Intensive beta testing and bug squashing"
+          completed: false
+        - text: "Finalize all documentation and tutorials"
+          completed: false
+        - text: "Coordinated public launch campaign"
+          completed: false
+        - text: "Onboard initial users and collect feedback"
+          completed: false
+        - text: "Conduct full retrospective and celebrate"
+          completed: false
+
+  # Weekly execution rhythm
+  weekly_rhythm:
+    monday: "Planning & Sprint Setup - Review weekly goals, clear blockers"
+    tuesday_wednesday: "Deep Development Work - Focus on building core features"
+    thursday: "Testing & Refinement - Use the projects, fix bugs, improve UX"
+    friday: "Documentation & Public Sharing - Write blog posts, update GitHub, post demos"
+    weekend: "Rest & Strategic Thinking - Recharge and review the big picture"
+
+  # Project categorization
+  project_types:
+    analysis:
+      count: 21
+      description: "Data analysis, ML models, insights, and research projects"
+      examples:
+        - "Genre Analysis & Tracking"
+        - "Player Comparison Tool"
+        - "Workout Clustering & Archetype Discovery"
+        - "Player Churn & Retention Predictor"
+    build:
+      count: 21
+      description: "Full applications, tools, games, and interactive experiences"
+      examples:
+        - "Sports League Management App"
+        - "Anime Battle Simulator"
+        - "Gamified Move-to-Earn Fitness App"
+        - "Dead and Injured (Game)"
+    hub:
+      count: 7
+      description: "Comprehensive hub applications integrating multiple projects"
+      examples:
+        - "AthleHub (Sports)"
+        - "AnimeVerse (Anime)"
+        - "RepCore (Fitness)"
+        - "Backlog (Games)"
 
   # The 7 major hubs
   hubs:
     - name: "AthleHub"
       category: "sports"
-      status: "in-progress"
-      progress: 30
+      status: "planned"
+      progress: 0
       description: "Community sports platform for coordination, tracking, and recognition"
       color: "#FF6B35"
       icon: "fas fa-basketball-ball"
       target_features: 6
-      completed_features: 2
+      completed_features: 0
       features:
         - name: "Live Score Ticker"
-          status: "completed"
-          completion_date: "2025-10-15"
+          status: "planned"
+          target_date: "2025-09-15"
         - name: "Player Comparison Tool"
-          status: "completed"
-          completion_date: "2025-10-26"
+          status: "planned"
+          target_date: "2025-09-27"
         - name: "Team Manager"
-          status: "in-progress"
-          target_date: "2025-11-15"
+          status: "planned"
+          target_date: "2025-10-15"
         - name: "Event Coordinator"
           status: "planned"
-          target_date: "2025-12-01"
+          target_date: "2025-11-01"
         - name: "Stats Dashboard"
           status: "planned"
-          target_date: "2025-12-15"
+          target_date: "2025-11-15"
         - name: "Community Feed"
           status: "planned"
-          target_date: "2026-01-01"
+          target_date: "2025-12-01"
           
     - name: "AnimeVerse"
       category: "anime"
@@ -96,15 +217,15 @@ quest:
       features:
         - name: "Visual Taste Profile"
           status: "planned"
-          target_date: "2026-01-15"
+          target_date: "2025-12-15"
           description: "Analyze top 5 shows to build unique taste fingerprint"
         - name: "Advanced Social Discovery"
           status: "planned"
-          target_date: "2026-02-01"
+          target_date: "2026-01-01"
           description: "Curated reviews from friends and trusted community members"
         - name: "Unified Watch List"
           status: "planned"
-          target_date: "2026-02-15"
+          target_date: "2026-01-15"
           description: "Powerful list manager that syncs across all devices"
         - name: "Seasonal Hub"
           status: "planned"
@@ -199,58 +320,45 @@ quest:
 
   # Live activity feed - the engagement engine
   activity_log:
-    - date: "2025-10-26"
-      type: "project-complete"
-      title: "Player Stat Comparison Tool"
-      hub: "sports"
-      description: "Built interactive tool for comparing player statistics across seasons"
-      link: "/projects/player-stats"
-      
-    - date: "2025-10-24"
-      type: "blog-post"
-      title: "Building in Public: The Psychology Behind It"
-      description: "Published blog post about the psychological benefits of building in public"
-      link: "/blog/building-in-public-psychology"
-      
-    - date: "2025-10-20"
+    - date: "2025-09-09"
       type: "milestone"
-      title: "First Hub Progress: 30% Complete"
-      hub: "sports"
-      description: "AthleHub reaches 30% completion with 2 major features shipped"
-      
-    - date: "2025-10-15"
-      type: "project-complete"
-      title: "Live Score Ticker"
-      hub: "sports"
-      description: "Real-time sports score tracking widget with WebSocket integration"
-      link: "/projects/live-scores"
-      
-    - date: "2025-10-10"
+      title: "Quest Page Launched"
+      description: "Complete quest progress page with collapsible phases, hub cards, and dynamic tracking system"
+
+    - date: "2025-09-03"
+      type: "blog-post"
+      title: "The 49 Project Quest"
+      description: "Published comprehensive blog post announcing the quest and outlining the 12-month journey"
+      link: "/blog/49-project-quest"
+
+    - date: "2025-09-01"
       type: "quest-start"
       title: "The 49 Project Quest Begins"
-      description: "Officially launched the quest with infrastructure setup and planning"
-      link: "/blog/49-project-quest"
+      description: "Officially launched the quest with system setup, project planning, and tech stack finalization"
 
   # Current focus and next milestones
   current_focus:
-    title: "Team Manager for AthleHub"
-    description: "Building team creation, roster management, and scheduling system"
-    target_date: "2025-11-15"
-    progress: 45
-    
+    title: "Genre Analysis & Tracking (Anime Micro-Project)"
+    description: "Building interactive dashboard analyzing anime genre distribution, popularity trends, and personal viewing patterns"
+    target_date: "2025-09-20"
+    progress: 15
+
   next_milestones:
-    - title: "Complete AthleHub Team Manager"
-      date: "2025-11-15"
-      type: "feature"
-    - title: "Launch AthleHub Event Coordinator"
-      date: "2025-12-01"
-      type: "feature"
-    - title: "Foundation Phase Complete"
-      date: "2025-12-31"
+    - title: "Complete Genre Analysis & Tracking"
+      date: "2025-09-20"
+      type: "project"
+    - title: "Complete Player Comparison Tool"
+      date: "2025-09-27"
+      type: "project"
+    - title: "Complete Workout Personalization"
+      date: "2025-10-10"
+      type: "project"
+    - title: "Complete Phase 1 Micro-Projects"
+      date: "2025-10-31"
       type: "phase"
-    - title: "Start AnimeVault Development"
-      date: "2026-01-15"
-      type: "hub"
+    - title: "Start Phase 2: Sports Domain"
+      date: "2025-11-01"
+      type: "phase"
 
 # Meta information for social sharing
 meta:

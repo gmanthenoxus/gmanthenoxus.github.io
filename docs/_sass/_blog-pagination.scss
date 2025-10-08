@@ -148,6 +148,10 @@
     padding: 2px;
     gap: 2px;
 
+    @media (max-width: 768px) {
+        display: none;
+    }
+
     .view-btn {
         display: flex;
         align-items: center;

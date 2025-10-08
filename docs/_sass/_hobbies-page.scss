@@ -1,5 +1,4 @@
 // Hobbies Page Styles - Redesigned
-@use "sass:color";
 
 // ============================================================================
 // HERO SECTION - Redesigned
@@ -676,6 +675,7 @@ blockquote {
     position: relative;
     overflow: hidden;
     color: white;
+    border-radius: 0;
 
     // Radial overlay patterns
     &::before {
