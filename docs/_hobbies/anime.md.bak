@@ -183,28 +183,56 @@ favorites:
     episodes: 37
     url: "https://myanimelist.net/anime/1535/Death_Note"
 
-fun_facts:
-  - title: "Demon Slayer: Infinity Castle Breaks Records"
-    description: "Demon Slayer: Infinity Castle has become the highest-grossing anime film of all time, surpassing the previous record held by Mugen Train and breaking Japan's all-time box office records with unprecedented success."
+fun_facts_3:
+  - title: "Demon Slayer Shatters Box Office Records"
+    description: "Demon Slayer: Mugen Train became the highest-grossing anime film of all time, earning over $500 million worldwide and breaking Japan's all-time box office record previously held by Spirited Away for 19 years."
+    icon: "�"
+    category: "Records"
+    source: "https://www.guinnessworldrecords.com/world-records/highest-box-office-film-gross-anime"
+    source_name: "Guinness World Records"
+
+  - title: "One Piece: The Manga That Never Ends"
+    description: "With over 1,100 chapters and 500 million copies sold, One Piece holds the Guinness World Record as the best-selling manga series by a single author. Creator Eiichiro Oda has been writing it for over 25 years!"
+    icon: "�"
+    category: "Records"
+    source: "https://www.guinnessworldrecords.com/world-records/best-selling-comic-book-series-single-author"
+    source_name: "Guinness World Records"
+
+  - title: "Anime Tourism is a $2.4 Billion Industry"
+    description: "Anime-inspired tourism generates billions for Japan's economy. Cities featured in popular anime see visitor increases of 30-300%, with fans making pilgrimages to real-world locations from their favorite shows."
+    icon: "🗾"
+    category: "Impact"
+    source: "https://www.japantimes.co.jp/news/2019/09/04/business/anime-tourism-japan-economy"
+    source_name: "The Japan Times"
+
+fun_facts_4:
+  - title: "Demon Slayer Shatters Box Office Records"
+    description: "Demon Slayer: Mugen Train became the highest-grossing anime film of all time, earning over $500 million worldwide and breaking Japan's all-time box office record previously held by Spirited Away for 19 years."
     icon: "🎬"
     category: "Records"
-    
+    source: "https://www.guinnessworldrecords.com/world-records/highest-box-office-film-gross-anime"
+    source_name: "Guinness World Records"
+
   - title: "One Piece: The Manga That Never Ends"
     description: "With over 1,100 chapters and 500 million copies sold, One Piece holds the Guinness World Record as the best-selling manga series by a single author. Creator Eiichiro Oda has been writing it for over 25 years!"
     icon: "📚"
     category: "Records"
     source: "https://www.guinnessworldrecords.com/world-records/best-selling-comic-book-series-single-author"
     source_name: "Guinness World Records"
-    
+
   - title: "Anime Tourism is a $2.4 Billion Industry"
     description: "Anime-inspired tourism generates billions for Japan's economy. Cities featured in popular anime see visitor increases of 30-300%, with fans making pilgrimages to real-world locations from their favorite shows."
-    icon: "🗾"
+    icon: "�"
     category: "Impact"
-    
+    source: "https://www.japantimes.co.jp/news/2019/09/04/business/anime-tourism-japan-economy"
+    source_name: "The Japan Times"
+
   - title: "Voice Actors Are Japan's Hidden Superstars"
     description: "Japanese voice actors (seiyuu) have massive celebrity status with sold-out concerts, fan clubs, and endorsement deals. Top seiyuu like Kana Hanazawa and Mamoru Miyano earn millions and have dedicated fan followings rivaling pop stars."
     icon: "🎤"
     category: "Industry"
+    source: "https://www.animenewsnetwork.com/interest/2018-03-15/voice-actor-industry-in-japan"
+    source_name: "Anime News Network"
 
 trivia:
   - question: "In 'Bleach', what is the name of Ichigo's Zanpakutō that he first unleashes as a Bankai?"
@@ -219,14 +247,6 @@ trivia:
     options: ["The Law of Surprise", "The Force", "Equivalent Exchange", "The Way of the Samurai"]
     correct_answer: 2
     explanation: "Equivalent Exchange is the fundamental law: to obtain, something of equal value must be lost."
-  - question: "Which Studio Ghibli film was the first to win an Academy Award?"
-    options: ["Princess Mononoke", "Spirited Away", "Howl's Moving Castle", "My Neighbor Totoro"]
-    correct_answer: 1
-    explanation: "Spirited Away won the Academy Award for Best Animated Feature in 2003, making it the first anime film to win an Oscar."
-  - question: "In Attack on Titan, what is the name of the military branch that fights Titans outside the walls?"
-    options: ["Military Police", "Garrison Regiment", "Survey Corps", "Titan Defense Force"]
-    correct_answer: 2
-    explanation: "The Survey Corps (Scouting Legion) is the branch that ventures beyond the walls to fight Titans and explore the outside world."
 
 current_projects:
   - name: "The Ultimate Watchlist & Tracker"

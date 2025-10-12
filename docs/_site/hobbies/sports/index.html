@@ -222,42 +222,94 @@
                 </div>
             </section>
 
+            <!-- Favorites Section -->
+            
+
             <!-- Fun Facts Section -->
             
             <section class="fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
+
                 <div class="facts-grid">
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Analytics Revolution', 'Every NBA team now employs at least 3 full-time data scientists, and player tracking generates over 1 million data points per game through cameras and sensors.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Analytics Revolution</h3>
-                        <p>Every NBA team now employs at least 3 full-time data scientists, and player tracking generates over 1 million data points per game through cameras and sensors.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">📊</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Analytics Revolution</h3>
+
+                            
+
+                            <p>Every NBA team now employs at least 3 full-time data scientists, and player tracking generates over 1 million data points per game through cameras and sensors.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Analytics Revolution" data-description="Every NBA team now employs at least 3 full-time data scientists, and player tracking generates over 1 million data points per game through cameras and sensors." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Fantasy Sports Boom', 'Fantasy sports generate more revenue than the entire movie theater industry, with over 60 million players in North America spending an average of $653 per year.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Fantasy Sports Boom</h3>
-                        <p>Fantasy sports generate more revenue than the entire movie theater industry, with over 60 million players in North America spending an average of $653 per year.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">💰</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Fantasy Sports Boom</h3>
+
+                            
+
+                            <p>Fantasy sports generate more revenue than the entire movie theater industry, with over 60 million players in North America spending an average of $653 per year.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Fantasy Sports Boom" data-description="Fantasy sports generate more revenue than the entire movie theater industry, with over 60 million players in North America spending an average of $653 per year." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Prediction Accuracy', 'The best sports betting algorithms achieve only 55-60% accuracy, proving that sports remain beautifully unpredictable despite advanced analytics.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Prediction Accuracy</h3>
-                        <p>The best sports betting algorithms achieve only 55-60% accuracy, proving that sports remain beautifully unpredictable despite advanced analytics.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">🎯</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Prediction Accuracy</h3>
+
+                            
+
+                            <p>The best sports betting algorithms achieve only 55-60% accuracy, proving that sports remain beautifully unpredictable despite advanced analytics.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Prediction Accuracy" data-description="The best sports betting algorithms achieve only 55-60% accuracy, proving that sports remain beautifully unpredictable despite advanced analytics." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Real-Time Impact', 'Modern sports analytics can predict injury risk with 85% accuracy up to 2 weeks in advance, revolutionizing player health management.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Real-Time Impact</h3>
-                        <p>Modern sports analytics can predict injury risk with 85% accuracy up to 2 weeks in advance, revolutionizing player health management.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">⚡</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Real-Time Impact</h3>
+
+                            
+
+                            <p>Modern sports analytics can predict injury risk with 85% accuracy up to 2 weeks in advance, revolutionizing player health management.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Real-Time Impact" data-description="Modern sports analytics can predict injury risk with 85% accuracy up to 2 weeks in advance, revolutionizing player health management." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
                 </div>
@@ -267,60 +319,336 @@
             <!-- Interactive Trivia Section -->
             
             <section class="trivia-section">
-                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                <div class="trivia-container">
+                <div class="section-header-with-toggle">
+                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
+                    <div class="design-toggle">
+                        <button class="toggle-btn" data-design="optionA">Option A</button>
+                        <button class="toggle-btn active" data-design="optionB">Option B</button>
+                        <button class="toggle-btn" data-design="optionC">Option C</button>
+                        <button class="toggle-btn" data-design="optionD">Option D</button>
+                    </div>
+                </div>
+
+                <!-- Option A: Enhanced with Score & Share -->
+                <div class="trivia-container trivia-optionA">
+                    <div class="trivia-score-bar">
+                        <span class="score-display">Score: <span id="scoreA">0</span>/2</span>
+                        <div class="progress-dots" id="progressA"></div>
+                    </div>
+
                     
-                    <div class="trivia-card" data-question="0" data-correct-answer="">
+                    <div class="trivia-card trivia-card-a" data-question="0" data-correct-answer="">
+                        <div class="question-header">
+                            <span class="question-number">Question 1 of 2</span>
+                        </div>
                         <h3>Which sport generates the most data per game?</h3>
                         <div class="options-grid">
                             
-                            <button class="option-btn" data-index="0" onclick="selectAnswer(0, 0)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="0">
                                 {"text" => "Basketball", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="1" onclick="selectAnswer(0, 1)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="1">
                                 {"text" => "Baseball", "correct" => true}
                             </button>
                             
-                            <button class="option-btn" data-index="2" onclick="selectAnswer(0, 2)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="2">
                                 {"text" => "Football", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="3" onclick="selectAnswer(0, 3)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="3">
                                 {"text" => "Soccer", "correct" => false}
                             </button>
                             
                         </div>
-                        <div class="trivia-feedback" style="display: none;">
-                            <p><strong>❌ Incorrect</strong></p>
-                            <p>Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!</p>
+                        <div class="trivia-feedback feedback-a" style="display: none;">
+                            <div class="feedback-icon"></div>
+                            <p class="feedback-title"></p>
+                            <p class="feedback-subtitle">💡 Did you know?</p>
+                            <p class="feedback-text">Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!</p>
                         </div>
                     </div>
                     
-                    <div class="trivia-card" data-question="1" data-correct-answer="">
+                    <div class="trivia-card trivia-card-a" data-question="1" data-correct-answer="">
+                        <div class="question-header">
+                            <span class="question-number">Question 2 of 2</span>
+                        </div>
                         <h3>What does WAR stand for in baseball analytics?</h3>
                         <div class="options-grid">
                             
-                            <button class="option-btn" data-index="0" onclick="selectAnswer(1, 0)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="0">
                                 {"text" => "Wins Above Replacement", "correct" => true}
                             </button>
                             
-                            <button class="option-btn" data-index="1" onclick="selectAnswer(1, 1)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="1">
                                 {"text" => "Weighted Average Rating", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="2" onclick="selectAnswer(1, 2)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="2">
                                 {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="3" onclick="selectAnswer(1, 3)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="3">
                                 {"text" => "Weekly Athletic Ranking", "correct" => false}
                             </button>
                             
                         </div>
-                        <div class="trivia-feedback" style="display: none;">
-                            <p><strong>❌ Incorrect</strong></p>
-                            <p>WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics.</p>
+                        <div class="trivia-feedback feedback-a" style="display: none;">
+                            <div class="feedback-icon"></div>
+                            <p class="feedback-title"></p>
+                            <p class="feedback-subtitle">💡 Did you know?</p>
+                            <p class="feedback-text">WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="trivia-completion" id="completionA" style="display: none;">
+                        <div class="completion-icon">🎉</div>
+                        <h3>Quiz Complete!</h3>
+                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/2 🌟</p>
+                        <p class="completion-message" id="messageA"></p>
+                        <div class="completion-actions">
+                            <button class="share-score-btn" onclick="shareScore('A')">
+                                <i class="fas fa-share-alt"></i> Share Score
+                            </button>
+                            <button class="try-again-btn" onclick="resetQuiz('A')">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option B: Quiz Mode with Timer -->
+                <div class="trivia-container trivia-optionB active">
+                    <div class="quiz-start-screen" id="startScreenB">
+                        <div class="start-icon">⏱️</div>
+                        <h3>Timed Quiz Challenge</h3>
+                        <p>Answer 2 questions as fast as you can!</p>
+                        <p class="timer-info">⚡ 30 seconds per question</p>
+                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                            <i class="fas fa-play"></i> Start Quiz
+                        </button>
+                    </div>
+
+                    <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
+                        <div class="quiz-header">
+                            <div class="quiz-progress">
+                                <span class="question-counter">Question <span id="currentB">1</span>/2</span>
+                                <div class="progress-dots-container" id="progressDotsB"></div>
+                            </div>
+                            <div class="quiz-timer">
+                                <i class="fas fa-clock"></i>
+                                <span id="timerB">30</span>s
+                            </div>
+                        </div>
+
+                        
+                        <div class="trivia-card trivia-card-b" data-question="0" data-correct-answer="" style="">
+                            <h3>Which sport generates the most data per game?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="0">
+                                    {"text" => "Basketball", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="1">
+                                    {"text" => "Baseball", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="2">
+                                    {"text" => "Football", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="3">
+                                    {"text" => "Soccer", "correct" => false}
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="trivia-card trivia-card-b" data-question="1" data-correct-answer="" style="display: none;">
+                            <h3>What does WAR stand for in baseball analytics?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="0">
+                                    {"text" => "Wins Above Replacement", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="1">
+                                    {"text" => "Weighted Average Rating", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="2">
+                                    {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="3">
+                                    {"text" => "Weekly Athletic Ranking", "correct" => false}
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="trivia-completion" id="completionB" style="display: none;">
+                        <div class="completion-card-capture" id="completionCardB">
+                            <div class="completion-icon">⏱️</div>
+                            <h3>Quiz Complete!</h3>
+                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/2 🌟</p>
+                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
+                            <p class="completion-message" id="messageBText"></p>
+                        </div>
+
+                        <div class="completion-actions">
+                            <button class="share-score-btn" onclick="shareScoreWithImage('B')">
+                                <i class="fas fa-share-alt"></i> Share Score
+                            </button>
+                            <button class="try-again-btn" onclick="resetQuiz('B')">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                        </div>
+
+                        <!-- Go to Another Hobby Options -->
+                        <div class="hobby-navigation-options">
+                            <p class="nav-prompt">Explore another hobby:</p>
+                            <div class="hobby-nav-buttons" id="hobbyNavButtons"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option C: Difficulty Levels -->
+                <div class="trivia-container trivia-optionC">
+                    <div class="difficulty-tabs">
+                        <button class="difficulty-tab active" data-difficulty="easy">
+                            <i class="fas fa-smile"></i> Easy
+                        </button>
+                        <button class="difficulty-tab" data-difficulty="medium">
+                            <i class="fas fa-meh"></i> Medium
+                        </button>
+                        <button class="difficulty-tab" data-difficulty="hard">
+                            <i class="fas fa-fire"></i> Hard
+                        </button>
+                    </div>
+
+                    <div class="difficulty-content">
+                        <div class="difficulty-badge">
+                            <span class="badge-icon">🌟</span>
+                            <span class="badge-text">Easy Mode</span>
+                        </div>
+
+                        
+                        <div class="trivia-card trivia-card-c" data-question="0" data-correct-answer="">
+                            <h3>Which sport generates the most data per game?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="0">
+                                    {"text" => "Basketball", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="1">
+                                    {"text" => "Baseball", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="2">
+                                    {"text" => "Football", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="3">
+                                    {"text" => "Soccer", "correct" => false}
+                                </button>
+                                
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trivia-card trivia-card-c" data-question="1" data-correct-answer="">
+                            <h3>What does WAR stand for in baseball analytics?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="0">
+                                    {"text" => "Wins Above Replacement", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="1">
+                                    {"text" => "Weighted Average Rating", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="2">
+                                    {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="3">
+                                    {"text" => "Weekly Athletic Ranking", "correct" => false}
+                                </button>
+                                
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Option D: Minimal Polish -->
+                <div class="trivia-container trivia-optionD">
+                    
+                    <div class="trivia-card trivia-card-d" data-question="0" data-correct-answer="">
+                        <h3>Which sport generates the most data per game?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="0">
+                                {"text" => "Basketball", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="1">
+                                {"text" => "Baseball", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="2">
+                                {"text" => "Football", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="3">
+                                {"text" => "Soccer", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="1" data-correct-answer="">
+                        <h3>What does WAR stand for in baseball analytics?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="0">
+                                {"text" => "Wins Above Replacement", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="1">
+                                {"text" => "Weighted Average Rating", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="2">
+                                {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="3">
+                                {"text" => "Weekly Athletic Ranking", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics.</p>
                         </div>
                     </div>
                     

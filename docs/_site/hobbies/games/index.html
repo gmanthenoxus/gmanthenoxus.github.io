@@ -233,42 +233,94 @@
                 </div>
             </section>
 
+            <!-- Favorites Section -->
+            
+
             <!-- Fun Facts Section -->
             
             <section class="fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
+
                 <div class="facts-grid">
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Strategic Complexity', 'Chess has approximately 10^120 possible games, but modern board games like Go have even more possibilities at 10^170, making them more complex than the number of atoms in the observable universe.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Strategic Complexity</h3>
-                        <p>Chess has approximately 10^120 possible games, but modern board games like Go have even more possibilities at 10^170, making them more complex than the number of atoms in the observable universe.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">🎯</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Strategic Complexity</h3>
+
+                            
+
+                            <p>Chess has approximately 10^120 possible games, but modern board games like Go have even more possibilities at 10^170, making them more complex than the number of atoms in the observable universe.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Strategic Complexity" data-description="Chess has approximately 10^120 possible games, but modern board games like Go have even more possibilities at 10^170, making them more complex than the number of atoms in the observable universe." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Cognitive Benefits', 'Regular board game players show 15% better problem-solving skills and 20% improved memory retention compared to non-players, with benefits lasting well into older age.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Cognitive Benefits</h3>
-                        <p>Regular board game players show 15% better problem-solving skills and 20% improved memory retention compared to non-players, with benefits lasting well into older age.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">🧠</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Cognitive Benefits</h3>
+
+                            
+
+                            <p>Regular board game players show 15% better problem-solving skills and 20% improved memory retention compared to non-players, with benefits lasting well into older age.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Cognitive Benefits" data-description="Regular board game players show 15% better problem-solving skills and 20% improved memory retention compared to non-players, with benefits lasting well into older age." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Social Connection', 'Board game cafes have increased by 300% in the last decade, creating new social spaces where people disconnect from screens and connect with each other.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Social Connection</h3>
-                        <p>Board game cafes have increased by 300% in the last decade, creating new social spaces where people disconnect from screens and connect with each other.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">🌟</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Social Connection</h3>
+
+                            
+
+                            <p>Board game cafes have increased by 300% in the last decade, creating new social spaces where people disconnect from screens and connect with each other.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Social Connection" data-description="Board game cafes have increased by 300% in the last decade, creating new social spaces where people disconnect from screens and connect with each other." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('Innovation Engine', 'Many successful video game mechanics originated in board games, including deck-building, worker placement, and area control systems that now power billion-dollar digital games.')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>Innovation Engine</h3>
-                        <p>Many successful video game mechanics originated in board games, including deck-building, worker placement, and area control systems that now power billion-dollar digital games.</p>
+                    <div class="fact-card fact-card-option2">
+                        
+                        <div class="fact-icon-bg">💡</div>
+                        
+
+                        <div class="fact-content-layer">
+                            <h3>Innovation Engine</h3>
+
+                            
+
+                            <p>Many successful video game mechanics originated in board games, including deck-building, worker placement, and area control systems that now power billion-dollar digital games.</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Innovation Engine" data-description="Many successful video game mechanics originated in board games, including deck-building, worker placement, and area control systems that now power billion-dollar digital games." data-category="">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     
                 </div>
@@ -278,60 +330,336 @@
             <!-- Interactive Trivia Section -->
             
             <section class="trivia-section">
-                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                <div class="trivia-container">
+                <div class="section-header-with-toggle">
+                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
+                    <div class="design-toggle">
+                        <button class="toggle-btn" data-design="optionA">Option A</button>
+                        <button class="toggle-btn active" data-design="optionB">Option B</button>
+                        <button class="toggle-btn" data-design="optionC">Option C</button>
+                        <button class="toggle-btn" data-design="optionD">Option D</button>
+                    </div>
+                </div>
+
+                <!-- Option A: Enhanced with Score & Share -->
+                <div class="trivia-container trivia-optionA">
+                    <div class="trivia-score-bar">
+                        <span class="score-display">Score: <span id="scoreA">0</span>/2</span>
+                        <div class="progress-dots" id="progressA"></div>
+                    </div>
+
                     
-                    <div class="trivia-card" data-question="0" data-correct-answer="">
+                    <div class="trivia-card trivia-card-a" data-question="0" data-correct-answer="">
+                        <div class="question-header">
+                            <span class="question-number">Question 1 of 2</span>
+                        </div>
                         <h3>Which board game is considered the oldest known board game still played today?</h3>
                         <div class="options-grid">
                             
-                            <button class="option-btn" data-index="0" onclick="selectAnswer(0, 0)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="0">
                                 {"text" => "Chess", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="1" onclick="selectAnswer(0, 1)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="1">
                                 {"text" => "Backgammon", "correct" => true}
                             </button>
                             
-                            <button class="option-btn" data-index="2" onclick="selectAnswer(0, 2)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="2">
                                 {"text" => "Go", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="3" onclick="selectAnswer(0, 3)">
+                            <button class="option-btn option-btn-a" data-question="0" data-index="3">
                                 {"text" => "Checkers", "correct" => false}
                             </button>
                             
                         </div>
-                        <div class="trivia-feedback" style="display: none;">
-                            <p><strong>❌ Incorrect</strong></p>
-                            <p>Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!</p>
+                        <div class="trivia-feedback feedback-a" style="display: none;">
+                            <div class="feedback-icon"></div>
+                            <p class="feedback-title"></p>
+                            <p class="feedback-subtitle">💡 Did you know?</p>
+                            <p class="feedback-text">Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!</p>
                         </div>
                     </div>
                     
-                    <div class="trivia-card" data-question="1" data-correct-answer="">
+                    <div class="trivia-card trivia-card-a" data-question="1" data-correct-answer="">
+                        <div class="question-header">
+                            <span class="question-number">Question 2 of 2</span>
+                        </div>
                         <h3>What does 'Euro game' mean in modern board gaming?</h3>
                         <div class="options-grid">
                             
-                            <button class="option-btn" data-index="0" onclick="selectAnswer(1, 0)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="0">
                                 {"text" => "Games made in Europe", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="1" onclick="selectAnswer(1, 1)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="1">
                                 {"text" => "Games with indirect player interaction and resource management", "correct" => true}
                             </button>
                             
-                            <button class="option-btn" data-index="2" onclick="selectAnswer(1, 2)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="2">
                                 {"text" => "Games with European themes", "correct" => false}
                             </button>
                             
-                            <button class="option-btn" data-index="3" onclick="selectAnswer(1, 3)">
+                            <button class="option-btn option-btn-a" data-question="1" data-index="3">
                                 {"text" => "Games that cost more than $50", "correct" => false}
                             </button>
                             
                         </div>
-                        <div class="trivia-feedback" style="display: none;">
-                            <p><strong>❌ Incorrect</strong></p>
-                            <p>Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!</p>
+                        <div class="trivia-feedback feedback-a" style="display: none;">
+                            <div class="feedback-icon"></div>
+                            <p class="feedback-title"></p>
+                            <p class="feedback-subtitle">💡 Did you know?</p>
+                            <p class="feedback-text">Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="trivia-completion" id="completionA" style="display: none;">
+                        <div class="completion-icon">🎉</div>
+                        <h3>Quiz Complete!</h3>
+                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/2 🌟</p>
+                        <p class="completion-message" id="messageA"></p>
+                        <div class="completion-actions">
+                            <button class="share-score-btn" onclick="shareScore('A')">
+                                <i class="fas fa-share-alt"></i> Share Score
+                            </button>
+                            <button class="try-again-btn" onclick="resetQuiz('A')">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option B: Quiz Mode with Timer -->
+                <div class="trivia-container trivia-optionB active">
+                    <div class="quiz-start-screen" id="startScreenB">
+                        <div class="start-icon">⏱️</div>
+                        <h3>Timed Quiz Challenge</h3>
+                        <p>Answer 2 questions as fast as you can!</p>
+                        <p class="timer-info">⚡ 30 seconds per question</p>
+                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                            <i class="fas fa-play"></i> Start Quiz
+                        </button>
+                    </div>
+
+                    <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
+                        <div class="quiz-header">
+                            <div class="quiz-progress">
+                                <span class="question-counter">Question <span id="currentB">1</span>/2</span>
+                                <div class="progress-dots-container" id="progressDotsB"></div>
+                            </div>
+                            <div class="quiz-timer">
+                                <i class="fas fa-clock"></i>
+                                <span id="timerB">30</span>s
+                            </div>
+                        </div>
+
+                        
+                        <div class="trivia-card trivia-card-b" data-question="0" data-correct-answer="" style="">
+                            <h3>Which board game is considered the oldest known board game still played today?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="0">
+                                    {"text" => "Chess", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="1">
+                                    {"text" => "Backgammon", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="2">
+                                    {"text" => "Go", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="0" data-index="3">
+                                    {"text" => "Checkers", "correct" => false}
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="trivia-card trivia-card-b" data-question="1" data-correct-answer="" style="display: none;">
+                            <h3>What does 'Euro game' mean in modern board gaming?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="0">
+                                    {"text" => "Games made in Europe", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="1">
+                                    {"text" => "Games with indirect player interaction and resource management", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="2">
+                                    {"text" => "Games with European themes", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-b" data-question="1" data-index="3">
+                                    {"text" => "Games that cost more than $50", "correct" => false}
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="trivia-completion" id="completionB" style="display: none;">
+                        <div class="completion-card-capture" id="completionCardB">
+                            <div class="completion-icon">⏱️</div>
+                            <h3>Quiz Complete!</h3>
+                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/2 🌟</p>
+                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
+                            <p class="completion-message" id="messageBText"></p>
+                        </div>
+
+                        <div class="completion-actions">
+                            <button class="share-score-btn" onclick="shareScoreWithImage('B')">
+                                <i class="fas fa-share-alt"></i> Share Score
+                            </button>
+                            <button class="try-again-btn" onclick="resetQuiz('B')">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                        </div>
+
+                        <!-- Go to Another Hobby Options -->
+                        <div class="hobby-navigation-options">
+                            <p class="nav-prompt">Explore another hobby:</p>
+                            <div class="hobby-nav-buttons" id="hobbyNavButtons"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option C: Difficulty Levels -->
+                <div class="trivia-container trivia-optionC">
+                    <div class="difficulty-tabs">
+                        <button class="difficulty-tab active" data-difficulty="easy">
+                            <i class="fas fa-smile"></i> Easy
+                        </button>
+                        <button class="difficulty-tab" data-difficulty="medium">
+                            <i class="fas fa-meh"></i> Medium
+                        </button>
+                        <button class="difficulty-tab" data-difficulty="hard">
+                            <i class="fas fa-fire"></i> Hard
+                        </button>
+                    </div>
+
+                    <div class="difficulty-content">
+                        <div class="difficulty-badge">
+                            <span class="badge-icon">🌟</span>
+                            <span class="badge-text">Easy Mode</span>
+                        </div>
+
+                        
+                        <div class="trivia-card trivia-card-c" data-question="0" data-correct-answer="">
+                            <h3>Which board game is considered the oldest known board game still played today?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="0">
+                                    {"text" => "Chess", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="1">
+                                    {"text" => "Backgammon", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="2">
+                                    {"text" => "Go", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="0" data-index="3">
+                                    {"text" => "Checkers", "correct" => false}
+                                </button>
+                                
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trivia-card trivia-card-c" data-question="1" data-correct-answer="">
+                            <h3>What does 'Euro game' mean in modern board gaming?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="0">
+                                    {"text" => "Games made in Europe", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="1">
+                                    {"text" => "Games with indirect player interaction and resource management", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="2">
+                                    {"text" => "Games with European themes", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="1" data-index="3">
+                                    {"text" => "Games that cost more than $50", "correct" => false}
+                                </button>
+                                
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Option D: Minimal Polish -->
+                <div class="trivia-container trivia-optionD">
+                    
+                    <div class="trivia-card trivia-card-d" data-question="0" data-correct-answer="">
+                        <h3>Which board game is considered the oldest known board game still played today?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="0">
+                                {"text" => "Chess", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="1">
+                                {"text" => "Backgammon", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="2">
+                                {"text" => "Go", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="0" data-index="3">
+                                {"text" => "Checkers", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="1" data-correct-answer="">
+                        <h3>What does 'Euro game' mean in modern board gaming?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="0">
+                                {"text" => "Games made in Europe", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="1">
+                                {"text" => "Games with indirect player interaction and resource management", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="2">
+                                {"text" => "Games with European themes", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="1" data-index="3">
+                                {"text" => "Games that cost more than $50", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!</p>
                         </div>
                     </div>
                     

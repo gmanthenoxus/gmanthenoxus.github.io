@@ -1043,8 +1043,9 @@
     }
 }
 
-/* Stats Grid */
-.stats-grid {
+/* Stats Grid - Scoped to blog posts only */
+.blog-post .stats-grid,
+.post-content .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;

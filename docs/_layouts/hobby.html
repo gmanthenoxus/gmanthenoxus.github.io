@@ -85,13 +85,6 @@ layout: default
                         <!-- Value -->
                         <div class="stat-value">{{ stat.value }}</div>
 
-                        <!-- Progress Bar -->
-                        {% if stat.progress %}
-                        <div class="stat-progress">
-                            <div class="progress-bar" data-progress="{{ stat.progress }}"></div>
-                        </div>
-                        {% endif %}
-
                         <!-- Trend Indicator -->
                         {% if stat.trend %}
                         <div class="stat-trend trend-{{ stat.trend }}">
@@ -139,16 +132,6 @@ layout: default
                         </div>
                         {% endif %}
 
-                        <!-- Mini Chart -->
-                        {% if stat.chart_data %}
-                        <div class="stat-chart">
-                            <canvas class="mini-chart"
-                                    data-chart="{{ stat.chart_data | join: ',' }}"
-                                    width="200"
-                                    height="40"></canvas>
-                        </div>
-                        {% endif %}
-
                         <!-- Tooltip -->
                         {% if stat.tooltip %}
                         <div class="stat-tooltip">
@@ -160,23 +143,7 @@ layout: default
                     {% endfor %}
                 </div>
 
-                <!-- Quick Stats -->
-                {% if page.statistics.quick_stats and page.statistics.quick_stats.size > 0 %}
-                <div class="quick-stats-section">
-                    <h3><i class="fas fa-bolt"></i> Quick Stats</h3>
-                    <div class="quick-stats-grid">
-                        {% for quick_stat in page.statistics.quick_stats %}
-                        <div class="quick-stat-card">
-                            <span class="quick-stat-icon">{{ quick_stat.icon }}</span>
-                            <div class="quick-stat-info">
-                                <div class="quick-stat-label">{{ quick_stat.label }}</div>
-                                <div class="quick-stat-value">{{ quick_stat.value }}</div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
+
             </section>
             {% endif %}
 
@@ -188,18 +155,102 @@ layout: default
                 </div>
             </section>
 
+            <!-- Favorites Section -->
+            {% if page.favorites and page.favorites.size > 0 %}
+            <section class="favorites-section">
+                <h2><i class="fas fa-star"></i> My Favorites</h2>
+                <div class="favorites-grid">
+                    {% for favorite in page.favorites %}
+                    {% if favorite.url %}
+                    <a href="{{ favorite.url }}" class="favorite-card" target="_blank" rel="noopener noreferrer">
+                    {% else %}
+                    <div class="favorite-card">
+                    {% endif %}
+                        {% if favorite.image %}
+                        <div class="favorite-image" style="background-image: url('{{ favorite.image }}');">
+                            <div class="favorite-overlay">
+                                <span class="favorite-rating">
+                                    {% for i in (1..5) %}
+                                        {% if i <= favorite.rating %}
+                                        <i class="fas fa-star"></i>
+                                        {% else %}
+                                        <i class="far fa-star"></i>
+                                        {% endif %}
+                                    {% endfor %}
+                                </span>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="favorite-content">
+                            <h3>{{ favorite.title }}</h3>
+
+                            {% if favorite.genres and favorite.genres.size > 0 %}
+                            <div class="favorite-genres">
+                                {% for genre in favorite.genres %}
+                                <span class="genre-tag">{{ genre }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            {% if favorite.why %}
+                            <p class="favorite-why">{{ favorite.why }}</p>
+                            {% endif %}
+
+                            {% if favorite.year or favorite.episodes %}
+                            <div class="favorite-meta">
+                                {% if favorite.year %}
+                                <span><i class="fas fa-calendar"></i> {{ favorite.year }}</span>
+                                {% endif %}
+                                {% if favorite.episodes %}
+                                <span><i class="fas fa-film"></i> {{ favorite.episodes }} eps</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+
+                            {% if favorite.url %}
+                            <div class="favorite-link">
+                                <i class="fas fa-external-link-alt"></i> View on MyAnimeList
+                            </div>
+                            {% endif %}
+                        </div>
+                    {% if favorite.url %}
+                    </a>
+                    {% else %}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
             <!-- Fun Facts Section -->
             {% if page.fun_facts and page.fun_facts.size > 0 %}
             <section class="fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
+
                 <div class="facts-grid">
                     {% for fact in page.fun_facts %}
-                    <div class="fact-card">
-                        <button class="share-btn" onclick="shareFact('{{ fact.title }}', '{{ fact.description }}')">
-                            <i class="fas fa-share-alt"></i>
-                        </button>
-                        <h3>{{ fact.title }}</h3>
-                        <p>{{ fact.description }}</p>
+                    <div class="fact-card fact-card-option2">
+                        {% if fact.icon %}
+                        <div class="fact-icon-bg">{{ fact.icon }}</div>
+                        {% endif %}
+
+                        <div class="fact-content-layer">
+                            <h3>{{ fact.title }}</h3>
+
+                            {% if fact.category %}
+                            <span class="fact-category">{{ fact.category }}</span>
+                            {% endif %}
+
+                            <p>{{ fact.description }}</p>
+
+                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="{{ fact.title }}" data-description="{{ fact.description }}" data-category="{{ fact.category }}">
+                                <span class="share-text">Share</span>
+                                <i class="fas fa-share-alt share-icon"></i>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
@@ -209,21 +260,179 @@ layout: default
             <!-- Interactive Trivia Section -->
             {% if page.trivia and page.trivia.size > 0 %}
             <section class="trivia-section">
-                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                <div class="trivia-container">
+                <div class="section-header-with-toggle">
+                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
+                    <div class="design-toggle">
+                        <button class="toggle-btn" data-design="optionA">Option A</button>
+                        <button class="toggle-btn active" data-design="optionB">Option B</button>
+                        <button class="toggle-btn" data-design="optionC">Option C</button>
+                        <button class="toggle-btn" data-design="optionD">Option D</button>
+                    </div>
+                </div>
+
+                <!-- Option A: Enhanced with Score & Share -->
+                <div class="trivia-container trivia-optionA">
+                    <div class="trivia-score-bar">
+                        <span class="score-display">Score: <span id="scoreA">0</span>/{{ page.trivia.size }}</span>
+                        <div class="progress-dots" id="progressA"></div>
+                    </div>
+
                     {% for question in page.trivia %}
-                    <div class="trivia-card" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}">
+                    <div class="trivia-card trivia-card-a" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}">
+                        <div class="question-header">
+                            <span class="question-number">Question {{ forloop.index }} of {{ page.trivia.size }}</span>
+                        </div>
                         <h3>{{ question.question }}</h3>
                         <div class="options-grid">
                             {% for option in question.options %}
-                            <button class="option-btn" data-index="{{ forloop.index0 }}" onclick="selectAnswer({{ forloop.parentloop.index0 }}, {{ forloop.index0 }})">
+                            <button class="option-btn option-btn-a" data-question="{{ forloop.parentloop.index0 }}" data-index="{{ forloop.index0 }}">
                                 {{ option }}
                             </button>
                             {% endfor %}
                         </div>
-                        <div class="trivia-feedback" style="display: none;">
-                            <p><strong>{% if forloop.index0 == question.correct_answer %}✅ Correct!{% else %}❌ Incorrect{% endif %}</strong></p>
-                            <p>{{ question.explanation }}</p>
+                        <div class="trivia-feedback feedback-a" style="display: none;">
+                            <div class="feedback-icon"></div>
+                            <p class="feedback-title"></p>
+                            <p class="feedback-subtitle">💡 Did you know?</p>
+                            <p class="feedback-text">{{ question.explanation }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="trivia-completion" id="completionA" style="display: none;">
+                        <div class="completion-icon">🎉</div>
+                        <h3>Quiz Complete!</h3>
+                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/{{ page.trivia.size }} 🌟</p>
+                        <p class="completion-message" id="messageA"></p>
+                        <div class="completion-actions">
+                            <button class="share-score-btn" onclick="shareScore('A')">
+                                <i class="fas fa-share-alt"></i> Share Score
+                            </button>
+                            <button class="try-again-btn" onclick="resetQuiz('A')">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option B: Quiz Mode with Timer -->
+                <div class="trivia-container trivia-optionB active">
+                    <div class="quiz-start-screen" id="startScreenB">
+                        <div class="start-icon">⏱️</div>
+                        <h3>Timed Quiz Challenge</h3>
+                        <p>Answer {{ page.trivia.size }} questions as fast as you can!</p>
+                        <p class="timer-info">⚡ 30 seconds per question</p>
+                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                            <i class="fas fa-play"></i> Start Quiz
+                        </button>
+                    </div>
+
+                    <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
+                        <div class="quiz-header">
+                            <div class="quiz-progress">
+                                <span class="question-counter">Question <span id="currentB">1</span>/{{ page.trivia.size }}</span>
+                                <div class="progress-dots-container" id="progressDotsB"></div>
+                            </div>
+                            <div class="quiz-timer">
+                                <i class="fas fa-clock"></i>
+                                <span id="timerB">30</span>s
+                            </div>
+                        </div>
+
+                        {% for question in page.trivia %}
+                        <div class="trivia-card trivia-card-b" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}" style="{% if forloop.index0 != 0 %}display: none;{% endif %}">
+                            <h3>{{ question.question }}</h3>
+                            <div class="options-grid">
+                                {% for option in question.options %}
+                                <button class="option-btn option-btn-b" data-question="{{ forloop.parentloop.index0 }}" data-index="{{ forloop.index0 }}">
+                                    {{ option }}
+                                </button>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="trivia-completion" id="completionB" style="display: none;">
+                        <div class="completion-card-capture" id="completionCardB">
+                            <div class="completion-icon">⏱️</div>
+                            <h3>Quiz Complete!</h3>
+                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/{{ page.trivia.size }} 🌟</p>
+                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
+                            <p class="completion-message" id="messageBText"></p>
+                        </div>
+
+                        <div class="completion-actions">
+                            <button class="share-score-btn" onclick="shareScoreWithImage('B')">
+                                <i class="fas fa-share-alt"></i> Share Score
+                            </button>
+                            <button class="try-again-btn" onclick="resetQuiz('B')">
+                                <i class="fas fa-redo"></i> Try Again
+                            </button>
+                        </div>
+
+                        <!-- Go to Another Hobby Options -->
+                        <div class="hobby-navigation-options">
+                            <p class="nav-prompt">Explore another hobby:</p>
+                            <div class="hobby-nav-buttons" id="hobbyNavButtons"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option C: Difficulty Levels -->
+                <div class="trivia-container trivia-optionC">
+                    <div class="difficulty-tabs">
+                        <button class="difficulty-tab active" data-difficulty="easy">
+                            <i class="fas fa-smile"></i> Easy
+                        </button>
+                        <button class="difficulty-tab" data-difficulty="medium">
+                            <i class="fas fa-meh"></i> Medium
+                        </button>
+                        <button class="difficulty-tab" data-difficulty="hard">
+                            <i class="fas fa-fire"></i> Hard
+                        </button>
+                    </div>
+
+                    <div class="difficulty-content">
+                        <div class="difficulty-badge">
+                            <span class="badge-icon">🌟</span>
+                            <span class="badge-text">Easy Mode</span>
+                        </div>
+
+                        {% for question in page.trivia limit:3 %}
+                        <div class="trivia-card trivia-card-c" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}">
+                            <h3>{{ question.question }}</h3>
+                            <div class="options-grid">
+                                {% for option in question.options %}
+                                <button class="option-btn option-btn-c" data-question="{{ forloop.parentloop.index0 }}" data-index="{{ forloop.index0 }}">
+                                    {{ option }}
+                                </button>
+                                {% endfor %}
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>{{ question.explanation }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Option D: Minimal Polish -->
+                <div class="trivia-container trivia-optionD">
+                    {% for question in page.trivia %}
+                    <div class="trivia-card trivia-card-d" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}">
+                        <h3>{{ question.question }}</h3>
+                        <div class="options-grid">
+                            {% for option in question.options %}
+                            <button class="option-btn option-btn-d" data-question="{{ forloop.parentloop.index0 }}" data-index="{{ forloop.index0 }}">
+                                {{ option }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">{{ question.explanation }}</p>
                         </div>
                     </div>
                     {% endfor %}
