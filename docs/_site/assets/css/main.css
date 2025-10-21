@@ -5419,7 +5419,7 @@ blockquote p {
   position: relative;
   overflow: hidden;
   min-height: 70vh;
-  display: flex;
+  display: block;
   align-items: center;
 }
 
@@ -5478,62 +5478,111 @@ blockquote p {
   display: none; /* Removed from design */
 }
 
-/* Rotating Quotes */
-.quotes-container {
-  margin: 2.5rem 0 0;
-  min-height: 160px;
+/* Quotes Section - Simple & Clean */
+.hobby-quotes-section {
+  margin: 2.5rem auto 0;
+  max-width: 1400px;
+  width: 95%;
   position: relative;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  min-height: 120px;
+  padding: 0 1rem;
 }
 
-.quote-item {
+.hobby-quote-card {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 1rem;
+  right: 1rem;
+  padding: 0;
   opacity: 0;
-  transition: opacity 0.8s ease;
-  text-align: center;
-  padding: 0 2rem;
+  transition: opacity 1s ease-in-out;
 }
-
-.quote-item:first-child {
+.hobby-quote-card.active {
   opacity: 1;
 }
 
-.quote-text {
-  font-size: 1.2rem;
-  font-style: italic;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.75);
-  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
-  font-weight: 500;
-  max-height: 100px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+.hobby-quote-icon {
+  display: none;
 }
 
-.quote-author {
+.hobby-quote-content {
+  padding: 0;
+}
+
+.hobby-quote-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  display: inline;
+}
+
+.hobby-quote-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.hobby-quote-author {
   font-size: 0.95rem;
-  color: rgba(0, 0, 0, 0.6);
   font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
   font-style: normal;
 }
 
-/* Hero Navigation - Fixed Top-Left */
-.hero-nav {
+.hobby-quote-meta {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.55);
+  font-style: normal;
+}
+.hobby-quote-meta em {
+  font-style: italic;
+  color: var(--hobby-color);
+  font-weight: 500;
+}
+
+/* Quote Controls - Hidden */
+.hobby-quote-controls,
+.hobby-quote-nav-btn,
+.hobby-quote-indicators,
+.hobby-quote-dot {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hobby-quotes-section {
+    margin: 2rem 1rem 0;
+    min-height: 180px;
+    padding: 0 1rem;
+  }
+  .hobby-quote-card {
+    left: 1rem;
+    right: 1rem;
+  }
+  .hobby-quote-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+/* Hero Navigation - Fixed Top-Left - Scoped to hobby pages */
+.hobby-page .hero-nav {
   position: fixed;
   top: 5rem; /* Below 60px nav bar + spacing */
   left: 2rem;
   z-index: 999; /* Below main nav (1000) */
 }
 
-.back-btn {
+.hobby-page .back-btn {
   color: var(--hobby-color);
   text-decoration: none;
   font-weight: 600;
@@ -5549,7 +5598,7 @@ blockquote p {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.back-btn:hover {
+.hobby-page .back-btn:hover {
   background: var(--hobby-color);
   color: white;
   transform: translateY(-2px);
@@ -5581,8 +5630,10 @@ blockquote p {
   font-size: 2rem;
 }
 
-/* Statistics Dashboard */
-.stats-dashboard {
+/* ========================================
+   SECTION: Statistics Dashboard
+   ======================================== */
+.hobby-stats-dashboard {
   margin-bottom: 5rem;
   padding: 3rem 2rem;
   background: white;
@@ -5592,7 +5643,7 @@ blockquote p {
 }
 
 /* Stats Header with Time Filters */
-.stats-header {
+.hobby-stats-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -5600,13 +5651,12 @@ blockquote p {
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
-
-.stats-header h2 {
+.hobby-stats-header h2 {
   margin-bottom: 0;
 }
 
 /* Time Filters */
-.time-filters {
+.hobby-time-filters {
   display: flex;
   gap: 0.5rem;
   background: #f3f4f6;
@@ -5614,7 +5664,7 @@ blockquote p {
   border-radius: 12px;
 }
 
-.time-filter-btn {
+.hobby-time-filter-btn {
   padding: 0.6rem 1.2rem;
   border: none;
   background: transparent;
@@ -5625,49 +5675,49 @@ blockquote p {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-.time-filter-btn:hover {
+.hobby-time-filter-btn:hover {
   background: rgba(255, 255, 255, 0.5);
   color: var(--hobby-color);
 }
-
-.time-filter-btn.active {
+.hobby-time-filter-btn.active {
   background: white;
   color: var(--hobby-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Stats Grid - Horizontal Scroll */
-.stats-grid {
+.hobby-stats-grid {
   display: flex;
   gap: 2rem;
   margin-bottom: 3rem;
   overflow-x: auto;
   overflow-y: visible;
+  position: relative;
+  z-index: 1;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 1rem;
-  /* Hide scrollbar but keep functionality */
+  padding-top: 1rem;
   scrollbar-width: thin;
   scrollbar-color: var(--hobby-color-light) transparent;
 }
-.stats-grid::-webkit-scrollbar {
+.hobby-stats-grid::-webkit-scrollbar {
   height: 8px;
 }
-.stats-grid::-webkit-scrollbar-track {
+.hobby-stats-grid::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
-.stats-grid::-webkit-scrollbar-thumb {
+.hobby-stats-grid::-webkit-scrollbar-thumb {
   background: var(--hobby-color-light);
   border-radius: 4px;
 }
-.stats-grid::-webkit-scrollbar-thumb:hover {
+.hobby-stats-grid::-webkit-scrollbar-thumb:hover {
   background: var(--hobby-color);
 }
 
-/* Enhanced Stat Card */
-.stat-card.enhanced {
+/* Stat Card */
+.hobby-stat-card {
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
   border: 2px solid var(--hobby-color-light);
   border-radius: 20px;
@@ -5675,31 +5725,28 @@ blockquote p {
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden; /* Changed from visible to prevent overlap */
-  /* Fixed width for horizontal scroll */
+  overflow: hidden;
   min-width: 340px;
   max-width: 340px;
   flex-shrink: 0;
   scroll-snap-align: start;
-  /* Desktop: Show 2.5 cards */
 }
 @media (min-width: 1024px) {
-  .stat-card.enhanced {
+  .hobby-stat-card {
     min-width: 380px;
     max-width: 380px;
     padding: 2rem 1.75rem;
   }
 }
-
-.stat-card.enhanced:hover {
+.hobby-stat-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   border-color: var(--hobby-color);
-  z-index: 10; /* Ensure hovered card is on top */
+  z-index: 10;
 }
 
 /* Stat Icon */
-.stat-icon {
+.hobby-page .hobby-stat-icon {
   font-size: 1.8rem;
   color: var(--hobby-color);
   margin-bottom: 0.75rem;
@@ -5707,7 +5754,7 @@ blockquote p {
 }
 
 /* Stat Label */
-.stat-label {
+.hobby-stat-label {
   font-size: 0.8rem;
   color: #6b7280;
   text-transform: uppercase;
@@ -5717,7 +5764,7 @@ blockquote p {
 }
 
 /* Stat Value */
-.stat-value {
+.hobby-stat-value {
   font-size: 2.5rem;
   font-weight: 900;
   color: var(--hobby-color);
@@ -5727,7 +5774,7 @@ blockquote p {
 }
 
 /* Progress Bar */
-.stat-progress {
+.hobby-stat-progress {
   width: 100%;
   height: 8px;
   background: rgba(0, 0, 0, 0.1);
@@ -5737,16 +5784,16 @@ blockquote p {
   margin-bottom: 1.5rem;
 }
 
-.progress-bar {
+.hobby-progress-bar {
   height: 100%;
   background: linear-gradient(90deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
   border-radius: 4px;
   width: 0%;
   transition: width 2s ease;
-  animation: progressFill 2s ease forwards;
+  animation: hobbyProgressFill 2s ease forwards;
 }
 
-@keyframes progressFill {
+@keyframes hobbyProgressFill {
   from {
     width: 0%;
   }
@@ -5755,7 +5802,7 @@ blockquote p {
   }
 }
 /* Trend Indicator */
-.stat-trend {
+.hobby-stat-trend {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5766,33 +5813,29 @@ blockquote p {
   padding: 0.6rem 0.75rem;
   border-radius: 8px;
 }
-
-.stat-trend i {
+.hobby-stat-trend i {
   font-size: 0.9rem;
 }
-
-.stat-trend.trend-up {
+.hobby-stat-trend.trend-up {
   color: #10B981;
   background: rgba(16, 185, 129, 0.1);
 }
-
-.stat-trend.trend-down {
+.hobby-stat-trend.trend-down {
   color: #EF4444;
   background: rgba(239, 68, 68, 0.1);
 }
-
-.stat-trend.trend-stable {
+.hobby-stat-trend.trend-stable {
   color: #6B7280;
   background: rgba(107, 114, 128, 0.1);
 }
 
-.trend-value {
+.hobby-trend-value {
   font-size: 0.75rem;
   opacity: 0.8;
 }
 
 /* Comparison Section */
-.stat-comparison {
+.hobby-stat-comparison {
   background: rgba(0, 0, 0, 0.03);
   border-radius: 10px;
   padding: 0.85rem;
@@ -5800,7 +5843,7 @@ blockquote p {
   text-align: left;
 }
 
-.comparison-label {
+.hobby-comparison-label {
   font-size: 0.7rem;
   color: #9ca3af;
   text-transform: uppercase;
@@ -5809,14 +5852,14 @@ blockquote p {
   margin-bottom: 0.3rem;
 }
 
-.comparison-value {
+.hobby-comparison-value {
   font-size: 0.9rem;
   color: #1a202c;
   font-weight: 600;
   margin-bottom: 0.3rem;
 }
 
-.comparison-percentage {
+.hobby-comparison-percentage {
   font-size: 0.8rem;
   color: var(--hobby-color);
   font-weight: 700;
@@ -5824,13 +5867,12 @@ blockquote p {
   align-items: center;
   gap: 0.25rem;
 }
-
-.comparison-percentage i {
+.hobby-comparison-percentage i {
   font-size: 0.7rem;
 }
 
 /* Milestone Badge */
-.stat-milestone {
+.hobby-stat-milestone {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
   border: 2px solid rgba(245, 158, 11, 0.3);
   border-radius: 10px;
@@ -5841,19 +5883,17 @@ blockquote p {
   gap: 0.65rem;
   text-align: left;
 }
-
-.stat-milestone.reached {
+.hobby-stat-milestone.reached {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%);
   border-color: rgba(245, 158, 11, 0.5);
-  animation: milestoneGlow 2s ease-in-out infinite;
+  animation: hobbyMilestoneGlow 2s ease-in-out infinite;
 }
-
-.stat-milestone.in-progress {
+.hobby-stat-milestone.in-progress {
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.5) 100%);
   border-color: var(--hobby-color-light);
 }
 
-@keyframes milestoneGlow {
+@keyframes hobbyMilestoneGlow {
   0%, 100% {
     box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
   }
@@ -5861,29 +5901,29 @@ blockquote p {
     box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
   }
 }
-.milestone-icon {
+.hobby-page .hobby-milestone-icon {
   font-size: 1.75rem;
   line-height: 1;
 }
 
-.milestone-info {
+.hobby-milestone-info {
   flex: 1;
 }
 
-.milestone-title {
+.hobby-milestone-title {
   font-size: 0.85rem;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 0.2rem;
 }
 
-.milestone-description {
+.hobby-milestone-description {
   font-size: 0.7rem;
   color: #6b7280;
   margin-bottom: 0.4rem;
 }
 
-.milestone-progress {
+.hobby-milestone-progress {
   width: 100%;
   height: 4px;
   background: rgba(0, 0, 0, 0.1);
@@ -5891,7 +5931,7 @@ blockquote p {
   overflow: hidden;
 }
 
-.milestone-progress-bar {
+.hobby-milestone-progress-bar {
   height: 100%;
   background: linear-gradient(90deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
   border-radius: 2px;
@@ -5899,27 +5939,32 @@ blockquote p {
 }
 
 /* Tooltip */
-.stat-tooltip {
+.hobby-stat-tooltip {
   position: absolute;
   top: 0.85rem;
   right: 0.85rem;
   cursor: help;
   z-index: 20;
 }
-
-.stat-tooltip i {
+.hobby-stat-tooltip i {
   color: #9ca3af;
   font-size: 0.9rem;
   transition: color 0.3s ease;
 }
-
-.stat-tooltip:hover i {
+.hobby-stat-tooltip:hover i {
   color: var(--hobby-color);
 }
+.hobby-stat-tooltip:hover .hobby-tooltip-content {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
 
-.tooltip-content {
+.hobby-tooltip-content {
   display: none;
-  position: fixed; /* Changed from absolute to fixed to escape overflow:hidden */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
   background: #1a202c;
   color: white;
   padding: 0.65rem 0.85rem;
@@ -5927,24 +5972,28 @@ blockquote p {
   font-size: 0.8rem;
   line-height: 1.5;
   width: 220px;
+  max-width: 90vw;
   z-index: 1000;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   pointer-events: none;
+  /* Arrow pointing up */
 }
-
-.stat-tooltip:hover .tooltip-content {
-  display: block;
-  animation: fadeIn 0.3s ease;
+.hobby-tooltip-content::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 0.75rem;
+  border: 6px solid transparent;
+  border-bottom-color: #1a202c;
 }
 
 /* Quick Stats Section */
-.quick-stats-section {
+.hobby-quick-stats-section {
   margin-top: 3rem;
   padding-top: 3rem;
   border-top: 2px solid rgba(0, 0, 0, 0.05);
 }
-
-.quick-stats-section h3 {
+.hobby-quick-stats-section h3 {
   font-size: 1.5rem;
   font-weight: 700;
   color: #1a202c;
@@ -5953,19 +6002,18 @@ blockquote p {
   align-items: center;
   gap: 0.75rem;
 }
-
-.quick-stats-section h3 i {
+.hobby-quick-stats-section h3 i {
   color: var(--hobby-color);
   font-size: 1.3rem;
 }
 
-.quick-stats-grid {
+.hobby-quick-stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
 }
 
-.quick-stat-card {
+.hobby-quick-stat-card {
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.5) 100%);
   border: 2px solid var(--hobby-color-light);
   border-radius: 16px;
@@ -5975,24 +6023,23 @@ blockquote p {
   gap: 1rem;
   transition: all 0.3s ease;
 }
-
-.quick-stat-card:hover {
+.hobby-quick-stat-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   border-color: var(--hobby-color);
 }
 
-.quick-stat-icon {
+.hobby-quick-stat-icon {
   font-size: 2rem;
   line-height: 1;
 }
 
-.quick-stat-info {
+.hobby-quick-stat-info {
   flex: 1;
   text-align: left;
 }
 
-.quick-stat-label {
+.hobby-quick-stat-label {
   font-size: 0.75rem;
   color: #6b7280;
   text-transform: uppercase;
@@ -6001,14 +6048,16 @@ blockquote p {
   margin-bottom: 0.25rem;
 }
 
-.quick-stat-value {
+.hobby-quick-stat-value {
   font-size: 1.2rem;
   font-weight: 800;
   color: var(--hobby-color);
 }
 
-/* Personal Journey Section */
-.personal-journey {
+/* ========================================
+   SECTION: Personal Journey
+   ======================================== */
+.hobby-personal-journey {
   margin-bottom: 5rem;
   padding: 3rem 2rem;
   background: white;
@@ -6017,13 +6066,11 @@ blockquote p {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.journey-content {
+.hobby-journey-content {
   max-width: 800px;
   margin: 0 auto;
 }
-
-/* Section Headers */
-.journey-content h2 {
+.hobby-journey-content h2 {
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--hobby-color);
@@ -6033,27 +6080,23 @@ blockquote p {
   border-bottom: 2px solid var(--hobby-color-light);
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
-  /* First section has no top margin */
-  /* Stagger animation for multiple sections */
 }
-.journey-content h2:first-of-type {
+.hobby-journey-content h2:first-of-type {
   margin-top: 0;
 }
-.journey-content h2:nth-of-type(1) {
+.hobby-journey-content h2:nth-of-type(1) {
   animation-delay: 0.1s;
 }
-.journey-content h2:nth-of-type(2) {
+.hobby-journey-content h2:nth-of-type(2) {
   animation-delay: 0.2s;
 }
-.journey-content h2:nth-of-type(3) {
+.hobby-journey-content h2:nth-of-type(3) {
   animation-delay: 0.3s;
 }
-.journey-content h2:nth-of-type(4) {
+.hobby-journey-content h2:nth-of-type(4) {
   animation-delay: 0.4s;
 }
-
-/* Paragraphs */
-.journey-content p {
+.hobby-journey-content p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #4a5568;
@@ -6061,8 +6104,10 @@ blockquote p {
   text-align: left;
 }
 
-/* Favorites Section */
-.favorites-section {
+/* ========================================
+   SECTION: Favorites
+   ======================================== */
+.hobby-favorites-section {
   margin-bottom: 5rem;
   padding: 3rem 2rem;
   background: white;
@@ -6071,7 +6116,239 @@ blockquote p {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.favorites-grid {
+/* ========================================
+   FITNESS GOALS LAYOUT - COMPACT HORIZONTAL
+   ======================================== */
+.fitness-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.fitness-goal-card {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  height: 140px;
+}
+.fitness-goal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: var(--hobby-color);
+}
+
+.fitness-goal-image {
+  position: relative;
+  width: 140px;
+  height: 100%;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.fitness-goal-image .fitness-progress-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--hobby-color);
+  color: white;
+  padding: 0.35rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fitness-goal-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fitness-goal-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.4rem 0;
+}
+.fitness-goal-header .fitness-goal-category {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: rgba(0, 0, 0, 0.05);
+  color: #666;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fitness-goal-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.fitness-goal-stats .fitness-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.fitness-goal-stats .fitness-stat .stat-label {
+  font-size: 0.65rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.fitness-goal-stats .fitness-stat .stat-value {
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+.fitness-goal-stats .fitness-stat .stat-value.stat-target {
+  color: var(--hobby-color);
+}
+.fitness-goal-stats .fitness-stat-arrow {
+  font-size: 1.2rem;
+  color: var(--hobby-color);
+  font-weight: 700;
+  margin: 0 0.25rem;
+}
+
+/* ========================================
+   GAMES FAVORITES LAYOUT - COMPACT HORIZONTAL
+   ======================================== */
+.games-favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.games-favorite-card {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  height: 140px;
+}
+.games-favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: var(--hobby-color);
+}
+
+.games-favorite-image {
+  position: relative;
+  width: 140px;
+  height: 100%;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.games-favorite-image .games-category-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 0.3rem 0.6rem;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.games-favorite-image .games-rating-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 0.3rem 0.6rem;
+  background: var(--hobby-color);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.games-favorite-image .games-rating-badge i {
+  font-size: 0.7rem;
+}
+
+.games-favorite-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.games-favorite-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+}
+
+.games-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.games-info-grid .game-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+.games-info-grid .game-info-item i {
+  width: 16px;
+  color: var(--hobby-color);
+  font-size: 0.9rem;
+}
+.games-info-grid .game-info-item span {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive Design for Compact Cards */
+@media (max-width: 768px) {
+  .fitness-goals-grid,
+  .games-favorites-grid {
+    grid-template-columns: 1fr;
+  }
+  .fitness-goal-card,
+  .games-favorite-card {
+    height: auto;
+    flex-direction: column;
+  }
+  .fitness-goal-image,
+  .games-favorite-image {
+    width: 100%;
+    height: 160px;
+  }
+}
+.hobby-favorites-grid {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
@@ -6080,26 +6357,25 @@ blockquote p {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 1rem;
-  /* Custom scrollbar */
   scrollbar-width: thin;
   scrollbar-color: var(--hobby-color-light) transparent;
 }
-.favorites-grid::-webkit-scrollbar {
+.hobby-favorites-grid::-webkit-scrollbar {
   height: 8px;
 }
-.favorites-grid::-webkit-scrollbar-track {
+.hobby-favorites-grid::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
-.favorites-grid::-webkit-scrollbar-thumb {
+.hobby-favorites-grid::-webkit-scrollbar-thumb {
   background: var(--hobby-color-light);
   border-radius: 4px;
 }
-.favorites-grid::-webkit-scrollbar-thumb:hover {
+.hobby-favorites-grid::-webkit-scrollbar-thumb:hover {
   background: var(--hobby-color);
 }
 
-.favorite-card {
+.hobby-favorite-card {
   min-width: 280px;
   max-width: 280px;
   flex-shrink: 0;
@@ -6115,33 +6391,33 @@ blockquote p {
   display: block;
   cursor: pointer;
 }
-.favorite-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  text-decoration: none !important;
-}
-.favorite-card:hover .favorite-image {
-  transform: scale(1.05);
-}
-.favorite-card:hover .favorite-link {
-  color: var(--hobby-color);
-  text-decoration: none !important;
-}
-.favorite-card:hover .favorite-link i {
-  transform: translateX(3px);
-}
-.favorite-card:focus, .favorite-card:active, .favorite-card:visited {
-  text-decoration: none !important;
-  color: inherit;
-}
 @media (min-width: 1024px) {
-  .favorite-card {
+  .hobby-favorite-card {
     min-width: 320px;
     max-width: 320px;
   }
 }
+.hobby-favorite-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-decoration: none !important;
+}
+.hobby-favorite-card:hover .hobby-favorite-image {
+  transform: scale(1.05);
+}
+.hobby-favorite-card:hover .hobby-favorite-link {
+  color: var(--hobby-color);
+  text-decoration: none !important;
+}
+.hobby-favorite-card:hover .hobby-favorite-link i {
+  transform: translateX(3px);
+}
+.hobby-favorite-card:focus, .hobby-favorite-card:active, .hobby-favorite-card:visited {
+  text-decoration: none !important;
+  color: inherit;
+}
 
-.favorite-image {
+.hobby-favorite-image {
   width: 100%;
   height: 200px;
   background-size: cover;
@@ -6151,12 +6427,12 @@ blockquote p {
   transition: transform 0.3s ease;
 }
 @media (min-width: 1024px) {
-  .favorite-image {
+  .hobby-favorite-image {
     height: 240px;
   }
 }
 
-.favorite-overlay {
+.hobby-favorite-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -6168,21 +6444,20 @@ blockquote p {
   padding: 1rem;
 }
 
-.favorite-rating {
+.hobby-favorite-rating {
   color: #fbbf24;
   font-size: 1rem;
   display: flex;
   gap: 0.25rem;
 }
-.favorite-rating i {
+.hobby-favorite-rating i {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-.favorite-content {
+.hobby-favorite-content {
   padding: 1.5rem;
 }
-
-.favorite-content h3 {
+.hobby-favorite-content h3 {
   font-size: 1.3rem;
   font-weight: 700;
   color: #1a202c;
@@ -6190,14 +6465,14 @@ blockquote p {
   line-height: 1.3;
 }
 
-.favorite-genres {
+.hobby-favorite-genres {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
-.genre-tag {
+.hobby-genre-tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
   background: var(--hobby-color-alpha);
@@ -6209,7 +6484,7 @@ blockquote p {
   letter-spacing: 0.5px;
 }
 
-.favorite-why {
+.hobby-favorite-why {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #4a5568;
@@ -6217,7 +6492,7 @@ blockquote p {
   font-style: italic;
 }
 
-.favorite-meta {
+.hobby-favorite-meta {
   display: flex;
   gap: 1rem;
   font-size: 0.85rem;
@@ -6225,16 +6500,16 @@ blockquote p {
   padding-top: 0.75rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
-.favorite-meta span {
+.hobby-favorite-meta span {
   display: flex;
   align-items: center;
   gap: 0.35rem;
 }
-.favorite-meta i {
+.hobby-favorite-meta i {
   color: var(--hobby-color);
 }
 
-.favorite-link {
+.hobby-favorite-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -6246,65 +6521,379 @@ blockquote p {
   font-weight: 600;
   transition: all 0.3s ease;
 }
-.favorite-link i {
+.hobby-favorite-link i {
   font-size: 0.75rem;
   transition: transform 0.3s ease;
 }
 
-/* Fun Facts Section */
-.fun-facts {
+/* ========================================
+   SPORTS-SPECIFIC FAVORITES - 3 DESIGN OPTIONS
+   ======================================== */
+/* Shared Scroll Container */
+.sports-favorites-scroll {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--hobby-color) rgba(0, 0, 0, 0.1);
+}
+.sports-favorites-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.sports-favorites-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+.sports-favorites-scroll::-webkit-scrollbar-thumb {
+  background: var(--hobby-color);
+  border-radius: 10px;
+}
+.sports-favorites-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--hobby-color-dark, var(--hobby-color));
+}
+
+/* Shared Card Base */
+.sports-favorite-card {
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  position: relative;
+}
+.sports-favorite-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+.sports-favorite-card:hover .sports-favorite-image {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .sports-favorite-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+}
+
+.sports-favorite-image {
+  height: 200px;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .sports-favorite-image {
+    height: 220px;
+  }
+}
+
+.sports-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+  transition: all 0.3s ease;
+}
+
+.sports-favorite-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+.sports-favorite-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+/* Shared Genre Styling */
+.sports-genres {
+  margin-bottom: 0.85rem;
+}
+
+.sports-genre-tag {
+  font-size: 0.65rem;
+  padding: 0.25rem 0.6rem;
+  background: var(--hobby-color-alpha);
+  border: 1px solid var(--hobby-color-light);
+}
+
+/* ========================================
+   DESIGN OPTION 1: Compact with Badge Overlay
+   ======================================== */
+.sports-design-1 .sports-rating-badge-overlay {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.sports-design-1 .sports-rating-badge-overlay i {
+  color: #fbbf24;
+  font-size: 0.8rem;
+}
+.sports-design-1 .sports-favorite-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.06);
+}
+.sports-design-1 .sports-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.65rem 0.4rem;
+  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.3) 100%);
+  border-radius: 10px;
+  border: 1.5px solid var(--hobby-color-light);
+  transition: all 0.3s ease;
+}
+.sports-design-1 .sports-stat-item:hover {
+  background: linear-gradient(135deg, var(--hobby-color-light) 0%, var(--hobby-color-alpha) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--hobby-color);
+}
+.sports-design-1 .sports-stat-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+.sports-design-1 .sports-stat-value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--hobby-color);
+  line-height: 1;
+}
+.sports-design-1 .sports-favorite-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+.sports-design-1 .sports-favorite-meta i {
+  color: var(--hobby-color);
+  font-size: 0.8rem;
+}
+
+/* ========================================
+   DESIGN OPTION 2: Side-by-Side Stats
+   ======================================== */
+.sports-design-2 .sports-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+.sports-design-2 .sports-title-overlay h3 {
+  color: white;
+  margin: 0 0 0.35rem 0;
+  font-size: 1.3rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.sports-design-2 .sports-rating-stars {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+  color: #fbbf24;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.sports-design-2 .sports-favorite-stats-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.06);
+}
+.sports-design-2 .sports-stat-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: var(--hobby-color-alpha);
+  border-radius: 8px;
+  border-left: 3px solid var(--hobby-color);
+  transition: all 0.3s ease;
+}
+.sports-design-2 .sports-stat-inline:hover {
+  background: var(--hobby-color-light);
+  transform: translateX(4px);
+}
+.sports-design-2 .sports-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sports-design-2 .sports-stat-value {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--hobby-color);
+}
+
+/* ========================================
+   DESIGN OPTION 3: Minimal with Icon Stats
+   ======================================== */
+.sports-design-3 .sports-rating-circle {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark, var(--hobby-color)) 100%);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 800;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 3px solid white;
+}
+.sports-design-3 .sports-header-minimal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+  gap: 0.75rem;
+}
+.sports-design-3 .sports-header-minimal h3 {
+  margin: 0;
+  flex: 1;
+}
+.sports-design-3 .sports-year-badge {
+  padding: 0.3rem 0.65rem;
+  background: var(--hobby-color-alpha);
+  color: var(--hobby-color);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid var(--hobby-color-light);
+}
+.sports-design-3 .sports-favorite-stats-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.06);
+}
+.sports-design-3 .sports-stat-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.sports-design-3 .sports-stat-compact:hover {
+  background: var(--hobby-color-alpha);
+  transform: translateX(4px);
+}
+.sports-design-3 .sports-stat-icon {
+  font-size: 0.4rem;
+  color: var(--hobby-color);
+}
+.sports-design-3 .sports-stat-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+.sports-design-3 .sports-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sports-design-3 .sports-stat-value {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--hobby-color);
+}
+
+/* Section 4 Complete */
+/* ========================================
+   SECTION: Fun Facts
+   ======================================== */
+.hobby-fun-facts {
   margin-bottom: 5rem;
   padding: 3rem 2rem;
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
   border-radius: 24px;
   border: 2px solid var(--hobby-color-light);
 }
-.fun-facts h2 {
+.hobby-fun-facts h2 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
   color: #1a202c;
   margin-bottom: 3rem;
 }
-.fun-facts h2 i {
+.hobby-fun-facts h2 i {
   color: var(--hobby-color);
   margin-right: 0.75rem;
 }
 
-.facts-grid {
+.hobby-facts-grid {
   display: grid;
-  /* Desktop: 3 columns, hide 4th fact */
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 2rem;
-  /* Hide 4th fact on desktop */
-  /* Tablet: 2x2 grid (shows all 4 facts) */
-  /* Mobile: 1 column (stacked, shows 3 facts) */
 }
-.facts-grid .fact-card:nth-child(4) {
+.hobby-facts-grid .hobby-fact-card:nth-child(4) {
   display: none;
 }
 @media (max-width: 1024px) and (min-width: 769px) {
-  .facts-grid {
+  .hobby-facts-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* Show 4th fact on tablet */
   }
-  .facts-grid .fact-card:nth-child(4) {
+  .hobby-facts-grid .hobby-fact-card:nth-child(4) {
     display: block;
   }
 }
 @media (max-width: 768px) {
-  .facts-grid {
+  .hobby-facts-grid {
     grid-template-columns: 1fr;
-    /* Hide 4th fact on mobile */
   }
-  .facts-grid .fact-card:nth-child(4) {
+  .hobby-facts-grid .hobby-fact-card:nth-child(4) {
     display: none;
   }
 }
 
-/* Base card styles */
-.fact-card {
+/* Base Fact Card */
+.hobby-fact-card {
   background: white;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -6314,33 +6903,14 @@ blockquote p {
   overflow: hidden;
 }
 
-/* OPTION 1: Side Accent Bar */
-.fact-card-option1 {
-  padding: 2rem;
-  border-left: 4px solid var(--hobby-color);
-}
-
-.fact-card-option1:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  border-left-width: 6px;
-}
-
-.fact-card-option1 .fact-icon {
+/* Shared Fact Card Elements */
+.hobby-fact-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1;
 }
 
-.fact-card-option1 h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
-
-.fact-card-option1 .fact-category {
+.hobby-fact-category {
   display: inline-block;
   padding: 0.35rem 0.9rem;
   background: var(--hobby-color-alpha);
@@ -6353,53 +6923,89 @@ blockquote p {
   margin-bottom: 1rem;
 }
 
-.fact-card-option1 p {
+/* Share Fact Button - Gradient Style */
+.hobby-share-fact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark, var(--hobby-color)) 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.hobby-share-fact-btn i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+.hobby-share-fact-btn span {
+  position: relative;
+  z-index: 1;
+}
+.hobby-share-fact-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  z-index: 0;
+}
+.hobby-share-fact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.hobby-share-fact-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.hobby-share-fact-btn:hover i {
+  transform: scale(1.1);
+}
+.hobby-share-fact-btn:active {
+  transform: translateY(0);
+}
+
+/* OPTION 2: Icon Background (Active) */
+.hobby-fact-card-option2 {
+  padding: 2rem;
+  position: relative;
+}
+.hobby-fact-card-option2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+.hobby-fact-card-option2:hover .hobby-fact-icon-bg {
+  transform: scale(1.1);
+  opacity: 0.12;
+}
+.hobby-fact-card-option2 h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+.hobby-fact-card-option2 p {
   color: #4a5568;
   line-height: 1.7;
   margin: 0 0 1.5rem 0;
   font-size: 1rem;
 }
 
-.fact-card-option1 .share-btn-inline {
-  align-self: flex-end;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  color: var(--hobby-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.fact-card-option1 .share-btn-inline:hover {
-  gap: 0.75rem;
-}
-
-.fact-card-option1 .share-btn-inline i {
-  transition: transform 0.3s ease;
-}
-
-.fact-card-option1 .share-btn-inline:hover i {
-  transform: translateX(3px);
-}
-
-/* OPTION 2: Icon Background */
-.fact-card-option2 {
-  padding: 2rem;
-  position: relative;
-}
-
-.fact-card-option2:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
-}
-
-.fact-card-option2 .fact-icon-bg {
+.hobby-fact-icon-bg {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -6410,87 +7016,12 @@ blockquote p {
   transition: all 0.3s ease;
 }
 
-.fact-card-option2:hover .fact-icon-bg {
-  transform: scale(1.1);
-  opacity: 0.12;
-}
-
-.fact-card-option2 .fact-content-layer {
+.hobby-fact-content-layer {
   position: relative;
   z-index: 1;
 }
 
-.fact-card-option2 h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
-
-.fact-card-option2 .fact-category {
-  display: inline-block;
-  padding: 0.35rem 0.9rem;
-  background: var(--hobby-color-alpha);
-  color: var(--hobby-color);
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-}
-
-.fact-card-option2 p {
-  color: #4a5568;
-  line-height: 1.7;
-  margin: 0 0 1.5rem 0;
-  font-size: 1rem;
-}
-
-.fact-card-option2 .share-btn-inline {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  color: var(--hobby-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-  margin-left: auto;
-}
-.fact-card-option2 .share-btn-inline .share-icon {
-  display: none; /* Hidden on desktop */
-}
-
-.fact-card-option2 .share-btn-inline:hover {
-  gap: 0.75rem;
-}
-
-.fact-card-option2 .share-btn-inline i {
-  transition: transform 0.3s ease;
-}
-
-.fact-card-option2 .share-btn-inline:hover i {
-  transform: translateX(3px);
-}
-
-/* Mobile: Show icon instead of text, hide arrow */
-@media (max-width: 768px) {
-  .fact-card-option2 .share-btn-inline .share-text {
-    display: none;
-  }
-  .fact-card-option2 .share-btn-inline .share-icon {
-    display: inline-block;
-  }
-  .fact-card-option2 .share-btn-inline .fa-arrow-right {
-    display: none;
-  }
-}
-.fact-card-option2 .fact-source {
+.hobby-fact-source {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -6500,270 +7031,31 @@ blockquote p {
   margin-bottom: 1rem;
   transition: all 0.3s ease;
 }
-.fact-card-option2 .fact-source i {
+.hobby-fact-source i {
   font-size: 0.75rem;
 }
-.fact-card-option2 .fact-source:hover {
+.hobby-fact-source:hover {
   color: var(--hobby-color);
   gap: 0.6rem;
 }
 
-/* OPTION 3: Horizontal Split */
-.fact-card-option3 {
-  display: flex;
-  padding: 0;
-  min-height: 200px;
+/* Mobile: Show icon instead of text, hide arrow */
+@media (max-width: 768px) {
+  .hobby-share-btn-inline .share-text {
+    display: none;
+  }
+  .hobby-share-btn-inline .share-icon {
+    display: inline-block;
+  }
+  .hobby-share-btn-inline .fa-arrow-right {
+    display: none;
+  }
 }
-
-.fact-card-option3:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-.fact-card-option3 .fact-left-section {
-  width: 30%;
-  min-width: 140px;
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(var(--hobby-color-rgb), 0.05) 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem 1rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.fact-card-option3 .fact-left-section .fact-icon {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.fact-card-option3 .share-btn-block {
-  padding: 0.6rem 1.2rem;
-  background: var(--hobby-color);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.fact-card-option3 .share-btn-block:hover {
-  background: var(--hobby-color-dark);
-  gap: 0.75rem;
-}
-
-.fact-card-option3 .fact-right-section {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.fact-card-option3 h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
-
-.fact-card-option3 .fact-category {
-  display: inline-block;
-  padding: 0.35rem 0.9rem;
-  background: var(--hobby-color-alpha);
-  color: var(--hobby-color);
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-}
-
-.fact-card-option3 p {
-  color: #4a5568;
-  line-height: 1.7;
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-/* OPTION 4: Gradient Header */
-.fact-card-option4 {
-  padding: 0;
-  overflow: hidden;
-}
-
-.fact-card-option4:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-}
-
-.fact-card-option4 .fact-header-gradient {
-  background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.fact-card-option4 .fact-icon-inline {
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.fact-card-option4 .fact-header-gradient h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.fact-card-option4 .fact-body {
-  padding: 2rem;
-}
-
-.fact-card-option4 .fact-category {
-  display: inline-block;
-  padding: 0.35rem 0.9rem;
-  background: var(--hobby-color-alpha);
-  color: var(--hobby-color);
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-}
-
-.fact-card-option4 p {
-  color: #4a5568;
-  line-height: 1.7;
-  margin: 0 0 1.5rem 0;
-  font-size: 1rem;
-}
-
-.fact-card-option4 .share-btn-inline {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  color: var(--hobby-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-  margin-left: auto;
-}
-
-.fact-card-option4 .share-btn-inline:hover {
-  gap: 0.75rem;
-}
-
-.fact-card-option4 .share-btn-inline i {
-  transition: transform 0.3s ease;
-}
-
-.fact-card-option4 .share-btn-inline:hover i {
-  transform: translateX(3px);
-}
-
-/* OPTION 5: Compact List */
-.fact-card-option5 {
-  padding: 1.5rem;
-  border-top: 3px solid var(--hobby-color);
-}
-
-.fact-card-option5:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border-top-width: 4px;
-}
-
-.fact-card-option5 .fact-header-row {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.fact-card-option5 .fact-icon-small {
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
-.fact-card-option5 h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin: 0;
-  line-height: 1.3;
-  flex: 1;
-}
-
-.fact-card-option5 .fact-category {
-  display: inline-block;
-  padding: 0.3rem 0.75rem;
-  background: var(--hobby-color-alpha);
-  color: var(--hobby-color);
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.fact-card-option5 .fact-divider {
-  height: 1px;
-  background: rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-}
-
-.fact-card-option5 p {
-  color: #4a5568;
-  line-height: 1.6;
-  margin: 0 0 1rem 0;
-  font-size: 0.95rem;
-}
-
-.fact-card-option5 .share-btn-inline {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: none;
-  color: var(--hobby-color);
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-  margin-left: auto;
-}
-
-.fact-card-option5 .share-btn-inline:hover {
-  gap: 0.75rem;
-}
-
-.fact-card-option5 .share-btn-inline i {
-  transition: transform 0.3s ease;
-}
-
-.fact-card-option5 .share-btn-inline:hover i {
-  transform: translateX(3px);
-}
-
-/* Interactive Trivia Section */
-.trivia-section {
+/* Section 5 Complete */
+/* ========================================
+   SECTION: Interactive Trivia
+   ======================================== */
+.hobby-trivia-section {
   margin-bottom: 5rem;
   padding: 3rem 2rem;
   background: white;
@@ -6771,370 +7063,53 @@ blockquote p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
-.trivia-section h2 {
+.hobby-trivia-section h2 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
   color: #1a202c;
   margin-bottom: 3rem;
 }
-.trivia-section h2 i {
+.hobby-trivia-section h2 i {
   color: var(--hobby-color);
   margin-right: 0.75rem;
 }
 
-/* Hide inactive trivia options */
-.trivia-container:not(.active) {
-  display: none;
-}
-
-.trivia-container {
+.hobby-trivia-container {
   max-width: 700px;
   margin: 2rem auto 0;
 }
-
-/* ========================================
-   OPTION A: Enhanced with Score & Share
-   ======================================== */
-.trivia-score-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.9) 100%);
-  border-radius: 16px;
-  margin-bottom: 2rem;
-  border: 2px solid var(--hobby-color-light);
+.hobby-trivia-container:not(.active) {
+  display: none;
 }
 
-.score-display {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1a202c;
-}
-.score-display span {
-  color: var(--hobby-color);
-  font-size: 1.4rem;
-}
-
-.progress-dots {
-  display: flex;
-  gap: 0.5rem;
-}
-.progress-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #e5e7eb;
-  transition: all 0.3s ease;
-}
-.progress-dots .dot.active {
-  background: var(--hobby-color);
-  transform: scale(1.2);
-}
-.progress-dots .dot.correct {
-  background: #10b981;
-}
-.progress-dots .dot.incorrect {
-  background: #ef4444;
-}
-
-.trivia-card-a {
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border: 2px solid var(--hobby-color-light);
-  border-radius: 20px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
-}
-.trivia-card-a:hover {
-  border-color: var(--hobby-color);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.question-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.question-number {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--hobby-color);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.trivia-card-a h3 {
-  color: #1a202c;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.option-btn-a {
-  padding: 1.2rem;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-align: left;
-  font-size: 1rem;
-}
-.option-btn-a:hover:not(.correct):not(.incorrect):not(:disabled) {
-  border-color: var(--hobby-color);
-  background: var(--hobby-color-alpha);
-  transform: translateX(4px);
-}
-.option-btn-a.correct {
-  background: #d1fae5;
-  border-color: #10b981;
-  color: #065f46;
-  font-weight: 600;
-}
-.option-btn-a.correct::before {
-  content: "✓ ";
-  color: #10b981;
-  font-weight: 700;
-}
-.option-btn-a.incorrect {
-  background: #fee2e2;
-  border-color: #ef4444;
-  color: #991b1b;
-  opacity: 0.6;
-}
-.option-btn-a:disabled {
-  cursor: not-allowed;
-}
-
-.feedback-a {
-  margin-top: 2rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  border-left: 4px solid var(--hobby-color);
-  animation: slideDown 0.4s ease;
-}
-.feedback-a .feedback-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.feedback-a .feedback-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.feedback-a .feedback-subtitle {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--hobby-color);
-  margin-bottom: 0.5rem;
-}
-.feedback-a .feedback-text {
-  color: #4a5568;
-  line-height: 1.7;
-}
-
-.trivia-completion {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.9) 100%);
-  border-radius: 20px;
-  border: 2px solid var(--hobby-color-light);
-}
-.trivia-completion .completion-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-.trivia-completion h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 1rem;
-}
-.trivia-completion .completion-score {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--hobby-color);
-  margin-bottom: 1rem;
-}
-.trivia-completion .completion-message {
-  font-size: 1.1rem;
-  color: #4a5568;
-  margin-bottom: 2rem;
-}
-
-.completion-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.share-score-btn,
-.try-again-btn {
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.share-score-btn i,
-.try-again-btn i {
-  transition: transform 0.3s ease;
-}
-.share-score-btn:hover i,
-.try-again-btn:hover i {
-  transform: scale(1.2);
-}
-
-.share-score-btn {
-  background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
-  color: white;
-}
-.share-score-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.try-again-btn {
-  background: white;
-  color: var(--hobby-color);
-  border: 2px solid var(--hobby-color);
-}
-.try-again-btn:hover {
-  background: var(--hobby-color-alpha);
-  transform: translateY(-2px);
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.trivia-card {
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border: 2px solid var(--hobby-color-light);
-  border-radius: 20px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
-}
-
-.trivia-card:hover {
-  border-color: var(--hobby-color);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.trivia-card h3 {
-  color: #1a202c;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.options-grid {
-  display: grid;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.option-btn {
-  padding: 1.2rem;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-align: left;
-  font-size: 1rem;
-  color: #374151;
-}
-
-.option-btn:hover {
-  border-color: var(--hobby-color);
-  background: var(--hobby-color-alpha);
-  transform: translateX(5px);
-}
-
-.option-btn.selected {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.1);
-  color: #1e40af;
-}
-
-.option-btn.correct {
-  border-color: #10b981;
-  background: rgba(16, 185, 129, 0.1);
-  color: #065f46;
-}
-
-.option-btn.incorrect {
-  border-color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
-  color: #991b1b;
-}
-
-.trivia-feedback {
-  text-align: center;
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-top: 1rem;
-  background: var(--hobby-color-alpha);
-  border: 2px solid var(--hobby-color-light);
-  color: #374151;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-/* ========================================
-   OPTION B: Quiz Mode with Timer
-   ======================================== */
-.quiz-start-screen {
+/* Quiz Start Screen */
+.hobby-quiz-start-screen {
   text-align: center;
   padding: 4rem 2rem;
 }
-.quiz-start-screen .start-icon {
+.hobby-quiz-start-screen .start-icon {
   font-size: 5rem;
   margin-bottom: 1.5rem;
 }
-.quiz-start-screen h3 {
+.hobby-quiz-start-screen h3 {
   font-size: 2rem;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 1rem;
 }
-.quiz-start-screen p {
+.hobby-quiz-start-screen p {
   font-size: 1.1rem;
   color: #4a5568;
   margin-bottom: 0.5rem;
 }
-.quiz-start-screen .timer-info {
+.hobby-quiz-start-screen .timer-info {
   color: var(--hobby-color);
   font-weight: 600;
   margin-bottom: 2rem;
 }
 
-.start-quiz-btn {
+.hobby-start-quiz-btn {
   padding: 1.2rem 3rem;
   background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
   color: white;
@@ -7148,12 +7123,13 @@ blockquote p {
   align-items: center;
   gap: 0.75rem;
 }
-.start-quiz-btn:hover {
+.hobby-start-quiz-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.quiz-header {
+/* Quiz Header */
+.hobby-quiz-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7164,43 +7140,39 @@ blockquote p {
   border: 2px solid var(--hobby-color-light);
 }
 
-.quiz-progress {
+.hobby-quiz-progress {
   flex: 1;
-}
-.quiz-progress .question-counter {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #1a202c;
-  display: block;
-  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.progress-dots-container {
+.hobby-progress-dots-container {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
 }
-.progress-dots-container .progress-dot {
+.hobby-progress-dots-container .progress-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: #e5e7eb;
   transition: all 0.3s ease;
 }
-.progress-dots-container .progress-dot.active {
+.hobby-progress-dots-container .progress-dot.active {
   background: #94a3b8;
   transform: scale(1.2);
 }
-.progress-dots-container .progress-dot.completed {
+.hobby-progress-dots-container .progress-dot.completed {
   background: var(--hobby-color);
   transform: scale(1.1);
   box-shadow: 0 0 8px var(--hobby-color);
 }
-.progress-dots-container .progress-dot.skipped {
+.hobby-progress-dots-container .progress-dot.skipped {
   background: #cbd5e1;
 }
 
-.quiz-timer {
+.hobby-quiz-timer {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -7208,15 +7180,15 @@ blockquote p {
   font-weight: 700;
   color: var(--hobby-color);
 }
-.quiz-timer i {
+.hobby-quiz-timer i {
   font-size: 1.2rem;
 }
-.quiz-timer.warning {
+.hobby-quiz-timer.warning {
   color: #ef4444;
-  animation: pulse 1s infinite;
+  animation: hobbyPulse 1s infinite;
 }
 
-@keyframes pulse {
+@keyframes hobbyPulse {
   0%, 100% {
     transform: scale(1);
   }
@@ -7224,13 +7196,14 @@ blockquote p {
     transform: scale(1.1);
   }
 }
-.trivia-card-b {
+/* Trivia Cards */
+.hobby-trivia-card-b {
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
   border: 2px solid var(--hobby-color-light);
   border-radius: 20px;
   padding: 2.5rem;
 }
-.trivia-card-b h3 {
+.hobby-trivia-card-b h3 {
   color: #1a202c;
   margin-bottom: 2rem;
   font-size: 1.4rem;
@@ -7238,7 +7211,15 @@ blockquote p {
   line-height: 1.5;
 }
 
-.option-btn-b {
+/* Options Grid for Trivia */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hobby-option-btn-b {
   padding: 1.2rem;
   background: white;
   border: 2px solid #e5e7eb;
@@ -7249,38 +7230,222 @@ blockquote p {
   text-align: left;
   font-size: 1rem;
 }
-.option-btn-b:hover:not(:disabled) {
+.hobby-option-btn-b:hover:not(:disabled) {
   border-color: var(--hobby-color);
   background: var(--hobby-color-alpha);
   transform: translateX(4px);
 }
-.option-btn-b:disabled {
+.hobby-option-btn-b:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-.completion-time {
+/* Completion Screen */
+.hobby-completion-time {
   font-size: 1.2rem;
   font-weight: 600;
   color: #4a5568;
   margin-bottom: 1rem;
 }
 
-.completion-card-capture {
-  padding: 2rem;
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.95) 100%);
-  border-radius: 20px;
-  border: 3px solid var(--hobby-color);
+.hobby-completion-card-capture {
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark, var(--hobby-color)) 100%);
+  border-radius: 24px;
+  border: none;
   margin-bottom: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.hobby-completion-card-capture::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hobby-completion-card-capture * {
+  position: relative;
+  z-index: 1;
 }
 
-.completion-message {
+.hobby-completion-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.hobby-completion-header .completion-icon-large {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: bounceIn 0.6s ease;
+}
+.hobby-completion-header .completion-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.hobby-completion-header .completion-subtitle {
   font-size: 1.1rem;
-  color: #4a5568;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
-  margin-top: 1rem;
 }
 
+.hobby-completion-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.hobby-stat-item {
+  text-align: center;
+  flex: 1;
+}
+.hobby-stat-item .stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.hobby-stat-item .stat-label {
+  font-size: 0.9rem;
+  color: white !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.hobby-stat-item .stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hobby-stat-divider {
+  width: 2px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hobby-completion-message-box {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Completion Actions - Share and Try Again Buttons */
+.completion-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.completion-actions button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+.completion-actions button i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+.completion-actions button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+.completion-actions button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+.completion-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.completion-actions button:hover i {
+  transform: scale(1.1);
+}
+.completion-actions button:active {
+  transform: translateY(0);
+}
+
+.share-score-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+.share-score-btn:hover {
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.try-again-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+.try-again-btn:hover {
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.hobby-completion-footer {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+.hobby-completion-footer .completion-url {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Section 6 Complete */
 /* Hobby Navigation Options */
 .hobby-navigation-options {
   margin-top: 2.5rem;
@@ -7317,11 +7482,18 @@ blockquote p {
   gap: 0.5rem;
   position: relative;
   overflow: hidden;
+  min-width: 140px;
+  justify-content: flex-start;
 }
 .hobby-nav-buttons .hobby-nav-btn i {
   font-size: 1.1rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   color: var(--btn-hobby-color, #1a202c);
+}
+.hobby-nav-buttons .hobby-nav-btn span {
+  transition: all 0.3s ease;
+  opacity: 1;
+  white-space: nowrap;
 }
 .hobby-nav-buttons .hobby-nav-btn::before {
   content: "";
@@ -7339,18 +7511,27 @@ blockquote p {
   position: relative;
   z-index: 1;
 }
-.hobby-nav-buttons .hobby-nav-btn:hover {
+.hobby-nav-buttons .hobby-nav-btn:hover, .hobby-nav-buttons .hobby-nav-btn:active {
   border-color: var(--btn-hobby-color, #e5e7eb);
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  justify-content: center;
 }
-.hobby-nav-buttons .hobby-nav-btn:hover::before {
+.hobby-nav-buttons .hobby-nav-btn:hover::before, .hobby-nav-buttons .hobby-nav-btn:active::before {
   opacity: 1;
 }
-.hobby-nav-buttons .hobby-nav-btn:hover i {
+.hobby-nav-buttons .hobby-nav-btn:hover i, .hobby-nav-buttons .hobby-nav-btn:active i {
   transform: scale(1.2);
   color: white;
+}
+.hobby-nav-buttons .hobby-nav-btn:hover span, .hobby-nav-buttons .hobby-nav-btn:active span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+.hobby-nav-buttons .hobby-nav-btn:active {
+  transform: translateY(0);
 }
 
 /* Mobile responsive */
@@ -7363,233 +7544,8 @@ blockquote p {
     justify-content: center;
   }
 }
-/* ========================================
-   OPTION C: Difficulty Levels
-   ======================================== */
-.difficulty-tabs {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  justify-content: center;
-}
-
-.difficulty-tab {
-  padding: 1rem 2rem;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.difficulty-tab i {
-  font-size: 1.2rem;
-}
-.difficulty-tab:hover {
-  border-color: var(--hobby-color);
-  background: var(--hobby-color-alpha);
-}
-.difficulty-tab.active {
-  background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
-  color: white;
-  border-color: var(--hobby-color);
-}
-
-.difficulty-badge {
-  text-align: center;
-  padding: 1rem;
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.9) 100%);
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  border: 2px solid var(--hobby-color-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-}
-.difficulty-badge .badge-icon {
-  font-size: 1.5rem;
-}
-.difficulty-badge .badge-text {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--hobby-color);
-}
-
-.trivia-card-c {
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border: 2px solid var(--hobby-color-light);
-  border-radius: 20px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
-}
-.trivia-card-c:hover {
-  border-color: var(--hobby-color);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-.trivia-card-c h3 {
-  color: #1a202c;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.option-btn-c {
-  padding: 1.2rem;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-align: left;
-  font-size: 1rem;
-}
-.option-btn-c:hover:not(.correct):not(.incorrect):not(:disabled) {
-  border-color: var(--hobby-color);
-  background: var(--hobby-color-alpha);
-  transform: translateX(4px);
-}
-.option-btn-c.correct {
-  background: #d1fae5;
-  border-color: #10b981;
-  color: #065f46;
-  font-weight: 600;
-}
-.option-btn-c.incorrect {
-  background: #fee2e2;
-  border-color: #ef4444;
-  color: #991b1b;
-  opacity: 0.6;
-}
-.option-btn-c:disabled {
-  cursor: not-allowed;
-}
-
-.feedback-c {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 12px;
-  border-left: 4px solid var(--hobby-color);
-  animation: slideDown 0.4s ease;
-}
-.feedback-c .feedback-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-.feedback-c p {
-  color: #4a5568;
-  line-height: 1.7;
-}
-
-/* ========================================
-   OPTION D: Minimal Polish
-   ======================================== */
-.trivia-card-d {
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border: 2px solid var(--hobby-color-light);
-  border-radius: 20px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  transition: all 0.3s ease;
-}
-.trivia-card-d:hover {
-  border-color: var(--hobby-color);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-.trivia-card-d h3 {
-  color: #1a202c;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.option-btn-d {
-  padding: 1.2rem;
-  background: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  text-align: left;
-  font-size: 1rem;
-}
-.option-btn-d:hover:not(.correct):not(.incorrect):not(:disabled) {
-  border-color: var(--hobby-color);
-  background: var(--hobby-color-alpha);
-  transform: translateX(4px);
-}
-.option-btn-d.correct {
-  background: #d1fae5;
-  border-color: #10b981;
-  color: #065f46;
-  font-weight: 600;
-  animation: correctPulse 0.5s ease;
-}
-.option-btn-d.incorrect {
-  background: #fee2e2;
-  border-color: #ef4444;
-  color: #991b1b;
-  opacity: 0.6;
-  animation: shake 0.5s ease;
-}
-.option-btn-d:disabled {
-  cursor: not-allowed;
-}
-
-.feedback-d {
-  margin-top: 2rem;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  border-left: 4px solid var(--hobby-color);
-  animation: slideDown 0.4s ease;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-.feedback-d .feedback-emoji {
-  font-size: 3rem;
-  flex-shrink: 0;
-}
-.feedback-d .feedback-text {
-  color: #4a5568;
-  line-height: 1.7;
-  flex: 1;
-}
-
-@keyframes correctPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-}
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
-}
-/* Current Projects Section */
-.current-projects {
+/* Current Projects Section - Scoped to hobby pages */
+.hobby-page .current-projects {
   margin-bottom: 5rem;
   padding: 3rem 2rem;
   background: white;
@@ -7598,206 +7554,377 @@ blockquote p {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.projects-grid {
+.hobby-page .projects-container {
+  display: none;
+  margin-top: 2rem;
+}
+.hobby-page .projects-container.active {
+  display: block;
+}
+
+.hobby-page .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
-.project-card {
-  background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border: 2px solid var(--hobby-color-light);
-  border-radius: 20px;
+/* ========================================
+   CLEAN PROJECT CARDS - Scoped to hobby pages
+   ======================================== */
+.hobby-page .project-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  border-color: var(--hobby-color);
-}
-
-.project-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+}
+.hobby-page .project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--hobby-color);
+  background: var(--hobby-color-alpha);
+}
+
+.hobby-page .project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-bottom: 1rem;
+  align-items: flex-start;
 }
-
-.project-card h3 {
-  color: var(--hobby-color);
+.hobby-page .project-header h3 {
+  color: #111827;
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
+  line-height: 1.4;
+  text-align: left;
+  width: 100%;
 }
 
-.project-status {
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
+.hobby-page .project-description {
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.95rem;
+  flex: 1;
+  text-align: left;
+}
+
+.hobby-page .project-status {
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
+  align-self: flex-start;
 }
 
-.status-in-progress {
-  background: rgba(59, 130, 246, 0.1);
+.hobby-page .status-in-progress {
+  background: #dbeafe;
   color: #1e40af;
 }
 
-.status-completed {
-  background: rgba(16, 185, 129, 0.1);
+.hobby-page .status-complete {
+  background: #d1fae5;
   color: #065f46;
 }
 
-.status-planning {
-  background: rgba(245, 158, 11, 0.1);
+.hobby-page .status-planning {
+  background: #fef3c7;
   color: #92400e;
 }
 
-.project-card p {
-  color: #4a5568;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+.hobby-page .status-vision-stage {
+  background: #ede9fe;
+  color: #5b21b6;
 }
 
-.tech-stack {
+.hobby-page .status-ideation {
+  background: #fce7f3;
+  color: #9f1239;
+}
+
+.hobby-page .tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.tech-tag {
-  background: var(--hobby-color);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
+.hobby-page .tech-tag {
+  background: white !important;
+  color: var(--hobby-color) !important;
+  padding: 0.4rem 0.85rem !important;
+  border-radius: 20px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid var(--hobby-color) !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+}
+.hobby-page .tech-tag:hover {
+  text-decoration: none !important;
+  background: var(--hobby-color) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--hobby-color) !important;
+}
+.hobby-page .tech-tag.tech-more {
+  background: white !important;
+  border: 2px solid #e5e7eb !important;
+  color: #6b7280 !important;
+  cursor: default !important;
+}
+.hobby-page .tech-tag.tech-more:hover {
+  text-decoration: none !important;
+  background: white !important;
+  color: #6b7280 !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-.project-link {
-  color: var(--hobby-color);
-  text-decoration: none;
-  font-weight: 600;
+.hobby-page .project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.hobby-page .project-date {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  color: var(--hobby-color);
+  font-weight: 600;
+  background: var(--hobby-color-alpha);
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+}
+.hobby-page .project-date i {
+  font-size: 0.85rem;
 }
 
-.project-link:hover {
-  color: var(--hobby-color-dark);
-  transform: translateX(3px);
+.hobby-page .project-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  flex-wrap: wrap !important;
 }
 
-/* External Platforms Section */
-.external-platforms {
+.hobby-page .project-link {
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  transition: all 0.3s ease !important;
+  font-size: 0.9rem !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 10px !important;
+  white-space: nowrap !important;
+  min-width: fit-content !important;
+  width: auto !important; /* Override 44px from _projects.scss */
+  height: auto !important; /* Override 44px from _projects.scss */
+}
+.hobby-page .project-link:hover {
+  text-decoration: none !important;
+}
+.hobby-page .project-link:first-child {
+  background: var(--hobby-color) !important;
+  color: white !important;
+  border: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.hobby-page .project-link:first-child::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+  transition: left 0.5s ease !important;
+  opacity: 1 !important; /* Override opacity: 0 from _projects.scss */
+}
+.hobby-page .project-link:first-child:hover {
+  text-decoration: none !important;
+  transform: translateY(-3px) !important; /* Override rotate(5deg) from _projects.scss */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+  filter: brightness(1.1) !important;
+}
+.hobby-page .project-link:first-child:hover::before {
+  left: 100% !important;
+}
+.hobby-page .project-link:last-child:not(:first-child) {
+  background: white !important;
+  color: var(--hobby-color) !important;
+  border: 2px solid var(--hobby-color) !important;
+  padding: 0.75rem 1rem !important;
+}
+.hobby-page .project-link:last-child:not(:first-child)::before {
+  display: none !important; /* Remove gradient background from _projects.scss */
+}
+.hobby-page .project-link:last-child:not(:first-child):hover {
+  text-decoration: none !important;
+  background: var(--hobby-color) !important;
+  color: white !important;
+  transform: translateY(-3px) !important; /* Override rotate(5deg) from _projects.scss */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+.hobby-page .project-link:last-child:not(:first-child) i {
+  color: inherit !important; /* Inherit color instead of forced white */
+}
+.hobby-page .project-link i {
+  font-size: 0.95rem !important;
+  position: static !important; /* Override z-index positioning from _projects.scss */
+  z-index: auto !important;
+}
+
+/* ========================================
+   SECTION: External Platforms
+   ======================================== */
+.hobby-external-platforms {
   margin-bottom: 5rem;
   padding: 3rem 2rem;
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
   border-radius: 24px;
   border: 2px solid var(--hobby-color-light);
 }
+.hobby-external-platforms h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1a202c;
+}
+.hobby-external-platforms h2 i {
+  color: var(--hobby-color);
+  margin-right: 0.75rem;
+  font-size: 1.8rem;
+}
 
-.platforms-grid {
+.hobby-platforms-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
-.platform-card {
+.hobby-platform-card {
   background: white;
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   color: inherit;
   display: flex;
   align-items: center;
   gap: 1.5rem;
   position: relative;
+  overflow: hidden;
 }
-
-.platform-card:hover {
+.hobby-platform-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+.hobby-platform-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-color: var(--platform-color);
   text-decoration: none;
   color: inherit;
 }
-
-.platform-card > i:first-child {
+.hobby-platform-card:hover::before {
+  left: 100%;
+}
+.hobby-platform-card:hover > i:first-child {
+  transform: scale(1.1);
+  color: var(--platform-color);
+}
+.hobby-platform-card:hover > i:last-child {
+  color: var(--platform-color);
+  transform: translateX(5px);
+}
+.hobby-platform-card > i:first-child {
   font-size: 2.5rem;
-  color: var(--hobby-color);
+  color: var(--platform-color);
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.hobby-platform-card > i:last-child {
+  color: #9ca3af;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
-.platform-info {
+.hobby-platform-info {
   flex: 1;
 }
-
-.platform-info h3 {
-  color: var(--hobby-color);
+.hobby-platform-info h3 {
+  color: #1a202c;
   margin: 0 0 0.5rem 0;
   font-size: 1.3rem;
   font-weight: 700;
+  transition: color 0.3s ease;
 }
-
-.platform-info p {
+.hobby-platform-info p {
   color: #6b7280;
   margin: 0;
   line-height: 1.5;
   font-size: 0.95rem;
 }
 
-.platform-card > i:last-child {
-  color: #9ca3af;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-
-.platform-card:hover > i:last-child {
-  color: var(--hobby-color);
-  transform: translateX(3px);
-}
-
-/* Empty States */
-.empty-state {
+/* Section 7 Complete */
+/* ========================================
+   SECTION: Empty States & CTA
+   ======================================== */
+.hobby-empty-state {
   text-align: center;
   padding: 4rem 2rem;
   color: #6b7280;
 }
-
-.empty-state i {
+.hobby-empty-state i {
   font-size: 4rem;
   color: var(--hobby-color-light);
   margin-bottom: 1.5rem;
   opacity: 0.7;
 }
-
-.empty-state h3 {
+.hobby-empty-state h3 {
   color: #374151;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
-
-.empty-state p {
+.hobby-empty-state p {
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 400px;
   margin: 0 auto;
 }
 
-/* Call-to-Action Section */
 .hobby-cta {
   margin-bottom: 3rem;
   padding: 4rem 2rem;
@@ -7807,7 +7934,6 @@ blockquote p {
   position: relative;
   overflow: hidden;
 }
-
 .hobby-cta::before {
   content: "";
   position: absolute;
@@ -7818,14 +7944,6 @@ blockquote p {
   background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
   z-index: 1;
 }
-
-.cta-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .hobby-cta h2 {
   font-size: 2.8rem;
   font-weight: 900;
@@ -7833,7 +7951,6 @@ blockquote p {
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   color: white;
 }
-
 .hobby-cta p {
   font-size: 1.3rem;
   margin-bottom: 2.5rem;
@@ -7842,7 +7959,14 @@ blockquote p {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.cta-btn {
+.hobby-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hobby-cta-btn {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 1.2rem 2.5rem;
@@ -7857,13 +7981,122 @@ blockquote p {
   backdrop-filter: blur(15px);
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
-
-.cta-btn:hover {
+.hobby-cta-btn:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: white;
+}
+
+/* Section 8 Complete */
+/* ========================================
+   SECTION: Explore Other Hobbies
+   ======================================== */
+.hobby-explore-section {
+  margin-bottom: 5rem;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+.hobby-explore-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+.hobby-explore-section h2 i {
+  color: var(--hobby-color);
+  margin-right: 0.75rem;
+  font-size: 1.8rem;
+}
+
+.hobby-explore-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.hobby-explore-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Explore Hobby Cards */
+.hobby-explore-card {
+  background: linear-gradient(135deg, var(--card-hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border: 2px solid var(--card-hobby-color-light);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  max-width: 260px;
+  text-align: center;
+}
+.hobby-explore-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: var(--card-hobby-color);
+  text-decoration: none !important;
+}
+.hobby-explore-card:hover .hobby-explore-icon {
+  transform: scale(1.15);
+  background: var(--card-hobby-color);
+  border-color: var(--card-hobby-color);
+}
+.hobby-explore-card:hover .hobby-explore-icon i {
+  color: white;
+}
+.hobby-explore-card * {
+  text-decoration: none !important;
+}
+
+.hobby-explore-icon {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  border: 3px solid var(--card-hobby-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.hobby-explore-icon i {
+  color: var(--card-hobby-color);
+  transition: color 0.3s ease;
+}
+
+.hobby-explore-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hobby-explore-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
 /* Responsive Design */
@@ -7882,18 +8115,70 @@ blockquote p {
   .hobby-emoji-large {
     font-size: 4.5rem;
   }
-  .quote-text {
-    font-size: 1.1rem;
-    -webkit-line-clamp: 3;
-    max-height: 90px;
-  }
-  .quotes-container {
+  .hobby-quotes-section {
+    max-width: 100%;
+    width: 98%;
     min-height: 140px;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
+  }
+  .hobby-quote-card {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+  .hobby-quote-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .hobby-quote-author {
+    font-size: 0.85rem;
+  }
+  .hobby-quote-meta {
+    font-size: 0.75rem;
   }
   .hero-nav {
     top: 4.5rem; /* Below nav bar on mobile */
     left: 1rem;
+  }
+  /* Explore Hobbies - Mobile */
+  .hobby-explore-section {
+    padding: 2rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .hobby-explore-section h2 {
+    font-size: 1.6rem;
+  }
+  .hobby-explore-grid {
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+  .hobby-explore-card {
+    max-width: 100%;
+    padding: 1.8rem 1.5rem;
+  }
+  .hobby-explore-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 1.8rem;
+  }
+  .hobby-explore-name {
+    font-size: 1.2rem;
+  }
+  .hobby-page .hobby-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    font-size: 1.8rem;
+  }
+  .hobby-page .hobby-content {
+    padding-right: 0;
+    text-align: center;
+  }
+  .hobby-page .hobby-name {
+    font-size: 1.2rem;
+  }
+  .hobby-page .hobby-description {
+    font-size: 0.85rem;
   }
   .back-btn {
     padding: 0.6rem 1.2rem;
@@ -8016,12 +8301,13 @@ blockquote p {
   .hobby-emoji-large {
     font-size: 4rem;
   }
-  .quote-text {
+  .hobby-page .quote-text {
     font-size: 1rem;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     max-height: 70px;
   }
-  .quotes-container {
+  .hobby-page .quotes-container {
     min-height: 120px;
   }
   .hero-nav {

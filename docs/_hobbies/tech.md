@@ -1,6 +1,6 @@
 ---
 layout: hobby
-title: "Technology & Innovation"
+title: "Tech"
 slug: tech
 emoji: "💻"
 color: "#E3F2FD"
@@ -145,20 +145,20 @@ current_projects:
 # External Platforms
 external_platforms:
   - name: "GitHub"
-    icon: "💻"
+    icon: "fab fa-github"
     description: "Open source contributions and project portfolio"
     url: "https://github.com/gmanthenoxus"
-    stats: "50+ repositories, 500+ commits"
+    color: "#181717"
   - name: "Stack Overflow"
-    icon: "📚"
+    icon: "fab fa-stack-overflow"
     description: "Technical Q&A and community contributions"
     url: "https://stackoverflow.com/users/gmanthenoxus"
-    stats: "2.5K reputation, 100+ answers"
+    color: "#F58025"
   - name: "Tech Twitter"
-    icon: "🐦"
+    icon: "fab fa-twitter"
     description: "Technology insights and industry discussions"
     url: "https://twitter.com/gmanthenoxus_tech"
-    stats: "1.8K followers, daily tech content"
+    color: "#1DA1F2"
 
 # Empty States
 empty_states:

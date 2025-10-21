@@ -5,7 +5,7 @@
   icon: "fas fa-tv"
   color: "#9B59B6"
   category: "digital"
-  description: "Where storytelling meets artistry. My journey through Japanese animation and manga."
+  description: "Where storytelling meets artistry. My journey through Japanese animation."
   featured_image: "/assets/images/anime-bg.jpg"
   url: "/hobbies/anime/"
   projects:
@@ -66,16 +66,6 @@
   description: "From weights to cardio. Building intelligent fitness tracking systems."
   featured_image: "/assets/images/gym-bg.jpg"
   url: "/hobbies/fitness/"
-
-- name: "Food"
-  slug: "food"
-  emoji: "🍔"
-  icon: "fas fa-utensils"
-  color: "#E67E22"
-  category: "social"
-  description: "From street food to fine dining. Creating social kitchen coordination tools."
-  featured_image: "/assets/images/food-bg.jpg"
-  url: "/hobbies/food/"
 
 - name: "Music"
   slug: "music"

@@ -1,6 +1,31 @@
 // Enhanced Hobby Page Functionality
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Dynamic Color System - Convert hex to RGB and create color variants
+    const hobbyPage = document.querySelector('.hobby-page');
+    if (hobbyPage) {
+        const hobbyColor = getComputedStyle(hobbyPage).getPropertyValue('--hobby-color').trim();
+
+        // Convert hex to RGB
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        }
+
+        const rgb = hexToRgb(hobbyColor);
+        if (rgb) {
+            // Set color variants as CSS custom properties
+            hobbyPage.style.setProperty('--hobby-color-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
+            hobbyPage.style.setProperty('--hobby-color-alpha', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.1)`);
+            hobbyPage.style.setProperty('--hobby-color-light', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.15)`);
+            hobbyPage.style.setProperty('--hobby-color-dark', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.8)`);
+        }
+    }
+
     // Scroll Reveal Animation System
     const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
 
@@ -20,28 +45,92 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollRevealObserver.observe(element);
     });
 
-    // Quote Rotation System
-    const quoteItems = document.querySelectorAll('.quote-item');
-    if (quoteItems.length > 1) {
+    // Quote System - Simple Smooth Transitions
+    const quoteCards = document.querySelectorAll('.hobby-quote-card');
+
+    if (quoteCards.length > 0) {
         let currentQuoteIndex = 0;
+        let autoRotateTimeout;
+        const TRANSITION_DURATION = 1000; // 1 second smooth fade
+        const SHORT_QUOTE_DISPLAY = 8000; // 8 seconds for short quotes
+        const LONG_QUOTE_DISPLAY = 12000; // 12 seconds for long quotes
+        const LONG_QUOTE_THRESHOLD = 100; // Characters
 
-        function rotateQuote() {
-            // Hide current quote
-            quoteItems[currentQuoteIndex].style.opacity = '0';
-
-            // Move to next quote
-            currentQuoteIndex = (currentQuoteIndex + 1) % quoteItems.length;
-
-            // Show next quote
-            setTimeout(() => {
-                quoteItems.forEach((item, index) => {
-                    item.style.opacity = index === currentQuoteIndex ? '1' : '0';
-                });
-            }, 800);
+        // Calculate display time based on quote length
+        function calculateDisplayTime(text) {
+            return text.length <= LONG_QUOTE_THRESHOLD ? SHORT_QUOTE_DISPLAY : LONG_QUOTE_DISPLAY;
         }
 
-        // Rotate quotes every 8 seconds
-        setInterval(rotateQuote, 8000);
+        // Show specific quote with smooth transition
+        function showQuote(index) {
+            // Clear any pending rotation
+            if (autoRotateTimeout) {
+                clearTimeout(autoRotateTimeout);
+            }
+
+            // Fade out current quote
+            const currentCard = quoteCards[currentQuoteIndex];
+            currentCard.classList.remove('active');
+
+            // Wait for fade out, then fade in new quote
+            setTimeout(() => {
+                const newCard = quoteCards[index];
+                const quoteText = newCard.querySelector('.hobby-quote-text');
+
+                if (quoteText) {
+                    const fullText = quoteText.getAttribute('data-full-text');
+
+                    // Fade in the card
+                    newCard.classList.add('active');
+
+                    // Schedule next rotation after reading time
+                    const displayTime = calculateDisplayTime(fullText);
+                    autoRotateTimeout = setTimeout(() => {
+                        nextQuote();
+                    }, displayTime);
+                }
+
+                currentQuoteIndex = index;
+            }, TRANSITION_DURATION);
+        }
+
+        // Move to next quote
+        function nextQuote() {
+            const nextIndex = (currentQuoteIndex + 1) % quoteCards.length;
+            showQuote(nextIndex);
+        }
+
+        // Initialize - show first quote
+        quoteCards[0].classList.add('active');
+        const firstQuoteText = quoteCards[0].querySelector('.hobby-quote-text');
+        if (firstQuoteText && quoteCards.length > 1) {
+            const fullText = firstQuoteText.getAttribute('data-full-text');
+            const displayTime = calculateDisplayTime(fullText);
+            autoRotateTimeout = setTimeout(() => {
+                nextQuote();
+            }, displayTime);
+        }
+
+        // Pause auto-rotate on hover
+        const quotesSection = document.querySelector('.hobby-quotes-section');
+        if (quotesSection && quoteCards.length > 1) {
+            quotesSection.addEventListener('mouseenter', () => {
+                if (autoRotateTimeout) {
+                    clearTimeout(autoRotateTimeout);
+                }
+            });
+
+            quotesSection.addEventListener('mouseleave', () => {
+                const currentQuoteText = quoteCards[currentQuoteIndex].querySelector('.hobby-quote-text');
+                if (currentQuoteText) {
+                    const fullText = currentQuoteText.getAttribute('data-full-text');
+                    const displayTime = calculateDisplayTime(fullText);
+                    autoRotateTimeout = setTimeout(() => {
+                        nextQuote();
+                    }, displayTime);
+                }
+            });
+        }
     }
 
     // Trivia System - No action needed, handled by global function
@@ -263,10 +352,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Global function for trivia answer selection
 window.selectAnswer = function(questionIndex, answerIndex) {
-    const triviaCard = document.querySelectorAll('.trivia-card')[questionIndex];
+    const triviaCard = document.querySelectorAll('.hobby-trivia-card')[questionIndex];
     if (!triviaCard) return;
 
-    const buttons = triviaCard.querySelectorAll('.option-btn');
+    const buttons = triviaCard.querySelectorAll('.hobby-option-btn');
     const feedback = triviaCard.querySelector('.trivia-feedback');
 
     // Get correct answer from data attribute
@@ -322,8 +411,8 @@ window.selectAnswer = function(questionIndex, answerIndex) {
 
 // Trivia toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const triviaToggles = document.querySelectorAll('.trivia-section .toggle-btn');
-    const triviaContainers = document.querySelectorAll('.trivia-container[class*="trivia-option"]');
+    const triviaToggles = document.querySelectorAll('.hobby-trivia-section .hobby-toggle-btn');
+    const triviaContainers = document.querySelectorAll('.hobby-trivia-container[class*="trivia-option"]');
 
     triviaToggles.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -363,7 +452,7 @@ let scoreA = 0;
 let answeredA = [];
 
 function initOptionA() {
-    const totalQuestions = document.querySelectorAll('.trivia-card-a').length;
+    const totalQuestions = document.querySelectorAll('.hobby-trivia-card-a').length;
 
     // Initialize progress dots
     const progressContainer = document.getElementById('progressA');
@@ -378,18 +467,18 @@ function initOptionA() {
     }
 
     // Add click handlers to option buttons
-    document.querySelectorAll('.option-btn-a').forEach(btn => {
+    document.querySelectorAll('.hobby-option-btn-a').forEach(btn => {
         btn.addEventListener('click', function() {
             if (this.disabled) return;
 
             const questionIndex = parseInt(this.getAttribute('data-question'));
             const answerIndex = parseInt(this.getAttribute('data-index'));
-            const card = document.querySelector(`.trivia-card-a[data-question="${questionIndex}"]`);
+            const card = document.querySelector(`.hobby-trivia-card-a[data-question="${questionIndex}"]`);
             const correctAnswer = parseInt(card.getAttribute('data-correct-answer'));
             const isCorrect = answerIndex === correctAnswer;
 
             // Disable all buttons in this question
-            card.querySelectorAll('.option-btn-a').forEach(b => b.disabled = true);
+            card.querySelectorAll('.hobby-option-btn-a').forEach(b => b.disabled = true);
 
             // Mark answer
             if (isCorrect) {
@@ -399,7 +488,7 @@ function initOptionA() {
             } else {
                 this.classList.add('incorrect');
                 // Show correct answer
-                card.querySelectorAll('.option-btn-a')[correctAnswer].classList.add('correct');
+                card.querySelectorAll('.hobby-option-btn-a')[correctAnswer].classList.add('correct');
                 updateProgressDot(questionIndex, 'incorrect');
             }
 
@@ -442,7 +531,7 @@ function updateProgressDot(index, status) {
 }
 
 function showCompletionA(total) {
-    document.querySelectorAll('.trivia-card-a').forEach(card => card.style.display = 'none');
+    document.querySelectorAll('.hobby-trivia-card-a').forEach(card => card.style.display = 'none');
     const completion = document.getElementById('completionA');
     completion.style.display = 'block';
 
@@ -469,9 +558,9 @@ window.resetQuiz = function(option) {
         document.getElementById('scoreA').textContent = '0';
         document.getElementById('completionA').style.display = 'none';
 
-        document.querySelectorAll('.trivia-card-a').forEach(card => {
+        document.querySelectorAll('.hobby-trivia-card-a').forEach(card => {
             card.style.display = 'block';
-            card.querySelectorAll('.option-btn-a').forEach(btn => {
+            card.querySelectorAll('.hobby-option-btn-a').forEach(btn => {
                 btn.disabled = false;
                 btn.classList.remove('correct', 'incorrect');
             });
@@ -492,8 +581,8 @@ window.resetQuiz = function(option) {
         answersB = [];
 
         // Reset all cards
-        document.querySelectorAll('.trivia-card-b').forEach(card => {
-            card.querySelectorAll('.option-btn-b').forEach(btn => {
+        document.querySelectorAll('.hobby-trivia-card-b').forEach(card => {
+            card.querySelectorAll('.hobby-option-btn-b').forEach(btn => {
                 btn.disabled = false;
             });
         });
@@ -508,13 +597,13 @@ window.resetQuiz = function(option) {
 // Initialize hobby navigation buttons
 function initHobbyNavigation() {
     const hobbies = [
-        { name: 'Anime', icon: 'fas fa-tv', url: '/hobbies/anime', color: '#FF6B9D' },
-        { name: 'Fitness', icon: 'fas fa-dumbbell', url: '/hobbies/fitness', color: '#FF4757' },
-        { name: 'Food', icon: 'fas fa-utensils', url: '/hobbies/food', color: '#FFA502' },
-        { name: 'Games', icon: 'fas fa-gamepad', url: '/hobbies/games', color: '#5F27CD' },
-        { name: 'Sneakers', icon: 'fas fa-shoe-prints', url: '/hobbies/sneakers', color: '#00D2D3' },
-        { name: 'Sports', icon: 'fas fa-basketball-ball', url: '/hobbies/sports', color: '#1E90FF' },
-        { name: 'Tech', icon: 'fas fa-laptop-code', url: '/hobbies/tech', color: '#2ECC71' }
+        { name: 'Anime', icon: 'fas fa-tv', url: '/hobbies/anime', color: '#FF6B9D', description: 'From Bleach\'s first Bankai to the depths of isekai' },
+        { name: 'Fitness', icon: 'fas fa-dumbbell', url: '/hobbies/fitness', color: '#4ECDC4', description: 'From forced punishment to purposeful strength' },
+        { name: 'Games', icon: 'fas fa-gamepad', url: '/hobbies/games', color: '#9B59B6', description: 'From Nintendo 64 magic to midnight lobbies' },
+        { name: 'Music', icon: 'fas fa-music', url: '/hobbies/music', color: '#E91E63', description: 'From indie to pop. Building active music discovery companions' },
+        { name: 'Sneakers', icon: 'fas fa-shoe-prints', url: '/hobbies/sneakers', color: '#FFE5B4', description: 'The culture, the craft, the community' },
+        { name: 'Sports', icon: 'fas fa-basketball-ball', url: '/hobbies/sports', color: '#2E86AB', description: 'Where passion meets performance' },
+        { name: 'Tech', icon: 'fas fa-laptop-code', url: '/hobbies/tech', color: '#E3F2FD', description: 'Exploring the cutting edge of technology' }
     ];
 
     const currentHobby = document.querySelector('.hobby-hero h1')?.textContent.trim() || '';
@@ -543,42 +632,199 @@ function initHobbyNavigation() {
     }
 }
 
+// Initialize "Explore Other Hobbies" section (circular navigation)
+function initExploreHobbies() {
+    // Helper function to convert hex to RGB
+    function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
+
+    const hobbies = [
+        { name: 'Anime', icon: 'fas fa-tv', url: '/hobbies/anime', color: '#FF6B9D', description: 'From Bleach\'s first Bankai to the depths of isekai' },
+        { name: 'Fitness', icon: 'fas fa-dumbbell', url: '/hobbies/fitness', color: '#4ECDC4', description: 'From forced punishment to purposeful strength' },
+        { name: 'Games', icon: 'fas fa-gamepad', url: '/hobbies/games', color: '#9B59B6', description: 'From Nintendo 64 magic to midnight lobbies' },
+        { name: 'Music', icon: 'fas fa-music', url: '/hobbies/music', color: '#E91E63', description: 'From indie to pop. Building active music discovery companions' },
+        { name: 'Sneakers', icon: 'fas fa-shoe-prints', url: '/hobbies/sneakers', color: '#FFE5B4', description: 'The culture, the craft, the community' },
+        { name: 'Sports', icon: 'fas fa-basketball-ball', url: '/hobbies/sports', color: '#2E86AB', description: 'Where passion meets performance' },
+        { name: 'Tech', icon: 'fas fa-laptop-code', url: '/hobbies/tech', color: '#E3F2FD', description: 'Exploring the cutting edge of technology' }
+    ];
+
+    const currentHobbyTitle = document.querySelector('.hobby-hero h1')?.textContent.trim() || '';
+    const gridContainer = document.getElementById('otherHobbiesGrid');
+
+    if (gridContainer) {
+        gridContainer.innerHTML = '';
+
+        // Find current hobby index by checking if title contains hobby name
+        const currentIndex = hobbies.findIndex(h => currentHobbyTitle.includes(h.name));
+
+        if (currentIndex !== -1) {
+            // Calculate previous and next indices (circular)
+            const prevIndex = (currentIndex - 1 + hobbies.length) % hobbies.length;
+            const nextIndex = (currentIndex + 1) % hobbies.length;
+
+            // Get previous and next hobbies
+            const prevHobby = hobbies[prevIndex];
+            const nextHobby = hobbies[nextIndex];
+
+            // Create cards for previous and next hobbies
+            [prevHobby, nextHobby].forEach((hobby) => {
+                const card = document.createElement('a');
+                card.href = hobby.url;
+                card.className = 'hobby-explore-card';
+                card.style.setProperty('--card-hobby-color', hobby.color);
+
+                // Calculate alpha and light colors for backgrounds
+                const rgb = hexToRgb(hobby.color);
+                if (rgb) {
+                    card.style.setProperty('--card-hobby-color-alpha', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.12)`);
+                    card.style.setProperty('--card-hobby-color-light', `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`);
+                }
+
+                card.innerHTML = `
+                    <div class="hobby-explore-icon">
+                        <i class="${hobby.icon}"></i>
+                    </div>
+                    <div class="hobby-explore-content">
+                        <h3 class="hobby-explore-name">${hobby.name}</h3>
+                    </div>
+                `;
+
+                gridContainer.appendChild(card);
+            });
+        }
+    }
+}
+
+// Helper function to adjust color brightness
+function adjustColor(color, amount) {
+    const hex = color.replace('#', '');
+    const r = Math.max(0, Math.min(255, parseInt(hex.substr(0, 2), 16) + amount));
+    const g = Math.max(0, Math.min(255, parseInt(hex.substr(2, 2), 16) + amount));
+    const b = Math.max(0, Math.min(255, parseInt(hex.substr(4, 2), 16) + amount));
+    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
+
 // Share score with image capture
 window.shareScoreWithImage = async function(option) {
     const hobbyTitle = document.querySelector('.hobby-hero h1')?.textContent || 'Hobby';
     const pageUrl = window.location.href;
-    let score, total, time, message;
+    let score, total, time, message, shareTitle, completionCardId;
 
-    if (option === 'B') {
+    if (option === 'A') {
+        score = scoreA;
+        total = document.querySelectorAll('.trivia-card-a').length;
+        shareTitle = `${hobbyTitle} Trivia Score`;
+        message = `🎯 I scored ${score}/${total} on the ${hobbyTitle} trivia quiz!`;
+        completionCardId = 'completionCardA';
+    } else if (option === 'B') {
         score = scoreB;
-        total = document.querySelectorAll('.trivia-card-b').length;
+        total = document.querySelectorAll('.hobby-trivia-card-b').length;
         time = document.getElementById('totalTimeB').textContent;
+        shareTitle = `${hobbyTitle} Trivia Score`;
         message = `⏱️ I scored ${score}/${total} in ${time}s on the ${hobbyTitle} timed quiz!`;
+        completionCardId = 'completionCardB';
     }
 
-    const shareText = `${message}
+    const shareText = `${shareTitle}
+${pageUrl}
+
+${message}
 
 Think you can beat my score? Try it here:
 ${pageUrl}
 
 #${hobbyTitle.replace(/\s+/g, '')} #TriviaChallenge #QuizTime`;
 
-    // Try to use Web Share API with text
-    if (navigator.share) {
-        try {
-            await navigator.share({
-                title: `${hobbyTitle} Trivia Score`,
+    // Try to capture completion card as image
+    try {
+        const completionCard = document.getElementById(completionCardId);
+
+        if (completionCard && typeof html2canvas !== 'undefined') {
+            showNotification('Generating image... 📸');
+
+            // Capture the card as canvas
+            const canvas = await html2canvas(completionCard, {
+                backgroundColor: null,
+                scale: 2, // Higher quality
+                logging: false,
+                useCORS: true
+            });
+
+            // Convert canvas to blob
+            canvas.toBlob(async (blob) => {
+                if (blob) {
+                    // Always try to share with both image and text
+                    if (navigator.share) {
+                        try {
+                            const file = new File([blob], `${hobbyTitle.toLowerCase().replace(/\s+/g, '-')}-quiz-score.png`, { type: 'image/png' });
+
+                            // Try sharing with file first
+                            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                                await navigator.share({
+                                    title: shareTitle,
+                                    text: shareText,
+                                    files: [file]
+                                });
+                                showNotification('Score shared successfully! 🎉');
+                                return;
+                            }
+                        } catch (err) {
+                            if (err.name !== 'AbortError') {
+                                console.log('Share with image failed:', err);
+                            } else {
+                                return; // User cancelled
+                            }
+                        }
+                    }
+
+                    // Fallback: Download image and copy text
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${hobbyTitle.toLowerCase().replace(/\s+/g, '-')}-quiz-score.png`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+
+                    // Copy text to clipboard
+                    copyToClipboard(shareText);
+                    showNotification('✅ Image downloaded! Share text copied to clipboard 📋');
+                } else {
+                    // Fallback to text only
+                    shareTextOnly();
+                }
+            }, 'image/png');
+        } else {
+            // html2canvas not available, share text only
+            shareTextOnly();
+        }
+    } catch (err) {
+        console.error('Error capturing image:', err);
+        shareTextOnly();
+    }
+
+    // Helper function for text-only sharing
+    function shareTextOnly() {
+        if (navigator.share) {
+            navigator.share({
+                title: shareTitle,
                 text: shareText,
                 url: pageUrl
+            }).then(() => {
+                showNotification('Score shared successfully! 🎉');
+            }).catch(err => {
+                if (err.name !== 'AbortError') {
+                    copyToClipboard(shareText);
+                }
             });
-            showNotification('Score shared successfully! 🎉');
-        } catch (err) {
-            if (err.name !== 'AbortError') {
-                copyToClipboard(shareText);
-            }
+        } else {
+            copyToClipboard(shareText);
         }
-    } else {
-        copyToClipboard(shareText);
     }
 };
 
@@ -589,11 +835,11 @@ window.shareScore = function(option) {
 
     if (option === 'A') {
         score = scoreA;
-        total = document.querySelectorAll('.trivia-card-a').length;
+        total = document.querySelectorAll('.hobby-trivia-card-a').length;
         message = `🧠 I scored ${score}/${total} on the ${hobbyTitle} trivia quiz!`;
     } else if (option === 'B') {
         score = scoreB;
-        total = document.querySelectorAll('.trivia-card-b').length;
+        total = document.querySelectorAll('.hobby-trivia-card-b').length;
         const time = document.getElementById('totalTimeB').textContent;
         message = `⏱️ I scored ${score}/${total} in ${time}s on the ${hobbyTitle} timed quiz!`;
     }
@@ -630,7 +876,7 @@ let answersB = []; // Track correct/incorrect answers
 
 function initOptionB() {
     // Initialize progress dots
-    const totalQuestions = document.querySelectorAll('.trivia-card-b').length;
+    const totalQuestions = document.querySelectorAll('.hobby-trivia-card-b').length;
     const progressContainer = document.getElementById('progressDotsB');
 
     if (progressContainer) {
@@ -667,20 +913,20 @@ window.startQuiz = function(option) {
         startTimerB();
 
         // Add click handlers (only once)
-        const buttons = document.querySelectorAll('.option-btn-b');
+        const buttons = document.querySelectorAll('.hobby-option-btn-b');
         buttons.forEach(btn => {
             // Remove existing listeners by cloning
             const newBtn = btn.cloneNode(true);
             btn.parentNode.replaceChild(newBtn, btn);
         });
 
-        document.querySelectorAll('.option-btn-b').forEach(btn => {
+        document.querySelectorAll('.hobby-option-btn-b').forEach(btn => {
             btn.addEventListener('click', function() {
                 if (this.disabled) return;
 
                 const questionIndex = parseInt(this.getAttribute('data-question'));
                 const answerIndex = parseInt(this.getAttribute('data-index'));
-                const card = document.querySelector(`.trivia-card-b[data-question="${questionIndex}"]`);
+                const card = document.querySelector(`.hobby-trivia-card-b[data-question="${questionIndex}"]`);
                 const correctAnswer = parseInt(card.getAttribute('data-correct-answer'));
                 const isCorrect = answerIndex === correctAnswer;
 
@@ -695,13 +941,13 @@ window.startQuiz = function(option) {
                 updateProgressDotB(questionIndex, true);
 
                 // Disable buttons
-                card.querySelectorAll('.option-btn-b').forEach(b => b.disabled = true);
+                card.querySelectorAll('.hobby-option-btn-b').forEach(b => b.disabled = true);
 
                 // Move to next question
                 clearInterval(timerB);
                 currentQuestionB++;
 
-                if (currentQuestionB < document.querySelectorAll('.trivia-card-b').length) {
+                if (currentQuestionB < document.querySelectorAll('.hobby-trivia-card-b').length) {
                     setTimeout(() => {
                         showQuestionB(currentQuestionB);
                         startTimerB();
@@ -727,18 +973,16 @@ function updateProgressDotB(index, answered) {
 }
 
 function showQuestionB(index) {
-    document.querySelectorAll('.trivia-card-b').forEach((card, i) => {
+    document.querySelectorAll('.hobby-trivia-card-b').forEach((card, i) => {
         card.style.display = i === index ? 'block' : 'none';
 
         // Re-enable buttons for current question
         if (i === index) {
-            card.querySelectorAll('.option-btn-b').forEach(btn => {
+            card.querySelectorAll('.hobby-option-btn-b').forEach(btn => {
                 btn.disabled = false;
             });
         }
     });
-
-    document.getElementById('currentB').textContent = index + 1;
 
     // Update active dot
     document.querySelectorAll('#progressDotsB .progress-dot').forEach((dot, i) => {
@@ -752,7 +996,7 @@ function showQuestionB(index) {
     timeLeftB = 30;
 
     // Reset timer warning
-    const timerEl = document.querySelector('.quiz-timer');
+    const timerEl = document.querySelector('.hobby-quiz-timer');
     if (timerEl) {
         timerEl.classList.remove('warning');
     }
@@ -764,7 +1008,7 @@ function startTimerB() {
         document.getElementById('timerB').textContent = timeLeftB;
 
         if (timeLeftB <= 10) {
-            document.querySelector('.quiz-timer').classList.add('warning');
+            document.querySelector('.hobby-quiz-timer').classList.add('warning');
         }
 
         if (timeLeftB <= 0) {
@@ -776,7 +1020,7 @@ function startTimerB() {
 
             currentQuestionB++;
 
-            if (currentQuestionB < document.querySelectorAll('.trivia-card-b').length) {
+            if (currentQuestionB < document.querySelectorAll('.hobby-trivia-card-b').length) {
                 showQuestionB(currentQuestionB);
                 startTimerB();
             } else {
@@ -796,7 +1040,7 @@ function endQuizB() {
     document.getElementById('totalTimeB').textContent = totalTimeB;
 
     // Set completion message
-    const total = document.querySelectorAll('.trivia-card-b').length;
+    const total = document.querySelectorAll('.hobby-trivia-card-b').length;
     const percentage = (scoreB / total) * 100;
     const messageEl = document.getElementById('messageBText');
 
@@ -845,25 +1089,25 @@ function initOptionC() {
     });
 
     // Add click handlers to option buttons
-    document.querySelectorAll('.option-btn-c').forEach(btn => {
+    document.querySelectorAll('.hobby-option-btn-c').forEach(btn => {
         btn.addEventListener('click', function() {
             if (this.disabled) return;
 
             const questionIndex = parseInt(this.getAttribute('data-question'));
             const answerIndex = parseInt(this.getAttribute('data-index'));
-            const card = document.querySelector(`.trivia-card-c[data-question="${questionIndex}"]`);
+            const card = document.querySelector(`.hobby-trivia-card-c[data-question="${questionIndex}"]`);
             const correctAnswer = parseInt(card.getAttribute('data-correct-answer'));
             const isCorrect = answerIndex === correctAnswer;
 
             // Disable all buttons
-            card.querySelectorAll('.option-btn-c').forEach(b => b.disabled = true);
+            card.querySelectorAll('.hobby-option-btn-c').forEach(b => b.disabled = true);
 
             // Mark answer
             if (isCorrect) {
                 this.classList.add('correct');
             } else {
                 this.classList.add('incorrect');
-                card.querySelectorAll('.option-btn-c')[correctAnswer].classList.add('correct');
+                card.querySelectorAll('.hobby-option-btn-c')[correctAnswer].classList.add('correct');
             }
 
             // Show feedback
@@ -888,25 +1132,25 @@ function initOptionC() {
 // ========================================
 
 function initOptionD() {
-    document.querySelectorAll('.option-btn-d').forEach(btn => {
+    document.querySelectorAll('.hobby-option-btn-d').forEach(btn => {
         btn.addEventListener('click', function() {
             if (this.disabled) return;
 
             const questionIndex = parseInt(this.getAttribute('data-question'));
             const answerIndex = parseInt(this.getAttribute('data-index'));
-            const card = document.querySelector(`.trivia-card-d[data-question="${questionIndex}"]`);
+            const card = document.querySelector(`.hobby-trivia-card-d[data-question="${questionIndex}"]`);
             const correctAnswer = parseInt(card.getAttribute('data-correct-answer'));
             const isCorrect = answerIndex === correctAnswer;
 
             // Disable all buttons
-            card.querySelectorAll('.option-btn-d').forEach(b => b.disabled = true);
+            card.querySelectorAll('.hobby-option-btn-d').forEach(b => b.disabled = true);
 
             // Mark answer
             if (isCorrect) {
                 this.classList.add('correct');
             } else {
                 this.classList.add('incorrect');
-                card.querySelectorAll('.option-btn-d')[correctAnswer].classList.add('correct');
+                card.querySelectorAll('.hobby-option-btn-d')[correctAnswer].classList.add('correct');
             }
 
             // Show feedback
@@ -1023,7 +1267,7 @@ function showNotification(message) {
 
 // Time Filter Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const timeFilterBtns = document.querySelectorAll('.time-filter-btn');
+    const timeFilterBtns = document.querySelectorAll('.hobby-time-filter-btn');
     timeFilterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Remove active class from all buttons
@@ -1042,7 +1286,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateStatsForPeriod(period) {
         // Visual feedback during update
-        const statsGrid = document.querySelector('.stats-grid');
+        const statsGrid = document.querySelector('.hobby-stats-grid');
         if (statsGrid) {
             statsGrid.style.opacity = '0.5';
             statsGrid.style.transition = 'opacity 0.3s ease';
@@ -1058,11 +1302,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Animate milestone badges on scroll
-    const milestoneBadges = document.querySelectorAll('.stat-milestone.reached');
+    const milestoneBadges = document.querySelectorAll('.hobby-stat-milestone.reached');
     const milestoneObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.animation = 'milestoneGlow 2s ease-in-out infinite';
+                entry.target.style.animation = 'hobbyMilestoneGlow 2s ease-in-out infinite';
                 milestoneObserver.unobserve(entry.target);
             }
         });
@@ -1071,7 +1315,7 @@ document.addEventListener('DOMContentLoaded', function() {
     milestoneBadges.forEach(badge => milestoneObserver.observe(badge));
 
     // Animate trend indicators
-    const trendIndicators = document.querySelectorAll('.stat-trend');
+    const trendIndicators = document.querySelectorAll('.hobby-stat-trend');
     const trendObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1101,4 +1345,75 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Initialize platform toggle
+    initPlatformToggle();
+
+    // Initialize project toggle
+    initProjectToggle();
+});
+
+/* ========================================
+   EXTERNAL PLATFORMS TOGGLE
+   ======================================== */
+
+function initPlatformToggle() {
+    const toggleButtons = document.querySelectorAll('.hobby-external-platforms .hobby-toggle-btn');
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const design = this.getAttribute('data-design');
+
+            // Update active button
+            toggleButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update active container
+            const containers = document.querySelectorAll('.hobby-platforms-container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+
+            const activeContainer = document.querySelector(`.hobby-platform-${design}`);
+            if (activeContainer) {
+                activeContainer.classList.add('active');
+            }
+        });
+    });
+}
+
+/* ========================================
+   CURRENT PROJECTS TOGGLE
+   ======================================== */
+
+function initProjectToggle() {
+    const toggleButtons = document.querySelectorAll('.current-projects .toggle-btn');
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const design = this.getAttribute('data-design');
+
+            // Update active button
+            toggleButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update active container
+            const containers = document.querySelectorAll('.projects-container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+
+            const activeContainer = document.querySelector(`.project-${design}`);
+            if (activeContainer) {
+                activeContainer.classList.add('active');
+            }
+        });
+    });
+}
+
+// Initialize all functions on page load
+document.addEventListener('DOMContentLoaded', function() {
+    initHobbyNavigation();
+    initExploreHobbies();
+    initProjectToggle();
 });

@@ -21,23 +21,28 @@ layout: default
                 <!-- Title & Description -->
                 <h1>{{ page.title }}</h1>
                 <p class="hobby-subtitle">{{ page.description }}</p>
-                
-                <!-- Rotating Quotes -->
+
+                <!-- Rotating Quotes with Smart Display -->
                 {% if page.quotes and page.quotes.size > 0 %}
-                <div class="quotes-container">
+                <div class="hobby-quotes-section">
                     {% for quote in page.quotes %}
-                    <div class="quote-item" {% if forloop.first %}style="opacity: 1;"{% endif %}>
-                        <blockquote class="quote-text">"{{ quote.text }}"</blockquote>
-                        <cite class="quote-author">
-                            — {{ quote.author }}
-                            {% if quote.source %}, <em>{{ quote.source }}</em>{% endif %}
-                            {% if quote.episode %} ({{ quote.episode }}){% endif %}
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="{{ forloop.index0 }}">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="{{ quote.text }}">{{ quote.text }}</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— {{ quote.author }}</span>
+                                {% if quote.source or quote.episode %}
+                                <span class="hobby-quote-meta">
+                                    {% if quote.source %}<em>{{ quote.source }}</em>{% endif %}{% if quote.source and quote.episode %}, {% endif %}{% if quote.episode %}{{ quote.episode }}{% endif %}
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
                 {% endif %}
-                
+
                 <!-- Navigation -->
                 <div class="hero-nav">
                     <a href="/hobbies/" class="back-btn">
@@ -53,15 +58,15 @@ layout: default
             
             <!-- Enhanced Statistics Dashboard -->
             {% if page.statistics and page.statistics.stats and page.statistics.stats.size > 0 %}
-            <section class="stats-dashboard">
-                <div class="stats-header">
+            <section class="hobby-stats-dashboard">
+                <div class="hobby-stats-header">
                     <h2><i class="fas fa-chart-line"></i> Statistics Dashboard</h2>
 
                     <!-- Time Filters -->
                     {% if page.statistics.time_periods and page.statistics.time_periods.size > 0 %}
-                    <div class="time-filters">
+                    <div class="hobby-time-filters">
                         {% for period in page.statistics.time_periods %}
-                        <button class="time-filter-btn {% if period.active %}active{% endif %}"
+                        <button class="hobby-time-filter-btn {% if period.active %}active{% endif %}"
                                 data-period="{{ period.id }}">
                             {{ period.label }}
                         </button>
@@ -71,23 +76,23 @@ layout: default
                 </div>
 
                 <!-- Main Stats Grid -->
-                <div class="stats-grid">
+                <div class="hobby-stats-grid">
                     {% for stat in page.statistics.stats %}
-                    <div class="stat-card enhanced" data-stat-id="{{ stat.id }}">
+                    <div class="hobby-stat-card enhanced" data-stat-id="{{ stat.id }}">
                         <!-- Icon -->
-                        <div class="stat-icon">
+                        <div class="hobby-stat-icon">
                             <i class="{{ stat.icon }}"></i>
                         </div>
 
                         <!-- Label -->
-                        <div class="stat-label">{{ stat.label }}</div>
+                        <div class="hobby-stat-label">{{ stat.label }}</div>
 
                         <!-- Value -->
-                        <div class="stat-value">{{ stat.value }}</div>
+                        <div class="hobby-stat-value">{{ stat.value }}</div>
 
                         <!-- Trend Indicator -->
                         {% if stat.trend %}
-                        <div class="stat-trend trend-{{ stat.trend }}">
+                        <div class="hobby-stat-trend trend-{{ stat.trend }}">
                             {% if stat.trend == "up" %}
                             <i class="fas fa-arrow-up"></i>
                             {% elsif stat.trend == "down" %}
@@ -102,7 +107,7 @@ layout: default
 
                         <!-- Comparison -->
                         {% if stat.comparison %}
-                        <div class="stat-comparison">
+                        <div class="hobby-stat-comparison">
                             <div class="comparison-label">{{ stat.comparison.label }}</div>
                             <div class="comparison-value">{{ stat.comparison.value }}</div>
                             {% if stat.comparison.percentage %}
@@ -118,8 +123,8 @@ layout: default
 
                         <!-- Milestone Badge -->
                         {% if stat.milestone %}
-                        <div class="stat-milestone {% if stat.milestone.reached %}reached{% else %}in-progress{% endif %}">
-                            <span class="milestone-icon">{{ stat.milestone.icon }}</span>
+                        <div class="hobby-stat-milestone {% if stat.milestone.reached %}reached{% else %}in-progress{% endif %}">
+                            <span class="hobby-milestone-icon">{{ stat.milestone.icon }}</span>
                             <div class="milestone-info">
                                 <div class="milestone-title">{{ stat.milestone.title }}</div>
                                 <div class="milestone-description">{{ stat.milestone.description }}</div>
@@ -134,9 +139,9 @@ layout: default
 
                         <!-- Tooltip -->
                         {% if stat.tooltip %}
-                        <div class="stat-tooltip">
+                        <div class="hobby-stat-tooltip">
                             <i class="fas fa-info-circle"></i>
-                            <div class="tooltip-content">{{ stat.tooltip }}</div>
+                            <div class="hobby-tooltip-content">{{ stat.tooltip }}</div>
                         </div>
                         {% endif %}
                     </div>
@@ -148,28 +153,270 @@ layout: default
             {% endif %}
 
             <!-- Personal Journey Section -->
-            <section class="personal-journey">
+            <section class="hobby-personal-journey">
                 <h2><i class="fas fa-map-marked-alt"></i> My Journey</h2>
-                <div class="journey-content">
+                <div class="hobby-journey-content">
                     {{ content }}
                 </div>
             </section>
 
-            <!-- Favorites Section -->
+            <!-- Favorites/Goals Section -->
             {% if page.favorites and page.favorites.size > 0 %}
-            <section class="favorites-section">
+            <section class="hobby-favorites-section hobby-favorites-{{ page.slug }}">
+                {% if page.section_type == "goals" %}
+                <h2><i class="fas fa-bullseye"></i> My Goals</h2>
+                {% else %}
                 <h2><i class="fas fa-star"></i> My Favorites</h2>
-                <div class="favorites-grid">
+                {% endif %}
+
+                <!-- Fitness Goals Layout - Compact Horizontal Cards -->
+                {% if page.slug == "fitness" %}
+                <div class="fitness-goals-grid">
+                    {% for favorite in page.favorites %}
+                    <div class="fitness-goal-card">
+                        {% if favorite.image %}
+                        <div class="fitness-goal-image" style="background-image: url('{{ favorite.image }}');">
+                            {% if favorite.progress %}
+                            <div class="fitness-progress-badge">{{ favorite.progress }}%</div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+
+                        <div class="fitness-goal-content">
+                            <div class="fitness-goal-header">
+                                <h3>{{ favorite.name }}</h3>
+                                <span class="fitness-goal-category">{{ favorite.category }}</span>
+                            </div>
+
+                            <div class="fitness-goal-stats">
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Current</span>
+                                    <span class="stat-value">{{ favorite.current }}</span>
+                                </div>
+                                <div class="fitness-stat-arrow">→</div>
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Target</span>
+                                    <span class="stat-value stat-target">{{ favorite.target }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Games Favorites Layout - Compact Horizontal Cards -->
+                {% elsif page.slug == "games" %}
+                <div class="games-favorites-grid">
+                    {% for favorite in page.favorites %}
+                    <div class="games-favorite-card" data-game-type="{{ favorite.type }}">
+                        {% if favorite.image %}
+                        <div class="games-favorite-image" style="background-image: url('{{ favorite.image }}');">
+                            <div class="games-category-badge">{{ favorite.category }}</div>
+                            {% if favorite.rating %}
+                            <div class="games-rating-badge">
+                                <i class="fas fa-star"></i> {{ favorite.rating }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+
+                        <div class="games-favorite-content">
+                            <h3>{{ favorite.name }}</h3>
+
+                            <div class="games-info-grid">
+                                {% if favorite.type == "video_game" %}
+                                    <div class="game-info-item">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>{{ favorite.genre }}</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>{{ favorite.platform }}</span>
+                                    </div>
+                                {% elsif favorite.type == "board_game" %}
+                                    <div class="game-info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>{{ favorite.players }} Players</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>{{ favorite.duration }}</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Sports-Specific Layout -->
+                {% elsif page.slug == "sports" %}
+
+                <!-- DESIGN OPTION 1: Compact with Badge Overlay -->
+                <div class="hobby-favorites-grid sports-favorites-scroll sports-design-1">
+                    {% for favorite in page.favorites %}
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        {% if favorite.image %}
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('{{ favorite.image }}');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                {% if favorite.rating %}
+                                <div class="sports-rating-badge-overlay">
+                                    <i class="fas fa-star"></i>
+                                    <span>{{ favorite.rating }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <h3>{{ favorite.title }}</h3>
+
+                            {% if favorite.genres and favorite.genres.size > 0 %}
+                            <div class="hobby-favorite-genres sports-genres">
+                                {% for genre in favorite.genres limit:2 %}
+                                <span class="hobby-genre-tag sports-genre-tag">{{ genre }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            <!-- Sports Stats Grid -->
+                            {% if favorite.stats and favorite.stats.size > 0 %}
+                            <div class="sports-favorite-stats">
+                                {% for stat in favorite.stats %}
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">{{ stat.label }}</span>
+                                    <span class="sports-stat-value">{{ stat.value }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            {% if favorite.year %}
+                            <div class="hobby-favorite-meta sports-favorite-meta">
+                                <i class="fas fa-clock"></i>
+                                <span>{{ favorite.year }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- DESIGN OPTION 2: Side-by-Side Stats -->
+                <div class="hobby-favorites-grid sports-favorites-scroll sports-design-2" style="display: none;">
+                    {% for favorite in page.favorites %}
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        {% if favorite.image %}
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('{{ favorite.image }}');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                <div class="sports-title-overlay">
+                                    <h3>{{ favorite.title }}</h3>
+                                    {% if favorite.rating %}
+                                    <div class="sports-rating-stars">
+                                        {% for i in (1..5) %}
+                                            {% if i <= favorite.rating %}
+                                            <i class="fas fa-star"></i>
+                                            {% else %}
+                                            <i class="far fa-star"></i>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            {% if favorite.genres and favorite.genres.size > 0 %}
+                            <div class="hobby-favorite-genres sports-genres">
+                                {% for genre in favorite.genres limit:2 %}
+                                <span class="hobby-genre-tag sports-genre-tag">{{ genre }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            <!-- Sports Stats Horizontal -->
+                            {% if favorite.stats and favorite.stats.size > 0 %}
+                            <div class="sports-favorite-stats-horizontal">
+                                {% for stat in favorite.stats %}
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">{{ stat.label }}:</span>
+                                    <span class="sports-stat-value">{{ stat.value }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- DESIGN OPTION 3: Minimal with Icon Stats -->
+                <div class="hobby-favorites-grid sports-favorites-scroll sports-design-3" style="display: none;">
+                    {% for favorite in page.favorites %}
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        {% if favorite.image %}
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('{{ favorite.image }}');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                {% if favorite.rating %}
+                                <div class="sports-rating-circle">
+                                    <span>{{ favorite.rating }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <div class="sports-header-minimal">
+                                <h3>{{ favorite.title }}</h3>
+                                {% if favorite.year %}
+                                <span class="sports-year-badge">{{ favorite.year | replace: "Started ", "" }}</span>
+                                {% endif %}
+                            </div>
+
+                            {% if favorite.genres and favorite.genres.size > 0 %}
+                            <div class="hobby-favorite-genres sports-genres">
+                                {% for genre in favorite.genres limit:3 %}
+                                <span class="hobby-genre-tag sports-genre-tag">{{ genre }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            <!-- Sports Stats Compact -->
+                            {% if favorite.stats and favorite.stats.size > 0 %}
+                            <div class="sports-favorite-stats-compact">
+                                {% for stat in favorite.stats %}
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">{{ stat.label }}</span>
+                                        <span class="sports-stat-value">{{ stat.value }}</span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Default Layout (Anime, etc.) -->
+                {% else %}
+                <div class="hobby-favorites-grid">
                     {% for favorite in page.favorites %}
                     {% if favorite.url %}
-                    <a href="{{ favorite.url }}" class="favorite-card" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ favorite.url }}" class="hobby-favorite-card" target="_blank" rel="noopener noreferrer">
                     {% else %}
-                    <div class="favorite-card">
+                    <div class="hobby-favorite-card">
                     {% endif %}
                         {% if favorite.image %}
-                        <div class="favorite-image" style="background-image: url('{{ favorite.image }}');">
-                            <div class="favorite-overlay">
-                                <span class="favorite-rating">
+                        <div class="hobby-favorite-image" style="background-image: url('{{ favorite.image }}');">
+                            <div class="hobby-favorite-overlay">
+                                <span class="hobby-favorite-rating">
                                     {% for i in (1..5) %}
                                         {% if i <= favorite.rating %}
                                         <i class="fas fa-star"></i>
@@ -182,23 +429,23 @@ layout: default
                         </div>
                         {% endif %}
 
-                        <div class="favorite-content">
+                        <div class="hobby-favorite-content">
                             <h3>{{ favorite.title }}</h3>
 
                             {% if favorite.genres and favorite.genres.size > 0 %}
-                            <div class="favorite-genres">
+                            <div class="hobby-favorite-genres">
                                 {% for genre in favorite.genres %}
-                                <span class="genre-tag">{{ genre }}</span>
+                                <span class="hobby-genre-tag">{{ genre }}</span>
                                 {% endfor %}
                             </div>
                             {% endif %}
 
                             {% if favorite.why %}
-                            <p class="favorite-why">{{ favorite.why }}</p>
+                            <p class="hobby-favorite-why">{{ favorite.why }}</p>
                             {% endif %}
 
                             {% if favorite.year or favorite.episodes %}
-                            <div class="favorite-meta">
+                            <div class="hobby-favorite-meta">
                                 {% if favorite.year %}
                                 <span><i class="fas fa-calendar"></i> {{ favorite.year }}</span>
                                 {% endif %}
@@ -209,7 +456,7 @@ layout: default
                             {% endif %}
 
                             {% if favorite.url %}
-                            <div class="favorite-link">
+                            <div class="hobby-favorite-link">
                                 <i class="fas fa-external-link-alt"></i> View on MyAnimeList
                             </div>
                             {% endif %}
@@ -221,34 +468,34 @@ layout: default
                     {% endif %}
                     {% endfor %}
                 </div>
+                {% endif %}
             </section>
             {% endif %}
 
             <!-- Fun Facts Section -->
             {% if page.fun_facts and page.fun_facts.size > 0 %}
-            <section class="fun-facts">
+            <section class="hobby-fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
 
-                <div class="facts-grid">
+                <div class="hobby-facts-grid">
                     {% for fact in page.fun_facts %}
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         {% if fact.icon %}
-                        <div class="fact-icon-bg">{{ fact.icon }}</div>
+                        <div class="hobby-fact-icon-bg">{{ fact.icon }}</div>
                         {% endif %}
 
-                        <div class="fact-content-layer">
+                        <div class="hobby-fact-content-layer">
                             <h3>{{ fact.title }}</h3>
 
                             {% if fact.category %}
-                            <span class="fact-category">{{ fact.category }}</span>
+                            <span class="hobby-fact-category">{{ fact.category }}</span>
                             {% endif %}
 
                             <p>{{ fact.description }}</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="{{ fact.title }}" data-description="{{ fact.description }}" data-category="{{ fact.category }}">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="{{ fact.title }}" data-description="{{ fact.description }}" data-category="{{ fact.category }}">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
@@ -259,93 +506,45 @@ layout: default
 
             <!-- Interactive Trivia Section -->
             {% if page.trivia and page.trivia.size > 0 %}
-            <section class="trivia-section">
-                <div class="section-header-with-toggle">
-                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                    <div class="design-toggle">
-                        <button class="toggle-btn" data-design="optionA">Option A</button>
-                        <button class="toggle-btn active" data-design="optionB">Option B</button>
-                        <button class="toggle-btn" data-design="optionC">Option C</button>
-                        <button class="toggle-btn" data-design="optionD">Option D</button>
-                    </div>
-                </div>
+            <section class="hobby-trivia-section">
+                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
 
-                <!-- Option A: Enhanced with Score & Share -->
-                <div class="trivia-container trivia-optionA">
-                    <div class="trivia-score-bar">
-                        <span class="score-display">Score: <span id="scoreA">0</span>/{{ page.trivia.size }}</span>
-                        <div class="progress-dots" id="progressA"></div>
-                    </div>
-
-                    {% for question in page.trivia %}
-                    <div class="trivia-card trivia-card-a" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}">
-                        <div class="question-header">
-                            <span class="question-number">Question {{ forloop.index }} of {{ page.trivia.size }}</span>
-                        </div>
-                        <h3>{{ question.question }}</h3>
-                        <div class="options-grid">
-                            {% for option in question.options %}
-                            <button class="option-btn option-btn-a" data-question="{{ forloop.parentloop.index0 }}" data-index="{{ forloop.index0 }}">
-                                {{ option }}
-                            </button>
-                            {% endfor %}
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">{{ question.explanation }}</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-
-                    <div class="trivia-completion" id="completionA" style="display: none;">
-                        <div class="completion-icon">🎉</div>
-                        <h3>Quiz Complete!</h3>
-                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/{{ page.trivia.size }} 🌟</p>
-                        <p class="completion-message" id="messageA"></p>
-                        <div class="completion-actions">
-                            <button class="share-score-btn" onclick="shareScore('A')">
-                                <i class="fas fa-share-alt"></i> Share Score
-                            </button>
-                            <button class="try-again-btn" onclick="resetQuiz('A')">
-                                <i class="fas fa-redo"></i> Try Again
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Option B: Quiz Mode with Timer -->
-                <div class="trivia-container trivia-optionB active">
-                    <div class="quiz-start-screen" id="startScreenB">
+                <!-- Option B: Quiz Mode with Timer (Uniform format for all hobby pages) -->
+                <div class="hobby-trivia-container trivia-optionB active">
+                    <div class="hobby-quiz-start-screen" id="startScreenB">
                         <div class="start-icon">⏱️</div>
                         <h3>Timed Quiz Challenge</h3>
                         <p>Answer {{ page.trivia.size }} questions as fast as you can!</p>
                         <p class="timer-info">⚡ 30 seconds per question</p>
-                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                        <button class="hobby-start-quiz-btn" onclick="startQuiz('B')">
                             <i class="fas fa-play"></i> Start Quiz
                         </button>
                     </div>
 
                     <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
-                        <div class="quiz-header">
-                            <div class="quiz-progress">
-                                <span class="question-counter">Question <span id="currentB">1</span>/{{ page.trivia.size }}</span>
-                                <div class="progress-dots-container" id="progressDotsB"></div>
+                        <div class="hobby-quiz-header">
+                            <div class="hobby-quiz-progress">
+                                <div class="hobby-progress-dots-container" id="progressDotsB"></div>
                             </div>
-                            <div class="quiz-timer">
+                            <div class="hobby-quiz-timer">
                                 <i class="fas fa-clock"></i>
                                 <span id="timerB">30</span>s
                             </div>
                         </div>
 
                         {% for question in page.trivia %}
-                        <div class="trivia-card trivia-card-b" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}" style="{% if forloop.index0 != 0 %}display: none;{% endif %}">
+                        {% assign correct_index = -1 %}
+                        {% for option in question.options %}
+                            {% if option.correct == true %}
+                                {% assign correct_index = forloop.index0 %}
+                            {% endif %}
+                        {% endfor %}
+                        <div class="hobby-trivia-card-b" data-question="{{ forloop.index0 }}" data-correct-answer="{{ correct_index }}" style="{% if forloop.index0 != 0 %}display: none;{% endif %}">
                             <h3>{{ question.question }}</h3>
                             <div class="options-grid">
                                 {% for option in question.options %}
-                                <button class="option-btn option-btn-b" data-question="{{ forloop.parentloop.index0 }}" data-index="{{ forloop.index0 }}">
-                                    {{ option }}
+                                <button class="hobby-option-btn-b" data-question="{{ forloop.parentloop.index0 }}" data-index="{{ forloop.index0 }}" data-correct="{{ option.correct }}">
+                                    {{ option.text }}
                                 </button>
                                 {% endfor %}
                             </div>
@@ -354,12 +553,32 @@ layout: default
                     </div>
 
                     <div class="trivia-completion" id="completionB" style="display: none;">
-                        <div class="completion-card-capture" id="completionCardB">
-                            <div class="completion-icon">⏱️</div>
-                            <h3>Quiz Complete!</h3>
-                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/{{ page.trivia.size }} 🌟</p>
-                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
-                            <p class="completion-message" id="messageBText"></p>
+                        <div class="hobby-completion-card-capture" id="completionCardB">
+                            <div class="hobby-completion-header">
+                                <div class="completion-icon-large">🎉</div>
+                                <h3 class="completion-title">Quiz Complete!</h3>
+                                <div class="completion-subtitle">{{ page.title }} Trivia Challenge</div>
+                            </div>
+
+                            <div class="hobby-completion-stats">
+                                <div class="hobby-stat-item stat-score">
+                                    <div class="hobby-stat-icon">🏆</div>
+                                    <div class="hobby-stat-label">Score</div>
+                                    <div class="hobby-stat-value"><span id="finalScoreB">0</span>/{{ page.trivia.size }}</div>
+                                </div>
+                                <div class="hobby-stat-divider"></div>
+                                <div class="hobby-stat-item stat-time">
+                                    <div class="hobby-stat-icon">⚡</div>
+                                    <div class="hobby-stat-label">Time</div>
+                                    <div class="hobby-stat-value"><span id="totalTimeB">0</span>s</div>
+                                </div>
+                            </div>
+
+                            <div class="hobby-completion-message-box" id="messageBText"></div>
+
+                            <div class="hobby-completion-footer">
+                                <div class="completion-url">{{ site.url }}/hobbies/{{ page.slug }}</div>
+                            </div>
                         </div>
 
                         <div class="completion-actions">
@@ -380,7 +599,7 @@ layout: default
                 </div>
 
                 <!-- Option C: Difficulty Levels -->
-                <div class="trivia-container trivia-optionC">
+                <div class="hobby-trivia-container trivia-optionC">
                     <div class="difficulty-tabs">
                         <button class="difficulty-tab active" data-difficulty="easy">
                             <i class="fas fa-smile"></i> Easy
@@ -419,7 +638,7 @@ layout: default
                 </div>
 
                 <!-- Option D: Minimal Polish -->
-                <div class="trivia-container trivia-optionD">
+                <div class="hobby-trivia-container trivia-optionD">
                     {% for question in page.trivia %}
                     <div class="trivia-card trivia-card-d" data-question="{{ forloop.index0 }}" data-correct-answer="{{ question.correct_answer }}">
                         <h3>{{ question.question }}</h3>
@@ -453,19 +672,36 @@ layout: default
                                 {{ project.status }}
                             </span>
                         </div>
-                        <p>{{ project.description }}</p>
+                        <p class="project-description">{{ project.description }}</p>
                         {% if project.tech_stack %}
                         <div class="tech-stack">
-                            {% for tech in project.tech_stack %}
+                            {% for tech in project.tech_stack limit:3 %}
                             <span class="tech-tag">{{ tech }}</span>
                             {% endfor %}
+                            {% assign remaining = project.tech_stack.size | minus: 3 %}
+                            {% if remaining > 0 %}
+                            <span class="tech-tag tech-more">+{{ remaining }}</span>
+                            {% endif %}
                         </div>
                         {% endif %}
-                        {% if project.github_url %}
-                        <a href="{{ project.github_url }}" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                        {% endif %}
+                        <div class="project-footer">
+                            {% if project.last_updated %}
+                            <span class="project-date">
+                                <i class="fas fa-clock"></i>
+                                {{ project.last_updated }}
+                            </span>
+                            {% endif %}
+                            <div class="project-links">
+                                <a href="{{ project.url | default: '#' }}" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                {% if project.github_url %}
+                                <a href="{{ project.github_url }}" class="project-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
@@ -473,7 +709,7 @@ layout: default
             {% else %}
             <section class="current-projects">
                 <h2><i class="fas fa-code"></i> Current Projects</h2>
-                <div class="empty-state">
+                <div class="hobby-empty-state">
                     <i class="fas fa-hammer"></i>
                     <h3>Building Something Amazing</h3>
                     <p>Projects related to {{ page.title | downcase }} are currently in the planning phase. Check back soon for updates!</p>
@@ -483,13 +719,13 @@ layout: default
 
             <!-- External Platforms Section -->
             {% if page.external_platforms and page.external_platforms.size > 0 %}
-            <section class="external-platforms">
+            <section class="hobby-external-platforms">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
-                <div class="platforms-grid">
+                <div class="hobby-platforms-grid">
                     {% for platform in page.external_platforms %}
-                    <a href="{{ platform.url }}" class="platform-card" target="_blank">
+                    <a href="{{ platform.url }}" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: {{ platform.color }}">
                         <i class="{{ platform.icon }}"></i>
-                        <div class="platform-info">
+                        <div class="hobby-platform-info">
                             <h3>{{ platform.name }}</h3>
                             <p>{{ platform.description }}</p>
                         </div>
@@ -499,9 +735,9 @@ layout: default
                 </div>
             </section>
             {% else %}
-            <section class="external-platforms">
+            <section class="hobby-external-platforms">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
-                <div class="empty-state">
+                <div class="hobby-empty-state">
                     <i class="fas fa-link"></i>
                     <h3>Connecting Soon</h3>
                     <p>I'm working on building my presence in the {{ page.title | downcase }} community. Stay tuned for platform links!</p>
@@ -512,17 +748,27 @@ layout: default
             <!-- Call-to-Action Section -->
             {% if page.cta %}
             <section class="hobby-cta">
-                <div class="cta-content">
+                <div class="hobby-cta-content">
                     <h2>{{ page.cta.title }}</h2>
                     <p>{{ page.cta.description }}</p>
-                    <a href="{{ page.cta.button_url }}" class="cta-btn">
+                    <a href="{{ page.cta.button_url }}" class="hobby-cta-btn">
                         {{ page.cta.button_text }} <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </section>
             {% endif %}
+
+            <!-- Explore Other Hobbies Section -->
+            <section class="hobby-explore-section">
+                <h2><i class="fas fa-arrow-circle-right"></i> Continue Exploring</h2>
+                <p class="hobby-explore-subtitle">Discover more passions in my journey</p>
+                <div class="hobby-explore-grid" id="otherHobbiesGrid"></div>
+            </section>
         </div>
     </main>
 </div>
+
+<!-- html2canvas for image capture -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script src="/assets/js/hobby-enhancements.js"></script>

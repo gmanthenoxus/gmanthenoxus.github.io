@@ -1,6 +1,6 @@
 ---
 layout: hobby
-title: "Anime & Manga"
+title: "Anime"
 slug: anime
 emoji: "🎌"
 description: "From Bleach's first Bankai to the depths of isekai. My journey from casual viewer to daily consumer and aspiring creator."
@@ -11,27 +11,22 @@ quotes:
     author: "Roronoa Zoro"
     source: "One Piece"
     episode: "Episode 377"
-    context: "After enduring his captain's pain to save his life, defining ultimate crew loyalty."
   - text: "Wake up to reality. Nothing ever goes as planned in this accursed world. The longer you live, the more you realize that only pain, suffering, and futility exist in this reality."
     author: "Madara Uchiha"
     source: "Naruto Shippuden"
     episode: "Episode 344"
-    context: "A nihilistic philosophy delivered to break a hero's spirit."
   - text: "A lesson without pain is meaningless. For you cannot gain anything without sacrificing something first. But once you have recovered from the pain and overcome it, you will find that you have a heart strong enough to overcome any obstacle."
     author: "Roy Mustang"
     source: "Fullmetal Alchemist: Brotherhood"
     episode: "Episode 50"
-    context: "Reframing Equivalent Exchange into a lesson on human resilience."
   - text: "I'll leave tomorrow's problems to tomorrow's me."
     author: "Saitama"
     source: "One-Punch Man"
     episode: "Episode 5"
-    context: "The ultimate anti-stress philosophy from a hero too powerful for anxieties."
   - text: "I don't know the answer. I never have. Whether I trusted myself or the choices of my dependable comrades, there was no way to know the outcome. So… choose for yourself whichever decision you will regret the least."
     author: "Levi Ackerman"
     source: "Attack on Titan"
     episode: "Episode 54"
-    context: "A captain's honest advice about making impossible choices."
 
 statistics:
   # Time filter options
@@ -189,7 +184,7 @@ fun_facts:
     icon: "🎬"
     category: "Records"
     
-  - title: "One Piece: The Manga That Never Ends"
+  - title: "One Piece: The Anime That Never Ends"
     description: "With over 1,100 chapters and 500 million copies sold, One Piece holds the Guinness World Record as the best-selling manga series by a single author. Creator Eiichiro Oda has been writing it for over 25 years!"
     icon: "📚"
     category: "Records"
@@ -208,37 +203,97 @@ fun_facts:
 
 trivia:
   - question: "In 'Bleach', what is the name of Ichigo's Zanpakutō that he first unleashes as a Bankai?"
-    options: ["Zangetsu", "Tensa Zangetsu", "Engetsu", "Benihime"]
-    correct_answer: 1
+    options:
+      - text: "Zangetsu"
+        correct: false
+      - text: "Tensa Zangetsu"
+        correct: true
+      - text: "Engetsu"
+        correct: false
+      - text: "Benihime"
+        correct: false
     explanation: "Tensa Zangetsu is the name of his Bankai, manifesting as a sleek, black-bladed katana."
   - question: "Which of these is NOT a common isekai trope?"
-    options: ["Reincarnated by a truck", "Getting stuck in a video game", "Attending a magic high school", "Becoming a famous musician in Tokyo"]
-    correct_answer: 3
+    options:
+      - text: "Reincarnated by a truck"
+        correct: false
+      - text: "Getting stuck in a video game"
+        correct: false
+      - text: "Attending a magic high school"
+        correct: false
+      - text: "Becoming a famous musician in Tokyo"
+        correct: true
     explanation: "While music anime exist, it's not a standard trope for the isekai (another world) genre."
   - question: "What is the core alchemical principle in 'Fullmetal Alchemist'?"
-    options: ["The Law of Surprise", "The Force", "Equivalent Exchange", "The Way of the Samurai"]
-    correct_answer: 2
+    options:
+      - text: "The Law of Surprise"
+        correct: false
+      - text: "The Force"
+        correct: false
+      - text: "Equivalent Exchange"
+        correct: true
+      - text: "The Way of the Samurai"
+        correct: false
     explanation: "Equivalent Exchange is the fundamental law: to obtain, something of equal value must be lost."
   - question: "Which Studio Ghibli film was the first to win an Academy Award?"
-    options: ["Princess Mononoke", "Spirited Away", "Howl's Moving Castle", "My Neighbor Totoro"]
-    correct_answer: 1
+    options:
+      - text: "Princess Mononoke"
+        correct: false
+      - text: "Spirited Away"
+        correct: true
+      - text: "Howl's Moving Castle"
+        correct: false
+      - text: "My Neighbor Totoro"
+        correct: false
     explanation: "Spirited Away won the Academy Award for Best Animated Feature in 2003, making it the first anime film to win an Oscar."
   - question: "In Attack on Titan, what is the name of the military branch that fights Titans outside the walls?"
-    options: ["Military Police", "Garrison Regiment", "Survey Corps", "Titan Defense Force"]
-    correct_answer: 2
+    options:
+      - text: "Military Police"
+        correct: false
+      - text: "Garrison Regiment"
+        correct: false
+      - text: "Survey Corps"
+        correct: true
+      - text: "Titan Defense Force"
+        correct: false
     explanation: "The Survey Corps (Scouting Legion) is the branch that ventures beyond the walls to fight Titans and explore the outside world."
 
 current_projects:
   - name: "The Ultimate Watchlist & Tracker"
     description: "A unified platform to track seasonal anime, share lists with friends, and never miss an episode."
-    tech_stack: ["TBD"]
-    status: "Vision Stage"
+    tech_stack: ["React", "Node.js", "MongoDB"]
+    status: "In Progress"
+    progress: 45
+    milestones_completed: 3
+    milestones_total: 7
+    last_updated: "TBD"
+    icon: "fas fa-list-check"
     url: "#"
+    github_url: "#"
   - name: "The Hidden Gem Discovery Engine"
     description: "Tired of the same recommendations? A tool to unearth old and obscure anime you'll actually love."
-    tech_stack: ["TBD"]
-    status: "Ideation"
+    tech_stack: ["Python", "TensorFlow", "FastAPI"]
+    status: "Planning"
+    progress: 15
+    milestones_completed: 1
+    milestones_total: 5
+    last_updated: "TBD"
+    icon: "fas fa-search"
     url: "#"
+    github_url: "#"
+
+external_platforms:
+  - name: "MyAnimeList"
+    description: "Follow my anime journey and see what I'm watching"
+    url: "https://myanimelist.net/animelist/Gmanthenoxus"
+    icon: "fas fa-list-ul"
+    color: "#2E51A2"
+
+  - name: "X (Twitter)"
+    description: "Anime thoughts, hot takes, and discussions"
+    url: "https://twitter.com/USERNAME"
+    icon: "fab fa-twitter"
+    color: "#1DA1F2"
 
 cta:
   title: "Love Anime Tech?"

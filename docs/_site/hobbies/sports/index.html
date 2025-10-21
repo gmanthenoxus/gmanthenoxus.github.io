@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Sports Analytics Journey
+    <meta name="description" content="My Sports Journey
 ">
     <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
     <meta name="author" content="Noxus' Hub">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Sports & Analytics | Noxus' Hub">
-    <meta property="og:description" content="My Sports Analytics Journey
+    <meta property="og:title" content="Sports | Noxus' Hub">
+    <meta property="og:description" content="My Sports Journey
 ">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://localhost:4000/hobbies/sports/">
     
-    <title>Sports & Analytics | Noxus' Hub</title>
+    <title>Sports | Noxus' Hub</title>
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
 
     
     <main id="main-content" class="main-content">
-        <div class="hobby-page" style="--hobby-color: #4ECDC4;">
+        <div class="hobby-page" style="--hobby-color: #2E86AB;">
     <!-- Hero Section with Rotating Quotes -->
     <header class="hobby-hero">
         <div class="container">
@@ -108,52 +108,46 @@
                 
                 
                 <!-- Title & Description -->
-                <h1>Sports & Analytics</h1>
-                <p class="hobby-subtitle">Where passion meets performance. Combining sports fandom with data-driven insights and predictive analytics.</p>
+                <h1>Sports</h1>
+                <p class="hobby-subtitle">From street soccer to the hardwood court. My lifelong journey through athletic expression and the community it builds.</p>
+
+                <!-- Rotating Quotes with Smart Display -->
                 
-                <!-- Rotating Quotes -->
-                
-                <div class="quotes-container">
+                <div class="hobby-quotes-section">
                     
-                    <div class="quote-item" style="opacity: 1;">
-                        <blockquote class="quote-text">"Champions are made from something deep inside them - a desire, a dream, a vision."</blockquote>
-                        <cite class="quote-author">
-                            — Muhammad Ali
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="0">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="It's not whether you get knocked down, it's whether you get back up.">It's not whether you get knocked down, it's whether you get back up.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Vince Lombardi</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"The difference between the impossible and the possible lies in determination."</blockquote>
-                        <cite class="quote-author">
-                            — Tommy Lasorda
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="1">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="Skills fly out the window when you don't play with passion.">Skills fly out the window when you don't play with passion.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Giannis Antetokounmpo</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"You miss 100% of the shots you do not take."</blockquote>
-                        <cite class="quote-author">
-                            — Wayne Gretzky
-                            
-                            
-                        </cite>
-                    </div>
-                    
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"It is not whether you get knocked down; it is whether you get up."</blockquote>
-                        <cite class="quote-author">
-                            — Vince Lombardi
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="2">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="Talent wins games, but teamwork and intelligence win championships.">Talent wins games, but teamwork and intelligence win championships.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Michael Jordan</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
                 
-                
+
                 <!-- Navigation -->
                 <div class="hero-nav">
                     <a href="/hobbies/" class="back-btn">
@@ -169,145 +163,1431 @@
             
             <!-- Enhanced Statistics Dashboard -->
             
+            <section class="hobby-stats-dashboard">
+                <div class="hobby-stats-header">
+                    <h2><i class="fas fa-chart-line"></i> Statistics Dashboard</h2>
+
+                    <!-- Time Filters -->
+                    
+                    <div class="hobby-time-filters">
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="week">
+                            This Week
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="month">
+                            This Month
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="year">
+                            This Year
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn active"
+                                data-period="all">
+                            All Time
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+
+                <!-- Main Stats Grid -->
+                <div class="hobby-stats-grid">
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="basketball_sessions">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Basketball Sessions</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">12</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-up">
+                            
+                            <i class="fas fa-arrow-up"></i>
+                            
+                            <span>75%</span>
+                            <span class="trend-value">+3 from last month</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+                        <div class="hobby-stat-comparison">
+                            <div class="comparison-label">Monthly Goal: 16</div>
+                            <div class="comparison-value">4 to go</div>
+                            
+                            <div class="comparison-percentage">
+                                75%
+                                
+                                <i class="fas fa-arrow-up"></i>
+                                
+                            </div>
+                            
+                        </div>
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone in-progress">
+                            <span class="hobby-milestone-icon">�</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Court Regular</div>
+                                <div class="milestone-description">Play 16+ sessions per month</div>
+                                
+                                <div class="milestone-progress">
+                                    <div class="milestone-progress-bar" style="width: 75%"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Regular pickup games and court sessions as a pass-first point guard</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="assists">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Assists</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">47</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-up">
+                            
+                            <i class="fas fa-arrow-up"></i>
+                            
+                            <span>85%</span>
+                            <span class="trend-value">+12 from last month</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+                        <div class="hobby-stat-comparison">
+                            <div class="comparison-label">vs Team Average</div>
+                            <div class="comparison-value">28 assists</div>
+                            
+                            <div class="comparison-percentage">
+                                68%
+                                
+                                <i class="fas fa-arrow-up"></i>
+                                
+                            </div>
+                            
+                        </div>
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone reached">
+                            <span class="hobby-milestone-icon">�</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Playmaker</div>
+                                <div class="milestone-description">50+ assists in a month</div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Pass-first point guard mentality - making teammates better</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="hours_played">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Hours Played</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">18h</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-stable">
+                            
+                            <i class="fas fa-minus"></i>
+                            
+                            <span>60%</span>
+                            <span class="trend-value">+0 from last month</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+                        <div class="hobby-stat-comparison">
+                            <div class="comparison-label">Monthly Goal: 30h</div>
+                            <div class="comparison-value">12h to go</div>
+                            
+                            <div class="comparison-percentage">
+                                60%
+                                
+                                <i class="fas fa-arrow-up"></i>
+                                
+                            </div>
+                            
+                        </div>
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone in-progress">
+                            <span class="hobby-milestone-icon">⏱️</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Dedicated Athlete</div>
+                                <div class="milestone-description">30+ hours per month</div>
+                                
+                                <div class="milestone-progress">
+                                    <div class="milestone-progress-bar" style="width: 60%"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Time on court across all sports - basketball, table tennis, badminton, chess</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="games_organized">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Games Organized</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">5</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-up">
+                            
+                            <i class="fas fa-arrow-up"></i>
+                            
+                            <span>50%</span>
+                            <span class="trend-value">+2 from last month</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+                        <div class="hobby-stat-comparison">
+                            <div class="comparison-label">Community Impact</div>
+                            <div class="comparison-value">40+ players</div>
+                            
+                            <div class="comparison-percentage">
+                                100%
+                                
+                                <i class="fas fa-arrow-up"></i>
+                                
+                            </div>
+                            
+                        </div>
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone in-progress">
+                            <span class="hobby-milestone-icon">🤝</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Community Builder</div>
+                                <div class="milestone-description">Organize 10+ games per month</div>
+                                
+                                <div class="milestone-progress">
+                                    <div class="milestone-progress-bar" style="width: 50%"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Coordinating pickup games and bringing the community together</div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+
+            </section>
+            
 
             <!-- Personal Journey Section -->
-            <section class="personal-journey">
+            <section class="hobby-personal-journey">
                 <h2><i class="fas fa-map-marked-alt"></i> My Journey</h2>
-                <div class="journey-content">
-                    <h1 id="my-sports-analytics-journey">My Sports Analytics Journey</h1>
+                <div class="hobby-journey-content">
+                    <h2 id="my-sports-journey">My Sports Journey</h2>
 
-<p>Sports have always been more than entertainment for me—they are a fascinating intersection of human performance, strategy, and statistics. What started as casual fantasy football has evolved into a deep appreciation for the analytics that drive modern sports decision-making.</p>
+<p>My story isn’t one of specialized training or elite camps; it’s a story of pure, undirected energy and a deep-seated need to move. From sprinting in nursery school to performing bicycle stunts on the street, sports have always been my constant. As a military kid who changed schools frequently, the universal language of a game, whether it was soccer on dusty roads or badminton with my dad. It was how I connected, how I settled in, and how I expressed myself.</p>
 
-<h2 id="current-focus-areas">Current Focus Areas</h2>
+<p>The spark for basketball was almost accidental. Moving to a house right beside a court felt like fate. With no prior experience, I walked out, shot a ball, and watched my first bucket swish through the net. That was the moment. That simple success ignited a passion that has since expanded to include everything from the strategic duel of table tennis to the endurance test of long distance running. I’ve even attempted the high jump at 5’6” not for medals, but for the pure joy of trying.</p>
 
-<p>I am particularly drawn to:</p>
+<h2 id="the-bond--the-problem">The Bond &amp; The Problem</h2>
+
+<p>For me, sports have never been solely about competition. They’re about the bonds forged on the pitch and the court. Some of my closest friends are people I met because of a shared drive to improve and a shared passion for the game. Sports are an unparalleled unit of unison, breaking down barriers of language, upbringing, and background.</p>
+
+<p>But this beautiful community faces ugly frustrations. I’ve lost count of the times I’ve shown up to an empty court, heard about a pickup game too late, or watched the stats and stories of a great match disappear into thin air. This isn’t just a basketball problem. My friends who play football, volleyball, and badminton all share the same pain: a lack of coordination, missing data, and no lasting recognition for the communities we build every time we play.</p>
+
+<h2 id="the-vision">The Vision</h2>
+
+<p>This frustration is where my passion meets my skills. I see a world where technology serves the casual athlete where finding a game is effortless, where your contributions are tracked and celebrated, and where the community thrives beyond the final whistle. My goal is to build that world, starting with the tools we wish we had.</p>
+
+<h3 id="what-im-building"><strong>What I’m Building</strong></h3>
+
+<p><strong>Athlehub</strong> - A sports-first social platform that solves the coordination problem:</p>
 <ul>
-  <li><strong>Fantasy Sports Optimization</strong>: Building algorithms that consistently outperform human intuition</li>
-  <li><strong>Predictive Modeling</strong>: Machine learning approaches to game outcomes and player performance</li>
-  <li><strong>Market Inefficiencies</strong>: Finding value in sports betting through statistical analysis</li>
-  <li><strong>Performance Analytics</strong>: Understanding what separates elite athletes from the competition</li>
+  <li><strong>Find Games Instantly</strong>: Real-time coordination for pickup games in your area</li>
+  <li><strong>Track Your Journey</strong>: Stats, achievements, and memories that don’t disappear</li>
+  <li><strong>Build Community</strong>: Recognition and connection for casual athletes</li>
+  <li><strong>Never Miss Out</strong>: Notifications for games, events, and your sports community</li>
 </ul>
 
-<h2 id="the-data-driven-approach">The Data-Driven Approach</h2>
+<h3 id="the-impact-i-want-to-create"><strong>The Impact I Want to Create</strong></h3>
 
-<p>My programming background has opened up exciting ways to engage with sports:</p>
-
-<h3 id="fantasy-dominance-through-data"><strong>Fantasy Dominance Through Data</strong></h3>
 <ul>
-  <li>Developing machine learning models that analyze player matchups, weather conditions, and injury reports</li>
-  <li>Creating automated lineup generators that have achieved an 87% win rate across multiple sports</li>
-  <li>Building real-time optimization tools that adjust strategies based on breaking news and line movements</li>
+  <li><strong>For Players</strong>: No more empty courts, missed games, or lost stats</li>
+  <li><strong>For Communities</strong>: Stronger bonds through better coordination and recognition</li>
+  <li><strong>For the Sport</strong>: Celebrating the casual athlete who plays for love of the game</li>
+  <li><strong>For Technology</strong>: Proving that the best tools serve real human needs</li>
 </ul>
 
-<h3 id="predictive-analytics"><strong>Predictive Analytics</strong></h3>
-<ul>
-  <li>Constructing models that predict game outcomes with 78% accuracy in basketball</li>
-  <li>Analyzing historical patterns to identify betting value and market inefficiencies</li>
-  <li>Developing injury prediction algorithms that forecast player availability 2 weeks in advance</li>
-</ul>
+<h2 id="philosophy">Philosophy</h2>
 
-<h3 id="community-impact"><strong>Community Impact</strong></h3>
-<ul>
-  <li>Sharing analytics insights that help 500+ fantasy players improve their performance</li>
-  <li>Creating viral sports predictions that demonstrate the power of data-driven analysis</li>
-  <li>Contributing to the growing sports analytics community through open-source tools and research</li>
-</ul>
+<p>Sports taught me that the best moments aren’t always about winning—they’re about showing up, giving your all, and being part of something bigger than yourself. Whether it’s a perfect assist, a hard-fought defensive stand, or just the joy of running with friends, these moments deserve to be remembered and celebrated.</p>
 
-<h2 id="philosophy--impact">Philosophy &amp; Impact</h2>
-
-<p>Sports analytics has taught me that behind every great performance is a story told by data, but the human element—heart, determination, clutch performance—is what makes sports truly unpredictable and exciting.</p>
-
-<p>The real-time nature of sports data has also improved my skills in building responsive, high-performance applications that can process live data streams and provide instant insights for critical decision-making.</p>
+<p>The casual sports community is massive, passionate, and underserved. We deserve tools as good as the ones built for fantasy sports and professional analytics. That’s what I’m building.</p>
 
                 </div>
             </section>
 
-            <!-- Favorites Section -->
+            <!-- Favorites/Goals Section -->
+            
+            <section class="hobby-favorites-section hobby-favorites-sports">
+                
+                <h2><i class="fas fa-star"></i> My Favorites</h2>
+                
+
+                <!-- Fitness Goals Layout - Compact Horizontal Cards -->
+                
+
+                <!-- DESIGN OPTION 1: Compact with Badge Overlay -->
+                <div class="hobby-favorites-grid sports-favorites-scroll sports-design-1">
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-badge-overlay">
+                                    <i class="fas fa-star"></i>
+                                    <span>5</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <h3>Basketball</h3>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Team Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Grid -->
+                            
+                            <div class="sports-favorite-stats">
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Position</span>
+                                    <span class="sports-stat-value">Point Guard</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Style</span>
+                                    <span class="sports-stat-value">Pass-First</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Years</span>
+                                    <span class="sports-stat-value">14+</span>
+                                </div>
+                                
+                            </div>
+                            
+
+                            
+                            <div class="hobby-favorite-meta sports-favorite-meta">
+                                <i class="fas fa-clock"></i>
+                                <span>Started 2015</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-badge-overlay">
+                                    <i class="fas fa-star"></i>
+                                    <span>5</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <h3>Soccer</h3>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Team Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Endurance</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Grid -->
+                            
+                            <div class="sports-favorite-stats">
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Position</span>
+                                    <span class="sports-stat-value">Left Back</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Style</span>
+                                    <span class="sports-stat-value">Pace Bruiser</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Years</span>
+                                    <span class="sports-stat-value">15+</span>
+                                </div>
+                                
+                            </div>
+                            
+
+                            
+                            <div class="hobby-favorite-meta sports-favorite-meta">
+                                <i class="fas fa-clock"></i>
+                                <span>Started 2010</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-badge-overlay">
+                                    <i class="fas fa-star"></i>
+                                    <span>4</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <h3>Table Tennis</h3>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Individual</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Grid -->
+                            
+                            <div class="sports-favorite-stats">
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Style</span>
+                                    <span class="sports-stat-value">All-Around</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Strength</span>
+                                    <span class="sports-stat-value">cuts</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Years</span>
+                                    <span class="sports-stat-value">8+</span>
+                                </div>
+                                
+                            </div>
+                            
+
+                            
+                            <div class="hobby-favorite-meta sports-favorite-meta">
+                                <i class="fas fa-clock"></i>
+                                <span>Started 2017</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-badge-overlay">
+                                    <i class="fas fa-star"></i>
+                                    <span>4</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <h3>Badminton</h3>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Individual/Doubles</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Precision</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Grid -->
+                            
+                            <div class="sports-favorite-stats">
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Format</span>
+                                    <span class="sports-stat-value">Singles</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Style</span>
+                                    <span class="sports-stat-value">Defensive</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Years</span>
+                                    <span class="sports-stat-value">12+</span>
+                                </div>
+                                
+                            </div>
+                            
+
+                            
+                            <div class="hobby-favorite-meta sports-favorite-meta">
+                                <i class="fas fa-clock"></i>
+                                <span>Started 2013</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-badge-overlay">
+                                    <i class="fas fa-star"></i>
+                                    <span>5</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <h3>Chess</h3>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Mental Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Grid -->
+                            
+                            <div class="sports-favorite-stats">
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Style</span>
+                                    <span class="sports-stat-value">Positional</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Rating</span>
+                                    <span class="sports-stat-value">---</span>
+                                </div>
+                                
+                                <div class="sports-stat-item">
+                                    <span class="sports-stat-label">Years</span>
+                                    <span class="sports-stat-value">13+</span>
+                                </div>
+                                
+                            </div>
+                            
+
+                            
+                            <div class="hobby-favorite-meta sports-favorite-meta">
+                                <i class="fas fa-clock"></i>
+                                <span>Started 2012</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- DESIGN OPTION 2: Side-by-Side Stats -->
+                <div class="hobby-favorites-grid sports-favorites-scroll sports-design-2" style="display: none;">
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                <div class="sports-title-overlay">
+                                    <h3>Basketball</h3>
+                                    
+                                    <div class="sports-rating-stars">
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Team Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Horizontal -->
+                            
+                            <div class="sports-favorite-stats-horizontal">
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Position:</span>
+                                    <span class="sports-stat-value">Point Guard</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Style:</span>
+                                    <span class="sports-stat-value">Pass-First</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Years:</span>
+                                    <span class="sports-stat-value">14+</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                <div class="sports-title-overlay">
+                                    <h3>Soccer</h3>
+                                    
+                                    <div class="sports-rating-stars">
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Team Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Endurance</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Horizontal -->
+                            
+                            <div class="sports-favorite-stats-horizontal">
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Position:</span>
+                                    <span class="sports-stat-value">Left Back</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Style:</span>
+                                    <span class="sports-stat-value">Pace Bruiser</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Years:</span>
+                                    <span class="sports-stat-value">15+</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                <div class="sports-title-overlay">
+                                    <h3>Table Tennis</h3>
+                                    
+                                    <div class="sports-rating-stars">
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="far fa-star"></i>
+                                            
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Individual</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Horizontal -->
+                            
+                            <div class="sports-favorite-stats-horizontal">
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Style:</span>
+                                    <span class="sports-stat-value">All-Around</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Strength:</span>
+                                    <span class="sports-stat-value">cuts</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Years:</span>
+                                    <span class="sports-stat-value">8+</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                <div class="sports-title-overlay">
+                                    <h3>Badminton</h3>
+                                    
+                                    <div class="sports-rating-stars">
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="far fa-star"></i>
+                                            
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Individual/Doubles</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Precision</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Horizontal -->
+                            
+                            <div class="sports-favorite-stats-horizontal">
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Format:</span>
+                                    <span class="sports-stat-value">Singles</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Style:</span>
+                                    <span class="sports-stat-value">Defensive</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Years:</span>
+                                    <span class="sports-stat-value">12+</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                <div class="sports-title-overlay">
+                                    <h3>Chess</h3>
+                                    
+                                    <div class="sports-rating-stars">
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                            
+                                            <i class="fas fa-star"></i>
+                                            
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Mental Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Horizontal -->
+                            
+                            <div class="sports-favorite-stats-horizontal">
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Style:</span>
+                                    <span class="sports-stat-value">Positional</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Rating:</span>
+                                    <span class="sports-stat-value">---</span>
+                                </div>
+                                
+                                <div class="sports-stat-inline">
+                                    <span class="sports-stat-label">Years:</span>
+                                    <span class="sports-stat-value">13+</span>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- DESIGN OPTION 3: Minimal with Icon Stats -->
+                <div class="hobby-favorites-grid sports-favorites-scroll sports-design-3" style="display: none;">
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-circle">
+                                    <span>5</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <div class="sports-header-minimal">
+                                <h3>Basketball</h3>
+                                
+                                <span class="sports-year-badge">2015</span>
+                                
+                            </div>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Team Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Fast-Paced</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Compact -->
+                            
+                            <div class="sports-favorite-stats-compact">
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Position</span>
+                                        <span class="sports-stat-value">Point Guard</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Style</span>
+                                        <span class="sports-stat-value">Pass-First</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Years</span>
+                                        <span class="sports-stat-value">14+</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-circle">
+                                    <span>5</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <div class="sports-header-minimal">
+                                <h3>Soccer</h3>
+                                
+                                <span class="sports-year-badge">2010</span>
+                                
+                            </div>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Team Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Endurance</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Universal</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Compact -->
+                            
+                            <div class="sports-favorite-stats-compact">
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Position</span>
+                                        <span class="sports-stat-value">Left Back</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Style</span>
+                                        <span class="sports-stat-value">Pace Bruiser</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Years</span>
+                                        <span class="sports-stat-value">15+</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-circle">
+                                    <span>4</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <div class="sports-header-minimal">
+                                <h3>Table Tennis</h3>
+                                
+                                <span class="sports-year-badge">2017</span>
+                                
+                            </div>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Individual</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Reflexes</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Compact -->
+                            
+                            <div class="sports-favorite-stats-compact">
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Style</span>
+                                        <span class="sports-stat-value">All-Around</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Strength</span>
+                                        <span class="sports-stat-value">cuts</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Years</span>
+                                        <span class="sports-stat-value">8+</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-circle">
+                                    <span>4</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <div class="sports-header-minimal">
+                                <h3>Badminton</h3>
+                                
+                                <span class="sports-year-badge">2013</span>
+                                
+                            </div>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Individual/Doubles</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Precision</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Endurance</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Compact -->
+                            
+                            <div class="sports-favorite-stats-compact">
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Format</span>
+                                        <span class="sports-stat-value">Singles</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Style</span>
+                                        <span class="sports-stat-value">Defensive</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Years</span>
+                                        <span class="sports-stat-value">12+</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-favorite-card sports-favorite-card">
+                        
+                        <div class="hobby-favorite-image sports-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800');">
+                            <div class="hobby-favorite-overlay sports-overlay">
+                                
+                                <div class="sports-rating-circle">
+                                    <span>5</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="hobby-favorite-content sports-favorite-content">
+                            <div class="sports-header-minimal">
+                                <h3>Chess</h3>
+                                
+                                <span class="sports-year-badge">2012</span>
+                                
+                            </div>
+
+                            
+                            <div class="hobby-favorite-genres sports-genres">
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Mental Sport</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Strategic</span>
+                                
+                                <span class="hobby-genre-tag sports-genre-tag">Timeless</span>
+                                
+                            </div>
+                            
+
+                            <!-- Sports Stats Compact -->
+                            
+                            <div class="sports-favorite-stats-compact">
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Style</span>
+                                        <span class="sports-stat-value">Positional</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Rating</span>
+                                        <span class="sports-stat-value">---</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="sports-stat-compact">
+                                    <i class="fas fa-circle sports-stat-icon"></i>
+                                    <div class="sports-stat-text">
+                                        <span class="sports-stat-label">Years</span>
+                                        <span class="sports-stat-value">13+</span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Default Layout (Anime, etc.) -->
+                
+            </section>
             
 
             <!-- Fun Facts Section -->
             
-            <section class="fun-facts">
+            <section class="hobby-fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
 
-                <div class="facts-grid">
+                <div class="hobby-facts-grid">
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">📊</div>
+                        <div class="hobby-fact-icon-bg">🌍</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Analytics Revolution</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>A Universal Language</h3>
 
                             
 
-                            <p>Every NBA team now employs at least 3 full-time data scientists, and player tracking generates over 1 million data points per game through cameras and sensors.</p>
+                            <p>There are over 8,000 indigenous sports and sporting games worldwide, making it one of humanity's most diverse cultural expressions.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Analytics Revolution" data-description="Every NBA team now employs at least 3 full-time data scientists, and player tracking generates over 1 million data points per game through cameras and sensors." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="A Universal Language" data-description="There are over 8,000 indigenous sports and sporting games worldwide, making it one of humanity's most diverse cultural expressions." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">💰</div>
+                        <div class="hobby-fact-icon-bg">🏛️</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Fantasy Sports Boom</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>The First Sport</h3>
 
                             
 
-                            <p>Fantasy sports generate more revenue than the entire movie theater industry, with over 60 million players in North America spending an average of $653 per year.</p>
+                            <p>Wrestling is considered the world's oldest sport, with cave drawings dating back 15,000 years depicting matches.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Fantasy Sports Boom" data-description="Fantasy sports generate more revenue than the entire movie theater industry, with over 60 million players in North America spending an average of $653 per year." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="The First Sport" data-description="Wrestling is considered the world's oldest sport, with cave drawings dating back 15,000 years depicting matches." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🎯</div>
+                        <div class="hobby-fact-icon-bg">🤝</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Prediction Accuracy</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>More Than a Game</h3>
 
                             
 
-                            <p>The best sports betting algorithms achieve only 55-60% accuracy, proving that sports remain beautifully unpredictable despite advanced analytics.</p>
+                            <p>A study of European football found that 85% of fans feel a strong sense of community and belonging because of their team.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Prediction Accuracy" data-description="The best sports betting algorithms achieve only 55-60% accuracy, proving that sports remain beautifully unpredictable despite advanced analytics." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="More Than a Game" data-description="A study of European football found that 85% of fans feel a strong sense of community and belonging because of their team." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">⚡</div>
+                        <div class="hobby-fact-icon-bg">🏀</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Real-Time Impact</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>Basketball's Global Reach</h3>
 
                             
 
-                            <p>Modern sports analytics can predict injury risk with 85% accuracy up to 2 weeks in advance, revolutionizing player health management.</p>
+                            <p>Basketball is played by over 450 million people worldwide, making it one of the most accessible and popular sports globally.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Real-Time Impact" data-description="Modern sports analytics can predict injury risk with 85% accuracy up to 2 weeks in advance, revolutionizing player health management." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Basketball's Global Reach" data-description="Basketball is played by over 450 million people worldwide, making it one of the most accessible and popular sports globally." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
@@ -318,172 +1598,153 @@
 
             <!-- Interactive Trivia Section -->
             
-            <section class="trivia-section">
-                <div class="section-header-with-toggle">
-                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                    <div class="design-toggle">
-                        <button class="toggle-btn" data-design="optionA">Option A</button>
-                        <button class="toggle-btn active" data-design="optionB">Option B</button>
-                        <button class="toggle-btn" data-design="optionC">Option C</button>
-                        <button class="toggle-btn" data-design="optionD">Option D</button>
-                    </div>
-                </div>
+            <section class="hobby-trivia-section">
+                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
 
-                <!-- Option A: Enhanced with Score & Share -->
-                <div class="trivia-container trivia-optionA">
-                    <div class="trivia-score-bar">
-                        <span class="score-display">Score: <span id="scoreA">0</span>/2</span>
-                        <div class="progress-dots" id="progressA"></div>
-                    </div>
-
-                    
-                    <div class="trivia-card trivia-card-a" data-question="0" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 1 of 2</span>
-                        </div>
-                        <h3>Which sport generates the most data per game?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="0">
-                                {"text" => "Basketball", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="1">
-                                {"text" => "Baseball", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="2">
-                                {"text" => "Football", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="3">
-                                {"text" => "Soccer", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="trivia-card trivia-card-a" data-question="1" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 2 of 2</span>
-                        </div>
-                        <h3>What does WAR stand for in baseball analytics?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="0">
-                                {"text" => "Wins Above Replacement", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="1">
-                                {"text" => "Weighted Average Rating", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="2">
-                                {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="3">
-                                {"text" => "Weekly Athletic Ranking", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics.</p>
-                        </div>
-                    </div>
-                    
-
-                    <div class="trivia-completion" id="completionA" style="display: none;">
-                        <div class="completion-icon">🎉</div>
-                        <h3>Quiz Complete!</h3>
-                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/2 🌟</p>
-                        <p class="completion-message" id="messageA"></p>
-                        <div class="completion-actions">
-                            <button class="share-score-btn" onclick="shareScore('A')">
-                                <i class="fas fa-share-alt"></i> Share Score
-                            </button>
-                            <button class="try-again-btn" onclick="resetQuiz('A')">
-                                <i class="fas fa-redo"></i> Try Again
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Option B: Quiz Mode with Timer -->
-                <div class="trivia-container trivia-optionB active">
-                    <div class="quiz-start-screen" id="startScreenB">
+                <!-- Option B: Quiz Mode with Timer (Uniform format for all hobby pages) -->
+                <div class="hobby-trivia-container trivia-optionB active">
+                    <div class="hobby-quiz-start-screen" id="startScreenB">
                         <div class="start-icon">⏱️</div>
                         <h3>Timed Quiz Challenge</h3>
-                        <p>Answer 2 questions as fast as you can!</p>
+                        <p>Answer 5 questions as fast as you can!</p>
                         <p class="timer-info">⚡ 30 seconds per question</p>
-                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                        <button class="hobby-start-quiz-btn" onclick="startQuiz('B')">
                             <i class="fas fa-play"></i> Start Quiz
                         </button>
                     </div>
 
                     <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
-                        <div class="quiz-header">
-                            <div class="quiz-progress">
-                                <span class="question-counter">Question <span id="currentB">1</span>/2</span>
-                                <div class="progress-dots-container" id="progressDotsB"></div>
+                        <div class="hobby-quiz-header">
+                            <div class="hobby-quiz-progress">
+                                <div class="hobby-progress-dots-container" id="progressDotsB"></div>
                             </div>
-                            <div class="quiz-timer">
+                            <div class="hobby-quiz-timer">
                                 <i class="fas fa-clock"></i>
                                 <span id="timerB">30</span>s
                             </div>
                         </div>
 
                         
-                        <div class="trivia-card trivia-card-b" data-question="0" data-correct-answer="" style="">
-                            <h3>Which sport generates the most data per game?</h3>
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="0" data-correct-answer="1" style="">
+                            <h3>Which sport is considered the oldest in the world?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="0">
-                                    {"text" => "Basketball", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="0" data-correct="false">
+                                    Running
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="1">
-                                    {"text" => "Baseball", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="1" data-correct="true">
+                                    Wrestling
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="2">
-                                    {"text" => "Football", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="2" data-correct="false">
+                                    Javelin
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="3">
-                                    {"text" => "Soccer", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="3" data-correct="false">
+                                    Swimming
                                 </button>
                                 
                             </div>
                         </div>
                         
-                        <div class="trivia-card trivia-card-b" data-question="1" data-correct-answer="" style="display: none;">
-                            <h3>What does WAR stand for in baseball analytics?</h3>
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="1" data-correct-answer="0" style="display: none;">
+                            <h3>In football (soccer), what is the term for scoring three goals in a single game?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="0">
-                                    {"text" => "Wins Above Replacement", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="0" data-correct="true">
+                                    Hat-Trick
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="1">
-                                    {"text" => "Weighted Average Rating", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="1" data-correct="false">
+                                    Triple-Double
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="2">
-                                    {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="2" data-correct="false">
+                                    Brace
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="3">
-                                    {"text" => "Weekly Athletic Ranking", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="3" data-correct="false">
+                                    Slam Dunk
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="2" data-correct-answer="1" style="display: none;">
+                            <h3>In basketball, what does 'triple-double' mean?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="0" data-correct="false">
+                                    Scoring 30+ points in a game
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="1" data-correct="true">
+                                    Double-digit numbers in three statistical categories
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="2" data-correct="false">
+                                    Making three consecutive three-pointers
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="3" data-correct="false">
+                                    Playing three quarters without a break
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="3" data-correct-answer="1" style="display: none;">
+                            <h3>How many squares are there on a standard chess board?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="0" data-correct="false">
+                                    64 squares
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="1" data-correct="true">
+                                    204 squares
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="2" data-correct="false">
+                                    100 squares
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="3" data-correct="false">
+                                    128 squares
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="4" data-correct-answer="1" style="display: none;">
+                            <h3>In table tennis, what is the maximum number of consecutive serves one player can have?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="0" data-correct="false">
+                                    5 serves
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="1" data-correct="true">
+                                    2 serves
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="2" data-correct="false">
+                                    3 serves
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="3" data-correct="false">
+                                    Until they lose a point
                                 </button>
                                 
                             </div>
@@ -492,12 +1753,32 @@
                     </div>
 
                     <div class="trivia-completion" id="completionB" style="display: none;">
-                        <div class="completion-card-capture" id="completionCardB">
-                            <div class="completion-icon">⏱️</div>
-                            <h3>Quiz Complete!</h3>
-                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/2 🌟</p>
-                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
-                            <p class="completion-message" id="messageBText"></p>
+                        <div class="hobby-completion-card-capture" id="completionCardB">
+                            <div class="hobby-completion-header">
+                                <div class="completion-icon-large">🎉</div>
+                                <h3 class="completion-title">Quiz Complete!</h3>
+                                <div class="completion-subtitle">Sports Trivia Challenge</div>
+                            </div>
+
+                            <div class="hobby-completion-stats">
+                                <div class="hobby-stat-item stat-score">
+                                    <div class="hobby-stat-icon">🏆</div>
+                                    <div class="hobby-stat-label">Score</div>
+                                    <div class="hobby-stat-value"><span id="finalScoreB">0</span>/5</div>
+                                </div>
+                                <div class="hobby-stat-divider"></div>
+                                <div class="hobby-stat-item stat-time">
+                                    <div class="hobby-stat-icon">⚡</div>
+                                    <div class="hobby-stat-label">Time</div>
+                                    <div class="hobby-stat-value"><span id="totalTimeB">0</span>s</div>
+                                </div>
+                            </div>
+
+                            <div class="hobby-completion-message-box" id="messageBText"></div>
+
+                            <div class="hobby-completion-footer">
+                                <div class="completion-url">http://localhost:4000/hobbies/sports</div>
+                            </div>
                         </div>
 
                         <div class="completion-actions">
@@ -518,7 +1799,7 @@
                 </div>
 
                 <!-- Option C: Difficulty Levels -->
-                <div class="trivia-container trivia-optionC">
+                <div class="hobby-trivia-container trivia-optionC">
                     <div class="difficulty-tabs">
                         <button class="difficulty-tab active" data-difficulty="easy">
                             <i class="fas fa-smile"></i> Easy
@@ -539,56 +1820,83 @@
 
                         
                         <div class="trivia-card trivia-card-c" data-question="0" data-correct-answer="">
-                            <h3>Which sport generates the most data per game?</h3>
+                            <h3>Which sport is considered the oldest in the world?</h3>
                             <div class="options-grid">
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="0">
-                                    {"text" => "Basketball", "correct" => false}
+                                    {"text" => "Running", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="1">
-                                    {"text" => "Baseball", "correct" => true}
+                                    {"text" => "Wrestling", "correct" => true}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="2">
-                                    {"text" => "Football", "correct" => false}
+                                    {"text" => "Javelin", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="3">
-                                    {"text" => "Soccer", "correct" => false}
+                                    {"text" => "Swimming", "correct" => false}
                                 </button>
                                 
                             </div>
                             <div class="trivia-feedback feedback-c" style="display: none;">
                                 <p class="feedback-title"></p>
-                                <p>Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!</p>
+                                <p>Cave paintings in France depict wrestlers from over 15,000 years ago! Wrestling is humanity's oldest documented sport.</p>
                             </div>
                         </div>
                         
                         <div class="trivia-card trivia-card-c" data-question="1" data-correct-answer="">
-                            <h3>What does WAR stand for in baseball analytics?</h3>
+                            <h3>In football (soccer), what is the term for scoring three goals in a single game?</h3>
                             <div class="options-grid">
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="0">
-                                    {"text" => "Wins Above Replacement", "correct" => true}
+                                    {"text" => "Hat-Trick", "correct" => true}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="1">
-                                    {"text" => "Weighted Average Rating", "correct" => false}
+                                    {"text" => "Triple-Double", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="2">
-                                    {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
+                                    {"text" => "Brace", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="3">
-                                    {"text" => "Weekly Athletic Ranking", "correct" => false}
+                                    {"text" => "Slam Dunk", "correct" => false}
                                 </button>
                                 
                             </div>
                             <div class="trivia-feedback feedback-c" style="display: none;">
                                 <p class="feedback-title"></p>
-                                <p>WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics.</p>
+                                <p>The term 'hat-trick' originated in cricket, where a bowler taking three wickets in consecutive deliveries would often be awarded a hat. The term later spread to other sports!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trivia-card trivia-card-c" data-question="2" data-correct-answer="">
+                            <h3>In basketball, what does 'triple-double' mean?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="0">
+                                    {"text" => "Scoring 30+ points in a game", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="1">
+                                    {"text" => "Double-digit numbers in three statistical categories", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="2">
+                                    {"text" => "Making three consecutive three-pointers", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="3">
+                                    {"text" => "Playing three quarters without a break", "correct" => false}
+                                </button>
+                                
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>A triple-double is achieved when a player records double-digit numbers (10+) in three of five statistical categories: points, rebounds, assists, steals, and blocks. It's a rare feat that showcases all-around excellence!</p>
                             </div>
                         </div>
                         
@@ -596,59 +1904,140 @@
                 </div>
 
                 <!-- Option D: Minimal Polish -->
-                <div class="trivia-container trivia-optionD">
+                <div class="hobby-trivia-container trivia-optionD">
                     
                     <div class="trivia-card trivia-card-d" data-question="0" data-correct-answer="">
-                        <h3>Which sport generates the most data per game?</h3>
+                        <h3>Which sport is considered the oldest in the world?</h3>
                         <div class="options-grid">
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="0">
-                                {"text" => "Basketball", "correct" => false}
+                                {"text" => "Running", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="1">
-                                {"text" => "Baseball", "correct" => true}
+                                {"text" => "Wrestling", "correct" => true}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="2">
-                                {"text" => "Football", "correct" => false}
+                                {"text" => "Javelin", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="3">
-                                {"text" => "Soccer", "correct" => false}
+                                {"text" => "Swimming", "correct" => false}
                             </button>
                             
                         </div>
                         <div class="trivia-feedback feedback-d" style="display: none;">
                             <div class="feedback-emoji"></div>
-                            <p class="feedback-text">Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!</p>
+                            <p class="feedback-text">Cave paintings in France depict wrestlers from over 15,000 years ago! Wrestling is humanity's oldest documented sport.</p>
                         </div>
                     </div>
                     
                     <div class="trivia-card trivia-card-d" data-question="1" data-correct-answer="">
-                        <h3>What does WAR stand for in baseball analytics?</h3>
+                        <h3>In football (soccer), what is the term for scoring three goals in a single game?</h3>
                         <div class="options-grid">
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="0">
-                                {"text" => "Wins Above Replacement", "correct" => true}
+                                {"text" => "Hat-Trick", "correct" => true}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="1">
-                                {"text" => "Weighted Average Rating", "correct" => false}
+                                {"text" => "Triple-Double", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="2">
-                                {"text" => "Win-Loss Adjustment Ratio", "correct" => false}
+                                {"text" => "Brace", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="3">
-                                {"text" => "Weekly Athletic Ranking", "correct" => false}
+                                {"text" => "Slam Dunk", "correct" => false}
                             </button>
                             
                         </div>
                         <div class="trivia-feedback feedback-d" style="display: none;">
                             <div class="feedback-emoji"></div>
-                            <p class="feedback-text">WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics.</p>
+                            <p class="feedback-text">The term 'hat-trick' originated in cricket, where a bowler taking three wickets in consecutive deliveries would often be awarded a hat. The term later spread to other sports!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="2" data-correct-answer="">
+                        <h3>In basketball, what does 'triple-double' mean?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="0">
+                                {"text" => "Scoring 30+ points in a game", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="1">
+                                {"text" => "Double-digit numbers in three statistical categories", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="2">
+                                {"text" => "Making three consecutive three-pointers", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="3">
+                                {"text" => "Playing three quarters without a break", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">A triple-double is achieved when a player records double-digit numbers (10+) in three of five statistical categories: points, rebounds, assists, steals, and blocks. It's a rare feat that showcases all-around excellence!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="3" data-correct-answer="">
+                        <h3>How many squares are there on a standard chess board?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="0">
+                                {"text" => "64 squares", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="1">
+                                {"text" => "204 squares", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="2">
+                                {"text" => "100 squares", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="3">
+                                {"text" => "128 squares", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">While there are 64 individual squares (8×8), a chess board actually contains 204 total squares when you count all possible square sizes: 64 (1×1) + 49 (2×2) + 36 (3×3) + 25 (4×4) + 16 (5×5) + 9 (6×6) + 4 (7×7) + 1 (8×8) = 204!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="4" data-correct-answer="">
+                        <h3>In table tennis, what is the maximum number of consecutive serves one player can have?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="0">
+                                {"text" => "5 serves", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="1">
+                                {"text" => "2 serves", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="2">
+                                {"text" => "3 serves", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="3">
+                                {"text" => "Until they lose a point", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">In modern table tennis rules, each player serves for 2 consecutive points before the serve switches to the opponent. This changed from the old rule of 5 serves to make games faster and more exciting!</p>
                         </div>
                     </div>
                     
@@ -664,54 +2053,76 @@
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Fantasy Lineup Optimizer</h3>
-                            <span class="project-status status-production">
-                                Production
+                            <h3>Athlehub</h3>
+                            <span class="project-status status-vision-stage">
+                                Vision Stage
                             </span>
                         </div>
-                        <p>Machine learning algorithm that optimizes daily fantasy lineups by analyzing player matchups, weather conditions, injury reports, and historical performance patterns.</p>
+                        <p class="project-description">A sports-first social hub to solve coordination, tracking, and community recognition for casual players. Find games, track stats, and build your sports community.</p>
                         
                         <div class="tech-stack">
                             
-                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TBD</span>
                             
-                            <span class="tech-tag">Scikit-learn</span>
                             
-                            <span class="tech-tag">Pandas</span>
-                            
-                            <span class="tech-tag">DraftKings API</span>
-                            
-                            <span class="tech-tag">PostgreSQL</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <span class="project-date">
+                                <i class="fas fa-clock"></i>
+                                TBD
+                            </span>
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Sports Betting Edge Finder</h3>
-                            <span class="project-status status-beta-testing">
-                                Beta Testing
+                            <h3>Pickup Sports Coordinator</h3>
+                            <span class="project-status status-ideation">
+                                Ideation
                             </span>
                         </div>
-                        <p>Real-time system that identifies betting opportunities by comparing odds across multiple sportsbooks and calculating expected value using proprietary prediction models.</p>
+                        <p class="project-description">A tool to find games, organize players, and ensure the court is never empty again. Real-time coordination for casual sports communities.</p>
                         
                         <div class="tech-stack">
                             
-                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">TBD</span>
                             
-                            <span class="tech-tag">TensorFlow</span>
                             
-                            <span class="tech-tag">Redis</span>
-                            
-                            <span class="tech-tag">Odds API</span>
-                            
-                            <span class="tech-tag">React Dashboard</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <span class="project-date">
+                                <i class="fas fa-clock"></i>
+                                TBD
+                            </span>
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
@@ -720,33 +2131,33 @@
 
             <!-- External Platforms Section -->
             
-            <section class="external-platforms">
+            <section class="hobby-external-platforms">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
-                <div class="platforms-grid">
+                <div class="hobby-platforms-grid">
                     
-                    <a href="https://fantasy.espn.com/profile/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="🏈"></i>
-                        <div class="platform-info">
-                            <h3>ESPN Fantasy</h3>
-                            <p>Multiple championship leagues with advanced analytics</p>
+                    <a href="https://www.chess.com/member/gmanthenoxus" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #7FA650">
+                        <i class="fas fa-chess"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Chess.com</h3>
+                            <p>Online chess games and tournaments - Follow my chess journey</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://draftkings.com/profile/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="💎"></i>
-                        <div class="platform-info">
-                            <h3>DraftKings</h3>
-                            <p>Daily fantasy sports with algorithmic lineup optimization</p>
+                    <a href="https://www.strava.com/athletes/191156625" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #FC4C02">
+                        <i class="fab fa-strava"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Strava</h3>
+                            <p>Track basketball sessions, runs, and athletic activities</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://twitter.com/gmanthenoxus_sports" class="platform-card" target="_blank">
-                        <i class="📊"></i>
-                        <div class="platform-info">
-                            <h3>Sports Analytics Twitter</h3>
-                            <p>Sharing insights and predictions with the analytics community</p>
+                    <a href="https://www.instagram.com/_athlee/" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #E4405F">
+                        <i class="fab fa-instagram"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Instagram</h3>
+                            <p>Athletic journey, game highlights, and sports lifestyle</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -757,9 +2168,29 @@
 
             <!-- Call-to-Action Section -->
             
+            <section class="hobby-cta">
+                <div class="hobby-cta-content">
+                    <h2>Tired of Showing Up to Empty Courts?</h2>
+                    <p>Let's build better tools for the casual sports community together.</p>
+                    <a href="/contact" class="hobby-cta-btn">
+                        Share Your Ideas <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+            
+
+            <!-- Explore Other Hobbies Section -->
+            <section class="hobby-explore-section">
+                <h2><i class="fas fa-arrow-circle-right"></i> Continue Exploring</h2>
+                <p class="hobby-explore-subtitle">Discover more passions in my journey</p>
+                <div class="hobby-explore-grid" id="otherHobbiesGrid"></div>
+            </section>
         </div>
     </main>
 </div>
+
+<!-- html2canvas for image capture -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script src="/assets/js/hobby-enhancements.js"></script>
 

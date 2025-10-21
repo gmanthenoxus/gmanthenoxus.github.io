@@ -1,6 +1,6 @@
 ---
 layout: hobby
-title: "Sneakers & Street Culture"
+title: "Sneakers"
 slug: sneakers
 emoji: "👟"
 color: "#FFE5B4"
@@ -147,20 +147,20 @@ current_projects:
 # External Platforms
 external_platforms:
   - name: "StockX"
-    icon: "📊"
+    icon: "fas fa-chart-line"
     description: "Sneaker marketplace and portfolio tracking"
     url: "https://stockx.com/profile/gmanthenoxus"
-    stats: "25+ transactions, 5-star rating"
+    color: "#00B050"
   - name: "GOAT"
-    icon: "🐐"
+    icon: "fas fa-certificate"
     description: "Authenticated sneaker marketplace"
     url: "https://goat.com/profile/gmanthenoxus"
-    stats: "15+ purchases, verified collector"
-  - name: "Sneaker Instagram"
-    icon: "📸"
+    color: "#000000"
+  - name: "Instagram"
+    icon: "fab fa-instagram"
     description: "Collection showcase and sneaker photography"
     url: "https://instagram.com/gmanthenoxus_kicks"
-    stats: "800+ followers, daily posts"
+    color: "#E4405F"
 
 # Empty States
 empty_states:

@@ -9,13 +9,13 @@
     <meta name="author" content="Noxus' Hub">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Technology & Innovation | Noxus' Hub">
+    <meta property="og:title" content="Tech | Noxus' Hub">
     <meta property="og:description" content="My Technology Journey
 ">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://localhost:4000/hobbies/tech/">
     
-    <title>Technology & Innovation | Noxus' Hub</title>
+    <title>Tech | Noxus' Hub</title>
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -108,52 +108,56 @@
                 
                 
                 <!-- Title & Description -->
-                <h1>Technology & Innovation</h1>
+                <h1>Tech</h1>
                 <p class="hobby-subtitle">From hardware to software. Exploring the cutting edge of technology and innovation.</p>
+
+                <!-- Rotating Quotes with Smart Display -->
                 
-                <!-- Rotating Quotes -->
-                
-                <div class="quotes-container">
+                <div class="hobby-quotes-section">
                     
-                    <div class="quote-item" style="opacity: 1;">
-                        <blockquote class="quote-text">"Technology is best when it brings people together."</blockquote>
-                        <cite class="quote-author">
-                            — Matt Mullenweg
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="0">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="Technology is best when it brings people together.">Technology is best when it brings people together.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Matt Mullenweg</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"The advance of technology is based on making it fit in so that you don't really even notice it."</blockquote>
-                        <cite class="quote-author">
-                            — Bill Gates
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="1">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="The advance of technology is based on making it fit in so that you don't really even notice it.">The advance of technology is based on making it fit in so that you don't really even notice it.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Bill Gates</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"Any sufficiently advanced technology is indistinguishable from magic."</blockquote>
-                        <cite class="quote-author">
-                            — Arthur C. Clarke
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="2">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="Any sufficiently advanced technology is indistinguishable from magic.">Any sufficiently advanced technology is indistinguishable from magic.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Arthur C. Clarke</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"Innovation distinguishes between a leader and a follower."</blockquote>
-                        <cite class="quote-author">
-                            — Steve Jobs
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="3">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="Innovation distinguishes between a leader and a follower.">Innovation distinguishes between a leader and a follower.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Steve Jobs</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
                 
-                
+
                 <!-- Navigation -->
                 <div class="hero-nav">
                     <a href="/hobbies/" class="back-btn">
@@ -171,9 +175,9 @@
             
 
             <!-- Personal Journey Section -->
-            <section class="personal-journey">
+            <section class="hobby-personal-journey">
                 <h2><i class="fas fa-map-marked-alt"></i> My Journey</h2>
-                <div class="journey-content">
+                <div class="hobby-journey-content">
                     <h1 id="my-technology-journey">My Technology Journey</h1>
 
 <p>Technology is the great enabler of human potential. What started as curiosity about how computers work has evolved into a deep passion for building solutions, exploring emerging technologies, and understanding how innovation shapes our world and creates new possibilities.</p>
@@ -268,92 +272,88 @@
                 </div>
             </section>
 
-            <!-- Favorites Section -->
+            <!-- Favorites/Goals Section -->
             
 
             <!-- Fun Facts Section -->
             
-            <section class="fun-facts">
+            <section class="hobby-fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
 
-                <div class="facts-grid">
+                <div class="hobby-facts-grid">
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">⚡</div>
+                        <div class="hobby-fact-icon-bg">⚡</div>
                         
 
-                        <div class="fact-content-layer">
+                        <div class="hobby-fact-content-layer">
                             <h3>Moore's Law Evolution</h3>
 
                             
 
                             <p>While traditional Moore's Law is slowing, specialized chips like GPUs and AI processors are advancing exponentially, with some AI chips improving 10x every 2 years instead of the traditional 2x.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Moore's Law Evolution" data-description="While traditional Moore's Law is slowing, specialized chips like GPUs and AI processors are advancing exponentially, with some AI chips improving 10x every 2 years instead of the traditional 2x." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Moore's Law Evolution" data-description="While traditional Moore's Law is slowing, specialized chips like GPUs and AI processors are advancing exponentially, with some AI chips improving 10x every 2 years instead of the traditional 2x." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🌍</div>
+                        <div class="hobby-fact-icon-bg">🌍</div>
                         
 
-                        <div class="fact-content-layer">
+                        <div class="hobby-fact-content-layer">
                             <h3>Internet Scale</h3>
 
                             
 
                             <p>Every day, humans create 2.5 quintillion bytes of data—so much that 90% of all data in the world was created in just the last two years, requiring revolutionary storage and processing technologies.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Internet Scale" data-description="Every day, humans create 2.5 quintillion bytes of data—so much that 90% of all data in the world was created in just the last two years, requiring revolutionary storage and processing technologies." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Internet Scale" data-description="Every day, humans create 2.5 quintillion bytes of data—so much that 90% of all data in the world was created in just the last two years, requiring revolutionary storage and processing technologies." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🔋</div>
+                        <div class="hobby-fact-icon-bg">🔋</div>
                         
 
-                        <div class="fact-content-layer">
+                        <div class="hobby-fact-content-layer">
                             <h3>Energy Efficiency</h3>
 
                             
 
                             <p>Modern smartphones are over 100,000 times more powerful than the computers that guided Apollo 11 to the moon, yet use less power than a light bulb thanks to incredible advances in chip efficiency.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Energy Efficiency" data-description="Modern smartphones are over 100,000 times more powerful than the computers that guided Apollo 11 to the moon, yet use less power than a light bulb thanks to incredible advances in chip efficiency." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Energy Efficiency" data-description="Modern smartphones are over 100,000 times more powerful than the computers that guided Apollo 11 to the moon, yet use less power than a light bulb thanks to incredible advances in chip efficiency." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🚀</div>
+                        <div class="hobby-fact-icon-bg">🚀</div>
                         
 
-                        <div class="fact-content-layer">
+                        <div class="hobby-fact-content-layer">
                             <h3>Development Speed</h3>
 
                             
 
                             <p>The average software project today uses over 500 open-source dependencies, allowing developers to build in weeks what would have taken years to create from scratch just a decade ago.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Development Speed" data-description="The average software project today uses over 500 open-source dependencies, allowing developers to build in weeks what would have taken years to create from scratch just a decade ago." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Development Speed" data-description="The average software project today uses over 500 open-source dependencies, allowing developers to build in weeks what would have taken years to create from scratch just a decade ago." data-category="">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
@@ -364,172 +364,78 @@
 
             <!-- Interactive Trivia Section -->
             
-            <section class="trivia-section">
-                <div class="section-header-with-toggle">
-                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                    <div class="design-toggle">
-                        <button class="toggle-btn" data-design="optionA">Option A</button>
-                        <button class="toggle-btn active" data-design="optionB">Option B</button>
-                        <button class="toggle-btn" data-design="optionC">Option C</button>
-                        <button class="toggle-btn" data-design="optionD">Option D</button>
-                    </div>
-                </div>
+            <section class="hobby-trivia-section">
+                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
 
-                <!-- Option A: Enhanced with Score & Share -->
-                <div class="trivia-container trivia-optionA">
-                    <div class="trivia-score-bar">
-                        <span class="score-display">Score: <span id="scoreA">0</span>/2</span>
-                        <div class="progress-dots" id="progressA"></div>
-                    </div>
-
-                    
-                    <div class="trivia-card trivia-card-a" data-question="0" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 1 of 2</span>
-                        </div>
-                        <h3>What does 'API' stand for in software development?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="0">
-                                {"text" => "Application Programming Interface", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="1">
-                                {"text" => "Advanced Programming Integration", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="2">
-                                {"text" => "Automated Process Interaction", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="3">
-                                {"text" => "Application Process Interface", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">API stands for Application Programming Interface—a set of protocols and tools that allows different software applications to communicate with each other!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="trivia-card trivia-card-a" data-question="1" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 2 of 2</span>
-                        </div>
-                        <h3>Which programming paradigm focuses on organizing code around objects and classes?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="0">
-                                {"text" => "Functional Programming", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="1">
-                                {"text" => "Object-Oriented Programming", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="2">
-                                {"text" => "Procedural Programming", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="3">
-                                {"text" => "Logic Programming", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">Object-Oriented Programming (OOP) organizes code around objects that contain both data and methods, promoting code reusability and modularity!</p>
-                        </div>
-                    </div>
-                    
-
-                    <div class="trivia-completion" id="completionA" style="display: none;">
-                        <div class="completion-icon">🎉</div>
-                        <h3>Quiz Complete!</h3>
-                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/2 🌟</p>
-                        <p class="completion-message" id="messageA"></p>
-                        <div class="completion-actions">
-                            <button class="share-score-btn" onclick="shareScore('A')">
-                                <i class="fas fa-share-alt"></i> Share Score
-                            </button>
-                            <button class="try-again-btn" onclick="resetQuiz('A')">
-                                <i class="fas fa-redo"></i> Try Again
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Option B: Quiz Mode with Timer -->
-                <div class="trivia-container trivia-optionB active">
-                    <div class="quiz-start-screen" id="startScreenB">
+                <!-- Option B: Quiz Mode with Timer (Uniform format for all hobby pages) -->
+                <div class="hobby-trivia-container trivia-optionB active">
+                    <div class="hobby-quiz-start-screen" id="startScreenB">
                         <div class="start-icon">⏱️</div>
                         <h3>Timed Quiz Challenge</h3>
                         <p>Answer 2 questions as fast as you can!</p>
                         <p class="timer-info">⚡ 30 seconds per question</p>
-                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                        <button class="hobby-start-quiz-btn" onclick="startQuiz('B')">
                             <i class="fas fa-play"></i> Start Quiz
                         </button>
                     </div>
 
                     <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
-                        <div class="quiz-header">
-                            <div class="quiz-progress">
-                                <span class="question-counter">Question <span id="currentB">1</span>/2</span>
-                                <div class="progress-dots-container" id="progressDotsB"></div>
+                        <div class="hobby-quiz-header">
+                            <div class="hobby-quiz-progress">
+                                <div class="hobby-progress-dots-container" id="progressDotsB"></div>
                             </div>
-                            <div class="quiz-timer">
+                            <div class="hobby-quiz-timer">
                                 <i class="fas fa-clock"></i>
                                 <span id="timerB">30</span>s
                             </div>
                         </div>
 
                         
-                        <div class="trivia-card trivia-card-b" data-question="0" data-correct-answer="" style="">
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="0" data-correct-answer="0" style="">
                             <h3>What does 'API' stand for in software development?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="0">
-                                    {"text" => "Application Programming Interface", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="0" data-correct="true">
+                                    Application Programming Interface
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="1">
-                                    {"text" => "Advanced Programming Integration", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="1" data-correct="false">
+                                    Advanced Programming Integration
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="2">
-                                    {"text" => "Automated Process Interaction", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="2" data-correct="false">
+                                    Automated Process Interaction
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="3">
-                                    {"text" => "Application Process Interface", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="3" data-correct="false">
+                                    Application Process Interface
                                 </button>
                                 
                             </div>
                         </div>
                         
-                        <div class="trivia-card trivia-card-b" data-question="1" data-correct-answer="" style="display: none;">
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="1" data-correct-answer="1" style="display: none;">
                             <h3>Which programming paradigm focuses on organizing code around objects and classes?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="0">
-                                    {"text" => "Functional Programming", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="0" data-correct="false">
+                                    Functional Programming
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="1">
-                                    {"text" => "Object-Oriented Programming", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="1" data-correct="true">
+                                    Object-Oriented Programming
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="2">
-                                    {"text" => "Procedural Programming", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="2" data-correct="false">
+                                    Procedural Programming
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="3">
-                                    {"text" => "Logic Programming", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="3" data-correct="false">
+                                    Logic Programming
                                 </button>
                                 
                             </div>
@@ -538,12 +444,32 @@
                     </div>
 
                     <div class="trivia-completion" id="completionB" style="display: none;">
-                        <div class="completion-card-capture" id="completionCardB">
-                            <div class="completion-icon">⏱️</div>
-                            <h3>Quiz Complete!</h3>
-                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/2 🌟</p>
-                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
-                            <p class="completion-message" id="messageBText"></p>
+                        <div class="hobby-completion-card-capture" id="completionCardB">
+                            <div class="hobby-completion-header">
+                                <div class="completion-icon-large">🎉</div>
+                                <h3 class="completion-title">Quiz Complete!</h3>
+                                <div class="completion-subtitle">Tech Trivia Challenge</div>
+                            </div>
+
+                            <div class="hobby-completion-stats">
+                                <div class="hobby-stat-item stat-score">
+                                    <div class="hobby-stat-icon">🏆</div>
+                                    <div class="hobby-stat-label">Score</div>
+                                    <div class="hobby-stat-value"><span id="finalScoreB">0</span>/2</div>
+                                </div>
+                                <div class="hobby-stat-divider"></div>
+                                <div class="hobby-stat-item stat-time">
+                                    <div class="hobby-stat-icon">⚡</div>
+                                    <div class="hobby-stat-label">Time</div>
+                                    <div class="hobby-stat-value"><span id="totalTimeB">0</span>s</div>
+                                </div>
+                            </div>
+
+                            <div class="hobby-completion-message-box" id="messageBText"></div>
+
+                            <div class="hobby-completion-footer">
+                                <div class="completion-url">http://localhost:4000/hobbies/tech</div>
+                            </div>
                         </div>
 
                         <div class="completion-actions">
@@ -564,7 +490,7 @@
                 </div>
 
                 <!-- Option C: Difficulty Levels -->
-                <div class="trivia-container trivia-optionC">
+                <div class="hobby-trivia-container trivia-optionC">
                     <div class="difficulty-tabs">
                         <button class="difficulty-tab active" data-difficulty="easy">
                             <i class="fas fa-smile"></i> Easy
@@ -642,7 +568,7 @@
                 </div>
 
                 <!-- Option D: Minimal Polish -->
-                <div class="trivia-container trivia-optionD">
+                <div class="hobby-trivia-container trivia-optionD">
                     
                     <div class="trivia-card trivia-card-d" data-question="0" data-correct-answer="">
                         <h3>What does 'API' stand for in software development?</h3>
@@ -715,7 +641,7 @@
                                 Development
                             </span>
                         </div>
-                        <p>Comprehensive automation platform that integrates with various APIs to automate daily tasks, from social media posting to expense tracking and habit monitoring.</p>
+                        <p class="project-description">Comprehensive automation platform that integrates with various APIs to automate daily tasks, from social media posting to expense tracking and habit monitoring.</p>
                         
                         <div class="tech-stack">
                             
@@ -725,15 +651,21 @@
                             
                             <span class="tech-tag">React</span>
                             
-                            <span class="tech-tag">PostgreSQL</span>
                             
-                            <span class="tech-tag">Docker</span>
                             
-                            <span class="tech-tag">Various APIs</span>
+                            <span class="tech-tag tech-more">+3</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="project-card">
@@ -743,7 +675,7 @@
                                 Research
                             </span>
                         </div>
-                        <p>Intelligent coding companion that analyzes code patterns, suggests optimizations, and helps with debugging using machine learning and natural language processing.</p>
+                        <p class="project-description">Intelligent coding companion that analyzes code patterns, suggests optimizations, and helps with debugging using machine learning and natural language processing.</p>
                         
                         <div class="tech-stack">
                             
@@ -753,13 +685,21 @@
                             
                             <span class="tech-tag">OpenAI API</span>
                             
-                            <span class="tech-tag">VS Code Extension</span>
                             
-                            <span class="tech-tag">Node.js</span>
+                            
+                            <span class="tech-tag tech-more">+2</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
@@ -768,31 +708,31 @@
 
             <!-- External Platforms Section -->
             
-            <section class="external-platforms">
+            <section class="hobby-external-platforms">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
-                <div class="platforms-grid">
+                <div class="hobby-platforms-grid">
                     
-                    <a href="https://github.com/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="💻"></i>
-                        <div class="platform-info">
+                    <a href="https://github.com/gmanthenoxus" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #181717">
+                        <i class="fab fa-github"></i>
+                        <div class="hobby-platform-info">
                             <h3>GitHub</h3>
                             <p>Open source contributions and project portfolio</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://stackoverflow.com/users/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="📚"></i>
-                        <div class="platform-info">
+                    <a href="https://stackoverflow.com/users/gmanthenoxus" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #F58025">
+                        <i class="fab fa-stack-overflow"></i>
+                        <div class="hobby-platform-info">
                             <h3>Stack Overflow</h3>
                             <p>Technical Q&A and community contributions</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://twitter.com/gmanthenoxus_tech" class="platform-card" target="_blank">
-                        <i class="🐦"></i>
-                        <div class="platform-info">
+                    <a href="https://twitter.com/gmanthenoxus_tech" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #1DA1F2">
+                        <i class="fab fa-twitter"></i>
+                        <div class="hobby-platform-info">
                             <h3>Tech Twitter</h3>
                             <p>Technology insights and industry discussions</p>
                         </div>
@@ -805,9 +745,19 @@
 
             <!-- Call-to-Action Section -->
             
+
+            <!-- Explore Other Hobbies Section -->
+            <section class="hobby-explore-section">
+                <h2><i class="fas fa-arrow-circle-right"></i> Continue Exploring</h2>
+                <p class="hobby-explore-subtitle">Discover more passions in my journey</p>
+                <div class="hobby-explore-grid" id="otherHobbiesGrid"></div>
+            </section>
         </div>
     </main>
 </div>
+
+<!-- html2canvas for image capture -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script src="/assets/js/hobby-enhancements.js"></script>
 

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Gaming Journey
+    <meta name="description" content="My Gaming Philosophy
 ">
     <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
     <meta name="author" content="Noxus' Hub">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Games & Interactive Media | Noxus' Hub">
-    <meta property="og:description" content="My Gaming Journey
+    <meta property="og:title" content="Games | Noxus' Hub">
+    <meta property="og:description" content="My Gaming Philosophy
 ">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://localhost:4000/hobbies/games/">
     
-    <title>Games & Interactive Media | Noxus' Hub</title>
+    <title>Games | Noxus' Hub</title>
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
 
     
     <main id="main-content" class="main-content">
-        <div class="hobby-page" style="--hobby-color: #F0F0F0;">
+        <div class="hobby-page" style="--hobby-color: #9B59B6;">
     <!-- Hero Section with Rotating Quotes -->
     <header class="hobby-hero">
         <div class="container">
@@ -102,56 +102,52 @@
                 
                 <!-- Icon/Emoji -->
                 
-                <div class="hobby-emoji-large">🎮</div>
+                <div class="hobby-icon-large">
+                    <i class="fas fa-gamepad"></i>
+                </div>
                 
                 
                 <!-- Title & Description -->
-                <h1>Games & Interactive Media</h1>
-                <p class="hobby-subtitle">From board games to video games. Strategic thinking meets digital innovation.</p>
+                <h1>Games</h1>
+                <p class="hobby-subtitle">From Nintendo 64 magic to midnight lobbies. My journey through interactive art, challenge, and the communities games build.</p>
+
+                <!-- Rotating Quotes with Smart Display -->
                 
-                <!-- Rotating Quotes -->
-                
-                <div class="quotes-container">
+                <div class="hobby-quotes-section">
                     
-                    <div class="quote-item" style="opacity: 1;">
-                        <blockquote class="quote-text">"Every game is an opportunity to learn something new about strategy and yourself."</blockquote>
-                        <cite class="quote-author">
-                            — Reiner Knizia
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="0">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="The opposite of play is not work. It is depression.">The opposite of play is not work. It is depression.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Brian Sutton-Smith</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"The best games are easy to learn but impossible to master."</blockquote>
-                        <cite class="quote-author">
-                            — Sid Meier
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="1">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="We don't stop playing because we grow old; we grow old because we stop playing.">We don't stop playing because we grow old; we grow old because we stop playing.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— George Bernard Shaw</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"In games, we find the perfect balance of challenge and reward."</blockquote>
-                        <cite class="quote-author">
-                            — Jane McGonigal
-                            
-                            
-                        </cite>
-                    </div>
-                    
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"Strategy without tactics is the slowest route to victory. Tactics without strategy is the noise before defeat."</blockquote>
-                        <cite class="quote-author">
-                            — Sun Tzu
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="2">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="Video games are bad for you? That's what they said about rock-n-roll.">Video games are bad for you? That's what they said about rock-n-roll.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Shigeru Miyamoto</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
                 
-                
+
                 <!-- Navigation -->
                 <div class="hero-nav">
                     <a href="/hobbies/" class="back-btn">
@@ -167,158 +163,533 @@
             
             <!-- Enhanced Statistics Dashboard -->
             
+            <section class="hobby-stats-dashboard">
+                <div class="hobby-stats-header">
+                    <h2><i class="fas fa-chart-line"></i> Statistics Dashboard</h2>
+
+                    <!-- Time Filters -->
+                    
+                    <div class="hobby-time-filters">
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="week">
+                            This Week
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="month">
+                            This Month
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn active"
+                                data-period="year">
+                            This Year
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="all">
+                            All Time
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+
+                <!-- Main Stats Grid -->
+                <div class="hobby-stats-grid">
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="first_console">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">First Console</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">Nintendo 64</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-stable">
+                            
+                            <i class="fas fa-minus"></i>
+                            
+                            <span>100%</span>
+                            <span class="trend-value">Where it all began</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone reached">
+                            <span class="hobby-milestone-icon">🎮</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Gaming Origins</div>
+                                <div class="milestone-description">Started with the legendary N64</div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Where the magic began—gift from my father that opened up 3D gaming worlds</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="current_platform">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fab fa-xbox"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Current Platform</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">Xbox Series S</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-stable">
+                            
+                            <i class="fas fa-minus"></i>
+                            
+                            <span>100%</span>
+                            <span class="trend-value">Current gen</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone reached">
+                            <span class="hobby-milestone-icon">🎯</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Next-Gen Gamer</div>
+                                <div class="milestone-description">Playing on current generation hardware</div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">My current gaming setup for both competitive and single-player experiences</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="play_style">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Play Style</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">Competitive & Immersive</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-balanced">
+                            
+                            <i class="fas fa-minus"></i>
+                            
+                            <span>90%</span>
+                            <span class="trend-value">Best of both worlds</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+                        <div class="hobby-stat-comparison">
+                            <div class="comparison-label">Multiplayer vs Single-Player</div>
+                            <div class="comparison-value">50/50 split</div>
+                            
+                            <div class="comparison-percentage">
+                                50%
+                                
+                            </div>
+                            
+                        </div>
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone reached">
+                            <span class="hobby-milestone-icon">⚔️</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Balanced Gamer</div>
+                                <div class="milestone-description">Enjoys both competitive and immersive experiences</div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">From midnight lobbies with friends to epic single-player adventures</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="gaming_philosophy">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Gaming Philosophy</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">All Forms</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-stable">
+                            
+                            <i class="fas fa-minus"></i>
+                            
+                            <span>100%</span>
+                            <span class="trend-value">Universal appreciation</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone reached">
+                            <span class="hobby-milestone-icon">🏆</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">True Gamer</div>
+                                <div class="milestone-description">Appreciates gaming in all its forms</div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Board games, video games, party games—I love them all</div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+
+            </section>
+            
 
             <!-- Personal Journey Section -->
-            <section class="personal-journey">
+            <section class="hobby-personal-journey">
                 <h2><i class="fas fa-map-marked-alt"></i> My Journey</h2>
-                <div class="journey-content">
-                    <h1 id="my-gaming-journey">My Gaming Journey</h1>
+                <div class="hobby-journey-content">
+                    <h2 id="my-gaming-philosophy">My Gaming Philosophy</h2>
 
-<p>Games represent the perfect intersection of strategy, storytelling, technology, and social interaction. What started as childhood memories of family game nights and early video game experiences has evolved into a deep appreciation for game design, interactive media, and the unique ways games bring people together across digital and physical spaces.</p>
+<p>To me, gaming is the ultimate expression of creativity, art, challenge, and technology. It’s not just about pixels on a screen or pieces on a board; it’s about the journey and the shared experience. Whether I’m alone, lost in the vast world of Skyrim, or with friends in a chaotic midnight FIFA lobby, games are a conduit for connection, storytelling, and pure, unadulterated fun.</p>
 
-<h2 id="current-focus-areas">Current Focus Areas</h2>
+<h2 id="the-journey-from-family-bonds-to-midnight-lobbies">The Journey: From Family Bonds to Midnight Lobbies</h2>
 
-<p>My passion for games spans several key areas:</p>
-<ul>
-  <li><strong>Strategic Board Games</strong>: Exploring complex Euro games and innovative tabletop mechanics</li>
-  <li><strong>Indie Video Games</strong>: Discovering unique narratives and experimental gameplay</li>
-  <li><strong>Digital Adaptations</strong>: Building online versions of favorite games with AI opponents</li>
-  <li><strong>Game Design</strong>: Understanding what makes games engaging, balanced, and memorable</li>
-  <li><strong>Cross-Platform Gaming</strong>: Creating experiences that bridge physical and digital play</li>
-</ul>
+<p>My journey began with a Nintendo 64, a gift from my father that felt like pure magic. The leap into 3D worlds was awe-inspiring. But even before that, I was building bonds over board games with my family. This foundation—from Ludo and Chess to tag and hide-and-seek—taught me that play is a universal language.</p>
 
-<h2 id="the-strategic-programming-connection">The Strategic Programming Connection</h2>
+<p>My tastes have expanded to encompass a huge spectrum: the strategic depth of poker, the competitive rush of NBA 2K, the long-term planning of Clash of Clans, and the narrative immersion of Assassin’s Creed. I appreciate games in all their forms, from quick party games to epic open-world adventures.</p>
 
-<p>My programming background has opened up exciting ways to engage with board games:</p>
+<h2 id="the-two-sides-of-the-controller">The Two Sides of the Controller</h2>
 
-<h3 id="digital-game-development"><strong>Digital Game Development</strong></h3>
-<ul>
-  <li>Creating web-based versions of favorite games with real-time multiplayer support</li>
-  <li>Building AI opponents that provide challenging and fair gameplay experiences</li>
-  <li>Developing game state management systems that handle complex rule interactions</li>
-  <li>Implementing matchmaking algorithms that create balanced and enjoyable games</li>
-</ul>
+<p>These days, my gaming life has two primary modes. There’s the <strong>competitive thrill</strong> of hopping online with the boys for late-night sessions, where communication and teamwork are key. Then there’s the <strong>immersive escape</strong> of diving into a rich, single-player world to decompress and explore. I believe a balanced diet of both is the key to a fulfilling gaming life.</p>
 
-<h3 id="game-analysis--optimization"><strong>Game Analysis &amp; Optimization</strong></h3>
-<ul>
-  <li>Using data analysis to understand game balance and optimal strategies</li>
-  <li>Creating tools that help players improve their strategic decision-making</li>
-  <li>Building recommendation systems that suggest games based on player preferences</li>
-  <li>Developing automated tournament management and ranking systems</li>
-</ul>
-
-<h3 id="community-building"><strong>Community Building</strong></h3>
-<ul>
-  <li>Creating platforms that connect board game enthusiasts and facilitate game discovery</li>
-  <li>Building tools that help organize game nights and manage collections</li>
-  <li>Developing educational resources that teach game mechanics and strategy</li>
-  <li>Contributing to the growing intersection of traditional and digital gaming</li>
-</ul>
-
-<h2 id="philosophy--impact">Philosophy &amp; Impact</h2>
-
-<p>Board games have taught me that the best solutions often come from thinking several moves ahead, considering multiple variables, and adapting strategies based on changing conditions—skills that directly translate to software development and problem-solving.</p>
-
-<p>The social aspect of board gaming has also reinforced the importance of clear communication, collaborative problem-solving, and creating inclusive environments where everyone can contribute and succeed.</p>
-
-<h2 id="favorite-game-mechanics">Favorite Game Mechanics</h2>
-
-<ul>
-  <li><strong>Engine Building</strong>: The satisfaction of creating efficient systems (like in Wingspan or Splendor)</li>
-  <li><strong>Worker Placement</strong>: Strategic resource allocation and timing (like in Lords of Waterdeep)</li>
-  <li><strong>Deck Building</strong>: Customizing and optimizing card combinations (like in Dominion)</li>
-  <li><strong>Area Control</strong>: Territorial strategy and influence management (like in Risk or Scythe)</li>
-</ul>
+<p>This wide-ranging experience has shown me the gaps in how we manage our gaming lives—juggling platforms, organizing friends, and preserving our in-game memories. My goal is to build tools that enhance these social and organizational aspects, making it easier than ever to just play.</p>
 
                 </div>
             </section>
 
-            <!-- Favorites Section -->
+            <!-- Favorites/Goals Section -->
+            
+            <section class="hobby-favorites-section hobby-favorites-games">
+                
+                <h2><i class="fas fa-star"></i> My Favorites</h2>
+                
+
+                <!-- Fitness Goals Layout - Compact Horizontal Cards -->
+                
+                <div class="games-favorites-grid">
+                    
+                    <div class="games-favorite-card" data-game-type="video_game">
+                        
+                        <div class="games-favorite-image" style="background-image: url('https://media.rawg.io/media/screenshots/d6a/d6a58b272dc77a5e2b38ed5729dee9a8.jpg');">
+                            <div class="games-category-badge">Sports</div>
+                            
+                            <div class="games-rating-badge">
+                                <i class="fas fa-star"></i> 4.0
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="games-favorite-content">
+                            <h3>NBA 2K26</h3>
+
+                            <div class="games-info-grid">
+                                
+                                    <div class="game-info-item">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Simulation, Sports</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Xbox Series S/X</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="games-favorite-card" data-game-type="video_game">
+                        
+                        <div class="games-favorite-image" style="background-image: url('https://media.rawg.io/media/screenshots/928/9289953b354ac641e3f1b83d43e18521.jpg');">
+                            <div class="games-category-badge">Sports</div>
+                            
+                            <div class="games-rating-badge">
+                                <i class="fas fa-star"></i> 3.3
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="games-favorite-content">
+                            <h3>EA Sports FC 26</h3>
+
+                            <div class="games-info-grid">
+                                
+                                    <div class="game-info-item">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Simulation, Sports</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Xbox Series S/X</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="games-favorite-card" data-game-type="video_game">
+                        
+                        <div class="games-favorite-image" style="background-image: url('https://media.rawg.io/media/games/934/9346092ae11bf7582c883869468171cc.jpg');">
+                            <div class="games-category-badge">Action</div>
+                            
+                            <div class="games-rating-badge">
+                                <i class="fas fa-star"></i> 3.7
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="games-favorite-content">
+                            <h3>Assassin's Creed SHADOWS</h3>
+
+                            <div class="games-info-grid">
+                                
+                                    <div class="game-info-item">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Adventure, Action</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>Xbox Series S/X</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="games-favorite-card" data-game-type="video_game">
+                        
+                        <div class="games-favorite-image" style="background-image: url('https://media.rawg.io/media/screenshots/761/76129e9a98953bd17583f2a8cb776214.jpeg');">
+                            <div class="games-category-badge">Strategy</div>
+                            
+                            <div class="games-rating-badge">
+                                <i class="fas fa-star"></i> 3.5
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="games-favorite-content">
+                            <h3>Clash of Clans</h3>
+
+                            <div class="games-info-grid">
+                                
+                                    <div class="game-info-item">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>Strategy, Action</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-desktop"></i>
+                                        <span>iOS</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="games-favorite-card" data-game-type="board_game">
+                        
+                        <div class="games-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1611371805429-8b5c1b2c34ba?w=800&q=80');">
+                            <div class="games-category-badge">Strategic Luck</div>
+                            
+                            <div class="games-rating-badge">
+                                <i class="fas fa-star"></i> 4.0
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="games-favorite-content">
+                            <h3>Monopoly</h3>
+
+                            <div class="games-info-grid">
+                                
+                                    <div class="game-info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>2-8 Players</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>60-180 min</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="games-favorite-card" data-game-type="board_game">
+                        
+                        <div class="games-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&q=80');">
+                            <div class="games-category-badge">Strategy</div>
+                            
+                            <div class="games-rating-badge">
+                                <i class="fas fa-star"></i> 5.0
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="games-favorite-content">
+                            <h3>Chess</h3>
+
+                            <div class="games-info-grid">
+                                
+                                    <div class="game-info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>2 Players</span>
+                                    </div>
+                                    <div class="game-info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>30-60 min</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Sports-Specific Layout -->
+                
+            </section>
             
 
             <!-- Fun Facts Section -->
             
-            <section class="fun-facts">
+            <section class="hobby-fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
 
-                <div class="facts-grid">
+                <div class="hobby-facts-grid">
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🎯</div>
+                        <div class="hobby-fact-icon-bg">🎮</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Strategic Complexity</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>The First Video Game</h3>
 
                             
+                            <span class="hobby-fact-category">History</span>
+                            
 
-                            <p>Chess has approximately 10^120 possible games, but modern board games like Go have even more possibilities at 10^170, making them more complex than the number of atoms in the observable universe.</p>
+                            <p>The first known video game, 'Tennis for Two', was created in 1958 on an oscilloscope, long before Pong.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Strategic Complexity" data-description="Chess has approximately 10^120 possible games, but modern board games like Go have even more possibilities at 10^170, making them more complex than the number of atoms in the observable universe." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="The First Video Game" data-description="The first known video game, 'Tennis for Two', was created in 1958 on an oscilloscope, long before Pong." data-category="History">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🧠</div>
+                        <div class="hobby-fact-icon-bg">🎲</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Cognitive Benefits</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>A Universal Pastime</h3>
 
                             
+                            <span class="hobby-fact-category">History</span>
+                            
 
-                            <p>Regular board game players show 15% better problem-solving skills and 20% improved memory retention compared to non-players, with benefits lasting well into older age.</p>
+                            <p>Board games like Senet from Ancient Egypt (3500 BC) show that the human desire to play games is thousands of years old.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Cognitive Benefits" data-description="Regular board game players show 15% better problem-solving skills and 20% improved memory retention compared to non-players, with benefits lasting well into older age." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="A Universal Pastime" data-description="Board games like Senet from Ancient Egypt (3500 BC) show that the human desire to play games is thousands of years old." data-category="History">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🌟</div>
+                        <div class="hobby-fact-icon-bg">♟️</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Social Connection</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>Chess's Possible Moves</h3>
 
                             
-
-                            <p>Board game cafes have increased by 300% in the last decade, creating new social spaces where people disconnect from screens and connect with each other.</p>
-
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Social Connection" data-description="Board game cafes have increased by 300% in the last decade, creating new social spaces where people disconnect from screens and connect with each other." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="fact-card fact-card-option2">
-                        
-                        <div class="fact-icon-bg">💡</div>
-                        
-
-                        <div class="fact-content-layer">
-                            <h3>Innovation Engine</h3>
-
+                            <span class="hobby-fact-category">Mathematics</span>
                             
 
-                            <p>Many successful video game mechanics originated in board games, including deck-building, worker placement, and area control systems that now power billion-dollar digital games.</p>
+                            <p>There are more possible iterations of a game of chess than there are atoms in the known universe.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Innovation Engine" data-description="Many successful video game mechanics originated in board games, including deck-building, worker placement, and area control systems that now power billion-dollar digital games." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Chess's Possible Moves" data-description="There are more possible iterations of a game of chess than there are atoms in the known universe." data-category="Mathematics">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
@@ -329,172 +700,153 @@
 
             <!-- Interactive Trivia Section -->
             
-            <section class="trivia-section">
-                <div class="section-header-with-toggle">
-                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                    <div class="design-toggle">
-                        <button class="toggle-btn" data-design="optionA">Option A</button>
-                        <button class="toggle-btn active" data-design="optionB">Option B</button>
-                        <button class="toggle-btn" data-design="optionC">Option C</button>
-                        <button class="toggle-btn" data-design="optionD">Option D</button>
-                    </div>
-                </div>
+            <section class="hobby-trivia-section">
+                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
 
-                <!-- Option A: Enhanced with Score & Share -->
-                <div class="trivia-container trivia-optionA">
-                    <div class="trivia-score-bar">
-                        <span class="score-display">Score: <span id="scoreA">0</span>/2</span>
-                        <div class="progress-dots" id="progressA"></div>
-                    </div>
-
-                    
-                    <div class="trivia-card trivia-card-a" data-question="0" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 1 of 2</span>
-                        </div>
-                        <h3>Which board game is considered the oldest known board game still played today?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="0">
-                                {"text" => "Chess", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="1">
-                                {"text" => "Backgammon", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="2">
-                                {"text" => "Go", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="3">
-                                {"text" => "Checkers", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="trivia-card trivia-card-a" data-question="1" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 2 of 2</span>
-                        </div>
-                        <h3>What does 'Euro game' mean in modern board gaming?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="0">
-                                {"text" => "Games made in Europe", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="1">
-                                {"text" => "Games with indirect player interaction and resource management", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="2">
-                                {"text" => "Games with European themes", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="3">
-                                {"text" => "Games that cost more than $50", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!</p>
-                        </div>
-                    </div>
-                    
-
-                    <div class="trivia-completion" id="completionA" style="display: none;">
-                        <div class="completion-icon">🎉</div>
-                        <h3>Quiz Complete!</h3>
-                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/2 🌟</p>
-                        <p class="completion-message" id="messageA"></p>
-                        <div class="completion-actions">
-                            <button class="share-score-btn" onclick="shareScore('A')">
-                                <i class="fas fa-share-alt"></i> Share Score
-                            </button>
-                            <button class="try-again-btn" onclick="resetQuiz('A')">
-                                <i class="fas fa-redo"></i> Try Again
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Option B: Quiz Mode with Timer -->
-                <div class="trivia-container trivia-optionB active">
-                    <div class="quiz-start-screen" id="startScreenB">
+                <!-- Option B: Quiz Mode with Timer (Uniform format for all hobby pages) -->
+                <div class="hobby-trivia-container trivia-optionB active">
+                    <div class="hobby-quiz-start-screen" id="startScreenB">
                         <div class="start-icon">⏱️</div>
                         <h3>Timed Quiz Challenge</h3>
-                        <p>Answer 2 questions as fast as you can!</p>
+                        <p>Answer 5 questions as fast as you can!</p>
                         <p class="timer-info">⚡ 30 seconds per question</p>
-                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                        <button class="hobby-start-quiz-btn" onclick="startQuiz('B')">
                             <i class="fas fa-play"></i> Start Quiz
                         </button>
                     </div>
 
                     <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
-                        <div class="quiz-header">
-                            <div class="quiz-progress">
-                                <span class="question-counter">Question <span id="currentB">1</span>/2</span>
-                                <div class="progress-dots-container" id="progressDotsB"></div>
+                        <div class="hobby-quiz-header">
+                            <div class="hobby-quiz-progress">
+                                <div class="hobby-progress-dots-container" id="progressDotsB"></div>
                             </div>
-                            <div class="quiz-timer">
+                            <div class="hobby-quiz-timer">
                                 <i class="fas fa-clock"></i>
                                 <span id="timerB">30</span>s
                             </div>
                         </div>
 
                         
-                        <div class="trivia-card trivia-card-b" data-question="0" data-correct-answer="" style="">
-                            <h3>Which board game is considered the oldest known board game still played today?</h3>
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="0" data-correct-answer="2" style="">
+                            <h3>Which company created the Nintendo 64 console?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="0">
-                                    {"text" => "Chess", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="0" data-correct="false">
+                                    Sega
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="1">
-                                    {"text" => "Backgammon", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="1" data-correct="false">
+                                    Sony
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="2">
-                                    {"text" => "Go", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="2" data-correct="true">
+                                    Nintendo
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="3">
-                                    {"text" => "Checkers", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="3" data-correct="false">
+                                    Microsoft
                                 </button>
                                 
                             </div>
                         </div>
                         
-                        <div class="trivia-card trivia-card-b" data-question="1" data-correct-answer="" style="display: none;">
-                            <h3>What does 'Euro game' mean in modern board gaming?</h3>
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="1" data-correct-answer="1" style="display: none;">
+                            <h3>In chess, which piece can only move diagonally?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="0">
-                                    {"text" => "Games made in Europe", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="0" data-correct="false">
+                                    The Knight
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="1">
-                                    {"text" => "Games with indirect player interaction and resource management", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="1" data-correct="true">
+                                    The Bishop
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="2">
-                                    {"text" => "Games with European themes", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="2" data-correct="false">
+                                    The Rook
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="3">
-                                    {"text" => "Games that cost more than $50", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="1" data-index="3" data-correct="false">
+                                    The Queen
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="2" data-correct-answer="0" style="display: none;">
+                            <h3>What is the best-selling video game franchise of all time?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="0" data-correct="true">
+                                    Mario
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="1" data-correct="false">
+                                    Call of Duty
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="2" data-correct="false">
+                                    Pokémon
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="2" data-index="3" data-correct="false">
+                                    FIFA
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="3" data-correct-answer="1" style="display: none;">
+                            <h3>What year was the first PlayStation console released?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="0" data-correct="false">
+                                    1992
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="1" data-correct="true">
+                                    1994
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="2" data-correct="false">
+                                    1996
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="3" data-correct="false">
+                                    1998
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="4" data-correct-answer="2" style="display: none;">
+                            <h3>In poker, what is the highest-ranking hand?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="0" data-correct="false">
+                                    Four of a Kind
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="1" data-correct="false">
+                                    Straight Flush
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="2" data-correct="true">
+                                    Royal Flush
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="3" data-correct="false">
+                                    Full House
                                 </button>
                                 
                             </div>
@@ -503,12 +855,32 @@
                     </div>
 
                     <div class="trivia-completion" id="completionB" style="display: none;">
-                        <div class="completion-card-capture" id="completionCardB">
-                            <div class="completion-icon">⏱️</div>
-                            <h3>Quiz Complete!</h3>
-                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/2 🌟</p>
-                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
-                            <p class="completion-message" id="messageBText"></p>
+                        <div class="hobby-completion-card-capture" id="completionCardB">
+                            <div class="hobby-completion-header">
+                                <div class="completion-icon-large">🎉</div>
+                                <h3 class="completion-title">Quiz Complete!</h3>
+                                <div class="completion-subtitle">Games Trivia Challenge</div>
+                            </div>
+
+                            <div class="hobby-completion-stats">
+                                <div class="hobby-stat-item stat-score">
+                                    <div class="hobby-stat-icon">🏆</div>
+                                    <div class="hobby-stat-label">Score</div>
+                                    <div class="hobby-stat-value"><span id="finalScoreB">0</span>/5</div>
+                                </div>
+                                <div class="hobby-stat-divider"></div>
+                                <div class="hobby-stat-item stat-time">
+                                    <div class="hobby-stat-icon">⚡</div>
+                                    <div class="hobby-stat-label">Time</div>
+                                    <div class="hobby-stat-value"><span id="totalTimeB">0</span>s</div>
+                                </div>
+                            </div>
+
+                            <div class="hobby-completion-message-box" id="messageBText"></div>
+
+                            <div class="hobby-completion-footer">
+                                <div class="completion-url">http://localhost:4000/hobbies/games</div>
+                            </div>
                         </div>
 
                         <div class="completion-actions">
@@ -529,7 +901,7 @@
                 </div>
 
                 <!-- Option C: Difficulty Levels -->
-                <div class="trivia-container trivia-optionC">
+                <div class="hobby-trivia-container trivia-optionC">
                     <div class="difficulty-tabs">
                         <button class="difficulty-tab active" data-difficulty="easy">
                             <i class="fas fa-smile"></i> Easy
@@ -550,56 +922,83 @@
 
                         
                         <div class="trivia-card trivia-card-c" data-question="0" data-correct-answer="">
-                            <h3>Which board game is considered the oldest known board game still played today?</h3>
+                            <h3>Which company created the Nintendo 64 console?</h3>
                             <div class="options-grid">
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="0">
-                                    {"text" => "Chess", "correct" => false}
+                                    {"text" => "Sega", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="1">
-                                    {"text" => "Backgammon", "correct" => true}
+                                    {"text" => "Sony", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="2">
-                                    {"text" => "Go", "correct" => false}
+                                    {"text" => "Nintendo", "correct" => true}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="3">
-                                    {"text" => "Checkers", "correct" => false}
+                                    {"text" => "Microsoft", "correct" => false}
                                 </button>
                                 
                             </div>
                             <div class="trivia-feedback feedback-c" style="display: none;">
                                 <p class="feedback-title"></p>
-                                <p>Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!</p>
+                                <p>Nintendo released the N64 in 1996, famous for its groundbreaking 3D games like Super Mario 64 and The Legend of Zelda: Ocarina of Time.</p>
                             </div>
                         </div>
                         
                         <div class="trivia-card trivia-card-c" data-question="1" data-correct-answer="">
-                            <h3>What does 'Euro game' mean in modern board gaming?</h3>
+                            <h3>In chess, which piece can only move diagonally?</h3>
                             <div class="options-grid">
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="0">
-                                    {"text" => "Games made in Europe", "correct" => false}
+                                    {"text" => "The Knight", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="1">
-                                    {"text" => "Games with indirect player interaction and resource management", "correct" => true}
+                                    {"text" => "The Bishop", "correct" => true}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="2">
-                                    {"text" => "Games with European themes", "correct" => false}
+                                    {"text" => "The Rook", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="3">
-                                    {"text" => "Games that cost more than $50", "correct" => false}
+                                    {"text" => "The Queen", "correct" => false}
                                 </button>
                                 
                             </div>
                             <div class="trivia-feedback feedback-c" style="display: none;">
                                 <p class="feedback-title"></p>
-                                <p>Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!</p>
+                                <p>The Bishop moves any number of squares diagonally, staying on its starting color throughout the entire game.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trivia-card trivia-card-c" data-question="2" data-correct-answer="">
+                            <h3>What is the best-selling video game franchise of all time?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="0">
+                                    {"text" => "Mario", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="1">
+                                    {"text" => "Call of Duty", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="2">
+                                    {"text" => "Pokémon", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="3">
+                                    {"text" => "FIFA", "correct" => false}
+                                </button>
+                                
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>The Mario franchise has sold over 800 million units worldwide, making it the best-selling video game franchise in history!</p>
                             </div>
                         </div>
                         
@@ -607,59 +1006,140 @@
                 </div>
 
                 <!-- Option D: Minimal Polish -->
-                <div class="trivia-container trivia-optionD">
+                <div class="hobby-trivia-container trivia-optionD">
                     
                     <div class="trivia-card trivia-card-d" data-question="0" data-correct-answer="">
-                        <h3>Which board game is considered the oldest known board game still played today?</h3>
+                        <h3>Which company created the Nintendo 64 console?</h3>
                         <div class="options-grid">
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="0">
-                                {"text" => "Chess", "correct" => false}
+                                {"text" => "Sega", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="1">
-                                {"text" => "Backgammon", "correct" => true}
+                                {"text" => "Sony", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="2">
-                                {"text" => "Go", "correct" => false}
+                                {"text" => "Nintendo", "correct" => true}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="3">
-                                {"text" => "Checkers", "correct" => false}
+                                {"text" => "Microsoft", "correct" => false}
                             </button>
                             
                         </div>
                         <div class="trivia-feedback feedback-d" style="display: none;">
                             <div class="feedback-emoji"></div>
-                            <p class="feedback-text">Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!</p>
+                            <p class="feedback-text">Nintendo released the N64 in 1996, famous for its groundbreaking 3D games like Super Mario 64 and The Legend of Zelda: Ocarina of Time.</p>
                         </div>
                     </div>
                     
                     <div class="trivia-card trivia-card-d" data-question="1" data-correct-answer="">
-                        <h3>What does 'Euro game' mean in modern board gaming?</h3>
+                        <h3>In chess, which piece can only move diagonally?</h3>
                         <div class="options-grid">
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="0">
-                                {"text" => "Games made in Europe", "correct" => false}
+                                {"text" => "The Knight", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="1">
-                                {"text" => "Games with indirect player interaction and resource management", "correct" => true}
+                                {"text" => "The Bishop", "correct" => true}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="2">
-                                {"text" => "Games with European themes", "correct" => false}
+                                {"text" => "The Rook", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="3">
-                                {"text" => "Games that cost more than $50", "correct" => false}
+                                {"text" => "The Queen", "correct" => false}
                             </button>
                             
                         </div>
                         <div class="trivia-feedback feedback-d" style="display: none;">
                             <div class="feedback-emoji"></div>
-                            <p class="feedback-text">Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!</p>
+                            <p class="feedback-text">The Bishop moves any number of squares diagonally, staying on its starting color throughout the entire game.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="2" data-correct-answer="">
+                        <h3>What is the best-selling video game franchise of all time?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="0">
+                                {"text" => "Mario", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="1">
+                                {"text" => "Call of Duty", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="2">
+                                {"text" => "Pokémon", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="3">
+                                {"text" => "FIFA", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">The Mario franchise has sold over 800 million units worldwide, making it the best-selling video game franchise in history!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="3" data-correct-answer="">
+                        <h3>What year was the first PlayStation console released?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="0">
+                                {"text" => "1992", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="1">
+                                {"text" => "1994", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="2">
+                                {"text" => "1996", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="3">
+                                {"text" => "1998", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">The original PlayStation was released by Sony in 1994 in Japan, revolutionizing gaming with CD-based games and 3D graphics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="4" data-correct-answer="">
+                        <h3>In poker, what is the highest-ranking hand?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="0">
+                                {"text" => "Four of a Kind", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="1">
+                                {"text" => "Straight Flush", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="2">
+                                {"text" => "Royal Flush", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="3">
+                                {"text" => "Full House", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">A Royal Flush (10, Jack, Queen, King, Ace of the same suit) is the highest possible hand in poker and is extremely rare!</p>
                         </div>
                     </div>
                     
@@ -675,52 +1155,76 @@
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Digital Board Game Platform</h3>
-                            <span class="project-status status-development">
-                                Development
+                            <h3>The Ultimate Game Night Planner</h3>
+                            <span class="project-status status-vision-stage">
+                                Vision Stage
                             </span>
                         </div>
-                        <p>Web-based platform for playing classic and modern board games online with friends, featuring AI opponents, real-time multiplayer, and game state persistence.</p>
+                        <p class="project-description">A tool to seamlessly organize digital and physical game sessions with friends, from FIFA tournaments to board game nights.</p>
                         
                         <div class="tech-stack">
                             
-                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TBD</span>
                             
-                            <span class="tech-tag">Node.js</span>
                             
-                            <span class="tech-tag">Socket.io</span>
-                            
-                            <span class="tech-tag">MongoDB</span>
-                            
-                            <span class="tech-tag">AI/ML</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <span class="project-date">
+                                <i class="fas fa-clock"></i>
+                                TBD
+                            </span>
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Game Night Optimizer</h3>
-                            <span class="project-status status-beta-testing">
-                                Beta Testing
+                            <h3>Cross-Platform Gaming Hub</h3>
+                            <span class="project-status status-ideation">
+                                Ideation
                             </span>
                         </div>
-                        <p>Smart scheduling system that matches players with games based on preferences, complexity ratings, play time, and group dynamics to create perfect game night experiences.</p>
+                        <p class="project-description">A unified space to track progress, share clips, and connect with friends across different gaming ecosystems.</p>
                         
                         <div class="tech-stack">
                             
-                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TBD</span>
                             
-                            <span class="tech-tag">Machine Learning</span>
                             
-                            <span class="tech-tag">Calendar APIs</span>
-                            
-                            <span class="tech-tag">React Native</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <span class="project-date">
+                                <i class="fas fa-clock"></i>
+                                TBD
+                            </span>
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
@@ -729,33 +1233,33 @@
 
             <!-- External Platforms Section -->
             
-            <section class="external-platforms">
+            <section class="hobby-external-platforms">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
-                <div class="platforms-grid">
+                <div class="hobby-platforms-grid">
                     
-                    <a href="https://boardgamegeek.com/user/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="🎲"></i>
-                        <div class="platform-info">
-                            <h3>BoardGameGeek</h3>
-                            <p>Comprehensive game collection and ratings</p>
+                    <a href="#" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #9B59B6">
+                        <i class="fas fa-gamepad"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Placeholder Platform 1</h3>
+                            <p>Your gaming platform here</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://boardgamearena.com/player?id=gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="🌐"></i>
-                        <div class="platform-info">
-                            <h3>Board Game Arena</h3>
-                            <p>Online board gaming with global players</p>
+                    <a href="#" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #9B59B6">
+                        <i class="fas fa-trophy"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Placeholder Platform 2</h3>
+                            <p>Your achievement tracking platform here</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://steamcommunity.com/id/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="🖥️"></i>
-                        <div class="platform-info">
-                            <h3>Tabletop Simulator</h3>
-                            <p>Digital board gaming with custom mods</p>
+                    <a href="#" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #9B59B6">
+                        <i class="fas fa-users"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Placeholder Platform 3</h3>
+                            <p>Your gaming community platform here</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -766,9 +1270,19 @@
 
             <!-- Call-to-Action Section -->
             
+
+            <!-- Explore Other Hobbies Section -->
+            <section class="hobby-explore-section">
+                <h2><i class="fas fa-arrow-circle-right"></i> Continue Exploring</h2>
+                <p class="hobby-explore-subtitle">Discover more passions in my journey</p>
+                <div class="hobby-explore-grid" id="otherHobbiesGrid"></div>
+            </section>
         </div>
     </main>
 </div>
+
+<!-- html2canvas for image capture -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script src="/assets/js/hobby-enhancements.js"></script>
 

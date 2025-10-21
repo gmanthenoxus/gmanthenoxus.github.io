@@ -1,205 +1,422 @@
 ---
 layout: hobby
-title: "Sports & Analytics"
+title: "Sports"
 slug: sports
-emoji: "⚽️"
-color: "#4ECDC4"
-description: "Where passion meets performance. Combining sports fandom with data-driven insights and predictive analytics."
+emoji: "🏀"
+color: "#2E86AB"
+description: "From street soccer to the hardwood court. My lifelong journey through athletic expression and the community it builds."
 
 # Rotating Quotes
 quotes:
-  - text: "Champions are made from something deep inside them - a desire, a dream, a vision."
-    author: "Muhammad Ali"
-  - text: "The difference between the impossible and the possible lies in determination."
-    author: "Tommy Lasorda"
-  - text: "You miss 100% of the shots you do not take."
-    author: "Wayne Gretzky"
-  - text: "It is not whether you get knocked down; it is whether you get up."
+  - text: "It's not whether you get knocked down, it's whether you get back up."
     author: "Vince Lombardi"
+  - text: "Skills fly out the window when you don't play with passion."
+    author: "Giannis Antetokounmpo"
+  - text: "Talent wins games, but teamwork and intelligence win championships."
+    author: "Michael Jordan"
 
 # Live Statistics Dashboard
-stats:
-  - value: "87%"
-    label: "Fantasy Win Rate"
-    context: "Across NFL, NBA, and MLB seasons"
-    progress: 87
-  - value: "250+"
-    label: "Games Analyzed"
-    context: "Statistical breakdowns and predictions"
-  - value: "15"
-    label: "Sports Followed"
-    context: "From major leagues to niche competitions"
-    progress: 75
-  - value: "5"
-    label: "Active Models"
-    context: "Predictive algorithms in production"
-    progress: 60
+statistics:
+  # Time filter options
+  time_periods:
+    - id: "week"
+      label: "This Week"
+      active: false
+    - id: "month"
+      label: "This Month"
+      active: false
+    - id: "year"
+      label: "This Year"
+      active: false
+    - id: "all"
+      label: "All Time"
+      active: true
+
+  # Main statistics
+  stats:
+    - id: "basketball_sessions"
+      label: "Basketball Sessions"
+      icon: "fas fa-basketball-ball"
+      value: "12"
+      numeric_value: 12
+      progress: 75
+      trend: "up"
+      trend_value: "+3 from last month"
+      comparison:
+        type: "goal"
+        label: "Monthly Goal: 16"
+        value: "4 to go"
+        percentage: 75
+      tooltip: "Regular pickup games and court sessions as a pass-first point guard"
+      milestone:
+        reached: false
+        title: "Court Regular"
+        icon: "�"
+        description: "Play 16+ sessions per month"
+        progress: 75
+      chart_data: [8, 9, 10, 11, 9, 12]
+      time_data:
+        week: 3
+        month: 12
+        year: 124
+        all: 500
+
+    - id: "assists"
+      label: "Assists"
+      icon: "fas fa-hands-helping"
+      value: "47"
+      numeric_value: 47
+      progress: 85
+      trend: "up"
+      trend_value: "+12 from last month"
+      comparison:
+        type: "average"
+        label: "vs Team Average"
+        value: "28 assists"
+        percentage: 68
+      tooltip: "Pass-first point guard mentality - making teammates better"
+      milestone:
+        reached: true
+        title: "Playmaker"
+        icon: "�"
+        description: "50+ assists in a month"
+        progress: 94
+      chart_data: [32, 35, 38, 41, 35, 47]
+      time_data:
+        week: 11
+        month: 47
+        year: 512
+        all: 2100
+
+    - id: "hours_played"
+      label: "Hours Played"
+      icon: "fas fa-clock"
+      value: "18h"
+      numeric_value: 18
+      progress: 60
+      trend: "stable"
+      trend_value: "+0 from last month"
+      comparison:
+        type: "goal"
+        label: "Monthly Goal: 30h"
+        value: "12h to go"
+        percentage: 60
+      tooltip: "Time on court across all sports - basketball, table tennis, badminton, chess"
+      milestone:
+        reached: false
+        title: "Dedicated Athlete"
+        icon: "⏱️"
+        description: "30+ hours per month"
+        progress: 60
+      chart_data: [15, 16, 18, 19, 17, 18]
+      time_data:
+        week: 4.5
+        month: 18
+        year: 198
+        all: 850
+
+    - id: "games_organized"
+      label: "Games Organized"
+      icon: "fas fa-users"
+      value: "5"
+      numeric_value: 5
+      progress: 50
+      trend: "up"
+      trend_value: "+2 from last month"
+      comparison:
+        type: "community"
+        label: "Community Impact"
+        value: "40+ players"
+        percentage: 100
+      tooltip: "Coordinating pickup games and bringing the community together"
+      milestone:
+        reached: false
+        title: "Community Builder"
+        icon: "🤝"
+        description: "Organize 10+ games per month"
+        progress: 50
+      chart_data: [2, 3, 4, 3, 3, 5]
+      time_data:
+        week: 1
+        month: 5
+        year: 48
+        all: 180
 
 # World Statistics for Context
 world_stats:
-  - icon: "🏆"
-    value: "$500B"
-    label: "Global sports market value"
-    source: "Sports Business Research 2024"
-  - icon: "📊"
-    value: "4.3B"
-    label: "Sports fans worldwide"
-    source: "Nielsen Sports Report 2024"
-  - icon: "💰"
-    value: "$8.5B"
-    label: "Fantasy sports market size"
-    source: "Fantasy Sports Trade Association"
-  - icon: "📱"
-    value: "78%"
-    label: "Of fans use sports apps daily"
-    source: "Digital Sports Engagement Study"
+  - icon: "⚽"
+    value: "3.5B"
+    label: "Football (soccer) fans globally"
+    source: "FIFA Global Report 2024"
+  - icon: "🏀"
+    value: "450M"
+    label: "Basketball players worldwide"
+    source: "FIBA Statistics 2024"
+  - icon: "🤝"
+    value: "8,000+"
+    label: "Indigenous sports worldwide"
+    source: "UNESCO Sports Heritage"
+  - icon: "🏛️"
+    value: "15,000"
+    label: "Years wrestling has existed"
+    source: "Archaeological Sports History"
 
 # Personal Journey
 personal_journey:
-  origin_story: "Started as a casual fantasy football player in college, but my competitive nature and love for numbers quickly turned into deep statistical analysis. What began as trying to beat friends evolved into building predictive models and discovering the fascinating intersection of sports and data science."
-  current_status: "Active in multiple fantasy leagues while developing machine learning models for game predictions. Currently tracking 15+ sports with custom analytics dashboards and maintaining an 87% fantasy win rate through data-driven decision making."
+  origin_story: "My story isn't one of specialized training or elite camps; it's a story of pure, undirected energy and a deep seated need to move. From sprinting in nursery school to performing bicycle stunts on the street, sports have always been my constant. As a military kid who changed schools frequently, the universal language of a game whether soccer on dusty roads or badminton with my dad ."
+  current_status: "Active basketball player (pass-first point guard) who's played 10+ sports throughout life. Currently building tools to solve the coordination and community problems that plague casual sports players everywhere."
   goals:
-    - "Achieve 90%+ fantasy win rate across all major sports"
-    - "Build a comprehensive sports prediction platform"
-    - "Attend the MIT Sloan Sports Analytics Conference"
-    - "Create viral sports analytics content on social media"
-    - "Develop real-time betting optimization algorithms"
+    - "Build Athlehub - a sports-first social platform for casual players"
+    - "Create tools that make finding pickup games effortless"
+    - "Develop systems to track and celebrate casual sports achievements"
+    - "Foster stronger communities around neighborhood courts and fields"
+    - "Never show up to an empty court again"
   achievements:
-    - "Won 3 consecutive fantasy football championships using custom algorithms"
-    - "Built predictive models with 78% accuracy for NBA game outcomes"
-    - "Created automated lineup optimization tools used by 500+ fantasy players"
-    - "Successfully predicted 12 of 16 NFL playoff outcomes in 2023"
-  favorites:
-    - name: "NBA Analytics"
-      reason: "Perfect blend of individual performance and team dynamics with rich statistical data"
-    - name: "Fantasy Football"
-      reason: "Weekly strategic decisions that combine player analysis with matchup optimization"
-    - name: "March Madness"
-      reason: "Ultimate test of predictive modeling with single-elimination chaos and upsets"
-    - name: "Baseball Sabermetrics"
-      reason: "The original sports analytics with deep statistical traditions and advanced metrics"
+    - "First basketball shot ever was a swish - the moment that started it all"
+    - "Played 10+ different sports from street soccer to high jump"
+    - "Built lasting friendships through pickup games and court sessions"
+    - "Attempted high jump at 5'6\" - not for medals, but for the joy of trying"
+# Favorite Sports (Detailed)
+favorites:
+  - title: "Basketball"
+    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800"
+    rating: 5
+    genres: ["Team Sport", "Strategic", "Fast-Paced"]
+    why: "The sport that chose me. That first swish ignited a passion that's never faded. As a pass-first point guard, I love orchestrating plays, finding the open man, and making my teammates better. Basketball taught me that the best moments aren't always about scoring—they're about the perfect assist that makes everyone shine."
+    year: "Started 2015"
+    stats:
+      - label: "Position"
+        value: "Point Guard"
+      - label: "Style"
+        value: "Pass-First"
+      - label: "Years"
+        value: "14+"
+
+  - title: "Soccer"
+    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800"
+    rating: 5
+    genres: ["Team Sport", "Endurance", "Universal"]
+    why: "The universal language that connected me across schools and countries. As a military kid, soccer on dusty roads was how I made friends, how I belonged. Every pickup game was a chance to communicate without words, to be part of something bigger than myself."
+    year: "Started 2010"
+    stats:
+      - label: "Position"
+        value: "Left Back"
+      - label: "Style"
+        value: "Pace Bruiser"
+      - label: "Years"
+        value: "15+"
+
+  - title: "Table Tennis"
+    image: "https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800"
+    rating: 4
+    genres: ["Individual", "Strategic", "Reflexes"]
+    why: "The strategic duel that combines lightning reflexes with mental chess. Every rally is a conversation, every spin a question, every return an answer. Table tennis taught me that sports can be as much about outsmarting your opponent as outplaying them."
+    year: "Started 2017"
+    stats:
+      - label: "Style"
+        value: "All-Around"
+      - label: "Strength"
+        value: "cuts"
+      - label: "Years"
+        value: "8+"
+
+  - title: "Badminton"
+    image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800"
+    rating: 4
+    genres: ["Individual/Doubles", "Precision", "Endurance"]
+    why: "Bonding with my dad through patient rallies and learning the value of precision. Badminton taught me that power isn't everything—placement, timing, and patience can beat raw strength. Every game with my dad was a lesson in both sport and life."
+    year: "Started 2013"
+    stats:
+      - label: "Format"
+        value: "Singles"
+      - label: "Style"
+        value: "Defensive"
+      - label: "Years"
+        value: "12+"
+
+  - title: "Chess"
+    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800"
+    rating: 5
+    genres: ["Mental Sport", "Strategic", "Timeless"]
+    why: "The ultimate mental battlefield where every move matters. Chess taught me patience, foresight, and the beauty of thinking three steps ahead. It's the sport where physical limitations don't exist—only the depth of your strategy and the strength of your mind. Every game is a story, every position a puzzle waiting to be solved."
+    year: "Started 2012"
+    stats:
+      - label: "Style"
+        value: "Positional"
+      - label: "Rating"
+        value: "---"
+      - label: "Years"
+        value: "13+"
 
 # Fun Facts
 fun_facts:
-  - icon: "📊"
-    title: "Analytics Revolution"
-    description: "Every NBA team now employs at least 3 full-time data scientists, and player tracking generates over 1 million data points per game through cameras and sensors."
-    source: "NBA Advanced Analytics Report 2024"
-  - icon: "💰"
-    title: "Fantasy Sports Boom"
-    description: "Fantasy sports generate more revenue than the entire movie theater industry, with over 60 million players in North America spending an average of $653 per year."
-    source: "Fantasy Sports Trade Association 2024"
-  - icon: "🎯"
-    title: "Prediction Accuracy"
-    description: "The best sports betting algorithms achieve only 55-60% accuracy, proving that sports remain beautifully unpredictable despite advanced analytics."
-    source: "Sports Betting Analytics Study"
-  - icon: "⚡"
-    title: "Real-Time Impact"
-    description: "Modern sports analytics can predict injury risk with 85% accuracy up to 2 weeks in advance, revolutionizing player health management."
-    source: "Sports Medicine & Analytics Journal"
+  - icon: "🌍"
+    title: "A Universal Language"
+    description: "There are over 8,000 indigenous sports and sporting games worldwide, making it one of humanity's most diverse cultural expressions."
+    source: "UNESCO Sports Heritage Database"
+  - icon: "🏛️"
+    title: "The First Sport"
+    description: "Wrestling is considered the world's oldest sport, with cave drawings dating back 15,000 years depicting matches."
+    source: "Archaeological Sports History"
+  - icon: "🤝"
+    title: "More Than a Game"
+    description: "A study of European football found that 85% of fans feel a strong sense of community and belonging because of their team."
+    source: "European Football Community Study 2023"
+  - icon: "🏀"
+    title: "Basketball's Global Reach"
+    description: "Basketball is played by over 450 million people worldwide, making it one of the most accessible and popular sports globally."
+    source: "FIBA Global Basketball Statistics"
 
 # Interactive Trivia
 trivia:
-  - question: "Which sport generates the most data per game?"
+  - question: "Which sport is considered the oldest in the world?"
     options:
-      - text: "Basketball"
+      - text: "Running"
         correct: false
-      - text: "Baseball"
+      - text: "Wrestling"
         correct: true
-      - text: "Football"
+      - text: "Javelin"
         correct: false
-      - text: "Soccer"
+      - text: "Swimming"
         correct: false
-    explanation: "Baseball generates the most data per game with every pitch, swing, and defensive play tracked in detail. A single MLB game produces over 7 million data points!"
-  
-  - question: "What does WAR stand for in baseball analytics?"
+    explanation: "Cave paintings in France depict wrestlers from over 15,000 years ago! Wrestling is humanity's oldest documented sport."
+
+  - question: "In football (soccer), what is the term for scoring three goals in a single game?"
     options:
-      - text: "Wins Above Replacement"
+      - text: "Hat-Trick"
         correct: true
-      - text: "Weighted Average Rating"
+      - text: "Triple-Double"
         correct: false
-      - text: "Win-Loss Adjustment Ratio"
+      - text: "Brace"
         correct: false
-      - text: "Weekly Athletic Ranking"
+      - text: "Slam Dunk"
         correct: false
-    explanation: "WAR (Wins Above Replacement) measures how many more wins a player contributes compared to a replacement-level player. It is one of the most comprehensive player evaluation metrics."
+    explanation: "The term 'hat-trick' originated in cricket, where a bowler taking three wickets in consecutive deliveries would often be awarded a hat. The term later spread to other sports!"
+
+  - question: "In basketball, what does 'triple-double' mean?"
+    options:
+      - text: "Scoring 30+ points in a game"
+        correct: false
+      - text: "Double-digit numbers in three statistical categories"
+        correct: true
+      - text: "Making three consecutive three-pointers"
+        correct: false
+      - text: "Playing three quarters without a break"
+        correct: false
+    explanation: "A triple-double is achieved when a player records double-digit numbers (10+) in three of five statistical categories: points, rebounds, assists, steals, and blocks. It's a rare feat that showcases all-around excellence!"
+
+  - question: "How many squares are there on a standard chess board?"
+    options:
+      - text: "64 squares"
+        correct: false
+      - text: "204 squares"
+        correct: true
+      - text: "100 squares"
+        correct: false
+      - text: "128 squares"
+        correct: false
+    explanation: "While there are 64 individual squares (8×8), a chess board actually contains 204 total squares when you count all possible square sizes: 64 (1×1) + 49 (2×2) + 36 (3×3) + 25 (4×4) + 16 (5×5) + 9 (6×6) + 4 (7×7) + 1 (8×8) = 204!"
+
+  - question: "In table tennis, what is the maximum number of consecutive serves one player can have?"
+    options:
+      - text: "5 serves"
+        correct: false
+      - text: "2 serves"
+        correct: true
+      - text: "3 serves"
+        correct: false
+      - text: "Until they lose a point"
+        correct: false
+    explanation: "In modern table tennis rules, each player serves for 2 consecutive points before the serve switches to the opponent. This changed from the old rule of 5 serves to make games faster and more exciting!"
 
 # Current Projects
 current_projects:
-  - name: "Fantasy Lineup Optimizer"
-    icon: "🏆"
-    description: "Machine learning algorithm that optimizes daily fantasy lineups by analyzing player matchups, weather conditions, injury reports, and historical performance patterns."
-    status: "Production"
-    progress: 95
-    tech_stack: ["Python", "Scikit-learn", "Pandas", "DraftKings API", "PostgreSQL"]
-    link: "/projects/fantasy-optimizer"
-  
-  - name: "Sports Betting Edge Finder"
-    icon: "📈"
-    description: "Real-time system that identifies betting opportunities by comparing odds across multiple sportsbooks and calculating expected value using proprietary prediction models."
-    status: "Beta Testing"
-    progress: 72
-    tech_stack: ["Node.js", "TensorFlow", "Redis", "Odds API", "React Dashboard"]
+  - name: "Athlehub"
+    icon: "🏀"
+    description: "A sports-first social hub to solve coordination, tracking, and community recognition for casual players. Find games, track stats, and build your sports community."
+    status: "Vision Stage"
+    progress: 15
+    tech_stack: ["TBD"]
+    last_updated: "TBD"
+    url: "#"
+    github_url: "#"
+
+  - name: "Pickup Sports Coordinator"
+    icon: "📍"
+    description: "A tool to find games, organize players, and ensure the court is never empty again. Real-time coordination for casual sports communities."
+    status: "Ideation"
+    progress: 5
+    tech_stack: ["TBD"]
+    last_updated: "TBD"
+    url: "#"
+    github_url: "#"
 
 # External Platforms
 external_platforms:
-  - name: "ESPN Fantasy"
-    icon: "🏈"
-    description: "Multiple championship leagues with advanced analytics"
-    url: "https://fantasy.espn.com/profile/gmanthenoxus"
-    stats: "87% win rate, 3 championships"
-  - name: "DraftKings"
-    icon: "💎"
-    description: "Daily fantasy sports with algorithmic lineup optimization"
-    url: "https://draftkings.com/profile/gmanthenoxus"
-    stats: "Top 5% of players"
-  - name: "Sports Analytics Twitter"
-    icon: "📊"
-    description: "Sharing insights and predictions with the analytics community"
-    url: "https://twitter.com/gmanthenoxus_sports"
-    stats: "2.5K followers, viral predictions"
+  - name: "Chess.com"
+    icon: "fas fa-chess"
+    description: "Online chess games and tournaments - Follow my chess journey"
+    url: "https://www.chess.com/member/gmanthenoxus"
+    color: "#7FA650"
+  - name: "Strava"
+    icon: "fab fa-strava"
+    description: "Track basketball sessions, runs, and athletic activities"
+    url: "https://www.strava.com/athletes/191156625"
+    color: "#FC4C02"
+  - name: "Instagram"
+    icon: "fab fa-instagram"
+    description: "Athletic journey, game highlights, and sports lifestyle"
+    url: "https://www.instagram.com/_athlee/"
+    color: "#E4405F"
 
 # Empty States
 empty_states:
-  projects: "Even the best teams have rebuilding seasons - my next sports analytics breakthrough is in development!"
+  projects: "Even the best players have off-seasons - the next game-changing sports tool is in development!"
   projects_icon: "🏗️"
-  projects_title: "Draft Day Approaching"
-  projects_description: "Like waiting for the perfect draft pick, great sports analytics projects take time to develop. The next game-changing algorithm could be more valuable than a first-round selection!"
+  projects_title: "Building the Future of Casual Sports"
+  projects_description: "Great sports communities deserve great tools. The platform that solves empty courts and missed games is worth the wait!"
+
+# Call to Action
+cta:
+  title: "Tired of Showing Up to Empty Courts?"
+  description: "Let's build better tools for the casual sports community together."
+  button_text: "Share Your Ideas"
+  button_url: "/contact"
 ---
 
-# My Sports Analytics Journey
+## My Sports Journey
 
-Sports have always been more than entertainment for me—they are a fascinating intersection of human performance, strategy, and statistics. What started as casual fantasy football has evolved into a deep appreciation for the analytics that drive modern sports decision-making.
+My story isn't one of specialized training or elite camps; it's a story of pure, undirected energy and a deep-seated need to move. From sprinting in nursery school to performing bicycle stunts on the street, sports have always been my constant. As a military kid who changed schools frequently, the universal language of a game, whether it was soccer on dusty roads or badminton with my dad. It was how I connected, how I settled in, and how I expressed myself.
 
-## Current Focus Areas
+The spark for basketball was almost accidental. Moving to a house right beside a court felt like fate. With no prior experience, I walked out, shot a ball, and watched my first bucket swish through the net. That was the moment. That simple success ignited a passion that has since expanded to include everything from the strategic duel of table tennis to the endurance test of long distance running. I've even attempted the high jump at 5'6" not for medals, but for the pure joy of trying.
 
-I am particularly drawn to:
-- **Fantasy Sports Optimization**: Building algorithms that consistently outperform human intuition
-- **Predictive Modeling**: Machine learning approaches to game outcomes and player performance
-- **Market Inefficiencies**: Finding value in sports betting through statistical analysis
-- **Performance Analytics**: Understanding what separates elite athletes from the competition
+## The Bond & The Problem
 
-## The Data-Driven Approach
+For me, sports have never been solely about competition. They're about the bonds forged on the pitch and the court. Some of my closest friends are people I met because of a shared drive to improve and a shared passion for the game. Sports are an unparalleled unit of unison, breaking down barriers of language, upbringing, and background.
 
-My programming background has opened up exciting ways to engage with sports:
+But this beautiful community faces ugly frustrations. I've lost count of the times I've shown up to an empty court, heard about a pickup game too late, or watched the stats and stories of a great match disappear into thin air. This isn't just a basketball problem. My friends who play football, volleyball, and badminton all share the same pain: a lack of coordination, missing data, and no lasting recognition for the communities we build every time we play.
 
-### **Fantasy Dominance Through Data**
-- Developing machine learning models that analyze player matchups, weather conditions, and injury reports
-- Creating automated lineup generators that have achieved an 87% win rate across multiple sports
-- Building real-time optimization tools that adjust strategies based on breaking news and line movements
+## The Vision
 
-### **Predictive Analytics**
-- Constructing models that predict game outcomes with 78% accuracy in basketball
-- Analyzing historical patterns to identify betting value and market inefficiencies
-- Developing injury prediction algorithms that forecast player availability 2 weeks in advance
+This frustration is where my passion meets my skills. I see a world where technology serves the casual athlete where finding a game is effortless, where your contributions are tracked and celebrated, and where the community thrives beyond the final whistle. My goal is to build that world, starting with the tools we wish we had.
 
-### **Community Impact**
-- Sharing analytics insights that help 500+ fantasy players improve their performance
-- Creating viral sports predictions that demonstrate the power of data-driven analysis
-- Contributing to the growing sports analytics community through open-source tools and research
+### **What I'm Building**
 
-## Philosophy & Impact
+**Athlehub** - A sports-first social platform that solves the coordination problem:
+- **Find Games Instantly**: Real-time coordination for pickup games in your area
+- **Track Your Journey**: Stats, achievements, and memories that don't disappear
+- **Build Community**: Recognition and connection for casual athletes
+- **Never Miss Out**: Notifications for games, events, and your sports community
 
-Sports analytics has taught me that behind every great performance is a story told by data, but the human element—heart, determination, clutch performance—is what makes sports truly unpredictable and exciting.
+### **The Impact I Want to Create**
 
-The real-time nature of sports data has also improved my skills in building responsive, high-performance applications that can process live data streams and provide instant insights for critical decision-making.
+- **For Players**: No more empty courts, missed games, or lost stats
+- **For Communities**: Stronger bonds through better coordination and recognition
+- **For the Sport**: Celebrating the casual athlete who plays for love of the game
+- **For Technology**: Proving that the best tools serve real human needs
+
+## Philosophy
+
+Sports taught me that the best moments aren't always about winning—they're about showing up, giving your all, and being part of something bigger than yourself. Whether it's a perfect assist, a hard-fought defensive stand, or just the joy of running with friends, these moments deserve to be remembered and celebrated.
+
+The casual sports community is massive, passionate, and underserved. We deserve tools as good as the ones built for fantasy sports and professional analytics. That's what I'm building.

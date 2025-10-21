@@ -1,217 +1,336 @@
 ---
 layout: hobby
-title: "Games & Interactive Media"
-slug: boardgames
+title: "Games"
+slug: games
 emoji: "🎮"
-color: "#F0F0F0"
-description: "From board games to video games. Strategic thinking meets digital innovation."
+color: "#9B59B6"
+description: "From Nintendo 64 magic to midnight lobbies. My journey through interactive art, challenge, and the communities games build."
 
 # Rotating Quotes
 quotes:
-  - text: "Every game is an opportunity to learn something new about strategy and yourself."
-    author: "Reiner Knizia"
-  - text: "The best games are easy to learn but impossible to master."
-    author: "Sid Meier"
-  - text: "In games, we find the perfect balance of challenge and reward."
-    author: "Jane McGonigal"
-  - text: "Strategy without tactics is the slowest route to victory. Tactics without strategy is the noise before defeat."
-    author: "Sun Tzu"
+  - text: "The opposite of play is not work. It is depression."
+    author: "Brian Sutton-Smith"
+  - text: "We don't stop playing because we grow old; we grow old because we stop playing."
+    author: "George Bernard Shaw"
+  - text: "Video games are bad for you? That's what they said about rock-n-roll."
+    author: "Shigeru Miyamoto"
 
 # Live Statistics Dashboard
-stats:
-  - value: "200+"
-    label: "Games in Collection"
-    context: "Board games, video games, and digital titles"
-    progress: 75
-  - value: "50+"
-    label: "Games Completed"
-    context: "From indie gems to AAA blockbusters"
-    progress: 60
-  - value: "8"
-    label: "Game Nights Monthly"
-    context: "Regular sessions with friends and family"
-    progress: 80
-  - value: "5"
-    label: "Game Projects Built"
-    context: "Board game adaptations and original games"
-    progress: 50
+statistics:
+  # Time filter options
+  time_periods:
+    - id: "week"
+      label: "This Week"
+      active: false
+    - id: "month"
+      label: "This Month"
+      active: false
+    - id: "year"
+      label: "This Year"
+      active: true
+    - id: "all"
+      label: "All Time"
+      active: false
+
+  # Main statistics
+  stats:
+    - id: "first_console"
+      label: "First Console"
+      icon: "fas fa-gamepad"
+      value: "Nintendo 64"
+      numeric_value: 1996
+      progress: 100
+      trend: "stable"
+      trend_value: "Where it all began"
+      tooltip: "Where the magic began—gift from my father that opened up 3D gaming worlds"
+      milestone:
+        reached: true
+        title: "Gaming Origins"
+        icon: "🎮"
+        description: "Started with the legendary N64"
+
+    - id: "current_platform"
+      label: "Current Platform"
+      icon: "fab fa-xbox"
+      value: "Xbox Series S"
+      numeric_value: 2020
+      progress: 100
+      trend: "stable"
+      trend_value: "Current gen"
+      tooltip: "My current gaming setup for both competitive and single-player experiences"
+      milestone:
+        reached: true
+        title: "Next-Gen Gamer"
+        icon: "🎯"
+        description: "Playing on current generation hardware"
+
+    - id: "play_style"
+      label: "Play Style"
+      icon: "fas fa-crosshairs"
+      value: "Competitive & Immersive"
+      numeric_value: 90
+      progress: 90
+      trend: "balanced"
+      trend_value: "Best of both worlds"
+      tooltip: "From midnight lobbies with friends to epic single-player adventures"
+      comparison:
+        type: "balance"
+        label: "Multiplayer vs Single-Player"
+        value: "50/50 split"
+        percentage: 50
+      milestone:
+        reached: true
+        title: "Balanced Gamer"
+        icon: "⚔️"
+        description: "Enjoys both competitive and immersive experiences"
+
+    - id: "gaming_philosophy"
+      label: "Gaming Philosophy"
+      icon: "fas fa-heart"
+      value: "All Forms"
+      numeric_value: 100
+      progress: 100
+      trend: "stable"
+      trend_value: "Universal appreciation"
+      tooltip: "Board games, video games, party games—I love them all"
+      milestone:
+        reached: true
+        title: "True Gamer"
+        icon: "🏆"
+        description: "Appreciates gaming in all its forms"
 
 # World Statistics for Context
 world_stats:
   - icon: "🎮"
     value: "$184B"
     label: "Global gaming market size"
+    description: "Gaming is one of the largest entertainment industries"
     source: "Gaming Industry Report 2024"
   - icon: "📈"
     value: "13%"
     label: "Annual market growth rate"
+    description: "The gaming industry continues to expand rapidly"
     source: "Gaming Analytics 2024"
   - icon: "🌍"
     value: "3.2B"
     label: "Gamers worldwide"
+    description: "Nearly half the world's population plays games"
     source: "Global Gaming Survey 2024"
   - icon: "🏆"
     value: "10,000+"
     label: "New games released annually"
+    description: "An endless stream of new experiences to explore"
     source: "Steam & Gaming Platforms 2024"
 
 # Personal Journey
 personal_journey:
-  origin_story: "Started with classic family board games like Monopoly and early video games like Super Mario Bros. The strategic depth of board games and the interactive storytelling of video games opened up a world where analytical thinking meets creative expression and social connection."
-  current_status: "Actively playing both board games and video games while developing digital adaptations and original game concepts. Currently maintaining collections across multiple platforms and hosting regular game nights that blend strategy, technology, and fun."
+  origin_story: "My journey began with a Nintendo 64, a gift from my father that felt like pure magic. The leap into 3D worlds was awe-inspiring. But even before that, I was building bonds over board games with my family. This foundation—from Ludo and Chess to tag and hide-and-seek—taught me that play is a universal language."
+  current_status: "My gaming life has two primary modes: the competitive thrill of hopping online with the boys for late-night sessions, and the immersive escape of diving into rich, single-player worlds to decompress and explore. Currently playing on Xbox Series S with a huge spectrum of tastes."
   goals:
-    - "Build a comprehensive gaming platform for both board and video games"
-    - "Design and publish an original indie game"
-    - "Attend major gaming conventions like PAX and Gen Con"
-    - "Create AI opponents for complex strategy games"
-    - "Develop game recommendation algorithms across all platforms"
+    - "Build tools that enhance gaming social and organizational aspects"
+    - "Master strategic depth in competitive games"
+    - "Complete epic single-player adventures"
+    - "Organize seamless game nights across platforms"
+    - "Preserve and share in-game memories"
   achievements:
-    - "Built digital versions of 3 favorite board games with AI opponents"
-    - "Completed 50+ indie games and documented reviews"
-    - "Successfully introduced 50+ people to modern gaming culture"
-    - "Created automated game discovery and tracking system"
-  favorites:
-    - name: "Wingspan"
-      reason: "Perfect blend of strategy, beautiful art, and educational bird facts with engine-building mechanics"
-    - name: "Azul"
-      reason: "Elegant tile-laying puzzle that's easy to learn but offers deep strategic decisions"
-    - name: "Splendor"
-      reason: "Pure engine-building satisfaction with gem collection and card development"
-    - name: "7 Wonders"
-      reason: "Civilization building with simultaneous play that scales perfectly from 3-7 players"
+    - "Built lasting friendships through midnight gaming sessions"
+    - "Mastered multiple game genres from strategy to action"
+    - "Developed appreciation for games as art form"
+    - "Created community around shared gaming experiences"
+
+# Favorites Section
+favorites:
+  - name: "NBA 2K26"
+    category: "Sports"
+    genre: "Simulation, Sports"
+    platform: "Xbox Series S/X"
+    rating: 4.0
+    image: "https://media.rawg.io/media/screenshots/d6a/d6a58b272dc77a5e2b38ed5729dee9a8.jpg"
+    rawg_id: 988375
+    type: "video_game"
+
+  - name: "EA Sports FC 26"
+    category: "Sports"
+    genre: "Simulation, Sports"
+    platform: "Xbox Series S/X"
+    rating: 3.3
+    image: "https://media.rawg.io/media/screenshots/928/9289953b354ac641e3f1b83d43e18521.jpg"
+    rawg_id: 989185
+    type: "video_game"
+
+  - name: "Assassin's Creed SHADOWS"
+    category: "Action"
+    genre: "Adventure, Action"
+    platform: "Xbox Series S/X"
+    rating: 3.7
+    image: "https://media.rawg.io/media/games/934/9346092ae11bf7582c883869468171cc.jpg"
+    rawg_id: 437059
+    type: "video_game"
+
+  - name: "Clash of Clans"
+    category: "Strategy"
+    genre: "Strategy, Action"
+    platform: "iOS"
+    rating: 3.5
+    image: "https://media.rawg.io/media/screenshots/761/76129e9a98953bd17583f2a8cb776214.jpeg"
+    rawg_id: 1448
+    type: "video_game"
+
+  - name: "Monopoly"
+    category: "Strategic Luck"
+    players: "2-8"
+    duration: "60-180 min"
+    rating: 4.0
+    platform: "Board"
+    image: "https://images.unsplash.com/photo-1611371805429-8b5c1b2c34ba?w=800&q=80"
+    type: "board_game"
+
+  - name: "Chess"
+    category: "Strategy"
+    players: "2"
+    duration: "30-60 min"
+    rating: 5.0
+    platform: "PC, Mobile"
+    image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&q=80"
+    type: "board_game"
 
 # Fun Facts
 fun_facts:
-  - icon: "🎯"
-    title: "Strategic Complexity"
-    description: "Chess has approximately 10^120 possible games, but modern board games like Go have even more possibilities at 10^170, making them more complex than the number of atoms in the observable universe."
+  - icon: "🎮"
+    title: "The First Video Game"
+    description: "The first known video game, 'Tennis for Two', was created in 1958 on an oscilloscope, long before Pong."
+    category: "History"
+    source: "Video Game History Archives"
+  - icon: "🎲"
+    title: "A Universal Pastime"
+    description: "Board games like Senet from Ancient Egypt (3500 BC) show that the human desire to play games is thousands of years old."
+    category: "History"
+    source: "Archaeological Gaming Studies"
+  - icon: "♟️"
+    title: "Chess's Possible Moves"
+    description: "There are more possible iterations of a game of chess than there are atoms in the known universe."
+    category: "Mathematics"
     source: "Game Theory & Complexity Analysis 2024"
-  - icon: "🧠"
-    title: "Cognitive Benefits"
-    description: "Regular board game players show 15% better problem-solving skills and 20% improved memory retention compared to non-players, with benefits lasting well into older age."
-    source: "Cognitive Gaming Research Institute"
-  - icon: "🌟"
-    title: "Social Connection"
-    description: "Board game cafes have increased by 300% in the last decade, creating new social spaces where people disconnect from screens and connect with each other."
-    source: "Social Gaming Trends Report 2024"
-  - icon: "💡"
-    title: "Innovation Engine"
-    description: "Many successful video game mechanics originated in board games, including deck-building, worker placement, and area control systems that now power billion-dollar digital games."
-    source: "Game Design Evolution Study"
 
 # Interactive Trivia
 trivia:
-  - question: "Which board game is considered the oldest known board game still played today?"
+  - question: "Which company created the Nintendo 64 console?"
     options:
-      - text: "Chess"
+      - text: "Sega"
         correct: false
-      - text: "Backgammon"
+      - text: "Sony"
+        correct: false
+      - text: "Nintendo"
         correct: true
-      - text: "Go"
+      - text: "Microsoft"
         correct: false
-      - text: "Checkers"
-        correct: false
-    explanation: "Backgammon is over 5,000 years old, with boards found in ancient Mesopotamia. The modern rules have remained largely unchanged for centuries!"
-  
-  - question: "What does 'Euro game' mean in modern board gaming?"
+    explanation: "Nintendo released the N64 in 1996, famous for its groundbreaking 3D games like Super Mario 64 and The Legend of Zelda: Ocarina of Time."
+
+  - question: "In chess, which piece can only move diagonally?"
     options:
-      - text: "Games made in Europe"
+      - text: "The Knight"
         correct: false
-      - text: "Games with indirect player interaction and resource management"
+      - text: "The Bishop"
         correct: true
-      - text: "Games with European themes"
+      - text: "The Rook"
         correct: false
-      - text: "Games that cost more than $50"
+      - text: "The Queen"
         correct: false
-    explanation: "Euro games emphasize strategy over luck, feature indirect competition, and focus on resource management rather than direct conflict. Think Settlers of Catan or Agricola!"
+    explanation: "The Bishop moves any number of squares diagonally, staying on its starting color throughout the entire game."
+
+  - question: "What is the best-selling video game franchise of all time?"
+    options:
+      - text: "Mario"
+        correct: true
+      - text: "Call of Duty"
+        correct: false
+      - text: "Pokémon"
+        correct: false
+      - text: "FIFA"
+        correct: false
+    explanation: "The Mario franchise has sold over 800 million units worldwide, making it the best-selling video game franchise in history!"
+
+  - question: "What year was the first PlayStation console released?"
+    options:
+      - text: "1992"
+        correct: false
+      - text: "1994"
+        correct: true
+      - text: "1996"
+        correct: false
+      - text: "1998"
+        correct: false
+    explanation: "The original PlayStation was released by Sony in 1994 in Japan, revolutionizing gaming with CD-based games and 3D graphics."
+
+  - question: "In poker, what is the highest-ranking hand?"
+    options:
+      - text: "Four of a Kind"
+        correct: false
+      - text: "Straight Flush"
+        correct: false
+      - text: "Royal Flush"
+        correct: true
+      - text: "Full House"
+        correct: false
+    explanation: "A Royal Flush (10, Jack, Queen, King, Ace of the same suit) is the highest possible hand in poker and is extremely rare!"
 
 # Current Projects
 current_projects:
-  - name: "Digital Board Game Platform"
+  - name: "The Ultimate Game Night Planner"
     icon: "🎮"
-    description: "Web-based platform for playing classic and modern board games online with friends, featuring AI opponents, real-time multiplayer, and game state persistence."
-    status: "Development"
-    progress: 65
-    tech_stack: ["React", "Node.js", "Socket.io", "MongoDB", "AI/ML"]
-    link: "/projects/board-game-platform"
-  
-  - name: "Game Night Optimizer"
-    icon: "📅"
-    description: "Smart scheduling system that matches players with games based on preferences, complexity ratings, play time, and group dynamics to create perfect game night experiences."
-    status: "Beta Testing"
-    progress: 80
-    tech_stack: ["Python", "Machine Learning", "Calendar APIs", "React Native"]
+    description: "A tool to seamlessly organize digital and physical game sessions with friends, from FIFA tournaments to board game nights."
+    status: "Vision Stage"
+    progress: 15
+    tech_stack: ["TBD"]
+    last_updated: "TBD"
+    url: "#"
+    github_url: "#"
+
+  - name: "Cross-Platform Gaming Hub"
+    icon: "🌐"
+    description: "A unified space to track progress, share clips, and connect with friends across different gaming ecosystems."
+    status: "Ideation"
+    progress: 5
+    tech_stack: ["TBD"]
+    last_updated: "TBD"
+    url: "#"
+    github_url: "#"
 
 # External Platforms
 external_platforms:
-  - name: "BoardGameGeek"
-    icon: "🎲"
-    description: "Comprehensive game collection and ratings"
-    url: "https://boardgamegeek.com/user/gmanthenoxus"
-    stats: "150+ games rated, 4.2 avg rating"
-  - name: "Board Game Arena"
-    icon: "🌐"
-    description: "Online board gaming with global players"
-    url: "https://boardgamearena.com/player?id=gmanthenoxus"
-    stats: "500+ games played, 85% win rate"
-  - name: "Tabletop Simulator"
-    icon: "🖥️"
-    description: "Digital board gaming with custom mods"
-    url: "https://steamcommunity.com/id/gmanthenoxus"
-    stats: "50+ custom game mods created"
+  - name: "Placeholder Platform 1"
+    icon: "fas fa-gamepad"
+    description: "Your gaming platform here"
+    url: "#"
+    color: "#9B59B6"
+  - name: "Placeholder Platform 2"
+    icon: "fas fa-trophy"
+    description: "Your achievement tracking platform here"
+    url: "#"
+    color: "#9B59B6"
+  - name: "Placeholder Platform 3"
+    icon: "fas fa-users"
+    description: "Your gaming community platform here"
+    url: "#"
+    color: "#9B59B6"
 
 # Empty States
 empty_states:
-  projects: "Like waiting for the perfect opening move, great board game projects require careful planning and strategy!"
-  projects_icon: "🎯"
-  projects_title: "Next Move in Development"
-  projects_description: "Every master strategist knows that the best moves take time to develop. The next breakthrough in digital board gaming could be more exciting than rolling a natural 20!"
+  projects: "Like leveling up in an RPG, great gaming projects require patience and strategy—the next breakthrough is loading!"
 ---
 
-# My Gaming Journey
+## My Gaming Philosophy
 
-Games represent the perfect intersection of strategy, storytelling, technology, and social interaction. What started as childhood memories of family game nights and early video game experiences has evolved into a deep appreciation for game design, interactive media, and the unique ways games bring people together across digital and physical spaces.
+To me, gaming is the ultimate expression of creativity, art, challenge, and technology. It's not just about pixels on a screen or pieces on a board; it's about the journey and the shared experience. Whether I'm alone, lost in the vast world of Skyrim, or with friends in a chaotic midnight FIFA lobby, games are a conduit for connection, storytelling, and pure, unadulterated fun.
 
-## Current Focus Areas
+## The Journey: From Family Bonds to Midnight Lobbies
 
-My passion for games spans several key areas:
-- **Strategic Board Games**: Exploring complex Euro games and innovative tabletop mechanics
-- **Indie Video Games**: Discovering unique narratives and experimental gameplay
-- **Digital Adaptations**: Building online versions of favorite games with AI opponents
-- **Game Design**: Understanding what makes games engaging, balanced, and memorable
-- **Cross-Platform Gaming**: Creating experiences that bridge physical and digital play
+My journey began with a Nintendo 64, a gift from my father that felt like pure magic. The leap into 3D worlds was awe-inspiring. But even before that, I was building bonds over board games with my family. This foundation—from Ludo and Chess to tag and hide-and-seek—taught me that play is a universal language.
 
-## The Strategic Programming Connection
+My tastes have expanded to encompass a huge spectrum: the strategic depth of poker, the competitive rush of NBA 2K, the long-term planning of Clash of Clans, and the narrative immersion of Assassin's Creed. I appreciate games in all their forms, from quick party games to epic open-world adventures.
 
-My programming background has opened up exciting ways to engage with board games:
+## The Two Sides of the Controller
 
-### **Digital Game Development**
-- Creating web-based versions of favorite games with real-time multiplayer support
-- Building AI opponents that provide challenging and fair gameplay experiences
-- Developing game state management systems that handle complex rule interactions
-- Implementing matchmaking algorithms that create balanced and enjoyable games
+These days, my gaming life has two primary modes. There's the **competitive thrill** of hopping online with the boys for late-night sessions, where communication and teamwork are key. Then there's the **immersive escape** of diving into a rich, single-player world to decompress and explore. I believe a balanced diet of both is the key to a fulfilling gaming life.
 
-### **Game Analysis & Optimization**
-- Using data analysis to understand game balance and optimal strategies
-- Creating tools that help players improve their strategic decision-making
-- Building recommendation systems that suggest games based on player preferences
-- Developing automated tournament management and ranking systems
-
-### **Community Building**
-- Creating platforms that connect board game enthusiasts and facilitate game discovery
-- Building tools that help organize game nights and manage collections
-- Developing educational resources that teach game mechanics and strategy
-- Contributing to the growing intersection of traditional and digital gaming
-
-## Philosophy & Impact
-
-Board games have taught me that the best solutions often come from thinking several moves ahead, considering multiple variables, and adapting strategies based on changing conditions—skills that directly translate to software development and problem-solving.
-
-The social aspect of board gaming has also reinforced the importance of clear communication, collaborative problem-solving, and creating inclusive environments where everyone can contribute and succeed.
-
-## Favorite Game Mechanics
-
-- **Engine Building**: The satisfaction of creating efficient systems (like in Wingspan or Splendor)
-- **Worker Placement**: Strategic resource allocation and timing (like in Lords of Waterdeep)
-- **Deck Building**: Customizing and optimizing card combinations (like in Dominion)
-- **Area Control**: Territorial strategy and influence management (like in Risk or Scythe)
+This wide-ranging experience has shown me the gaps in how we manage our gaming lives—juggling platforms, organizing friends, and preserving our in-game memories. My goal is to build tools that enhance these social and organizational aspects, making it easier than ever to just play.

@@ -1,229 +1,323 @@
 ---
 layout: hobby
-title: "Fitness & Performance"
-slug: gym
+title: "Fitness"
+slug: fitness
 emoji: "🏋️"
-color: "#E8F5E9"
-description: "From weights to wellness. Optimizing human performance through data-driven fitness."
+color: "#4ECDC4"
+description: "From forced punishment to purposeful strength. My journey toward total wellbeing and the tools to make progress intelligent."
 
 # Rotating Quotes
 quotes:
-  - text: "The groundwork for all happiness is good health."
-    author: "Leigh Hunt"
-  - text: "Take care of your body. It's the only place you have to live."
-    author: "Jim Rohn"
+  - text: "The only bad workout is the one that didn't happen."
+    author: "Unknown"
   - text: "Strength does not come from physical capacity. It comes from an indomitable will."
     author: "Mahatma Gandhi"
-  - text: "The successful warrior is the average person with laser-like focus."
-    author: "Bruce Lee"
+  - text: "The goal is to be fit, not ripped. To be healthy, not skinny. To be powerful, not bulky. To be happy, not perfect."
+    author: "Unknown"
 
 # Live Statistics Dashboard
-stats:
-  - value: "5"
-    label: "Years Training"
-    context: "Consistent strength and conditioning"
-    progress: 83
-  - value: "315"
-    label: "Max Deadlift (lbs)"
-    context: "Personal record achieved in 2024"
-    progress: 75
-  - value: "6"
-    label: "Days Per Week"
-    context: "Average training frequency"
-    progress: 85
-  - value: "12"
-    label: "Body Fat %"
-    context: "Maintained through consistent training"
-    progress: 70
+statistics:
+  # Time filter options
+  time_periods:
+    - id: "week"
+      label: "This Week"
+      active: false
+    - id: "month"
+      label: "This Month"
+      active: false
+    - id: "year"
+      label: "This Year"
+      active: true
+    - id: "all"
+      label: "All Time"
+      active: false
+
+  # Main statistics
+  stats:
+    - id: "training_split"
+      label: "Training Split"
+      icon: "fas fa-dumbbell"
+      value: "Push, Pull, Legs"
+      numeric_value: 3
+      progress: 100
+      trend: "stable"
+      trend_value: "Consistent routine"
+      tooltip: "My current workout routine focusing on compound movements"
+      milestone:
+        reached: true
+        title: "Structured Training"
+        icon: "🏋️"
+        description: "Following a proven training split"
+
+    - id: "weekly_consistency"
+      label: "Weekly Consistency"
+      icon: "fas fa-calendar-check"
+      value: "3-4x"
+      numeric_value: 3.5
+      progress: 80
+      trend: "up"
+      trend_value: "+1 from last month"
+      tooltip: "Average training sessions per week"
+      comparison:
+        type: "goal"
+        label: "Goal: 4x/week"
+        value: "Almost there"
+        percentage: 87
+      milestone:
+        reached: false
+        title: "Consistency Master"
+        icon: "📅"
+        description: "Train 4+ times per week consistently"
+        progress: 87
+
+    - id: "current_focus"
+      label: "Current Focus"
+      icon: "fas fa-bullseye"
+      value: "Strength Bulk"
+      numeric_value: 65
+      progress: 65
+      trend: "up"
+      trend_value: "Building phase"
+      tooltip: "Building strength while maintaining lean mass"
+      milestone:
+        reached: false
+        title: "Strength Goal"
+        icon: "🎯"
+        description: "Hit all major lift targets"
+        progress: 65
+
+    - id: "bench_goal"
+      label: "Bench Press Goal"
+      icon: "fas fa-weight-hanging"
+      value: "120kg"
+      numeric_value: 100
+      progress: 70
+      trend: "up"
+      trend_value: "Currently ~100kg"
+      tooltip: "Target bench press max - currently at ~100kg"
+      comparison:
+        type: "goal"
+        label: "Goal: 120kg"
+        value: "20kg to go"
+        percentage: 83
+      milestone:
+        reached: false
+        title: "Bench Master"
+        icon: "💪"
+        description: "Hit 120kg bench press"
+        progress: 83
 
 # World Statistics for Context
 world_stats:
   - icon: "💪"
     value: "$96B"
     label: "Global fitness industry value"
+    description: "The worldwide fitness market continues to grow"
     source: "IHRSA Global Report 2024"
   - icon: "📱"
     value: "87%"
     label: "Of gym-goers use fitness apps"
+    description: "Technology is transforming how we train"
     source: "Digital Fitness Trends 2024"
   - icon: "🏃"
     value: "184M"
     label: "Gym members worldwide"
+    description: "More people than ever are prioritizing fitness"
     source: "Global Fitness Statistics 2024"
   - icon: "📊"
     value: "73%"
     label: "Improvement with data tracking"
+    description: "Data-driven training leads to better results"
     source: "Fitness Analytics Study 2024"
 
 # Personal Journey
 personal_journey:
-  origin_story: "Started fitness as a way to improve energy and focus for long coding sessions. What began as basic cardio and bodyweight exercises evolved into a comprehensive approach to strength training, nutrition optimization, and performance tracking through technology."
-  current_status: "Following a structured powerlifting program while developing custom fitness tracking applications. Currently focused on strength gains while maintaining cardiovascular health and flexibility through a balanced training approach."
+  origin_story: "My fitness journey started in the most unlikely way: as punishment from seniors in school. I quickly realized that this 'punishment' was making me stronger and faster on the basketball court and football pitch. That spark of tangible improvement ignited a passion."
+  current_status: "Following a Push, Pull, Legs split with a focus on strength building. Currently working toward concrete goals: a 120kg bench press, 20 pull-ups, and the elusive muscle-up. Training 3-4 times per week with an emphasis on compound movements and progressive overload."
   goals:
-    - "Achieve 400lb deadlift and 300lb squat"
-    - "Build a comprehensive fitness tracking platform"
-    - "Complete a powerlifting competition"
-    - "Develop AI-powered form analysis tools"
-    - "Create personalized workout optimization algorithms"
+    - "Achieve 120kg bench press"
+    - "Complete 20 consecutive pull-ups"
+    - "Master the muscle-up"
+    - "Build intelligent fitness tracking tools"
+    - "Help others find their 'why' in fitness"
   achievements:
-    - "Increased deadlift from 135lbs to 315lbs in 3 years"
-    - "Built custom workout tracking app with 500+ exercises"
-    - "Maintained consistent 6-day training schedule for 2+ years"
-    - "Developed automated nutrition tracking and meal planning system"
-  favorites:
-    - name: "Deadlifts"
-      reason: "The ultimate test of total-body strength and mental toughness"
-    - name: "Progressive Overload"
-      reason: "The systematic approach to continuous improvement mirrors software development"
-    - name: "Data Analysis"
-      reason: "Tracking metrics to optimize performance and identify patterns"
-    - name: "Compound Movements"
-      reason: "Efficient exercises that work multiple muscle groups simultaneously"
+    - "Transformed punishment into passion"
+    - "Improved athletic performance on court and field"
+    - "Developed consistent training routine"
+    - "Found purpose: strength to protect loved ones"
+
+# Goals Section (displayed as "My Goals" instead of "Favorites")
+section_type: "goals"
+favorites:
+  - name: "120kg Bench Press"
+    category: "Strength"
+    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"
+    current: "100kg"
+    target: "120kg"
+    progress: 83
+    type: "strength_goal"
+
+  - name: "20 Pull-Ups"
+    category: "Bodyweight"
+    image: "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=800&q=80"
+    current: "15 reps"
+    target: "20 reps"
+    progress: 75
+    type: "strength_goal"
+
+  - name: "Muscle-Up"
+    category: "Skill"
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+    current: "In Progress"
+    target: "Master"
+    progress: 60
+    type: "skill_goal"
+
+  - name: "180kg Squat"
+    category: "Strength"
+    image: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80"
+    current: "140kg"
+    target: "180kg"
+    progress: 78
+    type: "strength_goal"
 
 # Fun Facts
 fun_facts:
+  - icon: "💪"
+    title: "Muscle Memory is Real"
+    description: "When you build muscle, you create new nuclei in your cells. Even if you lose the muscle, these nuclei remain, making it easier to regain strength later."
+    category: "Science"
+    source: "Exercise Physiology Research 2024"
   - icon: "🧠"
-    title: "Brain Boost"
-    description: "Regular strength training increases BDNF (brain-derived neurotrophic factor) by up to 200%, improving memory, learning, and cognitive function—perfect for programmers!"
+    title: "Your Brain on Exercise"
+    description: "Just 20 minutes of moderate exercise can boost your mood for up to 12 hours by releasing endorphins and other neurochemicals."
+    category: "Mental Health"
     source: "Neuroscience & Fitness Research 2024"
-  - icon: "💻"
-    title: "Programmer's Edge"
-    description: "Developers who exercise regularly show 23% better problem-solving skills and 15% fewer bugs in their code compared to sedentary programmers."
-    source: "Tech Worker Health Study 2024"
-  - icon: "⚡"
-    title: "Energy Efficiency"
-    description: "Despite burning calories, regular exercise actually increases overall energy levels by improving mitochondrial efficiency by up to 40%."
-    source: "Exercise Physiology Journal 2024"
-  - icon: "🎯"
-    title: "Precision Training"
-    description: "Modern fitness trackers can detect form deviations as small as 2 degrees, enabling real-time technique corrections that were impossible just a decade ago."
-    source: "Sports Technology Review 2024"
+  - icon: "💪"
+    title: "The Strongest Muscle"
+    description: "Relative to its size, the strongest muscle in the human body is the masseter, or jaw muscle."
+    category: "Anatomy"
+    source: "Human Anatomy Studies 2024"
 
 # Interactive Trivia
 trivia:
-  - question: "Which exercise is considered the 'king' of all exercises?"
+  - question: "What is the recommended minimum amount of moderate-intensity exercise per week for adults?"
+    options:
+      - text: "60 minutes"
+        correct: false
+      - text: "150 minutes"
+        correct: true
+      - text: "300 minutes"
+        correct: false
+      - text: "75 minutes"
+        correct: false
+    explanation: "The WHO recommends at least 150 minutes of moderate-intensity aerobic activity per week for adults to maintain good health and reduce disease risk."
+
+  - question: "Which of these is NOT a compound exercise (an exercise that works multiple muscle groups)?"
     options:
       - text: "Bench Press"
         correct: false
-      - text: "Squat"
+      - text: "Bicep Curl"
         correct: true
+      - text: "Squat"
+        correct: false
       - text: "Deadlift"
         correct: false
-      - text: "Pull-up"
-        correct: false
-    explanation: "The squat is often called the 'king of exercises' because it works more muscles simultaneously than any other movement, including legs, core, and stabilizers!"
-  
+    explanation: "Bicep curls are an isolation exercise, primarily targeting one muscle group (the biceps). Compound exercises like bench press, squat, and deadlift work multiple muscle groups simultaneously."
+
   - question: "What does 'progressive overload' mean in fitness?"
     options:
-      - text: "Lifting as heavy as possible"
+      - text: "Lifting as heavy as possible every workout"
         correct: false
       - text: "Gradually increasing training demands over time"
         correct: true
-      - text: "Working out every day"
+      - text: "Working out every single day"
         correct: false
-      - text: "Focusing only on compound movements"
+      - text: "Only doing compound movements"
         correct: false
-    explanation: "Progressive overload is the gradual increase of stress placed on the body during exercise. This can be achieved by increasing weight, reps, sets, or decreasing rest time."
+    explanation: "Progressive overload is the gradual increase of stress placed on the body during exercise. This can be achieved by increasing weight, reps, sets, or decreasing rest time to continually challenge your muscles."
+
+  - question: "How long should you rest between sets when training for strength?"
+    options:
+      - text: "30 seconds"
+        correct: false
+      - text: "1 minute"
+        correct: false
+      - text: "2-5 minutes"
+        correct: true
+      - text: "10 minutes"
+        correct: false
+    explanation: "For strength training with heavy weights, 2-5 minutes of rest between sets allows your muscles to recover enough ATP (energy) to perform at maximum capacity on the next set."
+
+  - question: "Which macronutrient is most important for muscle recovery and growth?"
+    options:
+      - text: "Carbohydrates"
+        correct: false
+      - text: "Protein"
+        correct: true
+      - text: "Fats"
+        correct: false
+      - text: "Fiber"
+        correct: false
+    explanation: "Protein provides the amino acids necessary for muscle repair and growth. Most research suggests 1.6-2.2g of protein per kg of body weight for optimal muscle building."
 
 # Current Projects
 current_projects:
-  - name: "Smart Workout Tracker"
-    icon: "📱"
-    description: "AI-powered fitness app that analyzes workout patterns, suggests optimal training loads, and predicts performance plateaus before they happen."
-    status: "Development"
-    progress: 75
-    tech_stack: ["React Native", "TensorFlow", "Python", "Firebase", "Computer Vision", "HealthKit"]
-    link: "/projects/smart-workout-tracker/"
-    github: "https://github.com/gmanthenoxus/smart-workout-tracker"
-    demo: "https://workout-tracker.gmanthenoxus.dev"
-  
-  - name: "Form Analysis System"
-    icon: "🎥"
-    description: "Computer vision system that analyzes exercise form in real-time, providing instant feedback on technique and injury prevention recommendations."
-    status: "Prototype"
-    progress: 45
-    tech_stack: ["OpenCV", "MediaPipe", "Python", "Machine Learning", "Mobile App"]
+  - name: "The Intelligent Fitness Coach"
+    icon: "🧠"
+    description: "An app that doesn't just log your workouts, but analyzes them to provide actionable insights and break through plateaus."
+    status: "Vision Stage"
+    progress: 15
+    tech_stack: ["TBD"]
+    last_updated: "TBD"
+    url: "#"
+    github_url: "#"
+
+  - name: "Unified Progress Tracker"
+    icon: "📊"
+    description: "A single platform to unify workout logs, progress photos, and notes—turning scattered data into a clear progress narrative."
+    status: "Ideation"
+    progress: 5
+    tech_stack: ["TBD"]
+    last_updated: "TBD"
+    url: "#"
+    github_url: "#"
 
 # External Platforms
 external_platforms:
-  - name: "MyFitnessPal"
-    icon: "🍎"
-    description: "Comprehensive nutrition and macro tracking"
-    url: "https://myfitnesspal.com/profile/gmanthenoxus"
-    stats: "1,200+ day streak, 95% accuracy"
-  - name: "Strong App"
-    icon: "💪"
-    description: "Detailed workout logging and progress tracking"
-    url: "https://strong.app/profile/gmanthenoxus"
-    stats: "500+ workouts logged, 2+ years"
-  - name: "Strava"
-    icon: "🏃"
-    description: "Cardio and running activity tracking"
-    url: "https://strava.com/athletes/gmanthenoxus"
-    stats: "300+ activities, 1,500+ miles"
+  - name: "Placeholder Platform 1"
+    icon: "fas fa-dumbbell"
+    description: "Your fitness tracking platform here"
+    url: "#"
+    color: "#4ECDC4"
+  - name: "Placeholder Platform 2"
+    icon: "fas fa-heartbeat"
+    description: "Your health monitoring platform here"
+    url: "#"
+    color: "#4ECDC4"
+  - name: "Placeholder Platform 3"
+    icon: "fas fa-running"
+    description: "Your activity tracking platform here"
+    url: "#"
+    color: "#4ECDC4"
 
 # Empty States
 empty_states:
-  projects: "Like building muscle, great fitness tech projects require consistent effort and progressive overload!"
-  projects_icon: "🏗️"
-  projects_title: "Training in Progress"
-  projects_description: "Just as Rome wasn't built in a day, revolutionary fitness technology takes time to develop. The next breakthrough could be more powerful than a personal record!"
+  projects: "Even the strongest athletes started with a single rep—the next breakthrough fitness tool is in development!"
 ---
 
-# My Fitness Journey
+## My Fitness Philosophy
 
-Fitness has become far more than just physical exercise—it's a laboratory for testing the limits of human performance, a source of mental clarity for complex programming challenges, and a perfect example of how data-driven approaches can optimize any system, including the human body.
+For me, fitness is the totality of wellbeing—body, mind, and soul. It's about being capable: capable of protecting the people you love, capable of clearing your mind under a heavy barbell, and capable of enjoying life without physical limitations. My philosophy is simple: **do what you can and want to do.** It's not about following the perfect program, but about showing up consistently and listening to what your body and mind need.
 
-## Current Focus Areas
+## The Journey: From Punishment to Purpose
 
-My approach to fitness combines traditional strength training with modern technology:
-- **Strength Training**: Progressive powerlifting focused on the big three lifts
-- **Performance Analytics**: Using data to optimize training and recovery
-- **Technology Integration**: Building tools that enhance the fitness experience
-- **Holistic Wellness**: Balancing strength, cardio, flexibility, and mental health
+My fitness journey started in the most unlikely way: as punishment from seniors in school. I quickly realized that this "punishment" was making me stronger and faster on the basketball court and football pitch. That spark of tangible improvement ignited a passion.
 
-## The Data-Driven Approach
+I eventually stepped into a gym with no direction, just a vague desire to be bigger. That desire crystallized into a powerful purpose: **to be strong enough to protect the people in my life.** That "why" has been my anchor through phases of intense focus and inevitable fall-offs. These days, you'll find me following a Push, Pull, Legs split, aiming for those concrete goals: a 120kg bench, 20 pull-ups, and the elusive muscle-up.
 
-My programming background has revolutionized how I approach fitness:
+## The Gap in Fitness Tech
 
-### **Performance Optimization**
-- Tracking every workout with detailed metrics on volume, intensity, and progression
-- Using statistical analysis to identify optimal training frequencies and recovery periods
-- Building predictive models that forecast when to deload or push harder
-- Analyzing heart rate variability to optimize training intensity and recovery
+I've tried every fitness app on the market. They're great digital notebooks—excellent at logging what I did. But they're terrible coaches. They don't tell me *what to do next* when I plateau for months. My progress photos are buried in my camera roll, and my notes are scattered across apps. I was putting in the work but missing the intelligence to make it count.
 
-### **Technology Integration**
-- Developing custom apps that provide insights beyond basic fitness trackers
-- Creating automated systems for meal planning based on training goals and metabolic data
-- Building computer vision tools that analyze exercise form and provide real-time feedback
-- Implementing machine learning algorithms that personalize workout recommendations
-
-### **Systematic Progression**
-- Applying software development principles like version control to training programs
-- Using A/B testing methodologies to optimize exercise selection and programming
-- Creating feedback loops that continuously improve training effectiveness
-- Documenting and iterating on training protocols like code repositories
-
-## Philosophy & Impact
-
-Fitness has taught me that consistent, incremental progress beats sporadic intense efforts—a principle that applies perfectly to software development. The discipline required for regular training has improved my ability to tackle long-term coding projects and maintain focus during challenging debugging sessions.
-
-The mind-muscle connection developed through lifting has enhanced my ability to focus deeply on complex programming problems, while the problem-solving required to break through training plateaus has sharpened my analytical thinking skills.
-
-## Training Philosophy
-
-- **Compound Movements First**: Focus on exercises that provide the most bang for your buck
-- **Progressive Overload**: Consistent, measurable improvement over time
-- **Recovery is Growth**: Understanding that adaptation happens during rest, not just training
-- **Data-Informed Decisions**: Using metrics to guide training choices, not just intuition
-- **Sustainable Practices**: Building habits that can be maintained long-term
-
-## Current Training Split
-
-- **Monday**: Deadlift + Posterior Chain
-- **Tuesday**: Bench Press + Upper Body Push
-- **Wednesday**: Squat + Anterior Chain  
-- **Thursday**: Overhead Press + Upper Body Pull
-- **Friday**: Accessory Work + Conditioning
-- **Saturday**: Active Recovery + Mobility
-- **Sunday**: Complete Rest or Light Activity
+I'm not just building a better logbook. I'm building an intelligent partner for fitness—one that connects the dots between your effort, your nutrition, and your progress to provide real, actionable insights. Because the goal isn't just to be strong; it's to be smart about getting there.

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Fitness Journey
+    <meta name="description" content="My Fitness Philosophy
 ">
     <meta name="keywords" content="portfolio, hobbies, projects, blog, development">
     <meta name="author" content="Noxus' Hub">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Fitness & Performance | Noxus' Hub">
-    <meta property="og:description" content="My Fitness Journey
+    <meta property="og:title" content="Fitness | Noxus' Hub">
+    <meta property="og:description" content="My Fitness Philosophy
 ">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://localhost:4000/hobbies/fitness/">
     
-    <title>Fitness & Performance | Noxus' Hub</title>
+    <title>Fitness | Noxus' Hub</title>
     
     <link rel="stylesheet" href="/assets/css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
 
     
     <main id="main-content" class="main-content">
-        <div class="hobby-page" style="--hobby-color: #E8F5E9;">
+        <div class="hobby-page" style="--hobby-color: #4ECDC4;">
     <!-- Hero Section with Rotating Quotes -->
     <header class="hobby-hero">
         <div class="container">
@@ -102,56 +102,52 @@
                 
                 <!-- Icon/Emoji -->
                 
-                <div class="hobby-emoji-large">🏋️</div>
+                <div class="hobby-icon-large">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
                 
                 
                 <!-- Title & Description -->
-                <h1>Fitness & Performance</h1>
-                <p class="hobby-subtitle">From weights to wellness. Optimizing human performance through data-driven fitness.</p>
+                <h1>Fitness</h1>
+                <p class="hobby-subtitle">From forced punishment to purposeful strength. My journey toward total wellbeing and the tools to make progress intelligent.</p>
+
+                <!-- Rotating Quotes with Smart Display -->
                 
-                <!-- Rotating Quotes -->
-                
-                <div class="quotes-container">
+                <div class="hobby-quotes-section">
                     
-                    <div class="quote-item" style="opacity: 1;">
-                        <blockquote class="quote-text">"The groundwork for all happiness is good health."</blockquote>
-                        <cite class="quote-author">
-                            — Leigh Hunt
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="0">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="The only bad workout is the one that didn't happen.">The only bad workout is the one that didn't happen.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Unknown</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"Take care of your body. It's the only place you have to live."</blockquote>
-                        <cite class="quote-author">
-                            — Jim Rohn
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="1">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="Strength does not come from physical capacity. It comes from an indomitable will.">Strength does not come from physical capacity. It comes from an indomitable will.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Mahatma Gandhi</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"Strength does not come from physical capacity. It comes from an indomitable will."</blockquote>
-                        <cite class="quote-author">
-                            — Mahatma Gandhi
-                            
-                            
-                        </cite>
-                    </div>
-                    
-                    <div class="quote-item" >
-                        <blockquote class="quote-text">"The successful warrior is the average person with laser-like focus."</blockquote>
-                        <cite class="quote-author">
-                            — Bruce Lee
-                            
-                            
-                        </cite>
+                    <div class="hobby-quote-card" data-quote-index="2">
+                        <div class="hobby-quote-content">
+                            <p class="hobby-quote-text" data-full-text="The goal is to be fit, not ripped. To be healthy, not skinny. To be powerful, not bulky. To be happy, not perfect.">The goal is to be fit, not ripped. To be healthy, not skinny. To be powerful, not bulky. To be happy, not perfect.</p>
+                            <div class="hobby-quote-attribution">
+                                <span class="hobby-quote-author">— Unknown</span>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
                 
-                
+
                 <!-- Navigation -->
                 <div class="hero-nav">
                     <a href="/hobbies/" class="back-btn">
@@ -167,170 +163,496 @@
             
             <!-- Enhanced Statistics Dashboard -->
             
+            <section class="hobby-stats-dashboard">
+                <div class="hobby-stats-header">
+                    <h2><i class="fas fa-chart-line"></i> Statistics Dashboard</h2>
+
+                    <!-- Time Filters -->
+                    
+                    <div class="hobby-time-filters">
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="week">
+                            This Week
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="month">
+                            This Month
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn active"
+                                data-period="year">
+                            This Year
+                        </button>
+                        
+                        <button class="hobby-time-filter-btn "
+                                data-period="all">
+                            All Time
+                        </button>
+                        
+                    </div>
+                    
+                </div>
+
+                <!-- Main Stats Grid -->
+                <div class="hobby-stats-grid">
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="training_split">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Training Split</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">Push, Pull, Legs</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-stable">
+                            
+                            <i class="fas fa-minus"></i>
+                            
+                            <span>100%</span>
+                            <span class="trend-value">Consistent routine</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone reached">
+                            <span class="hobby-milestone-icon">🏋️</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Structured Training</div>
+                                <div class="milestone-description">Following a proven training split</div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">My current workout routine focusing on compound movements</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="weekly_consistency">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Weekly Consistency</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">3-4x</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-up">
+                            
+                            <i class="fas fa-arrow-up"></i>
+                            
+                            <span>80%</span>
+                            <span class="trend-value">+1 from last month</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+                        <div class="hobby-stat-comparison">
+                            <div class="comparison-label">Goal: 4x/week</div>
+                            <div class="comparison-value">Almost there</div>
+                            
+                            <div class="comparison-percentage">
+                                87%
+                                
+                                <i class="fas fa-arrow-up"></i>
+                                
+                            </div>
+                            
+                        </div>
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone in-progress">
+                            <span class="hobby-milestone-icon">📅</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Consistency Master</div>
+                                <div class="milestone-description">Train 4+ times per week consistently</div>
+                                
+                                <div class="milestone-progress">
+                                    <div class="milestone-progress-bar" style="width: 87%"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Average training sessions per week</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="current_focus">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Current Focus</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">Strength Bulk</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-up">
+                            
+                            <i class="fas fa-arrow-up"></i>
+                            
+                            <span>65%</span>
+                            <span class="trend-value">Building phase</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone in-progress">
+                            <span class="hobby-milestone-icon">🎯</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Strength Goal</div>
+                                <div class="milestone-description">Hit all major lift targets</div>
+                                
+                                <div class="milestone-progress">
+                                    <div class="milestone-progress-bar" style="width: 65%"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Building strength while maintaining lean mass</div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="hobby-stat-card enhanced" data-stat-id="bench_goal">
+                        <!-- Icon -->
+                        <div class="hobby-stat-icon">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+
+                        <!-- Label -->
+                        <div class="hobby-stat-label">Bench Press Goal</div>
+
+                        <!-- Value -->
+                        <div class="hobby-stat-value">120kg</div>
+
+                        <!-- Trend Indicator -->
+                        
+                        <div class="hobby-stat-trend trend-up">
+                            
+                            <i class="fas fa-arrow-up"></i>
+                            
+                            <span>70%</span>
+                            <span class="trend-value">Currently ~100kg</span>
+                        </div>
+                        
+
+                        <!-- Comparison -->
+                        
+                        <div class="hobby-stat-comparison">
+                            <div class="comparison-label">Goal: 120kg</div>
+                            <div class="comparison-value">20kg to go</div>
+                            
+                            <div class="comparison-percentage">
+                                83%
+                                
+                                <i class="fas fa-arrow-up"></i>
+                                
+                            </div>
+                            
+                        </div>
+                        
+
+                        <!-- Milestone Badge -->
+                        
+                        <div class="hobby-stat-milestone in-progress">
+                            <span class="hobby-milestone-icon">💪</span>
+                            <div class="milestone-info">
+                                <div class="milestone-title">Bench Master</div>
+                                <div class="milestone-description">Hit 120kg bench press</div>
+                                
+                                <div class="milestone-progress">
+                                    <div class="milestone-progress-bar" style="width: 83%"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+
+                        <!-- Tooltip -->
+                        
+                        <div class="hobby-stat-tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="hobby-tooltip-content">Target bench press max - currently at ~100kg</div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+
+            </section>
+            
 
             <!-- Personal Journey Section -->
-            <section class="personal-journey">
+            <section class="hobby-personal-journey">
                 <h2><i class="fas fa-map-marked-alt"></i> My Journey</h2>
-                <div class="journey-content">
-                    <h1 id="my-fitness-journey">My Fitness Journey</h1>
+                <div class="hobby-journey-content">
+                    <h2 id="my-fitness-philosophy">My Fitness Philosophy</h2>
 
-<p>Fitness has become far more than just physical exercise—it’s a laboratory for testing the limits of human performance, a source of mental clarity for complex programming challenges, and a perfect example of how data-driven approaches can optimize any system, including the human body.</p>
+<p>For me, fitness is the totality of wellbeing—body, mind, and soul. It’s about being capable: capable of protecting the people you love, capable of clearing your mind under a heavy barbell, and capable of enjoying life without physical limitations. My philosophy is simple: <strong>do what you can and want to do.</strong> It’s not about following the perfect program, but about showing up consistently and listening to what your body and mind need.</p>
 
-<h2 id="current-focus-areas">Current Focus Areas</h2>
+<h2 id="the-journey-from-punishment-to-purpose">The Journey: From Punishment to Purpose</h2>
 
-<p>My approach to fitness combines traditional strength training with modern technology:</p>
-<ul>
-  <li><strong>Strength Training</strong>: Progressive powerlifting focused on the big three lifts</li>
-  <li><strong>Performance Analytics</strong>: Using data to optimize training and recovery</li>
-  <li><strong>Technology Integration</strong>: Building tools that enhance the fitness experience</li>
-  <li><strong>Holistic Wellness</strong>: Balancing strength, cardio, flexibility, and mental health</li>
-</ul>
+<p>My fitness journey started in the most unlikely way: as punishment from seniors in school. I quickly realized that this “punishment” was making me stronger and faster on the basketball court and football pitch. That spark of tangible improvement ignited a passion.</p>
 
-<h2 id="the-data-driven-approach">The Data-Driven Approach</h2>
+<p>I eventually stepped into a gym with no direction, just a vague desire to be bigger. That desire crystallized into a powerful purpose: <strong>to be strong enough to protect the people in my life.</strong> That “why” has been my anchor through phases of intense focus and inevitable fall-offs. These days, you’ll find me following a Push, Pull, Legs split, aiming for those concrete goals: a 120kg bench, 20 pull-ups, and the elusive muscle-up.</p>
 
-<p>My programming background has revolutionized how I approach fitness:</p>
+<h2 id="the-gap-in-fitness-tech">The Gap in Fitness Tech</h2>
 
-<h3 id="performance-optimization"><strong>Performance Optimization</strong></h3>
-<ul>
-  <li>Tracking every workout with detailed metrics on volume, intensity, and progression</li>
-  <li>Using statistical analysis to identify optimal training frequencies and recovery periods</li>
-  <li>Building predictive models that forecast when to deload or push harder</li>
-  <li>Analyzing heart rate variability to optimize training intensity and recovery</li>
-</ul>
+<p>I’ve tried every fitness app on the market. They’re great digital notebooks—excellent at logging what I did. But they’re terrible coaches. They don’t tell me <em>what to do next</em> when I plateau for months. My progress photos are buried in my camera roll, and my notes are scattered across apps. I was putting in the work but missing the intelligence to make it count.</p>
 
-<h3 id="technology-integration"><strong>Technology Integration</strong></h3>
-<ul>
-  <li>Developing custom apps that provide insights beyond basic fitness trackers</li>
-  <li>Creating automated systems for meal planning based on training goals and metabolic data</li>
-  <li>Building computer vision tools that analyze exercise form and provide real-time feedback</li>
-  <li>Implementing machine learning algorithms that personalize workout recommendations</li>
-</ul>
-
-<h3 id="systematic-progression"><strong>Systematic Progression</strong></h3>
-<ul>
-  <li>Applying software development principles like version control to training programs</li>
-  <li>Using A/B testing methodologies to optimize exercise selection and programming</li>
-  <li>Creating feedback loops that continuously improve training effectiveness</li>
-  <li>Documenting and iterating on training protocols like code repositories</li>
-</ul>
-
-<h2 id="philosophy--impact">Philosophy &amp; Impact</h2>
-
-<p>Fitness has taught me that consistent, incremental progress beats sporadic intense efforts—a principle that applies perfectly to software development. The discipline required for regular training has improved my ability to tackle long-term coding projects and maintain focus during challenging debugging sessions.</p>
-
-<p>The mind-muscle connection developed through lifting has enhanced my ability to focus deeply on complex programming problems, while the problem-solving required to break through training plateaus has sharpened my analytical thinking skills.</p>
-
-<h2 id="training-philosophy">Training Philosophy</h2>
-
-<ul>
-  <li><strong>Compound Movements First</strong>: Focus on exercises that provide the most bang for your buck</li>
-  <li><strong>Progressive Overload</strong>: Consistent, measurable improvement over time</li>
-  <li><strong>Recovery is Growth</strong>: Understanding that adaptation happens during rest, not just training</li>
-  <li><strong>Data-Informed Decisions</strong>: Using metrics to guide training choices, not just intuition</li>
-  <li><strong>Sustainable Practices</strong>: Building habits that can be maintained long-term</li>
-</ul>
-
-<h2 id="current-training-split">Current Training Split</h2>
-
-<ul>
-  <li><strong>Monday</strong>: Deadlift + Posterior Chain</li>
-  <li><strong>Tuesday</strong>: Bench Press + Upper Body Push</li>
-  <li><strong>Wednesday</strong>: Squat + Anterior Chain</li>
-  <li><strong>Thursday</strong>: Overhead Press + Upper Body Pull</li>
-  <li><strong>Friday</strong>: Accessory Work + Conditioning</li>
-  <li><strong>Saturday</strong>: Active Recovery + Mobility</li>
-  <li><strong>Sunday</strong>: Complete Rest or Light Activity</li>
-</ul>
+<p>I’m not just building a better logbook. I’m building an intelligent partner for fitness—one that connects the dots between your effort, your nutrition, and your progress to provide real, actionable insights. Because the goal isn’t just to be strong; it’s to be smart about getting there.</p>
 
                 </div>
             </section>
 
-            <!-- Favorites Section -->
+            <!-- Favorites/Goals Section -->
+            
+            <section class="hobby-favorites-section hobby-favorites-fitness">
+                
+                <h2><i class="fas fa-bullseye"></i> My Goals</h2>
+                
+
+                <!-- Fitness Goals Layout - Compact Horizontal Cards -->
+                
+                <div class="fitness-goals-grid">
+                    
+                    <div class="fitness-goal-card">
+                        
+                        <div class="fitness-goal-image" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80');">
+                            
+                            <div class="fitness-progress-badge">83%</div>
+                            
+                        </div>
+                        
+
+                        <div class="fitness-goal-content">
+                            <div class="fitness-goal-header">
+                                <h3>120kg Bench Press</h3>
+                                <span class="fitness-goal-category">Strength</span>
+                            </div>
+
+                            <div class="fitness-goal-stats">
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Current</span>
+                                    <span class="stat-value">100kg</span>
+                                </div>
+                                <div class="fitness-stat-arrow">→</div>
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Target</span>
+                                    <span class="stat-value stat-target">120kg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fitness-goal-card">
+                        
+                        <div class="fitness-goal-image" style="background-image: url('https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=800&q=80');">
+                            
+                            <div class="fitness-progress-badge">75%</div>
+                            
+                        </div>
+                        
+
+                        <div class="fitness-goal-content">
+                            <div class="fitness-goal-header">
+                                <h3>20 Pull-Ups</h3>
+                                <span class="fitness-goal-category">Bodyweight</span>
+                            </div>
+
+                            <div class="fitness-goal-stats">
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Current</span>
+                                    <span class="stat-value">15 reps</span>
+                                </div>
+                                <div class="fitness-stat-arrow">→</div>
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Target</span>
+                                    <span class="stat-value stat-target">20 reps</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fitness-goal-card">
+                        
+                        <div class="fitness-goal-image" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80');">
+                            
+                            <div class="fitness-progress-badge">60%</div>
+                            
+                        </div>
+                        
+
+                        <div class="fitness-goal-content">
+                            <div class="fitness-goal-header">
+                                <h3>Muscle-Up</h3>
+                                <span class="fitness-goal-category">Skill</span>
+                            </div>
+
+                            <div class="fitness-goal-stats">
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Current</span>
+                                    <span class="stat-value">In Progress</span>
+                                </div>
+                                <div class="fitness-stat-arrow">→</div>
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Target</span>
+                                    <span class="stat-value stat-target">Master</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fitness-goal-card">
+                        
+                        <div class="fitness-goal-image" style="background-image: url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80');">
+                            
+                            <div class="fitness-progress-badge">78%</div>
+                            
+                        </div>
+                        
+
+                        <div class="fitness-goal-content">
+                            <div class="fitness-goal-header">
+                                <h3>180kg Squat</h3>
+                                <span class="fitness-goal-category">Strength</span>
+                            </div>
+
+                            <div class="fitness-goal-stats">
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Current</span>
+                                    <span class="stat-value">140kg</span>
+                                </div>
+                                <div class="fitness-stat-arrow">→</div>
+                                <div class="fitness-stat">
+                                    <span class="stat-label">Target</span>
+                                    <span class="stat-value stat-target">180kg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Games Favorites Layout - Compact Horizontal Cards -->
+                
+            </section>
             
 
             <!-- Fun Facts Section -->
             
-            <section class="fun-facts">
+            <section class="hobby-fun-facts">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
 
-                <div class="facts-grid">
+                <div class="hobby-facts-grid">
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">🧠</div>
+                        <div class="hobby-fact-icon-bg">💪</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Brain Boost</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>Muscle Memory is Real</h3>
 
                             
+                            <span class="hobby-fact-category">Science</span>
+                            
 
-                            <p>Regular strength training increases BDNF (brain-derived neurotrophic factor) by up to 200%, improving memory, learning, and cognitive function—perfect for programmers!</p>
+                            <p>When you build muscle, you create new nuclei in your cells. Even if you lose the muscle, these nuclei remain, making it easier to regain strength later.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Brain Boost" data-description="Regular strength training increases BDNF (brain-derived neurotrophic factor) by up to 200%, improving memory, learning, and cognitive function—perfect for programmers!" data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Muscle Memory is Real" data-description="When you build muscle, you create new nuclei in your cells. Even if you lose the muscle, these nuclei remain, making it easier to regain strength later." data-category="Science">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">💻</div>
+                        <div class="hobby-fact-icon-bg">🧠</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Programmer's Edge</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>Your Brain on Exercise</h3>
 
                             
+                            <span class="hobby-fact-category">Mental Health</span>
+                            
 
-                            <p>Developers who exercise regularly show 23% better problem-solving skills and 15% fewer bugs in their code compared to sedentary programmers.</p>
+                            <p>Just 20 minutes of moderate exercise can boost your mood for up to 12 hours by releasing endorphins and other neurochemicals.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Programmer's Edge" data-description="Developers who exercise regularly show 23% better problem-solving skills and 15% fewer bugs in their code compared to sedentary programmers." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="Your Brain on Exercise" data-description="Just 20 minutes of moderate exercise can boost your mood for up to 12 hours by releasing endorphins and other neurochemicals." data-category="Mental Health">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="fact-card fact-card-option2">
+                    <div class="hobby-fact-card hobby-fact-card-option2">
                         
-                        <div class="fact-icon-bg">⚡</div>
+                        <div class="hobby-fact-icon-bg">💪</div>
                         
 
-                        <div class="fact-content-layer">
-                            <h3>Energy Efficiency</h3>
+                        <div class="hobby-fact-content-layer">
+                            <h3>The Strongest Muscle</h3>
 
                             
-
-                            <p>Despite burning calories, regular exercise actually increases overall energy levels by improving mitochondrial efficiency by up to 40%.</p>
-
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Energy Efficiency" data-description="Despite burning calories, regular exercise actually increases overall energy levels by improving mitochondrial efficiency by up to 40%." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="fact-card fact-card-option2">
-                        
-                        <div class="fact-icon-bg">🎯</div>
-                        
-
-                        <div class="fact-content-layer">
-                            <h3>Precision Training</h3>
-
+                            <span class="hobby-fact-category">Anatomy</span>
                             
 
-                            <p>Modern fitness trackers can detect form deviations as small as 2 degrees, enabling real-time technique corrections that were impossible just a decade ago.</p>
+                            <p>Relative to its size, the strongest muscle in the human body is the masseter, or jaw muscle.</p>
 
-                            <button class="share-btn-inline" onclick="shareFact(this)" data-title="Precision Training" data-description="Modern fitness trackers can detect form deviations as small as 2 degrees, enabling real-time technique corrections that were impossible just a decade ago." data-category="">
-                                <span class="share-text">Share</span>
-                                <i class="fas fa-share-alt share-icon"></i>
-                                <i class="fas fa-arrow-right"></i>
+                            <button class="hobby-share-fact-btn" onclick="shareFact(this)" data-title="The Strongest Muscle" data-description="Relative to its size, the strongest muscle in the human body is the masseter, or jaw muscle." data-category="Anatomy">
+                                <i class="fas fa-share-alt"></i>
+                                <span>Share Fact</span>
                             </button>
                         </div>
                     </div>
@@ -341,172 +663,153 @@
 
             <!-- Interactive Trivia Section -->
             
-            <section class="trivia-section">
-                <div class="section-header-with-toggle">
-                    <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
-                    <div class="design-toggle">
-                        <button class="toggle-btn" data-design="optionA">Option A</button>
-                        <button class="toggle-btn active" data-design="optionB">Option B</button>
-                        <button class="toggle-btn" data-design="optionC">Option C</button>
-                        <button class="toggle-btn" data-design="optionD">Option D</button>
-                    </div>
-                </div>
+            <section class="hobby-trivia-section">
+                <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
 
-                <!-- Option A: Enhanced with Score & Share -->
-                <div class="trivia-container trivia-optionA">
-                    <div class="trivia-score-bar">
-                        <span class="score-display">Score: <span id="scoreA">0</span>/2</span>
-                        <div class="progress-dots" id="progressA"></div>
-                    </div>
-
-                    
-                    <div class="trivia-card trivia-card-a" data-question="0" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 1 of 2</span>
-                        </div>
-                        <h3>Which exercise is considered the 'king' of all exercises?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="0">
-                                {"text" => "Bench Press", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="1">
-                                {"text" => "Squat", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="2">
-                                {"text" => "Deadlift", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="0" data-index="3">
-                                {"text" => "Pull-up", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">The squat is often called the 'king of exercises' because it works more muscles simultaneously than any other movement, including legs, core, and stabilizers!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="trivia-card trivia-card-a" data-question="1" data-correct-answer="">
-                        <div class="question-header">
-                            <span class="question-number">Question 2 of 2</span>
-                        </div>
-                        <h3>What does 'progressive overload' mean in fitness?</h3>
-                        <div class="options-grid">
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="0">
-                                {"text" => "Lifting as heavy as possible", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="1">
-                                {"text" => "Gradually increasing training demands over time", "correct" => true}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="2">
-                                {"text" => "Working out every day", "correct" => false}
-                            </button>
-                            
-                            <button class="option-btn option-btn-a" data-question="1" data-index="3">
-                                {"text" => "Focusing only on compound movements", "correct" => false}
-                            </button>
-                            
-                        </div>
-                        <div class="trivia-feedback feedback-a" style="display: none;">
-                            <div class="feedback-icon"></div>
-                            <p class="feedback-title"></p>
-                            <p class="feedback-subtitle">💡 Did you know?</p>
-                            <p class="feedback-text">Progressive overload is the gradual increase of stress placed on the body during exercise. This can be achieved by increasing weight, reps, sets, or decreasing rest time.</p>
-                        </div>
-                    </div>
-                    
-
-                    <div class="trivia-completion" id="completionA" style="display: none;">
-                        <div class="completion-icon">🎉</div>
-                        <h3>Quiz Complete!</h3>
-                        <p class="completion-score">Your Score: <span id="finalScoreA">0</span>/2 🌟</p>
-                        <p class="completion-message" id="messageA"></p>
-                        <div class="completion-actions">
-                            <button class="share-score-btn" onclick="shareScore('A')">
-                                <i class="fas fa-share-alt"></i> Share Score
-                            </button>
-                            <button class="try-again-btn" onclick="resetQuiz('A')">
-                                <i class="fas fa-redo"></i> Try Again
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Option B: Quiz Mode with Timer -->
-                <div class="trivia-container trivia-optionB active">
-                    <div class="quiz-start-screen" id="startScreenB">
+                <!-- Option B: Quiz Mode with Timer (Uniform format for all hobby pages) -->
+                <div class="hobby-trivia-container trivia-optionB active">
+                    <div class="hobby-quiz-start-screen" id="startScreenB">
                         <div class="start-icon">⏱️</div>
                         <h3>Timed Quiz Challenge</h3>
-                        <p>Answer 2 questions as fast as you can!</p>
+                        <p>Answer 5 questions as fast as you can!</p>
                         <p class="timer-info">⚡ 30 seconds per question</p>
-                        <button class="start-quiz-btn" onclick="startQuiz('B')">
+                        <button class="hobby-start-quiz-btn" onclick="startQuiz('B')">
                             <i class="fas fa-play"></i> Start Quiz
                         </button>
                     </div>
 
                     <div class="quiz-active-screen" id="activeScreenB" style="display: none;">
-                        <div class="quiz-header">
-                            <div class="quiz-progress">
-                                <span class="question-counter">Question <span id="currentB">1</span>/2</span>
-                                <div class="progress-dots-container" id="progressDotsB"></div>
+                        <div class="hobby-quiz-header">
+                            <div class="hobby-quiz-progress">
+                                <div class="hobby-progress-dots-container" id="progressDotsB"></div>
                             </div>
-                            <div class="quiz-timer">
+                            <div class="hobby-quiz-timer">
                                 <i class="fas fa-clock"></i>
                                 <span id="timerB">30</span>s
                             </div>
                         </div>
 
                         
-                        <div class="trivia-card trivia-card-b" data-question="0" data-correct-answer="" style="">
-                            <h3>Which exercise is considered the 'king' of all exercises?</h3>
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="0" data-correct-answer="1" style="">
+                            <h3>What is the recommended minimum amount of moderate-intensity exercise per week for adults?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="0">
-                                    {"text" => "Bench Press", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="0" data-correct="false">
+                                    60 minutes
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="1">
-                                    {"text" => "Squat", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="1" data-correct="true">
+                                    150 minutes
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="2">
-                                    {"text" => "Deadlift", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="2" data-correct="false">
+                                    300 minutes
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="0" data-index="3">
-                                    {"text" => "Pull-up", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="0" data-index="3" data-correct="false">
+                                    75 minutes
                                 </button>
                                 
                             </div>
                         </div>
                         
-                        <div class="trivia-card trivia-card-b" data-question="1" data-correct-answer="" style="display: none;">
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="1" data-correct-answer="1" style="display: none;">
+                            <h3>Which of these is NOT a compound exercise (an exercise that works multiple muscle groups)?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="1" data-index="0" data-correct="false">
+                                    Bench Press
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="1" data-index="1" data-correct="true">
+                                    Bicep Curl
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="1" data-index="2" data-correct="false">
+                                    Squat
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="1" data-index="3" data-correct="false">
+                                    Deadlift
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="2" data-correct-answer="1" style="display: none;">
                             <h3>What does 'progressive overload' mean in fitness?</h3>
                             <div class="options-grid">
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="0">
-                                    {"text" => "Lifting as heavy as possible", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="2" data-index="0" data-correct="false">
+                                    Lifting as heavy as possible every workout
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="1">
-                                    {"text" => "Gradually increasing training demands over time", "correct" => true}
+                                <button class="hobby-option-btn-b" data-question="2" data-index="1" data-correct="true">
+                                    Gradually increasing training demands over time
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="2">
-                                    {"text" => "Working out every day", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="2" data-index="2" data-correct="false">
+                                    Working out every single day
                                 </button>
                                 
-                                <button class="option-btn option-btn-b" data-question="1" data-index="3">
-                                    {"text" => "Focusing only on compound movements", "correct" => false}
+                                <button class="hobby-option-btn-b" data-question="2" data-index="3" data-correct="false">
+                                    Only doing compound movements
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="3" data-correct-answer="2" style="display: none;">
+                            <h3>How long should you rest between sets when training for strength?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="0" data-correct="false">
+                                    30 seconds
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="1" data-correct="false">
+                                    1 minute
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="2" data-correct="true">
+                                    2-5 minutes
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="3" data-index="3" data-correct="false">
+                                    10 minutes
+                                </button>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="hobby-trivia-card-b" data-question="4" data-correct-answer="1" style="display: none;">
+                            <h3>Which macronutrient is most important for muscle recovery and growth?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="0" data-correct="false">
+                                    Carbohydrates
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="1" data-correct="true">
+                                    Protein
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="2" data-correct="false">
+                                    Fats
+                                </button>
+                                
+                                <button class="hobby-option-btn-b" data-question="4" data-index="3" data-correct="false">
+                                    Fiber
                                 </button>
                                 
                             </div>
@@ -515,12 +818,32 @@
                     </div>
 
                     <div class="trivia-completion" id="completionB" style="display: none;">
-                        <div class="completion-card-capture" id="completionCardB">
-                            <div class="completion-icon">⏱️</div>
-                            <h3>Quiz Complete!</h3>
-                            <p class="completion-score">Score: <span id="finalScoreB">0</span>/2 🌟</p>
-                            <p class="completion-time">⚡ Time: <span id="totalTimeB">0</span>s</p>
-                            <p class="completion-message" id="messageBText"></p>
+                        <div class="hobby-completion-card-capture" id="completionCardB">
+                            <div class="hobby-completion-header">
+                                <div class="completion-icon-large">🎉</div>
+                                <h3 class="completion-title">Quiz Complete!</h3>
+                                <div class="completion-subtitle">Fitness Trivia Challenge</div>
+                            </div>
+
+                            <div class="hobby-completion-stats">
+                                <div class="hobby-stat-item stat-score">
+                                    <div class="hobby-stat-icon">🏆</div>
+                                    <div class="hobby-stat-label">Score</div>
+                                    <div class="hobby-stat-value"><span id="finalScoreB">0</span>/5</div>
+                                </div>
+                                <div class="hobby-stat-divider"></div>
+                                <div class="hobby-stat-item stat-time">
+                                    <div class="hobby-stat-icon">⚡</div>
+                                    <div class="hobby-stat-label">Time</div>
+                                    <div class="hobby-stat-value"><span id="totalTimeB">0</span>s</div>
+                                </div>
+                            </div>
+
+                            <div class="hobby-completion-message-box" id="messageBText"></div>
+
+                            <div class="hobby-completion-footer">
+                                <div class="completion-url">http://localhost:4000/hobbies/fitness</div>
+                            </div>
                         </div>
 
                         <div class="completion-actions">
@@ -541,7 +864,7 @@
                 </div>
 
                 <!-- Option C: Difficulty Levels -->
-                <div class="trivia-container trivia-optionC">
+                <div class="hobby-trivia-container trivia-optionC">
                     <div class="difficulty-tabs">
                         <button class="difficulty-tab active" data-difficulty="easy">
                             <i class="fas fa-smile"></i> Easy
@@ -562,56 +885,83 @@
 
                         
                         <div class="trivia-card trivia-card-c" data-question="0" data-correct-answer="">
-                            <h3>Which exercise is considered the 'king' of all exercises?</h3>
+                            <h3>What is the recommended minimum amount of moderate-intensity exercise per week for adults?</h3>
                             <div class="options-grid">
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="0">
-                                    {"text" => "Bench Press", "correct" => false}
+                                    {"text" => "60 minutes", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="1">
-                                    {"text" => "Squat", "correct" => true}
+                                    {"text" => "150 minutes", "correct" => true}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="2">
-                                    {"text" => "Deadlift", "correct" => false}
+                                    {"text" => "300 minutes", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="0" data-index="3">
-                                    {"text" => "Pull-up", "correct" => false}
+                                    {"text" => "75 minutes", "correct" => false}
                                 </button>
                                 
                             </div>
                             <div class="trivia-feedback feedback-c" style="display: none;">
                                 <p class="feedback-title"></p>
-                                <p>The squat is often called the 'king of exercises' because it works more muscles simultaneously than any other movement, including legs, core, and stabilizers!</p>
+                                <p>The WHO recommends at least 150 minutes of moderate-intensity aerobic activity per week for adults to maintain good health and reduce disease risk.</p>
                             </div>
                         </div>
                         
                         <div class="trivia-card trivia-card-c" data-question="1" data-correct-answer="">
-                            <h3>What does 'progressive overload' mean in fitness?</h3>
+                            <h3>Which of these is NOT a compound exercise (an exercise that works multiple muscle groups)?</h3>
                             <div class="options-grid">
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="0">
-                                    {"text" => "Lifting as heavy as possible", "correct" => false}
+                                    {"text" => "Bench Press", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="1">
-                                    {"text" => "Gradually increasing training demands over time", "correct" => true}
+                                    {"text" => "Bicep Curl", "correct" => true}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="2">
-                                    {"text" => "Working out every day", "correct" => false}
+                                    {"text" => "Squat", "correct" => false}
                                 </button>
                                 
                                 <button class="option-btn option-btn-c" data-question="1" data-index="3">
-                                    {"text" => "Focusing only on compound movements", "correct" => false}
+                                    {"text" => "Deadlift", "correct" => false}
                                 </button>
                                 
                             </div>
                             <div class="trivia-feedback feedback-c" style="display: none;">
                                 <p class="feedback-title"></p>
-                                <p>Progressive overload is the gradual increase of stress placed on the body during exercise. This can be achieved by increasing weight, reps, sets, or decreasing rest time.</p>
+                                <p>Bicep curls are an isolation exercise, primarily targeting one muscle group (the biceps). Compound exercises like bench press, squat, and deadlift work multiple muscle groups simultaneously.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trivia-card trivia-card-c" data-question="2" data-correct-answer="">
+                            <h3>What does 'progressive overload' mean in fitness?</h3>
+                            <div class="options-grid">
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="0">
+                                    {"text" => "Lifting as heavy as possible every workout", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="1">
+                                    {"text" => "Gradually increasing training demands over time", "correct" => true}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="2">
+                                    {"text" => "Working out every single day", "correct" => false}
+                                </button>
+                                
+                                <button class="option-btn option-btn-c" data-question="2" data-index="3">
+                                    {"text" => "Only doing compound movements", "correct" => false}
+                                </button>
+                                
+                            </div>
+                            <div class="trivia-feedback feedback-c" style="display: none;">
+                                <p class="feedback-title"></p>
+                                <p>Progressive overload is the gradual increase of stress placed on the body during exercise. This can be achieved by increasing weight, reps, sets, or decreasing rest time to continually challenge your muscles.</p>
                             </div>
                         </div>
                         
@@ -619,59 +969,140 @@
                 </div>
 
                 <!-- Option D: Minimal Polish -->
-                <div class="trivia-container trivia-optionD">
+                <div class="hobby-trivia-container trivia-optionD">
                     
                     <div class="trivia-card trivia-card-d" data-question="0" data-correct-answer="">
-                        <h3>Which exercise is considered the 'king' of all exercises?</h3>
+                        <h3>What is the recommended minimum amount of moderate-intensity exercise per week for adults?</h3>
                         <div class="options-grid">
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="0">
-                                {"text" => "Bench Press", "correct" => false}
+                                {"text" => "60 minutes", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="1">
-                                {"text" => "Squat", "correct" => true}
+                                {"text" => "150 minutes", "correct" => true}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="2">
-                                {"text" => "Deadlift", "correct" => false}
+                                {"text" => "300 minutes", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="0" data-index="3">
-                                {"text" => "Pull-up", "correct" => false}
+                                {"text" => "75 minutes", "correct" => false}
                             </button>
                             
                         </div>
                         <div class="trivia-feedback feedback-d" style="display: none;">
                             <div class="feedback-emoji"></div>
-                            <p class="feedback-text">The squat is often called the 'king of exercises' because it works more muscles simultaneously than any other movement, including legs, core, and stabilizers!</p>
+                            <p class="feedback-text">The WHO recommends at least 150 minutes of moderate-intensity aerobic activity per week for adults to maintain good health and reduce disease risk.</p>
                         </div>
                     </div>
                     
                     <div class="trivia-card trivia-card-d" data-question="1" data-correct-answer="">
-                        <h3>What does 'progressive overload' mean in fitness?</h3>
+                        <h3>Which of these is NOT a compound exercise (an exercise that works multiple muscle groups)?</h3>
                         <div class="options-grid">
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="0">
-                                {"text" => "Lifting as heavy as possible", "correct" => false}
+                                {"text" => "Bench Press", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="1">
-                                {"text" => "Gradually increasing training demands over time", "correct" => true}
+                                {"text" => "Bicep Curl", "correct" => true}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="2">
-                                {"text" => "Working out every day", "correct" => false}
+                                {"text" => "Squat", "correct" => false}
                             </button>
                             
                             <button class="option-btn option-btn-d" data-question="1" data-index="3">
-                                {"text" => "Focusing only on compound movements", "correct" => false}
+                                {"text" => "Deadlift", "correct" => false}
                             </button>
                             
                         </div>
                         <div class="trivia-feedback feedback-d" style="display: none;">
                             <div class="feedback-emoji"></div>
-                            <p class="feedback-text">Progressive overload is the gradual increase of stress placed on the body during exercise. This can be achieved by increasing weight, reps, sets, or decreasing rest time.</p>
+                            <p class="feedback-text">Bicep curls are an isolation exercise, primarily targeting one muscle group (the biceps). Compound exercises like bench press, squat, and deadlift work multiple muscle groups simultaneously.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="2" data-correct-answer="">
+                        <h3>What does 'progressive overload' mean in fitness?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="0">
+                                {"text" => "Lifting as heavy as possible every workout", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="1">
+                                {"text" => "Gradually increasing training demands over time", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="2">
+                                {"text" => "Working out every single day", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="2" data-index="3">
+                                {"text" => "Only doing compound movements", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">Progressive overload is the gradual increase of stress placed on the body during exercise. This can be achieved by increasing weight, reps, sets, or decreasing rest time to continually challenge your muscles.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="3" data-correct-answer="">
+                        <h3>How long should you rest between sets when training for strength?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="0">
+                                {"text" => "30 seconds", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="1">
+                                {"text" => "1 minute", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="2">
+                                {"text" => "2-5 minutes", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="3" data-index="3">
+                                {"text" => "10 minutes", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">For strength training with heavy weights, 2-5 minutes of rest between sets allows your muscles to recover enough ATP (energy) to perform at maximum capacity on the next set.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trivia-card trivia-card-d" data-question="4" data-correct-answer="">
+                        <h3>Which macronutrient is most important for muscle recovery and growth?</h3>
+                        <div class="options-grid">
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="0">
+                                {"text" => "Carbohydrates", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="1">
+                                {"text" => "Protein", "correct" => true}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="2">
+                                {"text" => "Fats", "correct" => false}
+                            </button>
+                            
+                            <button class="option-btn option-btn-d" data-question="4" data-index="3">
+                                {"text" => "Fiber", "correct" => false}
+                            </button>
+                            
+                        </div>
+                        <div class="trivia-feedback feedback-d" style="display: none;">
+                            <div class="feedback-emoji"></div>
+                            <p class="feedback-text">Protein provides the amino acids necessary for muscle repair and growth. Most research suggests 1.6-2.2g of protein per kg of body weight for optimal muscle building.</p>
                         </div>
                     </div>
                     
@@ -687,56 +1118,76 @@
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Smart Workout Tracker</h3>
-                            <span class="project-status status-development">
-                                Development
+                            <h3>The Intelligent Fitness Coach</h3>
+                            <span class="project-status status-vision-stage">
+                                Vision Stage
                             </span>
                         </div>
-                        <p>AI-powered fitness app that analyzes workout patterns, suggests optimal training loads, and predicts performance plateaus before they happen.</p>
+                        <p class="project-description">An app that doesn't just log your workouts, but analyzes them to provide actionable insights and break through plateaus.</p>
                         
                         <div class="tech-stack">
                             
-                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">TBD</span>
                             
-                            <span class="tech-tag">TensorFlow</span>
                             
-                            <span class="tech-tag">Python</span>
-                            
-                            <span class="tech-tag">Firebase</span>
-                            
-                            <span class="tech-tag">Computer Vision</span>
-                            
-                            <span class="tech-tag">HealthKit</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <span class="project-date">
+                                <i class="fas fa-clock"></i>
+                                TBD
+                            </span>
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>Form Analysis System</h3>
-                            <span class="project-status status-prototype">
-                                Prototype
+                            <h3>Unified Progress Tracker</h3>
+                            <span class="project-status status-ideation">
+                                Ideation
                             </span>
                         </div>
-                        <p>Computer vision system that analyzes exercise form in real-time, providing instant feedback on technique and injury prevention recommendations.</p>
+                        <p class="project-description">A single platform to unify workout logs, progress photos, and notes—turning scattered data into a clear progress narrative.</p>
                         
                         <div class="tech-stack">
                             
-                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">TBD</span>
                             
-                            <span class="tech-tag">MediaPipe</span>
                             
-                            <span class="tech-tag">Python</span>
-                            
-                            <span class="tech-tag">Machine Learning</span>
-                            
-                            <span class="tech-tag">Mobile App</span>
                             
                         </div>
                         
-                        
+                        <div class="project-footer">
+                            
+                            <span class="project-date">
+                                <i class="fas fa-clock"></i>
+                                TBD
+                            </span>
+                            
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    View Project <i class="fas fa-arrow-right"></i>
+                                </a>
+                                
+                                <a href="#" class="project-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
@@ -745,33 +1196,33 @@
 
             <!-- External Platforms Section -->
             
-            <section class="external-platforms">
+            <section class="hobby-external-platforms">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
-                <div class="platforms-grid">
+                <div class="hobby-platforms-grid">
                     
-                    <a href="https://myfitnesspal.com/profile/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="🍎"></i>
-                        <div class="platform-info">
-                            <h3>MyFitnessPal</h3>
-                            <p>Comprehensive nutrition and macro tracking</p>
+                    <a href="#" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #4ECDC4">
+                        <i class="fas fa-dumbbell"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Placeholder Platform 1</h3>
+                            <p>Your fitness tracking platform here</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://strong.app/profile/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="💪"></i>
-                        <div class="platform-info">
-                            <h3>Strong App</h3>
-                            <p>Detailed workout logging and progress tracking</p>
+                    <a href="#" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #4ECDC4">
+                        <i class="fas fa-heartbeat"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Placeholder Platform 2</h3>
+                            <p>Your health monitoring platform here</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                     
-                    <a href="https://strava.com/athletes/gmanthenoxus" class="platform-card" target="_blank">
-                        <i class="🏃"></i>
-                        <div class="platform-info">
-                            <h3>Strava</h3>
-                            <p>Cardio and running activity tracking</p>
+                    <a href="#" class="hobby-platform-card" target="_blank" rel="noopener" style="--platform-color: #4ECDC4">
+                        <i class="fas fa-running"></i>
+                        <div class="hobby-platform-info">
+                            <h3>Placeholder Platform 3</h3>
+                            <p>Your activity tracking platform here</p>
                         </div>
                         <i class="fas fa-external-link-alt"></i>
                     </a>
@@ -782,9 +1233,19 @@
 
             <!-- Call-to-Action Section -->
             
+
+            <!-- Explore Other Hobbies Section -->
+            <section class="hobby-explore-section">
+                <h2><i class="fas fa-arrow-circle-right"></i> Continue Exploring</h2>
+                <p class="hobby-explore-subtitle">Discover more passions in my journey</p>
+                <div class="hobby-explore-grid" id="otherHobbiesGrid"></div>
+            </section>
         </div>
     </main>
 </div>
+
+<!-- html2canvas for image capture -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script src="/assets/js/hobby-enhancements.js"></script>
 
