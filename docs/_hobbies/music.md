@@ -1,38 +1,23 @@
 ---
 layout: hobby
 title: "Music"
-slug: anime
-emoji: "🎌"
-description: "From Bleach's first Bankai to the depths of isekai. My journey from casual viewer to daily consumer and aspiring creator."
-color: "#E91E63"
+slug: music
+emoji: "🎵"
+description: "From saxophone lessons to curated playlists. My journey through music as life's universal storyteller and emotional companion."
+color: "#E74C3C"
 
 quotes:
-  - text: "Nothing... happened."
-    author: "Roronoa Zoro"
-    source: "One Piece"
-    episode: "Episode 377"
-    context: "After enduring his captain's pain to save his life, defining ultimate crew loyalty."
-  - text: "Wake up to reality. Nothing ever goes as planned in this accursed world. The longer you live, the more you realize that only pain, suffering, and futility exist in this reality."
-    author: "Madara Uchiha"
-    source: "Naruto Shippuden"
-    episode: "Episode 344"
-    context: "A nihilistic philosophy delivered to break a hero's spirit."
-  - text: "A lesson without pain is meaningless. For you cannot gain anything without sacrificing something first. But once you have recovered from the pain and overcome it, you will find that you have a heart strong enough to overcome any obstacle."
-    author: "Roy Mustang"
-    source: "Fullmetal Alchemist: Brotherhood"
-    episode: "Episode 50"
-    context: "Reframing Equivalent Exchange into a lesson on human resilience."
-  - text: "I'll leave tomorrow's problems to tomorrow's me."
-    author: "Saitama"
-    source: "One-Punch Man"
-    episode: "Episode 5"
-    context: "The ultimate anti-stress philosophy from a hero too powerful for anxieties."
-  - text: "I don't know the answer. I never have. Whether I trusted myself or the choices of my dependable comrades, there was no way to know the outcome. So… choose for yourself whichever decision you will regret the least."
-    author: "Levi Ackerman"
-    source: "Attack on Titan"
-    episode: "Episode 54"
-    context: "A captain's honest advice about making impossible choices."
+  - text: "Where words fail, music speaks."
+    author: "Hans Christian Andersen"
+    context: "On music's power to communicate beyond language."
+  - text: "One good thing about music, when it hits you, you feel no pain."
+    author: "Bob Marley"
+    context: "The healing and transformative power of rhythm and melody."
+  - text: "Music is the soundtrack of your life."
+    author: "Dick Clark"
+    context: "How songs become markers for memories and moments."
 
+# Live Statistics Dashboard
 statistics:
   # Time filter options
   time_periods:
@@ -44,254 +29,214 @@ statistics:
       active: false
     - id: "year"
       label: "This Year"
-      active: false
+      active: true
     - id: "all"
       label: "All Time"
-      active: true
+      active: false
 
   # Main statistics
   stats:
-    - id: "experience"
-      label: "Years in the Fandom"
-      icon: "fas fa-calendar-alt"
-      value: "15+"
-      numeric_value: 15
-      progress: 90
+    - id: "instruments_played"
+      label: "Instruments Played"
+      icon: "fas fa-guitar"
+      value: "4+"
+      numeric_value: 4
+      progress: 80
       trend: "stable"
-      trend_value: "+0 this year"
-      comparison:
-        type: "average"
-        label: "vs Average Fan"
-        value: "8 years"
-        percentage: 87
-      tooltip: "Been watching anime since 2010, starting with Bleach in junior secondary school"
+      trend_value: "Multi-instrumentalist"
+      tooltip: "Saxophone, piano, guitar, and clarinet—learned from family and personal exploration"
       milestone:
         reached: true
-        title: "Veteran Fan"
-        icon: "🏆"
-        description: "15+ years in the fandom"
-      chart_data: [5, 8, 10, 12, 14, 15]
+        title: "Multi-Instrumentalist"
+        icon: "🎸"
+        description: "Mastered 4+ instruments"
 
-    - id: "watched"
-      label: "Anime Watched"
-      icon: "fas fa-tv"
-      value: "500+"
-      numeric_value: 500
-      progress: 85
-      trend: "up"
-      trend_value: "+12 this month"
-      comparison:
-        type: "goal"
-        label: "Goal: 600"
-        value: "100 to go"
-        percentage: 83
-      tooltip: "Completed series across all genres, from action to slice-of-life"
+    - id: "music_companion"
+      label: "Music as Companion"
+      icon: "fas fa-headphones"
+      value: "Daily"
+      numeric_value: 100
+      progress: 100
+      trend: "stable"
+      trend_value: "Essential daily ritual"
+      tooltip: "Music for gym sessions, emotional processing, focus work, and casual strolls"
       milestone:
-        reached: false
-        title: "Completionist"
-        icon: "🎯"
-        description: "Watch 600 anime"
-        progress: 83
-      chart_data: [450, 465, 478, 485, 492, 500]
+        reached: true
+        title: "Music Devotee"
+        icon: "🎧"
+        description: "Music is a daily companion"
 
-    - id: "genres"
-      label: "Genres Explored"
-      icon: "fas fa-compass"
-      value: "25+"
-      numeric_value: 25
+    - id: "genre_openness"
+      label: "Genre Openness"
+      icon: "fas fa-music"
+      value: "Limitless"
+      numeric_value: 95
       progress: 95
-      trend: "stable"
-      trend_value: "+1 this year"
+      trend: "up"
+      trend_value: "Always exploring"
+      tooltip: "From heavy African rhythms to pop harmonies—good music knows no boundaries"
       comparison:
-        type: "coverage"
-        label: "Genre Coverage"
-        value: "95% of all genres"
-        percentage: 95
-      tooltip: "From action to slice-of-life, explored almost every genre in anime"
+        type: "philosophy"
+        label: "Musical Philosophy"
+        value: "No genre boundaries"
+        percentage: 100
       milestone:
         reached: true
-        title: "Genre Master"
-        icon: "🌟"
-        description: "Explored 25+ genres"
-      chart_data: [15, 18, 20, 22, 24, 25]
+        title: "Musical Explorer"
+        icon: "🌍"
+        description: "Appreciates music across all genres"
 
-    - id: "weekly"
-      label: "Weekly Episodes"
-      icon: "fas fa-fire"
-      value: "12-15"
-      numeric_value: 13.5
-      progress: 70
-      trend: "down"
-      trend_value: "-3 from last week"
-      comparison:
-        type: "average"
-        label: "vs Average Viewer"
-        value: "8 episodes"
-        percentage: 68
-      tooltip: "Currently following 5 seasonal anime releases"
+    - id: "current_favorites"
+      label: "Current Favorites"
+      icon: "fas fa-star"
+      value: "J. Cole & Burna Boy"
+      numeric_value: 100
+      progress: 100
+      trend: "stable"
+      trend_value: "Storytelling + Rhythm"
+      tooltip: "The perfect blend of lyrical storytelling and infectious African rhythms"
       milestone:
-        reached: false
-        title: "Marathon Master"
-        icon: "⚡"
-        description: "Watch 20+ episodes in a week"
-        progress: 67
-      chart_data: [10, 12, 15, 18, 16, 13]
+        reached: true
+        title: "Taste Curator"
+        icon: "🎤"
+        description: "Found your musical identity"
 
-favorites:
-  - title: "One Piece"
-    image: "https://cdn.myanimelist.net/images/anime/6/73245.jpg"
-    rating: 5
-    genres: ["Adventure", "Action", "Fantasy"]
-    why: "Epic world-building, unforgettable characters, and the ultimate journey to freedom"
-    year: 1999
-    episodes: "1000+"
-    url: "https://myanimelist.net/anime/21/One_Piece"
+# World Statistics for Context
+world_stats:
+  - icon: "🎵"
+    value: "$26B"
+    label: "Global music streaming market"
+    description: "Music streaming has revolutionized how we discover and consume music"
+    source: "Music Industry Report 2024"
+  - icon: "🎧"
+    value: "523M"
+    label: "Music streaming subscribers worldwide"
+    description: "More people than ever have access to unlimited music"
+    source: "Streaming Analytics 2024"
+  - icon: "🌍"
+    value: "70,000+"
+    label: "New songs released daily on Spotify"
+    description: "An endless stream of new music to discover"
+    source: "Spotify Statistics 2024"
+  - icon: "🧠"
+    value: "90%"
+    label: "Of people say music affects their mood"
+    description: "Music's emotional impact is universal and powerful"
+    source: "Music Psychology Study 2024"
 
-  - title: "That Time I Got Reincarnated as a Slime"
-    image: "https://cdn.myanimelist.net/images/anime/1694/93337.jpg"
-    rating: 5
-    genres: ["Isekai", "Fantasy", "Comedy"]
-    why: "Perfect balance of power fantasy, nation-building, and wholesome character moments"
-    year: 2018
-    episodes: 48
-    url: "https://myanimelist.net/anime/37430/Tensei_shitara_Slime_Datta_Ken"
+# Personal Journey
+personal_journey:
+  origin_story: "My musical foundation was built early, learning to play the saxophone, piano, guitar, and clarinet. This technical understanding gave me a deep appreciation for the craft behind the art. At home, the soundtrack was a rich blend of heavy African rhythms from legends like Fela, mixed with the pop harmonies of Backstreet Boys and Westlife."
+  current_status: "Music is my ultimate utility player. It's the ginger that fuels my gym sessions, the outlet that helps me process emotions, the focus booster for deep work, and the perfect companion on casual strolls. Currently vibing to J. Cole and Burna Boy—the perfect blend of storytelling and rhythm."
+  goals:
+    - "Build intelligent music discovery tools"
+    - "Create contextual playlist systems"
+    - "Enable seamless cross-platform music sharing"
+    - "Develop mood-based music recommendations"
+    - "Make music social again"
+  achievements:
+    - "Learned 4+ instruments from family and exploration"
+    - "Developed eclectic taste across all genres"
+    - "Made music an essential daily companion"
+    - "Found personal favorites that define my identity"
 
-  - title: "Overlord"
-    image: "https://cdn.myanimelist.net/images/anime/7/88019.jpg"
-    rating: 5
-    genres: ["Isekai", "Fantasy", "Action"]
-    why: "Strategic depth meets power fantasy with morally complex world domination"
-    year: 2015
-    episodes: 13
-    url: "https://myanimelist.net/anime/29803/Overlord"
-
-  - title: "One Outs"
-    image: "https://cdn.myanimelist.net/images/anime/7/21065.jpg"
-    rating: 5
-    genres: ["Sports", "Psychological"]
-    why: "Psychological warfare meets baseball - the hidden gem that's impossible to find"
-    year: 2008
-    episodes: 25
-    url: "https://myanimelist.net/anime/5040/One_Outs"
-
-  - title: "Death Note"
-    image: "https://cdn.myanimelist.net/images/anime/9/9453.jpg"
-    rating: 5
-    genres: ["Psychological", "Thriller"]
-    why: "The ultimate cat and mouse game between two geniuses that never loses tension"
-    year: 2006
-    episodes: 37
-    url: "https://myanimelist.net/anime/1535/Death_Note"
-
+# Fun Facts
 fun_facts:
-  - title: "Demon Slayer: Infinity Castle Breaks Records"
-    description: "Demon Slayer: Infinity Castle has become the highest-grossing anime film of all time, surpassing the previous record held by Mugen Train and breaking Japan's all-time box office records with unprecedented success."
-    icon: "🎬"
-    category: "Records"
-    
-  - title: "One Piece: The Anime That Never Ends"
-    description: "With over 1,100 chapters and 500 million copies sold, One Piece holds the Guinness World Record as the best-selling manga series by a single author. Creator Eiichiro Oda has been writing it for over 25 years!"
-    icon: "📚"
-    category: "Records"
-    source: "https://www.guinnessworldrecords.com/world-records/best-selling-comic-book-series-single-author"
-    source_name: "Guinness World Records"
-    
-  - title: "Anime Tourism is a $2.4 Billion Industry"
-    description: "Anime-inspired tourism generates billions for Japan's economy. Cities featured in popular anime see visitor increases of 30-300%, with fans making pilgrimages to real-world locations from their favorite shows."
-    icon: "🗾"
-    category: "Impact"
-    
-  - title: "Voice Actors Are Japan's Hidden Superstars"
-    description: "Japanese voice actors (seiyuu) have massive celebrity status with sold-out concerts, fan clubs, and endorsement deals. Top seiyuu like Kana Hanazawa and Mamoru Miyano earn millions and have dedicated fan followings rivaling pop stars."
-    icon: "🎤"
-    category: "Industry"
+  - title: "Your Brain on Music"
+    description: "Listening to music releases dopamine, the same pleasure chemical released during eating and other rewarding activities."
+  - title: "The Universal Heartbeat"
+    description: "Most music across cultures is based on a tempo between 60-140 beats per minute, roughly matching the human heart rate."
+  - title: "The Silent Symphony"
+    description: "Composer John Cage's piece '4'33\"' consists of four minutes and thirty-three seconds of silence, challenging the definition of music."
 
+# Interactive Trivia
 trivia:
-  - question: "In 'Bleach', what is the name of Ichigo's Zanpakutō that he first unleashes as a Bankai?"
-    options: ["Zangetsu", "Tensa Zangetsu", "Engetsu", "Benihime"]
-    correct_answer: 1
-    explanation: "Tensa Zangetsu is the name of his Bankai, manifesting as a sleek, black-bladed katana."
-  - question: "Which of these is NOT a common isekai trope?"
-    options: ["Reincarnated by a truck", "Getting stuck in a video game", "Attending a magic high school", "Becoming a famous musician in Tokyo"]
-    correct_answer: 3
-    explanation: "While music anime exist, it's not a standard trope for the isekai (another world) genre."
-  - question: "What is the core alchemical principle in 'Fullmetal Alchemist'?"
-    options: ["The Law of Surprise", "The Force", "Equivalent Exchange", "The Way of the Samurai"]
-    correct_answer: 2
-    explanation: "Equivalent Exchange is the fundamental law: to obtain, something of equal value must be lost."
-  - question: "Which Studio Ghibli film was the first to win an Academy Award?"
-    options: ["Princess Mononoke", "Spirited Away", "Howl's Moving Castle", "My Neighbor Totoro"]
-    correct_answer: 1
-    explanation: "Spirited Away won the Academy Award for Best Animated Feature in 2003, making it the first anime film to win an Oscar."
-  - question: "In Attack on Titan, what is the name of the military branch that fights Titans outside the walls?"
-    options: ["Military Police", "Garrison Regiment", "Survey Corps", "Titan Defense Force"]
-    correct_answer: 2
-    explanation: "The Survey Corps (Scouting Legion) is the branch that ventures beyond the walls to fight Titans and explore the outside world."
+  - question: "Which instrument has the largest range of pitches?"
+    options:
+      - text: "Piano"
+        correct: true
+      - text: "Violin"
+        correct: false
+      - text: "Harp"
+        correct: false
+      - text: "Organ"
+        correct: false
+    explanation: "A standard piano covers over 7 octaves, giving it the widest pitch range of any common instrument."
 
+  - question: "What is the name given to the study of music from different cultures?"
+    options:
+      - text: "Ethnomusicology"
+        correct: true
+      - text: "Music Anthropology"
+        correct: false
+      - text: "Cultural Sonology"
+        correct: false
+      - text: "World Music Studies"
+        correct: false
+    explanation: "Ethnomusicology examines music in its cultural context worldwide."
+
+# Current Projects
 current_projects:
-  - name: "The Ultimate Watchlist & Tracker"
-    description: "A unified platform to track seasonal anime, share lists with friends, and never miss an episode."
-    tech_stack: ["React", "Node.js", "MongoDB"]
-    status: "In Progress"
-    progress: 45
-    milestones_completed: 3
-    milestones_total: 7
-    last_updated: "TBD"
-    icon: "fas fa-list-check"
-    url: "#"
-    github_url: "#"
-  - name: "The Hidden Gem Discovery Engine"
-    description: "Tired of the same recommendations? A tool to unearth old and obscure anime you'll actually love."
-    tech_stack: ["Python", "TensorFlow", "FastAPI"]
-    status: "Planning"
-    progress: 15
-    milestones_completed: 1
-    milestones_total: 5
-    last_updated: "TBD"
-    icon: "fas fa-search"
-    url: "#"
-    github_url: "#"
+  - name: "The Contextual Playlist Engine"
+    icon: "🎵"
+    description: "A smart system that curates music based on activity, mood, and current environment rather than just listening history."
+    status: "Vision Stage"
+    progress: 30
+    tech_stack: ["TBD"]
+    link: "#"
 
+  - name: "Social Music Discovery"
+    icon: "🎧"
+    description: "A platform that makes it effortless to share and discover music across different streaming services with friends."
+    status: "Ideation"
+    progress: 15
+    tech_stack: ["TBD"]
+    link: "#"
+
+# External Platforms
 external_platforms:
   - name: "Spotify"
+    icon: "fab fa-spotify"
     description: "Curated playlists and music discovery"
     url: "https://open.spotify.com/user/gmanthenoxus"
-    icon: "fab fa-spotify"
     color: "#1DB954"
 
   - name: "Last.fm"
+    icon: "fab fa-lastfm"
     description: "Music tracking and listening statistics"
     url: "https://last.fm/user/gmanthenoxus"
-    icon: "fab fa-lastfm"
     color: "#D51007"
 
   - name: "SoundCloud"
+    icon: "fab fa-soundcloud"
     description: "Independent artists and underground tracks"
     url: "https://soundcloud.com/gmanthenoxus"
-    icon: "fab fa-soundcloud"
     color: "#FF5500"
 
+# Call-to-Action
 cta:
-  title: "Love Anime Tech?"
-  description: "Let's talk about the future of fan tools, from better discovery to social sharing."
-  button_text: "Start a Conversation"
-  button_url: "/contact"
+  title: "Believe Music Should Adapt to Your Life?"
+  description: "Join me in building HarmonyHub—intelligent music tools that understand context, not just algorithms. Follow the journey as we create smarter, more social listening experiences."
+  button_text: "Follow the Journey"
+  button_url: "/quest-progress.html"
+
+# Empty States
+empty_states:
+  projects: "Like composing a symphony, great music projects require harmony and patience—the next breakthrough is in the works!"
 ---
 
-## The Beginning
+## My Music Philosophy
 
-My journey began in junior secondary school, fueled by the passionate discussions of my roommates. I took the plunge with *Bleach*, completely unaware of the massive world I was stepping into. The hook was set deep the first time Ichigo unleashed his Bankai. The sheer scale, the power shift, the visual spectacle it was a defining "I get it now" moment that transformed me from a curious observer into a dedicated fan.
+Music, to me, is life story portrayed in sound. Every song is a chapter from an artist's soul—whether through their lyrics, the rhythm they produce, or the beat they craft. I may not always remember the lyrics, but I remember how a song makes me feel. This emotional resonance is what transforms music from background noise into a powerful narrative force that scores our lives.
 
-## The Deep Dive
+## The Journey: From Family Band to Daily Companion
 
-From there, I dove headfirst into the world of light novels and isekai. *Overlord* was my gateway drug. It wasn't just about the power fantasy; it was the adventure, the freedom to shape a world, the stunning beauty of its scenes, and the philosophical question of what one *does* with absolute power.
+My musical foundation was built early, learning to play the saxophone, piano, guitar, and clarinet. This technical understanding gave me a deep appreciation for the craft behind the art. At home, the soundtrack was a rich blend of heavy African rhythms from legends like Fela, mixed with the pop harmonies of Backstreet Boys and Westlife. This eclectic upbringing taught me that good music knows no genre boundaries.
 
-## The Daily Ritual
+Today, music is my ultimate utility player. It's the ginger that fuels my gym sessions, the outlet that helps me process emotions, the focus booster for deep work, and the perfect companion on casual strolls. I've embraced being a musical explorer, constantly asking friends to curate playlists for different experiences and happily diving into Spotify's shuffle to discover new sounds.
 
-Now, I'm a daily consumer. My ritual is built on the mental patience to wait a week for a new episode, filled by restarting old favorites to catch missed plots and hunting for hidden gems. Anime is my companion for meals, my rest after work, and my perfect distraction. I've reached that point where it feels like there's no isekai left unseen.
+## The Vision: Smarter Music Discovery
 
-## The Builder's Vision
+My current favorites, J. Cole and Burna Boy, represent the blend of storytelling and rhythm I love. But my true passion lies in fixing how we discover and share music. Why should our playlists be so siloed? Why can't our music adapt to what we're doing and how we're feeling, rather than just what we've listened to before?
 
-This deep dive has made the industry's pain points painfully clear. I've spent hours, like searching for the psychological sports masterpiece *One Outs*, only to find it tucked away on an obscure YouTube channel. Keeping up with seasonal releases is a part-time job, and there's no easy way to share the experience to see what my friends are watching or to build a shared watchlist.
-
-This frustration is where my passion for anime meets my skills as a builder. I see a world where better tools can make being a fan seamless and more social. My goal is to build that world.
+I envision tools that make music social again—not locked to one platform, but fluid across services. Tools that understand that sometimes you need a pump-up playlist for the gym, and other times you need a calming soundtrack for a walk. The future of music tech isn't just about bigger libraries; it's about smarter, more contextual, and more human listening experiences.

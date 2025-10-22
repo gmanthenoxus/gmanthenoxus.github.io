@@ -118,11 +118,11 @@ empty_states:
 - **Projects**: Smart Recipe Manager, Flavor Profile Analyzer
 - **Content**: 225+ lines on culinary innovation
 
-#### **👟 Sneakers & Street Culture** (`sneakers.md`)
-- **Focus**: Sneaker collecting, market analysis, drop tracking technology
-- **Stats**: 45 pairs collection, 12 brands, 8 successful drops
-- **Projects**: Sneaker Drop Tracker, Collection Manager
-- **Content**: 225+ lines on sneaker culture and technology
+#### **👟 Shoes & Footwear** (`shoes.md`)
+- **Focus**: Footwear collection, sizing solutions, comfort and style balance
+- **Stats**: 15+ pairs collection, size 44 expertise, expert size guessing
+- **Projects**: Universal Sizing Guide, Smart Collection Tracker
+- **Content**: 320+ lines on footwear culture and technology
 
 #### **💻 Technology & Innovation** (`tech.md`)
 - **Focus**: Full-stack development, emerging technologies, system architecture

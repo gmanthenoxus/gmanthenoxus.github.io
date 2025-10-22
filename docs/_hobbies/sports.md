@@ -379,9 +379,9 @@ empty_states:
 # Call to Action
 cta:
   title: "Tired of Showing Up to Empty Courts?"
-  description: "Let's build better tools for the casual sports community together."
-  button_text: "Share Your Ideas"
-  button_url: "/contact"
+  description: "Join me in building Athlehub—the sports-first platform that solves coordination, celebrates casual athletes, and builds stronger communities. Follow the journey as we create tools the sports community deserves."
+  button_text: "Follow the Journey"
+  button_url: "/quest-progress.html"
 ---
 
 ## My Sports Journey

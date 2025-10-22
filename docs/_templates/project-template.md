@@ -2,7 +2,7 @@
 layout: post
 title: "Project Name"
 date: YYYY-MM-DD
-hobby: category  # sports, sneakers, fitness, games, food, tech, anime
+hobby: category  # sports, shoes, fitness, games, music, tech, anime
 description: "Brief project description for cards and previews (1-2 sentences that capture the essence and impact)"
 image: "/assets/images/projects/project-name.jpg"
 status: "completed"  # completed, development, planning, beta-testing

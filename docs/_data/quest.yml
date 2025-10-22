@@ -288,16 +288,6 @@ quest:
       target_features: 6
       completed_features: 0
 
-    - name: "Tastebuds"
-      category: "food"
-      status: "planned"
-      progress: 0
-      description: "Social kitchen hub for roommates, families, and friends"
-      color: "#E67E22"
-      icon: "fas fa-utensils"
-      target_features: 6
-      completed_features: 0
-
     - name: "Codeflow Studio"
       category: "tech"
       status: "planned"

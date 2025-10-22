@@ -601,7 +601,7 @@ function initHobbyNavigation() {
         { name: 'Fitness', icon: 'fas fa-dumbbell', url: '/hobbies/fitness', color: '#4ECDC4', description: 'From forced punishment to purposeful strength' },
         { name: 'Games', icon: 'fas fa-gamepad', url: '/hobbies/games', color: '#9B59B6', description: 'From Nintendo 64 magic to midnight lobbies' },
         { name: 'Music', icon: 'fas fa-music', url: '/hobbies/music', color: '#E91E63', description: 'From indie to pop. Building active music discovery companions' },
-        { name: 'Sneakers', icon: 'fas fa-shoe-prints', url: '/hobbies/sneakers', color: '#FFE5B4', description: 'The culture, the craft, the community' },
+        { name: 'Shoes', icon: 'fas fa-shoe-prints', url: '/hobbies/shoes', color: '#95A5A6', description: 'Artistic expression meets perfect comfort' },
         { name: 'Sports', icon: 'fas fa-basketball-ball', url: '/hobbies/sports', color: '#2E86AB', description: 'Where passion meets performance' },
         { name: 'Tech', icon: 'fas fa-laptop-code', url: '/hobbies/tech', color: '#E3F2FD', description: 'Exploring the cutting edge of technology' }
     ];
@@ -649,7 +649,7 @@ function initExploreHobbies() {
         { name: 'Fitness', icon: 'fas fa-dumbbell', url: '/hobbies/fitness', color: '#4ECDC4', description: 'From forced punishment to purposeful strength' },
         { name: 'Games', icon: 'fas fa-gamepad', url: '/hobbies/games', color: '#9B59B6', description: 'From Nintendo 64 magic to midnight lobbies' },
         { name: 'Music', icon: 'fas fa-music', url: '/hobbies/music', color: '#E91E63', description: 'From indie to pop. Building active music discovery companions' },
-        { name: 'Sneakers', icon: 'fas fa-shoe-prints', url: '/hobbies/sneakers', color: '#FFE5B4', description: 'The culture, the craft, the community' },
+        { name: 'Shoes', icon: 'fas fa-shoe-prints', url: '/hobbies/shoes', color: '#95A5A6', description: 'Artistic expression meets perfect comfort' },
         { name: 'Sports', icon: 'fas fa-basketball-ball', url: '/hobbies/sports', color: '#2E86AB', description: 'Where passion meets performance' },
         { name: 'Tech', icon: 'fas fa-laptop-code', url: '/hobbies/tech', color: '#E3F2FD', description: 'Exploring the cutting edge of technology' }
     ];

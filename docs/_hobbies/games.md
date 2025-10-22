@@ -314,6 +314,13 @@ external_platforms:
     url: "#"
     color: "#9B59B6"
 
+# Call-to-Action
+cta:
+  title: "Ready to Level Up Your Gaming Experience?"
+  description: "Join me in building Backlog—the ultimate game management platform that helps you organize your library, track your progress, and never forget why you bought that game. From backlog to victory screen."
+  button_text: "Follow the Journey"
+  button_url: "/quest-progress.html"
+
 # Empty States
 empty_states:
   projects: "Like leveling up in an RPG, great gaming projects require patience and strategy—the next breakthrough is loading!"

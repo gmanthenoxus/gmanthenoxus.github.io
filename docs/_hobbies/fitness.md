@@ -151,7 +151,7 @@ section_type: "goals"
 favorites:
   - name: "120kg Bench Press"
     category: "Strength"
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=800&q=80"
     current: "100kg"
     target: "120kg"
     progress: 83
@@ -159,7 +159,7 @@ favorites:
 
   - name: "20 Pull-Ups"
     category: "Bodyweight"
-    image: "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=800&q=80"
+    image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800&q=80"
     current: "15 reps"
     target: "20 reps"
     progress: 75
@@ -300,6 +300,13 @@ external_platforms:
     description: "Your activity tracking platform here"
     url: "#"
     color: "#4ECDC4"
+
+# Call-to-Action
+cta:
+  title: "Ready to Train Smarter?"
+  description: "Join me in building the future of intelligent fitness tracking. RepCore is coming soon—a tool that doesn't just log your workouts, but helps you understand your progress and optimize your training."
+  button_text: "Follow the Journey"
+  button_url: "/quest-progress.html"
 
 # Empty States
 empty_states:

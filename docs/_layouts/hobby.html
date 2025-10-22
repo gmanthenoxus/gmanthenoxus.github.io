@@ -45,7 +45,7 @@ layout: default
 
                 <!-- Navigation -->
                 <div class="hero-nav">
-                    <a href="/hobbies/" class="back-btn">
+                    <a href="{{ site.baseurl }}/hobbies.html" class="back-btn">
                         <i class="fas fa-arrow-left"></i> Back to Hobbies
                     </a>
                 </div>
@@ -54,11 +54,11 @@ layout: default
     </header>
 
     <main class="hobby-main">
-        <div class="container">
-            
+
             <!-- Enhanced Statistics Dashboard -->
             {% if page.statistics and page.statistics.stats and page.statistics.stats.size > 0 %}
             <section class="hobby-stats-dashboard">
+                <div class="container">
                 <div class="hobby-stats-header">
                     <h2><i class="fas fa-chart-line"></i> Statistics Dashboard</h2>
 
@@ -148,21 +148,24 @@ layout: default
                     {% endfor %}
                 </div>
 
-
+                </div>
             </section>
             {% endif %}
 
             <!-- Personal Journey Section -->
             <section class="hobby-personal-journey">
+                <div class="container">
                 <h2><i class="fas fa-map-marked-alt"></i> My Journey</h2>
                 <div class="hobby-journey-content">
                     {{ content }}
+                </div>
                 </div>
             </section>
 
             <!-- Favorites/Goals Section -->
             {% if page.favorites and page.favorites.size > 0 %}
             <section class="hobby-favorites-section hobby-favorites-{{ page.slug }}">
+                <div class="container">
                 {% if page.section_type == "goals" %}
                 <h2><i class="fas fa-bullseye"></i> My Goals</h2>
                 {% else %}
@@ -242,6 +245,12 @@ layout: default
                                         <i class="fas fa-clock"></i>
                                         <span>{{ favorite.duration }}</span>
                                     </div>
+                                    {% if favorite.platform %}
+                                    <div class="game-info-item">
+                                        <i class="fas fa-dice"></i>
+                                        <span>{{ favorite.platform }}</span>
+                                    </div>
+                                    {% endif %}
                                 {% endif %}
                             </div>
                         </div>
@@ -469,12 +478,52 @@ layout: default
                     {% endfor %}
                 </div>
                 {% endif %}
+                </div>
+            </section>
+            {% endif %}
+
+            <!-- Hit List Section (Shoes/Sneakers) -->
+            {% if page.hit_list and page.hit_list.size > 0 %}
+            <section class="hobby-hit-list-section">
+                <div class="container">
+                <h2><i class="fas fa-crosshairs"></i> The Hit List</h2>
+                <p class="hit-list-subtitle">My ultimate wishlist spanning lifestyle, performance, and formal footwear</p>
+
+                <div class="hit-list-grid">
+                    {% for shoe in page.hit_list %}
+                    <div class="hit-list-card" data-priority="{{ shoe.priority }}" data-category="{{ shoe.category | downcase }}">
+                        {% if shoe.image %}
+                        <div class="hit-list-image" style="background-image: url('{{ shoe.image }}');">
+                            <div class="hit-list-overlay">
+                                <span class="hit-list-status {{ shoe.status | downcase | replace: ' ', '-' }}">
+                                    {{ shoe.status }}
+                                </span>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="hit-list-content">
+                            <h3>{{ shoe.name }}</h3>
+                            <div class="hit-list-details">
+                                <span class="hit-list-colorway">
+                                    <i class="fas fa-palette"></i> {{ shoe.colorway }}
+                                </span>
+                                <span class="hit-list-category {{ shoe.category | downcase }}">
+                                    <i class="fas fa-tag"></i> {{ shoe.category }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
             </section>
             {% endif %}
 
             <!-- Fun Facts Section -->
             {% if page.fun_facts and page.fun_facts.size > 0 %}
             <section class="hobby-fun-facts">
+                <div class="container">
                 <h2><i class="fas fa-lightbulb"></i> Fun Facts</h2>
 
                 <div class="hobby-facts-grid">
@@ -501,12 +550,14 @@ layout: default
                     </div>
                     {% endfor %}
                 </div>
+                </div>
             </section>
             {% endif %}
 
             <!-- Interactive Trivia Section -->
             {% if page.trivia and page.trivia.size > 0 %}
             <section class="hobby-trivia-section">
+                <div class="container">
                 <h2><i class="fas fa-brain"></i> Test Your Knowledge</h2>
 
                 <!-- Option B: Quiz Mode with Timer (Uniform format for all hobby pages) -->
@@ -656,12 +707,14 @@ layout: default
                     </div>
                     {% endfor %}
                 </div>
+                </div>
             </section>
             {% endif %}
 
             <!-- Current Projects Section -->
             {% if page.current_projects and page.current_projects.size > 0 %}
             <section class="current-projects">
+                <div class="container">
                 <h2><i class="fas fa-code"></i> Current Projects</h2>
                 <div class="projects-grid">
                     {% for project in page.current_projects %}
@@ -705,14 +758,17 @@ layout: default
                     </div>
                     {% endfor %}
                 </div>
+                </div>
             </section>
             {% else %}
             <section class="current-projects">
+                <div class="container">
                 <h2><i class="fas fa-code"></i> Current Projects</h2>
                 <div class="hobby-empty-state">
                     <i class="fas fa-hammer"></i>
                     <h3>Building Something Amazing</h3>
                     <p>Projects related to {{ page.title | downcase }} are currently in the planning phase. Check back soon for updates!</p>
+                </div>
                 </div>
             </section>
             {% endif %}
@@ -720,6 +776,7 @@ layout: default
             <!-- External Platforms Section -->
             {% if page.external_platforms and page.external_platforms.size > 0 %}
             <section class="hobby-external-platforms">
+                <div class="container">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
                 <div class="hobby-platforms-grid">
                     {% for platform in page.external_platforms %}
@@ -733,14 +790,17 @@ layout: default
                     </a>
                     {% endfor %}
                 </div>
+                </div>
             </section>
             {% else %}
             <section class="hobby-external-platforms">
+                <div class="container">
                 <h2><i class="fas fa-globe"></i> Find Me Online</h2>
                 <div class="hobby-empty-state">
                     <i class="fas fa-link"></i>
                     <h3>Connecting Soon</h3>
                     <p>I'm working on building my presence in the {{ page.title | downcase }} community. Stay tuned for platform links!</p>
+                </div>
                 </div>
             </section>
             {% endif %}
@@ -748,6 +808,7 @@ layout: default
             <!-- Call-to-Action Section -->
             {% if page.cta %}
             <section class="hobby-cta">
+                <div class="container">
                 <div class="hobby-cta-content">
                     <h2>{{ page.cta.title }}</h2>
                     <p>{{ page.cta.description }}</p>
@@ -755,16 +816,18 @@ layout: default
                         {{ page.cta.button_text }} <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
+                </div>
             </section>
             {% endif %}
 
             <!-- Explore Other Hobbies Section -->
             <section class="hobby-explore-section">
+                <div class="container">
                 <h2><i class="fas fa-arrow-circle-right"></i> Continue Exploring</h2>
                 <p class="hobby-explore-subtitle">Discover more passions in my journey</p>
                 <div class="hobby-explore-grid" id="otherHobbiesGrid"></div>
+                </div>
             </section>
-        </div>
     </main>
 </div>
 

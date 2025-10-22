@@ -3,38 +3,104 @@ layout: hobby
 title: "Tech"
 slug: tech
 emoji: "💻"
-color: "#E3F2FD"
-description: "From hardware to software. Exploring the cutting edge of technology and innovation."
+color: "#3498DB"
+description: "From cyber cafe curiosity to building solutions for real human problems. My journey through code as a tool for meaningful improvement."
 
 # Rotating Quotes
 quotes:
-  - text: "Technology is best when it brings people together."
-    author: "Matt Mullenweg"
-  - text: "The advance of technology is based on making it fit in so that you don't really even notice it."
-    author: "Bill Gates"
-  - text: "Any sufficiently advanced technology is indistinguishable from magic."
-    author: "Arthur C. Clarke"
-  - text: "Innovation distinguishes between a leader and a follower."
-    author: "Steve Jobs"
+  - text: "Technology is the improvement of everyday activities from the curiosity and for the interest of man."
+    author: "Moses Gana"
+    context: "My personal definition of what technology should be."
+  - text: "The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation."
+    author: "Leo Cherne"
+    context: "On the symbiotic relationship between human creativity and computational power."
+  - text: "The best way to predict the future is to invent it."
+    author: "Alan Kay"
+    context: "A call to action for builders and creators."
 
 # Live Statistics Dashboard
-stats:
-  - value: "8+"
-    label: "Programming Languages"
-    context: "JavaScript, Python, Java, C++, and more"
-    progress: 80
-  - value: "25+"
-    label: "Tech Projects Built"
-    context: "Web apps, mobile apps, and automation tools"
-    progress: 75
-  - value: "5"
-    label: "Years Experience"
-    context: "Professional and personal development"
-    progress: 70
-  - value: "12"
-    label: "Tech Stacks Mastered"
-    context: "Full-stack development across platforms"
-    progress: 85
+statistics:
+  # Time filter options
+  time_periods:
+    - id: "week"
+      label: "This Week"
+      active: false
+    - id: "month"
+      label: "This Month"
+      active: false
+    - id: "year"
+      label: "This Year"
+      active: true
+    - id: "all"
+      label: "All Time"
+      active: false
+
+  # Main statistics
+  stats:
+    - id: "languages_mastered"
+      label: "Languages Mastered"
+      icon: "fas fa-code"
+      value: "8+"
+      numeric_value: 8
+      progress: 85
+      trend: "up"
+      trend_value: "Always learning"
+      tooltip: "Python, JavaScript, C, C++, Java, and more—constantly expanding"
+      milestone:
+        reached: true
+        title: "Polyglot Developer"
+        icon: "💻"
+        description: "Mastered 5+ programming languages"
+
+    - id: "first_code"
+      label: "First Line of Code"
+      icon: "fas fa-terminal"
+      value: "Hello World"
+      numeric_value: 100
+      progress: 100
+      trend: "stable"
+      trend_value: "Where it all began"
+      tooltip: "The magical moment that started the journey—still remember the thrill"
+      milestone:
+        reached: true
+        title: "Developer Origins"
+        icon: "🎯"
+        description: "Wrote your first program"
+
+    - id: "tech_philosophy"
+      label: "Tech Philosophy"
+      icon: "fas fa-lightbulb"
+      value: "Human-Centered"
+      numeric_value: 95
+      progress: 95
+      trend: "stable"
+      trend_value: "Purpose-driven"
+      tooltip: "Technology should solve real human problems, starting with your own"
+      milestone:
+        reached: true
+        title: "Purpose-Driven Builder"
+        icon: "🎨"
+        description: "Building solutions that matter"
+
+    - id: "learning_mindset"
+      label: "Learning Mindset"
+      icon: "fas fa-brain"
+      value: "Always Curious"
+      numeric_value: 100
+      progress: 100
+      trend: "up"
+      trend_value: "Never stops"
+      tooltip: "Constantly exploring new technologies and connecting dots across domains"
+      comparison:
+        type: "mindset"
+        label: "Curiosity Level"
+        value: "Limitless"
+        percentage: 100
+      milestone:
+        reached: true
+        title: "Eternal Student"
+        icon: "📚"
+        description: "Never stop learning and exploring"
 
 # World Statistics for Context
 world_stats:
@@ -57,90 +123,72 @@ world_stats:
 
 # Personal Journey
 personal_journey:
-  origin_story: "Started with curiosity about how computers work, taking apart old machines and learning to code simple programs. What began as tinkering with HTML and CSS evolved into a deep passion for understanding how technology shapes our world and building solutions that make life better."
-  current_status: "Actively developing across multiple technology stacks while staying current with emerging trends like AI, blockchain, and edge computing. Currently focused on building scalable applications and exploring the intersection of technology with other interests."
+  origin_story: "My 'wow' moment came in a cyber cafe, the first time I touched a computer. The sheer potential felt incredible, and my curiosity only deepened from there. Then came that magical first Hello World—the moment I knew this was my field."
+  current_status: "Building solutions that bridge the gap between technical skills and real-world problems I encounter in daily life and hobbies. Constantly exploring new technologies and connecting dots across different domains. Engaged with the community through meetups and teaching."
   goals:
-    - "Master machine learning and AI development"
-    - "Build a successful SaaS product from scratch"
-    - "Contribute to major open-source projects"
-    - "Explore quantum computing applications"
-    - "Develop technology solutions for social impact"
+    - "Build 49 projects across 7 passion domains"
+    - "Create tools that solve real human problems"
+    - "Master emerging technologies and frameworks"
+    - "Share knowledge through teaching and community"
+    - "Bridge technology with personal interests"
   achievements:
-    - "Built and deployed 25+ web applications and tools"
-    - "Mastered full-stack development across 5+ frameworks"
-    - "Created automation tools that save 10+ hours weekly"
-    - "Contributed to open-source projects with 1000+ stars"
-  favorites:
-    - name: "Full-Stack Development"
-      reason: "The satisfaction of building complete solutions from database to user interface"
-    - name: "API Design"
-      reason: "Creating elegant interfaces that enable seamless system integration"
-    - name: "Performance Optimization"
-      reason: "The challenge of making systems faster, more efficient, and scalable"
-    - name: "Emerging Technologies"
-      reason: "Exploring cutting-edge tools and frameworks that push boundaries"
+    - "Progressed from static webpages to full-stack development"
+    - "Mastered Python, C, C++, JavaScript, and more"
+    - "Built foundation that makes learning new tech natural"
+    - "Engaged with tech community through meetups and teaching"
 
 # Fun Facts
 fun_facts:
-  - icon: "⚡"
-    title: "Moore's Law Evolution"
-    description: "While traditional Moore's Law is slowing, specialized chips like GPUs and AI processors are advancing exponentially, with some AI chips improving 10x every 2 years instead of the traditional 2x."
-    source: "Semiconductor Industry Report 2024"
-  - icon: "🌍"
-    title: "Internet Scale"
-    description: "Every day, humans create 2.5 quintillion bytes of data—so much that 90% of all data in the world was created in just the last two years, requiring revolutionary storage and processing technologies."
-    source: "Data Analytics Institute 2024"
-  - icon: "🔋"
-    title: "Energy Efficiency"
-    description: "Modern smartphones are over 100,000 times more powerful than the computers that guided Apollo 11 to the moon, yet use less power than a light bulb thanks to incredible advances in chip efficiency."
-    source: "Mobile Technology Evolution Study"
-  - icon: "🚀"
-    title: "Development Speed"
-    description: "The average software project today uses over 500 open-source dependencies, allowing developers to build in weeks what would have taken years to create from scratch just a decade ago."
-    source: "Open Source Analytics 2024"
+  - title: "The First Computer Bug"
+    description: "The term 'debugging' originated in 1947 when engineers found an actual moth stuck in Harvard's Mark II computer."
+  - title: "Code is Everywhere"
+    description: "The average car today contains over 100 million lines of code—more than a Boeing 787 Dreamliner."
+  - title: "The First Website"
+    description: "The world's first website, created by Tim Berners-Lee in 1991, is still online at its original URL."
 
 # Interactive Trivia
 trivia:
-  - question: "What does 'API' stand for in software development?"
+  - question: "What was the first high-level programming language?"
     options:
-      - text: "Application Programming Interface"
+      - text: "FORTRAN"
         correct: true
-      - text: "Advanced Programming Integration"
+      - text: "COBOL"
         correct: false
-      - text: "Automated Process Interaction"
+      - text: "C"
         correct: false
-      - text: "Application Process Interface"
+      - text: "Assembly"
         correct: false
-    explanation: "API stands for Application Programming Interface—a set of protocols and tools that allows different software applications to communicate with each other!"
+    explanation: "FORTRAN (Formula Translation), developed in 1957, was the first widely used high-level language."
 
-  - question: "Which programming paradigm focuses on organizing code around objects and classes?"
+  - question: "Which of these is NOT a programming paradigm?"
     options:
-      - text: "Functional Programming"
+      - text: "Object-Oriented"
         correct: false
-      - text: "Object-Oriented Programming"
+      - text: "Functional"
+        correct: false
+      - text: "Procedural"
+        correct: false
+      - text: "Computational"
         correct: true
-      - text: "Procedural Programming"
-        correct: false
-      - text: "Logic Programming"
-        correct: false
-    explanation: "Object-Oriented Programming (OOP) organizes code around objects that contain both data and methods, promoting code reusability and modularity!"
+    explanation: "While 'computational' relates to computing, it's not considered a programming paradigm itself."
 
 # Current Projects
 current_projects:
-  - name: "Personal Automation Suite"
-    icon: "🤖"
-    description: "Comprehensive automation platform that integrates with various APIs to automate daily tasks, from social media posting to expense tracking and habit monitoring."
-    status: "Development"
-    progress: 70
-    tech_stack: ["Python", "FastAPI", "React", "PostgreSQL", "Docker", "Various APIs"]
-    link: "/projects/automation-suite"
+  - name: "Passion-Driven Development Framework"
+    icon: "🎯"
+    description: "A methodology and toolset for systematically connecting technical skills with personal interests to build meaningful projects."
+    status: "In Development"
+    progress: 60
+    tech_stack: ["TBD"]
+    link: "#"
 
-  - name: "AI-Powered Code Assistant"
-    icon: "🧠"
-    description: "Intelligent coding companion that analyzes code patterns, suggests optimizations, and helps with debugging using machine learning and natural language processing."
-    status: "Research"
-    progress: 40
-    tech_stack: ["Python", "TensorFlow", "OpenAI API", "VS Code Extension", "Node.js"]
+  - name: "The Problem-Solver's Toolkit"
+    icon: "🛠️"
+    description: "A collection of reusable solutions and patterns for the everyday problems I encounter across my hobbies."
+    status: "Ideation"
+    progress: 20
+    tech_stack: ["TBD"]
+    link: "#"
 
 # External Platforms
 external_platforms:
@@ -160,6 +208,13 @@ external_platforms:
     url: "https://twitter.com/gmanthenoxus_tech"
     color: "#1DA1F2"
 
+# Call-to-Action
+cta:
+  title: "Believe Technology Should Solve Real Human Problems?"
+  description: "Join me in building tools that make everyday life better, starting with the problems closest to us. Follow the 49 Project Quest as we create solutions that matter."
+  button_text: "Follow the Journey"
+  button_url: "/quest-progress.html"
+
 # Empty States
 empty_states:
   projects: "Like compiling code, great tech projects require patience and attention to detail!"
@@ -168,38 +223,21 @@ empty_states:
   projects_description: "The most revolutionary technologies start as simple ideas. The next breakthrough could be more transformative than the invention of the internet itself!"
 ---
 
-# My Technology Journey
+## My Tech Philosophy
 
-Technology is the great enabler of human potential. What started as curiosity about how computers work has evolved into a deep passion for building solutions, exploring emerging technologies, and understanding how innovation shapes our world and creates new possibilities.
+My personal mantra defines it best: **"Technology is the improvement of everyday activities from the curiosity and for the interest of man."** I believe technology should solve real human problems, starting with the ones closest to you. Code isn't just syntax—it's a creative medium for building solutions that matter, for making life incrementally better, and for turning curiosity into tangible improvement.
 
-## Current Focus Areas
+## The Journey: From Cyber Cafe to Full-Stack Builder
 
-My approach to technology spans multiple domains:
-- **Full-Stack Development**: Building complete applications from backend to frontend
-- **Emerging Technologies**: Exploring AI, blockchain, IoT, and quantum computing
-- **Developer Tools**: Creating utilities that improve productivity and workflow
-- **System Architecture**: Designing scalable, maintainable, and efficient systems
-- **Open Source**: Contributing to and maintaining community-driven projects
+My "wow" moment came in a cyber cafe, the first time I touched a computer. The sheer potential felt incredible, and my curiosity only deepened from there. Then came that magical first `Hello World`—the moment I knew this was my field. I started building static webpages, then progressed through Python, C, C++, and many more languages, developing a solid foundation that made transitioning between technologies feel natural.
 
-## The Technology Philosophy
+What excites me isn't any single technology, but the endless potential of what's new and emerging. I'm constantly exploring, learning, and connecting dots between different domains. This curiosity fuels my belief that the best solutions often come from unexpected technological intersections.
 
-My approach to technology is guided by several key principles:
+## Building With Purpose
 
-### **Problem-First Development**
-- Starting with real problems that need solving, not just cool technologies
-- Building solutions that genuinely improve people's lives and workflows
-- Focusing on user experience and practical utility over technical complexity
-- Iterating based on feedback and real-world usage patterns
+My approach to technology is deeply practical. I engage with the community through meetups and teaching because I believe knowledge should be shared and collaboration breeds innovation. The projects I'm most passionate about are those that bridge the gap between my technical skills and the real-world problems I encounter in my daily life and hobbies.
 
-### **Continuous Learning**
-- Staying current with rapidly evolving technologies and best practices
-- Experimenting with new frameworks, languages, and development approaches
-- Learning from both successes and failures in personal and professional projects
-- Sharing knowledge through documentation, tutorials, and open-source contributions
-
-### **Quality and Craftsmanship**
-- Writing clean, maintainable code that other developers can understand and extend
-- Implementing proper testing, documentation, and deployment practices
+Whether it's creating tools to organize sports games, building better music discovery systems, or developing fitness apps that actually understand progress, I'm driven by the same principle: technology should serve human needs, not the other way around. The most satisfying code is the kind that disappears into the background, leaving only the improvement it creates.
 - Optimizing for performance, security, and scalability from the beginning
 - Taking pride in the elegance and efficiency of technical solutions
 

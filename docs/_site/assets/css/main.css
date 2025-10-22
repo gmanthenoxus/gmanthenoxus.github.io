@@ -5634,12 +5634,14 @@ blockquote p {
    SECTION: Statistics Dashboard
    ======================================== */
 .hobby-stats-dashboard {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Stats Header with Time Filters */
@@ -6058,12 +6060,14 @@ blockquote p {
    SECTION: Personal Journey
    ======================================== */
 .hobby-personal-journey {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .hobby-journey-content {
@@ -6108,14 +6112,197 @@ blockquote p {
    SECTION: Favorites
    ======================================== */
 .hobby-favorites-section {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+/* ========================================
+   HIT LIST SECTION (SHOES/SNEAKERS)
+   ======================================== */
+.hobby-hit-list-section {
+  margin-bottom: 0;
+  padding: 5rem 0;
+  background: #f8f9fa;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.hobby-hit-list-section h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.hobby-hit-list-section h2 i {
+  color: var(--hobby-color, #95A5A6);
+  margin-right: 0.5rem;
+}
+.hobby-hit-list-section .hit-list-subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.hit-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hit-list-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hit-list-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.hit-list-card[data-priority="1"] {
+  border-top: 4px solid #e74c3c;
+}
+.hit-list-card[data-priority="2"] {
+  border-top: 4px solid #f39c12;
+}
+.hit-list-card[data-priority="3"] {
+  border-top: 4px solid #3498db;
+}
+
+.hit-list-image {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hit-list-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.hit-list-status {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.hit-list-status.high-priority {
+  background: #e74c3c;
+  color: white;
+}
+.hit-list-status.grail {
+  background: #f39c12;
+  color: white;
+}
+.hit-list-status.dream-pair {
+  background: #9b59b6;
+  color: white;
+}
+.hit-list-status.active-hunt {
+  background: #3498db;
+  color: white;
+}
+.hit-list-status.performance {
+  background: #2ecc71;
+  color: white;
+}
+.hit-list-status.winter-essential, .hit-list-status.formal-collection, .hit-list-status.versatile-essential, .hit-list-status.comfort-focus, .hit-list-status.regular-rotation {
+  background: #95a5a6;
+  color: white;
+}
+
+.hit-list-content {
+  padding: 1.5rem;
+}
+.hit-list-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.hit-list-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.hit-list-details span {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+.hit-list-details span i {
+  margin-right: 0.5rem;
+  color: var(--hobby-color, #95A5A6);
+}
+
+.hit-list-colorway {
+  font-weight: 500;
+}
+
+.hit-list-category {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+.hit-list-category.lifestyle {
+  color: #3498db;
+}
+.hit-list-category.basketball {
+  color: #e74c3c;
+}
+.hit-list-category.boots {
+  color: #8e44ad;
+}
+.hit-list-category.dress {
+  color: #2c3e50;
+}
+
+/* Responsive Design for Hit List */
+@media (max-width: 768px) {
+  .hit-list-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .hit-list-image {
+    height: 180px;
+  }
+  .hobby-hit-list-section h2 {
+    font-size: 2rem;
+  }
+  .hit-list-subtitle {
+    font-size: 1rem;
+  }
+}
 /* ========================================
    FITNESS GOALS LAYOUT - COMPACT HORIZONTAL
    ======================================== */
@@ -6848,11 +7035,13 @@ blockquote p {
    SECTION: Fun Facts
    ======================================== */
 .hobby-fun-facts {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border-radius: 24px;
-  border: 2px solid var(--hobby-color-light);
+  border-radius: 0;
+  border: none;
+  border-top: 2px solid var(--hobby-color-light);
+  border-bottom: 2px solid var(--hobby-color-light);
 }
 .hobby-fun-facts h2 {
   text-align: center;
@@ -7056,12 +7245,14 @@ blockquote p {
    SECTION: Interactive Trivia
    ======================================== */
 .hobby-trivia-section {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .hobby-trivia-section h2 {
   text-align: center;
@@ -7546,12 +7737,25 @@ blockquote p {
 }
 /* Current Projects Section - Scoped to hobby pages */
 .hobby-page .current-projects {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.current-projects {
+  margin-bottom: 0;
+  padding: 5rem 0;
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .hobby-page .projects-container {
@@ -7801,11 +8005,13 @@ blockquote p {
    SECTION: External Platforms
    ======================================== */
 .hobby-external-platforms {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
-  border-radius: 24px;
-  border: 2px solid var(--hobby-color-light);
+  border-radius: 0;
+  border: none;
+  border-top: 2px solid var(--hobby-color-light);
+  border-bottom: 2px solid var(--hobby-color-light);
 }
 .hobby-external-platforms h2 {
   font-size: 2rem;
@@ -7926,8 +8132,8 @@ blockquote p {
 }
 
 .hobby-cta {
-  margin-bottom: 3rem;
-  padding: 4rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: linear-gradient(135deg, var(--hobby-color) 0%, var(--hobby-color-dark) 100%);
   color: white;
   text-align: center;
@@ -7994,12 +8200,13 @@ blockquote p {
    SECTION: Explore Other Hobbies
    ======================================== */
 .hobby-explore-section {
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  margin-bottom: 0;
+  padding: 5rem 0;
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 .hobby-explore-section h2 {
@@ -8952,9 +9159,9 @@ blockquote p {
   color: #1a5f5a;
   border: 2px solid rgba(78, 205, 196, 0.4);
 }
-.project-hobby-tag.sneakers {
-  background: linear-gradient(135deg, rgba(255, 229, 180, 0.9), rgba(255, 220, 150, 0.9));
-  color: #7a4510;
+.project-hobby-tag.shoes {
+  background: linear-gradient(135deg, rgba(149, 165, 166, 0.9), rgba(127, 140, 141, 0.9));
+  color: #2c3e50;
   border: 2px solid rgba(255, 200, 120, 0.6);
 }
 .project-hobby-tag.fitness {
