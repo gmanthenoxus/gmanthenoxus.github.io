@@ -9,47 +9,41 @@ color: "#E74C3C"
 quotes:
   - text: "Where words fail, music speaks."
     author: "Hans Christian Andersen"
-    context: "On music's power to communicate beyond language."
+    source: "Attributed"
+    context: "On music's power to communicate beyond language"
   - text: "One good thing about music, when it hits you, you feel no pain."
     author: "Bob Marley"
-    context: "The healing and transformative power of rhythm and melody."
+    source: "Trenchtown Rock"
+    context: "The healing and transformative power of rhythm and melody"
   - text: "Music is the soundtrack of your life."
     author: "Dick Clark"
-    context: "How songs become markers for memories and moments."
+    source: "American Bandstand"
+    context: "How songs become markers for memories and moments"
+  - text: "Music can change the world because it can change people."
+    author: "Bono"
+    source: "U2 Interview, 2005"
+    context: "Rock icon on music's power to inspire social change"
+  - text: "Without music, life would be a mistake."
+    author: "Friedrich Nietzsche"
+    source: "Twilight of the Idols"
+    context: "Philosopher on music as essential to human existence"
 
 # Live Statistics Dashboard
 statistics:
-  # Time filter options
-  time_periods:
-    - id: "week"
-      label: "This Week"
-      active: false
-    - id: "month"
-      label: "This Month"
-      active: false
-    - id: "year"
-      label: "This Year"
-      active: true
-    - id: "all"
-      label: "All Time"
-      active: false
-
   # Main statistics
   stats:
     - id: "instruments_played"
       label: "Instruments Played"
       icon: "fas fa-guitar"
-      value: "4+"
+      value: "4"
       numeric_value: 4
       progress: 80
-      trend: "stable"
-      trend_value: "Multi-instrumentalist"
       tooltip: "Saxophone, piano, guitar, and clarinet—learned from family and personal exploration"
       milestone:
         reached: true
         title: "Multi-Instrumentalist"
         icon: "🎸"
-        description: "Mastered 4+ instruments"
+        description: "Mastered 4 instruments"
 
     - id: "music_companion"
       label: "Music as Companion"
@@ -57,8 +51,6 @@ statistics:
       value: "Daily"
       numeric_value: 100
       progress: 100
-      trend: "stable"
-      trend_value: "Essential daily ritual"
       tooltip: "Music for gym sessions, emotional processing, focus work, and casual strolls"
       milestone:
         reached: true
@@ -72,34 +64,25 @@ statistics:
       value: "Limitless"
       numeric_value: 95
       progress: 95
-      trend: "up"
-      trend_value: "Always exploring"
       tooltip: "From heavy African rhythms to pop harmonies—good music knows no boundaries"
-      comparison:
-        type: "philosophy"
-        label: "Musical Philosophy"
-        value: "No genre boundaries"
-        percentage: 100
       milestone:
         reached: true
         title: "Musical Explorer"
         icon: "🌍"
         description: "Appreciates music across all genres"
 
-    - id: "current_favorites"
-      label: "Current Favorites"
-      icon: "fas fa-star"
-      value: "J. Cole & Burna Boy"
-      numeric_value: 100
-      progress: 100
-      trend: "stable"
-      trend_value: "Storytelling + Rhythm"
-      tooltip: "The perfect blend of lyrical storytelling and infectious African rhythms"
+    - id: "listening_hours"
+      label: "Daily Listening"
+      icon: "fas fa-clock"
+      value: "4-6 hours"
+      numeric_value: 5
+      progress: 85
+      tooltip: "Average daily music listening across all activities"
       milestone:
         reached: true
-        title: "Taste Curator"
-        icon: "🎤"
-        description: "Found your musical identity"
+        title: "Music Enthusiast"
+        icon: "⏰"
+        description: "Music is always playing"
 
 # World Statistics for Context
 world_stats:
@@ -139,6 +122,40 @@ personal_journey:
     - "Developed eclectic taste across all genres"
     - "Made music an essential daily companion"
     - "Found personal favorites that define my identity"
+
+# Current Rotation
+favorites:
+  - name: "J. Cole"
+    category: "Artist"
+    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80"
+    rating: 5
+    genres: ["Hip-Hop", "Rap", "Storytelling"]
+    why: "Master storyteller who weaves personal narratives with social commentary. Every album is a journey through his evolution as an artist and human."
+    top_tracks: ["No Role Modelz", "Middle Child", "Love Yourz"]
+
+  - name: "Burna Boy"
+    category: "Artist"
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80"
+    rating: 5
+    genres: ["Afrobeats", "Afrofusion", "Dancehall"]
+    why: "The African Giant who brings infectious rhythms and powerful messages. His music makes you move while making you think."
+    top_tracks: ["Last Last", "Ye", "On the Low"]
+
+  - name: "Fela Kuti"
+    category: "Artist"
+    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80"
+    rating: 5
+    genres: ["Afrobeat", "Jazz", "Funk"]
+    why: "The pioneer who created Afrobeat and used music as a weapon for social change. His legacy shaped African music forever."
+    top_tracks: ["Water No Get Enemy", "Zombie", "Sorrow Tears and Blood"]
+
+  - name: "Kendrick Lamar"
+    category: "Artist"
+    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80"
+    rating: 5
+    genres: ["Hip-Hop", "Rap", "Conscious"]
+    why: "Poetic genius who pushes the boundaries of hip-hop. His albums are cinematic experiences that demand multiple listens."
+    top_tracks: ["HUMBLE.", "Alright", "DNA."]
 
 # Fun Facts
 fun_facts:

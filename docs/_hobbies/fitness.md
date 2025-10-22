@@ -8,104 +8,26 @@ description: "From forced punishment to purposeful strength. My journey toward t
 
 # Rotating Quotes
 quotes:
-  - text: "The only bad workout is the one that didn't happen."
-    author: "Unknown"
+  - text: "The resistance that you fight physically in the gym and the resistance that you fight in life can only build a strong character."
+    author: "Arnold Schwarzenegger"
+    source: "Total Recall: My Unbelievably True Life Story"
+    context: "Seven-time Mr. Olympia and fitness icon"
   - text: "Strength does not come from physical capacity. It comes from an indomitable will."
     author: "Mahatma Gandhi"
-  - text: "The goal is to be fit, not ripped. To be healthy, not skinny. To be powerful, not bulky. To be happy, not perfect."
-    author: "Unknown"
-
-# Live Statistics Dashboard
-statistics:
-  # Time filter options
-  time_periods:
-    - id: "week"
-      label: "This Week"
-      active: false
-    - id: "month"
-      label: "This Month"
-      active: false
-    - id: "year"
-      label: "This Year"
-      active: true
-    - id: "all"
-      label: "All Time"
-      active: false
-
-  # Main statistics
-  stats:
-    - id: "training_split"
-      label: "Training Split"
-      icon: "fas fa-dumbbell"
-      value: "Push, Pull, Legs"
-      numeric_value: 3
-      progress: 100
-      trend: "stable"
-      trend_value: "Consistent routine"
-      tooltip: "My current workout routine focusing on compound movements"
-      milestone:
-        reached: true
-        title: "Structured Training"
-        icon: "🏋️"
-        description: "Following a proven training split"
-
-    - id: "weekly_consistency"
-      label: "Weekly Consistency"
-      icon: "fas fa-calendar-check"
-      value: "3-4x"
-      numeric_value: 3.5
-      progress: 80
-      trend: "up"
-      trend_value: "+1 from last month"
-      tooltip: "Average training sessions per week"
-      comparison:
-        type: "goal"
-        label: "Goal: 4x/week"
-        value: "Almost there"
-        percentage: 87
-      milestone:
-        reached: false
-        title: "Consistency Master"
-        icon: "📅"
-        description: "Train 4+ times per week consistently"
-        progress: 87
-
-    - id: "current_focus"
-      label: "Current Focus"
-      icon: "fas fa-bullseye"
-      value: "Strength Bulk"
-      numeric_value: 65
-      progress: 65
-      trend: "up"
-      trend_value: "Building phase"
-      tooltip: "Building strength while maintaining lean mass"
-      milestone:
-        reached: false
-        title: "Strength Goal"
-        icon: "🎯"
-        description: "Hit all major lift targets"
-        progress: 65
-
-    - id: "bench_goal"
-      label: "Bench Press Goal"
-      icon: "fas fa-weight-hanging"
-      value: "120kg"
-      numeric_value: 100
-      progress: 70
-      trend: "up"
-      trend_value: "Currently ~100kg"
-      tooltip: "Target bench press max - currently at ~100kg"
-      comparison:
-        type: "goal"
-        label: "Goal: 120kg"
-        value: "20kg to go"
-        percentage: 83
-      milestone:
-        reached: false
-        title: "Bench Master"
-        icon: "💪"
-        description: "Hit 120kg bench press"
-        progress: 83
+    source: "Young India"
+    context: "On the power of mental fortitude"
+  - text: "Take care of your body. It's the only place you have to live."
+    author: "Jim Rohn"
+    source: "The Art of Exceptional Living"
+    context: "Motivational speaker and personal development expert"
+  - text: "The body achieves what the mind believes."
+    author: "Napoleon Hill"
+    source: "Think and Grow Rich"
+    context: "Pioneer of personal success literature"
+  - text: "Physical fitness is not only one of the most important keys to a healthy body, it is the basis of dynamic and creative intellectual activity."
+    author: "John F. Kennedy"
+    source: "Sports Illustrated, 1960"
+    context: "35th President of the United States"
 
 # World Statistics for Context
 world_stats:

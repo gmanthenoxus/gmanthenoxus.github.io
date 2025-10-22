@@ -10,41 +10,35 @@ description: "From artistic expression to everyday comfort. My journey through f
 quotes:
   - text: "Walk with the dreamers, the believers, the courageous, the cheerful, the planners, the doers, the successful people with their heads in the clouds and their feet on the ground."
     author: "Wilfred Peterson"
-    context: "On the importance of staying grounded while dreaming big."
+    source: "The Art of Living"
+    context: "On the importance of staying grounded while dreaming big"
   - text: "Give a girl the right shoes and she can conquer the world."
     author: "Marilyn Monroe"
-    context: "The transformative power of the right footwear."
-  - text: "I have too many shoes? That's like saying I have too many dreams."
-    author: "Unknown"
-    context: "A playful take on shoe collecting."
+    source: "Attributed"
+    context: "The transformative power of the right footwear"
+  - text: "You can never take too much care over the choice of your shoes. Too many women think that they are unimportant, but the real proof of an elegant woman is what is on her feet."
+    author: "Christian Dior"
+    source: "Dior by Dior"
+    context: "Fashion icon on footwear as the foundation of style"
+  - text: "Good shoes take you good places."
+    author: "Seo Min Hyun"
+    source: "Korean Proverb"
+    context: "Ancient wisdom on the journey footwear enables"
+  - text: "To wear dreams on one's feet is to begin to give a reality to one's dreams."
+    author: "Roger Vivier"
+    source: "Legendary Shoe Designer"
+    context: "Pioneer of luxury footwear on shoes as dream manifestation"
 
 # Live Statistics Dashboard
 statistics:
-  # Time filter options
-  time_periods:
-    - id: "week"
-      label: "This Week"
-      active: false
-    - id: "month"
-      label: "This Month"
-      active: false
-    - id: "year"
-      label: "This Year"
-      active: true
-    - id: "all"
-      label: "All Time"
-      active: false
-
   # Main statistics
   stats:
     - id: "current_collection"
       label: "Current Collection"
       icon: "fas fa-shoe-prints"
-      value: "15+"
+      value: "15"
       numeric_value: 15
       progress: 60
-      trend: "stable"
-      trend_value: "Curated rotation"
       tooltip: "Practical yet expressive collection featuring Adidas, Jordan, and more"
       milestone:
         reached: true
@@ -58,8 +52,6 @@ statistics:
       value: "44"
       numeric_value: 44
       progress: 100
-      trend: "stable"
-      trend_value: "The Struggle"
       tooltip: "Size 44 feet—the eternal challenge of inconsistent sizing across brands"
       milestone:
         reached: true
@@ -73,8 +65,6 @@ statistics:
       value: "Comfort & Style"
       numeric_value: 90
       progress: 90
-      trend: "up"
-      trend_value: "Perfect balance"
       tooltip: "Balancing reliability, comfort, aesthetic appeal, and price point"
       milestone:
         reached: true
@@ -88,8 +78,6 @@ statistics:
       value: "Expert"
       numeric_value: 95
       progress: 95
-      trend: "stable"
-      trend_value: "Highly accurate"
       tooltip: "Can accurately guess shoe sizes just by looking at feet—a skill born from experience"
       milestone:
         reached: true

@@ -163,7 +163,7 @@
 @media (max-width: 768px) {
     .hobby-quotes-section {
         margin: 2rem 1rem 0;
-        min-height: 180px;
+        min-height: 200px; /* Increased from 180px */
         padding: 0 1rem;
     }
 
@@ -173,8 +173,8 @@
     }
 
     .hobby-quote-text {
-        font-size: 1.1rem;
-        line-height: 1.7;
+        font-size: 1rem; /* Reduced from 1.1rem for longer quotes */
+        line-height: 1.6; /* Reduced from 1.7 for better fit */
     }
 }
 
@@ -327,6 +327,41 @@
         &:hover {
             background: var(--hobby-color);
         }
+    }
+
+    /* Mobile: Add bounce animation to indicate scrollable content */
+    @media (max-width: 768px) {
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+            pointer-events: none;
+            animation: slideHintBounce 2s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        /* Stop animation after user scrolls */
+        &.scrolled::after {
+            animation: none;
+            opacity: 0;
+        }
+    }
+}
+
+/* Bounce animation for scroll hint */
+@keyframes slideHintBounce {
+    0%, 100% {
+        opacity: 0.7;
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(-10px);
     }
 }
 
@@ -3194,7 +3229,7 @@
     }
 
     .hobby-quote-text {
-        font-size: 1rem;
+        font-size: 0.95rem; /* Slightly smaller for longer quotes */
         line-height: 1.5;
     }
 
@@ -3203,7 +3238,7 @@
     }
 
     .hobby-quote-meta {
-        font-size: 0.75rem;
+        font-size: 0.7rem; /* Slightly smaller */
     }
 
     .hero-nav {

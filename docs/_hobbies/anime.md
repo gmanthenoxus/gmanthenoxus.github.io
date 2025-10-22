@@ -29,20 +29,6 @@ quotes:
     episode: "Episode 54"
 
 statistics:
-  # Time filter options
-  time_periods:
-    - id: "week"
-      label: "This Week"
-      active: false
-    - id: "month"
-      label: "This Month"
-      active: false
-    - id: "year"
-      label: "This Year"
-      active: false
-    - id: "all"
-      label: "All Time"
-      active: true
 
   # Main statistics
   stats:
@@ -52,20 +38,12 @@ statistics:
       value: "15+"
       numeric_value: 15
       progress: 90
-      trend: "stable"
-      trend_value: "+0 this year"
-      comparison:
-        type: "average"
-        label: "vs Average Fan"
-        value: "8 years"
-        percentage: 87
       tooltip: "Been watching anime since 2010, starting with Bleach in junior secondary school"
       milestone:
         reached: true
         title: "Veteran Fan"
         icon: "🏆"
         description: "15+ years in the fandom"
-      chart_data: [5, 8, 10, 12, 14, 15]
 
     - id: "watched"
       label: "Anime Watched"
@@ -73,13 +51,6 @@ statistics:
       value: "500+"
       numeric_value: 500
       progress: 85
-      trend: "up"
-      trend_value: "+12 this month"
-      comparison:
-        type: "goal"
-        label: "Goal: 600"
-        value: "100 to go"
-        percentage: 83
       tooltip: "Completed series across all genres, from action to slice-of-life"
       milestone:
         reached: false
@@ -87,28 +58,19 @@ statistics:
         icon: "🎯"
         description: "Watch 600 anime"
         progress: 83
-      chart_data: [450, 465, 478, 485, 492, 500]
 
     - id: "genres"
       label: "Genres Explored"
       icon: "fas fa-compass"
-      value: "25+"
-      numeric_value: 25
-      progress: 95
-      trend: "stable"
-      trend_value: "+1 this year"
-      comparison:
-        type: "coverage"
-        label: "Genre Coverage"
-        value: "95% of all genres"
-        percentage: 95
-      tooltip: "From action to slice-of-life, explored almost every genre in anime"
+      value: "16/18"
+      numeric_value: 16
+      progress: 89
+      tooltip: "Explored 16 out of 18 identified anime genres"
       milestone:
         reached: true
         title: "Genre Master"
         icon: "🌟"
-        description: "Explored 25+ genres"
-      chart_data: [15, 18, 20, 22, 24, 25]
+        description: "Explored 16/18 genres"
 
     - id: "weekly"
       label: "Weekly Episodes"
@@ -116,13 +78,6 @@ statistics:
       value: "12-15"
       numeric_value: 13.5
       progress: 70
-      trend: "down"
-      trend_value: "-3 from last week"
-      comparison:
-        type: "average"
-        label: "vs Average Viewer"
-        value: "8 episodes"
-        percentage: 68
       tooltip: "Currently following 5 seasonal anime releases"
       milestone:
         reached: false
@@ -130,7 +85,6 @@ statistics:
         icon: "⚡"
         description: "Watch 20+ episodes in a week"
         progress: 67
-      chart_data: [10, 12, 15, 18, 16, 13]
 
 favorites:
   - title: "One Piece"
@@ -304,7 +258,7 @@ cta:
 
 ## The Beginning
 
-My journey began in junior secondary school, fueled by the passionate discussions of my roommates. I took the plunge with *Bleach*, completely unaware of the massive world I was stepping into. The hook was set deep the first time Ichigo unleashed his Bankai. The sheer scale, the power shift, the visual spectacle it was a defining "I get it now" moment that transformed me from a curious observer into a dedicated fan.
+My journey began in junior secondary school, fueled by the passionate discussions of my roommates. I took the plunge with *Bleach*, completely unaware of the massive world I was stepping into. The hook was set deep the first time Ichigo unleashed his Bankai. The sheer scale, the power shift, the visual spectacle—it was a defining "I get it now" moment that transformed me from a curious observer into a dedicated fan.
 
 ## The Deep Dive
 
@@ -316,6 +270,6 @@ Now, I'm a daily consumer. My ritual is built on the mental patience to wait a w
 
 ## The Builder's Vision
 
-This deep dive has made the industry's pain points painfully clear. I've spent hours, like searching for the psychological sports masterpiece *One Outs*, only to find it tucked away on an obscure YouTube channel. Keeping up with seasonal releases is a part-time job, and there's no easy way to share the experience to see what my friends are watching or to build a shared watchlist.
+This deep dive has made the industry's pain points painfully clear. I've spent hours, like searching for the psychological sports masterpiece *One Outs*, only to find it tucked away on an obscure YouTube channel. Keeping up with seasonal releases is a part-time job, and there's no easy way to share the experience—to see what my friends are watching or to build a shared watchlist.
 
 This frustration is where my passion for anime meets my skills as a builder. I see a world where better tools can make being a fan seamless and more social. My goal is to build that world.

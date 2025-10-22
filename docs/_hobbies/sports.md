@@ -10,137 +10,82 @@ description: "From street soccer to the hardwood court. My lifelong journey thro
 quotes:
   - text: "It's not whether you get knocked down, it's whether you get back up."
     author: "Vince Lombardi"
+    source: "NFL Hall of Fame Coach"
+    context: "Legendary Packers coach on resilience and perseverance"
   - text: "Skills fly out the window when you don't play with passion."
     author: "Giannis Antetokounmpo"
+    source: "Post-game interview, 2021"
+    context: "Two-time NBA MVP on the importance of heart in competition"
   - text: "Talent wins games, but teamwork and intelligence win championships."
     author: "Michael Jordan"
+    source: "The Jordan Rules"
+    context: "Six-time NBA champion on what separates good from great"
+  - text: "The more difficult the victory, the greater the happiness in winning."
+    author: "Pelé"
+    source: "My Life and the Beautiful Game"
+    context: "Football legend on the value of hard-earned success"
+  - text: "Hard work beats talent when talent doesn't work hard."
+    author: "Tim Notke"
+    source: "High School Basketball Coach"
+    context: "On the power of dedication over natural ability"
 
 # Live Statistics Dashboard
 statistics:
-  # Time filter options
-  time_periods:
-    - id: "week"
-      label: "This Week"
-      active: false
-    - id: "month"
-      label: "This Month"
-      active: false
-    - id: "year"
-      label: "This Year"
-      active: false
-    - id: "all"
-      label: "All Time"
-      active: true
-
   # Main statistics
   stats:
-    - id: "basketball_sessions"
-      label: "Basketball Sessions"
-      icon: "fas fa-basketball-ball"
-      value: "12"
-      numeric_value: 12
-      progress: 75
-      trend: "up"
-      trend_value: "+3 from last month"
-      comparison:
-        type: "goal"
-        label: "Monthly Goal: 16"
-        value: "4 to go"
-        percentage: 75
-      tooltip: "Regular pickup games and court sessions as a pass-first point guard"
-      milestone:
-        reached: false
-        title: "Court Regular"
-        icon: "�"
-        description: "Play 16+ sessions per month"
-        progress: 75
-      chart_data: [8, 9, 10, 11, 9, 12]
-      time_data:
-        week: 3
-        month: 12
-        year: 124
-        all: 500
-
-    - id: "assists"
-      label: "Assists"
-      icon: "fas fa-hands-helping"
-      value: "47"
-      numeric_value: 47
-      progress: 85
-      trend: "up"
-      trend_value: "+12 from last month"
-      comparison:
-        type: "average"
-        label: "vs Team Average"
-        value: "28 assists"
-        percentage: 68
-      tooltip: "Pass-first point guard mentality - making teammates better"
+    - id: "sports_played"
+      label: "Sports Played"
+      icon: "fas fa-trophy"
+      value: "6"
+      numeric_value: 6
+      progress: 100
+      tooltip: "Basketball, Football, Table Tennis, Badminton, Chess, Running"
       milestone:
         reached: true
-        title: "Playmaker"
-        icon: "�"
-        description: "50+ assists in a month"
-        progress: 94
-      chart_data: [32, 35, 38, 41, 35, 47]
-      time_data:
-        week: 11
-        month: 47
-        year: 512
-        all: 2100
+        title: "Multi-Sport Athlete"
+        icon: "🏆"
+        description: "Active in 6 different sports"
 
-    - id: "hours_played"
-      label: "Hours Played"
-      icon: "fas fa-clock"
-      value: "18h"
-      numeric_value: 18
-      progress: 60
-      trend: "stable"
-      trend_value: "+0 from last month"
-      comparison:
-        type: "goal"
-        label: "Monthly Goal: 30h"
-        value: "12h to go"
-        percentage: 60
-      tooltip: "Time on court across all sports - basketball, table tennis, badminton, chess"
+    - id: "longest_run"
+      label: "Longest Run Distance"
+      icon: "fas fa-running"
+      value: "7km"
+      numeric_value: 7
+      progress: 70
+      tooltip: "Personal best distance for a single run"
       milestone:
         reached: false
-        title: "Dedicated Athlete"
-        icon: "⏱️"
-        description: "30+ hours per month"
-        progress: 60
-      chart_data: [15, 16, 18, 19, 17, 18]
-      time_data:
-        week: 4.5
-        month: 18
-        year: 198
-        all: 850
+        title: "Distance Runner"
+        icon: "🏃"
+        description: "Complete a 10km run"
+        progress: 70
 
-    - id: "games_organized"
-      label: "Games Organized"
-      icon: "fas fa-users"
-      value: "5"
-      numeric_value: 5
-      progress: 50
-      trend: "up"
-      trend_value: "+2 from last month"
-      comparison:
-        type: "community"
-        label: "Community Impact"
-        value: "40+ players"
-        percentage: 100
-      tooltip: "Coordinating pickup games and bringing the community together"
+    - id: "courts_visited"
+      label: "Courts Visited"
+      icon: "fas fa-map-marker-alt"
+      value: "35"
+      numeric_value: 35
+      progress: 85
+      tooltip: "Different basketball courts played across various locations"
+      milestone:
+        reached: true
+        title: "Court Explorer"
+        icon: "🗺️"
+        description: "Play at 30+ different courts"
+
+    - id: "trophies_won"
+      label: "Trophies Won"
+      icon: "fas fa-medal"
+      value: "2"
+      numeric_value: 2
+      progress: 40
+      tooltip: "Competition victories across different sports"
       milestone:
         reached: false
-        title: "Community Builder"
-        icon: "🤝"
-        description: "Organize 10+ games per month"
-        progress: 50
-      chart_data: [2, 3, 4, 3, 3, 5]
-      time_data:
-        week: 1
-        month: 5
-        year: 48
-        all: 180
+        title: "Champion"
+        icon: "🥇"
+        description: "Win 5+ trophies"
+        progress: 40
 
 # World Statistics for Context
 world_stats:
@@ -183,70 +128,70 @@ favorites:
     rating: 5
     genres: ["Team Sport", "Strategic", "Fast-Paced"]
     why: "The sport that chose me. That first swish ignited a passion that's never faded. As a pass-first point guard, I love orchestrating plays, finding the open man, and making my teammates better. Basketball taught me that the best moments aren't always about scoring—they're about the perfect assist that makes everyone shine."
-    year: "Started 2015"
+    started_year: 2015
     stats:
       - label: "Position"
         value: "Point Guard"
       - label: "Style"
         value: "Pass-First"
-      - label: "Years"
-        value: "14+"
+      - label: "Experience"
+        value: "10+ years"
 
   - title: "Soccer"
     image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800"
     rating: 5
     genres: ["Team Sport", "Endurance", "Universal"]
     why: "The universal language that connected me across schools and countries. As a military kid, soccer on dusty roads was how I made friends, how I belonged. Every pickup game was a chance to communicate without words, to be part of something bigger than myself."
-    year: "Started 2010"
+    started_year: 2010
     stats:
       - label: "Position"
         value: "Left Back"
       - label: "Style"
         value: "Pace Bruiser"
-      - label: "Years"
-        value: "15+"
+      - label: "Experience"
+        value: "15+ years"
 
   - title: "Table Tennis"
     image: "https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800"
     rating: 4
     genres: ["Individual", "Strategic", "Reflexes"]
     why: "The strategic duel that combines lightning reflexes with mental chess. Every rally is a conversation, every spin a question, every return an answer. Table tennis taught me that sports can be as much about outsmarting your opponent as outplaying them."
-    year: "Started 2017"
+    started_year: 2017
     stats:
       - label: "Style"
         value: "All-Around"
       - label: "Strength"
         value: "cuts"
-      - label: "Years"
-        value: "8+"
+      - label: "Experience"
+        value: "8+ years"
 
   - title: "Badminton"
     image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800"
     rating: 4
     genres: ["Individual/Doubles", "Precision", "Endurance"]
     why: "Bonding with my dad through patient rallies and learning the value of precision. Badminton taught me that power isn't everything—placement, timing, and patience can beat raw strength. Every game with my dad was a lesson in both sport and life."
-    year: "Started 2013"
+    started_year: 2013
     stats:
       - label: "Format"
         value: "Singles"
       - label: "Style"
         value: "Defensive"
-      - label: "Years"
-        value: "12+"
+      - label: "Experience"
+        value: "12+ years"
 
   - title: "Chess"
     image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800"
     rating: 5
     genres: ["Mental Sport", "Strategic", "Timeless"]
     why: "The ultimate mental battlefield where every move matters. Chess taught me patience, foresight, and the beauty of thinking three steps ahead. It's the sport where physical limitations don't exist—only the depth of your strategy and the strength of your mind. Every game is a story, every position a puzzle waiting to be solved."
-    year: "Started 2012"
+    started_year: 2012
     stats:
       - label: "Style"
         value: "Positional"
       - label: "Rating"
         value: "---"
-      - label: "Years"
-        value: "13+"
+      - label: "Experience"
+        value: "13+ years"
 
 # Fun Facts
 fun_facts:

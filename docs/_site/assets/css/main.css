@@ -5562,7 +5562,7 @@ blockquote p {
 @media (max-width: 768px) {
   .hobby-quotes-section {
     margin: 2rem 1rem 0;
-    min-height: 180px;
+    min-height: 200px; /* Increased from 180px */
     padding: 0 1rem;
   }
   .hobby-quote-card {
@@ -5570,8 +5570,8 @@ blockquote p {
     right: 1rem;
   }
   .hobby-quote-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1rem; /* Reduced from 1.1rem for longer quotes */
+    line-height: 1.6; /* Reduced from 1.7 for better fit */
   }
 }
 /* Hero Navigation - Fixed Top-Left - Scoped to hobby pages */
@@ -5702,6 +5702,7 @@ blockquote p {
   padding-top: 1rem;
   scrollbar-width: thin;
   scrollbar-color: var(--hobby-color-light) transparent;
+  /* Mobile: Add bounce animation to indicate scrollable content */
 }
 .hobby-stats-grid::-webkit-scrollbar {
   height: 8px;
@@ -5717,7 +5718,40 @@ blockquote p {
 .hobby-stats-grid::-webkit-scrollbar-thumb:hover {
   background: var(--hobby-color);
 }
+@media (max-width: 768px) {
+  .hobby-stats-grid {
+    /* Stop animation after user scrolls */
+  }
+  .hobby-stats-grid::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+    pointer-events: none;
+    animation: slideHintBounce 2s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  .hobby-stats-grid.scrolled::after {
+    animation: none;
+    opacity: 0;
+  }
+}
 
+/* Bounce animation for scroll hint */
+@keyframes slideHintBounce {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-10px);
+  }
+}
 /* Stat Card */
 .hobby-stat-card {
   background: linear-gradient(135deg, var(--hobby-color-alpha) 0%, rgba(255, 255, 255, 0.8) 100%);
@@ -8333,14 +8367,14 @@ blockquote p {
     right: 0.5rem;
   }
   .hobby-quote-text {
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller for longer quotes */
     line-height: 1.5;
   }
   .hobby-quote-author {
     font-size: 0.85rem;
   }
   .hobby-quote-meta {
-    font-size: 0.75rem;
+    font-size: 0.7rem; /* Slightly smaller */
   }
   .hero-nav {
     top: 4.5rem; /* Below nav bar on mobile */

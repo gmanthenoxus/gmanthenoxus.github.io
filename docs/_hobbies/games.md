@@ -10,94 +10,80 @@ description: "From Nintendo 64 magic to midnight lobbies. My journey through int
 quotes:
   - text: "The opposite of play is not work. It is depression."
     author: "Brian Sutton-Smith"
+    source: "The Ambiguity of Play"
+    context: "Play theorist on the essential nature of play in human life"
   - text: "We don't stop playing because we grow old; we grow old because we stop playing."
     author: "George Bernard Shaw"
+    source: "Man and Superman"
+    context: "Nobel Prize-winning playwright on maintaining youthful spirit"
   - text: "Video games are bad for you? That's what they said about rock-n-roll."
     author: "Shigeru Miyamoto"
+    source: "Interview, 2007"
+    context: "Creator of Mario and Zelda defending gaming as an art form"
+  - text: "In the information age, the barriers just aren't there. The barriers are self-imposed. If you want to set off and go develop some grand new thing, you don't need millions of dollars of capitalization. You need enough pizza and Diet Coke to stick in your refrigerator."
+    author: "John Carmack"
+    source: "Masters of Doom"
+    context: "id Software co-founder on the democratization of game development"
+  - text: "A game is an opportunity to focus our energy, with relentless optimism, at something we're good at and enjoy."
+    author: "Jane McGonigal"
+    source: "Reality Is Broken"
+    context: "Game designer on why games bring out the best in us"
 
 # Live Statistics Dashboard
 statistics:
-  # Time filter options
-  time_periods:
-    - id: "week"
-      label: "This Week"
-      active: false
-    - id: "month"
-      label: "This Month"
-      active: false
-    - id: "year"
-      label: "This Year"
-      active: true
-    - id: "all"
-      label: "All Time"
-      active: false
-
   # Main statistics
   stats:
-    - id: "first_console"
-      label: "First Console"
+    - id: "consoles_owned"
+      label: "Consoles Owned"
       icon: "fas fa-gamepad"
-      value: "Nintendo 64"
-      numeric_value: 1996
-      progress: 100
-      trend: "stable"
-      trend_value: "Where it all began"
-      tooltip: "Where the magic began—gift from my father that opened up 3D gaming worlds"
+      value: "7/50+"
+      numeric_value: 7
+      progress: 14
+      tooltip: "Owned 7 consoles out of 50+ major gaming consoles released throughout history"
       milestone:
         reached: true
-        title: "Gaming Origins"
+        title: "Console Collector"
         icon: "🎮"
-        description: "Started with the legendary N64"
+        description: "Built a diverse console collection"
 
-    - id: "current_platform"
-      label: "Current Platform"
-      icon: "fab fa-xbox"
-      value: "Xbox Series S"
-      numeric_value: 2020
-      progress: 100
-      trend: "stable"
-      trend_value: "Current gen"
-      tooltip: "My current gaming setup for both competitive and single-player experiences"
+    - id: "games_played"
+      label: "Games Played"
+      icon: "fas fa-trophy"
+      value: "200+"
+      numeric_value: 200
+      progress: 20
+      tooltip: "Played over 200 games across multiple platforms and genres"
       milestone:
         reached: true
-        title: "Next-Gen Gamer"
-        icon: "🎯"
-        description: "Playing on current generation hardware"
+        title: "Game Explorer"
+        icon: "🗺️"
+        description: "Explored 200+ gaming experiences"
 
-    - id: "play_style"
-      label: "Play Style"
+    - id: "top_genre"
+      label: "Top Genre"
       icon: "fas fa-crosshairs"
-      value: "Competitive & Immersive"
+      value: "Sports & FPS"
       numeric_value: 90
       progress: 90
-      trend: "balanced"
-      trend_value: "Best of both worlds"
-      tooltip: "From midnight lobbies with friends to epic single-player adventures"
-      comparison:
-        type: "balance"
-        label: "Multiplayer vs Single-Player"
-        value: "50/50 split"
-        percentage: 50
+      tooltip: "Favorite genres: Sports games and First-Person Shooters"
       milestone:
         reached: true
-        title: "Balanced Gamer"
-        icon: "⚔️"
-        description: "Enjoys both competitive and immersive experiences"
+        title: "Genre Specialist"
+        icon: "🎯"
+        description: "Mastered favorite gaming genres"
 
-    - id: "gaming_philosophy"
-      label: "Gaming Philosophy"
-      icon: "fas fa-heart"
-      value: "All Forms"
-      numeric_value: 100
+    - id: "gaming_since"
+      label: "Gaming Since"
+      icon: "fas fa-calendar-alt"
+      value: "1999"
+      numeric_value: 26
       progress: 100
-      trend: "stable"
-      trend_value: "Universal appreciation"
-      tooltip: "Board games, video games, party games—I love them all"
+      tooltip: "26 years of gaming starting with Nintendo 64—a gift from my father"
       milestone:
         reached: true
-        title: "True Gamer"
+        title: "Veteran Gamer"
         icon: "🏆"
-        description: "Appreciates gaming in all its forms"
+        description: "25+ years in gaming"
 
 # World Statistics for Context
 world_stats:

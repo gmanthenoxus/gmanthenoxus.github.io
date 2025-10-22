@@ -10,31 +10,27 @@ description: "From cyber cafe curiosity to building solutions for real human pro
 quotes:
   - text: "Technology is the improvement of everyday activities from the curiosity and for the interest of man."
     author: "Moses Gana"
-    context: "My personal definition of what technology should be."
+    source: "Personal Philosophy"
+    context: "My personal definition of what technology should be"
   - text: "The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation."
     author: "Leo Cherne"
-    context: "On the symbiotic relationship between human creativity and computational power."
+    source: "The Futurist, 1968"
+    context: "On the symbiotic relationship between human creativity and computational power"
   - text: "The best way to predict the future is to invent it."
     author: "Alan Kay"
-    context: "A call to action for builders and creators."
+    source: "Stanford University, 1971"
+    context: "A call to action for builders and creators"
+  - text: "Any sufficiently advanced technology is indistinguishable from magic."
+    author: "Arthur C. Clarke"
+    source: "Profiles of the Future"
+    context: "Science fiction visionary on the wonder of innovation"
+  - text: "The advance of technology is based on making it fit in so that you don't really even notice it, so it's part of everyday life."
+    author: "Bill Gates"
+    source: "The Road Ahead"
+    context: "Microsoft founder on seamless technology integration"
 
 # Live Statistics Dashboard
 statistics:
-  # Time filter options
-  time_periods:
-    - id: "week"
-      label: "This Week"
-      active: false
-    - id: "month"
-      label: "This Month"
-      active: false
-    - id: "year"
-      label: "This Year"
-      active: true
-    - id: "all"
-      label: "All Time"
-      active: false
-
   # Main statistics
   stats:
     - id: "languages_mastered"
@@ -43,29 +39,25 @@ statistics:
       value: "8+"
       numeric_value: 8
       progress: 85
-      trend: "up"
-      trend_value: "Always learning"
       tooltip: "Python, JavaScript, C, C++, Java, and more—constantly expanding"
       milestone:
         reached: true
         title: "Polyglot Developer"
         icon: "💻"
-        description: "Mastered 5+ programming languages"
+        description: "Mastered 8+ programming languages"
 
-    - id: "first_code"
-      label: "First Line of Code"
-      icon: "fas fa-terminal"
-      value: "Hello World"
-      numeric_value: 100
+    - id: "years_coding"
+      label: "Years Coding"
+      icon: "fas fa-calendar-alt"
+      value: "10+"
+      numeric_value: 10
       progress: 100
-      trend: "stable"
-      trend_value: "Where it all began"
-      tooltip: "The magical moment that started the journey—still remember the thrill"
+      tooltip: "Over a decade of building, learning, and creating with code"
       milestone:
         reached: true
-        title: "Developer Origins"
-        icon: "🎯"
-        description: "Wrote your first program"
+        title: "Veteran Developer"
+        icon: "🏆"
+        description: "10+ years of coding experience"
 
     - id: "tech_philosophy"
       label: "Tech Philosophy"
@@ -73,8 +65,6 @@ statistics:
       value: "Human-Centered"
       numeric_value: 95
       progress: 95
-      trend: "stable"
-      trend_value: "Purpose-driven"
       tooltip: "Technology should solve real human problems, starting with your own"
       milestone:
         reached: true
@@ -82,25 +72,18 @@ statistics:
         icon: "🎨"
         description: "Building solutions that matter"
 
-    - id: "learning_mindset"
-      label: "Learning Mindset"
-      icon: "fas fa-brain"
-      value: "Always Curious"
-      numeric_value: 100
-      progress: 100
-      trend: "up"
-      trend_value: "Never stops"
-      tooltip: "Constantly exploring new technologies and connecting dots across domains"
-      comparison:
-        type: "mindset"
-        label: "Curiosity Level"
-        value: "Limitless"
-        percentage: 100
+    - id: "projects_built"
+      label: "Projects Built"
+      icon: "fas fa-rocket"
+      value: "30+"
+      numeric_value: 30
+      progress: 75
+      tooltip: "From web apps to system tools—building solutions across domains"
       milestone:
         reached: true
-        title: "Eternal Student"
-        icon: "📚"
-        description: "Never stop learning and exploring"
+        title: "Prolific Builder"
+        icon: "🚀"
+        description: "Built 30+ projects"
 
 # World Statistics for Context
 world_stats:
@@ -136,6 +119,50 @@ personal_journey:
     - "Mastered Python, C, C++, JavaScript, and more"
     - "Built foundation that makes learning new tech natural"
     - "Engaged with tech community through meetups and teaching"
+
+# Core Tools & Technologies
+favorites:
+  - name: "Python"
+    category: "Language"
+    icon: "fab fa-python"
+    rating: 5
+    why: "My go-to language for rapid prototyping, data processing, and backend development. The ecosystem is unmatched."
+    use_cases: ["Backend APIs", "Data Analysis", "Automation", "AI/ML"]
+
+  - name: "JavaScript/TypeScript"
+    category: "Language"
+    icon: "fab fa-js"
+    rating: 5
+    why: "The language of the web. TypeScript adds the type safety that makes large projects maintainable."
+    use_cases: ["Frontend", "Backend (Node.js)", "Full-Stack", "Mobile"]
+
+  - name: "React"
+    category: "Framework"
+    icon: "fab fa-react"
+    rating: 5
+    why: "Component-based architecture that makes building complex UIs intuitive and maintainable."
+    use_cases: ["Web Apps", "SPAs", "Mobile (React Native)", "UI Libraries"]
+
+  - name: "FastAPI"
+    category: "Framework"
+    icon: "fas fa-bolt"
+    rating: 5
+    why: "Modern, fast Python framework with automatic API documentation and type validation built-in."
+    use_cases: ["REST APIs", "Microservices", "Real-time Apps", "ML Serving"]
+
+  - name: "PostgreSQL"
+    category: "Database"
+    icon: "fas fa-database"
+    rating: 5
+    why: "Reliable, feature-rich relational database that handles complex queries and scales beautifully."
+    use_cases: ["Data Storage", "Analytics", "Geospatial", "JSON Documents"]
+
+  - name: "Docker"
+    category: "DevOps"
+    icon: "fab fa-docker"
+    rating: 5
+    why: "Containerization that ensures 'it works on my machine' actually means it works everywhere."
+    use_cases: ["Development", "Deployment", "CI/CD", "Microservices"]
 
 # Fun Facts
 fun_facts:
@@ -238,43 +265,3 @@ What excites me isn't any single technology, but the endless potential of what's
 My approach to technology is deeply practical. I engage with the community through meetups and teaching because I believe knowledge should be shared and collaboration breeds innovation. The projects I'm most passionate about are those that bridge the gap between my technical skills and the real-world problems I encounter in my daily life and hobbies.
 
 Whether it's creating tools to organize sports games, building better music discovery systems, or developing fitness apps that actually understand progress, I'm driven by the same principle: technology should serve human needs, not the other way around. The most satisfying code is the kind that disappears into the background, leaving only the improvement it creates.
-- Optimizing for performance, security, and scalability from the beginning
-- Taking pride in the elegance and efficiency of technical solutions
-
-## Technology Stack Expertise
-
-### **Frontend Development**
-- **Languages**: JavaScript, TypeScript, HTML5, CSS3
-- **Frameworks**: React, Vue.js, Angular, Svelte
-- **Tools**: Webpack, Vite, Sass, Tailwind CSS
-
-### **Backend Development**
-- **Languages**: Python, Node.js, Java, C++
-- **Frameworks**: FastAPI, Express.js, Django, Spring Boot
-- **Databases**: PostgreSQL, MongoDB, Redis, SQLite
-
-### **DevOps & Infrastructure**
-- **Cloud**: AWS, Google Cloud, Azure
-- **Containers**: Docker, Kubernetes
-- **CI/CD**: GitHub Actions, Jenkins, GitLab CI
-- **Monitoring**: Prometheus, Grafana, ELK Stack
-
-### **Emerging Technologies**
-- **AI/ML**: TensorFlow, PyTorch, OpenAI API, Hugging Face
-- **Blockchain**: Ethereum, Solidity, Web3.js
-- **IoT**: Raspberry Pi, Arduino, MQTT
-- **Mobile**: React Native, Flutter
-
-## Philosophy & Impact
-
-Technology has taught me that the best solutions are often the simplest ones, and that understanding user needs is more important than technical sophistication. The collaborative nature of software development has reinforced the importance of clear communication, documentation, and building systems that others can understand and maintain.
-
-The rapid pace of technological change has also taught me the value of focusing on fundamental principles rather than just specific tools, as frameworks come and go but good engineering practices remain constant.
-
-## Current Interests
-
-- **Artificial Intelligence**: Exploring practical applications of AI in everyday tools
-- **Developer Experience**: Building tools that make programming more enjoyable and productive
-- **Performance Optimization**: Making applications faster and more efficient
-- **Accessibility**: Ensuring technology is usable by everyone
-- **Sustainability**: Building energy-efficient and environmentally conscious solutions

@@ -301,10 +301,10 @@ layout: default
                             </div>
                             {% endif %}
 
-                            {% if favorite.year %}
+                            {% if favorite.started_year %}
                             <div class="hobby-favorite-meta sports-favorite-meta">
                                 <i class="fas fa-clock"></i>
-                                <span>{{ favorite.year }}</span>
+                                <span>Started {{ favorite.started_year }}</span>
                             </div>
                             {% endif %}
                         </div>
@@ -381,8 +381,8 @@ layout: default
                         <div class="hobby-favorite-content sports-favorite-content">
                             <div class="sports-header-minimal">
                                 <h3>{{ favorite.title }}</h3>
-                                {% if favorite.year %}
-                                <span class="sports-year-badge">{{ favorite.year | replace: "Started ", "" }}</span>
+                                {% if favorite.started_year %}
+                                <span class="sports-year-badge">{{ favorite.started_year }}</span>
                                 {% endif %}
                             </div>
 

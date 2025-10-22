@@ -1349,6 +1349,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize platform toggle
     initPlatformToggle();
 
+    // Mobile stats grid scroll hint - remove animation after user scrolls
+    const statsGrid = document.querySelector('.hobby-stats-grid');
+    if (statsGrid && window.innerWidth <= 768) {
+        let scrolled = false;
+        statsGrid.addEventListener('scroll', function() {
+            if (!scrolled && this.scrollLeft > 10) {
+                scrolled = true;
+                this.classList.add('scrolled');
+            }
+        }, { passive: true });
+    }
+
     // Initialize project toggle
     initProjectToggle();
 });
