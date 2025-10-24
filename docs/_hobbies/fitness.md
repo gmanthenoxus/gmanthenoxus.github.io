@@ -52,6 +52,25 @@ world_stats:
     description: "Data-driven training leads to better results"
     source: "Fitness Analytics Study 2024"
 
+# Statistics Dashboard
+statistics:
+  stats:
+    - icon: "📏"
+      value: "5'6\""
+      label: "Height"
+
+    - icon: "⚖️"
+      value: "85kg"
+      label: "Weight"
+
+    - icon: "🚀"
+      value: "35\""
+      label: "Vertical Jump"
+
+    - icon: "⚡"
+      value: "11.4s"
+      label: "100m Sprint"
+
 # Personal Journey
 personal_journey:
   origin_story: "My fitness journey started in the most unlikely way: as punishment from seniors in school. I quickly realized that this 'punishment' was making me stronger and faster on the basketball court and football pitch. That spark of tangible improvement ignited a passion."

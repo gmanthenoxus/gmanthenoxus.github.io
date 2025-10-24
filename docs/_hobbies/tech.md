@@ -126,43 +126,49 @@ favorites:
     category: "Language"
     icon: "fab fa-python"
     rating: 5
-    why: "My go-to language for rapid prototyping, data processing, and backend development. The ecosystem is unmatched."
+    why: "My go-to language for rapid prototyping and backend development."
     use_cases: ["Backend APIs", "Data Analysis", "Automation", "AI/ML"]
+    website: "https://www.python.org/"
 
   - name: "JavaScript/TypeScript"
     category: "Language"
     icon: "fab fa-js"
     rating: 5
-    why: "The language of the web. TypeScript adds the type safety that makes large projects maintainable."
-    use_cases: ["Frontend", "Backend (Node.js)", "Full-Stack", "Mobile"]
+    why: "The language of the web with type safety for large projects."
+    use_cases: ["Frontend", "Backend", "Full-Stack", "Mobile"]
+    website: "https://www.typescriptlang.org/"
 
   - name: "React"
     category: "Framework"
     icon: "fab fa-react"
     rating: 5
-    why: "Component-based architecture that makes building complex UIs intuitive and maintainable."
-    use_cases: ["Web Apps", "SPAs", "Mobile (React Native)", "UI Libraries"]
+    why: "Component-based architecture for building complex UIs."
+    use_cases: ["Web Apps", "SPAs", "Mobile", "UI Libraries"]
+    website: "https://react.dev/"
 
   - name: "FastAPI"
     category: "Framework"
     icon: "fas fa-bolt"
     rating: 5
-    why: "Modern, fast Python framework with automatic API documentation and type validation built-in."
-    use_cases: ["REST APIs", "Microservices", "Real-time Apps", "ML Serving"]
+    why: "Modern Python framework with automatic API documentation."
+    use_cases: ["REST APIs", "Microservices", "Real-time", "ML Serving"]
+    website: "https://fastapi.tiangolo.com/"
 
   - name: "PostgreSQL"
     category: "Database"
     icon: "fas fa-database"
     rating: 5
-    why: "Reliable, feature-rich relational database that handles complex queries and scales beautifully."
-    use_cases: ["Data Storage", "Analytics", "Geospatial", "JSON Documents"]
+    why: "Reliable relational database for complex queries."
+    use_cases: ["Data Storage", "Analytics", "Geospatial", "JSON"]
+    website: "https://www.postgresql.org/"
 
   - name: "Docker"
     category: "DevOps"
     icon: "fab fa-docker"
     rating: 5
-    why: "Containerization that ensures 'it works on my machine' actually means it works everywhere."
+    why: "Containerization for consistent deployment everywhere."
     use_cases: ["Development", "Deployment", "CI/CD", "Microservices"]
+    website: "https://www.docker.com/"
 
 # Fun Facts
 fun_facts:

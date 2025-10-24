@@ -126,82 +126,101 @@ personal_journey:
 
 # Hit List - The Grails
 hit_list:
-  - name: "Air Max Plus"
+  - name: "Nike Air Max Plus"
+    brand: "Nike"
     status: "High Priority"
-    colorway: "Black, white, and unique colorways"
+    colorway: "Triple Black"
+    colorway_colors: ["#000000"]
     category: "Lifestyle"
     priority: 1
+    retail_price: "$180"
+    why: "The aggressive design and visible Air cushioning make this a statement piece. Perfect for casual wear with that 90s edge."
     image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80"
+    stockx_url: "https://stockx.com/nike-air-max-plus-triple-black"
 
-  - name: "Jordan 1 Lows"
+  - name: "Air Jordan 1 Low OG"
+    brand: "Jordan"
     status: "Grail"
-    colorway: "Various"
+    colorway: "Mocha"
+    colorway_colors: ["#8B4513", "#FFFFFF", "#000000"]
     category: "Lifestyle"
     priority: 1
+    retail_price: "$140"
+    why: "The iconic silhouette in a more wearable low-top form. Versatile enough for any outfit, legendary enough to turn heads."
     image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&q=80"
+    stockx_url: "https://stockx.com/air-jordan-1-retro-low-og-mocha"
 
-  - name: "Jordan 11s"
+  - name: "Air Jordan 11 Retro"
+    brand: "Jordan"
     status: "Dream Pair"
-    colorway: "Concord or Bred"
+    colorway: "DMP Defining Moments"
+    colorway_colors: ["#000000", "#FFD700"]
     category: "Lifestyle"
     priority: 1
+    retail_price: "$220"
+    why: "The patent leather, the history, the elegance. This is the shoe that made Jordan Brand legendary beyond basketball."
     image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=80"
+    stockx_url: "https://stockx.com/air-jordan-11-retro-dmp-defining-moments-2023"
 
-  - name: "Jordan 4s"
-    status: "Active Hunt"
-    colorway: "Military Black or University Blue"
-    category: "Lifestyle"
-    priority: 2
-    image: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
-
-  - name: "Anthony Edwards AE 2"
-    status: "Performance"
-    colorway: "Team colors"
-    category: "Basketball"
-    priority: 2
-    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80"
-
-  - name: "Timberland Boots"
+  - name: "Air Jordan 4 Retro"
+    brand: "Jordan"
     status: "Winter Essential"
-    colorway: "Brown"
+    colorway: "Winter"
+    colorway_colors: ["#2F4F4F", "#000000"]
+    category: "Lifestyle"
+    priority: 2
+    retail_price: "$215"
+    why: "The perfect blend of street style and basketball heritage. The visible Air and unique lacing system make it instantly recognizable."
+    image: "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&q=80"
+    stockx_url: "https://stockx.com/air-jordan-4-retro-winter"
+
+  - name: "Adidas AE 2"
+    brand: "Adidas"
+    status: "Performance"
+    colorway: "Black/White/Red"
+    colorway_colors: ["#000000", "#FFFFFF", "#FF0000"]
+    category: "Basketball"
+    priority: 2
+    retail_price: "$140"
+    why: "Built for performance on the court. Ant's signature shoe combines style with the tech I need for serious hooping."
+    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80"
+    stockx_url: "https://stockx.com/adidas-ae-2-black-white-red"
+
+  - name: "Timberland 6-Inch Premium Boot"
+    brand: "Timberland"
+    status: "Winter Essential"
+    colorway: "Wheat"
+    colorway_colors: ["#D2B48C"]
     category: "Boots"
     priority: 2
+    retail_price: "$200"
+    why: "The ultimate winter boot. Durable, waterproof, and iconic. A wardrobe staple that never goes out of style."
     image: "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&q=80"
+    stockx_url: "https://stockx.com/timberland-6-premium-waterproof-boot-wheat-w"
 
-  - name: "Brogue Shoes"
-    status: "Formal Collection"
-    colorway: "Black and brown"
-    category: "Dress"
-    priority: 3
-    image: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=800&q=80"
-
-  - name: "Chelsea Boots"
-    status: "Versatile Essential"
-    colorway: "Tan or black"
-    category: "Boots"
-    priority: 3
-    image: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&q=80"
-
-  - name: "Yeezy 500"
+  - name: "Adidas Yeezy 500"
+    brand: "Adidas"
     status: "Comfort Focus"
-    colorway: "Utility Black or Blush"
+    colorway: "Clay Brown"
+    colorway_colors: ["#8B7355"]
     category: "Lifestyle"
     priority: 3
+    retail_price: "$200"
+    why: "Chunky, comfortable, and unmistakably Yeezy. The unique silhouette and all-day comfort make these perfect for long days."
     image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800&q=80"
+    stockx_url: "https://stockx.com/adidas-yeezy-500-clay-brown"
 
-  - name: "Way of Wade"
+  - name: "Li-Ning Way of Wade Shadow 6"
+    brand: "Li-Ning"
     status: "Performance"
-    colorway: "Team colors"
+    colorway: "Miami Night"
+    colorway_colors: ["#000000", "#FF1493", "#00CED1"]
     category: "Basketball"
     priority: 3
+    retail_price: "$160"
+    why: "D-Wade's signature line with Li-Ning offers premium performance at a great price. Underrated tech for serious ballers."
     image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800&q=80"
-
-  - name: "Streetwear Adidas"
-    status: "Regular Rotation"
-    colorway: "Various"
-    category: "Lifestyle"
-    priority: 3
-    image: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?w=800&q=80"
+    stockx_url: "https://stockx.com/li-ning-way-of-wade-shadow-6-miami-night"
 
 # Fun Facts
 fun_facts:

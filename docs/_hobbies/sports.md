@@ -134,8 +134,8 @@ favorites:
         value: "Point Guard"
       - label: "Style"
         value: "Pass-First"
-      - label: "Experience"
-        value: "10+ years"
+      - label: "Best Skill"
+        value: "Court Vision"
 
   - title: "Soccer"
     image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800"
@@ -148,8 +148,8 @@ favorites:
         value: "Left Back"
       - label: "Style"
         value: "Pace Bruiser"
-      - label: "Experience"
-        value: "15+ years"
+      - label: "Strength"
+        value: "Speed & Defense"
 
   - title: "Table Tennis"
     image: "https://images.unsplash.com/photo-1534158914592-062992fbe900?w=800"
@@ -160,10 +160,10 @@ favorites:
     stats:
       - label: "Style"
         value: "All-Around"
-      - label: "Strength"
-        value: "cuts"
-      - label: "Experience"
-        value: "8+ years"
+      - label: "Specialty"
+        value: "Spin Control"
+      - label: "Best Shot"
+        value: "Backhand Cuts"
 
   - title: "Badminton"
     image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800"
@@ -176,8 +176,8 @@ favorites:
         value: "Singles"
       - label: "Style"
         value: "Defensive"
-      - label: "Experience"
-        value: "12+ years"
+      - label: "Strength"
+        value: "Patience & Placement"
 
   - title: "Chess"
     image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800"
@@ -188,10 +188,10 @@ favorites:
     stats:
       - label: "Style"
         value: "Positional"
-      - label: "Rating"
-        value: "---"
-      - label: "Experience"
-        value: "13+ years"
+      - label: "Opening"
+        value: "King's Indian"
+      - label: "Strength"
+        value: "Endgame Strategy"
 
 # Fun Facts
 fun_facts:

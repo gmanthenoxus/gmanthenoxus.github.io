@@ -411,255 +411,114 @@
 
                 <!-- Fitness Goals Layout - Compact Horizontal Cards -->
                 
-                <div class="hobby-favorites-grid">
+                <div class="section-header-with-title">
+                    <h2><i class="fas fa-headphones"></i> Now Listening</h2>
+                    <p class="section-subtitle">Recently played tracks from my Spotify</p>
+                </div>
+
+                <!-- Spotify Recently Played (will be populated by JavaScript) -->
+                <div id="spotify-recently-played" class="music-favorites-scroll">
+                    <div class="spotify-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Loading your recently played tracks...
+                    </div>
+                </div>
+
+                <!-- Fallback: Static favorites if Spotify fails -->
+                <div class="music-favorites-scroll" id="music-fallback" style="display: none;">
                     
-                    
-                    <div class="hobby-favorite-card">
-                    
+                    <div class="music-favorite-card-compact">
                         
-                        <div class="hobby-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80');">
-                            <div class="hobby-favorite-overlay">
-                                <span class="hobby-favorite-rating">
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                </span>
-                            </div>
-                        </div>
+                        <div class="music-favorite-image-compact" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80');"></div>
                         
 
-                        <div class="hobby-favorite-content">
-                            <h3></h3>
+                        <div class="music-favorite-content-compact">
+                            <h3>J. Cole</h3>
+                            <span class="music-category-badge">Artist</span>
 
                             
-                            <div class="hobby-favorite-genres">
+                            <div class="music-genres-compact">
                                 
-                                <span class="hobby-genre-tag">Hip-Hop</span>
+                                <span class="music-genre-tag-small">Hip-Hop</span>
                                 
-                                <span class="hobby-genre-tag">Rap</span>
-                                
-                                <span class="hobby-genre-tag">Storytelling</span>
+                                <span class="music-genre-tag-small">Rap</span>
                                 
                             </div>
                             
-
-                            
-                            <p class="hobby-favorite-why">Master storyteller who weaves personal narratives with social commentary. Every album is a journey through his evolution as an artist and human.</p>
-                            
-
-                            
-
-                            
                         </div>
-                    
                     </div>
                     
-                    
-                    
-                    <div class="hobby-favorite-card">
-                    
+                    <div class="music-favorite-card-compact">
                         
-                        <div class="hobby-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80');">
-                            <div class="hobby-favorite-overlay">
-                                <span class="hobby-favorite-rating">
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                </span>
-                            </div>
-                        </div>
+                        <div class="music-favorite-image-compact" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80');"></div>
                         
 
-                        <div class="hobby-favorite-content">
-                            <h3></h3>
+                        <div class="music-favorite-content-compact">
+                            <h3>Burna Boy</h3>
+                            <span class="music-category-badge">Artist</span>
 
                             
-                            <div class="hobby-favorite-genres">
+                            <div class="music-genres-compact">
                                 
-                                <span class="hobby-genre-tag">Afrobeats</span>
+                                <span class="music-genre-tag-small">Afrobeats</span>
                                 
-                                <span class="hobby-genre-tag">Afrofusion</span>
-                                
-                                <span class="hobby-genre-tag">Dancehall</span>
+                                <span class="music-genre-tag-small">Afrofusion</span>
                                 
                             </div>
                             
-
-                            
-                            <p class="hobby-favorite-why">The African Giant who brings infectious rhythms and powerful messages. His music makes you move while making you think.</p>
-                            
-
-                            
-
-                            
                         </div>
-                    
                     </div>
                     
-                    
-                    
-                    <div class="hobby-favorite-card">
-                    
+                    <div class="music-favorite-card-compact">
                         
-                        <div class="hobby-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80');">
-                            <div class="hobby-favorite-overlay">
-                                <span class="hobby-favorite-rating">
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                </span>
-                            </div>
-                        </div>
+                        <div class="music-favorite-image-compact" style="background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80');"></div>
                         
 
-                        <div class="hobby-favorite-content">
-                            <h3></h3>
+                        <div class="music-favorite-content-compact">
+                            <h3>Fela Kuti</h3>
+                            <span class="music-category-badge">Artist</span>
 
                             
-                            <div class="hobby-favorite-genres">
+                            <div class="music-genres-compact">
                                 
-                                <span class="hobby-genre-tag">Afrobeat</span>
+                                <span class="music-genre-tag-small">Afrobeat</span>
                                 
-                                <span class="hobby-genre-tag">Jazz</span>
-                                
-                                <span class="hobby-genre-tag">Funk</span>
+                                <span class="music-genre-tag-small">Jazz</span>
                                 
                             </div>
                             
-
-                            
-                            <p class="hobby-favorite-why">The pioneer who created Afrobeat and used music as a weapon for social change. His legacy shaped African music forever.</p>
-                            
-
-                            
-
-                            
                         </div>
-                    
                     </div>
                     
-                    
-                    
-                    <div class="hobby-favorite-card">
-                    
+                    <div class="music-favorite-card-compact">
                         
-                        <div class="hobby-favorite-image" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80');">
-                            <div class="hobby-favorite-overlay">
-                                <span class="hobby-favorite-rating">
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                        
-                                        <i class="fas fa-star"></i>
-                                        
-                                    
-                                </span>
-                            </div>
-                        </div>
+                        <div class="music-favorite-image-compact" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80');"></div>
                         
 
-                        <div class="hobby-favorite-content">
-                            <h3></h3>
+                        <div class="music-favorite-content-compact">
+                            <h3>Kendrick Lamar</h3>
+                            <span class="music-category-badge">Artist</span>
 
                             
-                            <div class="hobby-favorite-genres">
+                            <div class="music-genres-compact">
                                 
-                                <span class="hobby-genre-tag">Hip-Hop</span>
+                                <span class="music-genre-tag-small">Hip-Hop</span>
                                 
-                                <span class="hobby-genre-tag">Rap</span>
-                                
-                                <span class="hobby-genre-tag">Conscious</span>
+                                <span class="music-genre-tag-small">Rap</span>
                                 
                             </div>
                             
-
-                            
-                            <p class="hobby-favorite-why">Poetic genius who pushes the boundaries of hip-hop. His albums are cinematic experiences that demand multiple listens.</p>
-                            
-
-                            
-
-                            
                         </div>
-                    
                     </div>
-                    
                     
                 </div>
+
+                <!-- Default Layout (Anime, etc.) -->
                 
                 </div>
             </section>
             
 
-            <!-- Hit List Section (Shoes/Sneakers) -->
+            <!-- Hit List Section (Shoes/Sneakers) - List View -->
             
 
             <!-- Fun Facts Section -->
@@ -1131,6 +990,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script src="/assets/js/hobby-enhancements.js"></script>
+<script src="/assets/js/spotify-integration.js"></script>
 
     </main>
 

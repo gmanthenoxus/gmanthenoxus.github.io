@@ -1423,9 +1423,37 @@ function initProjectToggle() {
     });
 }
 
+// Shoe Design Switcher
+function initShoeDesignSwitcher() {
+    const designButtons = document.querySelectorAll('.design-option-btn');
+    const designs = document.querySelectorAll('.hit-list-grid, .hit-list-list');
+
+    designButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const designNumber = this.getAttribute('data-design');
+
+            // Remove active class from all buttons
+            designButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to clicked button
+            this.classList.add('active');
+
+            // Hide all designs
+            designs.forEach(design => design.classList.remove('active'));
+
+            // Show selected design
+            const selectedDesign = document.querySelector(`.hit-list-design-${designNumber}`);
+            if (selectedDesign) {
+                selectedDesign.classList.add('active');
+            }
+        });
+    });
+}
+
 // Initialize all functions on page load
 document.addEventListener('DOMContentLoaded', function() {
     initHobbyNavigation();
     initExploreHobbies();
     initProjectToggle();
+    initShoeDesignSwitcher();
 });

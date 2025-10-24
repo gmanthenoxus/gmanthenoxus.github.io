@@ -126,7 +126,7 @@ personal_journey:
 
 # Favorites Section
 favorites:
-  - name: "NBA 2K26"
+  - name: "NBA 2K25"
     category: "Sports"
     genre: "Simulation, Sports"
     platform: "Xbox Series S/X"
@@ -135,7 +135,7 @@ favorites:
     rawg_id: 988375
     type: "video_game"
 
-  - name: "EA Sports FC 26"
+  - name: "EA Sports FC 25"
     category: "Sports"
     genre: "Simulation, Sports"
     platform: "Xbox Series S/X"
@@ -144,12 +144,12 @@ favorites:
     rawg_id: 989185
     type: "video_game"
 
-  - name: "Assassin's Creed SHADOWS"
+  - name: "Assassin's Creed Shadows"
     category: "Action"
     genre: "Adventure, Action"
     platform: "Xbox Series S/X"
     rating: 3.7
-    image: "https://media.rawg.io/media/games/934/9346092ae11bf7582c883869468171cc.jpg"
+    image: "https://media.rawg.io/media/games/526/526881e0f5f8c1550e51df3801f96ea3.jpg"
     rawg_id: 437059
     type: "video_game"
 

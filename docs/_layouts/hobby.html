@@ -413,6 +413,85 @@ layout: default
                     {% endfor %}
                 </div>
 
+                <!-- Tech Favorites Layout - Tools & Technologies (Horizontal Scroll) -->
+                {% elsif page.slug == "tech" %}
+                <div class="tech-favorites-scroll">
+                    {% for favorite in page.favorites %}
+                    <div class="tech-favorite-card-compact">
+                        {% if favorite.icon %}
+                        <i class="{{ favorite.icon }} tech-tool-icon-large"></i>
+                        {% endif %}
+
+                        <h3>{{ favorite.name }}</h3>
+                        <span class="tech-tool-category-badge">{{ favorite.category }}</span>
+
+                        {% if favorite.rating %}
+                        <div class="tech-tool-rating-compact">
+                            {% for i in (1..5) %}
+                                {% if i <= favorite.rating %}
+                                <i class="fas fa-star"></i>
+                                {% else %}
+                                <i class="far fa-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        {% if favorite.use_cases and favorite.use_cases.size > 0 %}
+                        <div class="tech-tags-compact">
+                            {% for use_case in favorite.use_cases limit:3 %}
+                            <span class="tech-tag-small">{{ use_case }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        {% if favorite.website %}
+                        <a href="{{ favorite.website }}" target="_blank" rel="noopener noreferrer" class="tech-website-link">
+                            <i class="fas fa-external-link-alt"></i> Visit Site
+                        </a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Music Favorites Layout - Now Listening (Horizontal Scroll) -->
+                {% elsif page.slug == "music" %}
+                <div class="section-header-with-title">
+                    <h2><i class="fas fa-headphones"></i> Now Listening</h2>
+                    <p class="section-subtitle">Recently played tracks from my Spotify</p>
+                </div>
+
+                <!-- Spotify Recently Played (will be populated by JavaScript) -->
+                <div id="spotify-recently-played" class="music-favorites-scroll">
+                    <div class="spotify-loading">
+                        <i class="fas fa-spinner fa-spin"></i> Loading your recently played tracks...
+                    </div>
+                </div>
+
+                <!-- Fallback: Static favorites if Spotify fails -->
+                <div class="music-favorites-scroll" id="music-fallback" style="display: none;">
+                    {% for favorite in page.favorites %}
+                    <div class="music-favorite-card-compact">
+                        {% if favorite.image %}
+                        <div class="music-favorite-image-compact" style="background-image: url('{{ favorite.image }}');"></div>
+                        {% endif %}
+
+                        <div class="music-favorite-content-compact">
+                            <h3>{{ favorite.name }}</h3>
+                            <span class="music-category-badge">{{ favorite.category }}</span>
+
+                            {% if favorite.genres and favorite.genres.size > 0 %}
+                            <div class="music-genres-compact">
+                                {% for genre in favorite.genres limit:2 %}
+                                <span class="music-genre-tag-small">{{ genre }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
                 <!-- Default Layout (Anime, etc.) -->
                 {% else %}
                 <div class="hobby-favorites-grid">
@@ -482,40 +561,66 @@ layout: default
             </section>
             {% endif %}
 
-            <!-- Hit List Section (Shoes/Sneakers) -->
+            <!-- Hit List Section (Shoes/Sneakers) - List View -->
             {% if page.hit_list and page.hit_list.size > 0 %}
             <section class="hobby-hit-list-section">
                 <div class="container">
                 <h2><i class="fas fa-crosshairs"></i> The Hit List</h2>
                 <p class="hit-list-subtitle">My ultimate wishlist spanning lifestyle, performance, and formal footwear</p>
 
-                <div class="hit-list-grid">
+                <div class="hit-list-list">
                     {% for shoe in page.hit_list %}
-                    <div class="hit-list-card" data-priority="{{ shoe.priority }}" data-category="{{ shoe.category | downcase }}">
+                    <div class="hit-list-item" data-priority="{{ shoe.priority }}">
                         {% if shoe.image %}
-                        <div class="hit-list-image" style="background-image: url('{{ shoe.image }}');">
-                            <div class="hit-list-overlay">
-                                <span class="hit-list-status {{ shoe.status | downcase | replace: ' ', '-' }}">
-                                    {{ shoe.status }}
-                                </span>
-                            </div>
-                        </div>
+                        <div class="list-thumbnail" style="background-image: url('{{ shoe.image }}');"></div>
                         {% endif %}
 
-                        <div class="hit-list-content">
-                            <h3>{{ shoe.name }}</h3>
-                            <div class="hit-list-details">
-                                <span class="hit-list-colorway">
-                                    <i class="fas fa-palette"></i> {{ shoe.colorway }}
-                                </span>
-                                <span class="hit-list-category {{ shoe.category | downcase }}">
-                                    <i class="fas fa-tag"></i> {{ shoe.category }}
-                                </span>
+                        <div class="list-content">
+                            <div class="list-header">
+                                <h3>{{ shoe.name }}</h3>
+                                <div class="list-priority">
+                                    {% for i in (1..5) %}
+                                        {% if i <= shoe.priority %}
+                                        <i class="fas fa-star"></i>
+                                        {% else %}
+                                        <i class="far fa-star"></i>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
                             </div>
+
+                            <div class="list-meta">
+                                <span class="list-status {{ shoe.status | downcase | replace: ' ', '-' }}">{{ shoe.status }}</span>
+                                {% if shoe.retail_price %}<span>{{ shoe.retail_price }}</span>{% endif %}
+                                {% if shoe.brand %}<span>{{ shoe.brand }}</span>{% endif %}
+                                {% if shoe.colorway %}
+                                <span>
+                                    {% if shoe.colorway_colors and shoe.colorway_colors.size > 0 %}
+                                        {% for color in shoe.colorway_colors %}
+                                        <span class="color-dot" style="background-color: {{ color }};"></span>
+                                        {% endfor %}
+                                    {% endif %}
+                                    {{ shoe.colorway }}
+                                </span>
+                                {% endif %}
+                            </div>
+
+                            {% if shoe.why %}
+                            <p class="list-why">{{ shoe.why }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="list-actions">
+                            {% if shoe.stockx_url %}
+                            <a href="{{ shoe.stockx_url }}" target="_blank" title="View on StockX">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                     {% endfor %}
                 </div>
+
                 </div>
             </section>
             {% endif %}
@@ -835,3 +940,4 @@ layout: default
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <script src="/assets/js/hobby-enhancements.js"></script>
+<script src="/assets/js/spotify-integration.js"></script>

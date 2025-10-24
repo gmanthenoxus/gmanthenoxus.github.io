@@ -776,6 +776,308 @@
 }
 
 /* ========================================
+   TECH FAVORITES - HORIZONTAL SCROLL
+   ======================================== */
+
+.tech-favorites-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 2rem 0;
+    margin: 0 -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: thin;
+    scrollbar-color: var(--hobby-color, #667eea) transparent;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--hobby-color, #667eea);
+        border-radius: 4px;
+    }
+}
+
+.tech-favorite-card-compact {
+    flex: 0 0 250px;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--hobby-color, #667eea);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    h3 {
+        margin: 0.75rem 0 0.5rem 0;
+        font-size: 1.2rem;
+        color: #2c3e50;
+    }
+}
+
+.tech-tool-icon-large {
+    font-size: 3.5rem;
+    color: var(--hobby-color, #667eea);
+}
+
+.tech-tool-category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--hobby-color-light, rgba(102, 126, 234, 0.1));
+    color: var(--hobby-color, #667eea);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.tech-tool-rating-compact {
+    margin: 0.75rem 0;
+    color: #f39c12;
+    font-size: 0.9rem;
+}
+
+.tech-tags-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.tech-tag-small {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    background: #f8f9fa;
+    color: #555;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    border: 1px solid #e9ecef;
+}
+
+.tech-website-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--hobby-color, #667eea);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-top: auto;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: var(--hobby-color-dark, rgba(102, 126, 234, 0.8));
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   MUSIC FAVORITES - HORIZONTAL SCROLL
+   ======================================== */
+
+.music-favorites-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 2rem 0;
+    margin: 0 -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: thin;
+    scrollbar-color: var(--hobby-color, #667eea) transparent;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--hobby-color, #667eea);
+        border-radius: 4px;
+    }
+}
+
+.spotify-loading {
+    width: 100%;
+    text-align: center;
+    padding: 3rem;
+    color: #999;
+    font-size: 1.1rem;
+
+    i {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 1rem;
+        color: #1DB954; /* Spotify green */
+    }
+}
+
+.music-favorite-card-compact {
+    flex: 0 0 220px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.music-favorite-image-compact {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.music-favorite-content-compact {
+    padding: 1rem;
+    text-align: center;
+
+    h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+        color: #2c3e50;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.music-category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--hobby-color-light, rgba(102, 126, 234, 0.1));
+    color: var(--hobby-color, #667eea);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.music-genres-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.music-genre-tag-small {
+    padding: 0.25rem 0.5rem;
+    background: #f8f9fa;
+    color: #555;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    border: 1px solid #e9ecef;
+}
+
+/* Spotify Track Card */
+.spotify-track-card {
+    flex: 0 0 220px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.spotify-album-art {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .spotify-play-icon {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        background: #1DB954;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover .spotify-play-icon {
+        opacity: 1;
+    }
+}
+
+.spotify-track-info {
+    padding: 1rem;
+
+    .track-name {
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .track-artist {
+        color: #7f8c8d;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .track-played-at {
+        color: #95a5a6;
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ========================================
    HIT LIST SECTION (SHOES/SNEAKERS)
    ======================================== */
 
@@ -806,12 +1108,80 @@
         text-align: center;
         color: #7f8c8d;
         font-size: 1.1rem;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 }
 
+/* Design Selector */
+.hit-list-design-selector {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    label {
+        display: block;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+}
+
+.design-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.design-option-btn {
+    padding: 0.75rem 1.5rem;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+        font-size: 1.1rem;
+    }
+
+    &:hover {
+        background: #e9ecef;
+        border-color: var(--hobby-color, #667eea);
+        color: var(--hobby-color, #667eea);
+    }
+
+    &.active {
+        background: var(--hobby-color, #667eea);
+        border-color: var(--hobby-color, #667eea);
+        color: white;
+    }
+}
+
+/* Hide inactive designs */
+.hit-list-grid,
+.hit-list-list {
+    display: none;
+
+    &.active {
+        display: grid;
+    }
+}
+
+.hit-list-list.active {
+    display: block;
+}
+
 .hit-list-grid {
-    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
@@ -965,6 +1335,306 @@
     }
 }
 
+/* ========================================
+   SHOE DESIGN ENHANCEMENTS
+   ======================================== */
+
+/* Priority Badge */
+.priority-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+}
+
+/* Colorway Swatches */
+.colorway-swatches {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.color-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-right: 0.25rem;
+}
+
+/* Shoe Details */
+.shoe-brand,
+.shoe-price {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.shoe-brand {
+    color: var(--hobby-color, #667eea);
+}
+
+.shoe-price {
+    color: #2ecc71;
+}
+
+.shoe-why {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.stockx-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #16c784 0%, #0fa968 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(22, 199, 132, 0.3);
+    }
+}
+
+/* Design 2: Showcase */
+.hit-list-design-2 {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+}
+
+.showcase-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.showcase-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.showcase-content {
+    padding: 2rem;
+}
+
+.showcase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h3 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+}
+
+.showcase-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.showcase-specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    span {
+        font-size: 0.9rem;
+        color: #555;
+    }
+}
+
+.showcase-why {
+    margin-bottom: 1.5rem;
+
+    strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.6;
+        margin: 0;
+    }
+}
+
+.showcase-actions {
+    display: flex;
+    gap: 1rem;
+
+    .btn-stockx,
+    .btn-alert {
+        flex: 1;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .btn-stockx {
+        background: linear-gradient(135deg, #16c784 0%, #0fa968 100%);
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 199, 132, 0.3);
+        }
+    }
+
+    .btn-alert {
+        background: #f8f9fa;
+        color: #555;
+
+        &:hover {
+            background: #e9ecef;
+        }
+    }
+}
+
+/* Design 3: List View */
+.hit-list-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.hit-list-item {
+    display: flex;
+    gap: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.list-thumbnail {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+.list-content {
+    flex: 1;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+
+    h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        color: #2c3e50;
+    }
+}
+
+.list-priority {
+    color: #f39c12;
+    font-size: 1rem;
+}
+
+.list-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+
+    span {
+        font-size: 0.9rem;
+        color: #555;
+    }
+}
+
+.list-status {
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.list-why {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.list-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+        color: var(--hobby-color, #667eea);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
 /* Responsive Design for Hit List */
 @media (max-width: 768px) {
     .hit-list-grid {
@@ -982,6 +1652,28 @@
 
     .hit-list-subtitle {
         font-size: 1rem;
+    }
+
+    .design-options {
+        flex-direction: column;
+    }
+
+    .design-option-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hit-list-item {
+        flex-direction: column;
+    }
+
+    .list-thumbnail {
+        width: 100%;
+        height: 200px;
+    }
+
+    .showcase-specs {
+        grid-template-columns: 1fr;
     }
 }
 
