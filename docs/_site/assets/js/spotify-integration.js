@@ -15,8 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!spotifyContainer) return;
 
     // Check if we're on the music hobby page
-    if (!window.location.pathname.includes('/hobbies/music')) return;
+    const isOnMusicPage = window.location.pathname.includes('/hobbies/music') ||
+                          window.location.pathname.includes('/music');
 
+    if (!isOnMusicPage) return;
+
+    console.log('Spotify integration initialized on music page');
     loadSpotifyTracks();
 });
 
@@ -24,22 +28,33 @@ async function loadSpotifyTracks() {
     const container = document.getElementById('spotify-recently-played');
     const fallback = document.getElementById('music-fallback');
 
+    console.log('Loading Spotify tracks...');
+
     try {
         // Check if we have an access token
         const accessToken = getAccessToken();
 
         if (!accessToken) {
-            // No token available - show fallback
+            console.log('No access token found, showing auth prompt');
+            // No token available - show auth prompt
             showFallback(container, fallback);
             return;
         }
+
+        console.log('Access token found, fetching tracks...');
 
         // Fetch recently played tracks
         const tracks = await fetchRecentlyPlayed(accessToken);
 
         if (tracks && tracks.length > 0) {
+            console.log(`Displaying ${tracks.length} tracks`);
             displaySpotifyTracks(tracks, container);
+            // Hide fallback when tracks are loaded
+            if (fallback) {
+                fallback.style.display = 'none';
+            }
         } else {
+            console.log('No tracks found, showing fallback');
             showFallback(container, fallback);
         }
     } catch (error) {

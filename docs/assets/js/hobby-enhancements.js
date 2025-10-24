@@ -1,5 +1,53 @@
+// Tech Design Selector Function
+function selectTechDesign(designNumber) {
+    // Update active button
+    document.querySelectorAll('.design-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`[data-design="${designNumber}"]`).classList.add('active');
+
+    // Store preference
+    localStorage.setItem('tech_design_preference', designNumber);
+
+    // Show notification
+    const notification = document.createElement('div');
+    notification.className = 'design-notification';
+    notification.innerHTML = `<i class="fas fa-check-circle"></i> Design ${designNumber} selected!`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #27ae60;
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 2000);
+
+    // Note: Actual design implementation would require page reload or dynamic CSS changes
+    console.log(`Tech design ${designNumber} selected. Refresh page to see changes.`);
+}
+
 // Enhanced Hobby Page Functionality
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Load saved tech design preference
+    const savedDesign = localStorage.getItem('tech_design_preference');
+    if (savedDesign) {
+        const designBtn = document.querySelector(`[data-design="${savedDesign}"]`);
+        if (designBtn) {
+            document.querySelectorAll('.design-btn').forEach(btn => btn.classList.remove('active'));
+            designBtn.classList.add('active');
+        }
+    }
 
     // Dynamic Color System - Convert hex to RGB and create color variants
     const hobbyPage = document.querySelector('.hobby-page');

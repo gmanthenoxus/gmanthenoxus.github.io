@@ -126,7 +126,7 @@ personal_journey:
 
 # Favorites Section
 favorites:
-  - name: "NBA 2K25"
+  - name: "NBA 2K26"
     category: "Sports"
     genre: "Simulation, Sports"
     platform: "Xbox Series S/X"
@@ -135,7 +135,7 @@ favorites:
     rawg_id: 988375
     type: "video_game"
 
-  - name: "EA Sports FC 25"
+  - name: "EA Sports FC 26"
     category: "Sports"
     genre: "Simulation, Sports"
     platform: "Xbox Series S/X"

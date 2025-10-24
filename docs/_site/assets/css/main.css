@@ -6159,6 +6159,56 @@ blockquote p {
 /* ========================================
    TECH FAVORITES - HORIZONTAL SCROLL
    ======================================== */
+.design-selector .design-btn {
+  padding: 0.6rem 1.2rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.design-selector .design-btn:hover {
+  border-color: var(--hobby-color);
+  color: var(--hobby-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.design-selector .design-btn.active {
+  background: var(--hobby-color);
+  border-color: var(--hobby-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.design-selector .design-btn i {
+  font-size: 1rem;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
 .tech-favorites-scroll {
   display: flex;
   gap: 1.5rem;
