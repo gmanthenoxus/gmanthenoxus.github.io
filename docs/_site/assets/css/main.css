@@ -6159,150 +6159,130 @@ blockquote p {
 /* ========================================
    TECH FAVORITES - HORIZONTAL SCROLL
    ======================================== */
-.design-selector .design-btn {
-  padding: 0.6rem 1.2rem;
-  background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  color: #7f8c8d;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.design-selector .design-btn:hover {
-  border-color: var(--hobby-color);
-  color: var(--hobby-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.design-selector .design-btn.active {
-  background: var(--hobby-color);
-  border-color: var(--hobby-color);
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.design-selector .design-btn i {
-  font-size: 1rem;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(400px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(400px);
-    opacity: 0;
-  }
-}
 .tech-favorites-scroll {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   overflow-x: auto;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   margin: 0 -2rem;
   padding-left: 2rem;
   padding-right: 2rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  /* Hide scrollbar but keep functionality */
+  /* Custom scrollbar */
   scrollbar-width: thin;
-  scrollbar-color: var(--hobby-color, #667eea) transparent;
+  scrollbar-color: var(--hobby-color) transparent;
 }
 .tech-favorites-scroll::-webkit-scrollbar {
-  height: 8px;
+  height: 6px;
 }
 .tech-favorites-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
 .tech-favorites-scroll::-webkit-scrollbar-thumb {
-  background: var(--hobby-color, #667eea);
-  border-radius: 4px;
+  background: var(--hobby-color);
+  border-radius: 3px;
 }
 
-.tech-favorite-card-compact {
-  flex: 0 0 250px;
+.tech-favorite-card {
+  flex: 0 0 280px;
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border-top: 4px solid var(--hobby-color, #667eea);
+  padding: 1.25rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+.tech-favorite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--hobby-color);
+}
+
+.tech-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.tech-icon-wrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  background: var(--hobby-color-light);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
-.tech-favorite-card-compact:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+.tech-favorite-card:hover .tech-icon-wrapper {
+  background: var(--hobby-color);
+  transform: scale(1.08);
 }
-.tech-favorite-card-compact h3 {
-  margin: 0.75rem 0 0.5rem 0;
-  font-size: 1.2rem;
+
+.tech-tool-icon {
+  font-size: 1.5rem;
+  color: var(--hobby-color);
+  transition: color 0.3s ease;
+}
+.tech-favorite-card:hover .tech-tool-icon {
+  color: white;
+}
+
+.tech-card-title {
+  flex: 1;
+  min-width: 0;
+}
+.tech-card-title h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #2c3e50;
+  line-height: 1.3;
 }
-
-.tech-tool-icon-large {
-  font-size: 3.5rem;
-  color: var(--hobby-color, #667eea);
-}
-
-.tech-tool-category-badge {
+.tech-card-title .hobby-tech-category {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background: var(--hobby-color-light, rgba(102, 126, 234, 0.1));
-  color: var(--hobby-color, #667eea);
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.tech-tool-rating-compact {
-  margin: 0.75rem 0;
-  color: #f39c12;
-  font-size: 0.9rem;
-}
-
-.tech-tags-compact {
+.tech-use-cases {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  justify-content: center;
-  margin: 1rem 0;
 }
 
-.tech-tag-small {
+.tech-tag {
   display: inline-block;
-  padding: 0.3rem 0.6rem;
+  padding: 0.35rem 0.75rem;
   background: #f8f9fa;
-  color: #555;
+  color: #5a6c7d;
   border-radius: 6px;
   font-size: 0.75rem;
+  font-weight: 500;
   border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+.tech-tag:hover {
+  background: var(--hobby-color-light);
+  color: var(--hobby-color);
+  border-color: var(--hobby-color);
 }
 
-.tech-website-link {
+.tech-website-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background: var(--hobby-color, #667eea);
+  padding: 0.7rem 1.2rem;
+  background: linear-gradient(135deg, var(--hobby-color), var(--hobby-color-dark));
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -6310,178 +6290,38 @@ blockquote p {
   font-size: 0.85rem;
   margin-top: auto;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.tech-website-link:hover {
-  background: var(--hobby-color-dark, rgba(102, 126, 234, 0.8));
-  transform: scale(1.05);
-}
-
-/* ========================================
-   TECH CARD DESIGN VARIATIONS
-   ======================================== */
-.tech-design-2 .tech-favorite-card-compact {
-  flex: 0 0 350px;
-  flex-direction: row !important;
-  text-align: left !important;
-  align-items: center !important;
-  padding: 1rem 1.5rem !important;
-}
-.tech-design-2 .tech-favorite-card-compact .tech-tool-icon-large {
-  font-size: 2rem !important;
-  margin: 0 1rem 0 0 !important;
-}
-.tech-design-2 .tech-favorite-card-compact h3 {
-  font-size: 1rem !important;
-  margin: 0 0 0.25rem 0 !important;
-}
-.tech-design-2 .tech-favorite-card-compact .tech-tool-category-badge {
-  margin: 0 0.5rem 0 0 !important;
-}
-.tech-design-2 .tech-favorite-card-compact .tech-tool-rating-compact {
-  margin: 0 !important;
-  display: inline-block !important;
-}
-.tech-design-2 .tech-favorite-card-compact .tech-tags-compact {
-  margin: 0.5rem 0 0 0 !important;
-  justify-content: flex-start !important;
-}
-.tech-design-2 .tech-favorite-card-compact .tech-website-link {
-  margin-left: auto !important;
-  padding: 0.5rem 1rem !important;
-}
-
-.tech-design-3 .tech-favorite-card-compact {
-  flex: 0 0 280px;
-}
-.tech-design-3 .tech-favorite-card-compact .tech-tool-rating-compact,
-.tech-design-3 .tech-favorite-card-compact .tech-tags-compact {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.tech-design-3 .tech-favorite-card-compact:hover .tech-tool-rating-compact,
-.tech-design-3 .tech-favorite-card-compact:hover .tech-tags-compact {
-  opacity: 1;
-  max-height: 200px;
-}
-
-.tech-design-4 .tech-favorite-card-compact {
-  flex: 0 0 220px;
-  flex-direction: row !important;
-  align-items: center !important;
-  padding: 0.75rem 1.25rem !important;
-  border-radius: 50px !important;
-}
-.tech-design-4 .tech-favorite-card-compact .tech-tool-icon-large {
-  font-size: 1.5rem !important;
-  margin: 0 0.75rem 0 0 !important;
-}
-.tech-design-4 .tech-favorite-card-compact h3 {
-  font-size: 0.95rem !important;
-  margin: 0 !important;
+.tech-website-btn span {
   flex: 1;
 }
-.tech-design-4 .tech-favorite-card-compact .tech-tool-category-badge,
-.tech-design-4 .tech-favorite-card-compact .tech-tags-compact {
-  display: none !important;
+.tech-website-btn i {
+  transition: transform 0.3s ease;
 }
-.tech-design-4 .tech-favorite-card-compact .tech-tool-rating-compact {
-  margin: 0 0.5rem !important;
-  font-size: 0.8rem !important;
+.tech-website-btn:hover {
+  transform: translateX(3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
-.tech-design-4 .tech-favorite-card-compact .tech-website-link {
-  padding: 0.25rem 0.5rem !important;
-  font-size: 0.8rem !important;
+.tech-website-btn:hover i {
+  transform: translateX(3px);
 }
 
-.tech-design-5 {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
-  gap: 1.5rem !important;
-  overflow-x: visible !important;
+@media (max-width: 768px) {
+  .tech-favorites-scroll {
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .tech-favorite-card {
+    flex: 0 0 260px;
+  }
 }
-.tech-design-5 .tech-favorite-card-compact {
-  flex: 1 1 auto;
-  background: linear-gradient(135deg, var(--hobby-color), var(--hobby-color-dark)) !important;
-  color: white !important;
-}
-.tech-design-5 .tech-favorite-card-compact .tech-tool-icon-large {
-  color: white !important;
-  opacity: 0.9;
-}
-.tech-design-5 .tech-favorite-card-compact h3 {
-  color: white !important;
-}
-.tech-design-5 .tech-favorite-card-compact .tech-tool-category-badge {
-  background: rgba(255, 255, 255, 0.2) !important;
-  color: white !important;
-}
-.tech-design-5 .tech-favorite-card-compact .tech-tool-rating-compact i {
-  color: white !important;
-}
-.tech-design-5 .tech-favorite-card-compact .tech-tag-small {
-  background: rgba(255, 255, 255, 0.2) !important;
-  color: white !important;
-  border-color: transparent !important;
-}
-.tech-design-5 .tech-favorite-card-compact .tech-website-link {
-  background: white !important;
-  color: var(--hobby-color) !important;
-}
-.tech-design-5 .tech-favorite-card-compact .tech-website-link:hover {
-  background: rgba(255, 255, 255, 0.9) !important;
-}
-
-.tech-design-6 .tech-favorite-card-compact {
-  flex: 0 0 320px;
-  padding: 1.5rem !important;
-}
-.tech-design-6 .tech-favorite-card-compact .tech-tool-icon-large {
-  font-size: 2.5rem !important;
-}
-.tech-design-6 .tech-favorite-card-compact h3 {
-  font-size: 1.2rem !important;
-}
-
-.tech-design-7 {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
-  gap: 2rem !important;
-  overflow-x: visible !important;
-}
-.tech-design-7 .tech-favorite-card-compact {
-  flex: 1 1 auto;
-  padding: 1rem !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-.tech-design-7 .tech-favorite-card-compact .tech-tool-icon-large {
-  font-size: 4rem !important;
-}
-.tech-design-7 .tech-favorite-card-compact h3 {
-  font-size: 0.9rem !important;
-  margin-top: 0.5rem !important;
-}
-.tech-design-7 .tech-favorite-card-compact .tech-tool-category-badge,
-.tech-design-7 .tech-favorite-card-compact .tech-tool-rating-compact,
-.tech-design-7 .tech-favorite-card-compact .tech-tags-compact,
-.tech-design-7 .tech-favorite-card-compact .tech-website-link {
-  display: none !important;
-}
-.tech-design-7 .tech-favorite-card-compact:hover {
-  background: white !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-  border: 1px solid #e9ecef !important;
-}
-
 /* ========================================
-   MUSIC FAVORITES - SPOTIFY EMBEDS
+   MUSIC NOW LISTENING - SPOTIFY EMBEDS
    ======================================== */
 .music-spotify-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 2rem;
   padding: 2rem 0;
 }
@@ -6489,42 +6329,56 @@ blockquote p {
 .music-spotify-card {
   background: white;
   border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  padding: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .music-spotify-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: var(--hobby-color);
 }
 
 .spotify-embed-container {
-  margin-bottom: 1rem;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
+  background: #f8f9fa;
 }
 .spotify-embed-container iframe {
   display: block;
   width: 100%;
 }
 
-.music-spotify-info h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin: 0 0 0.5rem 0;
+.music-spotify-info {
+  padding: 1.5rem;
+  background: linear-gradient(to bottom, white, #fafbfc);
 }
-.music-spotify-info .music-artist {
-  font-size: 0.95rem;
-  color: #7f8c8d;
-  margin: 0 0 0.75rem 0;
+.music-spotify-info .music-type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--hobby-color-light);
+  color: var(--hobby-color);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+.music-spotify-info .music-type-badge i {
+  font-size: 0.85rem;
 }
 .music-spotify-info .music-why {
-  font-size: 0.9rem;
-  color: #95a5a6;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #5a6c7d;
+  line-height: 1.7;
   margin: 0;
-  font-style: italic;
+  font-style: normal;
+  font-weight: 400;
 }
 
 @media (max-width: 768px) {

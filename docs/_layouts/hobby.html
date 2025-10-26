@@ -163,11 +163,15 @@ layout: default
             </section>
 
             <!-- Favorites/Goals Section -->
-            {% if page.favorites and page.favorites.size > 0 %}
+            {% if page.favorites and page.favorites.size > 0 or page.now_listening and page.now_listening.size > 0 %}
             <section class="hobby-favorites-section hobby-favorites-{{ page.slug }}">
                 <div class="container">
                 {% if page.section_type == "goals" %}
                 <h2><i class="fas fa-bullseye"></i> My Goals</h2>
+                {% elsif page.slug == "tech" %}
+                <h2><i class="fas fa-tools"></i> Core Tools & Technologies</h2>
+                {% elsif page.slug == "music" %}
+                <!-- Title handled in music section below -->
                 {% else %}
                 <h2><i class="fas fa-star"></i> My Favorites</h2>
                 {% endif %}
@@ -413,86 +417,54 @@ layout: default
                     {% endfor %}
                 </div>
 
-                <!-- Tech Favorites Layout - Tools & Technologies (Horizontal Scroll) -->
+                <!-- Tech Favorites Layout - Horizontal Scroll -->
                 {% elsif page.slug == "tech" %}
-
-                <!-- Design Selector -->
-                <div class="design-selector" style="margin-bottom: 2rem; text-align: center;">
-                    <p style="color: #7f8c8d; margin-bottom: 1rem;">
-                        <i class="fas fa-palette"></i> Choose a card design:
-                    </p>
-                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
-                        <button onclick="selectTechDesign(1)" class="design-btn active" data-design="1">
-                            <i class="fas fa-th-large"></i> Minimal
-                        </button>
-                        <button onclick="selectTechDesign(2)" class="design-btn" data-design="2">
-                            <i class="fas fa-list"></i> Compact
-                        </button>
-                        <button onclick="selectTechDesign(3)" class="design-btn" data-design="3">
-                            <i class="fas fa-hand-pointer"></i> Hover
-                        </button>
-                        <button onclick="selectTechDesign(4)" class="design-btn" data-design="4">
-                            <i class="fas fa-tag"></i> Badge
-                        </button>
-                        <button onclick="selectTechDesign(5)" class="design-btn" data-design="5">
-                            <i class="fas fa-th"></i> Grid
-                        </button>
-                        <button onclick="selectTechDesign(6)" class="design-btn" data-design="6">
-                            <i class="fas fa-info-circle"></i> Detailed
-                        </button>
-                        <button onclick="selectTechDesign(7)" class="design-btn" data-design="7">
-                            <i class="fas fa-icons"></i> Icons
-                        </button>
-                    </div>
-                </div>
-
                 <div class="tech-favorites-scroll">
                     {% for favorite in page.favorites %}
-                    <div class="tech-favorite-card-compact">
-                        {% if favorite.icon %}
-                        <i class="{{ favorite.icon }} tech-tool-icon-large"></i>
-                        {% endif %}
-
-                        <h3>{{ favorite.name }}</h3>
-                        <span class="tech-tool-category-badge">{{ favorite.category }}</span>
-
-                        {% if favorite.rating %}
-                        <div class="tech-tool-rating-compact">
-                            {% for i in (1..5) %}
-                                {% if i <= favorite.rating %}
-                                <i class="fas fa-star"></i>
-                                {% else %}
-                                <i class="far fa-star"></i>
-                                {% endif %}
-                            {% endfor %}
+                    <div class="tech-favorite-card">
+                        <div class="tech-card-header">
+                            {% if favorite.icon %}
+                            <div class="tech-icon-wrapper">
+                                <i class="{{ favorite.icon }} tech-tool-icon"></i>
+                            </div>
+                            {% endif %}
+                            <div class="tech-card-title">
+                                <h3>{{ favorite.name }}</h3>
+                                <span class="hobby-tech-category">{{ favorite.category }}</span>
+                            </div>
                         </div>
-                        {% endif %}
 
                         {% if favorite.use_cases and favorite.use_cases.size > 0 %}
-                        <div class="tech-tags-compact">
+                        <div class="tech-use-cases">
                             {% for use_case in favorite.use_cases limit:3 %}
-                            <span class="tech-tag-small">{{ use_case }}</span>
+                            <span class="tech-tag">{{ use_case }}</span>
                             {% endfor %}
                         </div>
                         {% endif %}
 
                         {% if favorite.website %}
-                        <a href="{{ favorite.website }}" target="_blank" rel="noopener noreferrer" class="tech-website-link">
-                            <i class="fas fa-external-link-alt"></i> Visit Site
+                        <a href="{{ favorite.website }}" target="_blank" rel="noopener noreferrer" class="tech-website-btn">
+                            <span>Visit Website</span>
+                            <i class="fas fa-arrow-right"></i>
                         </a>
                         {% endif %}
                     </div>
                     {% endfor %}
                 </div>
 
-                <!-- Music Favorites Layout - Spotify Embeds -->
+                <!-- Music Now Listening - Spotify Embeds -->
                 {% elsif page.slug == "music" %}
+                <div class="section-header-with-title">
+                    <h2><i class="fas fa-headphones-alt"></i> Now Listening</h2>
+                    <p class="section-subtitle">Current rotation on repeat</p>
+                </div>
+
                 <div class="music-spotify-grid">
-                    {% for favorite in page.favorites %}
+                    {% for track in page.favorites %}
                     <div class="music-spotify-card">
                         <!-- Spotify Embed Player -->
-                        {% if favorite.spotify_uri %}
-                            {% assign uri_parts = favorite.spotify_uri | split: ':' %}
+                        {% if track.spotify_uri %}
+                            {% assign uri_parts = track.spotify_uri | split: ':' %}
                             {% assign spotify_type = uri_parts[1] %}
                             {% assign spotify_id = uri_parts[2] %}
 
@@ -512,11 +484,11 @@ layout: default
 
                         <!-- Song/Album Info -->
                         <div class="music-spotify-info">
-                            <h3>{{ favorite.name }}</h3>
-                            <p class="music-artist">{{ favorite.artist }}</p>
-                            {% if favorite.why %}
-                            <p class="music-why">{{ favorite.why }}</p>
-                            {% endif %}
+                            <div class="music-type-badge">
+                                <i class="fas fa-{% if track.type == 'album' %}compact-disc{% else %}music{% endif %}"></i>
+                                {{ track.type | capitalize }}
+                            </div>
+                            <p class="music-why">{{ track.why }}</p>
                         </div>
                     </div>
                     {% endfor %}

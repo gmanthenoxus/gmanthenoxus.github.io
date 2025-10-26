@@ -258,16 +258,16 @@ empty_states:
 
 ## My Tech Philosophy
 
-My personal mantra defines it best: **"Technology is the improvement of everyday activities from the curiosity and for the interest of man."** I believe technology should solve real human problems, starting with the ones closest to you. Code isn't just syntax—it's a creative medium for building solutions that matter, for making life incrementally better, and for turning curiosity into tangible improvement.
+My personal mantra defines it best: **"Technology is the improvement of everyday activities from the curiosity and for the interest of man."** I believe technology should solve real human problems, starting with the ones closest to you. Code isn't just syntax, it's a creative medium for building solutions that matter, for making life incrementally better, and for turning curiosity into tangible improvement.
 
 ## The Journey: From Cyber Cafe to Full-Stack Builder
 
-My "wow" moment came in a cyber cafe, the first time I touched a computer. The sheer potential felt incredible, and my curiosity only deepened from there. Then came that magical first `Hello World`—the moment I knew this was my field. I started building static webpages, then progressed through Python, C, C++, and many more languages, developing a solid foundation that made transitioning between technologies feel natural.
+My "wow" moment came in a cyber cafe, the first time I touched a computer. The sheer potential felt incredible, and my curiosity only deepened from there. Then came that magical first `Hello World` the moment I knew this was my field. I started building static webpages, then progressed through Python, C, C++, and many more languages, developing a solid foundation that made transitioning between technologies feel natural.
 
 What excites me isn't any single technology, but the endless potential of what's new and emerging. I'm constantly exploring, learning, and connecting dots between different domains. This curiosity fuels my belief that the best solutions often come from unexpected technological intersections.
 
 ## Building With Purpose
 
-My approach to technology is deeply practical. I engage with the community through meetups and teaching because I believe knowledge should be shared and collaboration breeds innovation. The projects I'm most passionate about are those that bridge the gap between my technical skills and the real-world problems I encounter in my daily life and hobbies.
+My approach to technology is deeply practical. I engage with the community through meetups and teaching because I believe knowledge should be shared and collaboration breeds innovation. The projects I'm most passionate about are those that bridge the gap between my technical skills and the real world problems I encounter in my daily life and hobbies.
 
 Whether it's creating tools to organize sports games, building better music discovery systems, or developing fitness apps that actually understand progress, I'm driven by the same principle: technology should serve human needs, not the other way around. The most satisfying code is the kind that disappears into the background, leaving only the improvement it creates.

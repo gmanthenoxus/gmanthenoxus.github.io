@@ -362,6 +362,6 @@ This frustration is where my passion meets my skills. I see a world where techno
 
 ## Philosophy
 
-Sports taught me that the best moments aren't always about winning—they're about showing up, giving your all, and being part of something bigger than yourself. Whether it's a perfect assist, a hard-fought defensive stand, or just the joy of running with friends, these moments deserve to be remembered and celebrated.
+Sports taught me that the best moments aren't always about winning—they're about showing up, giving your all, and being part of something bigger than yourself. Whether it's a perfect assist, a hard fought defensive stand, or just the joy of running with friends, these moments deserve to be remembered and celebrated.
 
 The casual sports community is massive, passionate, and underserved. We deserve tools as good as the ones built for fantasy sports and professional analytics. That's what I'm building.

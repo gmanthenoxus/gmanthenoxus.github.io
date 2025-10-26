@@ -123,44 +123,43 @@ personal_journey:
     - "Made music an essential daily companion"
     - "Found personal favorites that define my identity"
 
-# Current Rotation
-# HOW TO ADD YOUR SONGS:
-# 1. Open Spotify Desktop/Web
-# 2. Right-click on any song/album
-# 3. Click "Share" > "Copy Spotify URI"
-# 4. Paste the URI below (format: spotify:track:XXXXX or spotify:album:XXXXX)
-# 5. The embed will automatically work - no API needed!
-
 favorites:
   - name: "No Role Modelz"
-    artist: "Artist Name"
+    artist: "J.Cole"
     type: "track"
     spotify_uri: "spotify:track:68Dni7IE4VyPkTOH9mRWHr"
-    why: "Why you love this song"
-    
+    why: "Classic J. Cole storytelling that never gets old."
+
   - name: "88"
     artist: "Otami"
     type: "track"
-    spotify_uri: "spotify:track:14Di07TGHINFwWorgYvbzv"  
-    why: "Why you love this song"
+    spotify_uri: "spotify:track:14Di07TGHINFwWorgYvbzv"
+    why: "Smooth Afrobeats vibes with clean production."
 
   - name: "The Boy Who Played the Harp"
     artist: "Dave"
     type: "album"
     spotify_uri: "spotify:album:24f1GFXCkViGoRpmGqlSSl"
-    why: "Why you love this album"
+    why: "Dave's introspective masterpiece blending UK rap with orchestral elements."
 
   - name: "Toxic"
     artist: "Gabzy"
     type: "track"
-    spotify_uri: "spotify:track:1wr9Qy4JEk84PovFDoOO3F" 
-    why: "Why you love this song"
+    spotify_uri: "spotify:track:1wr9Qy4JEk84PovFDoOO3F"
+    why: "Infectious Afrobeats energy that makes you move."
 
   - name: "Location"
     artist: "Dave ft Burna Boy"
     type: "track"
-    spotify_uri: "spotify:track:3n3Ppam7vgaVa1iaRUc9Lp"  # Replace with your song URI
-    why: "Why you love this song"
+    spotify_uri: "spotify:track:3z4CGd63tpUn9a6oQSG0CI"
+    why: "Dave's lyricism meets Burna's Afrofusion sound perfectly."
+
+  - name: "Outside"
+    artist: "Burna Boy"
+    type: "album"
+    spotify_uri: "spotify:album:5SCK5p3Rqgg0FwTmAurrcp"
+    why: "The album that put Burna Boy on the global stage."
+
 
 # Fun Facts
 fun_facts:
@@ -249,7 +248,7 @@ empty_states:
 
 ## My Music Philosophy
 
-Music, to me, is life story portrayed in sound. Every song is a chapter from an artist's soul—whether through their lyrics, the rhythm they produce, or the beat they craft. I may not always remember the lyrics, but I remember how a song makes me feel. This emotional resonance is what transforms music from background noise into a powerful narrative force that scores our lives.
+Music, to me, is life story portrayed in sound. Every song is a chapter from an artist's soul, whether through their lyrics, the rhythm they produce, or the beat they craft. I may not always remember the lyrics, but I remember how a song makes me feel. This emotional resonance is what transforms music from background noise into a powerful narrative force that scores our lives.
 
 ## The Journey: From Family Band to Daily Companion
 
@@ -261,4 +260,4 @@ Today, music is my ultimate utility player. It's the ginger that fuels my gym se
 
 My current favorites, J. Cole and Burna Boy, represent the blend of storytelling and rhythm I love. But my true passion lies in fixing how we discover and share music. Why should our playlists be so siloed? Why can't our music adapt to what we're doing and how we're feeling, rather than just what we've listened to before?
 
-I envision tools that make music social again—not locked to one platform, but fluid across services. Tools that understand that sometimes you need a pump-up playlist for the gym, and other times you need a calming soundtrack for a walk. The future of music tech isn't just about bigger libraries; it's about smarter, more contextual, and more human listening experiences.
+I envision tools that make music social again, not locked to one platform, but fluid across services. Tools that understand that sometimes you need a pump-up playlist for the gym, and other times you need a calming soundtrack for a walk. The future of music tech isn't just about bigger libraries; it's about smarter, more contextual, and more human listening experiences.

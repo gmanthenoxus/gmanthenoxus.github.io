@@ -256,7 +256,7 @@ empty_states:
 
 ## My Fitness Philosophy
 
-For me, fitness is the totality of wellbeing—body, mind, and soul. It's about being capable: capable of protecting the people you love, capable of clearing your mind under a heavy barbell, and capable of enjoying life without physical limitations. My philosophy is simple: **do what you can and want to do.** It's not about following the perfect program, but about showing up consistently and listening to what your body and mind need.
+For me, fitness is the totality of wellbeing body, mind, and soul. It's about being capable: capable of protecting the people you love, capable of clearing your mind under a heavy barbell, and capable of enjoying life without physical limitations. My philosophy is simple: **do what you can and want to do.** It's not about following the perfect program, but about showing up consistently and listening to what your body and mind need.
 
 ## The Journey: From Punishment to Purpose
 
@@ -266,6 +266,6 @@ I eventually stepped into a gym with no direction, just a vague desire to be big
 
 ## The Gap in Fitness Tech
 
-I've tried every fitness app on the market. They're great digital notebooks—excellent at logging what I did. But they're terrible coaches. They don't tell me *what to do next* when I plateau for months. My progress photos are buried in my camera roll, and my notes are scattered across apps. I was putting in the work but missing the intelligence to make it count.
+I've tried every fitness app on the market. They're great digital notebooks excellent at logging what I did. But they're terrible coaches. They don't tell me *what to do next* when I plateau for months. My progress photos are buried in my camera roll, and my notes are scattered across apps. I was putting in the work but missing the intelligence to make it count.
 
 I'm not just building a better logbook. I'm building an intelligent partner for fitness—one that connects the dots between your effort, your nutrition, and your progress to provide real, actionable insights. Because the goal isn't just to be strong; it's to be smart about getting there.

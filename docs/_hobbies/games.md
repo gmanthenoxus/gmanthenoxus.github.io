@@ -318,12 +318,12 @@ To me, gaming is the ultimate expression of creativity, art, challenge, and tech
 
 ## The Journey: From Family Bonds to Midnight Lobbies
 
-My journey began with a Nintendo 64, a gift from my father that felt like pure magic. The leap into 3D worlds was awe-inspiring. But even before that, I was building bonds over board games with my family. This foundation—from Ludo and Chess to tag and hide-and-seek—taught me that play is a universal language.
+My journey began with a Nintendo 64, a gift from my father that felt like pure magic. The leap into 3D worlds was awe-inspiring. But even before that, I was building bonds over board games with my family. This foundation from Ludo and Chess to tag and hide and seek taught me that play is a universal language.
 
 My tastes have expanded to encompass a huge spectrum: the strategic depth of poker, the competitive rush of NBA 2K, the long-term planning of Clash of Clans, and the narrative immersion of Assassin's Creed. I appreciate games in all their forms, from quick party games to epic open-world adventures.
 
 ## The Two Sides of the Controller
 
-These days, my gaming life has two primary modes. There's the **competitive thrill** of hopping online with the boys for late-night sessions, where communication and teamwork are key. Then there's the **immersive escape** of diving into a rich, single-player world to decompress and explore. I believe a balanced diet of both is the key to a fulfilling gaming life.
+These days, my gaming life has two primary modes. There's the **competitive thrill** of hopping online with the boys for late night sessions, where communication and teamwork are key. Then there's the **immersive escape** of diving into a rich, single-player world to decompress and explore. I believe a balanced diet of both is the key to a fulfilling gaming life.
 
-This wide-ranging experience has shown me the gaps in how we manage our gaming lives—juggling platforms, organizing friends, and preserving our in-game memories. My goal is to build tools that enhance these social and organizational aspects, making it easier than ever to just play.
+This wide ranging experience has shown me the gaps in how we manage our gaming lives juggling platforms, organizing friends, and preserving our in-game memories. My goal is to build tools that enhance these social and organizational aspects, making it easier than ever to just play.

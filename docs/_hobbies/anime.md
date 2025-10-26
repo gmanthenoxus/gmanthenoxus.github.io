@@ -258,7 +258,7 @@ cta:
 
 ## The Beginning
 
-My journey began in junior secondary school, fueled by the passionate discussions of my roommates. I took the plunge with *Bleach*, completely unaware of the massive world I was stepping into. The hook was set deep the first time Ichigo unleashed his Bankai. The sheer scale, the power shift, the visual spectacle—it was a defining "I get it now" moment that transformed me from a curious observer into a dedicated fan.
+My journey began in junior secondary school, fueled by the passionate discussions of my roommates. I took the plunge with *Bleach*, completely unaware of the massive world I was stepping into. The hook was set deep the first time Ichigo unleashed his Bankai. The sheer scale, the power shift, the visual spectacle it was a defining "I get it now" moment that transformed me from a curious observer into a dedicated fan.
 
 ## The Deep Dive
 
@@ -270,6 +270,6 @@ Now, I'm a daily consumer. My ritual is built on the mental patience to wait a w
 
 ## The Builder's Vision
 
-This deep dive has made the industry's pain points painfully clear. I've spent hours, like searching for the psychological sports masterpiece *One Outs*, only to find it tucked away on an obscure YouTube channel. Keeping up with seasonal releases is a part-time job, and there's no easy way to share the experience—to see what my friends are watching or to build a shared watchlist.
+This deep dive has made the industry's pain points painfully clear. I've spent hours, like searching for the psychological sports masterpiece *One Outs*, only to find it tucked away on an obscure YouTube channel. Keeping up with seasonal releases is a part time job, and there's no easy way to share the experience to see what my friends are watching or to build a shared watchlist.
 
 This frustration is where my passion for anime meets my skills as a builder. I see a world where better tools can make being a fan seamless and more social. My goal is to build that world.
