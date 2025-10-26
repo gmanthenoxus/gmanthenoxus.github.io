@@ -940,7 +940,7 @@ ${pageUrl}
 let scoreB = 0;
 let currentQuestionB = 0;
 let timerB = null;
-let timeLeftB = 30;
+let timeLeftB = 12;
 let totalTimeB = 0;
 let startTimeB = 0;
 let answersB = []; // Track correct/incorrect answers
@@ -1064,7 +1064,7 @@ function showQuestionB(index) {
         }
     });
 
-    timeLeftB = 30;
+    timeLeftB = 12;
 
     // Reset timer warning
     const timerEl = document.querySelector('.hobby-quiz-timer');

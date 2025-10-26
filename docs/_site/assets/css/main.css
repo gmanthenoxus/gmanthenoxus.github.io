@@ -5647,14 +5647,16 @@ blockquote p {
 /* Stats Header with Time Filters */
 .hobby-stats-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 .hobby-stats-header h2 {
   margin-bottom: 0;
+  width: 100%;
 }
 
 /* Time Filters */
@@ -5702,7 +5704,6 @@ blockquote p {
   padding-top: 1rem;
   scrollbar-width: thin;
   scrollbar-color: var(--hobby-color-light) transparent;
-  /* Mobile: Add bounce animation to indicate scrollable content */
 }
 .hobby-stats-grid::-webkit-scrollbar {
   height: 8px;
@@ -5718,38 +5719,28 @@ blockquote p {
 .hobby-stats-grid::-webkit-scrollbar-thumb:hover {
   background: var(--hobby-color);
 }
+
+/* Mobile: Vertical bounce animation on stat cards */
 @media (max-width: 768px) {
   .hobby-stats-grid {
+    animation: verticalBounceHint 2s ease-in-out;
+    animation-delay: 0.5s;
     /* Stop animation after user scrolls */
   }
-  .hobby-stats-grid::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
-    pointer-events: none;
-    animation: slideHintBounce 2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-  .hobby-stats-grid.scrolled::after {
+  .hobby-stats-grid.scrolled {
     animation: none;
-    opacity: 0;
   }
 }
-
-/* Bounce animation for scroll hint */
-@keyframes slideHintBounce {
+/* Vertical bounce animation for mobile scroll hint */
+@keyframes verticalBounceHint {
   0%, 100% {
-    opacity: 0.7;
-    transform: translateY(-50%) translateX(0);
+    transform: translateY(0);
   }
-  50% {
-    opacity: 1;
-    transform: translateY(-50%) translateX(-10px);
+  10%, 30% {
+    transform: translateY(-8px);
+  }
+  20%, 40% {
+    transform: translateY(0);
   }
 }
 /* Stat Card */
@@ -6185,15 +6176,17 @@ blockquote p {
 }
 
 .tech-favorite-card {
-  flex: 0 0 280px;
+  flex: 0 0 240px;
   background: white;
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
 }
 .tech-favorite-card:hover {
@@ -6204,28 +6197,30 @@ blockquote p {
 
 .tech-card-header {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 
 .tech-icon-wrapper {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--hobby-color-light);
-  border-radius: 10px;
+  border-radius: 12px;
   transition: all 0.3s ease;
 }
 .tech-favorite-card:hover .tech-icon-wrapper {
   background: var(--hobby-color);
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .tech-tool-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--hobby-color);
   transition: color 0.3s ease;
 }
@@ -6234,11 +6229,10 @@ blockquote p {
 }
 
 .tech-card-title {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
 }
 .tech-card-title h3 {
-  margin: 0 0 0.35rem 0;
+  margin: 0 0 0.5rem 0;
   font-size: 1.1rem;
   font-weight: 700;
   color: #2c3e50;
@@ -6253,54 +6247,29 @@ blockquote p {
   letter-spacing: 0.5px;
 }
 
-.tech-use-cases {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.tech-tag {
-  display: inline-block;
-  padding: 0.35rem 0.75rem;
-  background: #f8f9fa;
-  color: #5a6c7d;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid #e9ecef;
-  transition: all 0.2s ease;
-}
-.tech-tag:hover {
-  background: var(--hobby-color-light);
-  color: var(--hobby-color);
-  border-color: var(--hobby-color);
-}
-
 .tech-website-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
+  padding: 0.75rem 1.5rem;
   background: linear-gradient(135deg, var(--hobby-color), var(--hobby-color-dark));
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.85rem;
+  width: 100%;
   margin-top: auto;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.tech-website-btn span {
-  flex: 1;
 }
 .tech-website-btn i {
   transition: transform 0.3s ease;
 }
 .tech-website-btn:hover {
-  transform: translateX(3px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 .tech-website-btn:hover i {
   transform: translateX(3px);
@@ -6313,7 +6282,7 @@ blockquote p {
     padding-right: 1rem;
   }
   .tech-favorite-card {
-    flex: 0 0 260px;
+    flex: 0 0 200px;
   }
 }
 /* ========================================
@@ -8249,6 +8218,10 @@ blockquote p {
   color: white;
   position: relative;
   overflow: hidden;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Mobile: Fit to screen width */
 }
 .hobby-completion-card-capture::before {
   content: "";
@@ -8264,6 +8237,15 @@ blockquote p {
   position: relative;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .hobby-completion-card-capture {
+    padding: 2rem 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 16px;
+    max-width: 100%;
+  }
+}
 
 .hobby-completion-header {
   text-align: center;
@@ -8274,6 +8256,11 @@ blockquote p {
   margin-bottom: 1rem;
   animation: bounceIn 0.6s ease;
 }
+@media (max-width: 768px) {
+  .hobby-completion-header .completion-icon-large {
+    font-size: 3.5rem;
+  }
+}
 .hobby-completion-header .completion-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -8281,10 +8268,20 @@ blockquote p {
   margin-bottom: 0.5rem;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 768px) {
+  .hobby-completion-header .completion-title {
+    font-size: 1.8rem;
+  }
+}
 .hobby-completion-header .completion-subtitle {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+}
+@media (max-width: 768px) {
+  .hobby-completion-header .completion-subtitle {
+    font-size: 0.95rem;
+  }
 }
 
 .hobby-completion-stats {
@@ -8298,6 +8295,12 @@ blockquote p {
   border-radius: 16px;
   backdrop-filter: blur(10px);
 }
+@media (max-width: 768px) {
+  .hobby-completion-stats {
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+}
 
 .hobby-stat-item {
   text-align: center;
@@ -8307,6 +8310,12 @@ blockquote p {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 768px) {
+  .hobby-stat-item .stat-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+  }
+}
 .hobby-stat-item .stat-label {
   font-size: 0.9rem;
   color: white !important;
@@ -8315,17 +8324,34 @@ blockquote p {
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 768px) {
+  .hobby-stat-item .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+  }
+}
 .hobby-stat-item .stat-value {
   font-size: 2.5rem;
   font-weight: 800;
   color: white !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 768px) {
+  .hobby-stat-item .stat-value {
+    font-size: 1.8rem;
+  }
+}
 
 .hobby-stat-divider {
   width: 2px;
   height: 80px;
   background: rgba(255, 255, 255, 0.3);
+}
+@media (max-width: 768px) {
+  .hobby-stat-divider {
+    height: 60px;
+  }
 }
 
 .hobby-completion-message-box {
@@ -8339,6 +8365,13 @@ blockquote p {
   font-weight: 600;
   color: white;
   line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .hobby-completion-message-box {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
 
 /* Completion Actions - Share and Try Again Buttons */
@@ -8421,6 +8454,12 @@ blockquote p {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
+  word-break: break-all;
+}
+@media (max-width: 768px) {
+  .hobby-completion-footer .completion-url {
+    font-size: 0.75rem;
+  }
 }
 
 @keyframes bounceIn {
