@@ -156,8 +156,8 @@ favorites:
     spotify_uri: "spotify:track:1wr9Qy4JEk84PovFDoOO3F" 
     why: "Why you love this song"
 
-  - name: "Example Song 4"
-    artist: "Artist Name"
+  - name: "Location"
+    artist: "Dave ft Burna Boy"
     type: "track"
     spotify_uri: "spotify:track:3n3Ppam7vgaVa1iaRUc9Lp"  # Replace with your song URI
     why: "Why you love this song"
