@@ -9,10 +9,26 @@ function selectTechDesign(designNumber) {
     // Store preference
     localStorage.setItem('tech_design_preference', designNumber);
 
+    // Apply design immediately
+    const container = document.querySelector('.tech-favorites-scroll');
+    if (container) {
+        // Remove all design classes
+        container.className = 'tech-favorites-scroll';
+        // Add new design class
+        container.classList.add(`tech-design-${designNumber}`);
+
+        // Also update all cards
+        const cards = container.querySelectorAll('.tech-favorite-card-compact');
+        cards.forEach(card => {
+            card.className = 'tech-favorite-card-compact';
+            card.classList.add(`tech-card-design-${designNumber}`);
+        });
+    }
+
     // Show notification
     const notification = document.createElement('div');
     notification.className = 'design-notification';
-    notification.innerHTML = `<i class="fas fa-check-circle"></i> Design ${designNumber} selected!`;
+    notification.innerHTML = `<i class="fas fa-check-circle"></i> Design ${designNumber} applied!`;
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -31,9 +47,6 @@ function selectTechDesign(designNumber) {
         notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => notification.remove(), 300);
     }, 2000);
-
-    // Note: Actual design implementation would require page reload or dynamic CSS changes
-    console.log(`Tech design ${designNumber} selected. Refresh page to see changes.`);
 }
 
 // Enhanced Hobby Page Functionality
@@ -46,6 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (designBtn) {
             document.querySelectorAll('.design-btn').forEach(btn => btn.classList.remove('active'));
             designBtn.classList.add('active');
+
+            // Apply the saved design
+            const container = document.querySelector('.tech-favorites-scroll');
+            if (container) {
+                container.classList.add(`tech-design-${savedDesign}`);
+                const cards = container.querySelectorAll('.tech-favorite-card-compact');
+                cards.forEach(card => {
+                    card.classList.add(`tech-card-design-${savedDesign}`);
+                });
+            }
         }
     }
 

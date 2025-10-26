@@ -124,38 +124,43 @@ personal_journey:
     - "Found personal favorites that define my identity"
 
 # Current Rotation
+# HOW TO ADD YOUR SONGS:
+# 1. Open Spotify Desktop/Web
+# 2. Right-click on any song/album
+# 3. Click "Share" > "Copy Spotify URI"
+# 4. Paste the URI below (format: spotify:track:XXXXX or spotify:album:XXXXX)
+# 5. The embed will automatically work - no API needed!
+
 favorites:
-  - name: "J. Cole"
-    category: "Artist"
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80"
-    rating: 5
-    genres: ["Hip-Hop", "Rap", "Storytelling"]
-    why: "Master storyteller who weaves personal narratives with social commentary. Every album is a journey through his evolution as an artist and human."
-    top_tracks: ["No Role Modelz", "Middle Child", "Love Yourz"]
+  - name: "Example Song 1"
+    artist: "Artist Name"
+    type: "track"
+    spotify_uri: "spotify:track:68Dni7IE4VyPkTOH9mRWHr"
+    why: "Why you love this song"
+    
+  - name: "Example Song 2"
+    artist: "Artist Name"
+    type: "track"
+    spotify_uri: "spotify:track:14Di07TGHINFwWorgYvbzv"  
+    why: "Why you love this song"
 
-  - name: "Burna Boy"
-    category: "Artist"
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80"
-    rating: 5
-    genres: ["Afrobeats", "Afrofusion", "Dancehall"]
-    why: "The African Giant who brings infectious rhythms and powerful messages. His music makes you move while making you think."
-    top_tracks: ["Last Last", "Ye", "On the Low"]
+  - name: "Example Album 1"
+    artist: "Artist Name"
+    type: "album"
+    spotify_uri: "spotify:album:2noRn2Aes5aoNVsU6iWThc"  # Replace with your album URI
+    why: "Why you love this album"
 
-  - name: "Fela Kuti"
-    category: "Artist"
-    image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80"
-    rating: 5
-    genres: ["Afrobeat", "Jazz", "Funk"]
-    why: "The pioneer who created Afrobeat and used music as a weapon for social change. His legacy shaped African music forever."
-    top_tracks: ["Water No Get Enemy", "Zombie", "Sorrow Tears and Blood"]
+  - name: "Example Song 3"
+    artist: "Artist Name"
+    type: "track"
+    spotify_uri: "spotify:track:3n3Ppam7vgaVa1iaRUc9Lp"  # Replace with your song URI
+    why: "Why you love this song"
 
-  - name: "Kendrick Lamar"
-    category: "Artist"
-    image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80"
-    rating: 5
-    genres: ["Hip-Hop", "Rap", "Conscious"]
-    why: "Poetic genius who pushes the boundaries of hip-hop. His albums are cinematic experiences that demand multiple listens."
-    top_tracks: ["HUMBLE.", "Alright", "DNA."]
+  - name: "Example Song 4"
+    artist: "Artist Name"
+    type: "track"
+    spotify_uri: "spotify:track:3n3Ppam7vgaVa1iaRUc9Lp"  # Replace with your song URI
+    why: "Why you love this song"
 
 # Fun Facts
 fun_facts:

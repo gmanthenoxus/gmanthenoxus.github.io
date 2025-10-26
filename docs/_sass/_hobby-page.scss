@@ -952,8 +952,280 @@
     }
 }
 
+
 /* ========================================
-   MUSIC FAVORITES - HORIZONTAL SCROLL
+   TECH CARD DESIGN VARIATIONS
+   ======================================== */
+
+// Design 2: Compact List
+.tech-design-2 {
+    .tech-favorite-card-compact {
+        flex: 0 0 350px;
+        flex-direction: row !important;
+        text-align: left !important;
+        align-items: center !important;
+        padding: 1rem 1.5rem !important;
+
+        .tech-tool-icon-large {
+            font-size: 2rem !important;
+            margin: 0 1rem 0 0 !important;
+        }
+
+        h3 {
+            font-size: 1rem !important;
+            margin: 0 0 0.25rem 0 !important;
+        }
+
+        .tech-tool-category-badge {
+            margin: 0 0.5rem 0 0 !important;
+        }
+
+        .tech-tool-rating-compact {
+            margin: 0 !important;
+            display: inline-block !important;
+        }
+
+        .tech-tags-compact {
+            margin: 0.5rem 0 0 0 !important;
+            justify-content: flex-start !important;
+        }
+
+        .tech-website-link {
+            margin-left: auto !important;
+            padding: 0.5rem 1rem !important;
+        }
+    }
+}
+
+// Design 3: Hover Details
+.tech-design-3 {
+    .tech-favorite-card-compact {
+        flex: 0 0 280px;
+
+        .tech-tool-rating-compact,
+        .tech-tags-compact {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            .tech-tool-rating-compact,
+            .tech-tags-compact {
+                opacity: 1;
+                max-height: 200px;
+            }
+        }
+    }
+}
+
+// Design 4: Badge Style
+.tech-design-4 {
+    .tech-favorite-card-compact {
+        flex: 0 0 220px;
+        flex-direction: row !important;
+        align-items: center !important;
+        padding: 0.75rem 1.25rem !important;
+        border-radius: 50px !important;
+
+        .tech-tool-icon-large {
+            font-size: 1.5rem !important;
+            margin: 0 0.75rem 0 0 !important;
+        }
+
+        h3 {
+            font-size: 0.95rem !important;
+            margin: 0 !important;
+            flex: 1;
+        }
+
+        .tech-tool-category-badge,
+        .tech-tags-compact {
+            display: none !important;
+        }
+
+        .tech-tool-rating-compact {
+            margin: 0 0.5rem !important;
+            font-size: 0.8rem !important;
+        }
+
+        .tech-website-link {
+            padding: 0.25rem 0.5rem !important;
+            font-size: 0.8rem !important;
+        }
+    }
+}
+
+// Design 5: Grid with Background
+.tech-design-5 {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+    gap: 1.5rem !important;
+    overflow-x: visible !important;
+
+    .tech-favorite-card-compact {
+        flex: 1 1 auto;
+        background: linear-gradient(135deg, var(--hobby-color), var(--hobby-color-dark)) !important;
+        color: white !important;
+
+        .tech-tool-icon-large {
+            color: white !important;
+            opacity: 0.9;
+        }
+
+        h3 {
+            color: white !important;
+        }
+
+        .tech-tool-category-badge {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+        }
+
+        .tech-tool-rating-compact i {
+            color: white !important;
+        }
+
+        .tech-tag-small {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+            border-color: transparent !important;
+        }
+
+        .tech-website-link {
+            background: white !important;
+            color: var(--hobby-color) !important;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.9) !important;
+            }
+        }
+    }
+}
+
+// Design 6: Detailed Info
+.tech-design-6 {
+    .tech-favorite-card-compact {
+        flex: 0 0 320px;
+        padding: 1.5rem !important;
+
+        .tech-tool-icon-large {
+            font-size: 2.5rem !important;
+        }
+
+        h3 {
+            font-size: 1.2rem !important;
+        }
+    }
+}
+
+// Design 7: Icon Grid
+.tech-design-7 {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+    gap: 2rem !important;
+    overflow-x: visible !important;
+
+    .tech-favorite-card-compact {
+        flex: 1 1 auto;
+        padding: 1rem !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+
+        .tech-tool-icon-large {
+            font-size: 4rem !important;
+        }
+
+        h3 {
+            font-size: 0.9rem !important;
+            margin-top: 0.5rem !important;
+        }
+
+        .tech-tool-category-badge,
+        .tech-tool-rating-compact,
+        .tech-tags-compact,
+        .tech-website-link {
+            display: none !important;
+        }
+
+        &:hover {
+            background: white !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+            border: 1px solid #e9ecef !important;
+        }
+    }
+}
+
+
+/* ========================================
+   MUSIC FAVORITES - SPOTIFY EMBEDS
+   ======================================== */
+
+.music-spotify-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.music-spotify-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.spotify-embed-container {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+
+    iframe {
+        display: block;
+        width: 100%;
+    }
+}
+
+.music-spotify-info {
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .music-artist {
+        font-size: 0.95rem;
+        color: #7f8c8d;
+        margin: 0 0 0.75rem 0;
+    }
+
+    .music-why {
+        font-size: 0.9rem;
+        color: #95a5a6;
+        line-height: 1.5;
+        margin: 0;
+        font-style: italic;
+    }
+}
+
+@media (max-width: 768px) {
+    .music-spotify-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* ========================================
+   MUSIC FAVORITES - HORIZONTAL SCROLL (OLD - KEEP FOR FALLBACK)
    ======================================== */
 
 .music-favorites-scroll {
