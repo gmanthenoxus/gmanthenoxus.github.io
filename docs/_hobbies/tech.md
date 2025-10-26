@@ -205,6 +205,42 @@ trivia:
         correct: true
     explanation: "While 'computational' relates to computing, it's not considered a programming paradigm itself."
 
+  - question: "What does 'API' stand for in software development?"
+    options:
+      - text: "Application Programming Interface"
+        correct: true
+      - text: "Advanced Program Integration"
+        correct: false
+      - text: "Automated Process Instruction"
+        correct: false
+      - text: "Application Process Interface"
+        correct: false
+    explanation: "API (Application Programming Interface) allows different software applications to communicate with each other."
+
+  - question: "Which company developed the Git version control system?"
+    options:
+      - text: "Microsoft"
+        correct: false
+      - text: "Google"
+        correct: false
+      - text: "Linux Foundation"
+        correct: false
+      - text: "Created by Linus Torvalds"
+        correct: true
+    explanation: "Git was created by Linus Torvalds in 2005 for Linux kernel development, and is now the most widely used version control system."
+
+  - question: "What does 'RAM' stand for in computer hardware?"
+    options:
+      - text: "Random Access Memory"
+        correct: true
+      - text: "Rapid Application Module"
+        correct: false
+      - text: "Read And Modify"
+        correct: false
+      - text: "Runtime Access Manager"
+        correct: false
+    explanation: "RAM (Random Access Memory) is the computer's short-term memory used to store data that's actively being used."
+
 # Current Projects
 current_projects:
   - name: "Passion-Driven Development Framework"
@@ -230,16 +266,18 @@ external_platforms:
     description: "Open source contributions and project portfolio"
     url: "https://github.com/gmanthenoxus"
     color: "#181717"
-  - name: "Stack Overflow"
-    icon: "fab fa-stack-overflow"
-    description: "Technical Q&A and community contributions"
-    url: "https://stackoverflow.com/users/gmanthenoxus"
-    color: "#F58025"
-  - name: "Tech Twitter"
+
+  - name: "X (Twitter)"
     icon: "fab fa-twitter"
     description: "Technology insights and industry discussions"
-    url: "https://twitter.com/gmanthenoxus_tech"
+    url: "https://x.com/GmantheN"
     color: "#1DA1F2"
+
+  - name: "Discord"
+    icon: "fab fa-discord"
+    description: "Tech community and collaboration"
+    url: "https://discord.com/users/721843084219908249"
+    color: "#5865F2"
 
 # Call-to-Action
 cta:

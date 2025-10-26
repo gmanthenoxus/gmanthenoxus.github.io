@@ -284,21 +284,23 @@ current_projects:
 
 # External Platforms
 external_platforms:
-  - name: "Placeholder Platform 1"
-    icon: "fas fa-gamepad"
-    description: "Your gaming platform here"
-    url: "#"
-    color: "#9B59B6"
-  - name: "Placeholder Platform 2"
-    icon: "fas fa-trophy"
-    description: "Your achievement tracking platform here"
-    url: "#"
-    color: "#9B59B6"
-  - name: "Placeholder Platform 3"
-    icon: "fas fa-users"
-    description: "Your gaming community platform here"
-    url: "#"
-    color: "#9B59B6"
+  - name: "Xbox Live"
+    icon: "fab fa-xbox"
+    description: "Console gaming profile and achievements"
+    url: "https://www.xbox.com/en-GB/play/user/GMANTHENOXUS"
+    color: "#107C10"
+
+  - name: "Discord"
+    icon: "fab fa-discord"
+    description: "Gaming community and multiplayer sessions"
+    url: "https://discord.com/users/721843084219908249"
+    color: "#5865F2"
+
+  - name: "X (Twitter)"
+    icon: "fab fa-twitter"
+    description: "Gaming updates and community discussions"
+    url: "https://x.com/GmantheN"
+    color: "#1DA1F2"
 
 # Call-to-Action
 cta:

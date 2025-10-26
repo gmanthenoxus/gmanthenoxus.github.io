@@ -817,8 +817,6 @@ ${pageUrl}
         const completionCard = document.getElementById(completionCardId);
 
         if (completionCard && typeof html2canvas !== 'undefined') {
-            showNotification('Generating image... 📸');
-
             // Capture the card as canvas
             const canvas = await html2canvas(completionCard, {
                 backgroundColor: null,
@@ -842,7 +840,6 @@ ${pageUrl}
                                     text: shareText,
                                     files: [file]
                                 });
-                                showNotification('Score shared successfully! 🎉');
                                 return;
                             }
                         } catch (err) {
@@ -864,7 +861,6 @@ ${pageUrl}
 
                     // Copy text to clipboard
                     copyToClipboard(shareText);
-                    showNotification('✅ Image downloaded! Share text copied to clipboard 📋');
                 } else {
                     // Fallback to text only
                     shareTextOnly();
@@ -887,7 +883,7 @@ ${pageUrl}
                 text: shareText,
                 url: pageUrl
             }).then(() => {
-                showNotification('Score shared successfully! 🎉');
+                // Share successful
             }).catch(err => {
                 if (err.name !== 'AbortError') {
                     copyToClipboard(shareText);
@@ -1276,7 +1272,7 @@ ${description}
 function copyToClipboard(text) {
     if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(() => {
-            showNotification('Copied to clipboard!');
+            // Copied successfully
         }).catch(() => {
             fallbackCopy(text);
         });
@@ -1295,7 +1291,7 @@ function fallbackCopy(text) {
     textarea.select();
     try {
         document.execCommand('copy');
-        showNotification('Copied to clipboard!');
+        // Copied successfully
     } catch (err) {
         console.error('Failed to copy:', err);
     }

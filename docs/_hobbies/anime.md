@@ -245,9 +245,15 @@ external_platforms:
 
   - name: "X (Twitter)"
     description: "Anime thoughts, hot takes, and discussions"
-    url: "https://twitter.com/USERNAME"
+    url: "https://x.com/GmantheN"
     icon: "fab fa-twitter"
     color: "#1DA1F2"
+
+  - name: "Discord"
+    description: "Anime community and discussions"
+    url: "https://discord.com/users/721843084219908249"
+    icon: "fab fa-discord"
+    color: "#5865F2"
 
 cta:
   title: "Love Anime Tech?"

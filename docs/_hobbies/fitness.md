@@ -226,21 +226,6 @@ current_projects:
 
 # External Platforms
 external_platforms:
-  - name: "Placeholder Platform 1"
-    icon: "fas fa-dumbbell"
-    description: "Your fitness tracking platform here"
-    url: "#"
-    color: "#4ECDC4"
-  - name: "Placeholder Platform 2"
-    icon: "fas fa-heartbeat"
-    description: "Your health monitoring platform here"
-    url: "#"
-    color: "#4ECDC4"
-  - name: "Placeholder Platform 3"
-    icon: "fas fa-running"
-    description: "Your activity tracking platform here"
-    url: "#"
-    color: "#4ECDC4"
 
 # Call-to-Action
 cta:

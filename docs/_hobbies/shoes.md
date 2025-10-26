@@ -257,6 +257,42 @@ trivia:
         correct: false
     explanation: "Deadstock refers to shoes that are brand new, unworn, and in their original packaging."
 
+  - question: "Which Nike Air Jordan model is considered the most iconic and valuable?"
+    options:
+      - text: "Air Jordan 3"
+        correct: false
+      - text: "Air Jordan 11"
+        correct: false
+      - text: "Air Jordan 1"
+        correct: true
+      - text: "Air Jordan 4"
+        correct: false
+    explanation: "The Air Jordan 1, released in 1985, is the most iconic and sought-after model, with some colorways selling for hundreds of thousands of dollars."
+
+  - question: "What year did Nike introduce the Air Max technology with a visible air unit?"
+    options:
+      - text: "1985"
+        correct: false
+      - text: "1987"
+        correct: true
+      - text: "1990"
+        correct: false
+      - text: "1982"
+        correct: false
+    explanation: "Nike Air Max 1 was released in 1987, featuring the first visible Air cushioning unit designed by Tinker Hatfield."
+
+  - question: "Which brand's logo is known as 'The Three Stripes'?"
+    options:
+      - text: "Nike"
+        correct: false
+      - text: "Puma"
+        correct: false
+      - text: "Adidas"
+        correct: true
+      - text: "Reebok"
+        correct: false
+    explanation: "Adidas is famous for its Three Stripes logo, which has been a signature design element since 1949."
+
 # Current Projects
 current_projects:
   - name: "The Universal Sizing Guide"

@@ -196,6 +196,42 @@ trivia:
         correct: false
     explanation: "Ethnomusicology examines music in its cultural context worldwide."
 
+  - question: "Which music streaming service was the first to reach 100 million paid subscribers?"
+    options:
+      - text: "Apple Music"
+        correct: false
+      - text: "Spotify"
+        correct: true
+      - text: "YouTube Music"
+        correct: false
+      - text: "Amazon Music"
+        correct: false
+    explanation: "Spotify reached 100 million paid subscribers in 2019, becoming the first streaming service to hit this milestone."
+
+  - question: "What does BPM stand for in music production?"
+    options:
+      - text: "Beats Per Minute"
+        correct: true
+      - text: "Bass Power Modulation"
+        correct: false
+      - text: "Binary Pattern Mixing"
+        correct: false
+      - text: "Beat Pattern Measure"
+        correct: false
+    explanation: "BPM (Beats Per Minute) measures the tempo of a song—how fast or slow it is."
+
+  - question: "Which artist has won the most Grammy Awards in history?"
+    options:
+      - text: "Michael Jackson"
+        correct: false
+      - text: "Beyoncé"
+        correct: true
+      - text: "Quincy Jones"
+        correct: false
+      - text: "Stevie Wonder"
+        correct: false
+    explanation: "Beyoncé holds the record with 32 Grammy Awards as of 2023, surpassing all other artists."
+
 # Current Projects
 current_projects:
   - name: "The Contextual Playlist Engine"
@@ -222,17 +258,17 @@ external_platforms:
     url: "https://open.spotify.com/user/gmanthenoxus"
     color: "#1DB954"
 
-  - name: "Last.fm"
-    icon: "fab fa-lastfm"
-    description: "Music tracking and listening statistics"
-    url: "https://last.fm/user/gmanthenoxus"
-    color: "#D51007"
+  - name: "Discord"
+    icon: "fab fa-discord"
+    description: "Music discussions and community"
+    url: "https://discord.com/users/721843084219908249"
+    color: "#5865F2"
 
-  - name: "SoundCloud"
-    icon: "fab fa-soundcloud"
-    description: "Independent artists and underground tracks"
-    url: "https://soundcloud.com/gmanthenoxus"
-    color: "#FF5500"
+  - name: "X (Twitter)"
+    icon: "fab fa-twitter"
+    description: "Music thoughts and recommendations"
+    url: "https://x.com/GmantheN"
+    color: "#1DA1F2"
 
 # Call-to-Action
 cta:
