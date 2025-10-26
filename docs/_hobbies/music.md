@@ -132,28 +132,28 @@ personal_journey:
 # 5. The embed will automatically work - no API needed!
 
 favorites:
-  - name: "Example Song 1"
+  - name: "No Role Modelz"
     artist: "Artist Name"
     type: "track"
     spotify_uri: "spotify:track:68Dni7IE4VyPkTOH9mRWHr"
     why: "Why you love this song"
     
-  - name: "Example Song 2"
-    artist: "Artist Name"
+  - name: "88"
+    artist: "Otami"
     type: "track"
     spotify_uri: "spotify:track:14Di07TGHINFwWorgYvbzv"  
     why: "Why you love this song"
 
-  - name: "Example Album 1"
-    artist: "Artist Name"
+  - name: "The Boy Who Played the Harp"
+    artist: "Dave"
     type: "album"
-    spotify_uri: "spotify:album:2noRn2Aes5aoNVsU6iWThc"  # Replace with your album URI
+    spotify_uri: "spotify:album:24f1GFXCkViGoRpmGqlSSl"
     why: "Why you love this album"
 
-  - name: "Example Song 3"
-    artist: "Artist Name"
+  - name: "Toxic"
+    artist: "Gabzy"
     type: "track"
-    spotify_uri: "spotify:track:3n3Ppam7vgaVa1iaRUc9Lp"  # Replace with your song URI
+    spotify_uri: "spotify:track:1wr9Qy4JEk84PovFDoOO3F" 
     why: "Why you love this song"
 
   - name: "Example Song 4"
