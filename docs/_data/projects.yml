@@ -28,25 +28,29 @@ phase_1:
     icon: "fas fa-chart-bar"
 
   - id: 2
-    name: "AI Sneaker Identifier"
-    slug: "ai-sneaker-identifier"
+    name: "Resale Market Analysis"
+    slug: "resale-market-analysis"
     domain: "sneakers"
-    type: "build"
+    type: "analysis"
     phase: 1
     status: "planned"
     progress: 0
-    description: "Computer vision application identifying sneaker models from photos and providing detailed information, pricing, and authentication tips."
+    description: "Comprehensive analysis of sneaker resale markets identifying profitable opportunities, pricing trends, and market inefficiencies."
     tech_stack:
-      - "React Native"
-      - "TensorFlow"
-      - "Image Recognition"
+      - "Python"
+      - "Financial Analysis"
+      - "Web Scraping"
     key_features:
-      - "Model identification"
-      - "Legit check guidance"
-      - "Market pricing"
-      - "Release info"
-    database: "1000+ sneaker models with continuous updates"
-    icon: "fas fa-search"
+      - "Investment recommendations"
+      - "Price forecasting"
+      - "Market health indicators"
+      - "Risk assessment"
+    data_sources:
+      - "StockX"
+      - "GOAT"
+      - "eBay"
+      - "Regional marketplaces"
+    icon: "fas fa-dollar-sign"
 
   - id: 3
     name: "Workout Personalization"
@@ -728,30 +732,26 @@ phase_2_sneakers_music_1:
     icon: "fas fa-balance-scale"
 
   - id: 33
-    name: "Resale Market Analysis"
-    slug: "resale-market-analysis"
+    name: "AI Sneaker Identifier"
+    slug: "ai-sneaker-identifier"
     domain: "sneakers"
-    type: "analysis"
+    type: "build"
     phase: 2
     month: 7
     status: "planned"
     progress: 0
-    description: "Comprehensive analysis of sneaker resale markets identifying profitable opportunities, pricing trends, and market inefficiencies."
+    description: "Computer vision application identifying sneaker models from photos and providing detailed information, pricing, and authentication tips."
     tech_stack:
-      - "Python"
-      - "Financial Analysis"
-      - "Web Scraping"
+      - "React Native"
+      - "TensorFlow"
+      - "Image Recognition"
     key_features:
-      - "Investment recommendations"
-      - "Price forecasting"
-      - "Market health indicators"
-      - "Risk assessment"
-    data_sources:
-      - "StockX"
-      - "GOAT"
-      - "eBay"
-      - "Regional marketplaces"
-    icon: "fas fa-dollar-sign"
+      - "Model identification"
+      - "Legit check guidance"
+      - "Market pricing"
+      - "Release info"
+    database: "1000+ sneaker models with continuous updates"
+    icon: "fas fa-search"
 
   - id: 34
     name: "Genre Evolution Mapper"

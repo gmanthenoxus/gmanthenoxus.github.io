@@ -110,23 +110,18 @@
                 
                 
 
-                <div class="projects-quest-overview">
-                    <div class="projects-progress-stats">
-                        <div class="projects-progress-stat">
-                            <span class="projects-stat-number">0</span>
-                            <span class="projects-stat-label">Completed</span>
-                        </div>
-                        <div class="projects-progress-divider"></div>
-                        <div class="projects-progress-stat">
-                            <span class="projects-stat-number">0</span>
-                            <span class="projects-stat-label">In Progress</span>
-                        </div>
-                        <div class="projects-progress-divider"></div>
-                        <div class="projects-progress-stat">
-                            <span class="projects-stat-number">56</span>
-                            <span class="projects-stat-label">Total Projects</span>
-                        </div>
-                    </div>
+                <div class="projects-status-counter">
+                    <span class="projects-status-item projects-status-completed">
+                        <strong>0</strong> Completed
+                    </span>
+                    <span class="projects-status-divider">•</span>
+                    <span class="projects-status-item projects-status-progress">
+                        <strong>0</strong> In Progress
+                    </span>
+                    <span class="projects-status-divider">•</span>
+                    <span class="projects-status-item projects-status-planned">
+                        <strong>56</strong> Planned
+                    </span>
                 </div>
             </div>
 
@@ -158,17 +153,15 @@
 
             <!-- Filter Controls -->
             <div class="projects-filter-controls">
-                <!-- Domain Filter Dropdown -->
+                <!-- Domain Filter -->
                 <div class="projects-filter-dropdown">
-                    <button class="projects-filter-dropdown-btn" id="domainFilterBtn">
+                    <button class="projects-filter-btn" id="domainFilterBtn">
                         <i class="fas fa-th"></i>
-                        <span class="projects-filter-label">Domain: <strong id="domainFilterText">All</strong></span>
-                        <i class="fas fa-chevron-down projects-dropdown-arrow"></i>
+                        <span>Domain</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="projects-filter-dropdown-menu" id="domainFilterMenu">
-                        <button class="projects-filter-option active" data-filter="all" data-type="domain">
-                            <i class="fas fa-th"></i> All Domains
-                        </button>
+                    <div class="projects-filter-menu" id="domainFilterMenu">
+                        <button class="projects-filter-option active" data-filter="all" data-type="domain">All Domains</button>
                         <button class="projects-filter-option" data-filter="sports" data-type="domain">
                             <i class="fas fa-basketball-ball"></i> Sports
                         </button>
@@ -193,17 +186,15 @@
                     </div>
                 </div>
 
-                <!-- Type Filter Dropdown -->
+                <!-- Type Filter -->
                 <div class="projects-filter-dropdown">
-                    <button class="projects-filter-dropdown-btn" id="typeFilterBtn">
+                    <button class="projects-filter-btn" id="typeFilterBtn">
                         <i class="fas fa-filter"></i>
-                        <span class="projects-filter-label">Type: <strong id="typeFilterText">All</strong></span>
-                        <i class="fas fa-chevron-down projects-dropdown-arrow"></i>
+                        <span>Type</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="projects-filter-dropdown-menu" id="typeFilterMenu">
-                        <button class="projects-filter-option active" data-filter="all" data-type="type">
-                            <i class="fas fa-th"></i> All Types
-                        </button>
+                    <div class="projects-filter-menu" id="typeFilterMenu">
+                        <button class="projects-filter-option active" data-filter="all" data-type="type">All Types</button>
                         <button class="projects-filter-option" data-filter="analysis" data-type="type">
                             <i class="fas fa-chart-bar"></i> Analysis
                         </button>
@@ -216,17 +207,15 @@
                     </div>
                 </div>
 
-                <!-- Phase Filter Dropdown -->
+                <!-- Phase Filter -->
                 <div class="projects-filter-dropdown">
-                    <button class="projects-filter-dropdown-btn" id="phaseFilterBtn">
+                    <button class="projects-filter-btn" id="phaseFilterBtn">
                         <i class="fas fa-layer-group"></i>
-                        <span class="projects-filter-label">Phase: <strong id="phaseFilterText">All</strong></span>
-                        <i class="fas fa-chevron-down projects-dropdown-arrow"></i>
+                        <span>Phase</span>
+                        <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="projects-filter-dropdown-menu" id="phaseFilterMenu">
-                        <button class="projects-filter-option active" data-filter="all" data-type="phase">
-                            <i class="fas fa-th"></i> All Phases
-                        </button>
+                    <div class="projects-filter-menu" id="phaseFilterMenu" style="right: 0;">
+                        <button class="projects-filter-option active" data-filter="all" data-type="phase">All Phases</button>
                         <button class="projects-filter-option" data-filter="1" data-type="phase">
                             <i class="fas fa-rocket"></i> Phase 1
                         </button>
@@ -238,12 +227,6 @@
                         </button>
                     </div>
                 </div>
-
-                <!-- Reset Button -->
-                <button class="projects-reset-filters-btn" id="resetFiltersTop" title="Reset all filters">
-                    <i class="fas fa-redo"></i>
-                    <span>Reset</span>
-                </button>
             </div>
 
             <!-- Results Counter -->
@@ -283,18 +266,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#1</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Genre Analysis & Tracking</h3>
-                        <p class="projects-card-description">Interactive dashboard analyzing anime genre distribution, popularity trends, and personal viewing patterns. Visualize...</p>
+                        <p class="projects-card-description">Interactive dashboard analyzing anime genre distribution, popularity trends, and personal viewing...</p>
 
                         <!-- Tech Stack -->
                         
@@ -343,15 +316,15 @@
                 
                 <article class="projects-card"
                          data-domain="sneakers"
-                         data-type="build"
+                         data-type="analysis"
                          data-phase="1"
                          data-status="planned"
-                         data-search="ai sneaker identifier computer vision application identifying sneaker models from photos and providing detailed information, pricing, and authentication tips. react native tensorflow image recognition">
+                         data-search="resale market analysis comprehensive analysis of sneaker resale markets identifying profitable opportunities, pricing trends, and market inefficiencies. python financial analysis web scraping">
 
                     <!-- Project Header with Icon -->
                     <div class="projects-card-header">
                         <div class="projects-card-icon sneakers">
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-dollar-sign"></i>
                         </div>
 
                         <!-- Status Badge -->
@@ -365,28 +338,18 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#2</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
-                        <h3 class="projects-card-title">AI Sneaker Identifier</h3>
-                        <p class="projects-card-description">Computer vision application identifying sneaker models from photos and providing detailed information, pricing, and a...</p>
+                        <h3 class="projects-card-title">Resale Market Analysis</h3>
+                        <p class="projects-card-description">Comprehensive analysis of sneaker resale markets identifying profitable opportunities, pricing tr...</p>
 
                         <!-- Tech Stack -->
                         
                         <div class="projects-card-tech-stack">
                             
-                                <span class="projects-tech-tag sneakers">React Native</span>
+                                <span class="projects-tech-tag sneakers">Python</span>
                             
-                                <span class="projects-tech-tag sneakers">TensorFlow</span>
+                                <span class="projects-tech-tag sneakers">Financial Analysis</span>
                             
-                                <span class="projects-tech-tag sneakers">Image Recognition</span>
+                                <span class="projects-tech-tag sneakers">Web Scraping</span>
                             
                             
                         </div>
@@ -445,18 +408,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#3</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Workout Personalization</h3>
-                        <p class="projects-card-description">AI-powered workout generator creating customized routines based on user goals, available equipment, fitness level, an...</p>
+                        <p class="projects-card-description">AI-powered workout generator creating customized routines based on user goals, available equipmen...</p>
 
                         <!-- Tech Stack -->
                         
@@ -525,18 +478,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#4</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Trivia and Quiz</h3>
-                        <p class="projects-card-description">Multi-category trivia game with real-time leaderboards, power-ups, and social features for competitive gaming sessions.</p>
+                        <p class="projects-card-description">Multi-category trivia game with real-time leaderboards, power-ups, and social features for compet...</p>
 
                         <!-- Tech Stack -->
                         
@@ -605,18 +548,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#5</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Interactive Music Timeline Explorer</h3>
-                        <p class="projects-card-description">Visual music history explorer showing genre evolution, influential artists, and cultural movements through interactiv...</p>
+                        <p class="projects-card-description">Visual music history explorer showing genre evolution, influential artists, and cultural movement...</p>
 
                         <!-- Tech Stack -->
                         
@@ -685,18 +618,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#6</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Tech Stack Explorer</h3>
-                        <p class="projects-card-description">Decision-making tool for developers to compare technology stacks, frameworks, and tools with real-world usage data an...</p>
+                        <p class="projects-card-description">Decision-making tool for developers to compare technology stacks, frameworks, and tools with real...</p>
 
                         <!-- Tech Stack -->
                         
@@ -763,18 +686,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#7</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Sneaker Collection Manager</h3>
-                        <p class="projects-card-description">Digital sneaker closet with valuation tracking, outfit pairing suggestions, and release calendar integration.</p>
+                        <p class="projects-card-description">Digital sneaker closet with valuation tracking, outfit pairing suggestions, and release calendar ...</p>
 
                         <!-- Tech Stack -->
                         
@@ -843,18 +756,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#8</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Highlight Generator</h3>
-                        <p class="projects-card-description">AI-powered sports highlight reel creator that automatically identifies and compiles key moments from game footage usi...</p>
+                        <p class="projects-card-description">AI-powered sports highlight reel creator that automatically identifies and compiles key moments f...</p>
 
                         <!-- Tech Stack -->
                         
@@ -925,18 +828,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#9</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Contract Analysis</h3>
-                        <p class="projects-card-description">Sports financial analytics platform analyzing player contracts, salary cap implications, and team financial strategy ...</p>
+                        <p class="projects-card-description">Sports financial analytics platform analyzing player contracts, salary cap implications, and team...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1005,18 +898,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#10</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Predict Player Positions (K-NN)</h3>
-                        <p class="projects-card-description">Machine learning classification system that predicts optimal player positions based on physical attributes and perfor...</p>
+                        <p class="projects-card-description">Machine learning classification system that predicts optimal player positions based on physical a...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1085,18 +968,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#11</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Sports League Management App</h3>
-                        <p class="projects-card-description">Comprehensive league management platform for amateur sports with scheduling, stats tracking, payments, and communicat...</p>
+                        <p class="projects-card-description">Comprehensive league management platform for amateur sports with scheduling, stats tracking, paym...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1165,18 +1038,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#12</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">League with the Boys</h3>
-                        <p class="projects-card-description">Social fantasy sports platform focused on private leagues with friends, featuring trash talk channels, custom scoring...</p>
+                        <p class="projects-card-description">Social fantasy sports platform focused on private leagues with friends, featuring trash talk chan...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1245,18 +1108,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#13</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Sports Debate Simulator</h3>
-                        <p class="projects-card-description">AI-powered debate platform that generates data-backed arguments for sports debates and simulates discussions between ...</p>
+                        <p class="projects-card-description">AI-powered debate platform that generates data-backed arguments for sports debates and simulates ...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1325,18 +1178,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#14</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Interactive Anime Timeline Explorer</h3>
-                        <p class="projects-card-description">Zoomable historical timeline of anime evolution with studio relationships, genre development, and cultural impact vis...</p>
+                        <p class="projects-card-description">Zoomable historical timeline of anime evolution with studio relationships, genre development, and...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1405,18 +1248,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#15</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Hybrid Anime Recommender System</h3>
-                        <p class="projects-card-description">Advanced recommendation engine combining collaborative filtering (user behavior) with content-based filtering (genre,...</p>
+                        <p class="projects-card-description">Advanced recommendation engine combining collaborative filtering (user behavior) with content-bas...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1487,18 +1320,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#16</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Anime Scene Predictor</h3>
-                        <p class="projects-card-description">Machine learning model predicting key plot points, emotional arcs, and character development based on series patterns...</p>
+                        <p class="projects-card-description">Machine learning model predicting key plot points, emotional arcs, and character development base...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1567,18 +1390,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#17</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Anime Episode/Scene Recommender for Creators</h3>
-                        <p class="projects-card-description">Professional tool for content creators to find specific anime scenes and episodes for reaction videos, analysis, or e...</p>
+                        <p class="projects-card-description">Professional tool for content creators to find specific anime scenes and episodes for reaction vi...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1647,18 +1460,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#18</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Anime Battle Simulator</h3>
-                        <p class="projects-card-description">Character drafting and battle simulation platform for anime fan communities with stat-based outcomes and tactical tea...</p>
+                        <p class="projects-card-description">Character drafting and battle simulation platform for anime fan communities with stat-based outco...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1727,18 +1530,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#19</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Genre Analysis & Tracking v2</h3>
-                        <p class="projects-card-description">Advanced analytics platform tracking micro-genre evolution, crossover popularity, and predictive trend analysis for a...</p>
+                        <p class="projects-card-description">Advanced analytics platform tracking micro-genre evolution, crossover popularity, and predictive ...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1807,18 +1600,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#20</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Fitness Form Analyzer</h3>
-                        <p class="projects-card-description">Computer vision application providing real-time exercise form feedback using smartphone camera and pose estimation te...</p>
+                        <p class="projects-card-description">Computer vision application providing real-time exercise form feedback using smartphone camera an...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1887,18 +1670,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#21</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Workout Clustering & Archetype Discovery</h3>
-                        <p class="projects-card-description">Data mining project identifying fundamental workout archetypes and user behavior patterns from large-scale fitness ap...</p>
+                        <p class="projects-card-description">Data mining project identifying fundamental workout archetypes and user behavior patterns from la...</p>
 
                         <!-- Tech Stack -->
                         
@@ -1967,18 +1740,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#22</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Fitness Trend & Market Analyzer</h3>
-                        <p class="projects-card-description">Business intelligence platform tracking fitness industry trends, market opportunities, and competitive landscape anal...</p>
+                        <p class="projects-card-description">Business intelligence platform tracking fitness industry trends, market opportunities, and compet...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2047,18 +1810,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#23</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Fitness Monitoring System Design</h3>
-                        <p class="projects-card-description">Enterprise-grade fitness tracking system for gyms and teams with biometric monitoring, performance analytics, and coa...</p>
+                        <p class="projects-card-description">Enterprise-grade fitness tracking system for gyms and teams with biometric monitoring, performanc...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2127,18 +1880,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#24</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Gamified Move-to-Earn Fitness App</h3>
-                        <p class="projects-card-description">Blockchain-inspired fitness application where users earn rewards and unlock achievements for completing real-world wo...</p>
+                        <p class="projects-card-description">Blockchain-inspired fitness application where users earn rewards and unlock achievements for comp...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2207,18 +1950,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#25</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Workout Personalization v2</h3>
-                        <p class="projects-card-description">Advanced AI coach adapting workout plans in real-time based on performance data, recovery metrics, and user feedback.</p>
+                        <p class="projects-card-description">Advanced AI coach adapting workout plans in real-time based on performance data, recovery metrics...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2287,18 +2020,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#26</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Player Churn & Retention Predictor</h3>
-                        <p class="projects-card-description">Predictive analytics model identifying players at risk of quitting games and recommending retention strategies for ga...</p>
+                        <p class="projects-card-description">Predictive analytics model identifying players at risk of quitting games and recommending retenti...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2367,18 +2090,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#27</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Game Balance Auditor</h3>
-                        <p class="projects-card-description">Statistical analysis tool evaluating game balance across characters, weapons, and strategies using win rate data and ...</p>
+                        <p class="projects-card-description">Statistical analysis tool evaluating game balance across characters, weapons, and strategies usin...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2447,18 +2160,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#28</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Genre Profitability vs. Saturation</h3>
-                        <p class="projects-card-description">Market analysis platform comparing game genre profitability against market saturation to identify development opportu...</p>
+                        <p class="projects-card-description">Market analysis platform comparing game genre profitability against market saturation to identify...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2525,18 +2228,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#29</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Squad Finder / Team Synergy Analyzer</h3>
-                        <p class="projects-card-description">Matchmaking platform for competitive gamers analyzing team composition synergies and suggesting optimal squad formati...</p>
+                        <p class="projects-card-description">Matchmaking platform for competitive gamers analyzing team composition synergies and suggesting o...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2605,18 +2298,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#30</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Dead and Injured</h3>
-                        <p class="projects-card-description">Survival strategy game combining resource management, base building, and zombie survival mechanics with permadeath fe...</p>
+                        <p class="projects-card-description">Survival strategy game combining resource management, base building, and zombie survival mechanic...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2685,18 +2368,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#31</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Trivia and Quiz v2</h3>
-                        <p class="projects-card-description">Enhanced trivia platform with user-generated content, live events, tournament systems, and integrated streaming featu...</p>
+                        <p class="projects-card-description">Enhanced trivia platform with user-generated content, live events, tournament systems, and integr...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2765,18 +2438,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#32</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Player Comparison Tool</h3>
-                        <p class="projects-card-description">Real-time sports analytics platform comparing player statistics across seasons, teams, and eras with era-adjusted met...</p>
+                        <p class="projects-card-description">Real-time sports analytics platform comparing player statistics across seasons, teams, and eras w...</p>
 
                         <!-- Tech Stack -->
                         
@@ -2823,15 +2486,15 @@
                 
                 <article class="projects-card"
                          data-domain="sneakers"
-                         data-type="analysis"
+                         data-type="build"
                          data-phase="2"
                          data-status="planned"
-                         data-search="resale market analysis comprehensive analysis of sneaker resale markets identifying profitable opportunities, pricing trends, and market inefficiencies. python financial analysis web scraping">
+                         data-search="ai sneaker identifier computer vision application identifying sneaker models from photos and providing detailed information, pricing, and authentication tips. react native tensorflow image recognition">
 
                     <!-- Project Header with Icon -->
                     <div class="projects-card-header">
                         <div class="projects-card-icon sneakers">
-                            <i class="fas fa-dollar-sign"></i>
+                            <i class="fas fa-search"></i>
                         </div>
 
                         <!-- Status Badge -->
@@ -2845,28 +2508,18 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#33</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
-                        <h3 class="projects-card-title">Resale Market Analysis</h3>
-                        <p class="projects-card-description">Comprehensive analysis of sneaker resale markets identifying profitable opportunities, pricing trends, and market ine...</p>
+                        <h3 class="projects-card-title">AI Sneaker Identifier</h3>
+                        <p class="projects-card-description">Computer vision application identifying sneaker models from photos and providing detailed informa...</p>
 
                         <!-- Tech Stack -->
                         
                         <div class="projects-card-tech-stack">
                             
-                                <span class="projects-tech-tag sneakers">Python</span>
+                                <span class="projects-tech-tag sneakers">React Native</span>
                             
-                                <span class="projects-tech-tag sneakers">Financial Analysis</span>
+                                <span class="projects-tech-tag sneakers">TensorFlow</span>
                             
-                                <span class="projects-tech-tag sneakers">Web Scraping</span>
+                                <span class="projects-tech-tag sneakers">Image Recognition</span>
                             
                             
                         </div>
@@ -2925,18 +2578,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#34</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Genre Evolution Mapper</h3>
-                        <p class="projects-card-description">Data visualization project tracking the evolution and fusion of music genres over decades with cultural context and k...</p>
+                        <p class="projects-card-description">Data visualization project tracking the evolution and fusion of music genres over decades with cu...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3005,18 +2648,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#35</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Concert Tour Analyzer</h3>
-                        <p class="projects-card-description">Business intelligence tool analyzing concert tour profitability, routing efficiency, and market demand for artists an...</p>
+                        <p class="projects-card-description">Business intelligence tool analyzing concert tour profitability, routing efficiency, and market d...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3085,18 +2718,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#36</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Release Tracker</h3>
-                        <p class="projects-card-description">Comprehensive sneaker release calendar with raffle integration, reminder system, and regional release differences.</p>
+                        <p class="projects-card-description">Comprehensive sneaker release calendar with raffle integration, reminder system, and regional rel...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3165,18 +2788,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#37</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Investment Portfolio</h3>
-                        <p class="projects-card-description">Digital portfolio manager for sneaker investors tracking value, ROI, diversification, and market performance metrics.</p>
+                        <p class="projects-card-description">Digital portfolio manager for sneaker investors tracking value, ROI, diversification, and market ...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3245,18 +2858,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#38</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Authentication Algorithm</h3>
-                        <p class="projects-card-description">Machine learning model analyzing sneaker authentication through material analysis, stitching patterns, and manufactur...</p>
+                        <p class="projects-card-description">Machine learning model analyzing sneaker authentication through material analysis, stitching patt...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3325,18 +2928,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#39</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Sample Genealogy Mapper</h3>
-                        <p class="projects-card-description">Interactive platform tracing musical samples through history, showing how songs influence each other across genres an...</p>
+                        <p class="projects-card-description">Interactive platform tracing musical samples through history, showing how songs influence each ot...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3405,18 +2998,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#40</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">AI Genre Fusion</h3>
-                        <p class="projects-card-description">AI music generator creating new musical pieces by blending characteristics of different genres based on user preferen...</p>
+                        <p class="projects-card-description">AI music generator creating new musical pieces by blending characteristics of different genres ba...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3485,18 +3068,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#41</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Music Map</h3>
-                        <p class="projects-card-description">Geographic music discovery platform showing local music scenes, venue information, and regional sound characteristics.</p>
+                        <p class="projects-card-description">Geographic music discovery platform showing local music scenes, venue information, and regional s...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3565,18 +3138,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#42</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Playlist Mood Analyzer</h3>
-                        <p class="projects-card-description">Emotional analysis tool evaluating playlist moods, energy flow, and emotional arcs using audio features and lyrical a...</p>
+                        <p class="projects-card-description">Emotional analysis tool evaluating playlist moods, energy flow, and emotional arcs using audio fe...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3645,18 +3208,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#43</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Programming Language Trend Analysis</h3>
-                        <p class="projects-card-description">Comprehensive analysis of programming language popularity, job market demand, and future growth projections.</p>
+                        <p class="projects-card-description">Comprehensive analysis of programming language popularity, job market demand, and future growth p...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3725,18 +3278,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#44</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Code Snippet Library</h3>
-                        <p class="projects-card-description">Intelligent code snippet manager with search, categorization, and context-aware recommendations for developers.</p>
+                        <p class="projects-card-description">Intelligent code snippet manager with search, categorization, and context-aware recommendations f...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3805,18 +3348,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#45</span>
-                            <span class="projects-card-type-badge analysis">
-                                
-                                    <i class="fas fa-chart-bar"></i> Analysis
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Developer Tool Comparison</h3>
-                        <p class="projects-card-description">Data-driven comparison platform for development tools, frameworks, and libraries with real-world performance metrics.</p>
+                        <p class="projects-card-description">Data-driven comparison platform for development tools, frameworks, and libraries with real-world ...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3885,18 +3418,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#46</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">API Documentation Generator</h3>
-                        <p class="projects-card-description">Automated API documentation generator creating beautiful, interactive docs from code comments and OpenAPI specificati...</p>
+                        <p class="projects-card-description">Automated API documentation generator creating beautiful, interactive docs from code comments and...</p>
 
                         <!-- Tech Stack -->
                         
@@ -3965,18 +3488,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#47</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Tech Interview Prep Platform</h3>
-                        <p class="projects-card-description">Comprehensive technical interview preparation platform with coding challenges, system design practice, and behavioral...</p>
+                        <p class="projects-card-description">Comprehensive technical interview preparation platform with coding challenges, system design prac...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4045,18 +3558,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#48</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Open Source Contribution Tracker</h3>
-                        <p class="projects-card-description">Portfolio builder tracking open source contributions, impact metrics, and community engagement for developers.</p>
+                        <p class="projects-card-description">Portfolio builder tracking open source contributions, impact metrics, and community engagement fo...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4125,18 +3628,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#49</span>
-                            <span class="projects-card-type-badge build">
-                                
-                                    <i class="fas fa-hammer"></i> Build
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Developer Portfolio Template</h3>
-                        <p class="projects-card-description">Customizable portfolio template specifically designed for developers showcasing projects, skills, and technical exper...</p>
+                        <p class="projects-card-description">Customizable portfolio template specifically designed for developers showcasing projects, skills,...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4205,18 +3698,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#50</span>
-                            <span class="projects-card-type-badge hub">
-                                
-                                    <i class="fas fa-layer-group"></i> Hub
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">AthleHub</h3>
-                        <p class="projects-card-description">Community sports platform integrating league management, player comparison, highlight generation, and fantasy sports ...</p>
+                        <p class="projects-card-description">Community sports platform integrating league management, player comparison, highlight generation,...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4280,18 +3763,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#51</span>
-                            <span class="projects-card-type-badge hub">
-                                
-                                    <i class="fas fa-layer-group"></i> Hub
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">AnimeVerse</h3>
-                        <p class="projects-card-description">Personalized anime discovery platform combining recommendations, timeline exploration, battle simulation, and communi...</p>
+                        <p class="projects-card-description">Personalized anime discovery platform combining recommendations, timeline exploration, battle sim...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4355,18 +3828,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#52</span>
-                            <span class="projects-card-type-badge hub">
-                                
-                                    <i class="fas fa-layer-group"></i> Hub
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">RepCore</h3>
-                        <p class="projects-card-description">Comprehensive fitness tracking platform with form analysis, personalized workouts, gamification, and community challe...</p>
+                        <p class="projects-card-description">Comprehensive fitness tracking platform with form analysis, personalized workouts, gamification, ...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4430,18 +3893,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#53</span>
-                            <span class="projects-card-type-badge hub">
-                                
-                                    <i class="fas fa-layer-group"></i> Hub
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Backlog</h3>
-                        <p class="projects-card-description">Gamified game management platform with trivia, squad finder, balance analysis, and community features.</p>
+                        <p class="projects-card-description">Gamified game management platform with trivia, squad finder, balance analysis, and community feat...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4505,18 +3958,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#54</span>
-                            <span class="projects-card-type-badge hub">
-                                
-                                    <i class="fas fa-layer-group"></i> Hub
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Tastebuds</h3>
-                        <p class="projects-card-description">Social sneaker hub combining collection management, release tracking, authentication, and investment portfolio features.</p>
+                        <p class="projects-card-description">Social sneaker hub combining collection management, release tracking, authentication, and investm...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4580,18 +4023,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#55</span>
-                            <span class="projects-card-type-badge hub">
-                                
-                                    <i class="fas fa-layer-group"></i> Hub
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">Codeflow Studio</h3>
-                        <p class="projects-card-description">Visual programming playground integrating code snippets, interview prep, tool comparison, and portfolio building.</p>
+                        <p class="projects-card-description">Visual programming playground integrating code snippets, interview prep, tool comparison, and por...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4655,18 +4088,8 @@
 
                     <!-- Project Content -->
                     <div class="projects-card-content">
-                        <!-- Project Meta -->
-                        <div class="projects-card-meta">
-                            <span class="projects-card-id">#56</span>
-                            <span class="projects-card-type-badge hub">
-                                
-                                    <i class="fas fa-layer-group"></i> Hub
-                                
-                            </span>
-                        </div>
-
                         <h3 class="projects-card-title">HarmonyHub</h3>
-                        <p class="projects-card-description">Active music companion with timeline exploration, genre fusion, mood analysis, and local scene discovery.</p>
+                        <p class="projects-card-description">Active music companion with timeline exploration, genre fusion, mood analysis, and local scene di...</p>
 
                         <!-- Tech Stack -->
                         
@@ -4779,22 +4202,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsCount = document.getElementById('resultsCount');
     const noResults = document.getElementById('noResults');
     const resetFiltersBtn = document.getElementById('resetFilters');
-    const resetFiltersTopBtn = document.getElementById('resetFiltersTop');
     const pagination = document.getElementById('pagination');
     const prevPageBtn = document.getElementById('prevPage');
     const nextPageBtn = document.getElementById('nextPage');
     const paginationPages = document.getElementById('paginationPages');
 
-    // Dropdown elements
+    // Filter dropdowns
     const domainFilterBtn = document.getElementById('domainFilterBtn');
     const typeFilterBtn = document.getElementById('typeFilterBtn');
     const phaseFilterBtn = document.getElementById('phaseFilterBtn');
     const domainFilterMenu = document.getElementById('domainFilterMenu');
     const typeFilterMenu = document.getElementById('typeFilterMenu');
     const phaseFilterMenu = document.getElementById('phaseFilterMenu');
-    const domainFilterText = document.getElementById('domainFilterText');
-    const typeFilterText = document.getElementById('typeFilterText');
-    const phaseFilterText = document.getElementById('phaseFilterText');
 
     const filterOptions = document.querySelectorAll('.projects-filter-option');
 
@@ -4814,10 +4233,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const isOpen = menu.classList.contains('show');
 
         // Close all dropdowns
-        document.querySelectorAll('.projects-filter-dropdown-menu').forEach(m => {
+        document.querySelectorAll('.projects-filter-menu').forEach(m => {
             m.classList.remove('show');
         });
-        document.querySelectorAll('.projects-filter-dropdown-btn').forEach(b => {
+        document.querySelectorAll('.projects-filter-btn').forEach(b => {
             b.classList.remove('active');
         });
 
@@ -4845,10 +4264,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close dropdowns when clicking outside
     document.addEventListener('click', () => {
-        document.querySelectorAll('.projects-filter-dropdown-menu').forEach(m => {
+        document.querySelectorAll('.projects-filter-menu').forEach(m => {
             m.classList.remove('show');
         });
-        document.querySelectorAll('.projects-filter-dropdown-btn').forEach(b => {
+        document.querySelectorAll('.projects-filter-btn').forEach(b => {
             b.classList.remove('active');
         });
     });
@@ -4999,21 +4418,11 @@ document.addEventListener('DOMContentLoaded', function() {
             activeFilters[filterType] = filterValue;
 
             // Update button states in dropdown
-            const menu = this.closest('.projects-filter-dropdown-menu');
+            const menu = this.closest('.projects-filter-menu');
             menu.querySelectorAll('.projects-filter-option').forEach(opt => {
                 opt.classList.remove('active');
             });
             this.classList.add('active');
-
-            // Update dropdown button text
-            const text = this.textContent.trim();
-            if (filterType === 'domain') {
-                domainFilterText.textContent = filterValue === 'all' ? 'All' : text.split(' ').pop();
-            } else if (filterType === 'type') {
-                typeFilterText.textContent = filterValue === 'all' ? 'All' : text.split(' ').pop();
-            } else if (filterType === 'phase') {
-                phaseFilterText.textContent = filterValue === 'all' ? 'All' : text.split(' ').pop();
-            }
 
             // Close dropdown
             menu.classList.remove('show');
@@ -5046,11 +4455,6 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.value = '';
         clearSearch.style.display = 'none';
 
-        // Reset dropdown texts
-        domainFilterText.textContent = 'All';
-        typeFilterText.textContent = 'All';
-        phaseFilterText.textContent = 'All';
-
         // Reset active states
         filterOptions.forEach(opt => {
             opt.classList.toggle('active', opt.dataset.filter === 'all');
@@ -5061,7 +4465,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     resetFiltersBtn.addEventListener('click', resetAllFilters);
-    resetFiltersTopBtn.addEventListener('click', resetAllFilters);
 
     // Handle view details buttons
     document.querySelectorAll('.projects-btn-view-details').forEach(btn => {
