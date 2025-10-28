@@ -28,27 +28,25 @@ phase_1:
     icon: "fas fa-chart-bar"
 
   - id: 2
-    name: "Player Comparison Tool"
-    slug: "player-comparison-tool"
-    domain: "sports"
-    type: "analysis"
+    name: "AI Sneaker Identifier"
+    slug: "ai-sneaker-identifier"
+    domain: "sneakers"
+    type: "build"
     phase: 1
     status: "planned"
     progress: 0
-    description: "Real-time sports analytics platform comparing player statistics across seasons, teams, and eras with era-adjusted metrics."
+    description: "Computer vision application identifying sneaker models from photos and providing detailed information, pricing, and authentication tips."
     tech_stack:
-      - "React"
-      - "D3.js"
-      - "SportsData API"
+      - "React Native"
+      - "TensorFlow"
+      - "Image Recognition"
     key_features:
-      - "Side-by-side stat comparison"
-      - "Historical context"
-      - "Performance vs. salary analysis"
-    data_sources:
-      - "NBA/MLB/NFL official APIs"
-      - "Basketball-Reference"
-      - "Spotrac"
-    icon: "fas fa-balance-scale"
+      - "Model identification"
+      - "Legit check guidance"
+      - "Market pricing"
+      - "Release info"
+    database: "1000+ sneaker models with continuous updates"
+    icon: "fas fa-search"
 
   - id: 3
     name: "Workout Personalization"
@@ -706,26 +704,28 @@ phase_2_games:
 # Month 7: Sneakers & Music (4 Projects)
 phase_2_sneakers_music_1:
   - id: 32
-    name: "AI Sneaker Identifier"
-    slug: "ai-sneaker-identifier"
-    domain: "sneakers"
-    type: "build"
+    name: "Player Comparison Tool"
+    slug: "player-comparison-tool"
+    domain: "sports"
+    type: "analysis"
     phase: 2
     month: 7
     status: "planned"
     progress: 0
-    description: "Computer vision application identifying sneaker models from photos and providing detailed information, pricing, and authentication tips."
+    description: "Real-time sports analytics platform comparing player statistics across seasons, teams, and eras with era-adjusted metrics."
     tech_stack:
-      - "React Native"
-      - "TensorFlow"
-      - "Image Recognition"
+      - "React"
+      - "D3.js"
+      - "SportsData API"
     key_features:
-      - "Model identification"
-      - "Legit check guidance"
-      - "Market pricing"
-      - "Release info"
-    database: "1000+ sneaker models with continuous updates"
-    icon: "fas fa-search"
+      - "Side-by-side stat comparison"
+      - "Historical context"
+      - "Performance vs. salary analysis"
+    data_sources:
+      - "NBA/MLB/NFL official APIs"
+      - "Basketball-Reference"
+      - "Spotrac"
+    icon: "fas fa-balance-scale"
 
   - id: 33
     name: "Resale Market Analysis"

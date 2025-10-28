@@ -30,24 +30,21 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                 {% assign total_count = all_projects | size %}
                 {% assign completion_percentage = completed_count | times: 100 | divided_by: total_count %}
 
-                <div class="quest-progress-overview">
-                    <div class="progress-stats">
-                        <div class="progress-stat">
-                            <span class="stat-number">{{ completed_count }}</span>
-                            <span class="stat-label">Completed</span>
+                <div class="projects-quest-overview">
+                    <div class="projects-progress-stats">
+                        <div class="projects-progress-stat">
+                            <span class="projects-stat-number">{{ completed_count }}</span>
+                            <span class="projects-stat-label">Completed</span>
                         </div>
-                        <div class="progress-stat">
-                            <span class="stat-number">{{ in_progress_count }}</span>
-                            <span class="stat-label">In Progress</span>
+                        <div class="projects-progress-divider"></div>
+                        <div class="projects-progress-stat">
+                            <span class="projects-stat-number">{{ in_progress_count }}</span>
+                            <span class="projects-stat-label">In Progress</span>
                         </div>
-                        <div class="progress-stat">
-                            <span class="stat-number">{{ total_count }}</span>
-                            <span class="stat-label">Total Projects</span>
-                        </div>
-                    </div>
-                    <div class="quest-progress-bar">
-                        <div class="progress-fill" style="width: {{ completion_percentage }}%">
-                            <span class="progress-percentage">{{ completion_percentage }}%</span>
+                        <div class="projects-progress-divider"></div>
+                        <div class="projects-progress-stat">
+                            <span class="projects-stat-number">{{ total_count }}</span>
+                            <span class="projects-stat-label">Total Projects</span>
                         </div>
                     </div>
                 </div>
@@ -68,97 +65,110 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
     </section>
 
     <!-- Filter and Search Section -->
-    <section class="projects-filters">
+    <section class="projects-filters-section">
         <div class="container">
             <!-- Search Bar -->
-            <div class="search-container">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" id="projectSearch" class="search-input" placeholder="Search projects by name, description, or tech stack...">
-                <button class="search-clear" id="clearSearch" style="display: none;">
+            <div class="projects-search-container">
+                <i class="fas fa-search projects-search-icon"></i>
+                <input type="text" id="projectSearch" class="projects-search-input" placeholder="Search projects...">
+                <button class="projects-search-clear" id="clearSearch" style="display: none;">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
 
-            <!-- Filter Tabs -->
-            <div class="filter-tabs">
-                <!-- Domain Filters -->
-                <div class="filter-group">
-                    <span class="filter-label">Domain:</span>
-                    <button class="filter-btn active" data-filter="all" data-type="domain">
+            <!-- Filter Controls -->
+            <div class="projects-filter-controls">
+                <!-- Domain Filter Dropdown -->
+                <div class="projects-filter-dropdown">
+                    <button class="projects-filter-dropdown-btn" id="domainFilterBtn">
                         <i class="fas fa-th"></i>
-                        <span>All</span>
+                        <span class="projects-filter-label">Domain: <strong id="domainFilterText">All</strong></span>
+                        <i class="fas fa-chevron-down projects-dropdown-arrow"></i>
                     </button>
-                    <button class="filter-btn" data-filter="sports" data-type="domain">
-                        <i class="fas fa-basketball-ball"></i>
-                        <span>Sports</span>
-                    </button>
-                    <button class="filter-btn" data-filter="anime" data-type="domain">
-                        <i class="fas fa-tv"></i>
-                        <span>Anime</span>
-                    </button>
-                    <button class="filter-btn" data-filter="fitness" data-type="domain">
-                        <i class="fas fa-dumbbell"></i>
-                        <span>Fitness</span>
-                    </button>
-                    <button class="filter-btn" data-filter="games" data-type="domain">
-                        <i class="fas fa-gamepad"></i>
-                        <span>Games</span>
-                    </button>
-                    <button class="filter-btn" data-filter="sneakers" data-type="domain">
-                        <i class="fas fa-shoe-prints"></i>
-                        <span>Sneakers</span>
-                    </button>
-                    <button class="filter-btn" data-filter="music" data-type="domain">
-                        <i class="fas fa-music"></i>
-                        <span>Music</span>
-                    </button>
-                    <button class="filter-btn" data-filter="tech" data-type="domain">
-                        <i class="fas fa-code"></i>
-                        <span>Tech</span>
-                    </button>
+                    <div class="projects-filter-dropdown-menu" id="domainFilterMenu">
+                        <button class="projects-filter-option active" data-filter="all" data-type="domain">
+                            <i class="fas fa-th"></i> All Domains
+                        </button>
+                        <button class="projects-filter-option" data-filter="sports" data-type="domain">
+                            <i class="fas fa-basketball-ball"></i> Sports
+                        </button>
+                        <button class="projects-filter-option" data-filter="anime" data-type="domain">
+                            <i class="fas fa-tv"></i> Anime
+                        </button>
+                        <button class="projects-filter-option" data-filter="fitness" data-type="domain">
+                            <i class="fas fa-dumbbell"></i> Fitness
+                        </button>
+                        <button class="projects-filter-option" data-filter="games" data-type="domain">
+                            <i class="fas fa-gamepad"></i> Games
+                        </button>
+                        <button class="projects-filter-option" data-filter="sneakers" data-type="domain">
+                            <i class="fas fa-shoe-prints"></i> Sneakers
+                        </button>
+                        <button class="projects-filter-option" data-filter="music" data-type="domain">
+                            <i class="fas fa-music"></i> Music
+                        </button>
+                        <button class="projects-filter-option" data-filter="tech" data-type="domain">
+                            <i class="fas fa-code"></i> Tech
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Type Filters -->
-                <div class="filter-group">
-                    <span class="filter-label">Type:</span>
-                    <button class="filter-btn active" data-filter="all" data-type="type">
-                        <span>All</span>
+                <!-- Type Filter Dropdown -->
+                <div class="projects-filter-dropdown">
+                    <button class="projects-filter-dropdown-btn" id="typeFilterBtn">
+                        <i class="fas fa-filter"></i>
+                        <span class="projects-filter-label">Type: <strong id="typeFilterText">All</strong></span>
+                        <i class="fas fa-chevron-down projects-dropdown-arrow"></i>
                     </button>
-                    <button class="filter-btn" data-filter="analysis" data-type="type">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Analysis</span>
-                    </button>
-                    <button class="filter-btn" data-filter="build" data-type="type">
-                        <i class="fas fa-hammer"></i>
-                        <span>Build</span>
-                    </button>
-                    <button class="filter-btn" data-filter="hub" data-type="type">
+                    <div class="projects-filter-dropdown-menu" id="typeFilterMenu">
+                        <button class="projects-filter-option active" data-filter="all" data-type="type">
+                            <i class="fas fa-th"></i> All Types
+                        </button>
+                        <button class="projects-filter-option" data-filter="analysis" data-type="type">
+                            <i class="fas fa-chart-bar"></i> Analysis
+                        </button>
+                        <button class="projects-filter-option" data-filter="build" data-type="type">
+                            <i class="fas fa-hammer"></i> Build
+                        </button>
+                        <button class="projects-filter-option" data-filter="hub" data-type="type">
+                            <i class="fas fa-layer-group"></i> Hub
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Phase Filter Dropdown -->
+                <div class="projects-filter-dropdown">
+                    <button class="projects-filter-dropdown-btn" id="phaseFilterBtn">
                         <i class="fas fa-layer-group"></i>
-                        <span>Hub</span>
+                        <span class="projects-filter-label">Phase: <strong id="phaseFilterText">All</strong></span>
+                        <i class="fas fa-chevron-down projects-dropdown-arrow"></i>
                     </button>
+                    <div class="projects-filter-dropdown-menu" id="phaseFilterMenu">
+                        <button class="projects-filter-option active" data-filter="all" data-type="phase">
+                            <i class="fas fa-th"></i> All Phases
+                        </button>
+                        <button class="projects-filter-option" data-filter="1" data-type="phase">
+                            <i class="fas fa-rocket"></i> Phase 1
+                        </button>
+                        <button class="projects-filter-option" data-filter="2" data-type="phase">
+                            <i class="fas fa-fire"></i> Phase 2
+                        </button>
+                        <button class="projects-filter-option" data-filter="3" data-type="phase">
+                            <i class="fas fa-star"></i> Phase 3
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Phase Filters -->
-                <div class="filter-group">
-                    <span class="filter-label">Phase:</span>
-                    <button class="filter-btn active" data-filter="all" data-type="phase">
-                        <span>All</span>
-                    </button>
-                    <button class="filter-btn" data-filter="1" data-type="phase">
-                        <span>Phase 1</span>
-                    </button>
-                    <button class="filter-btn" data-filter="2" data-type="phase">
-                        <span>Phase 2</span>
-                    </button>
-                    <button class="filter-btn" data-filter="3" data-type="phase">
-                        <span>Phase 3</span>
-                    </button>
-                </div>
+                <!-- Reset Button -->
+                <button class="projects-reset-filters-btn" id="resetFiltersTop" title="Reset all filters">
+                    <i class="fas fa-redo"></i>
+                    <span>Reset</span>
+                </button>
             </div>
 
             <!-- Results Counter -->
-            <div class="results-counter">
-                <span id="resultsCount">{{ total_count }}</span> projects found
+            <div class="projects-results-counter">
+                Showing <span id="resultsCount">{{ total_count }}</span> of {{ total_count }} projects
             </div>
         </div>
     </section>
@@ -169,7 +179,7 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
             {% if all_projects.size > 0 %}
             <div class="projects-grid" id="projectsGrid">
                 {% for project in all_projects %}
-                <article class="project-card"
+                <article class="projects-card"
                          data-domain="{{ project.domain }}"
                          data-type="{{ project.type }}"
                          data-phase="{{ project.phase }}"
@@ -177,13 +187,13 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                          data-search="{{ project.name | downcase }} {{ project.description | downcase }} {{ project.tech_stack | join: ' ' | downcase }}">
 
                     <!-- Project Header with Icon -->
-                    <div class="project-header">
-                        <div class="project-icon {{ project.domain }}">
+                    <div class="projects-card-header">
+                        <div class="projects-card-icon {{ project.domain }}">
                             <i class="{{ project.icon }}"></i>
                         </div>
 
                         <!-- Status Badge -->
-                        <div class="project-status-badge {{ project.status }}">
+                        <div class="projects-card-status-badge {{ project.status }}">
                             {% if project.status == 'completed' %}
                                 <i class="fas fa-check-circle"></i>
                                 <span>Completed</span>
@@ -198,11 +208,11 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                     </div>
 
                     <!-- Project Content -->
-                    <div class="project-content">
+                    <div class="projects-card-content">
                         <!-- Project Meta -->
-                        <div class="project-meta">
-                            <span class="project-id">#{{ project.id }}</span>
-                            <span class="project-type-badge {{ project.type }}">
+                        <div class="projects-card-meta">
+                            <span class="projects-card-id">#{{ project.id }}</span>
+                            <span class="projects-card-type-badge {{ project.type }}">
                                 {% if project.type == 'analysis' %}
                                     <i class="fas fa-chart-bar"></i> Analysis
                                 {% elsif project.type == 'build' %}
@@ -213,24 +223,24 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                             </span>
                         </div>
 
-                        <h3 class="project-title">{{ project.name }}</h3>
-                        <p class="project-description">{{ project.description | truncate: 120 }}</p>
+                        <h3 class="projects-card-title">{{ project.name }}</h3>
+                        <p class="projects-card-description">{{ project.description | truncate: 120 }}</p>
 
                         <!-- Tech Stack -->
                         {% if project.tech_stack %}
-                        <div class="project-tech-stack">
+                        <div class="projects-card-tech-stack">
                             {% for tech in project.tech_stack limit:3 %}
-                                <span class="tech-tag {{ project.domain }}">{{ tech }}</span>
+                                <span class="projects-tech-tag {{ project.domain }}">{{ tech }}</span>
                             {% endfor %}
                             {% if project.tech_stack.size > 3 %}
-                                <span class="tech-tag more">+{{ project.tech_stack.size | minus: 3 }}</span>
+                                <span class="projects-tech-tag more">+{{ project.tech_stack.size | minus: 3 }}</span>
                             {% endif %}
                         </div>
                         {% endif %}
 
                         <!-- Key Features Preview -->
                         {% if project.key_features %}
-                        <div class="project-features">
+                        <div class="projects-card-features">
                             <i class="fas fa-star"></i>
                             <span>{{ project.key_features.size }} key features</span>
                         </div>
@@ -238,9 +248,9 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                     </div>
 
                     <!-- Project Footer -->
-                    <div class="project-footer">
+                    <div class="projects-card-footer">
                         <!-- Domain Tag -->
-                        <div class="project-domain-tag {{ project.domain }}">
+                        <div class="projects-card-domain-tag {{ project.domain }}">
                             {% if project.domain == 'sports' %}
                                 <i class="fas fa-basketball-ball"></i> Sports
                             {% elsif project.domain == 'anime' %}
@@ -260,16 +270,16 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
 
                         <!-- Progress Indicator -->
                         {% if project.progress > 0 %}
-                        <div class="project-progress">
-                            <div class="progress-bar-mini">
-                                <div class="progress-fill" style="width: {{ project.progress }}%"></div>
+                        <div class="projects-card-progress">
+                            <div class="projects-progress-bar-mini">
+                                <div class="projects-progress-fill" style="width: {{ project.progress }}%"></div>
                             </div>
-                            <span class="progress-text">{{ project.progress }}%</span>
+                            <span class="projects-progress-text">{{ project.progress }}%</span>
                         </div>
                         {% endif %}
 
                         <!-- View Details Button -->
-                        <button class="btn-view-details" data-project-id="{{ project.id }}">
+                        <button class="projects-btn-view-details" data-project-id="{{ project.id }}">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right"></i>
                         </button>
@@ -279,8 +289,8 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
             </div>
 
             <!-- No Results Message -->
-            <div class="no-results" id="noResults" style="display: none;">
-                <div class="no-results-icon">
+            <div class="projects-no-results" id="noResults" style="display: none;">
+                <div class="projects-no-results-icon">
                     <i class="fas fa-search"></i>
                 </div>
                 <h3>No Projects Found</h3>
@@ -288,6 +298,23 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                 <button class="btn btn-primary" id="resetFilters">
                     <i class="fas fa-redo"></i>
                     <span>Reset Filters</span>
+                </button>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div class="projects-pagination" id="pagination" style="display: none;">
+                <button class="projects-pagination-btn" id="prevPage" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                    <span>Previous</span>
+                </button>
+
+                <div class="projects-pagination-pages" id="paginationPages">
+                    <!-- Page numbers will be inserted here by JavaScript -->
+                </div>
+
+                <button class="projects-pagination-btn" id="nextPage">
+                    <span>Next</span>
+                    <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
             {% else %}
@@ -364,24 +391,24 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
     </section>
 
     <!-- CTA Section -->
-    <section class="projects-cta">
+    <section class="projects-cta-section">
         <div class="container">
-            <div class="cta-content">
-                <div class="cta-icon">
+            <div class="projects-cta-content">
+                <div class="projects-cta-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <h2>Follow the Quest</h2>
                 <p>Track my progress as I build 49 projects in 12 months. See detailed timelines, milestones, and weekly updates.</p>
-                <div class="cta-buttons">
-                    <a href="/quest-progress/" class="btn btn-primary btn-large">
+                <div class="projects-cta-buttons">
+                    <a href="/quest-progress/" class="projects-cta-btn projects-cta-btn-primary">
                         <i class="fas fa-rocket"></i>
                         <span>Track Quest Progress</span>
                     </a>
-                    <a href="/blog/49-project-quest/" class="btn btn-secondary btn-large">
+                    <a href="/blog/49-project-quest/" class="projects-cta-btn projects-cta-btn-secondary">
                         <i class="fas fa-book-open"></i>
                         <span>Read the Story</span>
                     </a>
-                    <a href="/hobbies/" class="btn btn-secondary btn-large">
+                    <a href="/hobbies/" class="projects-cta-btn projects-cta-btn-secondary">
                         <i class="fas fa-heart"></i>
                         <span>Explore Hobbies</span>
                     </a>
@@ -395,13 +422,30 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const projectsGrid = document.getElementById('projectsGrid');
-    const projectCards = document.querySelectorAll('.project-card');
+    const projectCards = Array.from(document.querySelectorAll('.projects-card'));
     const searchInput = document.getElementById('projectSearch');
     const clearSearch = document.getElementById('clearSearch');
     const resultsCount = document.getElementById('resultsCount');
     const noResults = document.getElementById('noResults');
     const resetFiltersBtn = document.getElementById('resetFilters');
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    const resetFiltersTopBtn = document.getElementById('resetFiltersTop');
+    const pagination = document.getElementById('pagination');
+    const prevPageBtn = document.getElementById('prevPage');
+    const nextPageBtn = document.getElementById('nextPage');
+    const paginationPages = document.getElementById('paginationPages');
+
+    // Dropdown elements
+    const domainFilterBtn = document.getElementById('domainFilterBtn');
+    const typeFilterBtn = document.getElementById('typeFilterBtn');
+    const phaseFilterBtn = document.getElementById('phaseFilterBtn');
+    const domainFilterMenu = document.getElementById('domainFilterMenu');
+    const typeFilterMenu = document.getElementById('typeFilterMenu');
+    const phaseFilterMenu = document.getElementById('phaseFilterMenu');
+    const domainFilterText = document.getElementById('domainFilterText');
+    const typeFilterText = document.getElementById('typeFilterText');
+    const phaseFilterText = document.getElementById('phaseFilterText');
+
+    const filterOptions = document.querySelectorAll('.projects-filter-option');
 
     let activeFilters = {
         domain: 'all',
@@ -409,116 +453,276 @@ document.addEventListener('DOMContentLoaded', function() {
         phase: 'all'
     };
 
-    // Filter projects
-    function filterProjects() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        let visibleCount = 0;
+    // Pagination settings
+    const itemsPerPage = 12;
+    let currentPage = 1;
+    let filteredCards = [];
 
-        projectCards.forEach(card => {
+    // Toggle dropdown menus
+    function toggleDropdown(menu, btn) {
+        const isOpen = menu.classList.contains('show');
+
+        // Close all dropdowns
+        document.querySelectorAll('.projects-filter-dropdown-menu').forEach(m => {
+            m.classList.remove('show');
+        });
+        document.querySelectorAll('.projects-filter-dropdown-btn').forEach(b => {
+            b.classList.remove('active');
+        });
+
+        // Toggle current dropdown
+        if (!isOpen) {
+            menu.classList.add('show');
+            btn.classList.add('active');
+        }
+    }
+
+    domainFilterBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(domainFilterMenu, domainFilterBtn);
+    });
+
+    typeFilterBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(typeFilterMenu, typeFilterBtn);
+    });
+
+    phaseFilterBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDropdown(phaseFilterMenu, phaseFilterBtn);
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.projects-filter-dropdown-menu').forEach(m => {
+            m.classList.remove('show');
+        });
+        document.querySelectorAll('.projects-filter-dropdown-btn').forEach(b => {
+            b.classList.remove('active');
+        });
+    });
+
+    // Filter and paginate projects
+    function filterAndPaginateProjects() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        // Filter cards
+        filteredCards = projectCards.filter(card => {
             const domain = card.dataset.domain;
             const type = card.dataset.type;
             const phase = card.dataset.phase;
             const searchData = card.dataset.search;
 
-            // Check filters
             const domainMatch = activeFilters.domain === 'all' || domain === activeFilters.domain;
             const typeMatch = activeFilters.type === 'all' || type === activeFilters.type;
             const phaseMatch = activeFilters.phase === 'all' || phase === activeFilters.phase;
             const searchMatch = searchTerm === '' || searchData.includes(searchTerm);
 
-            if (domainMatch && typeMatch && phaseMatch && searchMatch) {
-                card.style.display = 'block';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
+            return domainMatch && typeMatch && phaseMatch && searchMatch;
         });
 
         // Update results count
-        resultsCount.textContent = visibleCount;
+        resultsCount.textContent = filteredCards.length;
 
-        // Show/hide no results message
-        if (visibleCount === 0) {
+        // Show/hide no results
+        if (filteredCards.length === 0) {
             projectsGrid.style.display = 'none';
             noResults.style.display = 'flex';
+            pagination.style.display = 'none';
         } else {
             projectsGrid.style.display = 'grid';
             noResults.style.display = 'none';
+
+            // Show pagination if needed
+            if (filteredCards.length > itemsPerPage) {
+                pagination.style.display = 'flex';
+                renderPagination();
+            } else {
+                pagination.style.display = 'none';
+            }
+
+            // Display current page
+            displayPage(currentPage);
         }
     }
 
-    // Handle filter button clicks
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+    // Display specific page
+    function displayPage(page) {
+        currentPage = page;
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+
+        // Hide all cards first
+        projectCards.forEach(card => card.style.display = 'none');
+
+        // Show cards for current page
+        filteredCards.slice(startIndex, endIndex).forEach(card => {
+            card.style.display = 'block';
+        });
+
+        // Update pagination buttons
+        updatePaginationButtons();
+
+        // Scroll to top of projects section
+        projectsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Render pagination controls
+    function renderPagination() {
+        const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+        paginationPages.innerHTML = '';
+
+        // Show max 5 page numbers
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + 4);
+
+        if (endPage - startPage < 4) {
+            startPage = Math.max(1, endPage - 4);
+        }
+
+        // Add first page if not visible
+        if (startPage > 1) {
+            addPageButton(1);
+            if (startPage > 2) {
+                paginationPages.innerHTML += '<span class="projects-pagination-ellipsis">...</span>';
+            }
+        }
+
+        // Add page numbers
+        for (let i = startPage; i <= endPage; i++) {
+            addPageButton(i);
+        }
+
+        // Add last page if not visible
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationPages.innerHTML += '<span class="projects-pagination-ellipsis">...</span>';
+            }
+            addPageButton(totalPages);
+        }
+    }
+
+    function addPageButton(pageNum) {
+        const btn = document.createElement('button');
+        btn.className = 'projects-pagination-page' + (pageNum === currentPage ? ' active' : '');
+        btn.textContent = pageNum;
+        btn.addEventListener('click', () => displayPage(pageNum));
+        paginationPages.appendChild(btn);
+    }
+
+    function updatePaginationButtons() {
+        const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+        prevPageBtn.disabled = currentPage === 1;
+        nextPageBtn.disabled = currentPage === totalPages;
+
+        // Update active page button
+        document.querySelectorAll('.projects-pagination-page').forEach(btn => {
+            btn.classList.toggle('active', parseInt(btn.textContent) === currentPage);
+        });
+    }
+
+    // Pagination button handlers
+    prevPageBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+            displayPage(currentPage - 1);
+            renderPagination();
+        }
+    });
+
+    nextPageBtn.addEventListener('click', () => {
+        const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+        if (currentPage < totalPages) {
+            displayPage(currentPage + 1);
+            renderPagination();
+        }
+    });
+
+    // Handle filter option clicks
+    filterOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.stopPropagation();
             const filterType = this.dataset.type;
             const filterValue = this.dataset.filter;
 
             // Update active filter
             activeFilters[filterType] = filterValue;
 
-            // Update button states
-            document.querySelectorAll(`[data-type="${filterType}"]`).forEach(b => {
-                b.classList.remove('active');
+            // Update button states in dropdown
+            const menu = this.closest('.projects-filter-dropdown-menu');
+            menu.querySelectorAll('.projects-filter-option').forEach(opt => {
+                opt.classList.remove('active');
             });
             this.classList.add('active');
 
-            // Filter projects
-            filterProjects();
+            // Update dropdown button text
+            const text = this.textContent.trim();
+            if (filterType === 'domain') {
+                domainFilterText.textContent = filterValue === 'all' ? 'All' : text.split(' ').pop();
+            } else if (filterType === 'type') {
+                typeFilterText.textContent = filterValue === 'all' ? 'All' : text.split(' ').pop();
+            } else if (filterType === 'phase') {
+                phaseFilterText.textContent = filterValue === 'all' ? 'All' : text.split(' ').pop();
+            }
+
+            // Close dropdown
+            menu.classList.remove('show');
+            menu.previousElementSibling.classList.remove('active');
+
+            // Reset to page 1 and filter
+            currentPage = 1;
+            filterAndPaginateProjects();
         });
     });
 
     // Handle search input
     searchInput.addEventListener('input', function() {
-        if (this.value.length > 0) {
-            clearSearch.style.display = 'block';
-        } else {
-            clearSearch.style.display = 'none';
-        }
-        filterProjects();
+        clearSearch.style.display = this.value.length > 0 ? 'block' : 'none';
+        currentPage = 1;
+        filterAndPaginateProjects();
     });
 
     // Handle clear search
     clearSearch.addEventListener('click', function() {
         searchInput.value = '';
         clearSearch.style.display = 'none';
-        filterProjects();
+        currentPage = 1;
+        filterAndPaginateProjects();
     });
 
     // Handle reset filters
-    resetFiltersBtn.addEventListener('click', function() {
-        // Reset all filters
-        activeFilters = {
-            domain: 'all',
-            type: 'all',
-            phase: 'all'
-        };
-
-        // Reset search
+    function resetAllFilters() {
+        activeFilters = { domain: 'all', type: 'all', phase: 'all' };
         searchInput.value = '';
         clearSearch.style.display = 'none';
 
-        // Reset button states
-        filterBtns.forEach(btn => {
-            if (btn.dataset.filter === 'all') {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
+        // Reset dropdown texts
+        domainFilterText.textContent = 'All';
+        typeFilterText.textContent = 'All';
+        phaseFilterText.textContent = 'All';
+
+        // Reset active states
+        filterOptions.forEach(opt => {
+            opt.classList.toggle('active', opt.dataset.filter === 'all');
         });
 
-        // Filter projects
-        filterProjects();
-    });
+        currentPage = 1;
+        filterAndPaginateProjects();
+    }
 
-    // Handle view details buttons (placeholder for future modal/page)
-    document.querySelectorAll('.btn-view-details').forEach(btn => {
+    resetFiltersBtn.addEventListener('click', resetAllFilters);
+    resetFiltersTopBtn.addEventListener('click', resetAllFilters);
+
+    // Handle view details buttons
+    document.querySelectorAll('.projects-btn-view-details').forEach(btn => {
         btn.addEventListener('click', function() {
             const projectId = this.dataset.projectId;
-            // TODO: Open project detail modal or navigate to project page
             console.log('View project #' + projectId);
             alert('Project detail page coming soon! Project #' + projectId);
         });
     });
+
+    // Initial load
+    filterAndPaginateProjects();
 });
 </script>
 
