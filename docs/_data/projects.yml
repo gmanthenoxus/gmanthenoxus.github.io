@@ -1,0 +1,1267 @@
+# The 49 Projects - Complete Data Structure
+# This file contains all project information for the projects listing page
+
+# Phase 1: Foundation & Momentum (7 Micro-Projects)
+phase_1:
+  - id: 1
+    name: "Genre Analysis & Tracking"
+    slug: "genre-analysis-tracking"
+    domain: "anime"
+    type: "analysis"
+    phase: 1
+    status: "planned"
+    progress: 0
+    description: "Interactive dashboard analyzing anime genre distribution, popularity trends, and personal viewing patterns. Visualizes genre evolution over time and identifies underrated gems based on scoring patterns."
+    tech_stack:
+      - "Python"
+      - "Pandas"
+      - "Matplotlib"
+      - "Jikan API"
+      - "Streamlit"
+    key_features:
+      - "Genre popularity heatmaps"
+      - "Personal viewing statistics"
+      - "Recommendation engine based on genre preferences"
+    data_sources:
+      - "MyAnimeList API"
+      - "Personal viewing history"
+    icon: "fas fa-chart-bar"
+
+  - id: 2
+    name: "Player Comparison Tool"
+    slug: "player-comparison-tool"
+    domain: "sports"
+    type: "analysis"
+    phase: 1
+    status: "planned"
+    progress: 0
+    description: "Real-time sports analytics platform comparing player statistics across seasons, teams, and eras with era-adjusted metrics."
+    tech_stack:
+      - "React"
+      - "D3.js"
+      - "SportsData API"
+    key_features:
+      - "Side-by-side stat comparison"
+      - "Historical context"
+      - "Performance vs. salary analysis"
+    data_sources:
+      - "NBA/MLB/NFL official APIs"
+      - "Basketball-Reference"
+      - "Spotrac"
+    icon: "fas fa-balance-scale"
+
+  - id: 3
+    name: "Workout Personalization"
+    slug: "workout-personalization"
+    domain: "fitness"
+    type: "build"
+    phase: 1
+    status: "planned"
+    progress: 0
+    description: "AI-powered workout generator creating customized routines based on user goals, available equipment, fitness level, and time constraints."
+    tech_stack:
+      - "React Native"
+      - "Node.js"
+      - "Exercise Database"
+    key_features:
+      - "Goal-based quiz"
+      - "Equipment filtering"
+      - "Progressive overload tracking"
+      - "Video exercise library"
+    integration: "Apple Health/Google Fit sync"
+    icon: "fas fa-dumbbell"
+
+  - id: 4
+    name: "Trivia and Quiz"
+    slug: "trivia-quiz"
+    domain: "games"
+    type: "build"
+    phase: 1
+    status: "planned"
+    progress: 0
+    description: "Multi-category trivia game with real-time leaderboards, power-ups, and social features for competitive gaming sessions."
+    tech_stack:
+      - "React"
+      - "Socket.io"
+      - "Trivia API"
+    key_features:
+      - "Live multiplayer"
+      - "Category selection"
+      - "Streak bonuses"
+      - "Social sharing"
+      - "Achievement system"
+    game_types: "Sports, anime, gaming, music, and general knowledge"
+    icon: "fas fa-question-circle"
+
+  - id: 5
+    name: "Interactive Music Timeline Explorer"
+    slug: "music-timeline-explorer"
+    domain: "music"
+    type: "build"
+    phase: 1
+    status: "planned"
+    progress: 0
+    description: "Visual music history explorer showing genre evolution, influential artists, and cultural movements through interactive decades."
+    tech_stack:
+      - "D3.js"
+      - "React"
+      - "Spotify API"
+    key_features:
+      - "Zoomable timeline"
+      - "Genre relationship maps"
+      - "Artist influence webs"
+      - "Sample audio previews"
+    coverage: "1960s to present across major genres"
+    icon: "fas fa-music"
+
+  - id: 6
+    name: "Tech Stack Explorer"
+    slug: "tech-stack-explorer"
+    domain: "tech"
+    type: "build"
+    phase: 1
+    status: "planned"
+    progress: 0
+    description: "Decision-making tool for developers to compare technology stacks, frameworks, and tools with real-world usage data and learning curves."
+    tech_stack:
+      - "Next.js"
+      - "Tech Industry APIs"
+    key_features:
+      - "Stack comparison matrix"
+      - "Trend analysis"
+      - "Learning resource aggregation"
+      - "Community ratings"
+    data_sources:
+      - "GitHub trends"
+      - "Stack Overflow"
+      - "Job market demand"
+    icon: "fas fa-layer-group"
+
+  - id: 7
+    name: "Sneaker Collection Manager"
+    slug: "sneaker-collection-manager"
+    domain: "sneakers"
+    type: "build"
+    phase: 1
+    status: "planned"
+    progress: 0
+    description: "Digital sneaker closet with valuation tracking, outfit pairing suggestions, and release calendar integration."
+    tech_stack:
+      - "React"
+      - "Firebase"
+      - "Sneaker Database API"
+    key_features:
+      - "Barcode scanning"
+      - "Current market value"
+      - "Wear tracking"
+      - "Cleaning reminders"
+      - "Social sharing"
+    integration: "StockX API for pricing, release calendar sync"
+    icon: "fas fa-shoe-prints"
+
+# Phase 2: Domain Deep Dive & Execution (42 Projects)
+# Month 3: Sports (6 Projects)
+phase_2_sports:
+  - id: 8
+    name: "Highlight Generator"
+    slug: "highlight-generator"
+    domain: "sports"
+    type: "build"
+    phase: 2
+    month: 3
+    status: "planned"
+    progress: 0
+    description: "AI-powered sports highlight reel creator that automatically identifies and compiles key moments from game footage using computer vision."
+    tech_stack:
+      - "Python"
+      - "OpenCV"
+      - "TensorFlow"
+      - "FFmpeg"
+      - "Cloud Processing"
+    key_features:
+      - "Automatic moment detection"
+      - "Custom clip lengths"
+      - "Social media optimization"
+      - "Player-specific highlights"
+    use_case: "Content creators, team analysis, fan engagement"
+    icon: "fas fa-video"
+
+  - id: 9
+    name: "Contract Analysis"
+    slug: "contract-analysis"
+    domain: "sports"
+    type: "analysis"
+    phase: 2
+    month: 3
+    status: "planned"
+    progress: 0
+    description: "Sports financial analytics platform analyzing player contracts, salary cap implications, and team financial strategy across leagues."
+    tech_stack:
+      - "Python"
+      - "Financial Modeling"
+      - "Web Scraping"
+    key_features:
+      - "Contract value grading"
+      - "Cap space optimization"
+      - "Free agency predictions"
+      - "Trade machine"
+    data_sources:
+      - "Spotrac"
+      - "OverTheCap"
+      - "League CBA data"
+    icon: "fas fa-file-contract"
+
+  - id: 10
+    name: "Predict Player Positions (K-NN)"
+    slug: "predict-player-positions"
+    domain: "sports"
+    type: "analysis"
+    phase: 2
+    month: 3
+    status: "planned"
+    progress: 0
+    description: "Machine learning classification system that predicts optimal player positions based on physical attributes and performance metrics using K-Nearest Neighbors."
+    tech_stack:
+      - "Python"
+      - "scikit-learn"
+      - "Player Tracking Data"
+    key_features:
+      - "Position probability scores"
+      - "Archetype identification"
+      - "Draft prospect evaluation"
+      - "Role optimization"
+    algorithms: "K-NN, Random Forest, feature importance analysis"
+    icon: "fas fa-brain"
+
+  - id: 11
+    name: "Sports League Management App"
+    slug: "sports-league-management"
+    domain: "sports"
+    type: "build"
+    phase: 2
+    month: 3
+    status: "planned"
+    progress: 0
+    description: "Comprehensive league management platform for amateur sports with scheduling, stats tracking, payments, and communication tools."
+    tech_stack:
+      - "MERN Stack"
+      - "Stripe"
+      - "Real-time Updates"
+    key_features:
+      - "Automated scheduling"
+      - "Live score updates"
+      - "Team management"
+      - "Payment processing"
+      - "Mobile app"
+    users: "League commissioners, teams, players"
+    icon: "fas fa-trophy"
+
+  - id: 12
+    name: "League with the Boys"
+    slug: "league-with-the-boys"
+    domain: "sports"
+    type: "build"
+    phase: 2
+    month: 3
+    status: "planned"
+    progress: 0
+    description: "Social fantasy sports platform focused on private leagues with friends, featuring trash talk channels, custom scoring, and weekly challenges."
+    tech_stack:
+      - "React Native"
+      - "WebSockets"
+      - "Fantasy Sports APIs"
+    key_features:
+      - "Group chat"
+      - "Custom trophy system"
+      - "Meme integration"
+      - "Side bets"
+      - "Season-long narratives"
+    focus: "Social experience over pure competition"
+    icon: "fas fa-users"
+
+  - id: 13
+    name: "Sports Debate Simulator"
+    slug: "sports-debate-simulator"
+    domain: "sports"
+    type: "build"
+    phase: 2
+    month: 3
+    status: "planned"
+    progress: 0
+    description: "AI-powered debate platform that generates data-backed arguments for sports debates and simulates discussions between virtual analysts."
+    tech_stack:
+      - "React"
+      - "NLP Models"
+      - "Sports Statistics APIs"
+    key_features:
+      - "Argument generation"
+      - "Historical context"
+      - "Statistical evidence"
+      - "Debate scoring system"
+    debate_types: "Player comparisons, team legacy, historical what-ifs"
+    icon: "fas fa-comments"
+
+# Month 4: Anime (6 Projects)
+phase_2_anime:
+  - id: 14
+    name: "Interactive Anime Timeline Explorer"
+    slug: "anime-timeline-explorer"
+    domain: "anime"
+    type: "build"
+    phase: 2
+    month: 4
+    status: "planned"
+    progress: 0
+    description: "Zoomable historical timeline of anime evolution with studio relationships, genre development, and cultural impact visualization."
+    tech_stack:
+      - "React"
+      - "D3.js"
+      - "Anime Database"
+    key_features:
+      - "Studio lineage maps"
+      - "Genre evolution trees"
+      - "Influence tracking"
+      - "Milestone events"
+    timeline: "1960s Astro Boy to current seasonal anime"
+    icon: "fas fa-timeline"
+
+  - id: 15
+    name: "Hybrid Anime Recommender System"
+    slug: "hybrid-anime-recommender"
+    domain: "anime"
+    type: "analysis"
+    phase: 2
+    month: 4
+    status: "planned"
+    progress: 0
+    description: "Advanced recommendation engine combining collaborative filtering (user behavior) with content-based filtering (genre, themes, staff) and social graphs."
+    tech_stack:
+      - "Python"
+      - "surprise"
+      - "scikit-learn"
+      - "Graph Databases"
+    key_features:
+      - "Multi-factor recommendations"
+      - "Surprise prevention"
+      - "Seasonal discovery"
+      - "Friend influence weighting"
+    algorithms: "Matrix factorization, cosine similarity, network analysis"
+    icon: "fas fa-robot"
+
+  - id: 16
+    name: "Anime Scene Predictor"
+    slug: "anime-scene-predictor"
+    domain: "anime"
+    type: "analysis"
+    phase: 2
+    month: 4
+    status: "planned"
+    progress: 0
+    description: "Machine learning model predicting key plot points, emotional arcs, and character development based on series patterns and tropes."
+    tech_stack:
+      - "Python"
+      - "LSTM Networks"
+      - "Trope Databases"
+    key_features:
+      - "Plot twist prediction"
+      - "Emotional trajectory mapping"
+      - "Arc completion estimates"
+    training_data: "Anime plot summaries, episode guides, user ratings"
+    icon: "fas fa-crystal-ball"
+
+  - id: 17
+    name: "Anime Episode/Scene Recommender for Creators"
+    slug: "anime-scene-recommender"
+    domain: "anime"
+    type: "build"
+    phase: 2
+    month: 4
+    status: "planned"
+    progress: 0
+    description: "Professional tool for content creators to find specific anime scenes and episodes for reaction videos, analysis, or educational content."
+    tech_stack:
+      - "React"
+      - "Video Processing"
+      - "Scene Detection"
+    key_features:
+      - "Scene search by theme"
+      - "Emotional tone detection"
+      - "Copyright-safe timestamps"
+      - "Creator collaboration"
+    use_cases: "YouTube creators, educators, video editors"
+    icon: "fas fa-film"
+
+  - id: 18
+    name: "Anime Battle Simulator"
+    slug: "anime-battle-simulator"
+    domain: "anime"
+    type: "build"
+    phase: 2
+    month: 4
+    status: "planned"
+    progress: 0
+    description: "Character drafting and battle simulation platform for anime fan communities with stat-based outcomes and tactical team building."
+    tech_stack:
+      - "React"
+      - "Battle Algorithms"
+      - "Character Database"
+    key_features:
+      - "Character drafting"
+      - "Ability synergies"
+      - "Terrain effects"
+      - "Tournament modes"
+      - "Community rankings"
+    characters: "200+ across major shonen and popular series"
+    icon: "fas fa-fist-raised"
+
+  - id: 19
+    name: "Genre Analysis & Tracking v2"
+    slug: "genre-analysis-v2"
+    domain: "anime"
+    type: "analysis"
+    phase: 2
+    month: 4
+    status: "planned"
+    progress: 0
+    description: "Advanced analytics platform tracking micro-genre evolution, crossover popularity, and predictive trend analysis for anime production studios."
+    tech_stack:
+      - "Python"
+      - "Time Series Analysis"
+      - "Market Data"
+    key_features:
+      - "Trend forecasting"
+      - "Studio performance metrics"
+      - "Genre saturation alerts"
+      - "Investment recommendations"
+    audience: "Fans, industry analysts, production committees"
+    icon: "fas fa-chart-line"
+
+# Month 5: Fitness (6 Projects)
+phase_2_fitness:
+  - id: 20
+    name: "Fitness Form Analyzer"
+    slug: "fitness-form-analyzer"
+    domain: "fitness"
+    type: "build"
+    phase: 2
+    month: 5
+    status: "planned"
+    progress: 0
+    description: "Computer vision application providing real-time exercise form feedback using smartphone camera and pose estimation technology."
+    tech_stack:
+      - "React Native"
+      - "TensorFlow.js"
+      - "MediaPipe"
+    key_features:
+      - "Real-time correction alerts"
+      - "Form scoring"
+      - "Progress tracking"
+      - "Injury prevention tips"
+    exercises: "Squats, push-ups, deadlifts, yoga poses with expansion plans"
+    icon: "fas fa-camera"
+
+  - id: 21
+    name: "Workout Clustering & Archetype Discovery"
+    slug: "workout-clustering"
+    domain: "fitness"
+    type: "analysis"
+    phase: 2
+    month: 5
+    status: "planned"
+    progress: 0
+    description: "Data mining project identifying fundamental workout archetypes and user behavior patterns from large-scale fitness app data."
+    tech_stack:
+      - "Python"
+      - "scikit-learn"
+      - "Clustering Algorithms"
+    key_features:
+      - "User segmentation"
+      - "Workout pattern recognition"
+      - "Plateau detection"
+      - "Personalization insights"
+    data: "Aggregated anonymous workout logs, user demographics"
+    icon: "fas fa-project-diagram"
+
+  - id: 22
+    name: "Fitness Trend & Market Analyzer"
+    slug: "fitness-market-analyzer"
+    domain: "fitness"
+    type: "analysis"
+    phase: 2
+    month: 5
+    status: "planned"
+    progress: 0
+    description: "Business intelligence platform tracking fitness industry trends, market opportunities, and competitive landscape analysis."
+    tech_stack:
+      - "Python"
+      - "Web Scraping"
+      - "Market Analysis Tools"
+    key_features:
+      - "Trend forecasting"
+      - "Market gap identification"
+      - "Investment analysis"
+      - "Startup evaluation"
+    coverage: "Wearables, apps, equipment, supplements, services"
+    icon: "fas fa-chart-area"
+
+  - id: 23
+    name: "Fitness Monitoring System Design"
+    slug: "fitness-monitoring-system"
+    domain: "fitness"
+    type: "build"
+    phase: 2
+    month: 5
+    status: "planned"
+    progress: 0
+    description: "Enterprise-grade fitness tracking system for gyms and teams with biometric monitoring, performance analytics, and coach dashboards."
+    tech_stack:
+      - "Full-stack Development"
+      - "IoT Integration"
+      - "Real-time Analytics"
+    key_features:
+      - "Multi-user management"
+      - "Performance benchmarks"
+      - "Injury risk assessment"
+      - "Team comparisons"
+    users: "Coaches, athletes, gym owners, sports teams"
+    icon: "fas fa-heartbeat"
+
+  - id: 24
+    name: "Gamified Move-to-Earn Fitness App"
+    slug: "move-to-earn-fitness"
+    domain: "fitness"
+    type: "build"
+    phase: 2
+    month: 5
+    status: "planned"
+    progress: 0
+    description: "Blockchain-inspired fitness application where users earn rewards and unlock achievements for completing real-world workouts and challenges."
+    tech_stack:
+      - "React Native"
+      - "Game Mechanics"
+      - "Activity Tracking"
+    key_features:
+      - "Token rewards system"
+      - "NFT achievements"
+      - "Community challenges"
+      - "Leaderboard competitions"
+    activities: "Running, cycling, gym workouts, daily steps"
+    icon: "fas fa-coins"
+
+  - id: 25
+    name: "Workout Personalization v2"
+    slug: "workout-personalization-v2"
+    domain: "fitness"
+    type: "build"
+    phase: 2
+    month: 5
+    status: "planned"
+    progress: 0
+    description: "Advanced AI coach adapting workout plans in real-time based on performance data, recovery metrics, and user feedback."
+    tech_stack:
+      - "Machine Learning"
+      - "Adaptive Algorithms"
+      - "Health API Integration"
+    key_features:
+      - "Dynamic adjustment"
+      - "Recovery optimization"
+      - "Motivation analysis"
+      - "Long-term progression planning"
+    integration: "Wearable data, sleep tracking, nutrition input"
+    icon: "fas fa-user-cog"
+
+# Month 6: Games (6 Projects)
+phase_2_games:
+  - id: 26
+    name: "Player Churn & Retention Predictor"
+    slug: "player-churn-predictor"
+    domain: "games"
+    type: "analysis"
+    phase: 2
+    month: 6
+    status: "planned"
+    progress: 0
+    description: "Predictive analytics model identifying players at risk of quitting games and recommending retention strategies for game developers."
+    tech_stack:
+      - "Python"
+      - "Survival Analysis"
+      - "Player Behavior Data"
+    key_features:
+      - "Churn probability scoring"
+      - "Intervention timing"
+      - "Feature impact analysis"
+      - "Cohort comparison"
+    data: "Play session patterns, spending behavior, social interactions"
+    icon: "fas fa-user-slash"
+
+  - id: 27
+    name: "Game Balance Auditor"
+    slug: "game-balance-auditor"
+    domain: "games"
+    type: "analysis"
+    phase: 2
+    month: 6
+    status: "planned"
+    progress: 0
+    description: "Statistical analysis tool evaluating game balance across characters, weapons, and strategies using win rate data and player metrics."
+    tech_stack:
+      - "Python"
+      - "Statistical Testing"
+      - "Game Data APIs"
+    key_features:
+      - "Balance scoring"
+      - "Patch impact analysis"
+      - "Meta evolution tracking"
+      - "Developer recommendations"
+    games: "Competitive titles (LoL, Valorant, Apex) with expansion capability"
+    icon: "fas fa-balance-scale-right"
+
+  - id: 28
+    name: "Genre Profitability vs. Saturation"
+    slug: "game-genre-profitability"
+    domain: "games"
+    type: "analysis"
+    phase: 2
+    month: 6
+    status: "planned"
+    progress: 0
+    description: "Market analysis platform comparing game genre profitability against market saturation to identify development opportunities."
+    tech_stack:
+      - "Business Intelligence"
+      - "Market Data Analysis"
+    key_features:
+      - "Opportunity scoring"
+      - "Risk assessment"
+      - "Trend forecasting"
+      - "Investment recommendations"
+    metrics: "Revenue per title, development costs, market share, player demand"
+    icon: "fas fa-chart-pie"
+
+  - id: 29
+    name: "Squad Finder / Team Synergy Analyzer"
+    slug: "squad-finder"
+    domain: "games"
+    type: "build"
+    phase: 2
+    month: 6
+    status: "planned"
+    progress: 0
+    description: "Matchmaking platform for competitive gamers analyzing team composition synergies and suggesting optimal squad formations."
+    tech_stack:
+      - "React"
+      - "Game APIs"
+      - "Synergy Algorithms"
+    key_features:
+      - "Role balancing"
+      - "Playstyle matching"
+      - "Success prediction"
+      - "Team improvement suggestions"
+    integration: "Direct game API connections for real-time stats"
+    icon: "fas fa-users-cog"
+
+  - id: 30
+    name: "Dead and Injured"
+    slug: "dead-and-injured"
+    domain: "games"
+    type: "build"
+    phase: 2
+    month: 6
+    status: "planned"
+    progress: 0
+    description: "Survival strategy game combining resource management, base building, and zombie survival mechanics with permadeath features."
+    tech_stack:
+      - "Unity"
+      - "C#"
+      - "Cloud Saves"
+    key_features:
+      - "Procedural generation"
+      - "Character permadeath"
+      - "Community events"
+      - "Seasonal content"
+    platform: "Mobile with PC potential"
+    icon: "fas fa-skull-crossbones"
+
+  - id: 31
+    name: "Trivia and Quiz v2"
+    slug: "trivia-quiz-v2"
+    domain: "games"
+    type: "build"
+    phase: 2
+    month: 6
+    status: "planned"
+    progress: 0
+    description: "Enhanced trivia platform with user-generated content, live events, tournament systems, and integrated streaming features."
+    tech_stack:
+      - "React"
+      - "Real-time Databases"
+      - "Video Integration"
+    key_features:
+      - "Content creation tools"
+      - "Live hosting capabilities"
+      - "Prize systems"
+      - "Community features"
+    expansion: "Brand partnerships, streaming integration"
+    icon: "fas fa-gamepad"
+
+# Month 7: Sneakers & Music (4 Projects)
+phase_2_sneakers_music_1:
+  - id: 32
+    name: "AI Sneaker Identifier"
+    slug: "ai-sneaker-identifier"
+    domain: "sneakers"
+    type: "build"
+    phase: 2
+    month: 7
+    status: "planned"
+    progress: 0
+    description: "Computer vision application identifying sneaker models from photos and providing detailed information, pricing, and authentication tips."
+    tech_stack:
+      - "React Native"
+      - "TensorFlow"
+      - "Image Recognition"
+    key_features:
+      - "Model identification"
+      - "Legit check guidance"
+      - "Market pricing"
+      - "Release info"
+    database: "1000+ sneaker models with continuous updates"
+    icon: "fas fa-search"
+
+  - id: 33
+    name: "Resale Market Analysis"
+    slug: "resale-market-analysis"
+    domain: "sneakers"
+    type: "analysis"
+    phase: 2
+    month: 7
+    status: "planned"
+    progress: 0
+    description: "Comprehensive analysis of sneaker resale markets identifying profitable opportunities, pricing trends, and market inefficiencies."
+    tech_stack:
+      - "Python"
+      - "Financial Analysis"
+      - "Web Scraping"
+    key_features:
+      - "Investment recommendations"
+      - "Price forecasting"
+      - "Market health indicators"
+      - "Risk assessment"
+    data_sources:
+      - "StockX"
+      - "GOAT"
+      - "eBay"
+      - "Regional marketplaces"
+    icon: "fas fa-dollar-sign"
+
+  - id: 34
+    name: "Genre Evolution Mapper"
+    slug: "genre-evolution-mapper"
+    domain: "music"
+    type: "analysis"
+    phase: 2
+    month: 7
+    status: "planned"
+    progress: 0
+    description: "Data visualization project tracking the evolution and fusion of music genres over decades with cultural context and key influencer mapping."
+    tech_stack:
+      - "D3.js"
+      - "Music Databases"
+      - "Cultural Data"
+    key_features:
+      - "Genre relationship graphs"
+      - "Influence tracking"
+      - "Cultural moment integration"
+      - "Trend prediction"
+    timeline: "1950s to present across global music scenes"
+    icon: "fas fa-sitemap"
+
+  - id: 35
+    name: "Concert Tour Analyzer"
+    slug: "concert-tour-analyzer"
+    domain: "music"
+    type: "analysis"
+    phase: 2
+    month: 7
+    status: "planned"
+    progress: 0
+    description: "Business intelligence tool analyzing concert tour profitability, routing efficiency, and market demand for artists and promoters."
+    tech_stack:
+      - "Python"
+      - "Geospatial Analysis"
+      - "Ticket Data"
+    key_features:
+      - "Route optimization"
+      - "Demand prediction"
+      - "Revenue forecasting"
+      - "Risk analysis"
+    data: "Historical ticket sales, venue capacity, travel costs, market demographics"
+    icon: "fas fa-route"
+
+# Month 8: Sneakers, Music & Tech (14 Projects)
+phase_2_sneakers_music_tech:
+  - id: 36
+    name: "Release Tracker"
+    slug: "release-tracker"
+    domain: "sneakers"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Comprehensive sneaker release calendar with raffle integration, reminder system, and regional release differences."
+    tech_stack:
+      - "React"
+      - "Notification Systems"
+      - "Release APIs"
+    key_features:
+      - "Global release database"
+      - "Raffle aggregation"
+      - "Size conversion"
+      - "Regional pricing"
+    coverage: "50+ brands with real-time updates"
+    icon: "fas fa-calendar-alt"
+
+  - id: 37
+    name: "Investment Portfolio"
+    slug: "investment-portfolio"
+    domain: "sneakers"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Digital portfolio manager for sneaker investors tracking value, ROI, diversification, and market performance metrics."
+    tech_stack:
+      - "React"
+      - "Financial Charts"
+      - "Collection Database"
+    key_features:
+      - "Value tracking"
+      - "Profit/loss analysis"
+      - "Market comparisons"
+      - "Sale timing suggestions"
+    integration: "Direct marketplace API connections"
+    icon: "fas fa-briefcase"
+
+  - id: 38
+    name: "Authentication Algorithm"
+    slug: "authentication-algorithm"
+    domain: "sneakers"
+    type: "analysis"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Machine learning model analyzing sneaker authentication through material analysis, stitching patterns, and manufacturing consistency."
+    tech_stack:
+      - "Python"
+      - "Computer Vision"
+      - "Pattern Recognition"
+    key_features:
+      - "Legit check scoring"
+      - "Common fake detection"
+      - "Confidence ratings"
+      - "Learning system"
+    training_data: "Authentic vs. replica comparison database"
+    icon: "fas fa-shield-alt"
+
+  - id: 39
+    name: "Sample Genealogy Mapper"
+    slug: "sample-genealogy-mapper"
+    domain: "music"
+    type: "analysis"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Interactive platform tracing musical samples through history, showing how songs influence each other across genres and decades."
+    tech_stack:
+      - "React"
+      - "Graph Databases"
+      - "Audio Analysis"
+    key_features:
+      - "Sample lineage trees"
+      - "Influence scoring"
+      - "Cross-genre connections"
+      - "Cultural impact"
+    database: "10,000+ sampled songs with audio previews"
+    icon: "fas fa-code-branch"
+
+  - id: 40
+    name: "AI Genre Fusion"
+    slug: "ai-genre-fusion"
+    domain: "music"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "AI music generator creating new musical pieces by blending characteristics of different genres based on user preferences."
+    tech_stack:
+      - "Python"
+      - "Magenta"
+      - "Audio Synthesis"
+    key_features:
+      - "Genre blending controls"
+      - "Style intensity adjustment"
+      - "Export capabilities"
+      - "Collaboration features"
+    genres: "50+ with customizable parameters"
+    icon: "fas fa-magic"
+
+  - id: 41
+    name: "Music Map"
+    slug: "music-map"
+    domain: "music"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Geographic music discovery platform showing local music scenes, venue information, and regional sound characteristics."
+    tech_stack:
+      - "React"
+      - "Mapbox"
+      - "Music APIs"
+    key_features:
+      - "Local artist discovery"
+      - "Venue calendars"
+      - "Regional sound profiles"
+      - "Event recommendations"
+    coverage: "Global with city-level detail"
+    icon: "fas fa-map-marked-alt"
+
+  - id: 42
+    name: "Playlist Mood Analyzer"
+    slug: "playlist-mood-analyzer"
+    domain: "music"
+    type: "analysis"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Emotional analysis tool evaluating playlist moods, energy flow, and emotional arcs using audio features and lyrical analysis."
+    tech_stack:
+      - "Python"
+      - "Sentiment Analysis"
+      - "Audio Feature Extraction"
+    key_features:
+      - "Mood scoring"
+      - "Energy tracking"
+      - "Flow optimization"
+      - "Mood-based recommendations"
+    integration: "Spotify, Apple Music, YouTube Music"
+    icon: "fas fa-smile"
+
+  - id: 43
+    name: "Programming Language Trend Analysis"
+    slug: "programming-language-trends"
+    domain: "tech"
+    type: "analysis"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Comprehensive analysis of programming language popularity, job market demand, and future growth projections."
+    tech_stack:
+      - "Python"
+      - "Data Analysis"
+      - "Trend Forecasting"
+    key_features:
+      - "Market demand scoring"
+      - "Learning ROI analysis"
+      - "Community health metrics"
+      - "Trend predictions"
+    data_sources:
+      - "GitHub"
+      - "Stack Overflow"
+      - "Job boards"
+      - "Industry surveys"
+    icon: "fas fa-code"
+
+  - id: 44
+    name: "Code Snippet Library"
+    slug: "code-snippet-library"
+    domain: "tech"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Intelligent code snippet manager with search, categorization, and context-aware recommendations for developers."
+    tech_stack:
+      - "React"
+      - "Code Analysis"
+      - "Search Algorithms"
+    key_features:
+      - "Smart search"
+      - "Context detection"
+      - "Version control"
+      - "Team collaboration"
+    languages: "20+ programming languages with syntax highlighting"
+    icon: "fas fa-file-code"
+
+  - id: 45
+    name: "Developer Tool Comparison"
+    slug: "developer-tool-comparison"
+    domain: "tech"
+    type: "analysis"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Data-driven comparison platform for development tools, frameworks, and libraries with real-world performance metrics."
+    tech_stack:
+      - "Python"
+      - "Benchmarking"
+      - "Community Data"
+    key_features:
+      - "Performance comparisons"
+      - "Learning curve analysis"
+      - "Community support ratings"
+      - "Use case matching"
+    tools: "500+ development tools across categories"
+    icon: "fas fa-tools"
+
+  - id: 46
+    name: "API Documentation Generator"
+    slug: "api-documentation-generator"
+    domain: "tech"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Automated API documentation generator creating beautiful, interactive docs from code comments and OpenAPI specifications."
+    tech_stack:
+      - "Node.js"
+      - "Documentation Generation"
+      - "Interactive UI"
+    key_features:
+      - "Auto-generation"
+      - "Interactive examples"
+      - "Version management"
+      - "Team collaboration"
+    output: "Beautiful, searchable, mobile-friendly documentation"
+    icon: "fas fa-book"
+
+  - id: 47
+    name: "Tech Interview Prep Platform"
+    slug: "tech-interview-prep"
+    domain: "tech"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Comprehensive technical interview preparation platform with coding challenges, system design practice, and behavioral questions."
+    tech_stack:
+      - "React"
+      - "Code Execution"
+      - "Video Integration"
+    key_features:
+      - "Coding challenges"
+      - "Mock interviews"
+      - "Progress tracking"
+      - "Company-specific prep"
+    content: "1000+ questions across difficulty levels"
+    icon: "fas fa-user-graduate"
+
+  - id: 48
+    name: "Open Source Contribution Tracker"
+    slug: "open-source-tracker"
+    domain: "tech"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Portfolio builder tracking open source contributions, impact metrics, and community engagement for developers."
+    tech_stack:
+      - "React"
+      - "GitHub API"
+      - "Contribution Analysis"
+    key_features:
+      - "Contribution visualization"
+      - "Impact scoring"
+      - "Skill demonstration"
+      - "Recruiter views"
+    integration: "GitHub, GitLab, other development platforms"
+    icon: "fas fa-code-branch"
+
+  - id: 49
+    name: "Developer Portfolio Template"
+    slug: "developer-portfolio-template"
+    domain: "tech"
+    type: "build"
+    phase: 2
+    month: 8
+    status: "planned"
+    progress: 0
+    description: "Customizable portfolio template specifically designed for developers showcasing projects, skills, and technical expertise."
+    tech_stack:
+      - "Next.js"
+      - "Responsive Design"
+      - "Project Integration"
+    key_features:
+      - "Project showcases"
+      - "Skill visualization"
+      - "Blog integration"
+      - "Contact forms"
+    focus: "Technical hiring optimization and personal branding"
+    icon: "fas fa-laptop-code"
+
+# Phase 3: Hub Integration & Refinement (7 Hubs)
+phase_3_hubs:
+  - id: 50
+    name: "AthleHub"
+    slug: "atlehub"
+    domain: "sports"
+    type: "hub"
+    phase: 3
+    status: "planned"
+    progress: 0
+    description: "Community sports platform integrating league management, player comparison, highlight generation, and fantasy sports features."
+    tech_stack:
+      - "MERN Stack"
+      - "Real-time Features"
+      - "Mobile Apps"
+    integrates:
+      - "Sports League Management App"
+      - "Player Comparison Tool"
+      - "Highlight Generator"
+      - "League with the Boys"
+      - "Contract Analysis"
+      - "Sports Debate Simulator"
+    icon: "fas fa-basketball-ball"
+
+  - id: 51
+    name: "AnimeVerse"
+    slug: "animeverse"
+    domain: "anime"
+    type: "hub"
+    phase: 3
+    status: "planned"
+    progress: 0
+    description: "Personalized anime discovery platform combining recommendations, timeline exploration, battle simulation, and community features."
+    tech_stack:
+      - "React"
+      - "Graph Databases"
+      - "ML Models"
+    integrates:
+      - "Hybrid Anime Recommender System"
+      - "Interactive Anime Timeline Explorer"
+      - "Anime Battle Simulator"
+      - "Genre Analysis & Tracking"
+      - "Anime Scene Predictor"
+    icon: "fas fa-torii-gate"
+
+  - id: 52
+    name: "RepCore"
+    slug: "repcore"
+    domain: "fitness"
+    type: "hub"
+    phase: 3
+    status: "planned"
+    progress: 0
+    description: "Comprehensive fitness tracking platform with form analysis, personalized workouts, gamification, and community challenges."
+    tech_stack:
+      - "React Native"
+      - "TensorFlow"
+      - "Health APIs"
+    integrates:
+      - "Fitness Form Analyzer"
+      - "Workout Personalization"
+      - "Gamified Move-to-Earn Fitness App"
+      - "Fitness Monitoring System"
+      - "Workout Clustering"
+    icon: "fas fa-dumbbell"
+
+  - id: 53
+    name: "Backlog"
+    slug: "backlog"
+    domain: "games"
+    type: "hub"
+    phase: 3
+    status: "planned"
+    progress: 0
+    description: "Gamified game management platform with trivia, squad finder, balance analysis, and community features."
+    tech_stack:
+      - "React"
+      - "Real-time Systems"
+      - "Game APIs"
+    integrates:
+      - "Trivia and Quiz"
+      - "Squad Finder"
+      - "Game Balance Auditor"
+      - "Player Churn Predictor"
+      - "Dead and Injured"
+    icon: "fas fa-gamepad"
+
+  - id: 54
+    name: "Tastebuds"
+    slug: "tastebuds"
+    domain: "sneakers"
+    type: "hub"
+    phase: 3
+    status: "planned"
+    progress: 0
+    description: "Social sneaker hub combining collection management, release tracking, authentication, and investment portfolio features."
+    tech_stack:
+      - "React Native"
+      - "Computer Vision"
+      - "Marketplace APIs"
+    integrates:
+      - "Sneaker Collection Manager"
+      - "AI Sneaker Identifier"
+      - "Release Tracker"
+      - "Investment Portfolio"
+      - "Authentication Algorithm"
+      - "Resale Market Analysis"
+    icon: "fas fa-shoe-prints"
+
+  - id: 55
+    name: "Codeflow Studio"
+    slug: "codeflow-studio"
+    domain: "tech"
+    type: "hub"
+    phase: 3
+    status: "planned"
+    progress: 0
+    description: "Visual programming playground integrating code snippets, interview prep, tool comparison, and portfolio building."
+    tech_stack:
+      - "Next.js"
+      - "Code Execution"
+      - "Developer Tools"
+    integrates:
+      - "Tech Stack Explorer"
+      - "Code Snippet Library"
+      - "Tech Interview Prep Platform"
+      - "Developer Portfolio Template"
+      - "API Documentation Generator"
+      - "Open Source Contribution Tracker"
+    icon: "fas fa-code"
+
+  - id: 56
+    name: "HarmonyHub"
+    slug: "harmonyhub"
+    domain: "music"
+    type: "hub"
+    phase: 3
+    status: "planned"
+    progress: 0
+    description: "Active music companion with timeline exploration, genre fusion, mood analysis, and local scene discovery."
+    tech_stack:
+      - "React"
+      - "Audio Processing"
+      - "Music APIs"
+    integrates:
+      - "Interactive Music Timeline Explorer"
+      - "Genre Evolution Mapper"
+      - "AI Genre Fusion"
+      - "Music Map"
+      - "Playlist Mood Analyzer"
+      - "Sample Genealogy Mapper"
+      - "Concert Tour Analyzer"
+    icon: "fas fa-music"
+

@@ -1,32 +1,164 @@
 ---
 layout: default
-title: "Projects & Builds"
-description: "Explore my collection of passion-driven projects across multiple domains"
+title: "The 49 Projects"
+description: "A 12-month quest to build 49 projects across 7 passion domains"
 ---
 
 <div class="projects-page">
-    <!-- Hero Section -->
+    <!-- Hero Section with Quest Progress -->
     <section class="projects-hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
                     <i class="fas fa-rocket"></i>
-                    <span>{{ site.projects.size }} Active Projects</span>
+                    <span>The 49 Project Quest</span>
                 </div>
                 <h1>{{ page.title }}</h1>
                 <p class="hero-subtitle">{{ page.description }}</p>
+
+                <!-- Quest Progress Overview -->
+                {% assign all_projects = site.data.projects.phase_1
+                    | concat: site.data.projects.phase_2_sports
+                    | concat: site.data.projects.phase_2_anime
+                    | concat: site.data.projects.phase_2_fitness
+                    | concat: site.data.projects.phase_2_games
+                    | concat: site.data.projects.phase_2_sneakers_music_1
+                    | concat: site.data.projects.phase_2_sneakers_music_tech
+                    | concat: site.data.projects.phase_3_hubs %}
+                {% assign completed_count = all_projects | where: "status", "completed" | size %}
+                {% assign in_progress_count = all_projects | where: "status", "in-progress" | size %}
+                {% assign total_count = all_projects | size %}
+                {% assign completion_percentage = completed_count | times: 100 | divided_by: total_count %}
+
+                <div class="quest-progress-overview">
+                    <div class="progress-stats">
+                        <div class="progress-stat">
+                            <span class="stat-number">{{ completed_count }}</span>
+                            <span class="stat-label">Completed</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="stat-number">{{ in_progress_count }}</span>
+                            <span class="stat-label">In Progress</span>
+                        </div>
+                        <div class="progress-stat">
+                            <span class="stat-number">{{ total_count }}</span>
+                            <span class="stat-label">Total Projects</span>
+                        </div>
+                    </div>
+                    <div class="quest-progress-bar">
+                        <div class="progress-fill" style="width: {{ completion_percentage }}%">
+                            <span class="progress-percentage">{{ completion_percentage }}%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
+
             <!-- Floating Tech Icons -->
             <div class="floating-icons">
-                <i class="fas fa-laptop-code float-icon" style="--delay: 0s;"></i>
-                <i class="fas fa-mobile-alt float-icon" style="--delay: 1s;"></i>
-                <i class="fas fa-database float-icon" style="--delay: 2s;"></i>
-                <i class="fas fa-server float-icon" style="--delay: 3s;"></i>
-                <i class="fas fa-cloud float-icon" style="--delay: 4s;"></i>
-                <i class="fas fa-cogs float-icon" style="--delay: 5s;"></i>
-                <i class="fas fa-terminal float-icon" style="--delay: 6s;"></i>
-                <i class="fas fa-code-branch float-icon" style="--delay: 7s;"></i>
+                <i class="fas fa-tv float-icon" style="--delay: 0s;"></i>
+                <i class="fas fa-basketball-ball float-icon" style="--delay: 1s;"></i>
+                <i class="fas fa-dumbbell float-icon" style="--delay: 2s;"></i>
+                <i class="fas fa-gamepad float-icon" style="--delay: 3s;"></i>
+                <i class="fas fa-shoe-prints float-icon" style="--delay: 4s;"></i>
+                <i class="fas fa-music float-icon" style="--delay: 5s;"></i>
+                <i class="fas fa-code float-icon" style="--delay: 6s;"></i>
+                <i class="fas fa-rocket float-icon" style="--delay: 7s;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter and Search Section -->
+    <section class="projects-filters">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="projectSearch" class="search-input" placeholder="Search projects by name, description, or tech stack...">
+                <button class="search-clear" id="clearSearch" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <!-- Domain Filters -->
+                <div class="filter-group">
+                    <span class="filter-label">Domain:</span>
+                    <button class="filter-btn active" data-filter="all" data-type="domain">
+                        <i class="fas fa-th"></i>
+                        <span>All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="sports" data-type="domain">
+                        <i class="fas fa-basketball-ball"></i>
+                        <span>Sports</span>
+                    </button>
+                    <button class="filter-btn" data-filter="anime" data-type="domain">
+                        <i class="fas fa-tv"></i>
+                        <span>Anime</span>
+                    </button>
+                    <button class="filter-btn" data-filter="fitness" data-type="domain">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Fitness</span>
+                    </button>
+                    <button class="filter-btn" data-filter="games" data-type="domain">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Games</span>
+                    </button>
+                    <button class="filter-btn" data-filter="sneakers" data-type="domain">
+                        <i class="fas fa-shoe-prints"></i>
+                        <span>Sneakers</span>
+                    </button>
+                    <button class="filter-btn" data-filter="music" data-type="domain">
+                        <i class="fas fa-music"></i>
+                        <span>Music</span>
+                    </button>
+                    <button class="filter-btn" data-filter="tech" data-type="domain">
+                        <i class="fas fa-code"></i>
+                        <span>Tech</span>
+                    </button>
+                </div>
+
+                <!-- Type Filters -->
+                <div class="filter-group">
+                    <span class="filter-label">Type:</span>
+                    <button class="filter-btn active" data-filter="all" data-type="type">
+                        <span>All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="analysis" data-type="type">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analysis</span>
+                    </button>
+                    <button class="filter-btn" data-filter="build" data-type="type">
+                        <i class="fas fa-hammer"></i>
+                        <span>Build</span>
+                    </button>
+                    <button class="filter-btn" data-filter="hub" data-type="type">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Hub</span>
+                    </button>
+                </div>
+
+                <!-- Phase Filters -->
+                <div class="filter-group">
+                    <span class="filter-label">Phase:</span>
+                    <button class="filter-btn active" data-filter="all" data-type="phase">
+                        <span>All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="1" data-type="phase">
+                        <span>Phase 1</span>
+                    </button>
+                    <button class="filter-btn" data-filter="2" data-type="phase">
+                        <span>Phase 2</span>
+                    </button>
+                    <button class="filter-btn" data-filter="3" data-type="phase">
+                        <span>Phase 3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Counter -->
+            <div class="results-counter">
+                <span id="resultsCount">{{ total_count }}</span> projects found
             </div>
         </div>
     </section>
@@ -34,94 +166,129 @@ description: "Explore my collection of passion-driven projects across multiple d
     <!-- Projects Grid Section -->
     <section class="projects-container">
         <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p>A collection of passion-driven builds spanning multiple domains</p>
-            </div>
-            
-            {% if site.projects.size > 0 %}
-            <div class="projects-grid">
-                {% for project in site.projects %}
-                <article class="project-card" data-hobby="{{ project.hobby }}">
-                    <!-- Project Image -->
-                    <div class="project-image">
-                        {% if project.image %}
-                            <img src="{{ project.image }}" alt="{{ project.title }}">
-                        {% else %}
-                            <div class="project-placeholder">
-                                <i class="fas fa-code"></i>
-                            </div>
-                        {% endif %}
+            {% if all_projects.size > 0 %}
+            <div class="projects-grid" id="projectsGrid">
+                {% for project in all_projects %}
+                <article class="project-card"
+                         data-domain="{{ project.domain }}"
+                         data-type="{{ project.type }}"
+                         data-phase="{{ project.phase }}"
+                         data-status="{{ project.status }}"
+                         data-search="{{ project.name | downcase }} {{ project.description | downcase }} {{ project.tech_stack | join: ' ' | downcase }}">
 
-                        <!-- Status Badge -->
-                        <div class="project-status {{ project.status | default: 'completed' }}">
-                            {% if project.status == 'development' %}
-                                <i class="fas fa-cog fa-spin"></i>
-                                <span>In Progress</span>
-                            {% elsif project.status == 'planning' %}
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Planning</span>
-                            {% else %}
-                                <i class="fas fa-check-circle"></i>
-                                <span>Completed</span>
-                            {% endif %}
+                    <!-- Project Header with Icon -->
+                    <div class="project-header">
+                        <div class="project-icon {{ project.domain }}">
+                            <i class="{{ project.icon }}"></i>
                         </div>
 
-                        <!-- Progress Bar -->
-                        <div class="project-progress-bar">
-                            <div class="progress-fill" style="width: {{ project.progress | default: 100 }}%"></div>
+                        <!-- Status Badge -->
+                        <div class="project-status-badge {{ project.status }}">
+                            {% if project.status == 'completed' %}
+                                <i class="fas fa-check-circle"></i>
+                                <span>Completed</span>
+                            {% elsif project.status == 'in-progress' %}
+                                <i class="fas fa-cog fa-spin"></i>
+                                <span>In Progress</span>
+                            {% else %}
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Planned</span>
+                            {% endif %}
                         </div>
                     </div>
 
                     <!-- Project Content -->
                     <div class="project-content">
-                        <!-- Hobby Tag -->
-                        {% assign hobby_data = site.data.hobbies | where: "slug", project.hobby | first %}
-                        <div class="project-hobby-tag {{ project.hobby }}">
-                            <i class="{{ hobby_data.icon }}"></i>
-                            <span>{{ hobby_data.name }}</span>
+                        <!-- Project Meta -->
+                        <div class="project-meta">
+                            <span class="project-id">#{{ project.id }}</span>
+                            <span class="project-type-badge {{ project.type }}">
+                                {% if project.type == 'analysis' %}
+                                    <i class="fas fa-chart-bar"></i> Analysis
+                                {% elsif project.type == 'build' %}
+                                    <i class="fas fa-hammer"></i> Build
+                                {% else %}
+                                    <i class="fas fa-layer-group"></i> Hub
+                                {% endif %}
+                            </span>
                         </div>
 
-                        <h3 class="project-title">
-                            <a href="{{ project.url }}">{{ project.title }}</a>
-                        </h3>
-
-                        <p class="project-description">{{ project.description }}</p>
+                        <h3 class="project-title">{{ project.name }}</h3>
+                        <p class="project-description">{{ project.description | truncate: 120 }}</p>
 
                         <!-- Tech Stack -->
                         {% if project.tech_stack %}
                         <div class="project-tech-stack">
                             {% for tech in project.tech_stack limit:3 %}
-                                <span class="tech-tag">{{ tech }}</span>
+                                <span class="tech-tag {{ project.domain }}">{{ tech }}</span>
                             {% endfor %}
                             {% if project.tech_stack.size > 3 %}
-                                <span class="tech-tag">+{{ project.tech_stack.size | minus: 3 }} more</span>
+                                <span class="tech-tag more">+{{ project.tech_stack.size | minus: 3 }}</span>
                             {% endif %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Key Features Preview -->
+                        {% if project.key_features %}
+                        <div class="project-features">
+                            <i class="fas fa-star"></i>
+                            <span>{{ project.key_features.size }} key features</span>
                         </div>
                         {% endif %}
                     </div>
 
                     <!-- Project Footer -->
                     <div class="project-footer">
-                        <div class="project-links">
-                            {% if project.github %}
-                                <a href="{{ project.github }}" class="project-link" target="_blank" rel="noopener" title="View on GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            {% endif %}
-                            {% if project.demo %}
-                                <a href="{{ project.demo }}" class="project-link" target="_blank" rel="noopener" title="View Live Demo">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
+                        <!-- Domain Tag -->
+                        <div class="project-domain-tag {{ project.domain }}">
+                            {% if project.domain == 'sports' %}
+                                <i class="fas fa-basketball-ball"></i> Sports
+                            {% elsif project.domain == 'anime' %}
+                                <i class="fas fa-tv"></i> Anime
+                            {% elsif project.domain == 'fitness' %}
+                                <i class="fas fa-dumbbell"></i> Fitness
+                            {% elsif project.domain == 'games' %}
+                                <i class="fas fa-gamepad"></i> Games
+                            {% elsif project.domain == 'sneakers' %}
+                                <i class="fas fa-shoe-prints"></i> Sneakers
+                            {% elsif project.domain == 'music' %}
+                                <i class="fas fa-music"></i> Music
+                            {% else %}
+                                <i class="fas fa-code"></i> Tech
                             {% endif %}
                         </div>
-                        <a href="{{ project.url }}" class="btn-view-project">
-                            <span>View Project</span>
+
+                        <!-- Progress Indicator -->
+                        {% if project.progress > 0 %}
+                        <div class="project-progress">
+                            <div class="progress-bar-mini">
+                                <div class="progress-fill" style="width: {{ project.progress }}%"></div>
+                            </div>
+                            <span class="progress-text">{{ project.progress }}%</span>
+                        </div>
+                        {% endif %}
+
+                        <!-- View Details Button -->
+                        <button class="btn-view-details" data-project-id="{{ project.id }}">
+                            <span>View Details</span>
                             <i class="fas fa-arrow-right"></i>
-                        </a>
+                        </button>
                     </div>
                 </article>
                 {% endfor %}
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>No Projects Found</h3>
+                <p>Try adjusting your filters or search query</p>
+                <button class="btn btn-primary" id="resetFilters">
+                    <i class="fas fa-redo"></i>
+                    <span>Reset Filters</span>
+                </button>
             </div>
             {% else %}
             <!-- Empty State -->
@@ -201,14 +368,18 @@ description: "Explore my collection of passion-driven projects across multiple d
         <div class="container">
             <div class="cta-content">
                 <div class="cta-icon">
-                    <i class="fas fa-lightbulb"></i>
+                    <i class="fas fa-chart-line"></i>
                 </div>
-                <h2>Have a Project Idea?</h2>
-                <p>I'm always interested in collaborating on exciting projects or discussing new ideas. Let's build something amazing together!</p>
+                <h2>Follow the Quest</h2>
+                <p>Track my progress as I build 49 projects in 12 months. See detailed timelines, milestones, and weekly updates.</p>
                 <div class="cta-buttons">
-                    <a href="/contact/" class="btn btn-primary btn-large">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>Get In Touch</span>
+                    <a href="/quest-progress/" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        <span>Track Quest Progress</span>
+                    </a>
+                    <a href="/blog/49-project-quest/" class="btn btn-secondary btn-large">
+                        <i class="fas fa-book-open"></i>
+                        <span>Read the Story</span>
                     </a>
                     <a href="/hobbies/" class="btn btn-secondary btn-large">
                         <i class="fas fa-heart"></i>
@@ -219,4 +390,135 @@ description: "Explore my collection of passion-driven projects across multiple d
         </div>
     </section>
 </div>
+
+<!-- Projects Filter & Search JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const projectsGrid = document.getElementById('projectsGrid');
+    const projectCards = document.querySelectorAll('.project-card');
+    const searchInput = document.getElementById('projectSearch');
+    const clearSearch = document.getElementById('clearSearch');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    const resetFiltersBtn = document.getElementById('resetFilters');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    let activeFilters = {
+        domain: 'all',
+        type: 'all',
+        phase: 'all'
+    };
+
+    // Filter projects
+    function filterProjects() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+            const domain = card.dataset.domain;
+            const type = card.dataset.type;
+            const phase = card.dataset.phase;
+            const searchData = card.dataset.search;
+
+            // Check filters
+            const domainMatch = activeFilters.domain === 'all' || domain === activeFilters.domain;
+            const typeMatch = activeFilters.type === 'all' || type === activeFilters.type;
+            const phaseMatch = activeFilters.phase === 'all' || phase === activeFilters.phase;
+            const searchMatch = searchTerm === '' || searchData.includes(searchTerm);
+
+            if (domainMatch && typeMatch && phaseMatch && searchMatch) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Update results count
+        resultsCount.textContent = visibleCount;
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+            projectsGrid.style.display = 'none';
+            noResults.style.display = 'flex';
+        } else {
+            projectsGrid.style.display = 'grid';
+            noResults.style.display = 'none';
+        }
+    }
+
+    // Handle filter button clicks
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filterType = this.dataset.type;
+            const filterValue = this.dataset.filter;
+
+            // Update active filter
+            activeFilters[filterType] = filterValue;
+
+            // Update button states
+            document.querySelectorAll(`[data-type="${filterType}"]`).forEach(b => {
+                b.classList.remove('active');
+            });
+            this.classList.add('active');
+
+            // Filter projects
+            filterProjects();
+        });
+    });
+
+    // Handle search input
+    searchInput.addEventListener('input', function() {
+        if (this.value.length > 0) {
+            clearSearch.style.display = 'block';
+        } else {
+            clearSearch.style.display = 'none';
+        }
+        filterProjects();
+    });
+
+    // Handle clear search
+    clearSearch.addEventListener('click', function() {
+        searchInput.value = '';
+        clearSearch.style.display = 'none';
+        filterProjects();
+    });
+
+    // Handle reset filters
+    resetFiltersBtn.addEventListener('click', function() {
+        // Reset all filters
+        activeFilters = {
+            domain: 'all',
+            type: 'all',
+            phase: 'all'
+        };
+
+        // Reset search
+        searchInput.value = '';
+        clearSearch.style.display = 'none';
+
+        // Reset button states
+        filterBtns.forEach(btn => {
+            if (btn.dataset.filter === 'all') {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // Filter projects
+        filterProjects();
+    });
+
+    // Handle view details buttons (placeholder for future modal/page)
+    document.querySelectorAll('.btn-view-details').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const projectId = this.dataset.projectId;
+            // TODO: Open project detail modal or navigate to project page
+            console.log('View project #' + projectId);
+            alert('Project detail page coming soon! Project #' + projectId);
+        });
+    });
+});
+</script>
 
