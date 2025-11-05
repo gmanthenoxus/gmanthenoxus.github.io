@@ -115,42 +115,40 @@ layout: default
             <!-- Tech Stack -->
             {% if page.tech_stack %}
             <div class="sidebar-section">
-                <h3 class="sidebar-title">Tech Stack</h3>
+                <h3 class="sidebar-title"><i class="fas fa-layer-group"></i> Tech Stack</h3>
                 <div class="tech-stack-list">
                     {% for tech in page.tech_stack %}
-                    <span class="tech-item">{{ tech }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-            {% endif %}
-            
-            <!-- Project Stats -->
-            {% if page.stats %}
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">Key Metrics</h3>
-                <div class="stats-list">
-                    {% for stat in page.stats %}
-                    <div class="stat-item">
-                        <span class="stat-value">{{ stat.value }}</span>
-                        <span class="stat-label">{{ stat.label }}</span>
+                    <div class="tech-item" title="{{ tech.purpose }}">
+                        {% if tech.logo %}
+                        <img src="{{ tech.logo }}" alt="{{ tech.name }}" class="tech-logo">
+                        {% elsif tech.icon %}
+                        <i class="{{ tech.icon }}"></i>
+                        {% endif %}
+                        <span class="tech-name">{{ tech.name | default: tech }}</span>
                     </div>
                     {% endfor %}
                 </div>
             </div>
             {% endif %}
             
-            <!-- Project Timeline -->
-            {% if page.timeline %}
+
+            
+            <!-- Project Timeline / Milestones -->
+            {% if page.timeline or page.milestones %}
             <div class="sidebar-section">
-                <h3 class="sidebar-title">Timeline</h3>
+                <h3 class="sidebar-title"><i class="fas fa-flag-checkered"></i> Milestones</h3>
                 <div class="timeline-list">
-                    {% for milestone in page.timeline %}
-                    <div class="timeline-item {% if milestone.completed %}completed{% endif %}">
+                    {% assign milestones_list = page.timeline | default: page.milestones %}
+                    {% for milestone in milestones_list %}
+                    <div class="timeline-item {% if milestone.completed or milestone.status == 'completed' %}completed{% endif %}">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <h4 class="timeline-title">{{ milestone.title }}</h4>
                             {% if milestone.date %}
                             <time class="timeline-date">{{ milestone.date }}</time>
+                            {% endif %}
+                            {% if milestone.description %}
+                            <p class="timeline-description">{{ milestone.description }}</p>
                             {% endif %}
                         </div>
                     </div>
@@ -160,20 +158,21 @@ layout: default
             {% endif %}
             
             <!-- TO-DO List -->
-            {% if page.todo %}
+            {% if page.todo or page.todos %}
             <div class="sidebar-section">
                 <h3 class="sidebar-title">
-                    <span class="todo-icon">📋</span>
+                    <i class="fas fa-tasks"></i>
                     Project Tasks
                 </h3>
                 <div class="todo-list">
-                    {% for task in page.todo %}
+                    {% assign todos_list = page.todo | default: page.todos %}
+                    {% for task in todos_list %}
                     <div class="todo-item {% if task.completed %}completed{% endif %} priority-{{ task.priority | default: 'medium' }}">
                         <div class="todo-checkbox">
                             {% if task.completed %}✅{% else %}⬜{% endif %}
                         </div>
                         <div class="todo-content">
-                            <span class="todo-text">{{ task.task }}</span>
+                            <span class="todo-text">{{ task.task | default: task.text }}</span>
                             {% if task.priority and task.priority != 'medium' %}
                             <span class="todo-priority {{ task.priority }}">{{ task.priority }}</span>
                             {% endif %}
@@ -181,12 +180,12 @@ layout: default
                     </div>
                     {% endfor %}
                 </div>
-                
+
                 <!-- Progress Summary -->
-                {% assign completed_tasks = page.todo | where: "completed", true %}
-                {% assign total_tasks = page.todo.size %}
+                {% assign completed_tasks = todos_list | where: "completed", true %}
+                {% assign total_tasks = todos_list.size %}
                 {% assign completion_percentage = completed_tasks.size | times: 100 | divided_by: total_tasks %}
-                
+
                 <div class="todo-progress">
                     <div class="todo-progress-bar">
                         <div class="todo-progress-fill" style="width: {{ completion_percentage }}%"></div>

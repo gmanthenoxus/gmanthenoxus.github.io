@@ -1,0 +1,467 @@
+---
+layout: default
+title: "Test Projects - Design Preview"
+permalink: /test-projects/
+---
+
+<style>
+/* Test Page Specific Styles */
+.test-page-header {
+  background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+  padding: 3rem 0;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.test-page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.test-page-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.test-section {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+
+.test-section-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #e5e7eb;
+}
+
+.test-section-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.test-section-header p {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.test-project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Project Card Styles */
+.test-project-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.test-card-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.test-card-image.analysis {
+  background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
+}
+
+.test-card-image.build {
+  background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+}
+
+.test-card-image.hub {
+  background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+}
+
+.test-card-type-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.test-card-type-badge.analysis {
+  color: #9B59B6;
+}
+
+.test-card-type-badge.build {
+  color: #FF6B35;
+}
+
+.test-card-type-badge.hub {
+  color: #10b981;
+}
+
+.test-card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-card-header {
+  margin-bottom: 1rem;
+}
+
+.test-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.test-card-meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.test-card-domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  background: #f3f4f6;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.test-card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.test-card-status.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.test-card-status.in-progress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.test-card-status.planned {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.test-card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.test-card-footer {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.test-card-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.test-card-btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+  color: #ffffff;
+}
+
+.test-card-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.test-card-btn-secondary {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.test-card-btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+/* Info Box */
+.test-info-box {
+  background: #eff6ff;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.test-info-box h3 {
+  color: #1e40af;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.test-info-box p {
+  color: #1e3a8a;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.test-info-box ul {
+  color: #1e3a8a;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .test-page-header h1 {
+    font-size: 2rem;
+  }
+
+  .test-project-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .test-section {
+    padding: 0 1rem;
+  }
+}
+</style>
+
+<div class="test-page-header">
+  <h1>🧪 Project Design Test Page</h1>
+  <p>Preview project cards and detail pages for all 3 project types</p>
+</div>
+
+<div class="test-section">
+  <div class="test-info-box">
+    <h3><i class="fas fa-info-circle"></i> About This Test Page</h3>
+    <p><strong>Purpose:</strong> This page is for testing and previewing project designs before integrating them into the main site.</p>
+    <p><strong>Project Types:</strong></p>
+    <ul>
+      <li><strong>Analysis</strong>: Research-focused projects with data insights and findings</li>
+      <li><strong>Build</strong>: Application development projects with features and architecture</li>
+      <li><strong>Hub</strong>: Comprehensive platforms integrating multiple feature modules</li>
+    </ul>
+    <p><strong>Note:</strong> Click "View Details" to see the full project page with academic/informative content structure.</p>
+  </div>
+</div>
+
+<!-- Analysis Projects -->
+<div class="test-section">
+  <div class="test-section-header">
+    <h2>📊 Analysis Projects</h2>
+    <p>Research-focused projects with data analysis, methodology, and findings</p>
+  </div>
+
+  <div class="test-project-cards">
+    {% for project in site.projects %}
+      {% if project.project_type == 'analysis' %}
+      <div class="test-project-card">
+        <div class="test-card-image analysis">
+          <span class="test-card-type-badge analysis">Analysis</span>
+          <i class="fas fa-chart-line" style="color: rgba(255,255,255,0.3);"></i>
+        </div>
+        <div class="test-card-content">
+          <div class="test-card-header">
+            <h3 class="test-card-title">{{ project.title }}</h3>
+            <div class="test-card-meta">
+              <span class="test-card-domain">
+                <i class="fas fa-tag"></i>
+                {{ project.domain | capitalize }}
+              </span>
+              <span class="test-card-status {{ project.status }}">
+                {% if project.status == 'completed' %}✅{% elsif project.status == 'in-progress' %}🔧{% else %}📋{% endif %}
+                {{ project.status | replace: '-', ' ' | capitalize }}
+              </span>
+            </div>
+          </div>
+          <p class="test-card-description">{{ project.research_question }}</p>
+          <div class="test-card-footer">
+            <a href="{{ project.url }}" class="test-card-btn test-card-btn-primary">
+              <i class="fas fa-microscope"></i>
+              View Research
+            </a>
+            <a href="{{ project.github }}" class="test-card-btn test-card-btn-secondary" target="_blank">
+              <i class="fab fa-github"></i>
+              Code
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Build Projects -->
+<div class="test-section">
+  <div class="test-section-header">
+    <h2>🔨 Build Projects</h2>
+    <p>Application development projects with features, architecture, and user experience</p>
+  </div>
+
+  <div class="test-project-cards">
+    {% for project in site.projects %}
+      {% if project.project_type == 'build' %}
+      <div class="test-project-card">
+        <div class="test-card-image build">
+          <span class="test-card-type-badge build">Build</span>
+          <i class="fas fa-hammer" style="color: rgba(255,255,255,0.3);"></i>
+        </div>
+        <div class="test-card-content">
+          <div class="test-card-header">
+            <h3 class="test-card-title">{{ project.title }}</h3>
+            <div class="test-card-meta">
+              <span class="test-card-domain">
+                <i class="fas fa-tag"></i>
+                {{ project.domain | capitalize }}
+              </span>
+              <span class="test-card-status {{ project.status }}">
+                {% if project.status == 'completed' %}✅{% elsif project.status == 'in-progress' %}🔧{% else %}📋{% endif %}
+                {{ project.status | replace: '-', ' ' | capitalize }}
+              </span>
+              {% if project.progress %}
+              <span class="test-card-domain">
+                <i class="fas fa-tasks"></i>
+                {{ project.progress }}%
+              </span>
+              {% endif %}
+            </div>
+          </div>
+          <p class="test-card-description">{{ project.problem }}</p>
+          <div class="test-card-footer">
+            <a href="{{ project.url }}" class="test-card-btn test-card-btn-primary">
+              <i class="fas fa-rocket"></i>
+              View Project
+            </a>
+            {% if project.demo %}
+            <a href="{{ project.demo }}" class="test-card-btn test-card-btn-secondary" target="_blank">
+              <i class="fas fa-external-link-alt"></i>
+              Demo
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Hub Projects -->
+<div class="test-section">
+  <div class="test-section-header">
+    <h2>🏢 Hub Projects</h2>
+    <p>Comprehensive platforms integrating multiple feature modules into unified ecosystems</p>
+  </div>
+
+  <div class="test-project-cards">
+    {% for project in site.projects %}
+      {% if project.project_type == 'hub' %}
+      <div class="test-project-card">
+        <div class="test-card-image hub">
+          <span class="test-card-type-badge hub">Hub</span>
+          <i class="fas fa-network-wired" style="color: rgba(255,255,255,0.3);"></i>
+        </div>
+        <div class="test-card-content">
+          <div class="test-card-header">
+            <h3 class="test-card-title">{{ project.title }}</h3>
+            <div class="test-card-meta">
+              <span class="test-card-domain">
+                <i class="fas fa-tag"></i>
+                {{ project.domain | capitalize }}
+              </span>
+              <span class="test-card-status {{ project.status }}">
+                {% if project.status == 'completed' %}✅{% elsif project.status == 'in-progress' %}🔧{% else %}📋{% endif %}
+                {{ project.status | replace: '-', ' ' | capitalize }}
+              </span>
+              {% if project.hub_metrics %}
+              <span class="test-card-domain">
+                <i class="fas fa-puzzle-piece"></i>
+                {{ project.hub_metrics.completed_features }}/{{ project.hub_metrics.total_features }} Features
+              </span>
+              {% endif %}
+            </div>
+          </div>
+          <p class="test-card-description"><strong>{{ project.tagline }}</strong><br>{{ project.vision }}</p>
+          <div class="test-card-footer">
+            <a href="{{ project.url }}" class="test-card-btn test-card-btn-primary">
+              <i class="fas fa-sitemap"></i>
+              View Hub
+            </a>
+            {% if project.docs %}
+            <a href="{{ project.docs }}" class="test-card-btn test-card-btn-secondary" target="_blank">
+              <i class="fas fa-book"></i>
+              Docs
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Back to Main Site -->
+<div class="test-section" style="text-align: center; padding: 3rem 0;">
+  <a href="/projects/" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; background: linear-gradient(135deg, #10b981 0%, #0891b2 100%); color: #ffffff; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s ease;">
+    <i class="fas fa-arrow-left"></i>
+    Back to Main Projects Page
+  </a>
+</div>
+

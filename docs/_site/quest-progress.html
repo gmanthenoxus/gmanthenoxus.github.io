@@ -11,7 +11,7 @@
     <meta property="og:title" content="The 49 Project Quest | Noxus' Hub">
     <meta property="og:description" content="A portfolio showcasing my passions and projects">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/quest-progress.html">
+    <meta property="og:url" content="https://gmanthenoxus.github.io/quest-progress.html">
     
     <title>The 49 Project Quest | Noxus' Hub</title>
     
@@ -92,98 +92,83 @@
     
     <main id="main-content" class="main-content">
         <div class="quest-page">
-    <!-- Epic Hero Section -->
+    <!-- Hero Section -->
     <section class="quest-hero">
-        <div class="container">
-            <div class="hero-content">
+        <div class="quest-container">
+            <div class="quest-hero-content">
                 <!-- Quest Badge -->
                 <div class="quest-badge">
                     <i class="fas fa-rocket"></i>
                     <span>Live Progress</span>
                 </div>
 
-                <h1>The 49 Project Quest</h1>
-                <p class="hero-subtitle">Building 49 passion-driven projects across 7 domains in 12 months</p>
+                <h1 class="quest-hero-title">The 49 Project Quest</h1>
+                <p class="quest-hero-subtitle">Building 49 passion-driven projects across 7 domains in 12 months</p>
 
-                <!-- Epic Progress Ring -->
-                <div class="progress-ring-container">
-                    <svg class="progress-ring" width="200" height="200" viewBox="0 0 200 200">
-                        <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85" />
-                        <circle class="progress-ring-circle" cx="100" cy="100" r="85"
-                                style="stroke-dasharray: 534; stroke-dashoffset: 534;" />
+                <!-- Progress Ring -->
+                <div class="quest-progress-ring-container">
+                    <svg class="quest-progress-ring" width="180" height="180" viewBox="0 0 180 180">
+                        <circle class="quest-progress-ring-bg" cx="90" cy="90" r="75" />
+                        <circle class="quest-progress-ring-fill" cx="90" cy="90" r="75"
+                                style="stroke-dasharray: 471; stroke-dashoffset: 471;"
+                                data-progress="3" />
                     </svg>
-                    <div class="progress-ring-text">
-                        <span class="progress-number">0</span>
-                        <span class="progress-total">/49</span>
+                    <div class="quest-progress-ring-text">
+                        <span class="quest-progress-number">2</span>
+                        <span class="quest-progress-total">/56</span>
                     </div>
                 </div>
 
-                <!-- Quick Stats Grid -->
-                <div class="hero-stats-grid">
-                    <div class="hero-stat">
-                        <i class="fas fa-rocket"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">Phase 1</span>
-                            <span class="stat-label">Current Phase</span>
-                        </div>
+                <!-- Clean Stats Counter (like projects page) -->
+                <div class="quest-stats-counter">
+                    <div class="quest-stat-item">
+                        <strong>2</strong>
+                        <span>Completed</span>
                     </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-check-circle"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">0/7</span>
-                            <span class="stat-label">Micro-Projects</span>
-                        </div>
+                    <span class="quest-stat-divider">•</span>
+                    <div class="quest-stat-item">
+                        
+                        
+                        <strong>5</strong>
+                        <span>In Progress</span>
                     </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-calendar-day"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">Week 2</span>
-                            <span class="stat-label">Of Month 1</span>
-                        </div>
-                    </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-fire"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">7</span>
-                            <span class="stat-label">To Phase 2</span>
-                        </div>
+                    <span class="quest-stat-divider">•</span>
+                    <div class="quest-stat-item">
+                        
+                        <strong>49</strong>
+                        <span>Planned</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Floating Icons -->
-            <div class="floating-icons">
-                <i class="fas fa-code float-icon" style="--delay: 0s;"></i>
-                <i class="fas fa-rocket float-icon" style="--delay: 1s;"></i>
-                <i class="fas fa-lightbulb float-icon" style="--delay: 2s;"></i>
-                <i class="fas fa-star float-icon" style="--delay: 3s;"></i>
-                <i class="fas fa-heart float-icon" style="--delay: 4s;"></i>
-                <i class="fas fa-bolt float-icon" style="--delay: 5s;"></i>
             </div>
         </div>
     </section>
 
     <!-- Current Focus Banner -->
-    <section class="current-focus-banner">
-        <div class="container">
-            <div class="focus-content">
-                <div class="focus-icon">
-                    <i class="fas fa-crosshairs"></i>
-                </div>
-                <div class="focus-details">
-                    <span class="focus-label">Currently Building</span>
-                    <h3>Genre Analysis & Tracking (Anime Micro-Project)</h3>
-                    <p>Building interactive dashboard analyzing anime genre distribution, popularity trends, and personal viewing patterns</p>
-                    <div class="focus-progress">
-                        <div class="focus-progress-bar">
-                            <div class="focus-progress-fill" style="width: 15%"></div>
-                        </div>
-                        <span class="focus-progress-text">15% Complete</span>
+    <section class="quest-focus-banner">
+        <div class="quest-container">
+            <div class="quest-focus-content">
+                <div class="quest-focus-header">
+                    <div class="quest-focus-badge">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>Currently Building</span>
+                    </div>
+                    <div class="quest-focus-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Target: Oct 31, 2025</span>
                     </div>
                 </div>
-                <div class="focus-date">
-                    <i class="fas fa-calendar"></i>
-                    <span>Target: Sep 20, 2025</span>
+
+                <h2 class="quest-focus-title">Portfolio Website & Quest Infrastructure</h2>
+                <p class="quest-focus-description">Building the foundation: complete portfolio website with hobby pages, projects listing, and quest tracking system to showcase the journey</p>
+
+                <div class="quest-focus-progress">
+                    <div class="quest-focus-progress-info">
+                        <span class="quest-focus-progress-label">Progress</span>
+                        <span class="quest-focus-progress-percent">85%</span>
+                    </div>
+                    <div class="quest-focus-progress-bar">
+                        <div class="quest-focus-progress-fill" style="width: 85%"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -191,296 +176,365 @@
 
     <!-- Main Content -->
     <main class="quest-main">
-        <div class="container">
+        <div class="quest-container">
             <!-- Quest Phases Timeline -->
-            <section class="phases-section">
-                <div class="section-header">
+            <section class="quest-phases-section">
+                <div class="quest-section-header">
                     <h2>Quest Phases</h2>
                     <p>The journey broken down into strategic phases</p>
                 </div>
 
-                <div class="phases-timeline">
+                <div class="quest-phases-timeline">
                     
-                    <div class="phase-card active" data-phase="1">
-                        <div class="phase-header-clickable" onclick="togglePhase(1)">
-                            <div class="phase-icon">
+                    <div class="quest-phase-card active" data-phase="1">
+                        <div class="quest-phase-header" onclick="togglePhase(1)">
+                            <div class="quest-phase-icon">
                                 <i class="fas fa-rocket"></i>
                             </div>
-                            <div class="phase-info">
+                            <div class="quest-phase-info">
                                 <h3>Phase 1: Foundation & Momentum</h3>
-                                <span class="phase-dates">Month 1 - Month 2</span>
+                                <span class="quest-phase-dates">Sep 2025 - Oct 2025</span>
                             </div>
-                            <div class="phase-summary">
+                            <div class="quest-phase-summary">
                                 
-                                <span class="phase-percentage">0%</span>
+                                <span class="quest-phase-percentage">28%</span>
                                 
-                                <span class="status-badge in-progress">
+                                <span class="quest-status-badge in-progress">
                                     
-                                        <span class="badge-icon pulse">●</span>
-                                        <span class="badge-text">Active</span>
+                                        <i class="fas fa-circle-notch fa-spin"></i>
+                                        <span>Active</span>
                                     
                                 </span>
                             </div>
-                            <div class="phase-toggle">
+                            <div class="quest-phase-toggle">
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
 
-                        <div class="phase-details" id="phase-1-details">
-                            <p class="phase-description">Establish systems, validate project ideas with micro-projects, and build public momentum</p>
+                        <div class="quest-phase-details" id="phase-1-details">
+                            <p class="quest-phase-description">Establish systems, validate project ideas with micro-projects, and build public momentum</p>
 
                             
-                            <div class="phase-goals">
+                            <div class="quest-phase-goals">
                                 <h4><i class="fas fa-bullseye"></i> Key Goals</h4>
                                 <ul>
                                     
-                                    <li class="">Setup GitHub Org, Project Boards, and Public Blog</li>
+                                    <li class="completed">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Setup GitHub Org, Project Boards, and Public Blog</span>
+                                    </li>
                                     
-                                    <li class="">Finalize tech stack (Next.js, Supabase, Tailwind)</li>
+                                    <li class="completed">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Finalize tech stack (Next.js, Supabase, Tailwind)</span>
+                                    </li>
                                     
-                                    <li class="">Complete Passion-Skills Audit for all 7 domains</li>
+                                    <li class="completed">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Complete Passion-Skills Audit for all 7 domains</span>
+                                    </li>
                                     
-                                    <li class="">Deploy 7 functional micro-projects</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Deploy 7 functional micro-projects</span>
+                                    </li>
                                     
-                                    <li class="">Establish consistent weekly work rhythm</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Establish consistent weekly work rhythm</span>
+                                    </li>
                                     
                                 </ul>
                             </div>
                             
 
                             
-                            <div class="phase-progress">
-                                <div class="phase-progress-header">
-                                    <span>0/7 Projects</span>
-                                    <span>0%</span>
+                            <div class="quest-phase-progress">
+                                <div class="quest-phase-progress-header">
+                                    <span>2/7 Projects</span>
+                                    <span>28%</span>
                                 </div>
-                                <div class="phase-progress-bar">
-                                    <div class="phase-progress-fill" style="width: 0%"></div>
+                                <div class="quest-phase-progress-bar">
+                                    <div class="quest-phase-progress-fill" style="width: 28%"></div>
                                 </div>
                             </div>
                             
                         </div>
                     </div>
                     
-                    <div class="phase-card " data-phase="2">
-                        <div class="phase-header-clickable" onclick="togglePhase(2)">
-                            <div class="phase-icon">
+                    <div class="quest-phase-card " data-phase="2">
+                        <div class="quest-phase-header" onclick="togglePhase(2)">
+                            <div class="quest-phase-icon">
                                 <i class="fas fa-code"></i>
                             </div>
-                            <div class="phase-info">
+                            <div class="quest-phase-info">
                                 <h3>Phase 2: Domain Deep Dive & Execution</h3>
-                                <span class="phase-dates">Month 3 - Month 8</span>
+                                <span class="quest-phase-dates">Nov 2025 - Apr 2026</span>
                             </div>
-                            <div class="phase-summary">
+                            <div class="quest-phase-summary">
                                 
-                                <span class="phase-percentage">0%</span>
+                                <span class="quest-phase-percentage">0%</span>
                                 
-                                <span class="status-badge planned">
+                                <span class="quest-status-badge planned">
                                     
-                                        <span class="badge-icon">○</span>
-                                        <span class="badge-text">Planned</span>
+                                        <i class="far fa-circle"></i>
+                                        <span>Planned</span>
                                     
                                 </span>
                             </div>
-                            <div class="phase-toggle">
+                            <div class="quest-phase-toggle">
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
 
-                        <div class="phase-details" id="phase-2-details">
-                            <p class="phase-description">Systematically build the core 42 projects, one domain at a time, advancing skills in each area</p>
+                        <div class="quest-phase-details" id="phase-2-details">
+                            <p class="quest-phase-description">Systematically build the core 42 projects, one domain at a time, advancing skills in each area</p>
 
                             
-                            <div class="phase-goals">
+                            <div class="quest-phase-goals">
                                 <h4><i class="fas fa-bullseye"></i> Key Goals</h4>
                                 <ul>
                                     
-                                    <li class="">Complete 42 projects across 7 domains</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Complete 42 projects across 7 domains</span>
+                                    </li>
                                     
-                                    <li class="">Demonstrate depth of skill in each domain</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Demonstrate depth of skill in each domain</span>
+                                    </li>
                                     
-                                    <li class="">Collect and incorporate user feedback</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Collect and incorporate user feedback</span>
+                                    </li>
                                     
-                                    <li class="">Follow monthly rhythm: 2 weeks dev, 1 week testing, 1 week docs</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Follow monthly rhythm: 2 weeks dev, 1 week testing, 1 week docs</span>
+                                    </li>
                                     
                                 </ul>
                             </div>
                             
 
                             
-                            <div class="phase-progress">
-                                <div class="phase-progress-header">
+                            <div class="quest-phase-progress">
+                                <div class="quest-phase-progress-header">
                                     <span>0/42 Projects</span>
                                     <span>0%</span>
                                 </div>
-                                <div class="phase-progress-bar">
-                                    <div class="phase-progress-fill" style="width: 0%"></div>
+                                <div class="quest-phase-progress-bar">
+                                    <div class="quest-phase-progress-fill" style="width: 0%"></div>
                                 </div>
                             </div>
                             
                         </div>
                     </div>
                     
-                    <div class="phase-card " data-phase="3">
-                        <div class="phase-header-clickable" onclick="togglePhase(3)">
-                            <div class="phase-icon">
+                    <div class="quest-phase-card " data-phase="3">
+                        <div class="quest-phase-header" onclick="togglePhase(3)">
+                            <div class="quest-phase-icon">
                                 <i class="fas fa-puzzle-piece"></i>
                             </div>
-                            <div class="phase-info">
+                            <div class="quest-phase-info">
                                 <h3>Phase 3: Hub Integration & Refinement</h3>
-                                <span class="phase-dates">Month 9 - Month 10</span>
+                                <span class="quest-phase-dates">May 2026 - Jun 2026</span>
                             </div>
-                            <div class="phase-summary">
+                            <div class="quest-phase-summary">
                                 
-                                <span class="phase-percentage">0%</span>
+                                <span class="quest-phase-percentage">0%</span>
                                 
-                                <span class="status-badge planned">
+                                <span class="quest-status-badge planned">
                                     
-                                        <span class="badge-icon">○</span>
-                                        <span class="badge-text">Planned</span>
+                                        <i class="far fa-circle"></i>
+                                        <span>Planned</span>
                                     
                                 </span>
                             </div>
-                            <div class="phase-toggle">
+                            <div class="quest-phase-toggle">
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
 
-                        <div class="phase-details" id="phase-3-details">
-                            <p class="phase-description">Revisit and enhance the 7 hub applications, integrating the best projects from Phase 2 as core features</p>
+                        <div class="quest-phase-details" id="phase-3-details">
+                            <p class="quest-phase-description">Revisit and enhance the 7 hub applications, integrating the best projects from Phase 2 as core features</p>
 
                             
-                            <div class="phase-goals">
+                            <div class="quest-phase-goals">
                                 <h4><i class="fas fa-bullseye"></i> Key Goals</h4>
                                 <ul>
                                     
-                                    <li class="">Refine 7 feature-rich hub applications</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Refine 7 feature-rich hub applications</span>
+                                    </li>
                                     
-                                    <li class="">Integrate Phase 2 projects as core features</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Integrate Phase 2 projects as core features</span>
+                                    </li>
                                     
-                                    <li class="">Create seamless user experience within each hub</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Create seamless user experience within each hub</span>
+                                    </li>
                                     
-                                    <li class="">Establish hubs as definitive entry points</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Establish hubs as definitive entry points</span>
+                                    </li>
                                     
                                 </ul>
                             </div>
                             
 
                             
-                            <div class="phase-progress">
-                                <div class="phase-progress-header">
+                            <div class="quest-phase-progress">
+                                <div class="quest-phase-progress-header">
                                     <span>0/7 Projects</span>
                                     <span>0%</span>
                                 </div>
-                                <div class="phase-progress-bar">
-                                    <div class="phase-progress-fill" style="width: 0%"></div>
+                                <div class="quest-phase-progress-bar">
+                                    <div class="quest-phase-progress-fill" style="width: 0%"></div>
                                 </div>
                             </div>
                             
                         </div>
                     </div>
                     
-                    <div class="phase-card " data-phase="4">
-                        <div class="phase-header-clickable" onclick="togglePhase(4)">
-                            <div class="phase-icon">
+                    <div class="quest-phase-card " data-phase="4">
+                        <div class="quest-phase-header" onclick="togglePhase(4)">
+                            <div class="quest-phase-icon">
                                 <i class="fas fa-network-wired"></i>
                             </div>
-                            <div class="phase-info">
+                            <div class="quest-phase-info">
                                 <h3>Phase 4: Ecosystem Unification</h3>
-                                <span class="phase-dates">Month 11 - Month 11</span>
+                                <span class="quest-phase-dates">Jul 2026 - Jul 2026</span>
                             </div>
-                            <div class="phase-summary">
+                            <div class="quest-phase-summary">
                                 
-                                <span class="phase-percentage">0%</span>
+                                <span class="quest-phase-percentage">0%</span>
                                 
-                                <span class="status-badge planned">
+                                <span class="quest-status-badge planned">
                                     
-                                        <span class="badge-icon">○</span>
-                                        <span class="badge-text">Planned</span>
+                                        <i class="far fa-circle"></i>
+                                        <span>Planned</span>
                                     
                                 </span>
                             </div>
-                            <div class="phase-toggle">
+                            <div class="quest-phase-toggle">
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
 
-                        <div class="phase-details" id="phase-4-details">
-                            <p class="phase-description">Build the capstone platform that connects all hubs into a single, cohesive ecosystem</p>
+                        <div class="quest-phase-details" id="phase-4-details">
+                            <p class="quest-phase-description">Build the capstone platform that connects all hubs into a single, cohesive ecosystem</p>
 
                             
-                            <div class="phase-goals">
+                            <div class="quest-phase-goals">
                                 <h4><i class="fas fa-bullseye"></i> Key Goals</h4>
                                 <ul>
                                     
-                                    <li class="">Unified 'Passport' Authentication across all hubs</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Unified 'Passport' Authentication across all hubs</span>
+                                    </li>
                                     
-                                    <li class="">Centralized Dashboard showing activity from all hubs</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Centralized Dashboard showing activity from all hubs</span>
+                                    </li>
                                     
-                                    <li class="">Cross-Domain Discovery features</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Cross-Domain Discovery features</span>
+                                    </li>
                                     
-                                    <li class="">Community & Social Layer</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Community & Social Layer</span>
+                                    </li>
                                     
-                                    <li class="">Public API Gateway</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Public API Gateway</span>
+                                    </li>
                                     
                                 </ul>
                             </div>
                             
 
                             
-                            <div class="phase-progress">
-                                <div class="phase-progress-header">
+                            <div class="quest-phase-progress">
+                                <div class="quest-phase-progress-header">
                                     <span>0/1 Projects</span>
                                     <span>0%</span>
                                 </div>
-                                <div class="phase-progress-bar">
-                                    <div class="phase-progress-fill" style="width: 0%"></div>
+                                <div class="quest-phase-progress-bar">
+                                    <div class="quest-phase-progress-fill" style="width: 0%"></div>
                                 </div>
                             </div>
                             
                         </div>
                     </div>
                     
-                    <div class="phase-card " data-phase="5">
-                        <div class="phase-header-clickable" onclick="togglePhase(5)">
-                            <div class="phase-icon">
+                    <div class="quest-phase-card " data-phase="5">
+                        <div class="quest-phase-header" onclick="togglePhase(5)">
+                            <div class="quest-phase-icon">
                                 <i class="fas fa-trophy"></i>
                             </div>
-                            <div class="phase-info">
+                            <div class="quest-phase-info">
                                 <h3>Phase 5: Launch & Evolution</h3>
-                                <span class="phase-dates">Month 12 - Month 12</span>
+                                <span class="quest-phase-dates">Aug 2026 - Aug 2026</span>
                             </div>
-                            <div class="phase-summary">
+                            <div class="quest-phase-summary">
                                 
-                                <span class="status-badge planned">
+                                <span class="quest-status-badge planned">
                                     
-                                        <span class="badge-icon">○</span>
-                                        <span class="badge-text">Planned</span>
+                                        <i class="far fa-circle"></i>
+                                        <span>Planned</span>
                                     
                                 </span>
                             </div>
-                            <div class="phase-toggle">
+                            <div class="quest-phase-toggle">
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
 
-                        <div class="phase-details" id="phase-5-details">
-                            <p class="phase-description">Public launch, community building, and strategic planning for the future</p>
+                        <div class="quest-phase-details" id="phase-5-details">
+                            <p class="quest-phase-description">Public launch, community building, and strategic planning for the future</p>
 
                             
-                            <div class="phase-goals">
+                            <div class="quest-phase-goals">
                                 <h4><i class="fas fa-bullseye"></i> Key Goals</h4>
                                 <ul>
                                     
-                                    <li class="">Intensive beta testing and bug squashing</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Intensive beta testing and bug squashing</span>
+                                    </li>
                                     
-                                    <li class="">Finalize all documentation and tutorials</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Finalize all documentation and tutorials</span>
+                                    </li>
                                     
-                                    <li class="">Coordinated public launch campaign</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Coordinated public launch campaign</span>
+                                    </li>
                                     
-                                    <li class="">Onboard initial users and collect feedback</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Onboard initial users and collect feedback</span>
+                                    </li>
                                     
-                                    <li class="">Conduct full retrospective and celebrate</li>
+                                    <li class="">
+                                        <i class="fas fa-circle"></i>
+                                        <span>Conduct full retrospective and celebrate</span>
+                                    </li>
                                     
                                 </ul>
                             </div>
@@ -494,288 +548,294 @@
             </section>
 
             <!-- The 7 Hub Applications -->
-            <section class="hubs-section">
-                <div class="section-header">
+            <section class="quest-hubs-section">
+                <div class="quest-section-header">
                     <h2>The 7 Hub Applications</h2>
                     <p>Comprehensive platforms that bring together multiple projects into unified experiences</p>
                 </div>
 
-                <div class="hubs-grid">
+                <div class="quest-hubs-grid">
                     
-                    <article class="hub-card" data-status="planned">
-                        <!-- Hub Header with Icon -->
-                        <div class="hub-card-header">
-                            <div class="hub-icon-wrapper" style="background: linear-gradient(135deg, #FF6B35, #FF6B35dd);">
+                    <article class="quest-hub-card" data-status="in-progress">
+                        <!-- Hub Header -->
+                        <div class="quest-hub-header">
+                            <div class="quest-hub-icon" style="background: linear-gradient(135deg, #FF6B35, #FF6B35dd);">
                                 <i class="fas fa-basketball-ball"></i>
                             </div>
-                            <div class="hub-title-section">
+                            <div class="quest-hub-title-section">
                                 <h3>AthleHub</h3>
-                                <span class="hub-category">Sports</span>
+                                <span class="quest-hub-category">Sports</span>
                             </div>
-                            <div class="hub-status-badge">
+                            <div class="quest-hub-status">
                                 
-                                    <span class="badge planned"><i class="fas fa-clock"></i> Planned</span>
+                                    <span class="quest-hub-badge in-progress"><i class="fas fa-circle-notch fa-spin"></i> Building</span>
                                 
                             </div>
                         </div>
 
-                        <!-- Hub Description -->
-                        <p class="hub-description">Community sports platform for coordination, tracking, and recognition</p>
+                        <!-- Hub Body -->
+                        <div class="quest-hub-body">
+                            <p class="quest-hub-description">Community sports platform for coordination, tracking, and recognition</p>
 
-                        <!-- Pitch Summary (if available) -->
-                        
+                            
 
-                        <!-- Progress Section -->
-                        <div class="hub-progress-section">
-                            <div class="progress-info">
-                                <span class="progress-label">0% Complete</span>
-                                
-                                <span class="progress-count">0/6 Features</span>
-                                
-                            </div>
-                            <div class="hub-progress-bar">
-                                <div class="hub-progress-fill" style="width: 0%; background: #FF6B35;"></div>
+                            <!-- Progress Section -->
+                            <div class="quest-hub-progress">
+                                <div class="quest-hub-progress-info">
+                                    <span class="quest-hub-progress-label">15% Complete</span>
+                                    
+                                    <span class="quest-hub-progress-count">0/6 Features</span>
+                                    
+                                </div>
+                                <div class="quest-hub-progress-bar">
+                                    <div class="quest-hub-progress-fill" style="width: 15%; background: #FF6B35;"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Hub Footer -->
-                        <div class="hub-card-footer">
-                            <a href="/hubs/athlehub" class="hub-link">
+                        <div class="quest-hub-footer">
+                            <a href="/hubs/athlehub" class="quest-hub-link">
                                 <span>View Details</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
                     
-                    <article class="hub-card" data-status="planned">
-                        <!-- Hub Header with Icon -->
-                        <div class="hub-card-header">
-                            <div class="hub-icon-wrapper" style="background: linear-gradient(135deg, #9B59B6, #9B59B6dd);">
+                    <article class="quest-hub-card" data-status="planned">
+                        <!-- Hub Header -->
+                        <div class="quest-hub-header">
+                            <div class="quest-hub-icon" style="background: linear-gradient(135deg, #9B59B6, #9B59B6dd);">
                                 <i class="fas fa-tv"></i>
                             </div>
-                            <div class="hub-title-section">
+                            <div class="quest-hub-title-section">
                                 <h3>AnimeVerse</h3>
-                                <span class="hub-category">Anime</span>
+                                <span class="quest-hub-category">Anime</span>
                             </div>
-                            <div class="hub-status-badge">
+                            <div class="quest-hub-status">
                                 
-                                    <span class="badge planned"><i class="fas fa-clock"></i> Planned</span>
+                                    <span class="quest-hub-badge planned"><i class="far fa-clock"></i> Planned</span>
                                 
                             </div>
                         </div>
 
-                        <!-- Hub Description -->
-                        <p class="hub-description">Personalized anime discovery platform that cuts through the noise and learns your unique taste</p>
+                        <!-- Hub Body -->
+                        <div class="quest-hub-body">
+                            <p class="quest-hub-description">Personalized anime discovery platform that cuts through the noise and learns your unique taste</p>
 
-                        <!-- Pitch Summary (if available) -->
-                        
-                        <div class="hub-pitch">
-                            <i class="fas fa-quote-left"></i>
-                            <p>Turns overwhelming anime choice into curated delight through intelligent, visual recommendations</p>
-                        </div>
-                        
-
-                        <!-- Progress Section -->
-                        <div class="hub-progress-section">
-                            <div class="progress-info">
-                                <span class="progress-label">0% Complete</span>
-                                
-                                <span class="progress-count">0/6 Features</span>
-                                
+                            
+                            <div class="quest-hub-pitch">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Turns overwhelming anime choice into curated delight through intelligent, visual recommendations</p>
                             </div>
-                            <div class="hub-progress-bar">
-                                <div class="hub-progress-fill" style="width: 0%; background: #9B59B6;"></div>
+                            
+
+                            <!-- Progress Section -->
+                            <div class="quest-hub-progress">
+                                <div class="quest-hub-progress-info">
+                                    <span class="quest-hub-progress-label">0% Complete</span>
+                                    
+                                    <span class="quest-hub-progress-count">0/6 Features</span>
+                                    
+                                </div>
+                                <div class="quest-hub-progress-bar">
+                                    <div class="quest-hub-progress-fill" style="width: 0%; background: #9B59B6;"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Hub Footer -->
-                        <div class="hub-card-footer">
-                            <a href="/hubs/animeverse" class="hub-link">
+                        <div class="quest-hub-footer">
+                            <a href="/hubs/animeverse" class="quest-hub-link">
                                 <span>View Details</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
                     
-                    <article class="hub-card" data-status="planned">
-                        <!-- Hub Header with Icon -->
-                        <div class="hub-card-header">
-                            <div class="hub-icon-wrapper" style="background: linear-gradient(135deg, #27AE60, #27AE60dd);">
+                    <article class="quest-hub-card" data-status="planned">
+                        <!-- Hub Header -->
+                        <div class="quest-hub-header">
+                            <div class="quest-hub-icon" style="background: linear-gradient(135deg, #27AE60, #27AE60dd);">
                                 <i class="fas fa-dumbbell"></i>
                             </div>
-                            <div class="hub-title-section">
+                            <div class="quest-hub-title-section">
                                 <h3>RepCore</h3>
-                                <span class="hub-category">Fitness</span>
+                                <span class="quest-hub-category">Fitness</span>
                             </div>
-                            <div class="hub-status-badge">
+                            <div class="quest-hub-status">
                                 
-                                    <span class="badge planned"><i class="fas fa-clock"></i> Planned</span>
+                                    <span class="quest-hub-badge planned"><i class="far fa-clock"></i> Planned</span>
                                 
                             </div>
                         </div>
 
-                        <!-- Hub Description -->
-                        <p class="hub-description">Intelligent workout tracker that uses your data to predict progress and push past plateaus</p>
+                        <!-- Hub Body -->
+                        <div class="quest-hub-body">
+                            <p class="quest-hub-description">Intelligent workout tracker that uses your data to predict progress and push past plateaus</p>
 
-                        <!-- Pitch Summary (if available) -->
-                        
-                        <div class="hub-pitch">
-                            <i class="fas fa-quote-left"></i>
-                            <p>Not just a log; it's a digital coach with AI-powered recommendations</p>
-                        </div>
-                        
-
-                        <!-- Progress Section -->
-                        <div class="hub-progress-section">
-                            <div class="progress-info">
-                                <span class="progress-label">0% Complete</span>
-                                
-                                <span class="progress-count">0/6 Features</span>
-                                
+                            
+                            <div class="quest-hub-pitch">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Not just a log; it's a digital coach with AI-powered recommendations</p>
                             </div>
-                            <div class="hub-progress-bar">
-                                <div class="hub-progress-fill" style="width: 0%; background: #27AE60;"></div>
+                            
+
+                            <!-- Progress Section -->
+                            <div class="quest-hub-progress">
+                                <div class="quest-hub-progress-info">
+                                    <span class="quest-hub-progress-label">0% Complete</span>
+                                    
+                                    <span class="quest-hub-progress-count">0/6 Features</span>
+                                    
+                                </div>
+                                <div class="quest-hub-progress-bar">
+                                    <div class="quest-hub-progress-fill" style="width: 0%; background: #27AE60;"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Hub Footer -->
-                        <div class="hub-card-footer">
-                            <a href="/hubs/repcore" class="hub-link">
+                        <div class="quest-hub-footer">
+                            <a href="/hubs/repcore" class="quest-hub-link">
                                 <span>View Details</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
                     
-                    <article class="hub-card" data-status="planned">
-                        <!-- Hub Header with Icon -->
-                        <div class="hub-card-header">
-                            <div class="hub-icon-wrapper" style="background: linear-gradient(135deg, #3498DB, #3498DBdd);">
+                    <article class="quest-hub-card" data-status="planned">
+                        <!-- Hub Header -->
+                        <div class="quest-hub-header">
+                            <div class="quest-hub-icon" style="background: linear-gradient(135deg, #3498DB, #3498DBdd);">
                                 <i class="fas fa-gamepad"></i>
                             </div>
-                            <div class="hub-title-section">
+                            <div class="quest-hub-title-section">
                                 <h3>Backlog</h3>
-                                <span class="hub-category">Games</span>
+                                <span class="quest-hub-category">Games</span>
                             </div>
-                            <div class="hub-status-badge">
+                            <div class="quest-hub-status">
                                 
-                                    <span class="badge planned"><i class="fas fa-clock"></i> Planned</span>
+                                    <span class="quest-hub-badge planned"><i class="far fa-clock"></i> Planned</span>
                                 
                             </div>
                         </div>
 
-                        <!-- Hub Description -->
-                        <p class="hub-description">Gamified personal game manager and discovery platform</p>
+                        <!-- Hub Body -->
+                        <div class="quest-hub-body">
+                            <p class="quest-hub-description">Gamified personal game manager and discovery platform</p>
 
-                        <!-- Pitch Summary (if available) -->
-                        
+                            
 
-                        <!-- Progress Section -->
-                        <div class="hub-progress-section">
-                            <div class="progress-info">
-                                <span class="progress-label">0% Complete</span>
-                                
-                                <span class="progress-count">0/6 Features</span>
-                                
-                            </div>
-                            <div class="hub-progress-bar">
-                                <div class="hub-progress-fill" style="width: 0%; background: #3498DB;"></div>
+                            <!-- Progress Section -->
+                            <div class="quest-hub-progress">
+                                <div class="quest-hub-progress-info">
+                                    <span class="quest-hub-progress-label">0% Complete</span>
+                                    
+                                    <span class="quest-hub-progress-count">0/6 Features</span>
+                                    
+                                </div>
+                                <div class="quest-hub-progress-bar">
+                                    <div class="quest-hub-progress-fill" style="width: 0%; background: #3498DB;"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Hub Footer -->
-                        <div class="hub-card-footer">
-                            <a href="/hubs/backlog" class="hub-link">
+                        <div class="quest-hub-footer">
+                            <a href="/hubs/backlog" class="quest-hub-link">
                                 <span>View Details</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
                     
-                    <article class="hub-card" data-status="planned">
-                        <!-- Hub Header with Icon -->
-                        <div class="hub-card-header">
-                            <div class="hub-icon-wrapper" style="background: linear-gradient(135deg, #34495E, #34495Edd);">
+                    <article class="quest-hub-card" data-status="planned">
+                        <!-- Hub Header -->
+                        <div class="quest-hub-header">
+                            <div class="quest-hub-icon" style="background: linear-gradient(135deg, #34495E, #34495Edd);">
                                 <i class="fas fa-microchip"></i>
                             </div>
-                            <div class="hub-title-section">
+                            <div class="quest-hub-title-section">
                                 <h3>Codeflow Studio</h3>
-                                <span class="hub-category">Tech</span>
+                                <span class="quest-hub-category">Tech</span>
                             </div>
-                            <div class="hub-status-badge">
+                            <div class="quest-hub-status">
                                 
-                                    <span class="badge planned"><i class="fas fa-clock"></i> Planned</span>
+                                    <span class="quest-hub-badge planned"><i class="far fa-clock"></i> Planned</span>
                                 
                             </div>
                         </div>
 
-                        <!-- Hub Description -->
-                        <p class="hub-description">Visual programming playground for developers</p>
+                        <!-- Hub Body -->
+                        <div class="quest-hub-body">
+                            <p class="quest-hub-description">Visual programming playground for developers</p>
 
-                        <!-- Pitch Summary (if available) -->
-                        
+                            
 
-                        <!-- Progress Section -->
-                        <div class="hub-progress-section">
-                            <div class="progress-info">
-                                <span class="progress-label">0% Complete</span>
-                                
-                                <span class="progress-count">0/6 Features</span>
-                                
-                            </div>
-                            <div class="hub-progress-bar">
-                                <div class="hub-progress-fill" style="width: 0%; background: #34495E;"></div>
+                            <!-- Progress Section -->
+                            <div class="quest-hub-progress">
+                                <div class="quest-hub-progress-info">
+                                    <span class="quest-hub-progress-label">0% Complete</span>
+                                    
+                                    <span class="quest-hub-progress-count">0/6 Features</span>
+                                    
+                                </div>
+                                <div class="quest-hub-progress-bar">
+                                    <div class="quest-hub-progress-fill" style="width: 0%; background: #34495E;"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Hub Footer -->
-                        <div class="hub-card-footer">
-                            <a href="/hubs/codeflowstudio" class="hub-link">
+                        <div class="quest-hub-footer">
+                            <a href="/hubs/codeflowstudio" class="quest-hub-link">
                                 <span>View Details</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </article>
                     
-                    <article class="hub-card" data-status="planned">
-                        <!-- Hub Header with Icon -->
-                        <div class="hub-card-header">
-                            <div class="hub-icon-wrapper" style="background: linear-gradient(135deg, #E91E63, #E91E63dd);">
+                    <article class="quest-hub-card" data-status="planned">
+                        <!-- Hub Header -->
+                        <div class="quest-hub-header">
+                            <div class="quest-hub-icon" style="background: linear-gradient(135deg, #E91E63, #E91E63dd);">
                                 <i class="fas fa-music"></i>
                             </div>
-                            <div class="hub-title-section">
+                            <div class="quest-hub-title-section">
                                 <h3>HarmonyHub</h3>
-                                <span class="hub-category">Music</span>
+                                <span class="quest-hub-category">Music</span>
                             </div>
-                            <div class="hub-status-badge">
+                            <div class="quest-hub-status">
                                 
-                                    <span class="badge planned"><i class="fas fa-clock"></i> Planned</span>
+                                    <span class="quest-hub-badge planned"><i class="far fa-clock"></i> Planned</span>
                                 
                             </div>
                         </div>
 
-                        <!-- Hub Description -->
-                        <p class="hub-description">Active music companion that analyzes taste and connects to live music</p>
+                        <!-- Hub Body -->
+                        <div class="quest-hub-body">
+                            <p class="quest-hub-description">Active music companion that analyzes taste and connects to live music</p>
 
-                        <!-- Pitch Summary (if available) -->
-                        
+                            
 
-                        <!-- Progress Section -->
-                        <div class="hub-progress-section">
-                            <div class="progress-info">
-                                <span class="progress-label">0% Complete</span>
-                                
-                                <span class="progress-count">0/6 Features</span>
-                                
-                            </div>
-                            <div class="hub-progress-bar">
-                                <div class="hub-progress-fill" style="width: 0%; background: #E91E63;"></div>
+                            <!-- Progress Section -->
+                            <div class="quest-hub-progress">
+                                <div class="quest-hub-progress-info">
+                                    <span class="quest-hub-progress-label">0% Complete</span>
+                                    
+                                    <span class="quest-hub-progress-count">0/6 Features</span>
+                                    
+                                </div>
+                                <div class="quest-hub-progress-bar">
+                                    <div class="quest-hub-progress-fill" style="width: 0%; background: #E91E63;"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Hub Footer -->
-                        <div class="hub-card-footer">
-                            <a href="/hubs/harmonyhub" class="hub-link">
+                        <div class="quest-hub-footer">
+                            <a href="/hubs/harmonyhub" class="quest-hub-link">
                                 <span>View Details</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -786,46 +846,28 @@
             </section>
 
             <!-- Live Activity Feed -->
-            <section class="activity-section">
-                <div class="section-header">
+            <section class="quest-activity-section">
+                <div class="quest-section-header">
                     <h2>Recent Activity</h2>
                     <p>Latest updates and milestones from the quest</p>
                 </div>
 
-                <div class="activity-feed">
+                <div class="quest-activity-timeline">
                     
-                    <div class="activity-card milestone">
-                        <div class="activity-icon-wrapper">
+                    <div class="quest-activity-item milestone">
+                        <div class="quest-activity-icon">
                             
                                 <i class="fas fa-trophy"></i>
                             
                         </div>
-                        <div class="activity-content">
-                            <div class="activity-header">
-                                <h4>Quest Page Launched</h4>
-                                <span class="activity-date">Sep 09, 2025</span>
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
+                                <h4>Quest Progress Page Redesigned</h4>
+                                <span class="quest-activity-date">Oct 28, 2025</span>
                             </div>
-                            <p class="activity-description">Complete quest progress page with collapsible phases, hub cards, and dynamic tracking system</p>
+                            <p class="quest-activity-description">Complete redesign with clean timeline layouts, animated progress rings, and mobile-optimized interface</p>
                             
-                            
-                        </div>
-                    </div>
-                    
-                    <div class="activity-card blog-post">
-                        <div class="activity-icon-wrapper">
-                            
-                                <i class="fas fa-pen-fancy"></i>
-                            
-                        </div>
-                        <div class="activity-content">
-                            <div class="activity-header">
-                                <h4>The 49 Project Quest</h4>
-                                <span class="activity-date">Sep 03, 2025</span>
-                            </div>
-                            <p class="activity-description">Published comprehensive blog post announcing the quest and outlining the 12-month journey</p>
-                            
-                            
-                                <a href="/blog/49-project-quest" class="activity-link">
+                                <a href="/quest-progress" class="quest-activity-link">
                                     <span>View Details</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -833,19 +875,108 @@
                         </div>
                     </div>
                     
-                    <div class="activity-card quest-start">
-                        <div class="activity-icon-wrapper">
+                    <div class="quest-activity-item project">
+                        <div class="quest-activity-icon">
+                            
+                                <i class="fas fa-bolt"></i>
+                            
+                        </div>
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
+                                <h4>Projects Listing Page Completed</h4>
+                                <span class="quest-activity-date">Oct 25, 2025</span>
+                            </div>
+                            <p class="quest-activity-description">Launched comprehensive projects page with 56 projects, advanced filtering, search, and clean card designs</p>
+                            
+                                <a href="/projects" class="quest-activity-link">
+                                    <span>View Details</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="quest-activity-item milestone">
+                        <div class="quest-activity-icon">
+                            
+                                <i class="fas fa-trophy"></i>
+                            
+                        </div>
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
+                                <h4>All 7 Hobby Pages Completed</h4>
+                                <span class="quest-activity-date">Oct 20, 2025</span>
+                            </div>
+                            <p class="quest-activity-description">Finished building interactive hobby pages with statistics, trivia, and project showcases for all 7 domains</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="quest-activity-item blog-post">
+                        <div class="quest-activity-icon">
+                            
+                                <i class="fas fa-pen-fancy"></i>
+                            
+                        </div>
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
+                                <h4>Portfolio Website Launched</h4>
+                                <span class="quest-activity-date">Oct 15, 2025</span>
+                            </div>
+                            <p class="quest-activity-description">Launched complete portfolio website with hobby pages, projects listing, and quest tracking</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="quest-activity-item milestone">
+                        <div class="quest-activity-icon">
+                            
+                                <i class="fas fa-trophy"></i>
+                            
+                        </div>
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
+                                <h4>Quest Page Launched</h4>
+                                <span class="quest-activity-date">Sep 09, 2025</span>
+                            </div>
+                            <p class="quest-activity-description">Initial quest progress page with collapsible phases, hub cards, and dynamic tracking system</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="quest-activity-item blog-post">
+                        <div class="quest-activity-icon">
+                            
+                                <i class="fas fa-pen-fancy"></i>
+                            
+                        </div>
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
+                                <h4>The 49 Project Quest</h4>
+                                <span class="quest-activity-date">Sep 03, 2025</span>
+                            </div>
+                            <p class="quest-activity-description">Published comprehensive blog post announcing the quest and outlining the 12-month journey</p>
+                            
+                                <a href="/blog/49-project-quest" class="quest-activity-link">
+                                    <span>View Details</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="quest-activity-item quest-start">
+                        <div class="quest-activity-icon">
                             
                                 <i class="fas fa-flag-checkered"></i>
                             
                         </div>
-                        <div class="activity-content">
-                            <div class="activity-header">
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
                                 <h4>The 49 Project Quest Begins</h4>
-                                <span class="activity-date">Sep 01, 2025</span>
+                                <span class="quest-activity-date">Sep 01, 2025</span>
                             </div>
-                            <p class="activity-description">Officially launched the quest with system setup, project planning, and tech stack finalization</p>
-                            
+                            <p class="quest-activity-description">Officially launched the quest with system setup, project planning, and tech stack finalization</p>
                             
                         </div>
                     </div>
@@ -854,99 +985,99 @@
             </section>
 
             <!-- Next Milestones -->
-            <section class="milestones-section">
-                <div class="section-header">
+            <section class="quest-milestones-section">
+                <div class="quest-section-header">
                     <h2>Upcoming Milestones</h2>
                     <p>What's on the horizon</p>
                 </div>
 
-                <div class="milestones-grid">
+                <div class="quest-milestones-timeline">
                     
-                    <div class="milestone-card project">
-                        <div class="milestone-icon">
+                    <div class="quest-milestone-item milestone">
+                        <div class="quest-milestone-icon">
                             
                                 <i class="fas fa-star"></i>
                             
                         </div>
-                        <div class="milestone-content">
-                            <h4>Complete Genre Analysis & Tracking</h4>
-                            <div class="milestone-meta">
-                                <span class="milestone-type">Project</span>
-                                <span class="milestone-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Sep 20, 2025
+                        <div class="quest-milestone-content">
+                            <h4>Complete Portfolio Website</h4>
+                            <div class="quest-milestone-meta">
+                                <span class="quest-milestone-type">Milestone</span>
+                                <span class="quest-milestone-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Oct 31
                                 </span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="milestone-card project">
-                        <div class="milestone-icon">
+                    <div class="quest-milestone-item project">
+                        <div class="quest-milestone-icon">
                             
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-rocket"></i>
                             
                         </div>
-                        <div class="milestone-content">
-                            <h4>Complete Player Comparison Tool</h4>
-                            <div class="milestone-meta">
-                                <span class="milestone-type">Project</span>
-                                <span class="milestone-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Sep 27, 2025
+                        <div class="quest-milestone-content">
+                            <h4>Start First Feature Project</h4>
+                            <div class="quest-milestone-meta">
+                                <span class="quest-milestone-type">Project</span>
+                                <span class="quest-milestone-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Nov 01
                                 </span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="milestone-card project">
-                        <div class="milestone-icon">
-                            
-                                <i class="fas fa-star"></i>
-                            
-                        </div>
-                        <div class="milestone-content">
-                            <h4>Complete Workout Personalization</h4>
-                            <div class="milestone-meta">
-                                <span class="milestone-type">Project</span>
-                                <span class="milestone-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Oct 10, 2025
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="milestone-card phase">
-                        <div class="milestone-icon">
+                    <div class="quest-milestone-item phase">
+                        <div class="quest-milestone-icon">
                             
                                 <i class="fas fa-flag"></i>
                             
                         </div>
-                        <div class="milestone-content">
-                            <h4>Complete Phase 1 Micro-Projects</h4>
-                            <div class="milestone-meta">
-                                <span class="milestone-type">Phase</span>
-                                <span class="milestone-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Oct 31, 2025
+                        <div class="quest-milestone-content">
+                            <h4>Complete Phase 1: Foundation</h4>
+                            <div class="quest-milestone-meta">
+                                <span class="quest-milestone-type">Phase</span>
+                                <span class="quest-milestone-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Oct 31
                                 </span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="milestone-card phase">
-                        <div class="milestone-icon">
+                    <div class="quest-milestone-item phase">
+                        <div class="quest-milestone-icon">
                             
                                 <i class="fas fa-flag"></i>
                             
                         </div>
-                        <div class="milestone-content">
+                        <div class="quest-milestone-content">
                             <h4>Start Phase 2: Sports Domain</h4>
-                            <div class="milestone-meta">
-                                <span class="milestone-type">Phase</span>
-                                <span class="milestone-date">
-                                    <i class="fas fa-calendar"></i>
-                                    Nov 01, 2025
+                            <div class="quest-milestone-meta">
+                                <span class="quest-milestone-type">Phase</span>
+                                <span class="quest-milestone-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Nov 01
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quest-milestone-item milestone">
+                        <div class="quest-milestone-icon">
+                            
+                                <i class="fas fa-star"></i>
+                            
+                        </div>
+                        <div class="quest-milestone-content">
+                            <h4>Launch First Hub Application</h4>
+                            <div class="quest-milestone-meta">
+                                <span class="quest-milestone-type">Milestone</span>
+                                <span class="quest-milestone-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Dec 15
                                 </span>
                             </div>
                         </div>
@@ -958,20 +1089,20 @@
     </main>
 
     <!-- CTA Section -->
-    <section class="quest-cta">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-icon">
+    <section class="quest-cta-section">
+        <div class="quest-container">
+            <div class="quest-cta-content">
+                <div class="quest-cta-icon">
                     <i class="fas fa-bell"></i>
                 </div>
                 <h2>Follow the Journey</h2>
                 <p>Stay updated with weekly progress reports, behind-the-scenes insights, and lessons learned from building 49 projects.</p>
-                <div class="cta-buttons">
-                    <a href="/blog/" class="btn btn-primary btn-large">
+                <div class="quest-cta-buttons">
+                    <a href="/blog/" class="quest-cta-btn quest-cta-btn-primary">
                         <i class="fas fa-book-open"></i>
                         <span>Read the Blog</span>
                     </a>
-                    <a href="/contact/" class="btn btn-secondary btn-large">
+                    <a href="/contact/" class="quest-cta-btn quest-cta-btn-secondary">
                         <i class="fas fa-envelope"></i>
                         <span>Get In Touch</span>
                     </a>
@@ -982,11 +1113,33 @@
 </div>
 
 <script>
+// Animate progress ring on load
+document.addEventListener('DOMContentLoaded', function() {
+    // Progress ring animation
+    const progressRing = document.querySelector('.quest-progress-ring-fill');
+    if (progressRing) {
+        const progress = progressRing.getAttribute('data-progress');
+        const circumference = 2 * Math.PI * 75; // radius = 75
+        const offset = circumference - (progress / 100) * circumference;
+
+        setTimeout(() => {
+            progressRing.style.strokeDashoffset = offset;
+        }, 500);
+    }
+
+    // Auto-expand active phase
+    const activePhase = document.querySelector('.quest-phase-card.active');
+    if (activePhase) {
+        const phaseNumber = activePhase.getAttribute('data-phase');
+        togglePhase(phaseNumber);
+    }
+});
+
 // Toggle phase details
 function togglePhase(phaseNumber) {
     const details = document.getElementById(`phase-${phaseNumber}-details`);
     const card = document.querySelector(`[data-phase="${phaseNumber}"]`);
-    const toggle = card.querySelector('.phase-toggle i');
+    const toggle = card.querySelector('.quest-phase-toggle i');
 
     if (details.classList.contains('expanded')) {
         details.classList.remove('expanded');
@@ -996,15 +1149,6 @@ function togglePhase(phaseNumber) {
         toggle.style.transform = 'rotate(180deg)';
     }
 }
-
-// Auto-expand active phase on load
-document.addEventListener('DOMContentLoaded', function() {
-    const activePhase = document.querySelector('.phase-card.active');
-    if (activePhase) {
-        const phaseNumber = activePhase.getAttribute('data-phase');
-        togglePhase(phaseNumber);
-    }
-});
 </script>
 
     </main>

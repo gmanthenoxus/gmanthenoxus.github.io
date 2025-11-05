@@ -232,7 +232,7 @@ cta:
   title: "Ready to Train Smarter?"
   description: "Join me in building the future of intelligent fitness tracking. RepCore is coming soon—a tool that doesn't just log your workouts, but helps you understand your progress and optimize your training."
   button_text: "Follow the Journey"
-  button_url: "/quest-progress.html"
+  button_url: "/quest-progress"
 
 # Empty States
 empty_states:

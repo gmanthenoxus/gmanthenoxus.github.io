@@ -2,8 +2,8 @@
 # This is the brain of the quest progress page
 
 quest:
-  total_projects: 49
-  completed_projects: 0
+  total_projects: 56
+  completed_projects: 2
   start_date: "2025-09-01"
   target_completion: "2026-08-31"
   current_phase: "Foundation & Momentum"
@@ -13,21 +13,21 @@ quest:
   phases:
     - name: "Foundation & Momentum"
       phase_number: 1
-      start: "Month 1"
-      end: "Month 2"
+      start: "Sep 2025"
+      end: "Oct 2025"
       duration: "2 months"
       target_projects: 7
-      completed_projects: 0
+      completed_projects: 2
       status: "in-progress"
       description: "Establish systems, validate project ideas with micro-projects, and build public momentum"
       icon: "fas fa-rocket"
       goals:
         - text: "Setup GitHub Org, Project Boards, and Public Blog"
-          completed: false
+          completed: true
         - text: "Finalize tech stack (Next.js, Supabase, Tailwind)"
-          completed: false
+          completed: true
         - text: "Complete Passion-Skills Audit for all 7 domains"
-          completed: false
+          completed: true
         - text: "Deploy 7 functional micro-projects"
           completed: false
         - text: "Establish consistent weekly work rhythm"
@@ -35,8 +35,8 @@ quest:
 
     - name: "Domain Deep Dive & Execution"
       phase_number: 2
-      start: "Month 3"
-      end: "Month 8"
+      start: "Nov 2025"
+      end: "Apr 2026"
       duration: "6 months"
       target_projects: 42
       completed_projects: 0
@@ -53,29 +53,29 @@ quest:
         - text: "Follow monthly rhythm: 2 weeks dev, 1 week testing, 1 week docs"
           completed: false
       monthly_focus:
-        - month: 3
+        - month: "Nov 2025"
           domain: "Sports"
           projects: 6
-        - month: 4
+        - month: "Dec 2025"
           domain: "Anime"
           projects: 6
-        - month: 5
+        - month: "Jan 2026"
           domain: "Fitness"
           projects: 6
-        - month: 6
+        - month: "Feb 2026"
           domain: "Games"
           projects: 6
-        - month: 7
+        - month: "Mar 2026"
           domain: "Sneakers & Music"
           projects: 4
-        - month: 8
+        - month: "Apr 2026"
           domain: "Sneakers, Music & Tech"
           projects: 14
 
     - name: "Hub Integration & Refinement"
       phase_number: 3
-      start: "Month 9"
-      end: "Month 10"
+      start: "May 2026"
+      end: "Jun 2026"
       duration: "2 months"
       target_projects: 7
       completed_projects: 0
@@ -94,8 +94,8 @@ quest:
 
     - name: "Ecosystem Unification"
       phase_number: 4
-      start: "Month 11"
-      end: "Month 11"
+      start: "Jul 2026"
+      end: "Jul 2026"
       duration: "1 month"
       target_projects: 1
       completed_projects: 0
@@ -116,8 +116,8 @@ quest:
 
     - name: "Launch & Evolution"
       phase_number: 5
-      start: "Month 12"
-      end: "Month 12"
+      start: "Aug 2026"
+      end: "Aug 2026"
       duration: "1 month"
       target_projects: 0
       completed_projects: 0
@@ -175,8 +175,8 @@ quest:
   hubs:
     - name: "AthleHub"
       category: "sports"
-      status: "planned"
-      progress: 0
+      status: "in-progress"
+      progress: 15
       description: "Community sports platform for coordination, tracking, and recognition"
       color: "#FF6B35"
       icon: "fas fa-basketball-ball"
@@ -184,23 +184,23 @@ quest:
       completed_features: 0
       features:
         - name: "Live Score Ticker"
-          status: "planned"
-          target_date: "2025-09-15"
+          status: "in-progress"
+          target_date: "2025-11-15"
         - name: "Player Comparison Tool"
           status: "planned"
-          target_date: "2025-09-27"
+          target_date: "2025-11-27"
         - name: "Team Manager"
           status: "planned"
-          target_date: "2025-10-15"
+          target_date: "2025-12-15"
         - name: "Event Coordinator"
           status: "planned"
-          target_date: "2025-11-01"
+          target_date: "2026-01-01"
         - name: "Stats Dashboard"
           status: "planned"
-          target_date: "2025-11-15"
+          target_date: "2026-01-15"
         - name: "Community Feed"
           status: "planned"
-          target_date: "2025-12-01"
+          target_date: "2026-02-01"
           
     - name: "AnimeVerse"
       category: "anime"
@@ -310,10 +310,32 @@ quest:
 
   # Live activity feed - the engagement engine
   activity_log:
+    - date: "2025-10-28"
+      type: "milestone"
+      title: "Quest Progress Page Redesigned"
+      description: "Complete redesign with clean timeline layouts, animated progress rings, and mobile-optimized interface"
+      link: "/quest-progress"
+
+    - date: "2025-10-25"
+      type: "project"
+      title: "Projects Listing Page Completed"
+      description: "Launched comprehensive projects page with 56 projects, advanced filtering, search, and clean card designs"
+      link: "/projects"
+
+    - date: "2025-10-20"
+      type: "milestone"
+      title: "All 7 Hobby Pages Completed"
+      description: "Finished building interactive hobby pages with statistics, trivia, and project showcases for all 7 domains"
+
+    - date: "2025-10-15"
+      type: "blog-post"
+      title: "Portfolio Website Launched"
+      description: "Launched complete portfolio website with hobby pages, projects listing, and quest tracking"
+
     - date: "2025-09-09"
       type: "milestone"
       title: "Quest Page Launched"
-      description: "Complete quest progress page with collapsible phases, hub cards, and dynamic tracking system"
+      description: "Initial quest progress page with collapsible phases, hub cards, and dynamic tracking system"
 
     - date: "2025-09-03"
       type: "blog-post"
@@ -328,27 +350,27 @@ quest:
 
   # Current focus and next milestones
   current_focus:
-    title: "Genre Analysis & Tracking (Anime Micro-Project)"
-    description: "Building interactive dashboard analyzing anime genre distribution, popularity trends, and personal viewing patterns"
-    target_date: "2025-09-20"
-    progress: 15
+    title: "Portfolio Website & Quest Infrastructure"
+    description: "Building the foundation: complete portfolio website with hobby pages, projects listing, and quest tracking system to showcase the journey"
+    target_date: "2025-10-31"
+    progress: 85
 
   next_milestones:
-    - title: "Complete Genre Analysis & Tracking"
-      date: "2025-09-20"
+    - title: "Complete Portfolio Website"
+      date: "2025-10-31"
+      type: "milestone"
+    - title: "Start First Feature Project"
+      date: "2025-11-01"
       type: "project"
-    - title: "Complete Player Comparison Tool"
-      date: "2025-09-27"
-      type: "project"
-    - title: "Complete Workout Personalization"
-      date: "2025-10-10"
-      type: "project"
-    - title: "Complete Phase 1 Micro-Projects"
+    - title: "Complete Phase 1: Foundation"
       date: "2025-10-31"
       type: "phase"
     - title: "Start Phase 2: Sports Domain"
       date: "2025-11-01"
       type: "phase"
+    - title: "Launch First Hub Application"
+      date: "2025-12-15"
+      type: "milestone"
 
 # Meta information for social sharing
 meta:

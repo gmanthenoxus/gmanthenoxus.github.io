@@ -307,7 +307,7 @@ cta:
   title: "Ready to Level Up Your Gaming Experience?"
   description: "Join me in building Backlog—the ultimate game management platform that helps you organize your library, track your progress, and never forget why you bought that game. From backlog to victory screen."
   button_text: "Follow the Journey"
-  button_url: "/quest-progress.html"
+  button_url: "/quest-progress"
 
 # Empty States
 empty_states:

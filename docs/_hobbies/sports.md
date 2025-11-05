@@ -326,7 +326,7 @@ cta:
   title: "Tired of Showing Up to Empty Courts?"
   description: "Join me in building Athlehub—the sports-first platform that solves coordination, celebrates casual athletes, and builds stronger communities. Follow the journey as we create tools the sports community deserves."
   button_text: "Follow the Journey"
-  button_url: "/quest-progress.html"
+  button_url: "/quest-progress"
 ---
 
 ## My Sports Journey

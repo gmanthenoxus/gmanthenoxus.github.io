@@ -134,7 +134,7 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                         <span>Phase</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
-                    <div class="projects-filter-menu" id="phaseFilterMenu" style="right: 0;">
+                    <div class="projects-filter-menu" id="phaseFilterMenu">
                         <button class="projects-filter-option active" data-filter="all" data-type="phase">All Phases</button>
                         <button class="projects-filter-option" data-filter="1" data-type="phase">
                             <i class="fas fa-rocket"></i> Phase 1
@@ -369,15 +369,15 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                 <h2>Follow the Quest</h2>
                 <p>Track my progress as I build 49 projects in 12 months. See detailed timelines, milestones, and weekly updates.</p>
                 <div class="projects-cta-buttons">
-                    <a href="/quest-progress/" class="projects-cta-btn projects-cta-btn-primary">
+                    <a href="/quest-progress" class="projects-cta-btn projects-cta-btn-primary">
                         <i class="fas fa-rocket"></i>
                         <span>Track Quest Progress</span>
                     </a>
-                    <a href="/blog/49-project-quest/" class="projects-cta-btn projects-cta-btn-secondary">
+                    <a href="/blog/49-project-quest" class="projects-cta-btn projects-cta-btn-secondary">
                         <i class="fas fa-book-open"></i>
                         <span>Read the Story</span>
                     </a>
-                    <a href="/hobbies/" class="projects-cta-btn projects-cta-btn-secondary">
+                    <a href="/hobbies" class="projects-cta-btn projects-cta-btn-secondary">
                         <i class="fas fa-heart"></i>
                         <span>Explore Hobbies</span>
                     </a>
@@ -665,8 +665,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.projects-btn-view-details').forEach(btn => {
         btn.addEventListener('click', function() {
             const projectId = this.dataset.projectId;
+            const projectCard = this.closest('.projects-card');
+            const phase = projectCard ? projectCard.dataset.phase : null;
+
             console.log('View project #' + projectId);
-            alert('Project detail page coming soon! Project #' + projectId);
+
+            // Phase 1 and Hub projects (Phase 3) have detail pages
+            if (phase === '1' || phase === '3') {
+                // These projects have detail pages - this shouldn't show
+                // The link should navigate directly
+                return;
+            }
+
+            // Phase 2 and 4 projects show informative message
+            const phaseText = phase === '2' ? 'Phase 2' : phase === '4' ? 'Phase 4' : 'a future phase';
+            alert(`Full documentation will be available when this project begins in ${phaseText}.`);
         });
     });
 

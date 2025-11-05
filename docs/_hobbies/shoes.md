@@ -334,7 +334,7 @@ cta:
   title: "Tired of Inconsistent Shoe Sizing?"
   description: "Join me in building better tools for footwear enthusiasts who value both comfort and style. Follow the journey as we solve real problems in the shoe world."
   button_text: "Follow the Journey"
-  button_url: "/quest-progress.html"
+  button_url: "/quest-progress"
 
 # Empty States
 empty_states:

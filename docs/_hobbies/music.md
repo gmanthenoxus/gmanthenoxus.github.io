@@ -275,7 +275,7 @@ cta:
   title: "Believe Music Should Adapt to Your Life?"
   description: "Join me in building HarmonyHub—intelligent music tools that understand context, not just algorithms. Follow the journey as we create smarter, more social listening experiences."
   button_text: "Follow the Journey"
-  button_url: "/quest-progress.html"
+  button_url: "/quest-progress"
 
 # Empty States
 empty_states:

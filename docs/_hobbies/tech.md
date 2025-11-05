@@ -284,7 +284,7 @@ cta:
   title: "Believe Technology Should Solve Real Human Problems?"
   description: "Join me in building tools that make everyday life better, starting with the problems closest to us. Follow the 49 Project Quest as we create solutions that matter."
   button_text: "Follow the Journey"
-  button_url: "/quest-progress.html"
+  button_url: "/quest-progress"
 
 # Empty States
 empty_states:

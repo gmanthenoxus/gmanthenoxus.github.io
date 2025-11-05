@@ -5,98 +5,87 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
 ---
 
 <div class="quest-page">
-    <!-- Epic Hero Section -->
+    <!-- Hero Section -->
     <section class="quest-hero">
-        <div class="container">
-            <div class="hero-content">
+        <div class="quest-container">
+            <div class="quest-hero-content">
                 <!-- Quest Badge -->
                 <div class="quest-badge">
                     <i class="fas fa-rocket"></i>
                     <span>Live Progress</span>
                 </div>
 
-                <h1>The 49 Project Quest</h1>
-                <p class="hero-subtitle">Building 49 passion-driven projects across 7 domains in 12 months</p>
+                <h1 class="quest-hero-title">The 49 Project Quest</h1>
+                <p class="quest-hero-subtitle">Building 49 passion-driven projects across 7 domains in 12 months</p>
 
-                <!-- Epic Progress Ring -->
-                <div class="progress-ring-container">
-                    <svg class="progress-ring" width="200" height="200" viewBox="0 0 200 200">
-                        <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85" />
-                        <circle class="progress-ring-circle" cx="100" cy="100" r="85"
-                                style="stroke-dasharray: 534; stroke-dashoffset: 534;" />
+                <!-- Progress Ring -->
+                <div class="quest-progress-ring-container">
+                    <svg class="quest-progress-ring" width="180" height="180" viewBox="0 0 180 180">
+                        <circle class="quest-progress-ring-bg" cx="90" cy="90" r="75" />
+                        <circle class="quest-progress-ring-fill" cx="90" cy="90" r="75"
+                                style="stroke-dasharray: 471; stroke-dashoffset: 471;"
+                                data-progress="{{ site.data.quest.quest.completed_projects | times: 100 | divided_by: site.data.quest.quest.total_projects }}" />
                     </svg>
-                    <div class="progress-ring-text">
-                        <span class="progress-number">{{ site.data.quest.quest.completed_projects }}</span>
-                        <span class="progress-total">/{{ site.data.quest.quest.total_projects }}</span>
+                    <div class="quest-progress-ring-text">
+                        <span class="quest-progress-number">{{ site.data.quest.quest.completed_projects }}</span>
+                        <span class="quest-progress-total">/{{ site.data.quest.quest.total_projects }}</span>
                     </div>
                 </div>
 
-                <!-- Quick Stats Grid -->
-                <div class="hero-stats-grid">
-                    <div class="hero-stat">
-                        <i class="fas fa-rocket"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">Phase 1</span>
-                            <span class="stat-label">Current Phase</span>
-                        </div>
+                <!-- Clean Stats Counter (like projects page) -->
+                <div class="quest-stats-counter">
+                    <div class="quest-stat-item">
+                        <strong>{{ site.data.quest.quest.completed_projects }}</strong>
+                        <span>Completed</span>
                     </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-check-circle"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">{{ site.data.quest.quest.completed_projects }}/7</span>
-                            <span class="stat-label">Micro-Projects</span>
-                        </div>
+                    <span class="quest-stat-divider">•</span>
+                    <div class="quest-stat-item">
+                        {% assign in_progress = 0 %}
+                        {% for phase in site.data.quest.quest.phases %}
+                            {% if phase.status == 'in-progress' %}
+                                {% assign in_progress = phase.target_projects | minus: phase.completed_projects %}
+                            {% endif %}
+                        {% endfor %}
+                        <strong>{{ in_progress }}</strong>
+                        <span>In Progress</span>
                     </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-calendar-day"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">Week 2</span>
-                            <span class="stat-label">Of Month 1</span>
-                        </div>
-                    </div>
-                    <div class="hero-stat">
-                        <i class="fas fa-fire"></i>
-                        <div class="stat-content">
-                            <span class="stat-value">7</span>
-                            <span class="stat-label">To Phase 2</span>
-                        </div>
+                    <span class="quest-stat-divider">•</span>
+                    <div class="quest-stat-item">
+                        {% assign planned = site.data.quest.quest.total_projects | minus: site.data.quest.quest.completed_projects | minus: in_progress %}
+                        <strong>{{ planned }}</strong>
+                        <span>Planned</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Floating Icons -->
-            <div class="floating-icons">
-                <i class="fas fa-code float-icon" style="--delay: 0s;"></i>
-                <i class="fas fa-rocket float-icon" style="--delay: 1s;"></i>
-                <i class="fas fa-lightbulb float-icon" style="--delay: 2s;"></i>
-                <i class="fas fa-star float-icon" style="--delay: 3s;"></i>
-                <i class="fas fa-heart float-icon" style="--delay: 4s;"></i>
-                <i class="fas fa-bolt float-icon" style="--delay: 5s;"></i>
             </div>
         </div>
     </section>
 
     <!-- Current Focus Banner -->
-    <section class="current-focus-banner">
-        <div class="container">
-            <div class="focus-content">
-                <div class="focus-icon">
-                    <i class="fas fa-crosshairs"></i>
-                </div>
-                <div class="focus-details">
-                    <span class="focus-label">Currently Building</span>
-                    <h3>{{ site.data.quest.quest.current_focus.title }}</h3>
-                    <p>{{ site.data.quest.quest.current_focus.description }}</p>
-                    <div class="focus-progress">
-                        <div class="focus-progress-bar">
-                            <div class="focus-progress-fill" style="width: {{ site.data.quest.quest.current_focus.progress }}%"></div>
-                        </div>
-                        <span class="focus-progress-text">{{ site.data.quest.quest.current_focus.progress }}% Complete</span>
+    <section class="quest-focus-banner">
+        <div class="quest-container">
+            <div class="quest-focus-content">
+                <div class="quest-focus-header">
+                    <div class="quest-focus-badge">
+                        <i class="fas fa-crosshairs"></i>
+                        <span>Currently Building</span>
+                    </div>
+                    <div class="quest-focus-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Target: {{ site.data.quest.quest.current_focus.target_date | date: "%b %d, %Y" }}</span>
                     </div>
                 </div>
-                <div class="focus-date">
-                    <i class="fas fa-calendar"></i>
-                    <span>Target: {{ site.data.quest.quest.current_focus.target_date | date: "%b %d, %Y" }}</span>
+
+                <h2 class="quest-focus-title">{{ site.data.quest.quest.current_focus.title }}</h2>
+                <p class="quest-focus-description">{{ site.data.quest.quest.current_focus.description }}</p>
+
+                <div class="quest-focus-progress">
+                    <div class="quest-focus-progress-info">
+                        <span class="quest-focus-progress-label">Progress</span>
+                        <span class="quest-focus-progress-percent">{{ site.data.quest.quest.current_focus.progress }}%</span>
+                    </div>
+                    <div class="quest-focus-progress-bar">
+                        <div class="quest-focus-progress-fill" style="width: {{ site.data.quest.quest.current_focus.progress }}%"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,69 +93,72 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
 
     <!-- Main Content -->
     <main class="quest-main">
-        <div class="container">
+        <div class="quest-container">
             <!-- Quest Phases Timeline -->
-            <section class="phases-section">
-                <div class="section-header">
+            <section class="quest-phases-section">
+                <div class="quest-section-header">
                     <h2>Quest Phases</h2>
                     <p>The journey broken down into strategic phases</p>
                 </div>
 
-                <div class="phases-timeline">
+                <div class="quest-phases-timeline">
                     {% for phase in site.data.quest.quest.phases %}
-                    <div class="phase-card {% if phase.status == 'in-progress' %}active{% elsif phase.status == 'completed' %}completed{% endif %}" data-phase="{{ phase.phase_number }}">
-                        <div class="phase-header-clickable" onclick="togglePhase({{ phase.phase_number }})">
-                            <div class="phase-icon">
+                    <div class="quest-phase-card {% if phase.status == 'in-progress' %}active{% elsif phase.status == 'completed' %}completed{% endif %}" data-phase="{{ phase.phase_number }}">
+                        <div class="quest-phase-header" onclick="togglePhase({{ phase.phase_number }})">
+                            <div class="quest-phase-icon">
                                 <i class="{{ phase.icon }}"></i>
                             </div>
-                            <div class="phase-info">
+                            <div class="quest-phase-info">
                                 <h3>Phase {{ phase.phase_number }}: {{ phase.name }}</h3>
-                                <span class="phase-dates">{{ phase.start }} - {{ phase.end }}</span>
+                                <span class="quest-phase-dates">{{ phase.start }} - {{ phase.end }}</span>
                             </div>
-                            <div class="phase-summary">
+                            <div class="quest-phase-summary">
                                 {% if phase.target_projects > 0 %}
-                                <span class="phase-percentage">{{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%</span>
+                                <span class="quest-phase-percentage">{{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%</span>
                                 {% endif %}
-                                <span class="status-badge {{ phase.status }}">
+                                <span class="quest-status-badge {{ phase.status }}">
                                     {% if phase.status == 'completed' %}
-                                        <span class="badge-icon">✓</span>
-                                        <span class="badge-text">Done</span>
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Done</span>
                                     {% elsif phase.status == 'in-progress' %}
-                                        <span class="badge-icon pulse">●</span>
-                                        <span class="badge-text">Active</span>
+                                        <i class="fas fa-circle-notch fa-spin"></i>
+                                        <span>Active</span>
                                     {% else %}
-                                        <span class="badge-icon">○</span>
-                                        <span class="badge-text">Planned</span>
+                                        <i class="far fa-circle"></i>
+                                        <span>Planned</span>
                                     {% endif %}
                                 </span>
                             </div>
-                            <div class="phase-toggle">
+                            <div class="quest-phase-toggle">
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
 
-                        <div class="phase-details" id="phase-{{ phase.phase_number }}-details">
-                            <p class="phase-description">{{ phase.description }}</p>
+                        <div class="quest-phase-details" id="phase-{{ phase.phase_number }}-details">
+                            <p class="quest-phase-description">{{ phase.description }}</p>
 
                             {% if phase.goals %}
-                            <div class="phase-goals">
+                            <div class="quest-phase-goals">
                                 <h4><i class="fas fa-bullseye"></i> Key Goals</h4>
                                 <ul>
                                     {% for goal in phase.goals %}
-                                    <li class="{% if goal.completed %}completed{% endif %}">{{ goal.text }}</li>
+                                    <li class="{% if goal.completed %}completed{% endif %}">
+                                        <i class="fas {% if goal.completed %}fa-check-circle{% else %}fa-circle{% endif %}"></i>
+                                        <span>{{ goal.text }}</span>
+                                    </li>
                                     {% endfor %}
                                 </ul>
                             </div>
                             {% endif %}
 
                             {% if phase.target_projects > 0 %}
-                            <div class="phase-progress">
-                                <div class="phase-progress-header">
+                            <div class="quest-phase-progress">
+                                <div class="quest-phase-progress-header">
                                     <span>{{ phase.completed_projects }}/{{ phase.target_projects }} Projects</span>
                                     <span>{{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%</span>
                                 </div>
-                                <div class="phase-progress-bar">
-                                    <div class="phase-progress-fill" style="width: {{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%"></div>
+                                <div class="quest-phase-progress-bar">
+                                    <div class="quest-phase-progress-fill" style="width: {{ phase.completed_projects | times: 100 | divided_by: phase.target_projects }}%"></div>
                                 </div>
                             </div>
                             {% endif %}
@@ -177,62 +169,63 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
             </section>
 
             <!-- The 7 Hub Applications -->
-            <section class="hubs-section">
-                <div class="section-header">
+            <section class="quest-hubs-section">
+                <div class="quest-section-header">
                     <h2>The 7 Hub Applications</h2>
                     <p>Comprehensive platforms that bring together multiple projects into unified experiences</p>
                 </div>
 
-                <div class="hubs-grid">
+                <div class="quest-hubs-grid">
                     {% for hub in site.data.quest.quest.hubs %}
-                    <article class="hub-card" data-status="{{ hub.status }}">
-                        <!-- Hub Header with Icon -->
-                        <div class="hub-card-header">
-                            <div class="hub-icon-wrapper" style="background: linear-gradient(135deg, {{ hub.color }}, {{ hub.color }}dd);">
+                    <article class="quest-hub-card" data-status="{{ hub.status }}">
+                        <!-- Hub Header -->
+                        <div class="quest-hub-header">
+                            <div class="quest-hub-icon" style="background: linear-gradient(135deg, {{ hub.color }}, {{ hub.color }}dd);">
                                 <i class="{{ hub.icon }}"></i>
                             </div>
-                            <div class="hub-title-section">
+                            <div class="quest-hub-title-section">
                                 <h3>{{ hub.name }}</h3>
-                                <span class="hub-category">{{ hub.category | capitalize }}</span>
+                                <span class="quest-hub-category">{{ hub.category | capitalize }}</span>
                             </div>
-                            <div class="hub-status-badge">
+                            <div class="quest-hub-status">
                                 {% if hub.status == 'completed' %}
-                                    <span class="badge completed"><i class="fas fa-check-circle"></i> Live</span>
+                                    <span class="quest-hub-badge completed"><i class="fas fa-check-circle"></i> Live</span>
                                 {% elsif hub.status == 'in-progress' %}
-                                    <span class="badge in-progress"><i class="fas fa-cog fa-spin"></i> Building</span>
+                                    <span class="quest-hub-badge in-progress"><i class="fas fa-circle-notch fa-spin"></i> Building</span>
                                 {% else %}
-                                    <span class="badge planned"><i class="fas fa-clock"></i> Planned</span>
+                                    <span class="quest-hub-badge planned"><i class="far fa-clock"></i> Planned</span>
                                 {% endif %}
                             </div>
                         </div>
 
-                        <!-- Hub Description -->
-                        <p class="hub-description">{{ hub.description }}</p>
+                        <!-- Hub Body -->
+                        <div class="quest-hub-body">
+                            <p class="quest-hub-description">{{ hub.description }}</p>
 
-                        <!-- Pitch Summary (if available) -->
-                        {% if hub.pitch_summary %}
-                        <div class="hub-pitch">
-                            <i class="fas fa-quote-left"></i>
-                            <p>{{ hub.pitch_summary }}</p>
-                        </div>
-                        {% endif %}
-
-                        <!-- Progress Section -->
-                        <div class="hub-progress-section">
-                            <div class="progress-info">
-                                <span class="progress-label">{{ hub.progress }}% Complete</span>
-                                {% if hub.target_features %}
-                                <span class="progress-count">{{ hub.completed_features }}/{{ hub.target_features }} Features</span>
-                                {% endif %}
+                            {% if hub.pitch_summary %}
+                            <div class="quest-hub-pitch">
+                                <i class="fas fa-quote-left"></i>
+                                <p>{{ hub.pitch_summary }}</p>
                             </div>
-                            <div class="hub-progress-bar">
-                                <div class="hub-progress-fill" style="width: {{ hub.progress }}%; background: {{ hub.color }};"></div>
+                            {% endif %}
+
+                            <!-- Progress Section -->
+                            <div class="quest-hub-progress">
+                                <div class="quest-hub-progress-info">
+                                    <span class="quest-hub-progress-label">{{ hub.progress }}% Complete</span>
+                                    {% if hub.target_features %}
+                                    <span class="quest-hub-progress-count">{{ hub.completed_features }}/{{ hub.target_features }} Features</span>
+                                    {% endif %}
+                                </div>
+                                <div class="quest-hub-progress-bar">
+                                    <div class="quest-hub-progress-fill" style="width: {{ hub.progress }}%; background: {{ hub.color }};"></div>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Hub Footer -->
-                        <div class="hub-card-footer">
-                            <a href="/hubs/{{ hub.name | downcase | replace: ' ', '' }}" class="hub-link">
+                        <div class="quest-hub-footer">
+                            <a href="/hubs/{{ hub.name | downcase | replace: ' ', '' }}" class="quest-hub-link">
                                 <span>View Details</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -243,16 +236,16 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
             </section>
 
             <!-- Live Activity Feed -->
-            <section class="activity-section">
-                <div class="section-header">
+            <section class="quest-activity-section">
+                <div class="quest-section-header">
                     <h2>Recent Activity</h2>
                     <p>Latest updates and milestones from the quest</p>
                 </div>
 
-                <div class="activity-feed">
+                <div class="quest-activity-timeline">
                     {% for activity in site.data.quest.quest.activity_log %}
-                    <div class="activity-card {{ activity.type }}">
-                        <div class="activity-icon-wrapper">
+                    <div class="quest-activity-item {{ activity.type }}">
+                        <div class="quest-activity-icon">
                             {% if activity.type == 'project-complete' %}
                                 <i class="fas fa-rocket"></i>
                             {% elsif activity.type == 'blog-post' %}
@@ -265,21 +258,14 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
                                 <i class="fas fa-bolt"></i>
                             {% endif %}
                         </div>
-                        <div class="activity-content">
-                            <div class="activity-header">
+                        <div class="quest-activity-content">
+                            <div class="quest-activity-header">
                                 <h4>{{ activity.title }}</h4>
-                                <span class="activity-date">{{ activity.date | date: "%b %d, %Y" }}</span>
+                                <span class="quest-activity-date">{{ activity.date | date: "%b %d, %Y" }}</span>
                             </div>
-                            <p class="activity-description">{{ activity.description }}</p>
-                            {% if activity.hub %}
-                                {% assign hub_data = site.data.quest.quest.hubs | where: "category", activity.hub | first %}
-                                <span class="activity-hub-tag" style="background: {{ hub_data.color }}22; color: {{ hub_data.color }}; border-color: {{ hub_data.color }};">
-                                    <i class="{{ hub_data.icon }}"></i>
-                                    {{ hub_data.name }}
-                                </span>
-                            {% endif %}
+                            <p class="quest-activity-description">{{ activity.description }}</p>
                             {% if activity.link %}
-                                <a href="{{ activity.link }}" class="activity-link">
+                                <a href="{{ activity.link }}" class="quest-activity-link">
                                     <span>View Details</span>
                                     <i class="fas fa-arrow-right"></i>
                                 </a>
@@ -291,18 +277,18 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
             </section>
 
             <!-- Next Milestones -->
-            <section class="milestones-section">
-                <div class="section-header">
+            <section class="quest-milestones-section">
+                <div class="quest-section-header">
                     <h2>Upcoming Milestones</h2>
                     <p>What's on the horizon</p>
                 </div>
 
-                <div class="milestones-grid">
+                <div class="quest-milestones-timeline">
                     {% for milestone in site.data.quest.quest.next_milestones %}
-                    <div class="milestone-card {{ milestone.type }}">
-                        <div class="milestone-icon">
-                            {% if milestone.type == 'feature' %}
-                                <i class="fas fa-puzzle-piece"></i>
+                    <div class="quest-milestone-item {{ milestone.type }}">
+                        <div class="quest-milestone-icon">
+                            {% if milestone.type == 'project' %}
+                                <i class="fas fa-rocket"></i>
                             {% elsif milestone.type == 'phase' %}
                                 <i class="fas fa-flag"></i>
                             {% elsif milestone.type == 'hub' %}
@@ -311,13 +297,13 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
                                 <i class="fas fa-star"></i>
                             {% endif %}
                         </div>
-                        <div class="milestone-content">
+                        <div class="quest-milestone-content">
                             <h4>{{ milestone.title }}</h4>
-                            <div class="milestone-meta">
-                                <span class="milestone-type">{{ milestone.type | capitalize }}</span>
-                                <span class="milestone-date">
-                                    <i class="fas fa-calendar"></i>
-                                    {{ milestone.date | date: "%b %d, %Y" }}
+                            <div class="quest-milestone-meta">
+                                <span class="quest-milestone-type">{{ milestone.type | capitalize }}</span>
+                                <span class="quest-milestone-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    {{ milestone.date | date: "%b %d" }}
                                 </span>
                             </div>
                         </div>
@@ -329,20 +315,20 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
     </main>
 
     <!-- CTA Section -->
-    <section class="quest-cta">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-icon">
+    <section class="quest-cta-section">
+        <div class="quest-container">
+            <div class="quest-cta-content">
+                <div class="quest-cta-icon">
                     <i class="fas fa-bell"></i>
                 </div>
                 <h2>Follow the Journey</h2>
                 <p>Stay updated with weekly progress reports, behind-the-scenes insights, and lessons learned from building 49 projects.</p>
-                <div class="cta-buttons">
-                    <a href="/blog/" class="btn btn-primary btn-large">
+                <div class="quest-cta-buttons">
+                    <a href="/blog/" class="quest-cta-btn quest-cta-btn-primary">
                         <i class="fas fa-book-open"></i>
                         <span>Read the Blog</span>
                     </a>
-                    <a href="/contact/" class="btn btn-secondary btn-large">
+                    <a href="/contact/" class="quest-cta-btn quest-cta-btn-secondary">
                         <i class="fas fa-envelope"></i>
                         <span>Get In Touch</span>
                     </a>
@@ -353,11 +339,33 @@ description: "Follow my journey building 49 projects across 7 passion domains. R
 </div>
 
 <script>
+// Animate progress ring on load
+document.addEventListener('DOMContentLoaded', function() {
+    // Progress ring animation
+    const progressRing = document.querySelector('.quest-progress-ring-fill');
+    if (progressRing) {
+        const progress = progressRing.getAttribute('data-progress');
+        const circumference = 2 * Math.PI * 75; // radius = 75
+        const offset = circumference - (progress / 100) * circumference;
+
+        setTimeout(() => {
+            progressRing.style.strokeDashoffset = offset;
+        }, 500);
+    }
+
+    // Auto-expand active phase
+    const activePhase = document.querySelector('.quest-phase-card.active');
+    if (activePhase) {
+        const phaseNumber = activePhase.getAttribute('data-phase');
+        togglePhase(phaseNumber);
+    }
+});
+
 // Toggle phase details
 function togglePhase(phaseNumber) {
     const details = document.getElementById(`phase-${phaseNumber}-details`);
     const card = document.querySelector(`[data-phase="${phaseNumber}"]`);
-    const toggle = card.querySelector('.phase-toggle i');
+    const toggle = card.querySelector('.quest-phase-toggle i');
 
     if (details.classList.contains('expanded')) {
         details.classList.remove('expanded');
@@ -367,13 +375,4 @@ function togglePhase(phaseNumber) {
         toggle.style.transform = 'rotate(180deg)';
     }
 }
-
-// Auto-expand active phase on load
-document.addEventListener('DOMContentLoaded', function() {
-    const activePhase = document.querySelector('.phase-card.active');
-    if (activePhase) {
-        const phaseNumber = activePhase.getAttribute('data-phase');
-        togglePhase(phaseNumber);
-    }
-});
 </script>

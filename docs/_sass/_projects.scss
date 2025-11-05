@@ -401,6 +401,8 @@
 .projects-filter-menu {
   position: absolute;
   top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
   background: white;
   border: 2px solid #e5e7eb;
   border-radius: 16px;
@@ -409,9 +411,19 @@
   display: none;
   z-index: 100;
   min-width: 180px;
+  max-width: 220px;
+  white-space: nowrap;
 
   &.show {
     display: block;
+  }
+
+  // Prevent menu from extending off screen
+  @media (max-width: 768px) {
+    left: auto;
+    right: 0;
+    transform: none;
+    min-width: 160px;
   }
 }
 
