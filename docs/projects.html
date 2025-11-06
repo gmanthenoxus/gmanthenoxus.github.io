@@ -248,10 +248,17 @@ description: "A 12-month quest to build 49 projects across 7 passion domains"
                         {% endif %}
 
                         <!-- View Details Button -->
+                        {% if project.phase == 1 or project.type == 'hub' %}
+                        <a href="/builds/{{ project.slug }}/" class="projects-btn-view-details">
+                            <span>View Details</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        {% else %}
                         <button class="projects-btn-view-details" data-project-id="{{ project.id }}">
                             <span>View Details</span>
                             <i class="fas fa-arrow-right"></i>
                         </button>
+                        {% endif %}
                     </div>
                 </article>
                 {% endfor %}
